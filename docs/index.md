@@ -9,7 +9,7 @@ Archivo README que proporciona instrucciones de demostración y uso específico 
 
 ## Contenidos
 
-- [Conceptos generales](conceptos.md)
+- [TwinCAT 3 Conceptos Generales](conceptos.md)
 - [TwinCAT 3 Demo](readme_tc3_demo.md)
 
 ---
