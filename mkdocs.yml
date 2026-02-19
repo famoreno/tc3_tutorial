@@ -7,13 +7,13 @@ theme:
 
   palette:
     - scheme: default
-      primary: blue grey
+      primary: red #blue grey
       accent: indigo
       toggle:
         icon: material/weather-night
         name: Modo oscuro
     - scheme: slate
-      primary: blue grey
+      primary: red #blue grey
       accent: indigo
       toggle:
         icon: material/weather-sunny
@@ -36,6 +36,7 @@ theme:
 nav:
   - Inicio: index.md
   - Conceptos: conceptos.md
+  - TC3 Demo: readme_tc3_demo.md
 
 markdown_extensions:
   - admonition
@@ -60,3 +61,6 @@ extra:
 
 extra_css:
   - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/ui-course.js
