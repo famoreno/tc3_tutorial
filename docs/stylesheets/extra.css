@@ -1,0 +1,23 @@
+.md-typeset h1 {
+  font-weight: 700;
+}
+
+.md-typeset h2 {
+  border-bottom: 2px solid #eee;
+  padding-bottom: 0.2em;
+}
+
+.md-typeset code {
+  border-radius: 6px;
+}
+
+.md-typeset img {
+  border-radius: 10px;
+}
+
+/* Código inline */
+.md-typeset code {
+  color: #d32f2f;        /* rojo */
+  background-color: #fff0f0;
+  font-weight: 600;
+}

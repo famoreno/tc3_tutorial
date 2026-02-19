@@ -1,0 +1,64 @@
+site_name: TC3 Docs
+site_url: https://famoreno.github.io/tc3docs/
+
+theme:
+  name: material
+  language: es
+
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Modo oscuro
+
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Modo claro
+
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+  features:
+    - navigation.instant
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.tracking
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.action.edit
+
+nav:
+  - Inicio: index.md
+  - Conceptos: conceptos.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+
+  - toc:
+      permalink: true
+
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed
+  - pymdownx.snippets
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/famoreno/tc3docs
+
+extra_css:
+  - stylesheets/extra.css
