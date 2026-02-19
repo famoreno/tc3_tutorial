@@ -1,23 +1,58 @@
+/* ===== Tipografía ===== */
+
 .md-typeset h1 {
   font-weight: 700;
+  letter-spacing: -0.5px;
 }
 
 .md-typeset h2 {
-  border-bottom: 2px solid #eee;
-  padding-bottom: 0.2em;
+  border-bottom: 2px solid #e6e6e6;
+  padding-bottom: 0.25em;
+  margin-top: 2em;
 }
 
-.md-typeset code {
-  border-radius: 6px;
+.md-typeset h3 {
+  margin-top: 1.5em;
 }
+
+/* ===== Código inline ===== */
+
+.md-typeset :not(pre) > code {
+  color: #c62828;
+  background-color: #ffecec;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9em;
+}
+
+/* ===== Bloques de código ===== */
+
+.md-typeset pre {
+  border-left: 4px solid #c62828;
+  border-radius: 8px;
+}
+
+/* ===== Imágenes ===== */
 
 .md-typeset img {
-  border-radius: 10px;
+  border-radius: 8px;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
 }
 
-/* Código inline */
-.md-typeset code {
-  color: #d32f2f;        /* rojo */
-  background-color: #fff0f0;
-  font-weight: 600;
+/* ===== Listas más limpias ===== */
+
+.md-typeset ul li {
+  margin-bottom: 0.2em;
+}
+
+.md-typeset ol li {
+  margin-bottom: 0.3em;
+}
+
+/* ===== Tablas ===== */
+
+.md-typeset table {
+  font-size: 0.9em;
 }
