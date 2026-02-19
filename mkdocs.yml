@@ -35,7 +35,7 @@ theme:
 
 nav:
   - Inicio: index.md
-  - Conceptos: conceptos.md
+  - Conceptos generales: conceptos.md
   - TC3 Demo: readme_tc3_demo.md
 
 markdown_extensions:
