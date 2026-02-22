@@ -26,6 +26,6 @@
 
         ![Imagen](../images/01_conceptos/image%2014.png){width=240px}
 
-    - Si queremos que la variable cambie de valor cada vez que pulsemos el botón (el valor conmutará entre `TRUE` y `FALSE`) lo introduciremos en la sección `Toggle`:
+    - Si queremos que la variable cambie de valor cada vez que pulsemos el botón lo introduciremos en la sección `Toggle` (el valor conmutará entre `TRUE` y `FALSE`):
 
         ![Imagen](../images/01_conceptos/image%2015.png){width=240px}
