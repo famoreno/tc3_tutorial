@@ -1,6 +1,7 @@
 # 👋 Demo (TwinCAT 3)
 
-Enlace al repositorio en Github: [TC3_Demo](https://github.com/vetorres-uma/TC3_Demo)
+!!! info "Info"
+    Enlace al repositorio en Github [![Github Logo](../images/_resource/github_logo.svg){width=15px}](https://github.com/vetorres-uma/TC3_Demo)
 
 ## 📝 Descripción del Proyecto
 
