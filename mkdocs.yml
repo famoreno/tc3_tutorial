@@ -4,8 +4,10 @@ site_url: https://famoreno.github.io/tc3_docs/
 theme:
   name: material
   language: es
-  logo: images/_resource/AutoISATeam_logo.png
-  favicon: images/_resource/AutoISATeam_logo.png
+  #logo: images/_resource/AutoISATeam_logo.png
+  #favicon: images/_resource/AutoISATeam_logo.png
+  logo: images/_resource/logo_auto_isa_team.png
+  favicon: images/_resource/logo_auto_isa_team.png
 
   palette:
     - scheme: default
