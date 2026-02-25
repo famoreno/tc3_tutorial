@@ -17,7 +17,7 @@
 !!! warning "Importante"
     Si la carpeta ha sido comprimida para ser trasladada, hay que asegurarse de haber descomprimido la carpeta completa en el destino antes de abrir el proyecto.
 
-### Exportando como ```.tnzip```
+### Guardando como `.tnzip`
 
 !!! warning "Importante"
     La entrega final del proyecto deberá seguir este procedimiento.
@@ -25,12 +25,17 @@
 1. Este proceso genera el mínimo tamaño posible para trasladar un proyecto.
 2. Seleccionar `File → Save [nombre_del_proyecto] as Archive...`.
 3. Seleccionar dónde guardar el proyecto, darle un nombre y asegurarse de que el formato es de tipo `.tnzip`.
-4. Para volver a abrir el proyecto:
-   - Abrir TC3.
-   - Seleccionar `File → Open → Solution from Archive...`.
-   - Buscar el archivo `.tnzip`.
-   - Seleccionar (o crear si no existe) una carpeta donde se va a generar la *Solution*.
-   - En principio, se puede seleccionar siempre la misma carpeta cada vez que se repita este procedimiento.
+
+#### Abrir un fichero `.tnzip`
+Una vez movido el fichero `.tnzip` al equipo destino, para volver a abrir el proyecto, seguimos este procedimiento:
+
+- Abrir TC3.
+- Seleccionar `File → Open → Solution from Archive...`.
+- Buscar el archivo `.tnzip`.
+- Seleccionar (o crear si no existe) la carpeta donde queremos que se genere la *Solution*.
+   
+!!! tip "Sugerencia"
+    En principio, se puede seleccionar siempre la misma carpeta cada vez que se repita este procedimiento.
 
 !!! warning "Importante"
     Si al abrir el proyecto de nuevo y compilar obtienes errores no relacionados con el código que antes no tenías:
