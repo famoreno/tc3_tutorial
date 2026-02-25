@@ -60,7 +60,7 @@ Este proyecto incluye además, una **visualización** elemental que permite inte
 
 1. **Copiar** a tu equipo local el fichero `CV > Automatización > ejemplos > tc3_demo > tc3_demo.tnzip` que hay en la carpeta del campus virtual.
 2. **Seguir el procedimiento** descrito [aquí](../../contenidos/01_conceptos/#abrir-un-fichero-tnzip).
-3. 
+
 ### Mediante GIT
 
 Para descargar, compilar y ejecutar este proyecto en el entorno de TwinCAT 3, siga los siguientes pasos:
