@@ -13,7 +13,7 @@ Una vez el programa está implementado (independientemente del lenguaje utilizad
 El programa puede ser ejecutado en distintos "controladores"
 
 - Emulador `Local`.
-- Simulador `Um_RT` (*User Mode Real Time*).
+- Simulador `Um_RT` (*User Mode Real Time*). <font color="red">Recomendado para el laboratorio.</font>
 - Controlador remoto (PLC).
 
 #### Emulador local
@@ -24,7 +24,7 @@ El emulador local ejecuta el programa exactamente de la misma manera que si lo h
 
 En este caso no tendremos que asociar las variables a los terminales de E/S ya que no habrá ninguno disponible.
 
-Para usar este controlador, simplemente asegúrate de seleccionar ``Local` en el desplegable del `Target`.
+Para usar este controlador, simplemente asegúrate de seleccionar `Local` en el desplegable del `Target`.
 
 ![Imagen](../images/01_conceptos/image%2027.png){width=200px}
 
@@ -39,11 +39,20 @@ Al igual que con el emulador local, no tendremos que asociar las variables a los
 
 Para usar este controlador, tendremos que ejecutar en "**modo Administrador**" el archivo `TC3_UmRT_Start.bat` que proporcionamos en la carpeta `Automatización > programas` del CV. Esto abrirá un terminal de Windows con la información relativa a la ejecución del simulador. Minimizaremos esta ventana y **la dejaremos trabajar de fondo**.
 
+!!! danger "Error"
+    Se ha detectado que este procedimiento no funciona en los PCs del laboratorio por lo que, alternativamente, hay que realizar lo siguiente:
+
+    Pulsar `Win+R` e introducir el siguiente texto: 
+    `C:\TwinCAT\3.1\Runtimes\UmRT_Default\Start.bat`
+
 !!! warning "Importante"
     No debemos cerrar la ventana del terminal de Windows abierto por `TC3_UmRT_Start.bat` mientras queramos usar este simulador.
 
 Una vez hecho esto, aparecerá el texto `UmRT_Default` en el desplegable del target:
 ![Imagen](../images/01_conceptos/target_umrt_default.png){width=200px}
+
+!!! warning "Importante"
+    Una vez finalizado nuestro trabajo con el simulador, pulsaremos la tecla `'x'` en el terminal para apagar el simulador y se cerrará automáticamente la ventana.
 
 
 #### Controlador remoto (PLC)
