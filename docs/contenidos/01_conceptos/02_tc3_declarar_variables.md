@@ -23,6 +23,7 @@ Los tipos de datos más utilizados son los siguientes:
 | `FLOAT`             | Número real en coma flotante (32 bits). Permite decimales. |
 | `TIME`              | Tipo de dato para representar tiempos o duraciones. |
 | `R_TRIG`            | Bloque de función para detectar flanco ascendente (`FALSE` → `TRUE`). |
+| `TON`               | Temporizador a la conexión (retardo a la activación). Activa la salida tras un tiempo. |
 | `ARRAY[x..y] OF ...`| Conjunto de variables del mismo tipo indexadas entre `x` e `y`. |
 
 !!! question "Ejemplo"
@@ -45,6 +46,7 @@ Los tipos de datos más utilizados son los siguientes:
 
     // bloques funcionales
     Flanco_Pulsador: R_TRIG; // detector de flanco (estándar)
+    Temporizador: TON; // temporizador (estándar)
     Coordinador: FB_Coordinador; // bloque funcional definido por el usuario
 
     // arrays
@@ -61,13 +63,28 @@ Los tipos de datos más utilizados son los siguientes:
             `T#2s` (dos segundos)
             
             `T#500ms` (quinientos milisegundos).
-
+    
     - El acceso a los *arrays* se hace con el índice entre corchetes. 
         
         !!! question "Ejemplo"
             `Ocupado[1] := TRUE;`
 
-- Las variables en TC3 se declaran dentro de los ámbitos existentes en el POU correspondiente: **locales**, **entrada** y **salida**.
+- Ejemplos de llamadas a los bloques funcionales estándar:
+    
+    !!! question "Ejemplo"
+        **Detector de flanco:** Se activa su salida `Flanco_Pulsador.Q` cuando la señal `boton` pasa de `FALSE` a `TRUE`.
+            ```st
+                Flanco_Pulsador(CLK := boton);
+            ```
+    
+    !!! question "Ejemplo"
+        **Temporizador:** Se activa cuando la señal `start` pasa a `TRUE` y activa su salida `Temporizador.Q` tras pasar 10s.
+        ```st
+            Temporizador(IN:=start, PT:=T#10s);
+        ```
+
+
+Las variables en TC3 se declaran dentro de los ámbitos existentes en el POU correspondiente: **locales**, **entrada** y **salida**.
 
 ### Variables locales
 
@@ -92,7 +109,7 @@ END_VAR
 
 Las variables declaradas aquí **deben** ser especificadas al llamar al **FB** (a no ser que se les de un valor por defecto).
 
-!!! tip "Importante"
+!!! warning "Importante"
     No especificarlas en la llamada produce un error de compilación.
 
 ### Variables de salida
@@ -117,7 +134,7 @@ END_VAR
 LuzAmarillaEstacion := Estacion.LuzAmarilla; // esto es válido
 ```
 
-!!! tip "Importante"
+!!! warning "Importante"
     Querer acceder a una variable de un **FB** que no ha sido declarada como salida produce un error de compilación.
 
 ### Variables de entrada y salida
@@ -171,7 +188,7 @@ END_VAR
 ```
 
 !!! warning "Importante"
-    Recuerda que en nuestro trabajo usaremos la convención de añadir un prefijo `i_` delante de estas variables.
+    En nuestro trabajo usaremos la convención de añadir un prefijo `i_` delante de estas variables.
 
 #### Imagen de salida
 
@@ -186,7 +203,7 @@ END_VAR
 ```
 
 !!! warning "Importante"
-    Recuerda que en nuestro trabajo usaremos la convención de añadir un prefijo `o_` delante de estas variables.
+    En nuestro trabajo usaremos la convención de añadir un prefijo `o_` delante de estas variables.
 
 !!! warning "Importante"
     Declarar una variable en la imagen de entrada o salida es **independiente** de que sean entradas o salidas del bloque funcional.
