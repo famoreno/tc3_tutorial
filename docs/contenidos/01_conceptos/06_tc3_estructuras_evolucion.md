@@ -12,7 +12,7 @@
 
 ### Bifurcación
 
-- Tras una etapa podemos realizar una **bifurcación** en distintas ramas en función de distintas condiciones. Esto nos permite dirigir la secuencia por cambio si ocurre un evento y por otros distintos si ocurren otros eventos.
+- Tras una etapa podemos realizar una **bifurcación** en distintas ramas en función de distintas condiciones. Esto nos permite dirigir la secuencia por un camino si ocurre un evento y por otros distintos si ocurren otros eventos.
 
 - En el ejemplo de la figura, si la etapa `Init` está activa y se activa `Execute`, el programa evolucionará por la rama de la izquierda llegando a `S0`. Si lo que se activa es `Restore`, el programa evolucionará por la derecha pasando a `Sr` y, una vez se active `Restaurado`, la secuencia pasará a `S0`.
 
@@ -22,7 +22,7 @@
 
 - Nada impide que se pueda hacer una bifurcación con más de dos ramas.
 
-- Es recomendable que las condiciones de la bifurcación sean excluyentes pero nada impide que no lo sean. El programa tomará el camino de la primera transición cuya condición sea verdadera.
+- Es recomendable que las condiciones de la bifurcación sean excluyentes pero nada impide que no lo sean. El programa tomará el camino de la primera transición cuya condición sea verdadera de izquierda a derecha.
 
 - Si ocurriera que varias o todas las condiciones son verdaderas a la vez, el programa evolucionará por la rama de la izquierda. **Aunque esto puede ser útil en algunos casos, esto suele indicar que hay un mal diseño en el programa.**
 
