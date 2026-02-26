@@ -14,6 +14,15 @@
 }
 */ 
 
+/* Separadores horizontales */
+.md-typeset hr {
+  border: none;
+  height: 1px;
+  background-color: #e50000;
+  opacity: 0.3;   /* rojo claro */
+  margin: 2em 0;
+}
+
 .md-typeset h2 {
   font-weight: 700;
   font-size: 1.6em;
