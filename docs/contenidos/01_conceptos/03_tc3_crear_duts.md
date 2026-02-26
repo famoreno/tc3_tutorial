@@ -76,7 +76,7 @@ Cada uno de esos valores tiene un valor `INT` asociado, comenzando por el cero: 
 
 Para usarlo, se define una variable de ese tipo y se le asigna el valor deseado usando el nombre del tipo de dato ***Enumeration***:
 
-```pascal
+```st
 // Definicion de variables
 VAR
     Color: E_ColorBasic;
@@ -88,4 +88,17 @@ IF Color <> E_ColorBasic.eRed THEN // comprobacion de valor
     [...]
 END_IF
 ```
+#### Declaración compacta
+
+!!! warning "Importante"
+    Este método se utiliza si el tipo **va a ser utilizado solo en un mismo POU**. Si se pretende utilizar el tipo enumerado declarado en más de uno, es más conveniente declararlo como DUT siguiendo el procedimiento anterior.
+    
+Existe otra manera más compacta de declarar una variable de tipo ***Enumeration***. Para ello, basta con declarar el nombre de la variable y los posibles valores que puede tomar. 
+
+```st
+VAR
+    Estado : (E_Reposo, E_MarchandoDerecha, E_MarchandoIzquierda);
+END_VAR
+``` 
+
 
