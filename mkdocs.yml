@@ -1,4 +1,4 @@
-site_name: TC3 Tutorial
+site_name: Tutorial de TwinCAT 3
 site_url: https://famoreno.github.io/tc3_tutorial/
 
 theme:
@@ -40,8 +40,9 @@ theme:
 nav:
   - Inicio: index.md
   - Beckhoff y TwinCAT 3: contenidos/00_presentacion.md
-  - TC3 Conceptos Generales: contenidos/01_conceptos.md
-  - TC3 Demo: contenidos/02_tc3_demo.md
+  - Conceptos Generales: contenidos/01_conceptos.md
+  - Ejemplo - Demo: contenidos/02_tc3_demo.md
+  - Ejemplo - Carro Básico: contenidos/03_tc3_carro_basico.md
 
 markdown_extensions:
   - admonition
