@@ -1,7 +1,9 @@
 # 👋 Demo (TwinCAT 3)
 
+<!--
 !!! info "Info"
     Enlace al repositorio en Github [![Github Logo](../images/_resource/github_logo.svg){width=15px}](https://github.com/vetorres-uma/TC3_Demo)
+-->
 
 ## 📝 Descripción del Proyecto
 
@@ -63,7 +65,11 @@ Este proyecto incluye además, una **visualización** elemental que permite inte
 
 1. Crear una solución de TwinCAT3 con nombre `tc3_demo` [➡️](../../contenidos/01_conceptos/#crear-proyecto-tc3)
 2. Crear un proyecto PLC con nombre `demo_PLC` [➡️](../../contenidos/01_conceptos/#crear-proyecto-plc)
-3. Declarar las variables [➡️](../../contenidos/01_conceptos/#declaracion-de-variables)
+    
+    !!! warning "Importante"
+        En este ejemplo no utilizaremos bloques funcionales (**FB**) sino que implementaremos toda la funcionalidad directamente en el programa `MAIN`.
+
+3. Declarar las variables en el programa `MAIN` [➡️](../../contenidos/01_conceptos/#declaracion-de-variables)
     ```st
     PROGRAM MAIN
     VAR
@@ -72,6 +78,7 @@ Este proyecto incluye además, una **visualización** elemental que permite inte
         o_Lampara  AT %Q* : BOOL; // Variable booleana en la imagen de salida
     END_VAR
     ```
+
 4. Escribir el código
     ```st
     // Uso de una variable numérica (se incrementa con cada ciclo de ejecución)
@@ -80,10 +87,14 @@ Este proyecto incluye además, una **visualización** elemental que permite inte
     // Uso de variables de entrada y salida booleanas (copia la entrada en la salida)
     o_Lampara := i_Pulsador;
     ```
+
 5. Diseñar la visualización añadiendo: [➡️](../../contenidos/01_conceptos/#crear-visualizacion)
     
     ![Imagen](../images/02_tc3_demo/VISU_Demo.png){width=240px}
     
+    !!! tip "Sugerencia"
+        Los colores especificados para los elementos son simplemente un ejemplo, pero pueden ser escogidos libremente.
+
     1. Rectángulo (*Rectangle*) para la etiqueta **Contador**
 
         ??? info "Parámetros"
@@ -108,38 +119,54 @@ Este proyecto incluye además, una **visualización** elemental que permite inte
     4. Botón (*Button*) para el pulsador
 
         ??? info "Parámetros"
-            - Texts > Text = [**Marcha**]
+            - Texts > Text = [**Pulsador**]
             - Inputconfiguration
                 - Tap > Variable = [`MAIN.i_Pulsador`]
     
     5. Rectángulo (*Rectangle*) para la lámpara
         
         ??? info "Parámetros"
-            - Color > Normal state > Frame color = [0, 64, 0]
-            - Color > Normal state > Fill color = [0, 64, 0]       
-            - Color > Alarm state > Frame color = [0, 128, 0]
-            - Color > Alarm state > Fill color = [0, 128, 0]       
-            - Texts > Text = [**Marcha**]
+            - Colors > Normal state > Frame color = [0, 64, 0]
+            - Colors > Normal state > Fill color = [0, 64, 0]       
+            - Colors > Alarm state > Frame color = [0, 128, 0]
+            - Colors > Alarm state > Fill color = [0, 128, 0]       
+            - Texts > Text = [**Lámpara**]
             - Color variables > Toggle color = [`MAIN.o_Lampara`]
 
 
-6. Compilar el proyecto [➡️](../../contenidos/01_conceptos/#ejecutar-programa)
-7. Seleccionar el controlador [➡️](../../contenidos/01_conceptos/#seleccionar-el-controlador)
-8. Activar la configuración y reiniciar TwinCAT 3 en modo **Ejecución (Run Mode)** [➡️](../../contenidos/01_conceptos/#activar-la-configuracion)
-9. **Cargar el código** en el entorno PLC: iniciar la sesión y descargar el programa al PLC (**Login**) [➡️](../../contenidos/01_conceptos/#transferir-y-ejecutar-el-programa)
-10. **Poner el código en ejecución:** ejecutar la lógica de control en el controlador (**Start**) [➡️](../../contenidos/01_conceptos/#transferir-y-ejecutar-el-programa)
-14. **Utilizar la visualización** integrada en el proyecto PLC para facilitar la prueba:
+6. **Compilar** el proyecto [➡️](../../contenidos/01_conceptos/#ejecutar-programa)
+7. Seleccionar el **simulador** (`UmRT_Default`) como controlador [➡️](../../contenidos/01_conceptos/#seleccionar-el-controlador)
+8. **Activar la configuración** y reiniciar TwinCAT 3 en modo **Ejecución (Run Mode)** [➡️](../../contenidos/01_conceptos/#activar-la-configuracion)
+9. **Cargar el código** en el controlador (**Login**) [➡️](../../contenidos/01_conceptos/#transferir-y-ejecutar-el-programa)
+10. Poner el código en **ejecución** (**Start**) [➡️](../../contenidos/01_conceptos/#transferir-y-ejecutar-el-programa)
+11. **Utilizar la visualización** integrada en el proyecto PLC para facilitar la prueba:
     1. Reiniciar el contador desde la visualización pulsando en el botón **Reinicia**.
-    2. **Si se está ejecutando el programa en un controlador local** (emulador `Local` o simulador `UmRT`).
-        - Cambiar el valor de la lámpara de marcha pulsando el botón de marcha en la visualización.
-        - Alternativamente, escribe o fuerza las variables deseadas desde TwinCAT 3.
-    3. **Si tienes asociadas las variables a terminales de E/S físicas** en un controlador remoto.
-        - Comprobar en el programa `MAIN` que accionando el pulsador físico se enciende la lámpara.
-        - Comprobar en la visualización que accionando el pulsador físico cambia de estado la lámpara.
-        - Comprobar en la visualización que accionando el botón ni se enciende, ni cambia de estado la lámpara.
+    2. Cambiar el valor de la lámpara de marcha pulsando el **botón de marcha** en la visualización.
+    3. Alternativamente, **escribe o fuerza** las variables deseadas desde TwinCAT 3.
 
-            !!! warning "Importante"
-                La ejecución del ciclo básico hace que el valor del pulsador **se actualice con el valor del pulsador real** al inicio de cada ciclo.
+---
+
+Ahora vamos a ejecutar el programa en un **controlador remoto** (por ejemplo, un PLC del laboratorio).
+
+1. **Buscar** el controlador en la red, **escanear** los módulos y **probar** dos terminales/canales, uno de entrada y otro de salida. [➡️](../../contenidos/01_conceptos/#busqueda-de-controladores-remotos)
+
+    !!! tip "Sugerencia"
+        Abrir la hoja de cálculo con la lista de entradas y salidas del sistema FMS200, seleccionar la pestaña correspondiente a tu estación y escoger un **pulsador** de entre los elementos de entrada y una **lámpara** de entre los elementos de salida.
+
+2. **Vincular** los terminales/canales correspondiente con las variables de E/S [➡️](../../contenidos/01_conceptos/#vinculacion-de-variables-y-es)
+    1. Variable de entrada `i_Pulsador`
+    1. Variable de salida `i_Lampara`
+
+8. **Activar la configuración** y reiniciar TwinCAT 3 en modo **Ejecución (Run Mode)** [➡️](../../contenidos/01_conceptos/#activar-la-configuracion)
+9. **Cargar el código** en el controlador (**Login**) [➡️](../../contenidos/01_conceptos/#transferir-y-ejecutar-el-programa)
+10. Poner el código en **ejecución** (**Start**) [➡️](../../contenidos/01_conceptos/#transferir-y-ejecutar-el-programa)
+11. Comprobar que, accionando el pulsador físico, se enciende la lámpara física.
+12. **Utilizar la visualización** integrada en el proyecto PLC para facilitar la prueba:
+    - Comprobar en la visualización que, accionando el pulsador físico, cambia de estado la lámpara.
+    - Comprobar en la visualización que, accionando el botón de la visualización, **ni se enciende, ni cambia de estado la lámpara**.
+
+        !!! warning "Importante"
+            Esto se debe a que la ejecución del ciclo básico hace que el valor del pulsador **se actualice con el valor del pulsador físico** al inicio de cada ciclo, sobreescribiendo el valor que fija el botón de la visualización. 
 
 ---
 
@@ -152,8 +179,8 @@ Este proyecto incluye además, una **visualización** elemental que permite inte
  
 ### Mediante el Campus Virtual
 
-1. **Copiar** a tu equipo local el fichero `CV > Automatización > ejemplos > tc3_demo > tc3_demo.tnzip` que hay en la carpeta del campus virtual.
-2. **Seguir el procedimiento** descrito [aquí](../../contenidos/01_conceptos/#abrir-un-fichero-tnzip).
+1. **Copiar** a tu equipo local el fichero `CV > Automatización > ejemplos > 1_tc3_demo > tc3_demo.tnzip` que hay en la carpeta del campus virtual.
+2. **Seguir el procedimiento** descrito [aquí](../../contenidos/01_conceptos/#abrir-un-fichero-tnzip) para generar la **Solución** a partir del fichero.
 
 ### Mediante GIT
 
