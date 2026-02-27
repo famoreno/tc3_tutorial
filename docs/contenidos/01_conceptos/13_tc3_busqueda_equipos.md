@@ -47,6 +47,11 @@ Si queremos utilizar un controlador remoto (PLC), lo primero que debemos hacer e
 
 ### Escaneado del controlador
 
+!!! warning "Importante"
+    Para poder hacer este proceso, debemos asegurarnos que TwinCAT 3 está en modo configuración (*Configuration Mode*) y no en ejecución (*Run Mode*).
+
+    ![Imagen](../images/01_conceptos/tc3_modes.png){width=150px}
+
 Comenzamos por buscar los dispositivos de entrada/salida conectados al controlador. Para ello:
 
 - En el explorador de la solución (`Solution Explorer`):
@@ -64,9 +69,6 @@ Comenzamos por buscar los dispositivos de entrada/salida conectados al controlad
         Tened en cuenta que el terminal `EL9011` es un elemento virtual.
 
 ### Comprobación de los terminales
-
-!!! warning "Importante"
-    Para poder hacer este proceso, debemos asegurarnos que TwinCAT 3 están en modo configuración (*Configuration Mode*) y no en ejecución (*Run Mode*).
 
 Ahora vamos a comprobar alguno de los terminales de E/S para asegurarnos de que tenemos acceso a ellos. Usaremos un ejemplo en el que tendremos un programa con una variable de entrada `i_PulsadorMarcha` y una variable de salida `o_LamparaMarcha`.
 

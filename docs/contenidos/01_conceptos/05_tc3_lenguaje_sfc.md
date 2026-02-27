@@ -15,7 +15,7 @@
 #### Acción continua
 Las acciones continuas se ejecutan de manera continuada mientras el sistema está en la etapa asociada. Esto nos va a permitir:
 
-- **Activar una señal booleana** durante todo el tiempo que estemos en esa etapa. 
+- **Activar una señal booleana** durante todo el tiempo que la etapa esté activa. 
 - **Ejecutar una acción más compleja** asociada al **FB** de manera continua mientras la etapa esté activa.
 
 El procedimiento para su creación es el siguiente:
