@@ -9,9 +9,9 @@
 
 El **carro va y viene** es un móvil que se desplaza longitudinalmente entre los extremos izquierdo y derecho de un tramo de vía.
 
-![Esquematico del Carro Básico](../images/03_tc3_carro_basico/Carro_Basico_Esquematico.png){width=350px}
+![Esquematico del Carro Básico](../images/03_tc3_carro_basico/Carro_Basico_Esquematico.png){width=300px}
 
-### 🧩 Elementos constituyentes
+### Elementos constituyentes
 
 La **parte operativa** del carro básico está constituida por los siguiente dispositivos:
 
@@ -23,7 +23,7 @@ La **parte de relación** consiste en un panel de operador básico compuesto ún
 - Un **pulsador de marcha**.
 - Una **lámpara de marcha**.
 
-### 🔄 Descripción del proceso
+### Descripción del proceso
 
 El funcionamiento del carro básico es como sigue.
 
@@ -33,14 +33,14 @@ El funcionamiento del carro básico es como sigue.
 
 - **Condición inicial**: carro detenido sobre el final de carrera izquierda.
 
-### 🔢 Modalidades
+### Modalidades
 
 1. **Carro pulsado**. El carro inicia un viaje de ida y vuelta, únicamente, cuando estando en su posición inicial se acciona el pulsador de marcha.
 1. **Carro temporizado**. El carro se detiene durante un determinado tiempo sobre el final de carrera derecha antes de iniciar el camino de regreso hacia su posición inicial.
 1. **Carro limitado**. El carro realiza un determinado número de viajes de ida y vuelta (tarea) cada vez que, estando en su posición inicial, se acciona el pulsador de marcha.
 1. **Carro señalizado**. La lámpara de marcha se enciende de forma permanente para indicar que el carro está en funcionamiento y parpadea para indicar que el carro está en reposo.
 
-### ⇄ Entradas y salidas
+### Entradas y salidas
 
 | Nombre | Tipo | Origen | Descripción |
 | :--- | :--- | :--- | :--- |
@@ -53,7 +53,7 @@ El funcionamiento del carro básico es como sigue.
 
 ---
 
-### 📄 Especificación funcional
+### Especificación funcional
 
 Las siguientes especificaciones funcionales describen el comportamiento del carro (lógica de control) de una manera precisa utilizando los diagramas de relés y contactos y el lenguaje GRAFCET.
 
@@ -62,7 +62,7 @@ Las siguientes especificaciones funcionales describen el comportamiento del carr
 
 ---
 
-### 💻 Código
+### Código
 
 Implementa el funcionamiento básico de este "famoso" problema de automatización del carro va y viene en sus diferentes modalidades (básico, pulsado, temporizado, limitado y señalizado).
 
@@ -431,7 +431,7 @@ Una de las característica más relevante de este proyecto didáctico es que se 
     Carro();
     ```
 
-## 🚀 Puesta en Marcha
+## 🚀 Descargar el ejemplo
 
 !!! info "Lenguaje"
     Se proporciona con implementaciones equivalentes en `ST` y en `SFC`.

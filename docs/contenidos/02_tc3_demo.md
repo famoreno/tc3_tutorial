@@ -170,7 +170,7 @@ Ahora vamos a ejecutar el programa en un **controlador remoto** (por ejemplo, un
 
 ---
 
-## 🚀 Puesta en Marcha
+## 🚀 Descargar el ejemplo
 
 **Para descargar, compilar y ejecutar este proyecto en el entorno de TwinCAT 3, seguir una de estas dos opciones:**
 
