@@ -47,7 +47,8 @@ nav:
   - Ejemplos:
     # - ✏️ Descripción general: contenidos/01d_ejemplos.md 
     - 👋 Ejemplo - Demo: contenidos/02_tc3_demo.md
-    - 🚟 Ejemplo - Carro Básico: contenidos/03_tc3_carro_basico_v2.md
+    - 🛒 Ejemplo - Carro Básico: contenidos/03_tc3_carro_basico_v2.md
+    - 🚟 Ejemplo - Carro Extendido: contenidos/04_tc3_carro_extendido.md
 
 markdown_extensions:
   - admonition
