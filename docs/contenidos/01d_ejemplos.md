@@ -73,8 +73,8 @@ Descripción completa de los ejemplos y qué se va añadiendo en cada paso.
     - Gestión de una tarea
     - Señalización continua e intermitente
 
-## CARRO MONOLÍTICO Lite
-- Programa: `tc3_carro_monolitico_lite` [➡️](../contenidos/03_tc3_carro_mono_lite.md)
+## CARRO EXTENDIDO MONOLÍTICO (Lite)
+- Programa: `tc3_carro_extendido_monolitico_lite` [➡️](../contenidos/04_tc3_carro_extendido.md)
 - **Primera automatización real** 
 
 ??? abstract "Arquitectura"
@@ -112,6 +112,8 @@ Descripción completa de los ejemplos y qué se va añadiendo en cada paso.
     - Pausa no segura (sin detención de los actuadores no-limitados)
     - Carece de parada a final de ciclo
     - Requiere de variables auxiliares que «ensucian» la declaración de variables de `FB_Estacion`
+
+<!-- TODO: REVISAR ESTO
 
 ## CARRO MONOLÍTICO Basic
 - Programa: `tc3_carro_monolitico_basic` [➡️](../contenidos/03_tc3_carro_mono_basic.md)
@@ -151,3 +153,5 @@ Descripción completa de los ejemplos y qué se va añadiendo en cada paso.
 ??? failure "Limitaciones"
     - No hace comparación de estructuras
     - No utiliza `ARRAY` de `STRUCT`
+
+-->
