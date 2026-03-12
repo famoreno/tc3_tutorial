@@ -1,11 +1,11 @@
-# 🚟 Carro básico (TwinCAT 3)
+# 🛒 Carro Básico (TwinCAT 3)
 
 <!-- 
 !!! info "Info"
     Enlace al repositorio en Github [![Github Logo](../images/_resource/github_logo.svg){width=15px}](https://github.com/vetorres-uma/TC3_Carro_Basico)
 -->
 
-## 📝 Descripción del Proyecto
+## 📝 Descripción Funcional
 
 El **carro va y viene** es un móvil que se desplaza longitudinalmente entre los extremos izquierdo y derecho de un tramo de vía.
 
@@ -62,7 +62,7 @@ Las siguientes especificaciones funcionales describen el comportamiento del carr
 
 ---
 
-### Código
+### Implementación
 
 Implementa el funcionamiento básico de este "famoso" problema de automatización del carro va y viene en sus diferentes modalidades (básico, pulsado, temporizado, limitado y **señalizado**). 
 
@@ -89,16 +89,24 @@ Una de las característica más relevante de este proyecto didáctico es que se 
 !!! info "Lenguaje"
     Se proporciona con implementaciones equivalentes en `ST` y en `SFC`.
 
+**Para descargar, compilar y ejecutar este proyecto en el entorno de TwinCAT 3, seguir el siguiente procedimiento**.
+<!-- 
 **Para descargar, compilar y ejecutar este proyecto en el entorno de TwinCAT 3, seguir una de estas dos opciones:**
 
 - Mediante el Campus Virtual
 - Mediante GIT
- 
+-->
+
 ### Mediante el Campus Virtual
 
-1. **Copiar** a tu equipo local el fichero `CV > Automatización > ejemplos > 2_tc3_carro_basico > tc3_carro_basico.tnzip` que hay en la carpeta del campus virtual.
-2. **Seguir el procedimiento** descrito [aquí](../../contenidos/01_conceptos/#abrir-un-fichero-tnzip) para generar la **Solución** a partir del fichero.
+1. **Copiar** a tu equipo local el fichero 
+    
+    `CV → Automatización → ejemplos → 2_tc3_carro_basico → tc3_carro_basico.tnzip` 
+    
+    que hay en la carpeta del campus virtual.
 
+2. **Seguir el procedimiento** descrito [aquí](../../contenidos/01_conceptos/#abrir-un-fichero-tnzip) para generar la **Solución** a partir del fichero.
+<!-- 
 ### Mediante GIT
 
 1. **Clonar el Repositorio:**
@@ -112,13 +120,15 @@ git clone https://github.com/vetorres-uma/TC3_Carro_Basico.git
 1. **Activación de Configuración:** en el modo **Configuración**, active la configuración (**Activate Configuration**)) y reinicie TwinCAT en modo **Ejecución (Run Mode)**.
 1. **Carga del Código:** en el entorno PLC, inicie la sesión y descargue el programa al PLC (**Login**).
 1. **Poner el código en ejecución:** ejecute la lógica de control en el controlador (**Start**). Puede utilizar la visualización integrada en el proyecto PLC para facilitar la prueba.
-
+-->
 ---
 
 ## 🔨 Explicación del ejemplo
 
 !!! warning "Importante"
-    El proyecto completo que se explica aquí se corresponde con la versión **señalizada** del carro va y viene. **Descarga el ejemplo e inspecciona el código**.
+    El proyecto completo que se explica aquí se corresponde con la versión **señalizada** del carro va y viene.
+    
+    **Descarga el ejemplo para inspeccionar el código**.
 
 **Para replicar la creación de la solución completa, seguir este procedimiento:**
 
@@ -127,7 +137,7 @@ git clone https://github.com/vetorres-uma/TC3_Carro_Basico.git
 
 1. Crear una solución de TwinCAT3 con nombre `tc3_carro_basico` [➡️](../../contenidos/01_conceptos/#crear-proyecto-tc3)
 2. Crear un proyecto PLC con nombre `carro_basico_PLC` [➡️](../../contenidos/01_conceptos/#crear-proyecto-plc)
-3. **Escoger un lenguaje** para la implementación: `ST` o `SFC`
+3. **Escoger un lenguaje** para la implementación: `ST` o `SFC`. ==Aunque aquí expliquemos ambas versiones, en el curso habrá que replicar el correspondiente al lenguaje `SFC`==.
 4. Crear un bloque funcional con ese lenguaje llamado `FB_Carro_basico_ST` o `FB_Carro_basico_SFC` [➡️](../../contenidos/01_conceptos/#crear-bloque-funcional)
 5. Declarar las variables:
     
@@ -257,7 +267,7 @@ git clone https://github.com/vetorres-uma/TC3_Carro_Basico.git
         Carro();
         ```
 
-1.  Compilar y poner el programa en funcionamiento.
+1.  Compilar y poner el programa en funcionamiento [➡️](../contenidos/01b_ejecucion.md).
 
 ---
 

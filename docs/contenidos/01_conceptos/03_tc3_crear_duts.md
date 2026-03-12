@@ -76,7 +76,7 @@ Cada uno de esos valores tiene un valor `INT` asociado, comenzando por el cero: 
 
 Para usarlo, se define una variable de ese tipo y se le asigna el valor deseado usando el nombre del tipo de dato ***Enumeration***:
 
-```st
+```pascal
 // Definicion de variables
 VAR
     Color: E_ColorBasic;
@@ -95,7 +95,7 @@ END_IF
     
 Existe otra manera más compacta de declarar una variable de tipo ***Enumeration***. Para ello, basta con declarar el nombre de la variable y los posibles valores que puede tomar. 
 
-```st
+```pascal
 VAR
     Estado : (E_Reposo, E_MarchandoDerecha, E_MarchandoIzquierda);
 END_VAR

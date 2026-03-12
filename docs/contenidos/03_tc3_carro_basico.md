@@ -117,7 +117,7 @@ Una de las característica más relevante de este proyecto didáctico es que se 
 2. Declarar las variables dentro del FB [➡️](../../contenidos/01_conceptos/#declaracion-de-variables)
     - **Entrada** (se puede especificar su valor en la llamada al FB)
     
-    ```st
+    ```pascal
     VAR_INPUT
         ManiobrasSolicitadas     : UINT := 2;
         TiempoEspera             : TIME := T#2S;
@@ -131,7 +131,7 @@ Una de las característica más relevante de este proyecto didáctico es que se 
    
     - **Salida** (se puede utilizar su valor fuera del FB)
     
-    ```st
+    ```pascal
     VAR_OUTPUT
         ManiobrasPendientes      : UINT;
         TiempoPendiente          : TIME;
@@ -145,7 +145,7 @@ Una de las característica más relevante de este proyecto didáctico es que se 
 
     - **Locales** (de uso interno al FB)
     
-    ```st
+    ```pascal
     VAR
         // Enumeracion de etiquetas para los estados
         Estado : (E_Reposo, E_MarchandoDerecha, E_EsperandoDerecha, E_MarchandoIzquierda, E_EvaluandoTarea);
@@ -186,7 +186,7 @@ Una de las característica más relevante de este proyecto didáctico es que se 
     
     1. Llamada a los FBs de **utilidades**:
 
-        ```st
+        ```pascal
         // --- UTILIDADES ---
         BLK();
         FlancoPulsadorMarcha(CLK := i_PulsadorMarcha);
@@ -200,7 +200,7 @@ Una de las característica más relevante de este proyecto didáctico es que se 
 
     2. Especificación de la **función de estado** que implementa la evolución de la secuencia:
 
-        ```st
+        ```pascal
         // --- FUNCION DE ESTADO ---
         CASE Estado OF
             E_Reposo:
@@ -253,7 +253,7 @@ Una de las característica más relevante de este proyecto didáctico es que se 
 
     3. Especificación de la **función de salida** que activa las salidas del sistema según el estado activo:
        
-        ```st
+        ```pascal
         // --- FUNCION DE SALIDA ---
         o_LamparaMarcha    := ((Estado = E_Reposo) AND BLK.Q) OR (Estado <> E_Reposo);
         o_MarchaDerecha    := (Estado = E_MarchandoDerecha);
@@ -299,20 +299,20 @@ Una de las característica más relevante de este proyecto didáctico es que se 
     - Etapa `S0`. Se realizan tres acciones asociadas:
         - Acción **continua** `a_LamparaMarcha`: Hace que parpadee cuando `S0` esté activo (`S0.x = TRUE`) y quede fija en cualquier otra etapa.
         
-        ```st
+        ```pascal
         BLK();
         o_LamparaMarcha := (S0.x AND BLK.Q) OR NOT S0.x;
         ```
         
         - Acción **principal** `a_FlancoMarcha`: Realiza la llamada al FB de detección de flanco de subida del pulsador de marcha. Es en este estado donde queremos que se monitorice este flanco.
         
-        ```st
+        ```pascal
         FlancoPulsadorMarcha(CLK := i_PulsadorMarcha);
         ```
 
         - Acción **memorizada a la salida** `a_ManiobrasPendientes_Iniciar`: Antes de pasar a la siguiente etapa, inicializamos el valor de la variable `ManiobrasPendientes` al valor solicitado en `ManiobrasSolicitadas`.
         
-        ```st
+        ```pascal
         IF ManiobrasPendientes = 0 THEN
             ManiobrasPendientes := ManiobrasSolicitadas;
         END_IF
@@ -338,7 +338,7 @@ Una de las característica más relevante de este proyecto didáctico es que se 
         - Acción **continua** `a_LamparaMarcha`.
         - Acción **principal** `a_TiempoEspera`: Calcula el tiempo que queda por esperar en la posición derecha.
 
-        ```st
+        ```pascal
         TiempoPendiente := TiempoEspera - S2.t;
         ```
         
@@ -365,7 +365,7 @@ Una de las característica más relevante de este proyecto didáctico es que se 
         - Acción **continua** `a_LamparaMarcha`.
         - Acción **memorizada a la entrada** `a_ManiobrasPendientes_Iniciar`. Justo al entrar en esta etapa, se decrementa el valor de las `ManiobrasPendientes`.
 
-        ```st
+        ```pascal
         IF ManiobrasPendientes > 0 THEN
             ManiobrasPendientes := ManiobrasPendientes - 1;
         END_IF
@@ -418,7 +418,7 @@ Una de las característica más relevante de este proyecto didáctico es que se 
 
 6. Declarar la variable `Carro` de tipo `FB_Carro_SFC` o `FB_Carro_ST` en el programa `MAIN`, según la versión a utilizar.
     
-    ```st
+    ```pascal
     PROGRAM MAIN
     VAR
         Carro: FB_Carro_SFC; // o Carro: FB_Carro_ST;
@@ -427,7 +427,7 @@ Una de las característica más relevante de este proyecto didáctico es que se 
 
 7. Escribir, en la zona de implementación de `MAIN`, la llamada al FB del `Carro`.
 
-    ```st
+    ```pascal
     Carro();
     ```
 

@@ -18,7 +18,7 @@ Este proyecto incluye además, una **visualización** elemental que permite inte
 ### Código
 
 !!! info "Declaración"
-    ```st
+    ```pascal
     PROGRAM MAIN
     VAR
         ContadorCiclos    : UINT; // Variable numérica en el espacio de marcas
@@ -28,7 +28,7 @@ Este proyecto incluye además, una **visualización** elemental que permite inte
     ```
 
 !!! info "Código"
-    ```st
+    ```pascal
     // Uso de una variable numérica (se incrementa con cada ciclo de ejecución)
     ContadorCiclos := ContadorCiclos + 1;
 
@@ -42,7 +42,7 @@ Este proyecto incluye además, una **visualización** elemental que permite inte
 - La variable de salida `o_Lampara` copia, continuamente, el valor de la variable de entrada `i_Pulsador`.
 - El valor de la variable `ContadorCiclos` se muestra en la visualización.
 - La variable `ContadorCiclos` puede reinicarse si se acciona el pulsador `Reinicia`.
-- El valor de la variable `o_Lampara` se muestra con el cambio de color del rectángulo `Lampara` (verde claro = `false`, verde oscuro = `true`).
+- El valor de la variable `o_Lampara` se muestra con el cambio de color del rectángulo `Lampara` (verde claro = `FALSE`, verde oscuro = `TRUE`).
 - El valor de la variabale `i_Pulsador` cambia cuando se acciona el botón `Pulsador`.
 
 ---
@@ -58,16 +58,26 @@ Este proyecto incluye además, una **visualización** elemental que permite inte
 
 ## 🚀 Descargar el ejemplo
 
+**Para descargar, compilar y ejecutar este proyecto en el entorno de TwinCAT 3, seguir el siguiente procedimiento**.
+<!-- 
 **Para descargar, compilar y ejecutar este proyecto en el entorno de TwinCAT 3, seguir una de estas dos opciones:**
 
 - Mediante el Campus Virtual
 - Mediante GIT
- 
+--> 
 ### Mediante el Campus Virtual
 
-1. **Copiar** a tu equipo local el fichero `CV > Automatización > ejemplos > 1_tc3_demo > tc3_demo.tnzip` que hay en la carpeta del campus virtual.
+1. **Copiar** a tu equipo local el fichero:
+    
+    `CV → Automatización → ejemplos → 1_tc3_demo → tc3_demo.tnzip` 
+    
+    que hay en la carpeta del campus virtual.
+
 2. **Seguir el procedimiento** descrito [aquí](../../contenidos/01_conceptos/#abrir-un-fichero-tnzip) para generar la **Solución** a partir del fichero.
 
+3. **Compilar** y poner en marcha el proyecto siguiendo lo descrito [aquí](../contenidos/01b_ejecucion.md).
+
+<!-- 
 ### Mediante GIT
 
 1. **Clonar Repositorio:**
@@ -81,7 +91,7 @@ git clone https://github.com/vetorres-uma/TC3_Demo.git
 1. **Activación de Configuración:** en el modo **Configuración**, active la configuración (**Activate Configuration**) y reinicie TwinCAT en modo **Ejecución (Run Mode)**.
 1. **Carga del Código:** en el entorno PLC, inicie la sesión y descargue el programa al PLC (**Login**).
 1. **Poner el código en ejecución:** ejecute la lógica de control en el controlador (**Start**). Puede utilizar la visualización integrada en el proyecto PLC para facilitar la prueba.
-
+-->
 ---
 
 ## 🔨 Replicar el proyecto
@@ -98,7 +108,7 @@ git clone https://github.com/vetorres-uma/TC3_Demo.git
         En este ejemplo no utilizaremos bloques funcionales (**FB**) sino que implementaremos toda la funcionalidad directamente en el programa `MAIN`.
 
 3. Declarar las variables en el programa `MAIN` [➡️](../../contenidos/01_conceptos/#declaracion-de-variables)
-    ```st
+    ```pascal
     PROGRAM MAIN
     VAR
         ContadorCiclos    : UINT; // Variable numérica en el espacio de marcas
@@ -108,7 +118,7 @@ git clone https://github.com/vetorres-uma/TC3_Demo.git
     ```
 
 4. Escribir el código
-    ```st
+    ```pascal
     // Uso de una variable numérica (se incrementa con cada ciclo de ejecución)
     ContadorCiclos := ContadorCiclos + 1;
 
@@ -161,16 +171,18 @@ git clone https://github.com/vetorres-uma/TC3_Demo.git
             - Texts > Text = [**Lámpara**]
             - Color variables > Toggle color = [`MAIN.o_Lampara`]
 
+6. **Poner en marcha** el proyecto [➡️](../contenidos/01b_ejecucion.md)
+11. **Utilizar la visualización** creada PLC para facilitar la prueba:
+    1. Reiniciar el contador desde la visualización pulsando en el botón **Reinicia**.
+    2. Cambiar el valor de la lámpara de marcha pulsando el **botón de marcha** en la visualización.
+    3. Alternativamente, **escribe o fuerza** las variables deseadas desde TwinCAT 3.
 
-6. **Compilar** el proyecto [➡️](../../contenidos/01_conceptos/#ejecutar-programa)
+<!-- 6. **Compilar** el proyecto [➡️](../../contenidos/01_conceptos/#ejecutar-programa)
 7. Seleccionar el **simulador** (`UmRT_Default`) como controlador [➡️](../../contenidos/01_conceptos/#seleccionar-el-controlador)
 8. **Activar la configuración** y reiniciar TwinCAT 3 en modo **Ejecución (Run Mode)** [➡️](../../contenidos/01_conceptos/#activar-la-configuracion)
 9. **Cargar el código** en el controlador (**Login**) [➡️](../../contenidos/01_conceptos/#transferir-y-ejecutar-el-programa)
 10. Poner el código en **ejecución** (**Start**) [➡️](../../contenidos/01_conceptos/#transferir-y-ejecutar-el-programa)
-11. **Utilizar la visualización** integrada en el proyecto PLC para facilitar la prueba:
-    1. Reiniciar el contador desde la visualización pulsando en el botón **Reinicia**.
-    2. Cambiar el valor de la lámpara de marcha pulsando el **botón de marcha** en la visualización.
-    3. Alternativamente, **escribe o fuerza** las variables deseadas desde TwinCAT 3.
+-->
 
 ---
 

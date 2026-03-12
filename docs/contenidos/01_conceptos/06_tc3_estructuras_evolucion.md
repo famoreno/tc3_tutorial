@@ -34,5 +34,5 @@
 
     ![Imagen](../images/01_conceptos/image%2012.png){width=480px}
 
-- En la transición con condición `NOT Pulsador OR S0.t>T#5s` se produce un punto de sincronización ya que, para que el programa evolucione a `S1` debe ocurrir que `S0` y `Sr2` estén activas y, además, que la condición `NOT Pulsador OR S0.t>T#5s` sea cierta. Por tanto, podemos decir que el programa *esperará* hasta que termine la rama de la derecha antes de evolucionar.
+- En la transición con condición `NOT Pulsador OR S0.t>T#5s` se produce un **punto de sincronización** ya que, para que el programa evolucione a `S1` debe ocurrir que `S0` y `Sr2` estén activas y, además, que la condición `NOT Pulsador OR S0.t>T#5s` sea cierta. Por tanto, podemos decir que el programa *esperará* hasta que termine la rama de la derecha antes de evolucionar.
   

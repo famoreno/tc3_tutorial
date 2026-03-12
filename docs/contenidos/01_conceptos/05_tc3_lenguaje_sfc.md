@@ -62,7 +62,7 @@ Si, por el contrario, lo que queremos asociar a esta etapa es una **acción cond
 
 - Escribir el código de la acción, como por ejemplo:
 
-    ```st
+    ```pascal
     BLK();
     o_LamparaMarcha := (S0.x AND BLK.Q) OR NOT S0.x;  // acción condicionada que enciende la lámpara
     ```

@@ -73,13 +73,13 @@ Los tipos de datos más utilizados son los siguientes:
     
     !!! question "Ejemplo"
         **Detector de flanco:** Se activa su salida `Flanco_Pulsador.Q` cuando la señal `boton` pasa de `FALSE` a `TRUE`.
-            ```st
+            ```pascal
                 Flanco_Pulsador(CLK := boton);
             ```
     
     !!! question "Ejemplo"
         **Temporizador:** Se activa cuando la señal `start` pasa a `TRUE` y activa su salida `Temporizador.Q` tras pasar 10s.
-        ```st
+        ```pascal
             Temporizador(IN:=start, PT:=T#10s);
         ```
 
