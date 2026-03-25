@@ -33,7 +33,7 @@ La parte operativa del carro extendido está constituida por los siguiente dispo
 
 La parte de relación consiste en un panel de operador básico compuesto por:
 
-![Panel de operador del Carro Extendido](../images/04_tc3_carro_extendido/Carro_Extendido_Panel_Operador.png){width=500px}
+![Panel de operador del Carro Extendido](../images/04_tc3_carro_extendido/Carro_Extendido_Panel_Operador.png){width=400px}
 
 - Una **lámpara de material**, para indicar la falta de material en el silo.
 - Un **avisador acústico**, para reclamar la atención de los operarios.
@@ -47,7 +47,7 @@ La parte de relación consiste en un panel de operador básico compuesto por:
 
 El sistema de control también dispone de una visualización (panel de operador virtual) que permite la completa explotación del sistema.
 
-![Visualización del Carro Extendido](../images/04_tc3_carro_extendido/Carro_Extendido_Visualizacion.png){width=600px}
+![Visualización del Carro Extendido](../images/04_tc3_carro_extendido/Carro_Extendido_Visualizacion.png){width=450px}
 
 ---
 
@@ -95,10 +95,12 @@ El sistema de control también dispone de una visualización (panel de operador 
 1. Modo ininterrumpido y modo ciclo a ciclo.
 1. Gestión de la tarea (maniobras solicitadas, pendientes y realizadas).
 1. Parametrización de todas las variables (tiempos y cantidades).
-1. Parada inmediata y parada solicitada a final del ciclo.
+1. Reinicio y pausa del estado.
+<!-- 
 1. Detección, identificación y tratamiento de los errores (avisos y fallos).
 1. Habilitación y desabilitación de los fallos.
-1. Reinicio y pausa del estado.
+1. Parada inmediata y parada solicitada a final del ciclo.
+-->
 
 #### Visualización
 
@@ -107,15 +109,17 @@ El sistema de control también dispone de una visualización (panel de operador 
 1. Gestión de la tarea (maniobras solicitadas, pendientes y realizadas).
 1. Gestión de los parámetros del sistemas (tiempos, distancias y cantidades).
 1. Botón de verificación de los elementos de señalización.
-1. Botón de reinicio del estado.
+1. Botón de reinicio y pausa del estado.
 1. Indicador de las condiciones iniciales y de marcha.
-1. Gestión de los fallos.
+<!-- 
+3. Gestión de los fallos.
     1. Tiempos de respuesta.
-    1. Habilitación/deshabilitación.
-    1. Visualización del código y descripción del evento actual (aviso o fallo).
-    1. Gestión de los modos de funcionamiento (continuo, lotes, ciclo-a-ciclo).
-    1. Gestión de los modos de parada (inmediata y a final de ciclo).
-    1. Botón de reconocimiento del fallo actual.
+    2. Habilitación/deshabilitación.
+    3. Visualización del código y descripción del evento actual (aviso o fallo).
+    4. Gestión de los modos de funcionamiento (continuo, lotes, ciclo-a-ciclo).
+    5. Gestión de los modos de parada (inmediata y a final de ciclo).
+    6. Botón de reconocimiento del fallo actual.
+-->
 
 ---
 
@@ -168,17 +172,17 @@ El sistema de control también dispone de una visualización (panel de operador 
 
 Las siguientes especificaciones funcionales describen el comportamiento del carro extendido (lógica de control) de una manera precisa utilizando lenguaje GRAFCET.
 
-- [Monolítico (PDF)](docs/carro_extendido_monolitico_grf.pdf) <span class="fondo-amarillo">**Próximamente!**</span>
-- [Estructurado (PDF)](docs/carro_extendido_estructurado_grf.pdf) <span class="fondo-amarillo">**Próximamente!**</span>
-- [Funcional (PDF)](docs/carro_extendido_funcional_grf.pdf) <span class="fondo-amarillo">**Próximamente!**</span>
+- 🧱 [Monolítico (PDF)](docs/carro_extendido_monolitico_grf.pdf) <span class="fondo-amarillo">**Próximamente!**</span>
+- 🗂️ [Estructurado (PDF)](docs/carro_extendido_estructurado_grf.pdf) <span class="fondo-amarillo">**Próximamente!**</span>
+- 🧩 [Funcional (PDF)](docs/carro_extendido_funcional_grf.pdf) <span class="fondo-amarillo">**Próximamente!**</span>
 
 ### Implementación
 
 Implementa el funcionamiento del sistema de transporte de material que representa el carro extendido utilizando tres paradigmas de programación (monolítico, estructurado y funcional) para ilustrar, con fines didácticos, las posibilidades y el alcance que cada uno de ellos.
 
-1. **Monolítico** (orientada al sistema). Implementación directa. Toda la secuencia de control se encuentra recogida en un único elemento de programación.
-1. **Estructurado** (orientado a la tarea). La secuencia de funcionamiento se organiza y distribuye en subsecuencias denominadas tareas (acciones complejas). <span class="fondo-amarillo">**Próximamente!**</span>
-1. **Funcional** (orientado a la unidad funcional). La lógica de contol del sistema se organiza en términos de unidades funcionales, entidades formadas por un subconjunto de dispositivos (sensores y actuadores), capaces de llevar a cabo una o más tareas. <span class="fondo-amarillo">**Próximamente!**</span>
+1. 🧱 **Monolítico** (orientada al sistema). Implementación directa. Toda la secuencia de control se encuentra recogida en un único elemento de programación.
+1. 🗂️ **Estructurado** (orientado a la tarea). La secuencia de funcionamiento se organiza y distribuye en subsecuencias denominadas tareas (acciones complejas). <span class="fondo-amarillo">**Próximamente!**</span>
+1. 🧩 **Funcional** (orientado a la unidad funcional). La lógica de contol del sistema se organiza en términos de unidades funcionales, entidades formadas por un subconjunto de dispositivos (sensores y actuadores), capaces de llevar a cabo una o más tareas. <span class="fondo-amarillo">**Próximamente!**</span>
 
 ---
 
@@ -197,7 +201,14 @@ Implementa el funcionamiento del sistema de transporte de material que represent
 
 1. **Copiar** a tu equipo local el fichero 
     
-    `CV → Automatización → ejemplos → 3_tc3_carro_monolitico → tc3_carro_extendido_monolitico_lite.tnzip` 
+    !!! info "🧱 **Monolítico**" 
+        `CV → Automatización → ejemplos → 3_tc3_carro_monolitico → tc3_carro_extendido_monolitico_lite.tnzip`
+
+    !!! info "🗂️ **Estructurado**" 
+        <span class="fondo-amarillo">**Próximamente!**</span>
+
+    !!! info "🧩 **Funcional**" 
+        <span class="fondo-amarillo">**Próximamente!**</span>
     
     que hay en la carpeta del campus virtual.
 
@@ -220,7 +231,11 @@ git clone https://github.com/vetorres-uma/TC3_Carro_Extendido.git
 
 ## 🔨 Explicación del ejemplo
 
-<span class="fondo-amarillo">**Próximamente!**</span>
+🧱 **Monolítico** [➡️](./04_tc3_carro_extendido/04_tc3_carro_extendido_mono.md)
+
+🗂️ **Estructurado** <span class="fondo-amarillo">**Próximamente!**</span>
+
+🧩 **Funcional** <span class="fondo-amarillo">**Próximamente!**</span>
 
 <!-- 
 
@@ -366,7 +381,7 @@ git clone https://github.com/vetorres-uma/TC3_Carro_Extendido.git
         Carro();
         ```
 
-1.  Compilar y poner el programa en funcionamiento [➡️](../contenidos/01b_ejecucion.md).
+2.  Compilar y poner el programa en funcionamiento [➡️](../contenidos/01b_ejecucion.md).
 -->
 
 ---
@@ -377,7 +392,7 @@ Este proyecto es utilizado con fines educativos. Las contribuciones, sugerencias
 
 ---
 
-## 🧑‍💻 Autor
+## 🧑 Autor
 
 - **Autor Principal:** Victor Torres ([@vetorres-uma](https://github.com/vetorres-uma>))
 - **Revisor**: Francisco Ángel Moreno ([@famoreno](https://github.com/famoreno))
