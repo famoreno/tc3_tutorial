@@ -111,7 +111,7 @@ Una de las característica más relevante de este proyecto didáctico es que se 
     
     `E_Reposo`, `E_MarchandoDerecha`, `E_EsperandoDerecha`, `E_MarchandoIzquierda`, `E_EvaluandoTarea`.
     
-    Nótese que estos estados se corresponden con los que tenemos especificados en el **GRAFCET** del carro señalizado.
+    Nótese que estos estados se corresponden con los que tenemos especificados en el GRAFCET del carro señalizado.
 
 1. Crear un bloque funcional con nombre `FB_Carro_ST` [➡️](../../contenidos/01_conceptos/#crear-bloque-funcional)
 2. Declarar las variables dentro del FB [➡️](../../contenidos/01_conceptos/#declaracion-de-variables)
@@ -277,7 +277,7 @@ Una de las característica más relevante de este proyecto didáctico es que se 
 
     Este lenguaje es muy útil para implementar máquinas de estados de manera sencilla ya que su codificación explicita directamente la secuencia de estados y sus transiciones.
     
-    Nótese la gran similitud entre la especificación en **GRAFCET** y la implementación en **SFC**.
+    Nótese la gran similitud entre la especificación en GRAFCET y la implementación en **SFC**.
 
 1. Crear un bloque funcional con nombre `FB_Carro_SFC` [➡️](../../contenidos/01_conceptos/#crear-bloque-funcional)
 2. Declarar las variables dentro del FB [➡️](../../contenidos/01_conceptos/#declaracion-de-variables)
