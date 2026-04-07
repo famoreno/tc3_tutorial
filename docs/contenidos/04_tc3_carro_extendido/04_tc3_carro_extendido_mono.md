@@ -1,26 +1,38 @@
-# Carro extendido monolítico
-En esta implementación monolítica del carro extendido, toda la operación del sistema está concentrada en un solo bloque funcional, implementado en el lenguaje `SFC`. 
+# Carro Extendido Monolítico
+
+!!! warning "NOTA"
+    La descripción general sobre este ejemplo puede encontrarse [aquí](../../contenidos/04_tc3_carro_extendido.md).
+    
+En esta implementación monolítica del carro extendido, toda la operación del sistema está concentrada en un solo bloque funcional, implementado en el lenguaje `SFC`.
+
+
 
 ## Funcionalidades
-A continuación se explican las funcionalidades implementadas:
+A continuación se explican las funcionalidades implementadas.
 
-[Evaluación de las condiciones iniciales y de marcha](#evaluacion-de-las-condiciones-iniciales-y-de-marcha)
+??? info "Tabla de contenidos"
+    <!-- -->
+    [Evaluación de las condiciones iniciales y de marcha](#evaluacion-de-las-condiciones-iniciales-y-de-marcha)
+    
+    [Secuencia automática de restauración de las condiciones iniciales](#secuencia-automatica-de-restauracion-de-las-condiciones-iniciales)
+    
+    [Tratamiento de la falta de material](#tratamiento-de-la-falta-de-material)
+    
+    [Modo manual (mandos directos) y automático.](#modo-manual-mandos-directos-y-automatico)
+    
+    [Modo de procesamiento continuo o por lotes (tarea).](#modo-de-procesamiento-continuo-o-por-lotes-tarea)
+    
+    [Modo ininterrumpido y modo ciclo a ciclo.](#modo-ininterrumpido-y-modo-ciclo-a-ciclo)
+    
+    [Reinicio y pausa del estado.](#reinicio-y-pausa-del-estado)
+    
+    [Normalización y escalado de las señales de entrada analógicas.](#normalizacion-y-escalado-de-las-senales-de-entrada-analogicas)
+    
+    [Uso de constantes, variables `REAL` y *arrays*](#uso-de-constantes-variables-real-y-arrays)
+<!-- -->
 
-[Secuencia automática de restauración de las condiciones iniciales](#secuencia-automatica-de-restauracion-de-las-condiciones-iniciales)
-
-[Tratamiento de la falta de material](#tratamiento-de-la-falta-de-material)
-
-[Modo manual (mandos directos) y automático.](#modo-manual-mandos-directos-y-automatico)
-
-[Modo de procesamiento continuo o por lotes (tarea).](#modo-de-procesamiento-continuo-o-por-lotes-tarea)
-
-[Modo ininterrumpido y modo ciclo a ciclo.](#modo-ininterrumpido-y-modo-ciclo-a-ciclo)
-
-[Reinicio y pausa del estado.](#reinicio-y-pausa-del-estado)
-
-[Normalización y escalado de las señales de entrada analógicas.](#normalizacion-y-escalado-de-las-senales-de-entrada-analogicas)
-
-[Uso de constantes, variables `REAL` y *arrays*](#uso-de-constantes-variables-real-y-arrays)
+!!! info "Consejo"
+    Utiliza el menú de la derecha para ir directamente a la explicación de cada funcionalidad.
 
 ### Evaluación de las condiciones iniciales y de marcha
 En la primera transición se observa la siguiente condición:
@@ -46,7 +58,7 @@ CondicionInicial := i_SistemaConectado
 MarchaAutorizada := CondicionInicial AND CondicionMarcha;
 ```
 
-Aquí se observa cómo `MarchaAutorizada` aglutina la **condicion inicial** y la **condición de marcha**. La primera condición engloba a todas las condiciones iniciales especificadas en la descripción funcional (todo aquello que se necesita que sea verdadero para asegurarse de que la estación podrá empezar a funcionar).
+Aquí se observa cómo `MarchaAutorizada` aglutina la **condición inicial** y la **condición de marcha**. La primera condición engloba a todas las condiciones iniciales especificadas en la descripción funcional (todo aquello que se necesita que sea verdadero para asegurarse de que la estación podrá empezar a funcionar).
 
 La segunda variable, en este caso, engloba la **demanda de producción** y la condición de que el nivel del silo no sea excesivamente bajo (especificado por la variable binaria `SiloNivelBajo`). La demanda de producción, a su vez, indica si se le ha pedido funcionar a la estación, bien porque esté trabajando en modo continuo o bien porque se haya solicitado un número de maniobras.
 
@@ -67,10 +79,10 @@ Si **no** se cumplen las condiciones iniciales en la etapa `S0` al pulsar el pul
 Esta secuencia se encarga de **intentar recuperar esas condiciones iniciales automáticamente**, accionando los actuadores necesarios para asegurar que se activan los sensores incluidos en las condiciones iniciales. Dicho de otro modo, va a intentar colocar la estación en la situación adecuada para que se cumplan las condiciones iniciales.
 
 !!! info "Información"
-    Nótese que hay elementos que no se pueden recuperar automáticamente, como, por ejemplo, el armado de la estación, por lo que no aparece en la secuencia. Esta condicion inicial depende de que el operador haya armado la estación mediante el panel del operador (situación indicada por un nivel alto en la señal `i_SistemaConectado`).
+    Nótese que hay elementos que no se pueden recuperar automáticamente, como, por ejemplo, el armado de la estación, por lo que no aparece en la secuencia. Esta condición inicial depende de que el operador haya armado la estación mediante el panel del operador (situación indicada por un nivel alto en la señal `i_SistemaConectado`).
 
 !!! info "Información"
-    Normalmente, no tendremos que comprobar el estado de todas las señales de entrada en las condiciones adicionales, sino aquellas que sean susceptibles de no estar activadas al inicio del sistema. Estas se corresponden con las asociadas a los preactuadores **biestables**.
+    Normalmente, no tendremos que comprobar el estado de todas las señales de entrada en las condiciones adicionales, sino aquellas que sean susceptibles de no estar activadas al inicio del sistema. Estas se corresponden con las asociadas a los pre-actuadores **biestables**.
 
 Una vez recuperadas las condiciones iniciales, el programa volverá al estado inicial.
 
@@ -80,16 +92,16 @@ Si durante el proceso de producción se detecta que no hay material, se deberá 
 ![Secuencia de restauración](../../images/04_tc3_carro_extendido/Carro_Extendido_Falta_Material.png){width=550px} 
 
 !!! warning "Peligro"
-    No se debe poner, como condición de salida de este estado de espera, un sensor que detecte la presencia del material ya que ello llevará a la estación a moverse inmediatamente **sin tener seguridad** de que el operador no está aún en contacto la estación.
+    No se debe poner, como condición de salida de este estado de espera, un sensor que detecte la presencia del material, ya que ello llevará a la estación a moverse inmediatamente **sin tener seguridad** de que el operador no está aún en contacto la estación.
 
 Una vez pulsado, se volverá a la etapa de comprobación de falta material (**no a la etapa siguiente a esta**).
 
-### Modo manual (mandos directos) y automático.
+### Modo manual (mandos directos) y automático
 Para poder conmutar entre el modo manual y el automático, utilizaremos el valor del selector manual (`i_SelectorManual`).
 
 En TwinCAT3, cuando instanciamos un bloque funcional, estamos ejecutando su código. Si este código accede a las señales de E/S (por ejemplo, activa actuadores), no podremos hacer uso de la visualización para modificar su valor. Es decir, no podremos activar aquellos actuadores que estén controlados por el programa de manera manual. Para poder hacer esto, tendremos que quitar la llamada al código del bloque funcional. 
 
-Para ello, usaremos el siguiente código en el MAIN:
+Para ello, usaremos el siguiente código en el `MAIN`:
 !!! info "Declaración"
     ```pascal
     VAR
@@ -108,7 +120,7 @@ Nótese que lo único que hace este código es:
 - Si el selector manual no está activo (estamos, por tanto, en **modo automático**), hacemos la llamada al código del bloque funcional. 
 - En caso contrario (**modo manual**), no hacemos esa llamada y tendremos acceso al *hardware* mediante el panel de visualización, ya que no hay ningún código operando sobre las mismas variables.
 
-### Modo de procesamiento continuo o por lotes (tarea).
+### Modo de procesamiento continuo o por lotes (tarea)
 Además del modo de procesamiento por lotes (ya explicado en el carro básico), en este nivel podremos usar un **modo continuo**, donde no se indica un número específico de maniobras a realizar sino que se opera de manera indefinida.
 
 ![Modo Continuo](../../images/04_tc3_carro_extendido/Carro_Extendido_Continuo.png){width=550px} 
@@ -123,7 +135,7 @@ donde `ModoContinuo` es una variable `BOOL` activable en el panel de visualizaci
 
 ![Modo Continuo Visu](../../images/04_tc3_carro_extendido/Carro_Extendido_Continuo_Visu.png){width=150px} 
 
-### Modo ininterrumpido y modo ciclo a ciclo.
+### Modo ininterrumpido y modo ciclo a ciclo
 Además, tanto en modo continuo o por lotes, podremos indicar al sistema si queremos que pare o no después de cada ciclo hasta que el operador vuelva a pulsar el pulsador de marcha para continuar la producción. Esto lo denominaremos modo **ciclo-a-ciclo**.
 
 ![Modo Continuo](../../images/04_tc3_carro_extendido/Carro_Extendido_Continuo.png){width=550px} 
@@ -134,7 +146,7 @@ El modo ciclo-a-ciclo es activable mediante un botón en el panel de visualizaci
 
 ![Modo Ciclo a Ciclo](../../images/04_tc3_carro_extendido/Carro_Extendido_Ciclo_Ciclo.png){width=500px} 
 
-### Reinicio y pausa del estado. 
+### Reinicio y pausa del estado
 Observe que en el `FB_Estacion` se han declarado dos variables especiales:
 
 ```pascal
@@ -162,21 +174,21 @@ Ambas variables serán activables desde la visualización.
 
 ![Visu SFC Flags](../../images/04_tc3_carro_extendido/Carro_Extendido_Visu_SFCFlags.png){width=400px} 
 
-### Normalización y escalado de las señales de entrada analógicas.
-La mayoría de las entradas del sistema son binarias, por lo que las variables asociadas solo podrán tomar valores 0 o 1 (son variables *booleanas*). Sin embargo, también hay entradas analógicas que están asociadas a variables de tipo entero sin signo (`UINT`). Estas variables toman el valor numérico que devuelven los sensores utilizados: un **sensor de distancia** para conocer el nivel del silo y un **sensor de carga** para determinar el peso de la vagoneta cargada, en este caso.
+### Normalización y escalado de las señales de entrada analógicas
+La mayoría de las entradas del sistema son binarias, por lo que las variables asociadas solo podrán tomar valores `0` o `1` (son variables *booleanas*). Sin embargo, también hay **entradas analógicas** que están asociadas a variables de tipo entero sin signo (`UINT`). Estas variables toman el valor numérico que devuelven los sensores utilizados: en este caso, un **sensor de distancia** para conocer el nivel del silo y un **sensor de carga** para determinar el peso de la vagoneta cargada.
 
-Para darle significado a esos valores numéricos, es conveniente realizar una conversión a la unidad que están midiendo, es decir, **metros** y **kilogramos**, respectivamente.
+Para darle significado a esos valores numéricos *adimensionales*, es conveniente realizar una conversión a la unidad que están midiendo, es decir, **metros** y **kilogramos**, respectivamente.
 
 Conociendo los valores mínimo y máximo del sensor y sus equivalentes en las unidades físicas que miden podemos ajustar una recta que nos permita determinar el valor real correspondiente a una medida del sensor.
 
 En el ejemplo, hacemos uso de dos acciones para implementar esta normalización y escalado:
 
-1. `a_SiloNivel_Calcular` que implementa `SiloDistanciaMedida` = *f*(`i_SensorNivel`).
-1. `a_VagonetaCarga_Calcular` que implementa `VagonetaPesoBruto` = *g*(`i_SensorPeso`).
+1. `a_SiloNivel_Calcular` que implementa el cálculo de `SiloDistanciaMedida` (en metros) en función de `i_SensorNivel`.
+2. `a_VagonetaCarga_Calcular` que implementa el cálculo de `VagonetaPesoBruto` (en Kg) en función de `i_SensorPeso`.
 
-Además, dentro de estas acciones se da valor a variables de estado que indican, por ejemplo, si el nivel del silo está excesivamente bajo o la vagoneta está sobrecardada.
+Además, dentro de estas acciones se da valor a variables de estado que indican, por ejemplo, si el nivel del silo está excesivamente bajo o la vagoneta está sobrecargada.
 
-!!! tip "Consejo"
+!!! tip "Consejo"   
     Inspecciona el código de estas acciones para identificar el ajuste de rectas.
 
 ### Uso de constantes, variables `REAL` y *arrays*
