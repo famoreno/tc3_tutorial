@@ -4,8 +4,7 @@ site_url: https://famoreno.github.io/tc3_tutorial/
 theme:
   name: material
   language: es
-  #logo: images/_resource/AutoISATeam_logo.png
-  #favicon: images/_resource/AutoISATeam_logo.png
+  custom_dir: docs/overrides
   logo: images/_resource/logo_auto_isa_team.png
   favicon: images/_resource/logo_auto_isa_team.png
 
@@ -48,7 +47,11 @@ nav:
     # - ✏️ Descripción general: contenidos/01d_ejemplos.md 
     - 👋 Ejemplo - Demo: contenidos/02_tc3_demo.md
     - 🛒 Ejemplo - Carro Básico: contenidos/03_tc3_carro_basico_v2.md
-    - 🚟 Ejemplo - Carro Extendido: contenidos/04_tc3_carro_extendido.md
+    - 🚟 Ejemplo - Carro Extendido: 
+      - ℹ️ Información general: contenidos/04_tc3_carro_extendido.md
+      - 🧱 Impl. Monolítico: contenidos/04_tc3_carro_extendido/04_tc3_carro_extendido_mono.md
+      # - 🗂️ Impl. Estructurado: contenidos/04_tc3_carro_extendido/04_tc3_carro_extendido_estructurado.md
+      # - 🧩 Impl. Funcional: contenidos/04_tc3_carro_extendido/04_tc3_carro_extendido_funcional.md
 
 markdown_extensions:
   - admonition
@@ -68,6 +71,8 @@ markdown_extensions:
   - pymdownx.keys
   - pymdownx.mark
   - pymdownx.tilde
+  - pymdownx.arithmatex:
+      generic: true
 
 extra:
   social:
@@ -79,3 +84,5 @@ extra_css:
 
 extra_javascript:
   - javascripts/ui-course.js
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
