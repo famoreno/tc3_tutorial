@@ -14,20 +14,20 @@ El **carro extendido** pretende ser una modesta ampliación con fines docentes d
 
 ![Esquematico del Carro Básico](../images/03_tc3_carro_basico/Carro_Basico_Esquematico.png){width=300px}
 
-El carro extendido es un sistemas de transporte de material granulado entre los dos puntos extremos de una vía. Esta ampliación, de espíritu realista, pretende ser una propuesta equilibrada que, con fines didácticos, omite los detalles auxiliares de una instalación real, para centrarse en los elementos esenciales que permiten ilustrar claramente el potencial de los paradigmas de programación de la lógica de control monolítico, estructurado y funcional.
+El carro extendido es un sistema de transporte de material granulado entre los dos puntos extremos de una vía. Esta ampliación, de espíritu realista, pretende ser una propuesta equilibrada que, con fines didácticos, omite los detalles auxiliares de una instalación real, para centrarse en los elementos esenciales que permiten ilustrar claramente el potencial de los paradigmas de programación de la lógica de control monolítico, estructurado y funcional.
 
 ![Esquematico del Carro Extendido](../images/04_tc3_carro_extendido/Carro_Extendido_Esquematico.png){width=600px}
 
 ### Elementos constituyentes
 
 #### Parte operativa
-La parte operativa del carro extendido está constituida por los siguiente dispositivos:
+La parte operativa del carro extendido está constituida por los siguientes dispositivos:
 
 - Un **silo** cilíndrico de 10 m de altura por 5 m de diámetro con capacidad para contener unos 1500 m3 de material. El silo consta de un **sensor de nivel** por ultrasonidos, una **compuerta de tajadera** (válvula de guillotina) de seguridad de accionamiento neumático y una **válvula rotativa** (alimentador) de accionamiento eléctrico, para la dosificación precisa del material expendido.
 
-- Una **vagoneta con volquete** (carro) que se desplaza por unas vías transportando el material entre el punto origen situado bajo la tolva, hasta el punto destino situado sobre un sistema de evacuación separados unos 100 m. La vagoneta es impulsada por un **motor** de corriente alterna accionado por un variador de frecuencia, para controlar su movimiento hacia adelante y hacia atrás. La vagoneta dispone de un **freno eléctrico** de seguridad para impedir movientos accidentales. En el punto origen, bajo el boquerel de descarga del silo, se sitúa una **báscula de pesaje**, que permite conocer la candidad de material cargada en la caja de la vagoneta. La vagoneta dispone de un **volquete** dotado de **compuerta**, ambos accionados hidráulicamente, para la descarga del material transportado.
+- Una **vagoneta con volquete** (carro) que se desplaza por unas vías transportando el material entre el punto origen situado bajo la tolva, hasta el punto destino situado sobre un sistema de evacuación separado unos 100 m. La vagoneta es impulsada por un **motor** de corriente alterna accionado por un variador de frecuencia, para controlar su movimiento hacia adelante y hacia atrás. La vagoneta dispone de un **freno eléctrico** de seguridad para impedir movimientos accidentales. En el punto origen, bajo el boquerel de descarga del silo, se sitúa una **báscula de pesaje**, que permite conocer la cantidad de material cargada en la caja de la vagoneta. La vagoneta dispone de un **volquete** dotado de **compuerta**, ambos accionados hidráulicamente, para la descarga del material transportado.
 
-- Un sistema de evacuación que conduce el material hacia su destino final. Este sistema consta de una **tolva** de recepción, sobre la que la vagoneta vierte el material, y un **cinta transportadora** accionada por un motor de corriente alterna de arranque directo que dirige el material hasta su destino final. El rodillo de retorno incorpora un detector de rotación (sensor inductivo y pletina) para verificar el movimiento real de la banda y prevenir daños por deslizamiento o rotura.
+- Un sistema de evacuación que conduce el material hacia su destino final. Este sistema consta de una **tolva** de recepción, sobre la que la vagoneta vierte el material, y una **cinta transportadora** accionada por un motor de corriente alterna de arranque directo que dirige el material hasta su destino final. El rodillo de retorno incorpora un detector de rotación (sensor inductivo y pletina) para verificar el movimiento real de la banda y prevenir daños por deslizamiento o rotura.
 
 #### Parte de relación
 
@@ -55,7 +55,7 @@ El sistema de control también dispone de una visualización (panel de operador 
 
 #### Condición inicial
 
-- Pulsador de emergencia liberado.
+<!-- - Pulsador de emergencia liberado. -->
 - Parte operativa energizada (armada).
 - Silo por encima del nivel mínimo.
 - Tajadera cerrada.
@@ -107,7 +107,7 @@ El sistema de control también dispone de una visualización (panel de operador 
 1. Panel de operador.
 1. Monitorización y mando de todas las señales de entrada y salida.
 1. Gestión de la tarea (maniobras solicitadas, pendientes y realizadas).
-1. Gestión de los parámetros del sistemas (tiempos, distancias y cantidades).
+1. Gestión de los parámetros del sistema (tiempos, distancias y cantidades).
 1. Botón de verificación de los elementos de señalización.
 1. Botón de reinicio y pausa del estado.
 1. Indicador de las condiciones iniciales y de marcha.
@@ -154,7 +154,7 @@ El sistema de control también dispone de una visualización (panel de operador 
 | `LamparaAlarma` | `BOOL` | <span class="fondo-rojo">**S**</span> | Indica avisos o fallos |
 | `LamparaMarcha` | `BOOL` | <span class="fondo-rojo">**S**</span> | Indica el estado de funcionamiento de la tarea |
 | `LamparaMaterial` | `BOOL` | <span class="fondo-rojo">**S**</span> | Indica el nivel bajo de material en el silo |
-| `TajaderaAbre` | `BOOL` | <span class="fondo-rojo">**S**</span> | Abre la valvula de guillotina de seguridad |
+| `TajaderaAbre` | `BOOL` | <span class="fondo-rojo">**S**</span> | Abre la válvula de guillotina de seguridad |
 | `ValvulaAcciona` | `BOOL` | <span class="fondo-rojo">**S**</span> | Marcha/para la válvula rotativa de alimentación |
 | `VagonetaDesbloquea` | `BOOL` | <span class="fondo-rojo">**S**</span> | Activa freno eléctrico de la vagoneta (libera) |
 | `VagonetaMarcha` | `BOOL` | <span class="fondo-rojo">**S**</span> | Marcha/para el motor de la vagoneta (hacia adelante) |
@@ -181,8 +181,8 @@ Las siguientes especificaciones funcionales describen el comportamiento del carr
 Implementa el funcionamiento del sistema de transporte de material que representa el carro extendido utilizando tres paradigmas de programación (monolítico, estructurado y funcional) para ilustrar, con fines didácticos, las posibilidades y el alcance que cada uno de ellos.
 
 1. 🧱 **Monolítico** (orientada al sistema). Implementación directa. Toda la secuencia de control se encuentra recogida en un único elemento de programación.
-1. 🗂️ **Estructurado** (orientado a la tarea). La secuencia de funcionamiento se organiza y distribuye en subsecuencias denominadas tareas (acciones complejas). <span class="fondo-amarillo">**Próximamente!**</span>
-1. 🧩 **Funcional** (orientado a la unidad funcional). La lógica de contol del sistema se organiza en términos de unidades funcionales, entidades formadas por un subconjunto de dispositivos (sensores y actuadores), capaces de llevar a cabo una o más tareas. <span class="fondo-amarillo">**Próximamente!**</span>
+2. 🗂️ **Estructurado** (orientado a la tarea). La secuencia de funcionamiento se organiza y distribuye en sub-secuencias denominadas tareas (acciones complejas). <span class="fondo-amarillo">**Próximamente!**</span>
+3. 🧩 **Funcional** (orientado a la unidad funcional). La lógica de control del sistema se organiza en términos de unidades funcionales, entidades formadas por un subconjunto de dispositivos (sensores y actuadores), capaces de llevar a cabo una o más tareas. <span class="fondo-amarillo">**Próximamente!**</span>
 
 ---
 
@@ -191,7 +191,7 @@ Implementa el funcionamiento del sistema de transporte de material que represent
 ### Software
 
 - **IDE:** Microsoft Visual Studio / TwinCAT 3 XAE (Versión mínima recomendada: **3.1.4024.x**).
-- **Lenguajes:** Texto Estructurado (ST) y Diagrama de Funciones Secuenciales (SFC).
+- **Lenguajes:** Texto Estructurado (`ST`) y Diagrama de Funciones Secuenciales (`SFC`).
 
 ## 🚀 Descargar el ejemplo
 
@@ -206,6 +206,7 @@ Implementa el funcionamiento del sistema de transporte de material que represent
 
     !!! info "🗂️ **Estructurado**" 
         <span class="fondo-amarillo">**Próximamente!**</span>
+        <!-- `CV → Automatización → ejemplos → 4_tc3_carro_estructurado → tc3_carro_extendido_estructurado_lite.tnzip` -->
 
     !!! info "🧩 **Funcional**" 
         <span class="fondo-amarillo">**Próximamente!**</span>
@@ -233,7 +234,7 @@ git clone https://github.com/vetorres-uma/TC3_Carro_Extendido.git
 
 🧱 **Monolítico** [➡️](./04_tc3_carro_extendido/04_tc3_carro_extendido_mono.md)
 
-🗂️ **Estructurado** <span class="fondo-amarillo">**Próximamente!**</span>
+🗂️ **Estructurado** <span class="fondo-amarillo">**Próximamente!**</span> <!-- [➡️](./04_tc3_carro_extendido/04_tc3_carro_extendido_estructurado.md) -->
 
 🧩 **Funcional** <span class="fondo-amarillo">**Próximamente!**</span>
 
@@ -394,14 +395,14 @@ Este proyecto es utilizado con fines educativos. Las contribuciones, sugerencias
 
 ## 🧑 Autor
 
-- **Autor Principal:** Victor Torres ([@vetorres-uma](https://github.com/vetorres-uma>))
+- **Autor Principal:** Víctor Torres ([@vetorres-uma](https://github.com/vetorres-uma>))
 - **Revisor**: Francisco Ángel Moreno ([@famoreno](https://github.com/famoreno))
 
 ---
 
 ## 🎖️ Créditos y Atribuciones
 
-- **Iconografía:** Los iconos de los botones de la interfaz HMI se han obtenidos de [Flaticon](https://www.flaticon.es).
+- **Iconografía:** Los iconos de los botones de la interfaz HMI se han obtenido de [Flaticon](https://www.flaticon.es).
 
 ---
 
