@@ -22,4 +22,4 @@ Bienvenido/a al tutorial de TwinCAT 3. Aquí encontrarás guías y material de a
 - [Ejemplo - Carro Básico](contenidos/03_tc3_carro_basico_v2.md). Mi primera máquina de estados.
 - [Ejemplo - Carro Extendido](contenidos/04_tc3_carro_extendido.md). Primera automatización real.
     - [Monolítico](contenidos/04_tc3_carro_extendido/04_tc3_carro_extendido_mono.md)
-    <!-- - [Estructurado](contenidos/04_tc3_carro_extendido/04_tc3_carro_extendido_estructurado.md) -->
+    - [Estructurado](contenidos/04_tc3_carro_extendido/04_tc3_carro_extendido_estructurado.md)

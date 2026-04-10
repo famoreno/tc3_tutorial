@@ -144,9 +144,9 @@ A modo de ejemplo, en la figura se puede observar el código de la rutina que se
 ![Rutina de Tarea](../../images/04_tc3_carro_extendido/Carro_Extendido_Estructurado_TareaEjemplo.png){width=300px}
 
 ### Uso de métodos
-En TwinCAT 3, un **método** es una función que pertenece a un bloque funcional y que opera sobre sus variables, teniendo acceso a las variables internas del bloque, puede recibir parámetros de entrada y salida e incluso devolver un valor (opcional). Conceptualmente, es similar a una función, pero ligada al contexto del **FB**.
+En TwinCAT 3, un **método** es una función que pertenece a un bloque funcional y que tiene acceso a sus variables internas. Puede recibir parámetros de entrada y salida e incluso devolver un valor (opcional). Conceptualmente, es similar a una función, pero ligada al contexto del **FB**.
 
-Un método sirve principalmente para organizar el código en partes reutilizables y claras dentro del **FB**, encapsulando la lógica específica del bloque. Así, se evita repetir código y mejorar la modularidad y su mantenimiento.
+Un método sirve principalmente para organizar el código en partes reutilizables y claras dentro del **FB**, encapsulando la lógica específica del bloque. Así, se evita repetir código y mejora la modularidad y su mantenimiento.
 
 Para crear un método asociado a un **FB**, en el árbol del proyecto, haga **CD** sobre el **FB** y pulse `Add → Method`. En el menú contextual, hay que definir:
 
@@ -157,7 +157,7 @@ Para crear un método asociado a un **FB**, en el árbol del proyecto, haga **CD
 !!! warning "Importante"
     Por claridad, tomaremos la convención de añadir un prefijo `m_` al nombre de los métodos.
 
-Una vez creado, deberemos declarar variables de entrada/salida (si queremos usarlas, recuerda que el método ya tiene acceso a **todas** las variables del bloque funcional) e implementar el código.
+Una vez creado, deberemos declarar variables de entrada/salida (si queremos usarlas, recuerde que el método ya tiene acceso a **todas** las variables del bloque funcional) e implementar el código.
 
 Para usarlos, basta con llamar a su código desde una instancia del bloque funcional. Por ejemplo:
 
@@ -165,7 +165,7 @@ Para usarlos, basta con llamar a su código desde una instancia del bloque funci
 m_GestorEntradas();
 ```
 
-Nótese cómo, en este ejemplo, hemos encapsulado las funcionalidades de la estación dentro de distintos métodos:
+En este ejemplo, hemos encapsulado las funcionalidades de la estación dentro de distintos métodos:
 
 - `m_GestorEntradas`. Tareas de acondicionamiento de señales de entrada.
 - `m_GestorAcciones`. Procesamiento de las acciones (solo en modo automático).

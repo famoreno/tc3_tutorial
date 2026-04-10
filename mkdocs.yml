@@ -50,7 +50,7 @@ nav:
     - 🚟 Ejemplo - Carro Extendido: 
       - ℹ️ Información general: contenidos/04_tc3_carro_extendido.md
       - 🧱 Impl. Monolítico: contenidos/04_tc3_carro_extendido/04_tc3_carro_extendido_mono.md
-      # - 🗂️ Impl. Estructurado: contenidos/04_tc3_carro_extendido/04_tc3_carro_extendido_estructurado.md
+      - 🗂️ Impl. Estructurado: contenidos/04_tc3_carro_extendido/04_tc3_carro_extendido_estructurado.md
       # - 🧩 Impl. Funcional: contenidos/04_tc3_carro_extendido/04_tc3_carro_extendido_funcional.md
 
 markdown_extensions:
