@@ -181,7 +181,7 @@ Las siguientes especificaciones funcionales describen el comportamiento del carr
 Implementa el funcionamiento del sistema de transporte de material que representa el carro extendido utilizando tres paradigmas de programación (monolítico, estructurado y funcional) para ilustrar, con fines didácticos, las posibilidades y el alcance que cada uno de ellos.
 
 1. 🧱 **Monolítico** (orientada al sistema). Implementación directa. Toda la secuencia de control se encuentra recogida en un único elemento de programación.
-2. 🗂️ **Estructurado** (orientado a la tarea). La secuencia de funcionamiento se organiza y distribuye en sub-secuencias denominadas tareas (acciones complejas). <span class="fondo-amarillo">**Próximamente!**</span>
+2. 🗂️ **Estructurado** (orientado a la tarea). La secuencia de funcionamiento se organiza y distribuye en sub-secuencias denominadas tareas (acciones complejas).
 3. 🧩 **Funcional** (orientado a la unidad funcional). La lógica de control del sistema se organiza en términos de unidades funcionales, entidades formadas por un subconjunto de dispositivos (sensores y actuadores), capaces de llevar a cabo una o más tareas. <span class="fondo-amarillo">**Próximamente!**</span>
 
 ---
@@ -205,8 +205,7 @@ Implementa el funcionamiento del sistema de transporte de material que represent
         `CV → Automatización → ejemplos → 3_tc3_carro_monolitico → tc3_carro_extendido_monolitico_lite.tnzip`
 
     !!! info "🗂️ **Estructurado**" 
-        <span class="fondo-amarillo">**Próximamente!**</span>
-        <!-- `CV → Automatización → ejemplos → 4_tc3_carro_estructurado → tc3_carro_extendido_estructurado_lite.tnzip` -->
+        `CV → Automatización → ejemplos → 4_tc3_carro_estructurado → tc3_carro_extendido_estructurado_lite.tnzip`
 
     !!! info "🧩 **Funcional**" 
         <span class="fondo-amarillo">**Próximamente!**</span>
@@ -234,7 +233,7 @@ git clone https://github.com/vetorres-uma/TC3_Carro_Extendido.git
 
 🧱 **Monolítico** [➡️](./04_tc3_carro_extendido/04_tc3_carro_extendido_mono.md)
 
-🗂️ **Estructurado** <span class="fondo-amarillo">**Próximamente!**</span> <!-- [➡️](./04_tc3_carro_extendido/04_tc3_carro_extendido_estructurado.md) -->
+🗂️ **Estructurado** [➡️](./04_tc3_carro_extendido/04_tc3_carro_extendido_estructurado.md)
 
 🧩 **Funcional** <span class="fondo-amarillo">**Próximamente!**</span>
 
