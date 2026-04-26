@@ -211,10 +211,34 @@
   border-radius: 4px;
 }
 
+/* Fondo rojo (texto claro) */
+.fondo-naranja {
+  background-color: #ef8f13;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
 /* Fondo amarillo (texto oscuro) */
 .fondo-amarillo {
   background-color: #fcfd41;
   color: black;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Fondo gris (texto oscuro) */
+.fondo-gris {
+  background-color: #807f7f;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Fondo verde (texto oscuro) */
+.fondo-verde {
+  background-color: #4caf50;
+  color: white;
   padding: 2px 6px;
   border-radius: 4px;
 }
