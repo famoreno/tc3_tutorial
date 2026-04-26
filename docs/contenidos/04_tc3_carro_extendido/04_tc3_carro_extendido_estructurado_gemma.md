@@ -1,4 +1,4 @@
-# Carro Extendido Estructurado con GEMMA (Basic)
+# Carro Extendido Estructurado con GEMMA
 
 !!! warning "NOTAS"
     - La descripción general sobre este ejemplo puede encontrarse [**aquí**](../../contenidos/04_tc3_carro_extendido.md).
