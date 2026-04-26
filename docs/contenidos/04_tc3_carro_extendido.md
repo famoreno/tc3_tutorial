@@ -172,18 +172,22 @@ El sistema de control también dispone de una visualización (panel de operador 
 
 Las siguientes especificaciones funcionales describen el comportamiento del carro extendido (lógica de control) de una manera precisa utilizando lenguaje GRAFCET.
 
-- 🧱 [Monolítico (PDF)](docs/carro_extendido_monolitico_grf.pdf) <span class="fondo-amarillo">**Próximamente!**</span>
-- 🗂️ [Estructurado (PDF)](docs/carro_extendido_estructurado_grf.pdf) <span class="fondo-amarillo">**Próximamente!**</span>
-- 🧩 [Funcional (PDF)](docs/carro_extendido_funcional_grf.pdf) <span class="fondo-amarillo">**Próximamente!**</span>
+- 🧱 [Monolítico (PDF)](docs/carro_extendido_monolitico_grf.pdf) <span class="fondo-naranja">**Próximamente!**</span>
+- 🗂️ [Estructurado (PDF)](docs/carro_extendido_estructurado_grf.pdf) <span class="fondo-naranja">**Próximamente!**</span>
+- 🧩 [Estructurado con GEMMA (PDF)](docs/carro_extendido_estructurado_gemma_grf.pdf) <span class="fondo-naranja">**Próximamente!**</span>
+<!-- - 🧩 [Funcional (PDF)](docs/carro_extendido_funcional_grf.pdf) <span class="fondo-naranja">**Próximamente!**</span>
+-->
 
 ### Implementación
 
-Implementa el funcionamiento del sistema de transporte de material que representa el carro extendido utilizando tres paradigmas de programación (monolítico, estructurado y funcional) para ilustrar, con fines didácticos, las posibilidades y el alcance que cada uno de ellos.
+Implementa el funcionamiento del sistema de transporte de material que representa el carro extendido utilizando tres paradigmas de programación (monolítico, estructurado y estructurado con guía GEMMA) para ilustrar, con fines didácticos, las posibilidades y el alcance que cada uno de ellos.
 
-1. 🧱 **Monolítico** (orientada al sistema). Implementación directa. Toda la secuencia de control se encuentra recogida en un único elemento de programación.
-2. 🗂️ **Estructurado** (orientado a la tarea). La secuencia de funcionamiento se organiza y distribuye en sub-secuencias denominadas tareas (acciones complejas).
-3. 🧩 **Funcional** (orientado a la unidad funcional). La lógica de control del sistema se organiza en términos de unidades funcionales, entidades formadas por un subconjunto de dispositivos (sensores y actuadores), capaces de llevar a cabo una o más tareas. <span class="fondo-amarillo">**Próximamente!**</span>
-
+1. 🧱 <span class="fondo-verde">**MONO**</span> **Monolítico** (orientada al sistema). Implementación directa. Toda la secuencia de control se encuentra recogida en un único elemento de programación.
+2. 🗂️ **Estructurado** (orientado a la tarea). La secuencia de funcionamiento se organiza y distribuye en sub-secuencias denominadas tareas (acciones complejas). Hay dos versiones: 
+      1. 🗂️ <span class="fondo-amarillo">**EST**</span> **Estructurado**
+      2. 🧩 <span class="fondo-rojo">**EST+GEMMA**</span> **Estructurado con GEMMA** (incluye guía GEMMA).
+<!-- 3. 🧩 **Funcional** (orientado a la unidad funcional). La lógica de control del sistema se organiza en términos de unidades funcionales, entidades formadas por un subconjunto de dispositivos (sensores y actuadores), capaces de llevar a cabo una o más tareas. <span class="fondo-naranja">**Próximamente!**</span>
+-->
 ---
 
 ## 💻 Requisitos del Sistema
@@ -193,7 +197,7 @@ Implementa el funcionamiento del sistema de transporte de material que represent
 - **IDE:** Microsoft Visual Studio / TwinCAT 3 XAE (Versión mínima recomendada: **3.1.4024.x**).
 - **Lenguajes:** Texto Estructurado (`ST`) y Diagrama de Funciones Secuenciales (`SFC`).
 
-## 🚀 Descargar el ejemplo
+## 🚀 Descarga
 
 **Para descargar, compilar y ejecutar este proyecto en el entorno de TwinCAT 3, seguir el siguiente procedimiento**.
 
@@ -204,11 +208,12 @@ Implementa el funcionamiento del sistema de transporte de material que represent
     !!! info "🧱 **Monolítico**" 
         `CV → Automatización → ejemplos → 3_tc3_carro_monolitico → tc3_carro_extendido_monolitico_lite.tnzip`
 
-    !!! info "🗂️ **Estructurado**" 
-        `CV → Automatización → ejemplos → 4_tc3_carro_estructurado → tc3_carro_extendido_estructurado_lite.tnzip`
+    !!! info "**Estructurado**" 
+        - 🗂️ <span class="fondo-amarillo">**EST**</span> `CV → Automatización → ejemplos → 4_tc3_carro_estructurado → tc3_carro_extendido_estructurado_lite.tnzip`
+        - 🧩 <span class="fondo-rojo">**EST+GEMMA**</span> `CV → Automatización → ejemplos → 4_tc3_carro_estructurado → tc3_carro_extendido_estructurado_basic.tnzip`
 
-    !!! info "🧩 **Funcional**" 
-        <span class="fondo-amarillo">**Próximamente!**</span>
+    <!-- !!! info "🧩 **Funcional**" 
+        <span class="fondo-naranja">**Próximamente!**</span> -->
     
     que hay en la carpeta del campus virtual.
 
@@ -229,13 +234,15 @@ git clone https://github.com/vetorres-uma/TC3_Carro_Extendido.git
 
 ---
 
-## 🔨 Explicación del ejemplo
+## 🔨 Explicación
 
-🧱 **Monolítico** [➡️](./04_tc3_carro_extendido/04_tc3_carro_extendido_mono.md)
+🧱 <span class="fondo-verde">**MONO**</span> [➡️](./04_tc3_carro_extendido/04_tc3_carro_extendido_mono.md)
 
-🗂️ **Estructurado** [➡️](./04_tc3_carro_extendido/04_tc3_carro_extendido_estructurado.md)
+🗂️ <span class="fondo-amarillo">**EST**</span> [➡️](./04_tc3_carro_extendido/04_tc3_carro_extendido_estructurado.md)
 
-🧩 **Funcional** <span class="fondo-amarillo">**Próximamente!**</span>
+🧩 <span class="fondo-rojo">**EST+GEMMA**</span> [➡️](./04_tc3_carro_extendido/04_tc3_carro_extendido_estructurado_gemma.md)
+
+<!-- 🧩 **Funcional** <span class="fondo-naranja">**Próximamente!**</span> -->
 
 <!-- 
 
