@@ -25,7 +25,7 @@ La implementación se estructura de la siguiente manera:
 Como se observa en la figura, la `Estación` es un contenedor de datos y **métodos** desde donde se llama al resto de bloques funcionales. Cada bloque funcional distinto de la `Estación` se implementa como una **rutina GRAFCET** que permite su sincronización con el resto de **FBs**, tal y como se verá más adelante.
 
 ## Funcionalidades
-La lista de funcionalidades es prácticamente la misma que en el caso monolítico aunque en esta implementación se incorporan nuevos conceptos como los métodos o la funciones y se añade una serie de mejoras y extensiones.
+La lista de funcionalidades es prácticamente la misma que en el caso <span class="fondo-verde">**MONO**</span> aunque en esta implementación se incorporan nuevos conceptos como los métodos o la funciones y se añade una serie de mejoras y extensiones.
 
 ??? info "Tabla de contenidos"
     [Uso de rutinas GRAFCET/SFC](#uso-de-rutinas-grafcetsfc)
@@ -426,3 +426,35 @@ Fíjese en este trozo de código del `FB_Director`. En él se puede observar que
 
 !!! info "Consejo"
     Inspeccione el código del **FB** del `Director` y el `Coordinador` para entender la interacción entre ellos en este caso. Preste especial atención al valor que toman las variables utilizadas en las condiciones de transición entre etapas, ya que se ha utilizado una semántica reforzada para clarificar el proceso.
+
+#### Mejora de la gestión de falta material
+En esta versión, señalizaremos la falta de material en dos fases:
+
+- Activación simultánea de avisador sonoro y luminoso (luz de falta material).
+- Activación de avisador luminoso (luz de falta material).
+
+![Falta material](../../images/04_tc3_carro_extendido/Carro_Extendido_Estructurado_FaltaMaterial.png){width=400px}
+
+Como se observa en el código de la figura (del **FB** `VagonetaCargar`), cuando se detecte la falta de material (en este caso `SiloNivelBajo = TRUE`), inicialmente se entra en una etapa donde se activan ambas señalizaciones y se espera hasta que `Resume` se active. Esto ocurrirá cuando el operador pulse el botón de marcha indicando que se ha dado por enterado. Entonces se entra en una segunda etapa que mantiene la luz de falta material activa mientras el operador introduce nuevo material. Una vez terminado, el operador pulsará el botón de marcha por segunda vez y el programa volverá a la etapa de comprobación de material, continuando su proceso si vuelve a tener material.
+
+```pascal
+// m_GestorTareas
+VagonetaCargar(
+    SFCReset := OrdenReinicio,
+    SFCPause := OrdenPausa,
+    Execute := Coordinador.VagonetaCarga,
+    Resume := SolicitudMarcha, // <-- flanco positivo del pulsador de marcha
+    Ack := NOT Coordinador.VagonetaCarga,
+    TajaderaAbierta := i_TajaderaAbierta,
+    TajaderaCerrada := i_TajaderaCerrada,
+    CargaFinalizada := VagonetaCargada,
+    SiloNivelBajo := SiloNivelBajo
+);
+```
+
+El flanco positivo del pulsador de marcha se captura en `m_GestorEntradas` (nótese el uso del operador `=>`):
+
+```pascal
+// m_GestorEntradas
+FlancoPulsadorMarcha(CLK := i_PulsadorMarcha, Q => SolicitudMarcha);
+```
