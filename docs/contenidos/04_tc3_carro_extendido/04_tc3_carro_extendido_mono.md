@@ -69,7 +69,7 @@ El uso de estas variables intermedias (`MarchaAutorizada`, `CondicionInicial`, e
 
 Finalmente, nótese que el valor de la variable `CondicionInicial` y `CondicionMarcha` se muestran con indicadores `CI` y `CM` en la visualización.
 
-![Condicion Inicial y Marcha](../../images/04_tc3_carro_extendido/Carro_Extendido_Barra_Estado.png){width=500px}
+![Condición Inicial y Marcha](../../images/04_tc3_carro_extendido/Carro_Extendido_Barra_Estado.png){width=500px}
 
 ### Secuencia automática de restauración de las condiciones iniciales
 Si **no** se cumplen las condiciones iniciales en la etapa `S0` al pulsar el pulsador de `i_PulsadorMarcha`, el programa evolucionará por una rama que implementa la secuencia de restauración.
