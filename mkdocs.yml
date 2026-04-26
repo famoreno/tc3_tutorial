@@ -45,13 +45,23 @@ nav:
     - 🅰️ Lenguajes de Implementación: contenidos/01c_lenguajes.md
   - Ejemplos:
     # - ✏️ Descripción general: contenidos/01d_ejemplos.md 
-    - 👋 Ejemplo - Demo: contenidos/02_tc3_demo.md
-    - 🛒 Ejemplo - Carro Básico: contenidos/03_tc3_carro_basico_v2.md
-    - 🚟 Ejemplo - Carro Extendido: 
-      - ℹ️ Información general: contenidos/04_tc3_carro_extendido.md
-      - 🧱 Impl. Monolítico: contenidos/04_tc3_carro_extendido/04_tc3_carro_extendido_mono.md
-      - 🗂️ Impl. Estructurado: contenidos/04_tc3_carro_extendido/04_tc3_carro_extendido_estructurado.md
+    - 👋 Ej. - Demo: contenidos/02_tc3_demo.md
+    - 🛒 Ej. - Carro Básico: contenidos/03_tc3_carro_basico.md
+    - 🚟 Ej. - Carro Extendido: 
+      - ✏️ Descripción: contenidos/04_tc3_carro_extendido.md
+      - 🧱 Monolítico: contenidos/04_tc3_carro_extendido/04_tc3_carro_extendido_mono.md
+      - 🗂️ Estructurado: contenidos/04_tc3_carro_extendido/04_tc3_carro_extendido_estructurado.md
+      - 🧩 Estructurado + GEMMA: contenidos/04_tc3_carro_extendido/04_tc3_carro_extendido_estructurado_gemma.md
       # - 🧩 Impl. Funcional: contenidos/04_tc3_carro_extendido/04_tc3_carro_extendido_funcional.md
+  - Prácticas:
+    - ℹ️ Información: contenidos/01e_practicas.md 
+    - 👋 Demo: contenidos/05_tc3_practicas/05_tc3_demo.md
+    - 🛒 Carro básico: contenidos/05_tc3_practicas/05_tc3_carro_basico.md
+    - 🧱 Proyecto monolítico: contenidos/05_tc3_practicas/05_tc3_proyecto_mono.md
+    # - 🗂️ Proyecto estructurado: contenidos/05_tc3_practicas/05_tc3_proyecto_estructurado.md
+    # - ⚙️ Proyecto estructurado + GEMMA: contenidos/05_tc3_practicas/05_tc3_proyecto_gemma.md
+    # - 🧩 Proyecto funcional: contenidos/05_tc3_practicas/05_tc3_proyecto_funcional.md
+
 
 markdown_extensions:
   - admonition
@@ -73,7 +83,9 @@ markdown_extensions:
   - pymdownx.tilde
   - pymdownx.arithmatex:
       generic: true
-
+  - pymdownx.tasklist:
+      # custom_checkbox: true
+      clickable_checkbox: true
 extra:
   social:
     - icon: fontawesome/brands/github

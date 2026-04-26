@@ -19,7 +19,17 @@ Bienvenido/a al tutorial de TwinCAT 3. Aquí encontrarás guías y material de a
 ## Ejemplos
 <!-- - [Descripción general](contenidos/01d_ejemplos.md) -->
 - [Ejemplo - Demo](contenidos/02_tc3_demo.md). El «hola mundo» de la automatización industrial.
-- [Ejemplo - Carro Básico](contenidos/03_tc3_carro_basico_v2.md). Mi primera máquina de estados.
+- [Ejemplo - Carro Básico](contenidos/03_tc3_carro_basico.md). Mi primera máquina de estados.
 - [Ejemplo - Carro Extendido](contenidos/04_tc3_carro_extendido.md). Primera automatización real.
     - [Monolítico](contenidos/04_tc3_carro_extendido/04_tc3_carro_extendido_mono.md)
     - [Estructurado](contenidos/04_tc3_carro_extendido/04_tc3_carro_extendido_estructurado.md)
+    - [Estructurado con GEMMA](contenidos/04_tc3_carro_extendido/04_tc3_carro_extendido_estructurado_gemma.md)
+
+## Prácticas
+- [Descripción general](contenidos/01e_practicas.md)
+- [Demo](contenidos/05_tc3_practicas/05_tc3_demo.md)
+- [Carro básico](contenidos/05_tc3_practicas/05_tc3_carro_basico.md)
+- [Proyecto monolítico](contenidos/05_tc3_practicas/05_tc3_proyecto_mono.md)
+<!-- - [Estación estructurada]()
+- [Estación estructurada con GEMMA]()
+-->

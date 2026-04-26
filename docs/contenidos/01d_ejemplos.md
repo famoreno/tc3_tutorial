@@ -32,7 +32,7 @@ Descripción completa de los ejemplos y qué se va añadiendo en cada paso.
             - *Inputconfiguration* (*OnMouseClick > Execute ST-Code*)
                 
 ## CARRO BÁSICO
-- Programa: `tc3_carro_basico` [➡️](../contenidos/03_tc3_carro_basico_v2.md)
+- Programa: `tc3_carro_basico` [➡️](../contenidos/03_tc3_carro_basico.md)
 - **Mi primera máquina de estados** 
     - Introducción al GRAFCET
     - Introducción al `SFC`
@@ -53,12 +53,12 @@ Descripción completa de los ejemplos y qué se va añadiendo en cada paso.
     - Uso de enumerados locales
     - Operadores relacionales (`=`, `<>`)
     - Operadores lógicos (`AND`, `OR`)
-    - Uso de **FB** de la librería STANDARD (`R_TRIG`, `TON`)
+    - Uso de **FB** de la librería `STANDARD` (`R_TRIG`, `TON`)
     - Uso de **FB** de usuario (`FB_Blink`)
         - Intermitencia de elementos de señalización
     - Lenguaje `ST`: `CASE`, `IF`
     - Lenguaje `SFC`: 
-        - elementos: etapas, etapa inicial, trasiciones, acciones (continua, principal, entrada, salida), transiciones dependientes del tiempo, divergencias (ramas), saltos
+        - elementos: etapas, etapa inicial, transiciones, acciones (continua, principal, entrada, salida), transiciones dependientes del tiempo, divergencias (ramas), saltos
         - acciones continuas condicionadas
         - Variables implícitas de etapa (`.x`, `.t`)
         - Procesamiento de un `SFC`: bifurcaciones (prioridad implícita)
@@ -73,8 +73,8 @@ Descripción completa de los ejemplos y qué se va añadiendo en cada paso.
     - Gestión de una tarea
     - Señalización continua e intermitente
 
-## CARRO EXTENDIDO MONOLÍTICO (Lite)
-- Programa: `tc3_carro_extendido_monolitico_lite` [➡️](../contenidos/04_tc3_carro_extendido.md)
+## CARRO EXTENDIDO MONOLÍTICO
+- Programa: `tc3_carro_extendido_monolitico_lite` [➡️](../contenidos/04_tc3_carro_extendido/04_tc3_carro_extendido_mono.md)
 - **Primera automatización real** 
 
 ??? abstract "Arquitectura"
@@ -113,6 +113,30 @@ Descripción completa de los ejemplos y qué se va añadiendo en cada paso.
     - Carece de parada a final de ciclo
     - Requiere de variables auxiliares que «ensucian» la declaración de variables de `FB_Estacion`
 
+
+## CARRO EXTENDIDO ESTRUCTURADO
+- Programa: `tc3_carro_extendido_estructurado_lite` [➡️](../contenidos/04_tc3_carro_extendido/04_tc3_carro_extendido_estructurado.md)
+- **Primera automatización real con un código estructurado** 
+
+??? abstract "Arquitectura"
+    - **Estructurado en GRAFCET Coordinador de Tareas (GCT) y GRAFCETs de Tareas (GTs)**
+        - La lógica de control está distribuida en un conjunto de bloques funcionales
+        - `SFC` únicamente con elementos propios (transiciones y acciones)
+    - `MAIN -> Estacion`
+
+??? info "Contenidos"
+    - <span class="fondo-amarillo">**TODO**</span>
+
+??? success "Funcionalidades"
+    Las mismas de la implementación monolítica y:
+    
+    - <span class="fondo-amarillo">**TODO**</span>
+
+??? failure "Limitaciones"
+    Las mismas de la implementación monolítica excepto:
+    
+    - <span class="fondo-amarillo">**TODO**</span>
+    
 <!-- TODO: REVISAR ESTO
 
 ## CARRO MONOLÍTICO Basic
