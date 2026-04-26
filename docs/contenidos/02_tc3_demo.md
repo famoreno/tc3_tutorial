@@ -7,7 +7,7 @@
 
 ## 📝 Descripción del Proyecto
 
-El proyecto Demo pretende ser un **Hola Mundo** para **automatas programables (PLC)**. 
+El proyecto Demo pretende ser un **Hola Mundo** para **autómatas programables (PLC)**. 
 
 Es un proyecto mínimo y funcional, que muestra la declaración y el uso básico de variables booleanas y enteras, ubicadas en los espacios de memoria de marcas, imagen de entrada e imagen de salida. Cubriendo los elementos esenciales de programación de los lenguajes de la norma **IEC 61131-3** para la programación de PLC.
 
@@ -41,9 +41,9 @@ Este proyecto incluye además, una **visualización** elemental que permite inte
 - La variable `ContadorCiclos` se incrementa indefinidamente una vez por ciclo básico de ejecución del PLC (10 ms).
 - La variable de salida `o_Lampara` copia, continuamente, el valor de la variable de entrada `i_Pulsador`.
 - El valor de la variable `ContadorCiclos` se muestra en la visualización.
-- La variable `ContadorCiclos` puede reinicarse si se acciona el pulsador `Reinicia`.
+- La variable `ContadorCiclos` puede reiniciarse si se acciona el pulsador `Reinicia`.
 - El valor de la variable `o_Lampara` se muestra con el cambio de color del rectángulo `Lampara` (verde claro = `FALSE`, verde oscuro = `TRUE`).
-- El valor de la variabale `i_Pulsador` cambia cuando se acciona el botón `Pulsador`.
+- El valor de la variable `i_Pulsador` cambia cuando se acciona el botón `Pulsador`.
 
 ---
 
@@ -56,7 +56,7 @@ Este proyecto incluye además, una **visualización** elemental que permite inte
 
 ---
 
-## 🚀 Descargar el ejemplo
+## 🚀 Descarga
 
 **Para descargar, compilar y ejecutar este proyecto en el entorno de TwinCAT 3, seguir el siguiente procedimiento**.
 <!-- 
@@ -94,7 +94,7 @@ git clone https://github.com/vetorres-uma/TC3_Demo.git
 -->
 ---
 
-## 🔨 Replicar el proyecto
+## 🔨 Explicación
 
 **Para replicar la creación de la solución completa, seguir este procedimiento:**
 
