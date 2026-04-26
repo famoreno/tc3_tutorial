@@ -6,4 +6,4 @@
     | **DCI** | Doble clic izquierdo del ratón |
     | **TC3** | TwinCAT3 |
     | **CV** | Campus Virtual |
-    | **FB** | Bloque funcional (*Functional Block*) |
+    | **FB** | Bloque funcional (*Function Block*) |
