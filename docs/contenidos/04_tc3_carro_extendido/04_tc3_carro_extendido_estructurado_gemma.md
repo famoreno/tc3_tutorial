@@ -27,19 +27,18 @@ En este caso, la funcionalidad (secuencia) está distribuida en:
 ## Funcionalidades
 La lista de funcionalidades es idéntica a la de la versión <span class="fondo-amarillo">**EST**</span>, pero se le añade el uso de la guía GEMMA.
 
-TODO: Fix toc
 ??? info "Tabla de contenidos"
-    [Uso de rutinas GRAFCET/SFC](#uso-de-rutinas-grafcetsfc)
+    [Incorporación de la guía GEMMA en el `Director`](#incorporacion-de-la-guia-gemma-en-el-director)
     
-    [Uso de métodos](#uso-de-metodos)
+    [Codificación de una máquina de estados (GDMMA) en `ST`](#codificacion-de-una-maquina-de-estados-gdmma-en-st)
     
-    [Uso de secuencias de preparación, finalización y restauración](#uso-de-secuencias-de-preparacion-finalizacion-y-restauracion)
+    [Temporizador de reinicio manual](#temporizador-de-reinicio-manual)
     
-    [Uso de funciones](#uso-de-funciones)
+    [Reinicio del sistema tras emergencia](#reinicio-del-sistema-tras-emergencia)
     
-    [Uso de estructuras](#uso-de-estructuras)
+    [Temporizador para la desconexión automática por falta de actividad](#temporizador-para-la-desconexion-automatica-por-falta-de-actividad)
     
-    [Mejoras y extensiones](#mejoras-y-extensiones)
+    [Uso de una lista de texto](#uso-de-una-lista-de-texto)
 
 !!! info "Consejo"
     Utiliza el menú de la derecha para ir directamente a la explicación de cada funcionalidad.
