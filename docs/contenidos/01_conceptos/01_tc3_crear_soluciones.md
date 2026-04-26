@@ -64,13 +64,13 @@ Se utiliza **creando una instancia** del bloque en el programa y llamándola en 
 Para crear un FB, seguimos este procedimiento:
 
 1. Hacer **CD** sobre la sección `POUs`.
-2. Seleccionar `Add → POU → Functional Block`.
+2. Seleccionar `Add → POU → Function Block`.
 3. Darle un nombre significativo.
 4. Seleccionar el lenguaje a utilizar. Normalmente utilizaremos `ST` o `SFC`.
 
 ### Instanciar bloque funcional
 
-Para hacer uso del bloque funcional en un programa, deberemos **instanciar** dicho FB y llamar a la instancia:
+Para hacer uso del bloque funcional en un programa, deberemos **instanciar** dicho **FB** y llamar a la instancia:
 
 !!! info "Declaración"
     ```pascal
