@@ -101,7 +101,7 @@ Realizaremos la implementación del GDMMA en el lenguaje `ST`, ya que, a pesar d
 - Paso **inmediato** al modo de parada de emergencia: El sistema debe evolucionar al modo `D1` (**parada de emergencia**) desde cualquier modo del diagrama de manera inmediata tras pulsar la seta de emergencia.
 - Reinicio **inmediato** desde cualquier modo.
 
-La manera de implementar esta máquina de estados es similar a la utilizada en el ejemplo del carro básico (en `ST`) [todo_link](todo).
+La manera de implementar esta máquina de estados es similar a la utilizada en el ejemplo del carro básico (en `ST`) [➡️](../../03_tc3_carro_basico/#explicacion).
 
 ### Temporizador de reinicio manual
 En esta implementación, añadiremos una nueva opción de forzar un reinicio del sistema, adicional al uso del botón de la visualización asociado a `SFCReset`. El sistema se reiniciará tras pulsar el **pulsador de marcha y el de parada de manera simultánea** durante un tiempo determinado (3s por defecto)
@@ -247,13 +247,15 @@ Además de las funcionalidades anteriores, se ha introducido una serie de mejora
 ### Gestor de comandos
 Se ha añadido un nuevo método `m_GestorComandos` para la gestión de los comandos de **Reinicio** y **Pausa**.
 
-Para el primero, se utiliza para ejecutar el código del temporizador de reinicio manual [link](todo) y definir la orden de reinicio completa incluyendo los tres casos contemplados:
+Para el **reinicio**, se utiliza para ejecutar el código del temporizador de reinicio manual [(➡️)](#temporizador-de-reinicio-manual) y definir la orden de reinicio completa incluyendo los tres casos contemplados:
 
 - Reinicio manual
 - Salida de parada de emergencia
 - Botón de reinicio en la visualización
 
-Esta gestión se realiza de esta manera:
+Para la **pausa**, se captura la pulsación del botón correspondiente en la visualización **cuando no estemos en situación de reinicio**.
+
+Esta gestión se realiza de la siguiente manera:
 
 ```pascal
 // en m_GestorComandos
@@ -269,7 +271,7 @@ OrdenReinicio := ReiniciaEstado OR DesactivarAlarma OR TemporizadorReinicio.Q;
 OrdenPausa := NOT OrdenReinicio AND PausaEstado;
 ```
 
-Como se puede observar, la orden de **pausa** se aplica cuando se pulse el botón correspondiente en la visualización y **no estemos en situación de reinicio**.
+
 
 ### Gestión del modo
 El método `m_GestorModo` ha sido modificado para contemplar dos mejoras adicionales.
