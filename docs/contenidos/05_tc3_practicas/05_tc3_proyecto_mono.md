@@ -45,6 +45,8 @@ El proyecto desarrollado debe tener las siguientes funcionalidades:
     1.  Normalización y escalado de las señales de entrada analógicas.
     2.  Secuencias paralelas.
 
+(Versión descargable [aquí](../../pdfs/Checklist_Func_Monolitico.pdf){target="_blank"}).
+
 ## Componentes
 - `MAIN`: programa principal (`ST`)
     - `FB_Estacion`: lógica de control (`SFC`)
@@ -52,7 +54,7 @@ El proyecto desarrollado debe tener las siguientes funcionalidades:
 
 ## Itinerario
 !!! warning "Atención"
-    La siguiente lista es *clickable* pero **NO** guarda el estado. Si actualizas o entras/sales de la página se perderán las marcas. Puedes obtener una versión imprimible de esta lista [**aquí**](../../pdfs/Checklist_Monolitico.pdf){target="_blank"}.
+    La siguiente lista es *clickable* pero **NO** guarda el estado. Si actualizas o entras/sales de la página se perderán las marcas. Puedes obtener una versión imprimible de esta lista [**aquí**](../../pdfs/Checklist_Ruta_Monolitico.pdf){target="_blank"}.
 
 - [ ] Crear una solución con el nombre apropiado (`XXX_TC3_GYY`, `XXX` = iniciales de la asignatura, `YY` = número del grupo).
 - [ ] Crear el proyecto PLC (`FMS_20X_PLC`).

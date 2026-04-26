@@ -21,6 +21,8 @@ El proyecto desarrollado debe tener las siguientes funcionalidades:
     1. Gestión de la tarea (maniobras solicitadas, pendientes y realizadas).
     1. Parametrización de todas las variables (tiempos y cantidades).
 
+(Versión descargable [aquí](../../pdfs/Checklist_Func_Basico.pdf){target="_blank"}).
+
 ## Componentes
 - `MAIN`: programa principal (`ST`)
     - `FB_Carro`: lógica de control (`SFC`)
@@ -28,7 +30,7 @@ El proyecto desarrollado debe tener las siguientes funcionalidades:
 
 ## Itinerario
 !!! warning "Atención"
-    La siguiente lista es *clickable* pero **NO** guarda el estado. Si actualizas o entras/sales de la página se perderán las marcas. Puede descargar una versión imprimible en PDF [**aquí**](../../pdfs/Checklist_Basico.pdf){target="_blank"}.
+    La siguiente lista es *clickable* pero **NO** guarda el estado. Si actualizas o entras/sales de la página se perderán las marcas. Puede descargar una versión imprimible en PDF [**aquí**](../../pdfs/Checklist_Ruta_Basico.pdf){target="_blank"}.
 
 - [ ] Crear una solución con el nombre apropiado (`XXX_TC3_GYY`, `XXX` = iniciales de la asignatura, `YY` = número del grupo).
 - [ ] Crear el proyecto PLC (`Carro_Basico_PLC`).
