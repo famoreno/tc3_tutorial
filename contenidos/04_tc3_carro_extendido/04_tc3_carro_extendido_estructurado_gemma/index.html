@@ -1,0 +1,1758 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://famoreno.github.io/tc3_tutorial/contenidos/04_tc3_carro_extendido/04_tc3_carro_extendido_estructurado_gemma/">
+      
+      
+        <link rel="prev" href="../04_tc3_carro_extendido_estructurado/">
+      
+      
+        <link rel="next" href="../../01e_practicas/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../images/_resource/logo_auto_isa_team.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>🧩 Estructurado + GEMMA - Tutorial de TwinCAT 3</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
+          data-cf-beacon='{"token": "4d854f26fec440f88da4a7ee3846cc54"}'></script>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#carro-extendido-estructurado-con-gemma" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../../.." title="Tutorial de TwinCAT 3" class="md-header__button md-logo" aria-label="Tutorial de TwinCAT 3" data-md-component="logo">
+      
+  <img src="../../../images/_resource/logo_auto_isa_team.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Tutorial de TwinCAT 3
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              🧩 Estructurado + GEMMA
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="indigo"  aria-label="Modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="indigo"  aria-label="Modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Tutorial de TwinCAT 3" class="md-nav__button md-logo" aria-label="Tutorial de TwinCAT 3" data-md-component="logo">
+      
+  <img src="../../../images/_resource/logo_auto_isa_team.png" alt="logo">
+
+    </a>
+    Tutorial de TwinCAT 3
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contenidos generales
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Contenidos generales
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00_presentacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ⚙️ Beckhoff y TwinCAT 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01_conceptos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ✔ Conceptos Generales
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01b_ejecucion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ⚡ Ejecución de Programas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01c_lenguajes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🅰️ Lenguajes de Implementación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ejemplos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ejemplos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_tc3_demo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    👋 Ej. - Demo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03_tc3_carro_basico/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🛒 Ej. - Carro Básico
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🚟 Ej. - Carro Extendido
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🚟 Ej. - Carro Extendido
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ✏️ Descripción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_tc3_carro_extendido_mono/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧱 Monolítico
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_tc3_carro_extendido_estructurado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🗂️ Estructurado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧩 Estructurado + GEMMA
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧩 Estructurado + GEMMA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#arquitectura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arquitectura
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funcionalidades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Funcionalidades
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Funcionalidades">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#incorporacion-de-la-guia-gemma-en-el-director" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Incorporación de la guía GEMMA en el Director
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Incorporación de la guía GEMMA en el Director">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#beneficios-del-uso-de-la-guia-gemma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Beneficios del uso de la guía GEMMA:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uso-del-tipo-enum-para-el-modo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Uso del tipo ENUM para el modo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codificacion-de-una-maquina-de-estados-gdmma-en-st" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Codificación de una máquina de estados (GDMMA) en ST
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#temporizador-de-reinicio-manual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Temporizador de reinicio manual
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reinicio-del-sistema-tras-emergencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reinicio del sistema tras emergencia
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#temporizador-para-la-desconexion-automatica-por-falta-de-actividad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Temporizador para la desconexión automática por falta de actividad
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uso-de-una-lista-de-texto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Uso de una lista de texto
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mejoras-y-extensiones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mejoras y extensiones
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mejoras y extensiones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gestor-de-comandos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestor de comandos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-del-modo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestión del modo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestión del modo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#centralizacion-de-la-informacion-del-modo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Centralización de la información del modo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inicializacion-de-maniobraspendientes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inicialización de ManiobrasPendientes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-del-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestión del panel
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prácticas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Prácticas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01e_practicas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ℹ️ Información
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05_tc3_practicas/05_tc3_demo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    👋 Demo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05_tc3_practicas/05_tc3_carro_basico/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🛒 Carro básico
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05_tc3_practicas/05_tc3_proyecto_mono/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧱 Proyecto monolítico
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#arquitectura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arquitectura
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funcionalidades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Funcionalidades
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Funcionalidades">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#incorporacion-de-la-guia-gemma-en-el-director" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Incorporación de la guía GEMMA en el Director
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Incorporación de la guía GEMMA en el Director">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#beneficios-del-uso-de-la-guia-gemma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Beneficios del uso de la guía GEMMA:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uso-del-tipo-enum-para-el-modo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Uso del tipo ENUM para el modo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codificacion-de-una-maquina-de-estados-gdmma-en-st" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Codificación de una máquina de estados (GDMMA) en ST
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#temporizador-de-reinicio-manual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Temporizador de reinicio manual
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reinicio-del-sistema-tras-emergencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reinicio del sistema tras emergencia
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#temporizador-para-la-desconexion-automatica-por-falta-de-actividad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Temporizador para la desconexión automática por falta de actividad
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uso-de-una-lista-de-texto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Uso de una lista de texto
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mejoras-y-extensiones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mejoras y extensiones
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mejoras y extensiones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gestor-de-comandos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestor de comandos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-del-modo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestión del modo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestión del modo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#centralizacion-de-la-informacion-del-modo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Centralización de la información del modo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inicializacion-de-maniobraspendientes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inicialización de ManiobrasPendientes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-del-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestión del panel
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="carro-extendido-estructurado-con-gemma">Carro Extendido Estructurado con GEMMA<a class="headerlink" href="#carro-extendido-estructurado-con-gemma" title="Permanent link">&para;</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">NOTAS</p>
+<ul>
+<li>La descripción general sobre este ejemplo puede encontrarse <a href="../"><strong>aquí</strong></a>.</li>
+<li>Descargue y abra el proyecto en una ventana de TwinCAT3 para seguir la explicación.</li>
+</ul>
+</div>
+<p>En esta implementación estructurada del carro extendido, presentamos una primera automatización estructurada con aplicación de la guía GEMMA. Aquí, el <code>Director</code> implementa un gráfico <strong>GDMMA</strong>.</p>
+<h2 id="arquitectura">Arquitectura<a class="headerlink" href="#arquitectura" title="Permanent link">&para;</a></h2>
+<p>En esta implementación, la arquitectura es idéntica a la del caso <span class="fondo-amarillo"><strong>EST</strong></span>.</p>
+<p><img alt="Estructura del proyecto" src="../../../images/04_tc3_carro_extendido/Carro_Extendido_Estructurado_GEMMA_Proyecto.png" width="250px" /></p>
+<p>La implementación se estructura de la siguiente manera:</p>
+<p><code>MAIN</code> → <code>Estación</code> → <code>Director</code> → <code>Coordinador</code> + <code>Tareas</code> (funcionalidades)</p>
+<p>En este caso, la funcionalidad (secuencia) está distribuida en:</p>
+<ul>
+<li><code>Estación</code> (<code>ST</code>): contenedor principal</li>
+<li><code>Director</code> (<code>ST</code>): <strong>implementación completa del gráfico GDMMA</strong></li>
+<li><code>Coordinador</code> (<code>SFC</code>): coordinación de tareas para la producción normal </li>
+<li><code>Tareas</code> (<code>SFC</code>): sub-secuencias que implementan las distintas funcionalidades (conjunto de etapas/transiciones con sentido propio)</li>
+</ul>
+<p><img alt="Arquitectura" src="../../../images/04_tc3_carro_extendido/Carro_Extendido_Estructurado_GEMMA_Arquitectura.png" width="600px" /></p>
+<h2 id="funcionalidades">Funcionalidades<a class="headerlink" href="#funcionalidades" title="Permanent link">&para;</a></h2>
+<p>La lista de funcionalidades es idéntica a la de la versión <span class="fondo-amarillo"><strong>EST</strong></span>, pero se le añade el uso de la guía GEMMA.</p>
+<details class="info">
+<summary>Tabla de contenidos</summary>
+<p><a href="#incorporacion-de-la-guia-gemma-en-el-director">Incorporación de la guía GEMMA en el <code>Director</code></a></p>
+<p><a href="#codificacion-de-una-maquina-de-estados-gdmma-en-st">Codificación de una máquina de estados (GDMMA) en <code>ST</code></a></p>
+<p><a href="#temporizador-de-reinicio-manual">Temporizador de reinicio manual</a></p>
+<p><a href="#reinicio-del-sistema-tras-emergencia">Reinicio del sistema tras emergencia</a></p>
+<p><a href="#temporizador-para-la-desconexion-automatica-por-falta-de-actividad">Temporizador para la desconexión automática por falta de actividad</a></p>
+<p><a href="#uso-de-una-lista-de-texto">Uso de una lista de texto</a></p>
+</details>
+<div class="admonition info">
+<p class="admonition-title">Consejo</p>
+<p>Utiliza el menú de la derecha para ir directamente a la explicación de cada funcionalidad.</p>
+</div>
+<h3 id="incorporacion-de-la-guia-gemma-en-el-director">Incorporación de la guía GEMMA en el <code>Director</code><a class="headerlink" href="#incorporacion-de-la-guia-gemma-en-el-director" title="Permanent link">&para;</a></h3>
+<p>En la implementación <span class="fondo-amarillo"><strong>EST</strong></span>, el <code>Director</code> estaba implementado en <code>SFC</code> y encapsulaba la secuencia simplificada de la estación a alto nivel, incluyendo la producción. En esta nueva implementación, el <code>Director</code> abarca un ámbito mucho mayor, incorporando la <strong>guía GEMMA</strong> (<em>Guide d'Etude des Modes de Marche et d'Arrêt</em>) al sistema. </p>
+<p>Esta guía es una herramienta metodológica que permite analizar los modos de funcionamiento de un sistema de automatización. Al aplicar la guía GEMMA a un sistema concreto, se obtiene el <strong>GDMMA</strong> (<em>Gráfico Descriptivo de los Modos de Marcha y Parada</em>), una máquina de estados que describe el funcionamiento general de un sistema de automatización concreto.</p>
+<h4 id="beneficios-del-uso-de-la-guia-gemma"><strong>Beneficios del uso de la guía GEMMA:</strong><a class="headerlink" href="#beneficios-del-uso-de-la-guia-gemma" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Estandarización y Lenguaje Común</strong>: La guía GEMMA proporciona un marco estandarizado y reconocido para los modos de marcha y paro. Esto significa que diferentes ingenieros, técnicos de mantenimiento y operadores pueden entender rápidamente el comportamiento de la máquina, incluso si no participaron en su diseño original.</li>
+<li><strong>Claridad en la Operación y Mantenimiento</strong>: Define explícitamente estados como "Parada en estado inicial" (<code>A1</code>), "Producción normal" (<code>F1</code>), "Parada de emergencia" (<code>D1</code>), etc. Estos estados son intuitivos para los operadores y facilitan la capacitación. Para mantenimiento, saber que la máquina está en un modo específico (ej. "Verificación sin orden" - <code>F4</code>) ayuda a diagnosticar problemas.</li>
+<li><strong>Integración de la Seguridad desde el Diseño:</strong> Los modos de defecto (<code>D</code>) y parada (<code>A</code>) están intrínsecamente ligados a la seguridad. El modo <code>D1</code> (Emergencia) es un pilar. La guía fuerza a pensar en cómo la máquina debe comportarse en situaciones anómalas y cómo volver a un estado seguro (<code>A6</code> - Puesta en estado inicial).</li>
+<li><strong>Gestión Completa del Ciclo de Vida de la Operación:</strong> La guía GEMMA no solo define los estados de producción, sino también los de preparación (<code>F2</code>), finalización (<code>F3</code>), y los diferentes tipos de paradas (<code>A1</code>, <code>A2</code>, <code>A4</code>). Esto cubre todo el espectro de cómo una máquina opera, desde el arranque hasta la parada completa.</li>
+<li><strong>Facilita el Diseño de la Interfaz Hombre-Máquina (HMI):</strong> Los modos GEMMA pueden mapearse directamente a la HMI, proporcionando al operador una visión clara y coherente del estado de la máquina y de las acciones permitidas en cada modo.</li>
+<li><strong>Mejora la Modularidad y Reutilización del Código:</strong> Al definir claramente las responsabilidades de cada modo, se fomenta un diseño de <em>software</em> más modular. Las lógicas específicas de cada modo (ej. la secuencia de producción en <code>F1</code>, la secuencia de reinicio en <code>A6</code>) pueden encapsularse en bloques funcionales separados.</li>
+<li><strong>Análisis y Especificación Funcional más Rigurosos:</strong> El uso del diagrama GEMMA en la fase de diseño obliga a un análisis exhaustivo de todos los posibles modos de operación y las transiciones entre ellos. Esto ayuda a identificar omisiones o comportamientos no deseados antes de la implementación.</li>
+</ul>
+<h4 id="uso-del-tipo-enum-para-el-modo">Uso del tipo <code>ENUM</code> para el modo<a class="headerlink" href="#uso-del-tipo-enum-para-el-modo" title="Permanent link">&para;</a></h4>
+<p>Para implementar el GDMMA en nuestra estación, definiremos un tipo de dato <code>ENUM</code> que encapsule los modos de la guía GEMMA:</p>
+<div class="highlight"><pre><span></span><code><span class="cm">{attribute &#39;qualified_only&#39;}</span>
+<span class="cm">{attribute &#39;strict&#39;}</span>
+<span class="k">TYPE</span><span class="w"> </span><span class="n">E_GEMMA</span><span class="w"> </span><span class="o">:</span>
+<span class="p">(</span>
+<span class="w">    </span><span class="c1">// PROCEDIMIENTOS DE PARADA</span>
+<span class="w">    </span><span class="n">A1_ParadaEstadoInicial</span><span class="o">,</span>
+<span class="w">    </span><span class="n">A2_ParadaSolicitadaFinalCiclo</span><span class="o">,</span>
+<span class="w">    </span><span class="n">A3_ParadaSolicitadaEstadoDeterminado</span><span class="o">,</span>
+<span class="w">    </span><span class="n">A4_ParadaObtenida</span><span class="o">,</span>
+<span class="w">    </span><span class="n">A5_PreparacionRecuperacionFallo</span><span class="o">,</span>
+<span class="w">    </span><span class="n">A6_PuestaEstadoInicial</span><span class="o">,</span>
+<span class="w">    </span><span class="n">A7_PuestaEstadoDeterminado</span><span class="o">,</span>
+
+<span class="w">    </span><span class="c1">// PROCEDIMIENTOS DE FUNCIONAMIENTO</span>
+<span class="w">    </span><span class="n">F1_ProduccionNormal</span><span class="o">,</span>
+<span class="w">    </span><span class="n">F2_SecuenciaPreparacion</span><span class="o">,</span>
+<span class="w">    </span><span class="n">F3_SecuenciaFinalizacion</span><span class="o">,</span>
+<span class="w">    </span><span class="n">F4_VerificacionSinOrden</span><span class="o">,</span>
+<span class="w">    </span><span class="n">F5_VerificacionEnOrden</span><span class="o">,</span>
+<span class="w">    </span><span class="n">F6_SecuenciaPrueba</span><span class="o">,</span>
+
+<span class="w">    </span><span class="c1">// PROCEDIMIENTOS DE FALLO</span>
+<span class="w">    </span><span class="n">D1_ParadaEmergencia</span><span class="o">,</span>
+<span class="w">    </span><span class="n">D2_TratamientoFallos</span><span class="o">,</span>
+<span class="w">    </span><span class="n">D3_ProduccionConFallo</span>
+<span class="p">)</span><span class="o">;</span>
+<span class="n">END_TYPE</span>
+</code></pre></div>
+<p>Recuerde que un tipo <code>ENUM</code> no es más que un tipo entero al que se le <strong>da un nombre</strong> a cada valor que pueda tomar la variable, dotándolo de significado. Si no se especifica lo contrario, el primer nombre del enumerado equivale al valor <code>0</code> y los siguientes se asignan en orden creciente. Así, en este caso, cuando la variable tome el valor <code>0</code>, nos podremos referir a dicho valor con el nombre <code>A1_ParadaEstadoInicial</code>, cuando tome el valor <code>1</code> con el nombre <code>A2_ParadaSolicitadaFinalCiclo</code>, etc.</p>
+<p>En nuestro sistema definiremos dos variables de este tipo: <code>ModoActual</code> y <code>ModoAnterior</code>, para especificar el modo en el ciclo actual y en el ciclo anterior, respectivamente. De esta manera también podremos detectar los cambios de modo.</p>
+<h3 id="codificacion-de-una-maquina-de-estados-gdmma-en-st">Codificación de una máquina de estados (GDMMA) en <code>ST</code><a class="headerlink" href="#codificacion-de-una-maquina-de-estados-gdmma-en-st" title="Permanent link">&para;</a></h3>
+<p>Realizaremos la implementación del GDMMA en el lenguaje <code>ST</code>, ya que, a pesar de que podría parecer más sencillo implementarlo en <code>SFC</code> (el diagrama GDMMA no deja de ser una máquina de estados), existen un par de particularidades que son más sencillas de implementar en <code>ST</code>: </p>
+<ul>
+<li>Paso <strong>inmediato</strong> al modo de parada de emergencia: El sistema debe evolucionar al modo <code>D1</code> (<strong>parada de emergencia</strong>) desde cualquier modo del diagrama de manera inmediata tras pulsar la seta de emergencia.</li>
+<li>Reinicio <strong>inmediato</strong> desde cualquier modo.</li>
+</ul>
+<p>La manera de implementar esta máquina de estados es similar a la utilizada en el ejemplo del carro básico (en <code>ST</code>) <a href="../../03_tc3_carro_basico/#explicacion">➡️</a>.</p>
+<h3 id="temporizador-de-reinicio-manual">Temporizador de reinicio manual<a class="headerlink" href="#temporizador-de-reinicio-manual" title="Permanent link">&para;</a></h3>
+<p>En esta implementación, añadiremos una nueva opción de forzar un reinicio del sistema, adicional al uso del botón de la visualización asociado a <code>SFCReset</code>. El sistema se reiniciará tras pulsar el <strong>pulsador de marcha y el de parada de manera simultánea</strong> durante un tiempo determinado (3s por defecto)</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// en m_GestorComandos</span>
+<span class="n">TemporizadorReinicio</span><span class="p">(</span>
+<span class="w">    </span><span class="k">IN</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">i_PulsadorMarcha</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="n">i_PulsadorParada</span><span class="o">,</span>
+<span class="w">    </span><span class="n">PT</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">TiempoReinicio</span><span class="o">,</span>
+<span class="p">)</span><span class="o">;</span>
+
+<span class="c1">// ReiniciaEstado &lt;-- desde la visualización</span>
+<span class="c1">// DesactivarAlarma &lt;-- tras desenclavar la seta de emergencia</span>
+<span class="c1">// TemporizadorReinicio.Q &lt;-- tras final del temporizador de los pulsadores</span>
+<span class="n">OrdenReinicio</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">ReiniciaEstado</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">DesactivarAlarma</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">TemporizadorReinicio</span><span class="o">.</span><span class="n">Q</span><span class="o">;</span>
+<span class="n">OrdenPausa</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="n">OrdenReinicio</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">PausaEstado</span><span class="o">;</span>
+</code></pre></div>
+<p>La señal <code>OrdenReinicio</code> la recogerá el <strong>FB</strong> del <code>Director</code> como entrada y cambiará el modo del sistema al <code>A6</code> (<strong>puesta en estado inicial</strong>).</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// en m_GestorModo</span>
+<span class="n">Director</span><span class="p">(</span>
+<span class="w">    </span><span class="n">CondicionInicial</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">CondicionInicial</span><span class="o">,</span><span class="w"> </span>
+<span class="w">    </span><span class="n">CondicionMarcha</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">CondicionMarcha</span><span class="o">,</span><span class="w"> </span>
+<span class="w">    </span><span class="n">OrdenReinicio</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">OrdenReinicio</span><span class="o">,</span><span class="w"> </span><span class="c1">// &lt;-- Reiniciamos</span>
+<span class="w">    </span><span class="n">OrdenEmergencia</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="n">i_PulsadorEmergencia</span><span class="o">,</span><span class="w"> </span>
+<span class="w">    </span><span class="n">OrdenMarcha</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">SolicitudProduccion</span><span class="o">,</span><span class="w"> </span>
+<span class="w">    </span><span class="n">OrdenParada</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">SolicitudParada</span><span class="o">,</span><span class="w"> </span>
+<span class="w">    </span><span class="n">PreparacionConcluida</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">ProduccionPreparar</span><span class="o">.</span><span class="n">Done</span><span class="o">,</span><span class="w"> </span>
+<span class="w">    </span><span class="n">FinalizacionConcluida</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">ProduccionFinalizar</span><span class="o">.</span><span class="n">Done</span><span class="o">,</span><span class="w"> </span>
+<span class="w">    </span><span class="n">TareaFinalizada</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">TareaFinalizada</span><span class="o">,</span><span class="w"> </span>
+<span class="w">    </span><span class="n">CicloFinalizado</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">Coordinador</span><span class="o">.</span><span class="n">Done</span><span class="o">,</span>
+<span class="w">    </span><span class="n">ModoManual</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">i_SelectorManual</span><span class="o">,</span><span class="w"> </span>
+<span class="w">    </span><span class="n">Modo</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">ModoActual</span><span class="o">,</span><span class="w"> </span>
+<span class="p">)</span><span class="o">;</span>
+</code></pre></div>
+<p>Además, la señal <code>OrdenReinicio</code> se asignará a la variable <code>SFCReset</code> de todos los <strong>FBs</strong> que la vayan a utilizar, como por ejemplo:
+<div class="highlight"><pre><span></span><code><span class="c1">// en m_GestorTareas</span>
+<span class="p">[</span><span class="o">...</span><span class="p">]</span>
+
+<span class="n">Coordinador</span><span class="p">(</span>
+<span class="w">    </span><span class="n">SFCReset</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">OrdenReinicio</span><span class="o">,</span><span class="w"> </span><span class="c1">// &lt;-- Reiniciamos</span>
+<span class="w">    </span><span class="n">SFCPause</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">OrdenPausa</span><span class="o">,</span>
+<span class="w">    </span><span class="n">Execute</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="p">(</span><span class="n">ModoActual</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">E_GEMMA</span><span class="o">.</span><span class="n">F1_ProduccionNormal</span><span class="p">)</span><span class="o">,</span>
+<span class="w">    </span><span class="n">Ack</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">ContinuacionAutorizada</span><span class="o">,</span>
+<span class="w">    </span><span class="n">VagonetaCargada</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">VagonetaCargar</span><span class="o">.</span><span class="n">Done</span><span class="o">,</span>
+<span class="w">    </span><span class="n">VagonetaTrasladada</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">VagonetaTrasladar</span><span class="o">.</span><span class="n">Done</span><span class="o">,</span>
+<span class="w">    </span><span class="n">CintaEvacuada</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">CintaEvacuar</span><span class="o">.</span><span class="n">Done</span><span class="o">,</span>
+<span class="w">    </span><span class="n">TolvaLlena</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">i_TolvaLlena</span>
+<span class="p">)</span><span class="o">;</span>
+
+<span class="p">[</span><span class="o">...</span><span class="p">]</span>
+</code></pre></div></p>
+<h3 id="reinicio-del-sistema-tras-emergencia">Reinicio del sistema tras emergencia<a class="headerlink" href="#reinicio-del-sistema-tras-emergencia" title="Permanent link">&para;</a></h3>
+<p>Otra de las condiciones que van a provocar que el sistema vuelva a su estado inicial es la <strong>detección de salida del estado de emergencia</strong>. En nuestro sistema, cuando se detecte la pulsación del botón de emergencia, el <code>Director</code> pasará al modo <code>D1</code> (<strong>para de emergencia</strong>) y, cuando se desenclave la seta de emergencia, pasará al estado <code>A6</code> (<strong>puesta en estado inicial</strong>).</p>
+<p>La detección del desenclavamiento de la seta de emergencia se realiza usando el flanco:
+<div class="highlight"><pre><span></span><code><span class="c1">// en m_GestorEntradas</span>
+<span class="n">FlancoPulsadorEmergencia</span><span class="p">(</span><span class="n">CLK</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">i_PulsadorEmergencia</span><span class="o">,</span><span class="w"> </span><span class="n">Q</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">DesactivarAlarma</span><span class="p">)</span><span class="o">;</span>
+</code></pre></div></p>
+<p>Esto activará la señal <code>DesactivarAlarma</code> cuando se produzca el <strong>flanco positivo</strong> del <code>i_PulsadorEmergencia</code> (recuerde que el pulsador de emergencia tiene <strong>lógica inversa</strong>), la cual la introduciremos en la orden de reinicio:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// en m_GestorComandos</span>
+<span class="p">[</span><span class="o">...</span><span class="p">]</span>
+
+<span class="c1">// ReiniciaEstado &lt;-- desde la visualización</span>
+<span class="c1">// DesactivarAlarma &lt;-- tras desenclavar la seta de emergencia</span>
+<span class="c1">// TemporizadorReinicio.Q &lt;-- tras final del temporizador de los pulsadores</span>
+<span class="n">OrdenReinicio</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">ReiniciaEstado</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">DesactivarAlarma</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">TemporizadorReinicio</span><span class="o">.</span><span class="n">Q</span><span class="o">;</span>
+<span class="n">OrdenPausa</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="n">OrdenReinicio</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">PausaEstado</span><span class="o">;</span>
+</code></pre></div>
+<p>Nótese como la señal <code>DesactivarAlarma</code> es una de las condiciones que pueden activar la <code>OrdenReinicio</code>.</p>
+<h3 id="temporizador-para-la-desconexion-automatica-por-falta-de-actividad">Temporizador para la desconexión automática por falta de actividad<a class="headerlink" href="#temporizador-para-la-desconexion-automatica-por-falta-de-actividad" title="Permanent link">&para;</a></h3>
+<p>Para evitar mantener la parte operativa conectada de manera indefinida, hemos añadido al programa un temporizador de desconexión que monitoriza el tiempo que el sistema está <strong>conectado y en reposo</strong>. Tras un determinado tiempo en esta situación, el sistema se desconectará automáticamente.</p>
+<p>Esto se implementa de la siguiente manera:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// en m_GestionAcciones</span>
+<span class="n">TemporizadorDesconexion</span><span class="p">(</span>
+<span class="w">    </span><span class="k">IN</span><span class="w">  </span><span class="o">:=</span><span class="w"> </span><span class="n">i_SistemaConectado</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">SistemaEnReposo</span><span class="o">,</span>
+<span class="w">    </span><span class="n">PT</span><span class="w">  </span><span class="o">:=</span><span class="w"> </span><span class="n">TiempoDesconexion</span><span class="o">,</span>
+<span class="p">)</span><span class="o">;</span>
+
+<span class="p">[</span><span class="o">...</span><span class="p">]</span>
+
+<span class="n">o_SistemaDesconecta</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">TemporizadorDesconexion</span><span class="o">.</span><span class="n">Q</span><span class="o">;</span><span class="w"> </span><span class="c1">// Desconexión de la parte operativa</span>
+</code></pre></div>
+<p>En nuestro programa, el valor por defecto de <code>TiempoDesconexion</code> será de <strong>5 minutos</strong>.</p>
+<p>El sistema se considera en reposo cuando todos los <strong>FBs</strong> están en su etapa inicial esperando a que se les <em>active</em>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">SistemaEnReposo</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">Coordinador</span><span class="o">.</span><span class="n">Ready</span>
+<span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="n">EstacionRestaurar</span><span class="o">.</span><span class="n">Ready</span>
+<span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="n">ProduccionPreparar</span><span class="o">.</span><span class="n">Ready</span>
+<span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="n">ProduccionFinalizar</span><span class="o">.</span><span class="n">Ready</span>
+<span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="n">VagonetaCargar</span><span class="o">.</span><span class="n">Ready</span>
+<span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="n">VagonetaTrasladar</span><span class="o">.</span><span class="n">Ready</span>
+<span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="n">CintaEvacuar</span><span class="o">.</span><span class="n">Ready</span><span class="o">;</span>
+</code></pre></div>
+<p>Recuerde que, en las rutinas GRAFCET, los <strong>FBs</strong> activan una señal llamada <code>Ready</code> en su etapa inicial, lo que utilizaremos para identificar el reposo del sistema.</p>
+<h3 id="uso-de-una-lista-de-texto">Uso de una lista de texto<a class="headerlink" href="#uso-de-una-lista-de-texto" title="Permanent link">&para;</a></h3>
+<p>Para poder tener una descripción textual asociada a los modos de la guía GEMMA, vamos a utilizar una lista de texto (<em>Text List</em>) asociada a los valores numéricos del <code>Modo</code>. Conceptualmente, esta lista puede entenderse como un <em>array</em> de cadenas de texto al que se puede acceder mediante un índice numérico:</p>
+<p><img alt="Lista de texto" src="../../../images/04_tc3_carro_extendido/Carro_Extendido_Estructurado_GEMMA_Lista_Texto.png" width="300px" /></p>
+<p>Para crear una lista de texto, basta con hacer <strong>CD</strong> sobre el proyecto y seleccionar <code>Add &gt; Text List...</code>:</p>
+<p><img alt="Crear lista de texto" src="../../../images/04_tc3_carro_extendido/Carro_Extendido_Estructurado_GEMMA_Lista_Texto_Crear.png" width="400px" /></p>
+<p>Posteriormente, se le da un nombre (<code>TL_GEMMA</code> en nuestro proyecto) y se procede a introducir las descripciones de los modos.</p>
+<p>En nuestro proyecto, usaremos esta lista de texto para poder mostrar en la visualización la descripción textual del modo actual. Para ello, insertaremos un rectángulo en la visualización con estos parámetros:</p>
+<p><img alt="Lista Texto en VISU" src="../../../images/04_tc3_carro_extendido/Carro_Extendido_Estructurado_GEMMA_Visu_Modo.png" width="600px" /></p>
+<details class="info">
+<summary>Parámetros</summary>
+<ul>
+<li>Text &gt; Text = [%s]</li>
+<li>Dynamic texts<ul>
+<li>Text List &gt; [<code>TL_GEMMA</code>]</li>
+<li>Text index &gt; [<code>MAIN.Estacion.ModoActual</code>]</li>
+</ul>
+</li>
+</ul>
+</details>
+<p>Nótese como ahora tenemos el <em>placeholder</em> de <code>%s</code> (<em>string</em>) y cómo se especifica la lista de texto y el índice a utilizar para determinar la descripción a mostrar.</p>
+<h2 id="mejoras-y-extensiones">Mejoras y extensiones<a class="headerlink" href="#mejoras-y-extensiones" title="Permanent link">&para;</a></h2>
+<p>Además de las funcionalidades anteriores, se ha introducido una serie de mejoras a la implementación estructurada.</p>
+<h3 id="gestor-de-comandos">Gestor de comandos<a class="headerlink" href="#gestor-de-comandos" title="Permanent link">&para;</a></h3>
+<p>Se ha añadido un nuevo método <code>m_GestorComandos</code> para la gestión de los comandos de <strong>Reinicio</strong> y <strong>Pausa</strong>.</p>
+<p>Para el <strong>reinicio</strong>, se utiliza para ejecutar el código del temporizador de reinicio manual <a href="#temporizador-de-reinicio-manual">(➡️)</a> y definir la orden de reinicio completa incluyendo los tres casos contemplados:</p>
+<ul>
+<li>Reinicio manual</li>
+<li>Salida de parada de emergencia</li>
+<li>Botón de reinicio en la visualización</li>
+</ul>
+<p>Para la <strong>pausa</strong>, se captura la pulsación del botón correspondiente en la visualización <strong>cuando no estemos en situación de reinicio</strong>.</p>
+<p>Esta gestión se realiza de la siguiente manera:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// en m_GestorComandos</span>
+<span class="n">TemporizadorReinicio</span><span class="p">(</span>
+<span class="w">    </span><span class="k">IN</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">i_PulsadorMarcha</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="n">i_PulsadorParada</span><span class="o">,</span>
+<span class="w">    </span><span class="n">PT</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">TiempoReinicio</span><span class="o">,</span>
+<span class="p">)</span><span class="o">;</span>
+
+<span class="c1">// ReiniciaEstado &lt;-- desde la visualización</span>
+<span class="c1">// DesactivarAlarma &lt;-- tras desenclavar la seta de emergencia</span>
+<span class="c1">// TemporizadorReinicio.Q &lt;-- tras final del temporizador de los pulsadores</span>
+<span class="n">OrdenReinicio</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">ReiniciaEstado</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">DesactivarAlarma</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">TemporizadorReinicio</span><span class="o">.</span><span class="n">Q</span><span class="o">;</span>
+<span class="n">OrdenPausa</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="n">OrdenReinicio</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">PausaEstado</span><span class="o">;</span>
+</code></pre></div>
+<h3 id="gestion-del-modo">Gestión del modo<a class="headerlink" href="#gestion-del-modo" title="Permanent link">&para;</a></h3>
+<p>El método <code>m_GestorModo</code> ha sido modificado para contemplar dos mejoras adicionales.</p>
+<h4 id="centralizacion-de-la-informacion-del-modo">Centralización de la información del modo<a class="headerlink" href="#centralizacion-de-la-informacion-del-modo" title="Permanent link">&para;</a></h4>
+<p>En la llamada al <code>Director</code>, se copia la variable de salida <code>Modo</code> del bloque funcional en la variable <code>ModoActual</code>, que es la que se usa en todos los métodos de la estación, así como en la visualización.</p>
+<div class="highlight"><pre><span></span><code><span class="n">Director</span><span class="p">(</span>
+<span class="w">    </span><span class="n">CondicionInicial</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">CondicionInicial</span><span class="o">,</span><span class="w"> </span>
+<span class="w">    </span><span class="n">CondicionMarcha</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">CondicionMarcha</span><span class="o">,</span><span class="w"> </span>
+<span class="w">    </span><span class="n">OrdenReinicio</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">ReiniciaEstado</span><span class="o">,</span><span class="w"> </span>
+<span class="w">    </span><span class="n">OrdenEmergencia</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="n">i_PulsadorEmergencia</span><span class="o">,</span><span class="w"> </span>
+<span class="w">    </span><span class="n">OrdenMarcha</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">SolicitudProduccion</span><span class="o">,</span><span class="w"> </span>
+<span class="w">    </span><span class="n">OrdenParada</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">SolicitudParada</span><span class="o">,</span><span class="w"> </span>
+<span class="w">    </span><span class="n">PreparacionConcluida</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">ProduccionPreparar</span><span class="o">.</span><span class="n">Done</span><span class="o">,</span><span class="w"> </span>
+<span class="w">    </span><span class="n">FinalizacionConcluida</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">ProduccionFinalizar</span><span class="o">.</span><span class="n">Done</span><span class="o">,</span><span class="w"> </span>
+<span class="w">    </span><span class="n">TareaFinalizada</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">TareaFinalizada</span><span class="o">,</span><span class="w"> </span>
+<span class="w">    </span><span class="n">CicloFinalizado</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">Coordinador</span><span class="o">.</span><span class="n">Done</span><span class="o">,</span>
+<span class="w">    </span><span class="n">ModoManual</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">i_SelectorManual</span><span class="o">,</span><span class="w"> </span>
+<span class="w">    </span><span class="n">Modo</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">ModoActual</span><span class="o">,</span><span class="w"> </span><span class="c1">// &lt;-- Copia de Modo a ModoActual</span>
+<span class="p">)</span><span class="o">;</span>
+</code></pre></div>
+<p>Nótese el uso del operador <code>=&gt;</code> para realizar esta asignación.</p>
+<h4 id="inicializacion-de-maniobraspendientes">Inicialización de <code>ManiobrasPendientes</code><a class="headerlink" href="#inicializacion-de-maniobraspendientes" title="Permanent link">&para;</a></h4>
+<p>En esta versión vamos a inicializar el valor de <code>ManiobrasPendientes</code> cuando se produzca la transición de entrada al modo <code>F2</code> (<strong>Secuencia de Preparación</strong>). Para ello utilizaremos los valores de <code>ModoActual</code> y <code>ModoAnterior</code> para detectar esta transición.</p>
+<div class="highlight"><pre><span></span><code><span class="k">IF</span><span class="w"> </span><span class="p">(</span><span class="n">ModoActual</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">E_GEMMA</span><span class="o">.</span><span class="n">F2_SecuenciaPreparacion</span><span class="p">)</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="p">(</span><span class="n">ModoAnterior</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="n">E_GEMMA</span><span class="o">.</span><span class="n">F2_SecuenciaPreparacion</span><span class="p">)</span><span class="w"> </span><span class="k">THEN</span>
+<span class="w">    </span><span class="k">IF</span><span class="w"> </span><span class="n">ProduccionPorLotes</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="p">(</span><span class="n">ManiobrasPendientes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">THEN</span>
+<span class="w">        </span><span class="n">ManiobrasPendientes</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">ManiobrasSolicitadas</span><span class="o">;</span>
+<span class="w">    </span><span class="n">END_IF</span><span class="o">;</span>
+<span class="n">END_IF</span><span class="o">;</span>
+</code></pre></div>
+<p>Para poder detectar esta transición de modo es necesario guardar el valor del modo actual en la variable <code>ModoAnterior</code> al final de cada ciclo.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Se guarda el estado actual para la comparativa del próximo ciclo</span>
+<span class="n">ModoAnterior</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">Director</span><span class="o">.</span><span class="n">Modo</span><span class="o">;</span>
+</code></pre></div>
+<p>Finalmente, tenga en cuenta que esta inicialización la realizaremos cuando estemos produciendo por lotes (se controla con un botón en la visualización) y el número de maniobras pendientes valga <code>0</code> (es decir, hemos terminado el lote anterior, si lo hubiera habido).</p>
+<p><img alt="Producción por lotes" src="../../../images/04_tc3_carro_extendido/Carro_Extendido_Estructurado_GEMMA_ProduccionLotes.png" width="300px" /></p>
+<h3 id="gestion-del-panel">Gestión del panel<a class="headerlink" href="#gestion-del-panel" title="Permanent link">&para;</a></h3>
+<p>En el método <code>m_GestorPanel</code> se ha introducido el uso de <code>ModoActual</code> para actuar sobre los elementos del panel:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Intermitencia</span><span class="p">(</span><span class="n">Enable</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">TRUE</span><span class="p">)</span><span class="o">;</span>
+
+<span class="n">MarchaAutorizada</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">CondicionInicial</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">CondicionMarcha</span><span class="o">;</span>
+
+<span class="n">SistemaEnEspera</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">SistemaEnReposo</span><span class="w"> </span>
+<span class="w">    </span><span class="k">OR</span><span class="w"> </span><span class="n">Coordinador</span><span class="o">.</span><span class="n">Done</span><span class="w"> </span>
+<span class="w">    </span><span class="k">OR</span><span class="w"> </span><span class="n">VagonetaCargar</span><span class="o">.</span><span class="n">FaltaMaterial</span><span class="o">;</span>
+
+<span class="n">SistemaEnMarcha</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">Director</span><span class="o">.</span><span class="n">EnProduccion</span><span class="w"> </span>
+<span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="n">SistemaEnEspera</span><span class="o">;</span>
+
+<span class="n">o_AvisadorSonoro</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">ProduccionFinalizar</span><span class="o">.</span><span class="n">AvisadorAcustico</span><span class="w"> </span>
+<span class="w">    </span><span class="k">OR</span><span class="w"> </span><span class="p">((</span><span class="n">ProduccionPreparar</span><span class="o">.</span><span class="n">AvisadorAcustico</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">VagonetaCargar</span><span class="o">.</span><span class="n">AvisoMaterial</span><span class="p">)</span><span class="w"> </span>
+<span class="w">        </span><span class="k">AND</span><span class="w"> </span><span class="n">Intermitencia</span><span class="o">.</span><span class="n">Q</span><span class="p">)</span><span class="o">;</span>
+
+<span class="c1">// la lámpara de alarma tiene ahora en cuenta el estado de emergencia</span>
+<span class="n">o_LamparaAlarma</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="p">(</span><span class="n">ModoActual</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">E_GEMMA</span><span class="o">.</span><span class="n">D1_ParadaEmergencia</span><span class="p">)</span><span class="w"> </span>
+<span class="w">    </span><span class="k">OR</span><span class="w"> </span><span class="p">(</span><span class="n">SistemaEnReposo</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="n">MarchaAutorizada</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">Intermitencia</span><span class="o">.</span><span class="n">Q</span><span class="p">)</span>
+<span class="w">    </span><span class="k">OR</span><span class="w"> </span><span class="p">(</span><span class="n">VagonetaCargar</span><span class="o">.</span><span class="n">FaltaMaterial</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">Intermitencia</span><span class="o">.</span><span class="n">Q</span><span class="p">)</span><span class="o">;</span>
+
+<span class="n">o_LamparaMarcha</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">i_SistemaConectado</span><span class="w"> </span>
+<span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="p">(</span><span class="n">SistemaEnMarcha</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="p">(</span><span class="n">SistemaEnEspera</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">Intermitencia</span><span class="o">.</span><span class="n">Q</span><span class="p">))</span><span class="o">;</span>
+
+<span class="c1">// usamos ahora el modo para identificar la parada a final de ciclo</span>
+<span class="n">o_LamparaParada</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">SistemaEnEspera</span><span class="w"> </span>
+<span class="w">    </span><span class="k">OR</span><span class="w"> </span><span class="p">((</span><span class="n">ModoActual</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">E_GEMMA</span><span class="o">.</span><span class="n">A2_ParadaSolicitadaFinalCiclo</span><span class="p">)</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">Intermitencia</span><span class="o">.</span><span class="n">Q</span><span class="p">)</span><span class="o">;</span><span class="w"> </span>
+
+<span class="n">o_LamparaMaterial</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">SiloNivelBajo</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">Intermitencia</span><span class="o">.</span><span class="n">Q</span><span class="o">;</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/famoreno/tc3_tutorial" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../javascripts/ui-course.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
