@@ -1,4 +1,5 @@
 # 🚟 Proyecto Monolítico
+
 !!! info "Nota"
     Esta práctica es **entregable** y es el nivel **mínimo** a alcanzar.
 
@@ -15,9 +16,11 @@
     - **Riesgo de errores encadenados:** Un cambio en una sección del código puede impactar de forma inesperada en otras.
 
 ## Ejemplo de apoyo
-Utilice el ejemplo del [**carro extendido monolítico**](../contenidos/04_tc3_carro_extendido/04_tc3_carro_extendido_mono.md) como apoyo para entender la estructura del proyecto.
+
+Utilice el ejemplo del [**carro extendido monolítico**](../04_tc3_carro_extendido/04_tc3_carro_extendido_mono.md) como apoyo para entender la estructura del proyecto.
 
 ## Entregables
+
 - GRAFCET del proyecto monolítico en formato PDF.
 - Programa TC3 con la lógica de control del proyecto en formato `.tnzip`.
 
@@ -25,6 +28,7 @@ Utilice el ejemplo del [**carro extendido monolítico**](../contenidos/04_tc3_ca
     Siga las instrucciones en [este documento](../../pdfs/0e_proyecto_automatizacion.pdf){target="_blank"} referidas al nombre del entregable.
 
 ## Funcionalidades
+
 El proyecto desarrollado debe tener las siguientes funcionalidades:
 
 ??? info "Requeridas"
