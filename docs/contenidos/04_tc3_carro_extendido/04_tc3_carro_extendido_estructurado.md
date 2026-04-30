@@ -277,6 +277,7 @@ En esta versión, usaremos rutinas GRAFCET para implementar algunas secuencias r
     Inspeccione el código de los **FBs** de preparación, finalización y restauración en el ejemplo para ver la secuencia de pasos en cada caso. Nótese que, en los dos primeros, lo único que se hace en este ejemplo es activar el avisador sonoro durante un tiempo. En el de restauración, por el contrario, sí se realiza una secuencia de pasos para recuperar las condiciones iniciales.
 
 ### Uso de funciones
+
 En TwinCAT 3, una función (*Function*, **FUN**) es un bloque de código independiente que realiza un cálculo y devuelve un valor **sin tener un estado interno persistente**, es decir, no mantiene memoria entre ejecuciones.
 
 Así, una función recibe datos de entrada, ejecuta una operación y devuelve un único valor de forma obligatoria. Su uso se circunscribe, normalmente, para realizar cálculos concretos y reutilizables (por ejemplo, acondicionamiento de señales), simplificar expresiones complejas, evitar duplicar lógica matemática o de procesamiento y hacer el código más claro y modular
@@ -309,6 +310,7 @@ SiloDistanciaMedida := F_ScaleAnalogSensor(
 donde `F_ScaleAnalogSensor` es el nombre de la función y `RawInput` y `Parameters` son sus variables de entrada. La salida se le asignará a la variable `SiloDistanciaMedida`.
 
 ### Uso de estructuras
+
 En TwinCAT 3, una estructura (**STRUCT**) es un tipo de dato compuesto que agrupa varias variables (que pueden ser de distinto tipo) bajo un mismo nombre.
 
 En este ejemplo se utilizan para guardar los parámetros que pasan a la función de acondicionamiento de señales analógicas: `F_ScaleAnalogSensor`. Nótese como en su sección de variables de entrada se incluyen:
@@ -341,10 +343,12 @@ END_TYPE
 Puede encontrar más información sobre las estructuras, su uso y declaración [aquí](../../01_conceptos/#estructuras).
 
 ### Mejoras y extensiones
+
 Finalmente, en esta implementación del carro extendido estructurado se han realizado una serie de **mejoras y extensiones** respecto a la versión monolítica, que se explican a continuación.
 
 #### Implementación del modo manual correcta y adecuada
-A diferencia de como se hacía en la versión monolítica, se ha implementado la identificación del modo manual/automático **sin acceder de manera directa**, en el programa principal `MAIN`, a la variable asociada al conmutador de selección de modo del panel del operador. Esta gestión se realiza ahora dentro del **FB** de la propia estación, encapsulando esta funcionalidad dentro del mismo y evitando el *artificio* anterior. 
+
+A diferencia de como se hacía en la versión monolítica, se ha implementado la identificación del modo manual/automático **sin acceder de manera directa**, en el programa principal `MAIN`, a la variable asociada al conmutador de selección de modo del panel del operador. Esta gestión se realiza ahora dentro del **FB** de la propia estación, encapsulando esta funcionalidad dentro del mismo y evitando el *artificio* anterior.
 
 En este **FB** dispondremos de una variable de estado llamada `ModoAutomatico` que tomará el valor `TRUE` cuando el selector de modo así lo indique. Esta variable toma su valor **dentro del método de gestor de entradas**:
 
@@ -370,6 +374,7 @@ END_IF;
 De esta manera, dejamos de exponer, de forma directa, la variable asociada al *hardware* (`i_SelectorManual`) a los **FBs** distintos al de la estación.
 
 #### Implementación sencilla de la pausa a final de ciclo
+
 Para implementar la **pausa** (que no parada) al final de ciclo, hemos utilizado la señal `Ack` de la rutina GRAFCET del `Coordinador`. Como se explicó en [su sección correspondiente](#rutina-de-coordinacion), el `Coordinador` implementa un ciclo de producción completo del sistema, finalizando en la etapa `End` donde quedará a la espera de que la señal `Ack` se active antes de volver al inicio.
 
 En la llamada al **FB** del `Coordinador`, esta señal `Ack` está asignada a la variable `ContinuacionAutorizada`:
@@ -404,7 +409,8 @@ SolicitudMarcha := FlancoPulsadorMarcha.Q;
 Así, cuando la pausa a final de ciclo esté activa, pasaremos al siguiente ciclo cuando se pulse el pulsador de marcha.
 
 #### Implementación sencilla de la parada pedida
-En esta versión, hemos utilizado la captura del flanco del pulsador de parada para **solicitar la parada de la producción al final del ciclo actual**. De esta manera, cuando se pulse el pulsador de parada durante la ejecución de alguno de los ciclos, el sistema capturará este suceso y, cuando se alcance el final de ciclo, el sistema dejará de producir inmediatamente. 
+
+En esta versión, hemos utilizado la captura del flanco del pulsador de parada para **solicitar la parada de la producción al final del ciclo actual**. De esta manera, cuando se pulse el pulsador de parada durante la ejecución de alguno de los ciclos, el sistema capturará este suceso y, cuando se alcance el final de ciclo, el sistema dejará de producir inmediatamente.
 
 Esto se realiza en el método de gestión de entradas:
 
@@ -421,13 +427,14 @@ Posteriormente, este valor se le pasa como entrada al `Director` para que evoluc
 
 Fíjese en este trozo de código del `FB_Director`. En él se puede observar que, una vez dada la orden de producir (`OrdenProducción = TRUE`, lo que *dispara* la ejecución del `Coordinador`), el `Director` queda a la espera de que ocurra alguna de estas dos situaciones:
 
-1. Se acaba la producción (`FinProducción = TRUE`). En este caso, hemos alcanzado el final de la producción, lo cual ocurre cuando el número de maniobras pendientes ha llegado a `0` en producción por lotes. Entonces se pasa a **finalizar la producción** y termina el programa.
-2. Se ha solicitado la parada a final de ciclo (`SolicitudParada = TRUE`). En este caso, esta variable se ha activado porque **en algún momento** durante la producción se pulsó el pulsador de parada. Entonces, se activa una señal de `ParadaSolicitada`, que se usará para indicar la solicitud en el panel del operador, y se espera a que alcancemos el final de ciclo. Esto se producirá cuando el `Coordinador` termine uno de sus ciclos.
+1.  Se acaba la producción (`FinProducción = TRUE`). En este caso, hemos alcanzado el final de la producción, lo cual ocurre cuando el número de maniobras pendientes ha llegado a `0` en producción por lotes. Entonces se pasa a **finalizar la producción** y termina el programa.
+2.  Se ha solicitado la parada a final de ciclo (`SolicitudParada = TRUE`). En este caso, esta variable se ha activado porque **en algún momento** durante la producción se pulsó el pulsador de parada. Entonces, se activa una señal de `ParadaSolicitada`, que se usará para indicar la solicitud en el panel del operador, y se espera a que alcancemos el final de ciclo. Esto se producirá cuando el `Coordinador` termine uno de sus ciclos.
 
 !!! info "Consejo"
     Inspeccione el código del **FB** del `Director` y el `Coordinador` para entender la interacción entre ellos en este caso. Preste especial atención al valor que toman las variables utilizadas en las condiciones de transición entre etapas, ya que se ha utilizado una semántica reforzada para clarificar el proceso.
 
 #### Mejora de la gestión de falta material
+
 En esta versión, señalizaremos la falta de material en dos fases:
 
 - Activación simultánea de avisador sonoro y luminoso (luz de falta material).

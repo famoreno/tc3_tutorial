@@ -8,6 +8,7 @@ Bienvenido/a al tutorial de TwinCAT 3. Aquí encontrarás guías y material de a
     Usa el menú lateral y el buscador para moverte rápido.
 
 ## Contenidos generales
+
 - [Beckhoff y TwinCAT 3](contenidos/00_presentacion.md)
 - [Conceptos Generales](contenidos/01_conceptos.md)
     - Crear soluciones y proyectos, declarar variables, crear visualizaciones, selección de controlador, búsqueda en red, etc.
@@ -26,10 +27,10 @@ Bienvenido/a al tutorial de TwinCAT 3. Aquí encontrarás guías y material de a
     - [Estructurado con GEMMA](contenidos/04_tc3_carro_extendido/04_tc3_carro_extendido_estructurado_gemma.md)
 
 ## Prácticas
+
 - [Descripción general](contenidos/01e_practicas.md)
 - [Demo](contenidos/05_tc3_practicas/05_tc3_demo.md)
 - [Carro básico](contenidos/05_tc3_practicas/05_tc3_carro_basico.md)
 - [Proyecto monolítico](contenidos/05_tc3_practicas/05_tc3_proyecto_mono.md)
-<!-- - [Estación estructurada]()
-- [Estación estructurada con GEMMA]()
--->
+- [Proyecto estructurado](contenidos/05_tc3_practicas/05_tc3_proyecto_estructurado.md)
+- [Proyecto estructurado + GEMMA](contenidos/05_tc3_practicas/05_tc3_proyecto_estructurado_gemma.md)

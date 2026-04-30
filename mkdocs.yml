@@ -51,15 +51,15 @@ nav:
       - ✏️ Descripción: contenidos/04_tc3_carro_extendido.md
       - 🧱 Monolítico: contenidos/04_tc3_carro_extendido/04_tc3_carro_extendido_mono.md
       - 🗂️ Estructurado: contenidos/04_tc3_carro_extendido/04_tc3_carro_extendido_estructurado.md
-      - 🧩 Estructurado + GEMMA: contenidos/04_tc3_carro_extendido/04_tc3_carro_extendido_estructurado_gemma.md
+      - ⚙️ Estructurado + GEMMA: contenidos/04_tc3_carro_extendido/04_tc3_carro_extendido_estructurado_gemma.md
       # - 🧩 Impl. Funcional: contenidos/04_tc3_carro_extendido/04_tc3_carro_extendido_funcional.md
   - Prácticas:
     - ℹ️ Información: contenidos/01e_practicas.md 
     - 👋 Demo: contenidos/05_tc3_practicas/05_tc3_demo.md
     - 🛒 Carro básico: contenidos/05_tc3_practicas/05_tc3_carro_basico.md
     - 🧱 Proyecto monolítico: contenidos/05_tc3_practicas/05_tc3_proyecto_mono.md
-    # - 🗂️ Proyecto estructurado: contenidos/05_tc3_practicas/05_tc3_proyecto_estructurado.md
-    # - ⚙️ Proyecto estructurado + GEMMA: contenidos/05_tc3_practicas/05_tc3_proyecto_gemma.md
+    - 🗂️ Proyecto estructurado: contenidos/05_tc3_practicas/05_tc3_proyecto_estructurado.md
+    - ⚙️ Proyecto estructurado + GEMMA: contenidos/05_tc3_practicas/05_tc3_proyecto_estructurado_gemma.md
     # - 🧩 Proyecto funcional: contenidos/05_tc3_practicas/05_tc3_proyecto_funcional.md
 
 
