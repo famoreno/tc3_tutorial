@@ -1,4 +1,5 @@
 # 👋 Práctica Demo
+
 !!! info "Nota"
     Esta práctica **NO** es entregable.
 
@@ -11,4 +12,5 @@ En esta primera práctica, solo hay que replicar el [**ejemplo demo**](../02_tc3
 - Compilar y poner en ejecución un programa de TwinCAT 3.
 
 ## Entregables
+
 Ninguno.

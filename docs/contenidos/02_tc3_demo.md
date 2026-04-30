@@ -7,7 +7,7 @@
 
 ## 📝 Descripción del Proyecto
 
-El proyecto Demo pretende ser un **Hola Mundo** para **autómatas programables (PLC)**. 
+El proyecto Demo pretende ser un **Hola Mundo** para **autómatas programables (PLC)**.
 
 Es un proyecto mínimo y funcional, que muestra la declaración y el uso básico de variables booleanas y enteras, ubicadas en los espacios de memoria de marcas, imagen de entrada e imagen de salida. Cubriendo los elementos esenciales de programación de los lenguajes de la norma **IEC 61131-3** para la programación de PLC.
 
@@ -64,13 +64,13 @@ Este proyecto incluye además, una **visualización** elemental que permite inte
 
 - Mediante el Campus Virtual
 - Mediante GIT
---> 
+-->
 ### Mediante el Campus Virtual
 
 1. **Copiar** a tu equipo local el fichero:
-    
-    `CV → Automatización → ejemplos → 1_tc3_demo → tc3_demo.tnzip` 
-    
+
+    `CV → Automatización → ejemplos → 1_tc3_demo → tc3_demo.tnzip`
+
     que hay en la carpeta del campus virtual.
 
 2. **Seguir el procedimiento** descrito [aquí](../../contenidos/01_conceptos/#abrir-un-fichero-tnzip) para generar la **Solución** a partir del fichero.
@@ -103,11 +103,12 @@ git clone https://github.com/vetorres-uma/TC3_Demo.git
 
 1. Crear una solución de TwinCAT3 con nombre `tc3_demo` [➡️](../../contenidos/01_conceptos/#crear-proyecto-tc3)
 2. Crear un proyecto PLC con nombre `demo_PLC` [➡️](../../contenidos/01_conceptos/#crear-proyecto-plc)
-    
+
     !!! warning "Importante"
         En este ejemplo no utilizaremos bloques funcionales (**FB**) sino que implementaremos toda la funcionalidad directamente en el programa `MAIN`.
 
 3. Declarar las variables en el programa `MAIN` [➡️](../../contenidos/01_conceptos/#declaracion-de-variables)
+
     ```pascal
     PROGRAM MAIN
     VAR
@@ -118,6 +119,7 @@ git clone https://github.com/vetorres-uma/TC3_Demo.git
     ```
 
 4. Escribir el código
+
     ```pascal
     // Uso de una variable numérica (se incrementa con cada ciclo de ejecución)
     ContadorCiclos := ContadorCiclos + 1;
@@ -127,9 +129,9 @@ git clone https://github.com/vetorres-uma/TC3_Demo.git
     ```
 
 5. Diseñar la visualización añadiendo: [➡️](../../contenidos/01_conceptos/#crear-visualizacion)
-    
+
     ![Imagen](../images/02_tc3_demo/VISU_Demo.png){width=240px}
-    
+
     !!! tip "Sugerencia"
         Los colores especificados para los elementos son simplemente un ejemplo, pero pueden ser escogidos libremente.
 
@@ -139,50 +141,43 @@ git clone https://github.com/vetorres-uma/TC3_Demo.git
             - Texts > Text = Contador
 
     2. Rectángulo (*Rectangle*) para el valor de `ContadorCiclos`
-   
+
         ??? info "Parámetros"
             - Color > Normal state > Frame color = [0, 0, 0]
-            - Color > Normal state > Fill color = [255, 255, 255]        
+            - Color > Normal state > Fill color = [255, 255, 255]
             - Texts > Text = [%d]
                 - *Formato estilo printf que indica que se va a sustituir por un número entero.*
             - Text variables > Text variable = [`MAIN.ContadorCiclos`]
-   
+
     3. Botón (*Button*) para reiniciar el contador
-        
+
         ??? info "Parámetros"
             - Texts > Text = [**Reinicia**]
-            - Inputconfiguration 
+            - Inputconfiguration
                 - OnMouseClick > Configure > Execute ST-Code = [`MAIN.ContadorCiclos := 0;`]
-   
+
     4. Botón (*Button*) para el pulsador
 
         ??? info "Parámetros"
             - Texts > Text = [**Pulsador**]
             - Inputconfiguration
                 - Tap > Variable = [`MAIN.i_Pulsador`]
-    
+
     5. Rectángulo (*Rectangle*) para la lámpara
-        
+
         ??? info "Parámetros"
             - Colors > Normal state > Frame color = [0, 64, 0]
-            - Colors > Normal state > Fill color = [0, 64, 0]       
+            - Colors > Normal state > Fill color = [0, 64, 0]
             - Colors > Alarm state > Frame color = [0, 128, 0]
-            - Colors > Alarm state > Fill color = [0, 128, 0]       
+            - Colors > Alarm state > Fill color = [0, 128, 0]
             - Texts > Text = [**Lámpara**]
             - Color variables > Toggle color = [`MAIN.o_Lampara`]
 
 6. **Poner en marcha** el proyecto [➡️](../contenidos/01b_ejecucion.md)
-11. **Utilizar la visualización** creada PLC para facilitar la prueba:
-    1. Reiniciar el contador desde la visualización pulsando en el botón **Reinicia**.
-    2. Cambiar el valor de la lámpara de marcha pulsando el **botón de marcha** en la visualización.
-    3. Alternativamente, **escribe o fuerza** las variables deseadas desde TwinCAT 3.
-
-<!-- 6. **Compilar** el proyecto [➡️](../../contenidos/01_conceptos/#ejecutar-programa)
-7. Seleccionar el **simulador** (`UmRT_Default`) como controlador [➡️](../../contenidos/01_conceptos/#seleccionar-el-controlador)
-8. **Activar la configuración** y reiniciar TwinCAT 3 en modo **Ejecución (Run Mode)** [➡️](../../contenidos/01_conceptos/#activar-la-configuracion)
-9. **Cargar el código** en el controlador (**Login**) [➡️](../../contenidos/01_conceptos/#transferir-y-ejecutar-el-programa)
-10. Poner el código en **ejecución** (**Start**) [➡️](../../contenidos/01_conceptos/#transferir-y-ejecutar-el-programa)
--->
+7. **Utilizar la visualización** creada PLC para facilitar la prueba:
+    1.  Reiniciar el contador desde la visualización pulsando en el botón **Reinicia**.
+    2.  Cambiar el valor de la lámpara de marcha pulsando el **botón de marcha** en la visualización.
+    3.  Alternativamente, **escribe o fuerza** las variables deseadas desde TwinCAT 3.
 
 ---
 
@@ -194,19 +189,19 @@ Ahora vamos a ejecutar el programa en un **controlador remoto** (por ejemplo, un
         Abrir la hoja de cálculo con la lista de entradas y salidas del sistema FMS200, seleccionar la pestaña correspondiente a tu estación y escoger un **pulsador** de entre los elementos de entrada y una **lámpara** de entre los elementos de salida.
 
 2. **Vincular** los terminales/canales correspondiente con las variables de E/S [➡️](../../contenidos/01_conceptos/#vinculacion-de-variables-y-es)
-    1. Variable de entrada `i_Pulsador`
-    1. Variable de salida `i_Lampara`
+    2.  Variable de entrada `i_Pulsador`
+    2.  Variable de salida `i_Lampara`
 
-8. **Activar la configuración** y reiniciar TwinCAT 3 en modo **Ejecución (Run Mode)** [➡️](../../contenidos/01_conceptos/#activar-la-configuracion)
-9. **Cargar el código** en el controlador (**Login**) [➡️](../../contenidos/01_conceptos/#transferir-y-ejecutar-el-programa)
-10. Poner el código en **ejecución** (**Start**) [➡️](../../contenidos/01_conceptos/#transferir-y-ejecutar-el-programa)
-11. Comprobar que, accionando el pulsador físico, se enciende la lámpara física.
-12. **Utilizar la visualización** integrada en el proyecto PLC para facilitar la prueba:
+3. **Activar la configuración** y reiniciar TwinCAT 3 en modo **Ejecución (Run Mode)** [➡️](../../contenidos/01_conceptos/#activar-la-configuracion)
+4. **Cargar el código** en el controlador (**Login**) [➡️](../../contenidos/01_conceptos/#transferir-y-ejecutar-el-programa)
+5. Poner el código en **ejecución** (**Start**) [➡️](../../contenidos/01_conceptos/#transferir-y-ejecutar-el-programa)
+6. Comprobar que, accionando el pulsador físico, se enciende la lámpara física.
+7. **Utilizar la visualización** integrada en el proyecto PLC para facilitar la prueba:
     - Comprobar en la visualización que, accionando el pulsador físico, cambia de estado la lámpara.
     - Comprobar en la visualización que, accionando el botón de la visualización, **ni se enciende, ni cambia de estado la lámpara**.
 
         !!! warning "Importante"
-            Esto se debe a que la ejecución del ciclo básico hace que el valor del pulsador **se actualice con el valor del pulsador físico** al inicio de cada ciclo, sobreescribiendo el valor que fija el botón de la visualización. 
+            Esto se debe a que la ejecución del ciclo básico hace que el valor del pulsador **se actualice con el valor del pulsador físico** al inicio de cada ciclo, sobreescribiendo el valor que fija el botón de la visualización.
 
 ---
 

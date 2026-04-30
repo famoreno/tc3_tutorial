@@ -3,14 +3,15 @@
 ## Declaración de variables
 
 ### ¿Debo declarar en `VAR_INPUT` una variable que quiero conectar a una entrada física del sistema? (equivalentemente para `VAR_OUPUT`)
-No necesariamente. Hay que tener clara la distinción entre variables que se declaran en **la zona de entrada o salida** en un POU y las variables de entrada/salida de un **FB**. 
 
-- Las primeras son las que **podrán ser vinculadas** con las entradas y salidas físicas del sistema y se declaran de esta forma: 
+No necesariamente. Hay que tener clara la distinción entre variables que se declaran en **la zona de entrada o salida** en un POU y las variables de entrada/salida de un **FB**.
+
+- Las primeras son las que **podrán ser vinculadas** con las entradas y salidas físicas del sistema y se declaran de esta forma:
     - `<nombre_variable> AT %I* : <tipo>;` (zona de entrada de la memoria)
-    - `<nombre_variable> AT %Q* : <tipo>;` (zona de salida de la memoria). 
+    - `<nombre_variable> AT %Q* : <tipo>;` (zona de salida de la memoria).
 - Las segundas se declaran en los ámbitos `VAR_INPUT` (entradas) o `VAR_OUTPUT` (salidas) y se refieren a las entradas y salidas *software* del **FB**.
 
-!!! info "Nota" 
+!!! info "Nota"
     Es totalmente compatible declarar variables en la zona de entrada y salida tanto en los ámbitos `VAR_INPUT` como `VAR_OUTPUT`.
 
 !!! tip "Ejemplo de declaraciones válidas"
@@ -29,6 +30,7 @@ No necesariamente. Hay que tener clara la distinción entre variables que se dec
     ```
 
 ### ¿En qué ámbitos debo declarar mis variables: `VAR`, `VAR_INPUT` o `VAR_OUTPUT`?
+
 Si imaginamos un **FB** como una caja negra que realiza una funcionalidad, esta caja negra tiene una serie de entradas que permite introducir información en el **FB** para operar con ella y tiene una serie de salidas para sacar información del **FB** al exterior, además de un conjunto de variables de uso interno.
 
 !!! info "`VAR_INPUT`"
@@ -43,9 +45,11 @@ Si imaginamos un **FB** como una caja negra que realiza una funcionalidad, esta 
 ## Visualización
 
 ### ¿Cómo se debe especificar las variables asociadas a los elementos de la visualización?
+
 Se deben especificar **con su ruta completa**. Por ejemplo, para una variable `VariableEjemplo` declarada dentro de un **FB** llamado `Estacion` que ha sido instanciado en el programa `MAIN`, deberemos usar `MAIN.Estacion.VariableEjemplo`.
 
 ### ¿Qué elementos deben ser diseñados como botones?
+
 Deberán comportarse como botones **todos los elementos** excepto las etiquetas y los rectángulos de introducción y muestra de datos (numéricos o de tiempo):
 
 - Los elementos vinculados a las **salidas** del sistema, para poder actuar sobre la estación al pulsarlos. Deben ser de tipo `TOGGLE` para poder actuar en distintas salidas a la vez.
@@ -56,6 +60,7 @@ Deberán comportarse como botones **todos los elementos** excepto las etiquetas 
     En todos los casos, los botones **también** deberán cambiar de color con el cambio de estado de la variable asociada.
 
 ### ¿Qué representa el número que aparece al lado de los indicadores de los bits del código de palé?
+
 Es la **conversión numérica** (decimal) de los bits del código de palé. Los lenguajes de programación de PLC son especialmente sencillos para acceder a las variables a nivel de bit. Para realizar la conversión bastaría con asignar las variables booleanas correspondientes a cada bit a los bits de la variable numérica.
 
 !!! tip "Ejemplo"
@@ -66,7 +71,7 @@ Es la **conversión numérica** (decimal) de los bits del código de palé. Los 
         VariableBit1 : BOOL;
         VariableBit2 : BOOL := TRUE;
     END_VAR
-    
+
     ----- 
     
     VariableNumerica.0 := VariableBit0; // acceso al bit 0
@@ -79,4 +84,5 @@ Es la **conversión numérica** (decimal) de los bits del código de palé. Los 
 ## Hardware
 
 ### ¿Qué son los bits del código de palé?
+
 Mira la descripción de la cinta transportadora en la **descripción funcional** del sistema FMS200.

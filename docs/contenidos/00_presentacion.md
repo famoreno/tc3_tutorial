@@ -71,4 +71,3 @@ Uno de los grandes éxitos de TwinCAT 3 es su modelo de licencias, especialmente
 - **Instalación Gratuita:** El entorno de desarrollo (XAE) es **completamente gratuito** y se puede instalar en cualquier PC para programar y configurar proyectos de forma indefinida.
 - **Licencias de Prueba (Trial de 7 días):** TC3 permite generar licencias temporales de **7 días** para todas sus funciones (PLC, HMI, Motion, Safety, Vision). Estas licencias se pueden renovar de forma infinita simplemente introduciendo un código "Captcha".
 - **Licencias *Hardware*:** Para entornos de producción, las licencias se adquieren de forma permanente y se vinculan al *hardware* (el PC embebido o un dongle USB).
-

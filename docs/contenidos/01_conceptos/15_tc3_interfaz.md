@@ -1,4 +1,4 @@
-## Interfaz de TwinCAT 3
+## 💻 Interfaz de TwinCAT 3
 
 La imagen muestra el entorno de desarrollo **TwinCAT 3 (TcXaeShell)** integrado en Visual Studio. A continuación se describen las principales zonas de la interfaz:
 
@@ -25,6 +25,7 @@ La interfaz de TC3 se divide conceptualmente en:
 En la zona superior encontramos:
 
 #### Barra de menús
+
 Incluye los menús clásicos:
 
 - **File**
@@ -39,6 +40,7 @@ Incluye los menús clásicos:
 Desde aquí se gestionan acciones globales como compilar, activar configuración, depurar o configurar el runtime.
 
 #### Barra de herramientas
+
 Debajo del menú aparecen accesos rápidos a:
 
 - Selección de configuración (*Debug / Release*)
@@ -91,6 +93,7 @@ Puede mostrar distintos tipos de editores:
 En la imagen se observan dos zonas diferenciadas dentro del mismo bloque:
 
 #### Declaración de variables (parte superior)
+
 Aquí se **definen**:
 
 - `VAR_INPUT`
@@ -146,4 +149,3 @@ Sirve para:
 - Advertencias
 - Mensajes del sistema
 - Información de activación
-

@@ -1,8 +1,11 @@
 # Descripción general - Ejemplos TC3
 
+TODO: **Considerar borrado**
+
 Descripción completa de los ejemplos y qué se va añadiendo en cada paso.
 
 ## DEMO
+
 - Programa: `tc3_demo` [➡️](../contenidos/02_tc3_demo.md)
 - **El «hola mundo» de la automatización industrial**
     - Presentación del IDE TcXaeShell
@@ -30,10 +33,11 @@ Descripción completa de los ejemplos y qué se va añadiendo en cada paso.
             - *Text variables*
             - *Inputconfiguration* (*Tap*)
             - *Inputconfiguration* (*OnMouseClick > Execute ST-Code*)
-                
+
 ## CARRO BÁSICO
+
 - Programa: `tc3_carro_basico` [➡️](../contenidos/03_tc3_carro_basico.md)
-- **Mi primera máquina de estados** 
+- **Mi primera máquina de estados**
     - Introducción al GRAFCET
     - Introducción al `SFC`
     - Codificación de máquinas de estado en `SFC` y `ST`
@@ -57,7 +61,7 @@ Descripción completa de los ejemplos y qué se va añadiendo en cada paso.
     - Uso de **FB** de usuario (`FB_Blink`)
         - Intermitencia de elementos de señalización
     - Lenguaje `ST`: `CASE`, `IF`
-    - Lenguaje `SFC`: 
+    - Lenguaje `SFC`:
         - elementos: etapas, etapa inicial, transiciones, acciones (continua, principal, entrada, salida), transiciones dependientes del tiempo, divergencias (ramas), saltos
         - acciones continuas condicionadas
         - Variables implícitas de etapa (`.x`, `.t`)
@@ -74,8 +78,9 @@ Descripción completa de los ejemplos y qué se va añadiendo en cada paso.
     - Señalización continua e intermitente
 
 ## CARRO EXTENDIDO MONOLÍTICO
+
 - Programa: `tc3_carro_extendido_monolitico_lite` [➡️](../contenidos/04_tc3_carro_extendido/04_tc3_carro_extendido_mono.md)
-- **Primera automatización real** 
+- **Primera automatización real**
 
 ??? abstract "Arquitectura"
     - **Monolítica estricta**
@@ -113,15 +118,15 @@ Descripción completa de los ejemplos y qué se va añadiendo en cada paso.
     - Carece de parada a final de ciclo
     - Requiere de variables auxiliares que «ensucian» la declaración de variables de `FB_Estacion`
 
-
 ## CARRO EXTENDIDO ESTRUCTURADO
+
 - Programa: `tc3_carro_extendido_estructurado_lite` [➡️](../contenidos/04_tc3_carro_extendido/04_tc3_carro_extendido_estructurado.md)
-- **Primera automatización real con un código estructurado** 
+- **Primera automatización real con un código estructurado**
 
 ??? abstract "Arquitectura"
     - **Estructurado en GRAFCET Coordinador de Tareas (GCT) y GRAFCETs de Tareas (GTs)**
         - La lógica de control está distribuida en un conjunto de bloques funcionales
-        - `SFC` únicamente con elementos propios (transiciones y acciones)
+        - `SFC` únicamente con elementos propios (transiciones y acciones).
     - `MAIN -> Estacion`
 
 ??? info "Contenidos"
@@ -129,53 +134,10 @@ Descripción completa de los ejemplos y qué se va añadiendo en cada paso.
 
 ??? success "Funcionalidades"
     Las mismas de la implementación monolítica y:
-    
+
     - <span class="fondo-amarillo">**TODO**</span>
 
 ??? failure "Limitaciones"
     Las mismas de la implementación monolítica excepto:
-    
+
     - <span class="fondo-amarillo">**TODO**</span>
-    
-<!-- TODO: REVISAR ESTO
-
-## CARRO MONOLÍTICO Basic
-- Programa: `tc3_carro_monolitico_basic` [➡️](../contenidos/03_tc3_carro_mono_basic.md)
-- **Primera automatización real mejorada**
-
-??? abstract "Arquitectura"
-    - Monolítica extendida
-        - Toda la lógica de control en un único elemento (`FB_Estacion`)
-        - `SFC` con métodos
-    - Paralelismo
-    - `MAIN -> Estacion`
-    
-??? info "Contenidos"
-    - `STRUCT`: declaración, valores iniciales y asignación (`ST_SensorAnalogicoParams`)
-    - `ARRAY` (longitud variable)
-    - `METHOD` (`m_Proceso`): ejecución en *background*
-        - Aligera la lógica de control de la secuencia pricipal
-        - Favorece el uso de indicadores internos `SFC` (`SistemaEnReposo`, `FinCiclo`,...) que limpian, enriquecen y facilitan la comprensión
-        - Incorpora la gestión de la parada a final de ciclo
-        - Libera a la secuencia de control de la gestión de la señalización
-        - Gestiona adecuadamente las acciones críticas en la pausa
-        - Resuelve el uso inadecuado de `i_SelectorManual`
-    - Uso extensivo de funciones de usuario (`F_Map`, `F_Normalize`, `F_Scale`, `F_ScaleAnalogInput`)
-        - simplifica, favorece la reutilización y enriquece semánticamente la lógica
-    - `SFC`
-        - Secuencias paralelas (etapas de espera)
-    
-??? success "Funcionalidades"
-    - Semántica reforzada con indicadores internos y funciones
-    - Implementación adecuada del modo manual
-    - Entrada segura en el modo manual
-    - Pausa segura
-    - Implementación de parada solicitada a final de ciclo
-    - Funcionamiento paralel
-    - Favorece de la reutilización
-
-??? failure "Limitaciones"
-    - No hace comparación de estructuras
-    - No utiliza `ARRAY` de `STRUCT`
-
--->

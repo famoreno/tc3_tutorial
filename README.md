@@ -14,13 +14,17 @@ Este repositorio contiene la documentación y materiales para el tutorial de TC3
 ## Cómo visualizar la documentación
 
 1. Instala MkDocs si no lo tienes:
+
    ```bash
    pip install mkdocs
    ```
+
 2. Ejecuta el servidor local:
+
    ```bash
    mkdocs serve
    ```
+
 3. Abre tu navegador en [http://localhost:8000](http://localhost:8000)
 
 ## Estructura de contenidos

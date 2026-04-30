@@ -21,6 +21,7 @@ El carro extendido es un sistema de transporte de material granulado entre los d
 ### Elementos constituyentes
 
 #### Parte operativa
+
 La parte operativa del carro extendido está constituida por los siguientes dispositivos:
 
 - Un **silo** cilíndrico de 10 m de altura por 5 m de diámetro con capacidad para contener unos 1500 m3 de material. El silo consta de un **sensor de nivel** por ultrasonidos, una **compuerta de tajadera** (válvula de guillotina) de seguridad de accionamiento neumático y una **válvula rotativa** (alimentador) de accionamiento eléctrico, para la dosificación precisa del material expendido.
@@ -66,11 +67,11 @@ El sistema de control también dispone de una visualización (panel de operador 
 
 ![Secuencia normal del Carro Extendido](../images/04_tc3_carro_extendido/Carro_Extendido_Secuencia_Normal.gif){width=800px}
 
-1. Se carga la vagoneta hasta un determinado peso mínimo accionando la válvula rotativa con la tajadera abierta.
-2. Una vez cargada, la vagoneta transporta el material hasta su punto destino al final de la vía.
-3. Se descarga, durante el tiempo necesario, la vagoneta sobre la tolva de la cinta transportadora, abriendo la compuerta y elevando el volquete. 
-4. Se evacúa la tolva accionando la cinta transportadora durante el tiempo necesario.
-5. La vagoneta, ya descargada, regresa al punto de partida.
+1.  Se carga la vagoneta hasta un determinado peso mínimo accionando la válvula rotativa con la tajadera abierta.
+2.  Una vez cargada, la vagoneta transporta el material hasta su punto destino al final de la vía.
+3.  Se descarga, durante el tiempo necesario, la vagoneta sobre la tolva de la cinta transportadora, abriendo la compuerta y elevando el volquete.
+4.  Se evacúa la tolva accionando la cinta transportadora durante el tiempo necesario.
+5.  La vagoneta, ya descargada, regresa al punto de partida.
 
 !!! info "Notas"
     - Si en algún momento del funcionamiento, el nivel del silo desciende por debajo de su mínimo, la secuencia normal debe detenerse a la espera de que se reabastezca con el material necesario.
@@ -84,42 +85,28 @@ El sistema de control también dispone de una visualización (panel de operador 
 
 #### Lógica de control
 
-1. Evaluación de las condiciones iniciales.
-1. Evaluación de las condiciones de marcha.
-1. Secuencia automática de restauración de las condiciones iniciales.
-1. Secuencias de funcionamiento normal.
-1. Tratamiento de la falta de material.
-1. Normalización y escalado de las señales de entrada analógicas.
-1. Modo manual (mandos directos) y automático.
-1. Modo de procesamiento continuo o por lotes (tarea).
-1. Modo ininterrumpido y modo ciclo a ciclo.
-1. Gestión de la tarea (maniobras solicitadas, pendientes y realizadas).
-1. Parametrización de todas las variables (tiempos y cantidades).
-1. Reinicio y pausa del estado.
-<!-- 
-1. Detección, identificación y tratamiento de los errores (avisos y fallos).
-1. Habilitación y desabilitación de los fallos.
-1. Parada inmediata y parada solicitada a final del ciclo.
--->
+1.  Evaluación de las condiciones iniciales.
+2.  Evaluación de las condiciones de marcha.
+3.  Secuencia automática de restauración de las condiciones iniciales.
+4.  Secuencias de funcionamiento normal.
+5.  Tratamiento de la falta de material.
+6.  Normalización y escalado de las señales de entrada analógicas.
+7.  Modo manual (mandos directos) y automático.
+8.  Modo de procesamiento continuo o por lotes (tarea).
+9.  Modo ininterrumpido y modo ciclo a ciclo.
+10.  Gestión de la tarea (maniobras solicitadas, pendientes y realizadas).
+11.  Parametrización de todas las variables (tiempos y cantidades).
+12.  Reinicio y pausa del estado.
 
 #### Visualización
 
-1. Panel de operador.
-1. Monitorización y mando de todas las señales de entrada y salida.
-1. Gestión de la tarea (maniobras solicitadas, pendientes y realizadas).
-1. Gestión de los parámetros del sistema (tiempos, distancias y cantidades).
-1. Botón de verificación de los elementos de señalización.
-1. Botón de reinicio y pausa del estado.
-1. Indicador de las condiciones iniciales y de marcha.
-<!-- 
-3. Gestión de los fallos.
-    1. Tiempos de respuesta.
-    2. Habilitación/deshabilitación.
-    3. Visualización del código y descripción del evento actual (aviso o fallo).
-    4. Gestión de los modos de funcionamiento (continuo, lotes, ciclo-a-ciclo).
-    5. Gestión de los modos de parada (inmediata y a final de ciclo).
-    6. Botón de reconocimiento del fallo actual.
--->
+1.  Panel de operador.
+2.  Monitorización y mando de todas las señales de entrada y salida.
+3.  Gestión de la tarea (maniobras solicitadas, pendientes y realizadas).
+4.  Gestión de los parámetros del sistema (tiempos, distancias y cantidades).
+5.  Botón de verificación de los elementos de señalización.
+6.  Botón de reinicio y pausa del estado.
+7.  Indicador de las condiciones iniciales y de marcha.
 
 ---
 
@@ -183,9 +170,9 @@ Las siguientes especificaciones funcionales describen el comportamiento del carr
 Implementa el funcionamiento del sistema de transporte de material que representa el carro extendido utilizando tres paradigmas de programación (monolítico, estructurado y estructurado con guía GEMMA) para ilustrar, con fines didácticos, las posibilidades y el alcance que cada uno de ellos.
 
 1. 🧱 <span class="fondo-verde">**MONO**</span> **Monolítico** (orientada al sistema). Implementación directa. Toda la secuencia de control se encuentra recogida en un único elemento de programación.
-2. 🗂️ **Estructurado** (orientado a la tarea). La secuencia de funcionamiento se organiza y distribuye en sub-secuencias denominadas tareas (acciones complejas). Hay dos versiones: 
-      1. 🗂️ <span class="fondo-amarillo">**EST**</span> **Estructurado**
-      2. 🧩 <span class="fondo-rojo">**EST+GEMMA**</span> **Estructurado con GEMMA** (incluye guía GEMMA).
+2. 🗂️ **Estructurado** (orientado a la tarea). La secuencia de funcionamiento se organiza y distribuye en sub-secuencias denominadas tareas (acciones complejas). Hay dos versiones:
+      1.  🗂️ <span class="fondo-amarillo">**EST**</span> **Estructurado**
+      2.  🧩 <span class="fondo-rojo">**EST+GEMMA**</span> **Estructurado con GEMMA** (incluye guía GEMMA).
 <!-- 3. 🧩 **Funcional** (orientado a la unidad funcional). La lógica de control del sistema se organiza en términos de unidades funcionales, entidades formadas por un subconjunto de dispositivos (sensores y actuadores), capaces de llevar a cabo una o más tareas. <span class="fondo-naranja">**Próximamente!**</span>
 -->
 ---
@@ -203,18 +190,18 @@ Implementa el funcionamiento del sistema de transporte de material que represent
 
 ### Mediante el Campus Virtual
 
-1. **Copiar** a tu equipo local el fichero 
-    
-    !!! info "🧱 **Monolítico**" 
+1. **Copiar** a tu equipo local el fichero
+
+    !!! info "🧱 **Monolítico**"
         `CV → Automatización → ejemplos → 3_tc3_carro_monolitico → tc3_carro_extendido_monolitico_lite.tnzip`
 
-    !!! info "**Estructurado**" 
+    !!! info "**Estructurado**"
         - 🗂️ <span class="fondo-amarillo">**EST**</span> `CV → Automatización → ejemplos → 4_tc3_carro_estructurado → tc3_carro_extendido_estructurado_lite.tnzip`
         - 🧩 <span class="fondo-rojo">**EST+GEMMA**</span> `CV → Automatización → ejemplos → 4_tc3_carro_estructurado → tc3_carro_extendido_estructurado_basic.tnzip`
 
     <!-- !!! info "🧩 **Funcional**" 
         <span class="fondo-naranja">**Próximamente!**</span> -->
-    
+
     que hay en la carpeta del campus virtual.
 
 2. **Seguir el procedimiento** descrito [aquí](../../contenidos/01_conceptos/#abrir-un-fichero-tnzip) para generar la **Solución** a partir del fichero.

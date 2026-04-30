@@ -116,7 +116,7 @@ Una de las característica más relevante de este proyecto didáctico es que se 
 1. Crear un bloque funcional con nombre `FB_Carro_ST` [➡️](../../contenidos/01_conceptos/#crear-bloque-funcional)
 2. Declarar las variables dentro del **FB** [➡️](../../contenidos/01_conceptos/#declaracion-de-variables)
     - **Entrada** (se puede especificar su valor en la llamada al **FB**)
-    
+
     ```pascal
     VAR_INPUT
         ManiobrasSolicitadas     : UINT := 2;
@@ -128,9 +128,9 @@ Una de las característica más relevante de este proyecto didáctico es que se 
     |-----------------------|------|-----|-------------|
     | ManiobrasSolicitadas  | UINT | no  | Nº de ciclos "va-y-viene" solicitadas para ejecutar. |
     | TiempoEspera          | TIME | no  | Tiempo de espera en lado derecho. |
-   
+
     - **Salida** (se puede utilizar su valor fuera del **FB**)
-    
+
     ```pascal
     VAR_OUTPUT
         ManiobrasPendientes      : UINT;
@@ -144,7 +144,7 @@ Una de las característica más relevante de este proyecto didáctico es que se 
     | TiempoPendiente       | TIME | no  | Tiempo restante de la espera/temporización |
 
     - **Locales** (de uso interno al **FB**)
-    
+
     ```pascal
     VAR
         // Enumeracion de etiquetas para los estados
@@ -165,7 +165,7 @@ Una de las característica más relevante de este proyecto didáctico es que se 
         o_MarchaDerecha   AT %Q* : BOOL;
         o_MarchaIzquierda AT %Q* : BOOL;
     END_VAR
-    ``` 
+    ```
 
     | Variable | Tipo | E/S | Descripción |
     |----------|------|-----|-------------|

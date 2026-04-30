@@ -27,18 +27,18 @@ La **parte de relación** consiste en un panel de operador básico compuesto ún
 
 El funcionamiento del carro básico es como sigue.
 
-1. El carro se pone en marcha hacia la derecha cuando se acciona el pulsador de marcha. 
-1. Cuando el carro alcanza el final de carrera derecha invierte el sentido de la marcha.
-1. El carro se detiene al alcanzar, de nuevo,  el final de carrera izquierda (posición inicial).
+1.  El carro se pone en marcha hacia la derecha cuando se acciona el pulsador de marcha.
+2.  Cuando el carro alcanza el final de carrera derecha invierte el sentido de la marcha.
+3.  El carro se detiene al alcanzar, de nuevo, el final de carrera izquierda (posición inicial).
 
 - **Condición inicial**: carro detenido sobre el final de carrera izquierda.
 
 ### Modalidades
 
-1. **Carro pulsado**. El carro inicia un viaje de ida y vuelta, únicamente, cuando estando en su posición inicial se acciona el pulsador de marcha.
-1. **Carro temporizado**. El carro se detiene durante un determinado tiempo sobre el final de carrera derecha antes de iniciar el camino de regreso hacia su posición inicial.
-1. **Carro limitado**. El carro realiza un determinado número de viajes de ida y vuelta (tarea) cada vez que, estando en su posición inicial, se acciona el pulsador de marcha.
-1. **Carro señalizado**. La lámpara de marcha se enciende de forma permanente para indicar que el carro está en funcionamiento y parpadea para indicar que el carro está en reposo.
+1.  **Carro pulsado**. El carro inicia un viaje de ida y vuelta, únicamente, cuando estando en su posición inicial se acciona el pulsador de marcha.
+2.  **Carro temporizado**. El carro se detiene durante un determinado tiempo sobre el final de carrera derecha antes de iniciar el camino de regreso hacia su posición inicial.
+3.  **Carro limitado**. El carro realiza un determinado número de viajes de ida y vuelta (tarea) cada vez que, estando en su posición inicial, se acciona el pulsador de marcha.
+4.  **Carro señalizado**. La lámpara de marcha se enciende de forma permanente para indicar que el carro está en funcionamiento y parpadea para indicar que el carro está en reposo.
 
 ### Entradas y salidas
 
@@ -47,7 +47,7 @@ El funcionamiento del carro básico es como sigue.
 | `PM` | `BOOL` | Input | Pulsador de Marcha |
 | `FCI` | `BOOL` | Input | Final de Carrera Izquierda |
 | `FCD` | `BOOL` | Input | Final de Carrera Derecha |
-| `LM` | `BOOL` | Output | Lampara de Marcha |
+| `LM` | `BOOL` | Output | Lámpara de Marcha |
 | `MI` | `BOOL` | Output | Marcha Izquierda |
 | `MD` | `BOOL` | Output | Marcha Derecha |
 
@@ -64,12 +64,12 @@ Las siguientes especificaciones funcionales describen el comportamiento del carr
 
 ### Implementación
 
-Implementa el funcionamiento básico de este "famoso" problema de automatización del carro va y viene en sus diferentes modalidades (básico, pulsado, temporizado, limitado y **señalizado**). 
+Implementa el funcionamiento básico de este "famoso" problema de automatización del carro va y viene en sus diferentes modalidades (básico, pulsado, temporizado, limitado y **señalizado**).
 
 !!! warning "Importante"
     Puesto que el desarrollo es incremental, se incluye solo el código correspondiente al nivel superior, que incluye los anteriores.
 
-Una de las característica más relevante de este proyecto didáctico es que se muestran diferentes formas de especificar e implementer un problema simple de automatización, empleando el lenguaje de especificación GRAFCET y usando diferentes lenguajes de programación de la norma IEC 61131-3 (`SFC` y `ST`).
+Una de las características más relevante de este proyecto didáctico es que se muestran diferentes formas de especificar e implementar un problema simple de automatización, empleando el lenguaje de especificación GRAFCET y usando diferentes lenguajes de programación de la norma IEC 61131-3 (`SFC` y `ST`).
 
 - **GRF → [SFC / ST]**
 
@@ -99,10 +99,10 @@ Una de las característica más relevante de este proyecto didáctico es que se 
 
 ### Mediante el Campus Virtual
 
-1. **Copiar** a tu equipo local el fichero 
-    
-    `CV → Automatización → ejemplos → 2_tc3_carro_basico → tc3_carro_basico.tnzip` 
-    
+1. **Copiar** a tu equipo local el fichero
+
+    `CV → Automatización → ejemplos → 2_tc3_carro_basico → tc3_carro_basico.tnzip`
+
     que hay en la carpeta del campus virtual.
 
 2. **Seguir el procedimiento** descrito [aquí](../../contenidos/01_conceptos/#abrir-un-fichero-tnzip) para generar la **Solución** a partir del fichero.
@@ -127,7 +127,7 @@ git clone https://github.com/vetorres-uma/TC3_Carro_Basico.git
 
 !!! warning "Importante"
     El proyecto completo que se explica aquí se corresponde con la versión **señalizada** del carro va y viene.
-    
+
     **Descarga el ejemplo para inspeccionar el código**.
 
 **Para replicar la creación de la solución completa, seguir este procedimiento:**
@@ -140,27 +140,28 @@ git clone https://github.com/vetorres-uma/TC3_Carro_Basico.git
 3. **Escoger un lenguaje** para la implementación: `ST` o `SFC`. ==Aunque aquí expliquemos ambas versiones, en el curso habrá que replicar el correspondiente al lenguaje `SFC`==.
 4. Crear un bloque funcional con ese lenguaje llamado `FB_Carro_basico_ST` o `FB_Carro_basico_SFC` [➡️](../../contenidos/01_conceptos/#crear-bloque-funcional)
 5. Declarar las variables:
-    
+
     ??? info "Comunes"
         - Control de maniobras: `ManiobrasSolicitadas` (total a realizar) y `ManiobrasPendientes` (contador).
         - Control de tiempo de espera: `TiempoEspera` (total a esperar) y `TiempoPendiente` (tiempo que queda).
         - Utilidades: `FlancoPulsadorMarcha (R_TRIG)` (detector de flanco de subida) y `BLK (F_Blink)` (señal booleana que conmuta de valor cada cierto tiempo).
-        - Relativas al *hardware*: 
-            - <span class="fondo-amarillo">**E**</span>: `i_FinalDerecha`, `i_FinalIzquierda`, `i_PulsadorMarcha` 
+        - Relativas al *hardware*:
+            - <span class="fondo-amarillo">**E**</span>: `i_FinalDerecha`, `i_FinalIzquierda`, `i_PulsadorMarcha`
             - <span class="fondo-rojo">**S**</span>: `o_LamparaMarcha`, `o_MarchaDerecha`, `o_MarchaIzquierda`
-    
+
     ??? info "Específicas para `ST`"
         - Control del estado: `Estado`: Variable de tipo `ENUM` que puede tomar los valores que identifican los estados posibles mostrados en el GRAFCET.
         - Temporizador: `TemporizadorEspera (TON)`
 
     ??? info "Específicas para `SFC`"
-        - Ninguna. 
-            - **No necesitamos una variable de estado**, porque viene implícito en el lenguaje. Además, TwinCAT 3 asocia una variable booleana a cada estado que indica si éste está activo: `[nombre_etapa].x` (ejemplo `S2.x`).
+        - Ninguna.
+            - **No necesitamos una variable de estado**, porque viene implícito en el lenguaje. Además, TwinCAT 3 asocia una variable booleana a cada estado que indica si este está activo: `[nombre_etapa].x` (ejemplo `S2.x`).
             - **Tampoco necesitamos el temporizador**, ya que TwinCAT 3 incorpora un temporizador asociado a cada etapa, al que se puede acceder mediante el código `[nombre_etapa].t` (ejemplo `S2.t`).
+
 ---
 
 1. Escribir el código del **FB**:
-    
+
     ??? info "`ST`"
         1. Se llama a los **FBs** de **utilidades**: `BLK`, `FlancoPulsadorMarcha` y `TemporizadorEspera`.
         2. Se implementa la **función de estado** usando esta estructura:
@@ -204,7 +205,7 @@ git clone https://github.com/vetorres-uma/TC3_Carro_Basico.git
 
     ??? info "`SFC`"
         4. La conversión de GRAFCET a lenguaje `SFC` es más directa que con `ST`, al ser un lenguaje gráfico que representa muy claramente la secuencia de estados por la que pasa el sistema.
-            
+
             ![Código de carro básico SFC](../images/03_tc3_carro_basico/carro_basico_sfc.png){width=500px}
         
         5. El código incluye cinco tipos de acciones ([➡️](../../contenidos/01_conceptos/#asociar-acciones-a-etapas)):
@@ -218,6 +219,7 @@ git clone https://github.com/vetorres-uma/TC3_Carro_Basico.git
         7. Nótese el uso del **temporizador** implícito a la etapa `S2` (`S2.t`) para controlar la transición hacia la etapa `S3`.
         8. Nótese la **bifurcación** tras la etapa `S4` que dirige el flujo a `S0` o `S1` en función del valor de `ManiobrasPendientes`.
         9.  Nótese el uso de la **variable** `S0.x` en la acción `a_LamparaMarcha` para identificar si el estado `S0` está activo (`S0.x=TRUE`) o inactivo (`S0.x=FALSE`).
+
 ---
 
 1. Diseñar la visualización añadiendo: [➡️](../../contenidos/01_conceptos/#crear-visualizacion)
@@ -228,32 +230,33 @@ git clone https://github.com/vetorres-uma/TC3_Carro_Basico.git
     2. Rectángulos (*Rectangle*) **no editables** para mostrar el valor de `ManiobrasPendientes` y `TiempoRestante`.
 
         ??? info "Parámetros"
-            - Texts > Text = 
+            - Texts > Text =
                 - [%d] *Formato estilo printf que indica que se va a sustituir por un número entero*
-                - [%t] *Formato estilo printf que indica que se va a sustituir por una variable tipo `TIME`* 
-            - Text variables > Text variable = 
+                - [%t] *Formato estilo printf que indica que se va a sustituir por una variable tipo `TIME`*
+            - Text variables > Text variable =
                 - [`MAIN.Carro.ManiobrasPendientes`]
                 - [`MAIN.Carro.TiempoRestante`]
 
     3. Rectángulos (*Rectangle*) **editables** para introducir el valor de `ManiobrasSolicitadas` y `TiempoEspera`.
-        
+
         ??? info "Parámetros"
             - Añadir el siguiente a los correspondientes a los rectángulos **no editables**:
-            - Inputconfiguration 
-                - OnMouseClick > Configure > Write a Variable. 
+            - Inputconfiguration
+                - OnMouseClick > Configure > Write a Variable.
                     - *Aceptar cuadro de diálogo por defecto. El valor introducido se escribirá en la variable especificada en Text Variable.*
-        
-     4. Rectángulos (*Rectangle*) para las variables booleanas correspondientes a la lámpara, pulsador, sensores final de carrera y activación de motores. **Tanto para mostrar su valor como para poder modificarlo.**
+
+    4. Rectángulos (*Rectangle*) para las variables booleanas correspondientes a la lámpara, pulsador, sensores final de carrera y activación de motores. **Tanto para mostrar su valor como para poder modificarlo.**
 
         ??? info "Parámetros"
             - Texts > Text = [**Pulsador**], [**Lampara**], , etc.
             - Color variables > Toggle color = [`MAIN.i_PulsadorMarcha`], [`MAIN.o_Lampara`], etc.
             - InputConfiguration
                 - Toggle > Variable: [`MAIN.i_PulsadorMarcha`], [`MAIN.o_Lampara`], etc.
+
 ---
 
 1. Declarar la variable `Carro` de tipo `FB_Carro_SFC` o `FB_Carro_ST` en el programa `MAIN`, según la versión a utilizar y llamar al código del **FB**.
-    
+
     !!! info "Declaración"
         ```pascal
         PROGRAM MAIN
@@ -261,13 +264,13 @@ git clone https://github.com/vetorres-uma/TC3_Carro_Basico.git
             Carro: FB_Carro_SFC; // o Carro: FB_Carro_ST;
         END_VAR
         ```
-    
+
     !!! info "Código"
         ```pascal
         Carro();
         ```
 
-1.  Compilar y poner el programa en funcionamiento [➡️](../contenidos/01b_ejecucion.md).
+2. Compilar y poner el programa en funcionamiento [➡️](../contenidos/01b_ejecucion.md).
 
 ---
 
