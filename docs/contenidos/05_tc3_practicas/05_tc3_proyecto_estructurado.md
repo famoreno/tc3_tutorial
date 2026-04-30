@@ -72,7 +72,7 @@ El proyecto desarrollado debe tener implementar las siguientes funcionalidades (
     📃 Versión descargable [aquí](../../pdfs/Checklist_Itinerario_Proyecto_Estructurado.pdf){target="_blank"}.
 
 - [ ] Renombrar `FB_Estacion` por `_FB_Estacion_Monolitico`.
-- [ ] Crear un nuevo `FB_Estacion` (`SF`).
+- [ ] Crear un nuevo `FB_Estacion` (`ST`).
 - [ ] Trasladar toda la parte de declaración de `_FB_Estacion_Monolitico` a `FB_Estacion`.
 - [ ] Eliminar la invocación al proceso (`MAIN`).
 - [ ] Eliminar la gestión del modo manual (`MAIN`).
