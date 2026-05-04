@@ -1,0 +1,1982 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://famoreno.github.io/tc3_tutorial/contenidos/04_tc3_carro_extendido/04_tc3_carro_extendido_estructurado/">
+      
+      
+        <link rel="prev" href="../04_tc3_carro_extendido_mono/">
+      
+      
+        <link rel="next" href="../04_tc3_carro_extendido_estructurado_gemma/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../images/_resource/logo_auto_isa_team.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>🗂️ Estructurado - Tutorial de TwinCAT 3</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
+          data-cf-beacon='{"token": "4d854f26fec440f88da4a7ee3846cc54"}'></script>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#carro-extendido-estructurado" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../../.." title="Tutorial de TwinCAT 3" class="md-header__button md-logo" aria-label="Tutorial de TwinCAT 3" data-md-component="logo">
+      
+  <img src="../../../images/_resource/logo_auto_isa_team.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Tutorial de TwinCAT 3
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              🗂️ Estructurado
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="indigo"  aria-label="Modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="indigo"  aria-label="Modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Tutorial de TwinCAT 3" class="md-nav__button md-logo" aria-label="Tutorial de TwinCAT 3" data-md-component="logo">
+      
+  <img src="../../../images/_resource/logo_auto_isa_team.png" alt="logo">
+
+    </a>
+    Tutorial de TwinCAT 3
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contenidos generales
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Contenidos generales
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00_presentacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ⚙️ Beckhoff y TwinCAT 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01_conceptos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ✔ Conceptos Generales
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01b_ejecucion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ⚡ Ejecución de Programas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01c_lenguajes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🅰️ Lenguajes de Implementación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ejemplos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ejemplos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_tc3_demo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    👋 Ej. - Demo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03_tc3_carro_basico/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🛒 Ej. - Carro Básico
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🚟 Ej. - Carro Extendido
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🚟 Ej. - Carro Extendido
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ✏️ Descripción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_tc3_carro_extendido_mono/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧱 Monolítico
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🗂️ Estructurado
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🗂️ Estructurado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#arquitectura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arquitectura
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funcionalidades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Funcionalidades
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Funcionalidades">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uso-de-rutinas-grafcetsfc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Uso de rutinas GRAFCET/SFC
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Uso de rutinas GRAFCET/SFC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rutina-de-direccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rutina de dirección
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rutina-de-coordinacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rutina de coordinación
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rutinas-de-tareas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rutinas de tareas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uso-de-metodos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Uso de métodos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Uso de métodos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gestor-de-entradas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestor de Entradas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestor-de-acciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestor de Acciones
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestor-de-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestor de Panel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestor-de-modo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestor de Modo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestor-de-tareas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestor de Tareas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uso-de-secuencias-de-preparacion-finalizacion-y-restauracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Uso de secuencias de preparación, finalización y restauración
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uso-de-funciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Uso de funciones
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uso-de-estructuras" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Uso de estructuras
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mejoras-y-extensiones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mejoras y extensiones
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mejoras y extensiones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementacion-del-modo-manual-correcta-y-adecuada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementación del modo manual correcta y adecuada
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementacion-sencilla-de-la-pausa-a-final-de-ciclo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementación sencilla de la pausa a final de ciclo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementacion-sencilla-de-la-parada-pedida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementación sencilla de la parada pedida
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mejora-de-la-gestion-de-falta-material" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mejora de la gestión de falta material
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_tc3_carro_extendido_estructurado_gemma/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ⚙️ Estructurado + GEMMA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prácticas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Prácticas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01e_practicas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ℹ️ Información
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05_tc3_practicas/05_tc3_demo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    👋 Demo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05_tc3_practicas/05_tc3_carro_basico/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🛒 Carro básico
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05_tc3_practicas/05_tc3_proyecto_mono/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧱 Proyecto monolítico
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05_tc3_practicas/05_tc3_proyecto_estructurado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🗂️ Proyecto estructurado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05_tc3_practicas/05_tc3_proyecto_estructurado_gemma/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ⚙️ Proyecto estructurado + GEMMA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#arquitectura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arquitectura
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funcionalidades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Funcionalidades
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Funcionalidades">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uso-de-rutinas-grafcetsfc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Uso de rutinas GRAFCET/SFC
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Uso de rutinas GRAFCET/SFC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rutina-de-direccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rutina de dirección
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rutina-de-coordinacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rutina de coordinación
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rutinas-de-tareas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rutinas de tareas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uso-de-metodos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Uso de métodos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Uso de métodos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gestor-de-entradas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestor de Entradas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestor-de-acciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestor de Acciones
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestor-de-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestor de Panel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestor-de-modo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestor de Modo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestor-de-tareas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestor de Tareas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uso-de-secuencias-de-preparacion-finalizacion-y-restauracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Uso de secuencias de preparación, finalización y restauración
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uso-de-funciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Uso de funciones
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uso-de-estructuras" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Uso de estructuras
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mejoras-y-extensiones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mejoras y extensiones
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mejoras y extensiones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementacion-del-modo-manual-correcta-y-adecuada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementación del modo manual correcta y adecuada
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementacion-sencilla-de-la-pausa-a-final-de-ciclo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementación sencilla de la pausa a final de ciclo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementacion-sencilla-de-la-parada-pedida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementación sencilla de la parada pedida
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mejora-de-la-gestion-de-falta-material" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mejora de la gestión de falta material
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="carro-extendido-estructurado">Carro Extendido Estructurado<a class="headerlink" href="#carro-extendido-estructurado" title="Permanent link">&para;</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">NOTAS</p>
+<ul>
+<li>La descripción general sobre este ejemplo puede encontrarse <a href="../">aquí</a>.</li>
+<li>Descargue y abra el proyecto en una ventana de TwinCAT3 para seguir la explicación.</li>
+</ul>
+</div>
+<p>En esta implementación estructurada del carro extendido, presentamos una primera automatización real organizada en tareas, es decir, la lógica de control está distribuida en lugar de concentrada en un solo bloque funcional.</p>
+<h2 id="arquitectura">Arquitectura<a class="headerlink" href="#arquitectura" title="Permanent link">&para;</a></h2>
+<p>En esta implementación, la arquitectura se divide en el siguiente conjunto de bloques funcionales:</p>
+<ul>
+<li><code>Estación</code> (<code>ST</code>): contenedor principal</li>
+<li><code>Director</code> (<code>SFC</code>): gestión del modo de funcionamiento (<strong>Reposo</strong>, <strong>Preparación</strong>, <strong>Producción</strong>, <strong>Finalización</strong>, <strong>Parada Solicitada</strong>, <strong>Restauración</strong>) </li>
+<li><code>Coordinador</code> (<code>SFC</code>): coordinación de tareas para la producción normal </li>
+<li><code>Tareas</code> (<code>SFC</code>): sub-secuencias que implementan las distintas funcionalidades (conjunto de etapas/transiciones con sentido propio)</li>
+</ul>
+<p><img alt="Estructura del proyecto" src="../../../images/04_tc3_carro_extendido/Carro_Extendido_Estructurado_Proyecto.png" width="250px" /></p>
+<p>La implementación se estructura de la siguiente manera:</p>
+<p><code>MAIN</code> → <code>Estación</code> → <code>Director</code> → <code>Coordinador</code> + <code>Tareas</code> (funcionalidades)</p>
+<p><img alt="Arquitectura" src="../../../images/04_tc3_carro_extendido/Carro_Extendido_Estructurado_Arquitectura.png" width="600px" /></p>
+<p>Como se observa en la figura, la <code>Estación</code> es un contenedor de datos y <strong>métodos</strong> desde donde se llama al resto de bloques funcionales. Cada bloque funcional distinto de la <code>Estación</code> se implementa como una <strong>rutina GRAFCET</strong> que permite su sincronización con el resto de <strong>FBs</strong>, tal y como se verá más adelante.</p>
+<h2 id="funcionalidades">Funcionalidades<a class="headerlink" href="#funcionalidades" title="Permanent link">&para;</a></h2>
+<p>La lista de funcionalidades es prácticamente la misma que en el caso <span class="fondo-verde"><strong>MONO</strong></span> aunque en esta implementación se incorporan nuevos conceptos como los métodos o la funciones y se añade una serie de mejoras y extensiones.</p>
+<details class="info">
+<summary>Tabla de contenidos</summary>
+<p><a href="#uso-de-rutinas-grafcetsfc">Uso de rutinas GRAFCET/SFC</a></p>
+<p><a href="#uso-de-metodos">Uso de métodos</a></p>
+<p><a href="#uso-de-secuencias-de-preparacion-finalizacion-y-restauracion">Uso de secuencias de preparación, finalización y restauración</a></p>
+<p><a href="#uso-de-funciones">Uso de funciones</a></p>
+<p><a href="#uso-de-estructuras">Uso de estructuras</a></p>
+<p><a href="#mejoras-y-extensiones">Mejoras y extensiones</a></p>
+</details>
+<div class="admonition info">
+<p class="admonition-title">Consejo</p>
+<p>Utiliza el menú de la derecha para ir directamente a la explicación de cada funcionalidad.</p>
+</div>
+<h3 id="uso-de-rutinas-grafcetsfc">Uso de rutinas GRAFCET/SFC<a class="headerlink" href="#uso-de-rutinas-grafcetsfc" title="Permanent link">&para;</a></h3>
+<p>Una <strong>rutina GRAFCET/SFC</strong> consiste en un conjunto de etapas con una estructura definida que implementan la lógica de control de una funcionalidad concreta. Aunque en este proyecto se distinguirán entre rutinas de coordinación/dirección y rutinas de tareas, estructuralmente son idénticas.</p>
+<p>Las rutinas GRAFCET/SFC tienen la siguiente estructura:</p>
+<p><img alt="Rutina GRAFCET" src="../../../images/04_tc3_carro_extendido/Carro_Extendido_Estructurado_Rutina_GRAFCET.png" width="400px" /></p>
+<p>La lógica de control se encapsula entre dos etapas <code>Initial</code> y <code>End</code>, que podemos entender como <strong>etapas de espera</strong> que permiten sincronizar la ejecución de la rutina con otras rutinas.</p>
+<p>Las señales <code>Ready</code>, <code>Done</code>, <code>Execute</code> y <code>Ack</code> sirven para sincronizar la ejecución de la secuencia de la rutina con el resto de rutinas. Las dos primeras permiten comunicar que la rutina está en su estado inicial o que ya ha terminado su secuencia, mientras que las dos últimas permiten iniciar la secuencia y volver al inicio.</p>
+<div class="admonition info">
+<p class="admonition-title">Consejo</p>
+<p>Analice el código de los <strong>FBs</strong> del proyecto para ver ejemplos de esta estructura.</p>
+</div>
+<p>A modo de ejemplo, considere el siguiente esquema donde la rutina <code>FB_EstacionCoordinador_S_SFC</code> se sincroniza con la rutina <code>F_CintaEvacuar_SFC</code>. Cuando la primera activa la señal <code>CintaEvacua</code>, la transición regida por <code>Execute</code> en la segunda rutina se dispara, ejecutándose su lógica de control hasta alcanzar la etapa <code>End</code>. En ese momento, activa la señal <code>Done</code> que dispara la transición regida por la señal <code>CintaEvacuada</code> en la primera rutina (que estaba detenida) y hace que continúe su ejecución. Al pasar a la siguiente etapa, se activa la señal <code>Ack</code> en la segunda rutina para que esta vuelva al inicio.</p>
+<p><img alt="Sincronización rutina GRAFCET" src="../../../images/04_tc3_carro_extendido/Carro_Extendido_Estructurado_Rutina_GRAFCET_Sincro.png" width="700px" /></p>
+<p>Esta sincronización (o la <em>conexión</em> entre las distintas señales) se realiza en el <strong>FB</strong> que llama a ambas rutinas, en este caso, el <strong>FB</strong> <code>FB_Estacion</code>. En concreto, si miramos dentro del método <code>m_GestorTareas</code>, podemos ver el siguiente código:</p>
+<div class="admonition info">
+<p class="admonition-title">Declaración en <code>FB_Estacion</code></p>
+<div class="highlight"><pre><span></span><code><span class="k">VAR</span>
+<span class="w">    </span><span class="p">[</span><span class="o">...</span><span class="p">]</span>
+<span class="w">    </span><span class="n">Coordinador</span><span class="o">:</span><span class="w"> </span><span class="n">FB_EstacionCoordinador_S_SFC</span><span class="o">;</span>
+<span class="w">    </span><span class="n">CintaEvacuar</span><span class="o">:</span><span class="w"> </span><span class="n">FB_CintaEvacuar_SFC</span><span class="o">;</span>
+<span class="w">    </span><span class="p">[</span><span class="o">...</span><span class="p">]</span>
+<span class="n">END_VAR</span>
+</code></pre></div>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Implementación dentro de <code>m_GestorTareas</code></p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="o">...</span><span class="p">]</span>
+<span class="n">Coordinador</span><span class="p">(</span>
+<span class="w">    </span><span class="n">ManiobrasPendientes</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">ManiobrasPendientes</span><span class="o">,</span>
+<span class="w">    </span><span class="n">ManiobrasRealizadas</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">ManiobrasRealizadas</span><span class="o">,</span>
+<span class="w">    </span><span class="n">SFCReset</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">ReiniciaEstado</span><span class="o">,</span>
+<span class="w">    </span><span class="n">SFCPause</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">OrdenPausa</span><span class="o">,</span>
+<span class="w">    </span><span class="n">Execute</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">Director</span><span class="o">.</span><span class="n">OrdenProduccion</span><span class="o">,</span>
+<span class="w">    </span><span class="n">Ack</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">ContinuacionAutorizada</span><span class="o">,</span>
+<span class="w">    </span><span class="n">VagonetaCargada</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">VagonetaCargar</span><span class="o">.</span><span class="n">Done</span><span class="o">,</span>
+<span class="w">    </span><span class="n">VagonetaTrasladada</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">VagonetaTrasladar</span><span class="o">.</span><span class="n">Done</span><span class="o">,</span>
+<span class="w">    </span><span class="n">CintaEvacuada</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">CintaEvacuar</span><span class="o">.</span><span class="n">Done</span><span class="o">,</span><span class="w"> </span><span class="c1">// 2</span>
+<span class="p">)</span><span class="o">;</span>
+<span class="p">[</span><span class="o">...</span><span class="p">]</span>
+<span class="n">CintaEvacuar</span><span class="p">(</span>
+<span class="w">    </span><span class="n">SFCReset</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">ReiniciaEstado</span><span class="o">,</span>
+<span class="w">    </span><span class="n">SFCPause</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">OrdenPausa</span><span class="o">,</span>
+<span class="w">    </span><span class="n">Execute</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">Coordinador</span><span class="o">.</span><span class="n">CintaEvacua</span><span class="o">,</span><span class="w"> </span><span class="c1">// 1</span>
+<span class="w">    </span><span class="n">Ack</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="n">Coordinador</span><span class="o">.</span><span class="n">CintaEvacua</span><span class="o">,</span>
+<span class="w">    </span><span class="n">TolvaOcupada</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">i_TolvaOcupada</span><span class="o">,</span>
+<span class="w">    </span><span class="n">TiempoCinta</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">TiempoCinta</span>
+<span class="p">)</span><span class="o">;</span>
+<span class="p">[</span><span class="o">...</span><span class="p">]</span>
+</code></pre></div>
+</div>
+<p>Nótese como se asigna la señal <code>Coordinador.CintaEvacua</code> a la señal <code>Execute</code> de <code>CintaEvacuar</code> (línea <code>1</code>), y la señal <code>CintaEvacuar.Done</code> a la señal <code>CintaEvacuada</code> de <code>Coordinador</code> (línea <code>2</code>).</p>
+<div class="admonition info">
+<p class="admonition-title">Consejo</p>
+<p>Inspeccione el código del <strong>FB</strong> del <code>Coordinador</code> y el de las tareas relacionadas con la cinta y la vagoneta para ver más ejemplos de esta sincronización.</p>
+</div>
+<h4 id="rutina-de-direccion">Rutina de dirección<a class="headerlink" href="#rutina-de-direccion" title="Permanent link">&para;</a></h4>
+<p>Esta rutina está implementada en un <strong>FB</strong> en <code>SFC</code> y encapsula la secuencia completa (no solo producción) de la estación a alto nivel.</p>
+<p><img alt="Rutina de Dirección" src="../../../images/04_tc3_carro_extendido/Carro_Extendido_Estructurado_Director.png" width="700px" /></p>
+<p>Nótese cómo la secuencia incluye etapas de:</p>
+<ol>
+<li>Preparación</li>
+<li>Producción</li>
+<li>Finalización</li>
+<li>Solicitud de parada</li>
+<li>Restauración</li>
+</ol>
+<p>Cada etapa activará una señal que <em>disparará</em> la ejecución de otro <strong>FB</strong> y se parará hasta que este indique que ha terminado. Por ejemplo, la señal <code>OrdenPreparacion</code> activará la señal <code>Execute</code> del <code>FB_EstacionPreparar</code> y la señal <code>FinPreparacion</code> se activará cuando este active su señal <code>Done</code>.</p>
+<h4 id="rutina-de-coordinacion">Rutina de coordinación<a class="headerlink" href="#rutina-de-coordinacion" title="Permanent link">&para;</a></h4>
+<p>En un nivel de abstracción inferior al <code>Director</code>, encontramos al <code>Coordinador</code>, que se encargará de gestionar la secuencia de producción mediante la llamada a las distintas rutinas de tareas.</p>
+<p><img alt="Rutina de Coordinación" src="../../../images/04_tc3_carro_extendido/Carro_Extendido_Estructurado_Coordinador.png" width="300px" /></p>
+<p>En las etapas marcadas como <code>1</code>, <code>2</code> y <code>3</code>, el <code>Coordinador</code> activa señales que dispararán la ejecución de las secuencias de las tareas: <strong>cargar vagoneta</strong>, <strong>trasladar vagoneta</strong> y <strong>gestionar la cinta transportadora</strong>.</p>
+<div class="admonition info">
+<p class="admonition-title">Nota</p>
+<p>Nótese cómo la señal <code>Execute</code> del <code>Coordinador</code> (que dispara su funcionamiento) se activará cuando el <code>Coordinador</code> active su señal <code>OrdenProducción</code> (etapa <code>2</code> en la imagen anterior).</p>
+</div>
+<p>Una vez terminadas las activaciones de las rutinas de las tareas de producción, el <code>Coordinador</code> decrementará la variable contadora de maniobras (a la entrada de <code>S4</code>) y terminará en la etapa <code>End</code> donde se activará la señal <code>Done</code>. En este punto, habrá terminado un ciclo y quedará a la espera de que la señal <code>Ack</code> se active antes de volver al inicio.</p>
+<p>Una vez se vuelva al inicio, si su señal <code>Execute</code> sigue activa, se volverá a realizar un nuevo ciclo de producción.</p>
+<h4 id="rutinas-de-tareas">Rutinas de tareas<a class="headerlink" href="#rutinas-de-tareas" title="Permanent link">&para;</a></h4>
+<p>Finalmente, tendremos <strong>FBs</strong> dedicados a cada una de las tareas de la estación. Cada una de ellas se puede entender como una subrutina que realiza una tarea específica. En este ejemplo, tendremos rutinas que podemos agrupar conceptualmente en dos grupos:</p>
+<ul>
+<li>Tareas de producción: cargar vagoneta, trasladar vagoneta, gestionar cinta.</li>
+<li>Tareas de gestión de la estación: preparar, finalizar y restaurar.</li>
+</ul>
+<p>A modo de ejemplo, en la figura se puede observar el código de la rutina que se encarga de evacuar el material por la cinta transportadora</p>
+<p><img alt="Rutina de Tarea" src="../../../images/04_tc3_carro_extendido/Carro_Extendido_Estructurado_TareaEjemplo.png" width="300px" /></p>
+<h3 id="uso-de-metodos">Uso de métodos<a class="headerlink" href="#uso-de-metodos" title="Permanent link">&para;</a></h3>
+<p>En TwinCAT 3, un <strong>método</strong> es una función que pertenece a un bloque funcional y que tiene acceso a sus variables internas. Puede recibir parámetros de entrada y salida e incluso devolver un valor (opcional). Conceptualmente, es similar a una función, pero ligada al contexto del <strong>FB</strong>.</p>
+<p>Un método sirve principalmente para organizar el código en partes reutilizables y claras dentro del <strong>FB</strong>, encapsulando la lógica específica del bloque. Así, se evita repetir código y mejora la modularidad y su mantenimiento.</p>
+<p>Para crear un método asociado a un <strong>FB</strong>, en el árbol del proyecto, haga <strong>CD</strong> sobre el <strong>FB</strong> y pulse <code>Add → Method</code>. En el menú contextual, hay que definir:</p>
+<ul>
+<li>El nombre del método </li>
+<li>Tipo del valor devuelto (opcional).</li>
+<li>El lenguaje que vamos a utilizar en la implementación (nosotros usaremos <code>ST</code>).</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Importante</p>
+<p>Por claridad, tomaremos la convención de añadir un prefijo <code>m_</code> al nombre de los métodos.</p>
+</div>
+<p>Una vez creado, deberemos declarar variables de entrada/salida (si queremos usarlas, recuerde que el método ya tiene acceso a <strong>todas</strong> las variables del bloque funcional) e implementar el código.</p>
+<p>Para usarlos, basta con llamar a su código desde una instancia del bloque funcional. Por ejemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="n">m_GestorEntradas</span><span class="p">()</span><span class="o">;</span>
+</code></pre></div>
+<p>En este ejemplo, hemos encapsulado las funcionalidades de la estación dentro de distintos métodos:</p>
+<ul>
+<li><code>m_GestorEntradas</code>. Tareas de acondicionamiento de señales de entrada.</li>
+<li><code>m_GestorAcciones</code>. Procesamiento de las acciones (solo en modo automático).</li>
+<li><code>m_GestorPanel</code>. Gestión de la señalización en el panel del operador (solo en modo automático).</li>
+<li><code>m_GestorModo</code>. Toma de decisiones de nivel superior</li>
+<li><code>m_GestorTareas</code>. Procesamiento del estado (solo en modo automático).</li>
+</ul>
+<h4 id="gestor-de-entradas">Gestor de Entradas<a class="headerlink" href="#gestor-de-entradas" title="Permanent link">&para;</a></h4>
+<p>Este método se ejecuta tanto en modo manual como en automático y se encarga de realizar el acondicionamiento de las entradas al PLC. Esto incluye:</p>
+<ul>
+<li>Ejecución de los detectores de flanco para los pulsadores.</li>
+<li>Conversión de las unidades y rangos de las medidas analógicas: sensor de distancia en el silo y peso de la vagoneta.</li>
+<li>Cálculo de variables de estado del sistema como: <code>CondicionInicial</code>, <code>OrdenPausa</code>, <code>ModoAutomatico</code>, <code>SolicitudMarcha</code>, etc.</li>
+</ul>
+<h4 id="gestor-de-acciones">Gestor de Acciones<a class="headerlink" href="#gestor-de-acciones" title="Permanent link">&para;</a></h4>
+<p>Este método solo se ejecuta en <strong>modo automático</strong> y encapsula las activaciones de las salidas del sistema relacionadas con:</p>
+<ul>
+<li>La <strong>vagoneta</strong> (marcha)</li>
+<li>El <strong>silo</strong> (tajadera y válvula)</li>
+<li>El <strong>sistema hidráulico</strong> (activación, compuerta y volquete)</li>
+<li>La <strong>cinta transportadora</strong> (marcha)</li>
+</ul>
+<p>Estas salidas se activarán cuando los distintos <strong>FBs</strong> de las tareas lo demanden. Por ejemplo, el código:</p>
+<div class="highlight"><pre><span></span><code><span class="n">o_VolqueteBaja</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="n">OrdenPausa</span><span class="w"> </span>
+<span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="p">(</span><span class="n">VagonetaTrasladar</span><span class="o">.</span><span class="n">VolqueteBaja</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">EstacionRestaurar</span><span class="o">.</span><span class="n">VolqueteBaja</span><span class="p">)</span><span class="o">;</span>
+</code></pre></div>
+<p>realizará la bajada del volquete cuando el <strong>FB</strong> <code>VagonetaTrasladar</code> active su variable <code>VolqueteBaja</code> <strong>o</strong> cuando el <strong>FB</strong> <code>EstacionRestaurar</code> active su variable <code>VolqueteBaja</code> (siempre que no esté activa la señal <code>OrdenPausa</code>).</p>
+<div class="admonition info">
+<p class="admonition-title">Nota</p>
+<p>Al ejecutarse solo en modo automático, este método dejará <em>libres</em> las salidas <strong>en modo manual</strong> para que puedan ser accionadas desde la visualización.</p>
+</div>
+<h4 id="gestor-de-panel">Gestor de Panel<a class="headerlink" href="#gestor-de-panel" title="Permanent link">&para;</a></h4>
+<p>En este método se activarán los avisadores que tienen que ver con el panel del operador: </p>
+<ul>
+<li>Avisador sonoro</li>
+<li>Lámpara de alarma</li>
+<li>Lámpara de marcha</li>
+<li>Lámpara de parada</li>
+<li>Lámpara de material</li>
+</ul>
+<p>Además, se calcularán algunas variables de estado que se utilizarán en este método como <code>MarchaAutorizada</code>, <code>SistemaEnEspera</code>, etc.</p>
+<p>Estas salidas se comportarán de manera diferente en distintas situaciones. Por ejemplo, la lámpara de parada se iluminará <strong>de forma fija</strong> cuando el sistema está en espera y <strong>parpadeará</strong> cuando se haya solicitado la parada:</p>
+<div class="highlight"><pre><span></span><code><span class="n">o_LamparaParada</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">SistemaEnEspera</span><span class="w"> </span>
+<span class="w">    </span><span class="k">OR</span><span class="w"> </span><span class="p">(</span><span class="n">Director</span><span class="o">.</span><span class="n">ParadaSolicitada</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">Intermitencia</span><span class="o">.</span><span class="n">Q</span><span class="p">)</span><span class="o">;</span>
+</code></pre></div>
+<p>Nótese que, para permitir que estas salidas se activen intermitentemente, en este método se llamará al <strong>FB</strong> que permite la intermitencia: <code>Intermitencia</code>.</p>
+<h4 id="gestor-de-modo">Gestor de Modo<a class="headerlink" href="#gestor-de-modo" title="Permanent link">&para;</a></h4>
+<p>Este método se encarga de determinar en qué modo está la estación: <strong>Reposo</strong>, <strong>Preparación</strong>, <strong>Producción</strong>, <strong>Finalización</strong>, <strong>Parada Solicitada</strong> y <strong>Restauración</strong>, y pasar esta información al <code>FB_Director</code>, el cual se encargará de hacer evolucionar el sistema de un modo a otro.</p>
+<div class="admonition info">
+<p class="admonition-title">NOTA</p>
+<p>El gestor de modo debe ejecutarse tanto en modo automático como manual.</p>
+</div>
+<h4 id="gestor-de-tareas">Gestor de Tareas<a class="headerlink" href="#gestor-de-tareas" title="Permanent link">&para;</a></h4>
+<p>En este último método, encapsulamos la llamada a las rutinas relacionadas con las tareas, <strong>incluyendo al <code>Coordinador</code></strong>.</p>
+<p>Como se puede observar en el código, este método se limita a llamar a los <strong>FBs</strong> correspondientes, enlazando las entradas y salidas para conseguir la sincronización entre las rutinas.</p>
+<p>Nótese, por ejemplo, el siguiente trozo de código:</p>
+<div class="highlight"><pre><span></span><code><span class="n">ProduccionPreparar</span><span class="p">(</span>
+<span class="w">    </span><span class="n">SFCReset</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">ReiniciaEstado</span><span class="o">,</span>
+<span class="w">    </span><span class="n">SFCPause</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">OrdenPausa</span><span class="o">,</span>
+<span class="w">    </span><span class="n">Execute</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">Director</span><span class="o">.</span><span class="n">OrdenPreparacion</span><span class="o">,</span>
+<span class="w">    </span><span class="n">Ack</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="n">Director</span><span class="o">.</span><span class="n">OrdenPreparacion</span><span class="o">,</span>
+<span class="w">    </span><span class="n">TiempoPreparacion</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">TiempoPreparacion</span>
+<span class="p">)</span><span class="o">;</span>
+</code></pre></div>
+<p>donde se observa que la rutina correspondiente a la preparación de la estación se ejecutará cuando el <code>Director</code> lo ordene activando <code>OrdenPreparacion</code>.</p>
+<p>De manera similar, en este trozo de código:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Coordinador</span><span class="p">(</span>
+<span class="w">    </span><span class="n">ManiobrasPendientes</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">ManiobrasPendientes</span><span class="o">,</span>
+<span class="w">    </span><span class="n">ManiobrasRealizadas</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">ManiobrasRealizadas</span><span class="o">,</span>
+<span class="w">    </span><span class="n">SFCReset</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">ReiniciaEstado</span><span class="o">,</span>
+<span class="w">    </span><span class="n">SFCPause</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">OrdenPausa</span><span class="o">,</span>
+<span class="w">    </span><span class="n">Execute</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">Director</span><span class="o">.</span><span class="n">OrdenProduccion</span><span class="o">,</span>
+<span class="w">    </span><span class="n">Ack</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">ContinuacionAutorizada</span><span class="o">,</span>
+<span class="w">    </span><span class="n">VagonetaCargada</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">VagonetaCargar</span><span class="o">.</span><span class="n">Done</span><span class="o">,</span>
+<span class="w">    </span><span class="n">VagonetaTrasladada</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">VagonetaTrasladar</span><span class="o">.</span><span class="n">Done</span><span class="o">,</span>
+<span class="w">    </span><span class="n">CintaEvacuada</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">CintaEvacuar</span><span class="o">.</span><span class="n">Done</span><span class="o">,</span>
+<span class="p">)</span><span class="o">;</span>
+</code></pre></div>
+<p>puede observarse cómo las señales <code>Done</code> de los distintos <strong>FBs</strong> de tareas se asocian a las variables de entrada del <code>Coordinador</code> que le permitirán evolucionar en su secuencia. </p>
+<div class="admonition info">
+<p class="admonition-title">Consejo</p>
+<p>Inspecciona cuidadosamente el código de este método para entender las asociaciones entre las señales de sincronización.</p>
+</div>
+<h3 id="uso-de-secuencias-de-preparacion-finalizacion-y-restauracion">Uso de secuencias de preparación, finalización y restauración<a class="headerlink" href="#uso-de-secuencias-de-preparacion-finalizacion-y-restauracion" title="Permanent link">&para;</a></h3>
+<p>En esta versión, usaremos rutinas GRAFCET para implementar algunas secuencias relacionadas con la estación que <strong>no tienen que ver directamente con la producción</strong>, sino que solucionan situaciones especiales de la estación. En concreto, definiremos secuencias de:</p>
+<ul>
+<li><strong>Preparación</strong>, que se encarga de realizar todas aquellas acciones necesarias para preparar la estación para empezar a producir.</li>
+<li><strong>Finalización</strong>, que implementa la secuencia de pasos a realizar tras terminar la producción, para dejar la estación en reposo.</li>
+<li><strong>Restauración</strong>, que se encarga de tratar de recuperar las condiciones iniciales.</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Consejo</p>
+<p>Inspeccione el código de los <strong>FBs</strong> de preparación, finalización y restauración en el ejemplo para ver la secuencia de pasos en cada caso. Nótese que, en los dos primeros, lo único que se hace en este ejemplo es activar el avisador sonoro durante un tiempo. En el de restauración, por el contrario, sí se realiza una secuencia de pasos para recuperar las condiciones iniciales.</p>
+</div>
+<h3 id="uso-de-funciones">Uso de funciones<a class="headerlink" href="#uso-de-funciones" title="Permanent link">&para;</a></h3>
+<p>En TwinCAT 3, una función (<em>Function</em>, <strong>FUN</strong>) es un bloque de código independiente que realiza un cálculo y devuelve un valor <strong>sin tener un estado interno persistente</strong>, es decir, no mantiene memoria entre ejecuciones.</p>
+<p>Así, una función recibe datos de entrada, ejecuta una operación y devuelve un único valor de forma obligatoria. Su uso se circunscribe, normalmente, para realizar cálculos concretos y reutilizables (por ejemplo, acondicionamiento de señales), simplificar expresiones complejas, evitar duplicar lógica matemática o de procesamiento y hacer el código más claro y modular</p>
+<p>En nuestro ejemplo del carro extendido las usaremos para realizar el acondicionamiento de las señales analógicas.</p>
+<p>Las funciones no están asociadas a un <strong>FB</strong> concreto, sino que forman parte de las utilidades que podemos crear en nuestro proyecto. Para crear una función, en el árbol del proyecto, hay que hacer <strong>CD</strong> sobre la carpeta <code>POUs</code> y pulsar <code>Add → POU</code>. En el menú contextual, hay que cambiar el lenguaje de programación a alguno <strong>distinto</strong> a <code>SFC</code> (al no tener estado interno, las funciones no pueden ser implementadas en <code>SFC</code>). En nuestro caso usaremos <code>ST</code>, como habitualmente. Posteriormente, habrá que seleccionar <code>Function</code> y definir:</p>
+<ul>
+<li>El nombre de la función</li>
+<li>Tipo del valor devuelto (obligatorio).</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Importante</p>
+<p>Por claridad, tomaremos la convención de añadir un prefijo <code>F_</code> al nombre de las funciones.</p>
+</div>
+<p>Una vez creada, deberemos declarar las variables de entrada e implementar el código. Hay que tener en cuenta que el valor de salida se asigna <strong>utilizando el nombre de la propia función</strong>. Por ejemplo, para una función <code>F_Map</code>, el valor que devuelve se asigna como:</p>
+<div class="highlight"><pre><span></span><code><span class="n">F_Map</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">OutMin</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">Value</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">InMin</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">OutRange</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nb">InRange</span><span class="o">;</span>
+</code></pre></div>
+<p>Para usarlas, basta con llamar a su código <strong>utilizando el nombre de la función</strong>, asignando su salida a alguna variable. Por ejemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="n">SiloDistanciaMedida</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">F_ScaleAnalogSensor</span><span class="p">(</span>
+<span class="w">    </span><span class="n">RawInput</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">i_SensorNivel</span><span class="o">,</span>
+<span class="w">    </span><span class="n">Parameters</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">SensorNivelParams</span>
+<span class="p">)</span><span class="o">;</span>
+</code></pre></div>
+<p>donde <code>F_ScaleAnalogSensor</code> es el nombre de la función y <code>RawInput</code> y <code>Parameters</code> son sus variables de entrada. La salida se le asignará a la variable <code>SiloDistanciaMedida</code>.</p>
+<h3 id="uso-de-estructuras">Uso de estructuras<a class="headerlink" href="#uso-de-estructuras" title="Permanent link">&para;</a></h3>
+<p>En TwinCAT 3, una estructura (<strong>STRUCT</strong>) es un tipo de dato compuesto que agrupa varias variables (que pueden ser de distinto tipo) bajo un mismo nombre.</p>
+<p>En este ejemplo se utilizan para guardar los parámetros que pasan a la función de acondicionamiento de señales analógicas: <code>F_ScaleAnalogSensor</code>. Nótese como en su sección de variables de entrada se incluyen:</p>
+<div class="highlight"><pre><span></span><code><span class="k">FUNCTION</span><span class="w"> </span><span class="nf">F_ScaleAnalogSensor</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">REAL</span>
+<span class="n">VAR_INPUT</span>
+<span class="w">    </span><span class="n">RawInput</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nb">INT</span><span class="o">;</span><span class="w"> </span>
+<span class="w">    </span><span class="n">Parameters</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ST_SensorAnalogicoParams</span><span class="o">;</span><span class="w"> </span><span class="c1">// Estructura</span>
+<span class="n">END_VAR</span>
+</code></pre></div>
+<p>El tipo <code>ST_SensorAnalogicoParams</code> es una estructura que incluye:</p>
+<div class="highlight"><pre><span></span><code><span class="k">TYPE</span><span class="w"> </span><span class="n">ST_SensorAnalogicoParams</span><span class="w"> </span><span class="o">:</span>
+<span class="n">STRUCT</span>
+<span class="w">    </span><span class="n">RawMin</span><span class="w">    </span><span class="o">:</span><span class="w"> </span><span class="nb">INT</span><span class="o">;</span>
+<span class="w">    </span><span class="n">RawMax</span><span class="w">    </span><span class="o">:</span><span class="w"> </span><span class="nb">INT</span><span class="o">;</span>
+<span class="w">    </span><span class="n">ValueMin</span><span class="w">  </span><span class="o">:</span><span class="w"> </span><span class="kt">REAL</span><span class="o">;</span>
+<span class="w">    </span><span class="n">ValueMax</span><span class="w">  </span><span class="o">:</span><span class="w"> </span><span class="kt">REAL</span><span class="o">;</span>
+<span class="w">    </span><span class="n">Offset</span><span class="w">    </span><span class="o">:</span><span class="w"> </span><span class="kt">REAL</span><span class="o">;</span>
+<span class="n">END_STRUCT</span>
+<span class="n">END_TYPE</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Importante</p>
+<p>Por claridad, tomaremos la convención de añadir un prefijo <code>ST_</code> al nombre de las estructuras.</p>
+</div>
+<p>Puede encontrar más información sobre las estructuras, su uso y declaración <a href="../../01_conceptos/#estructuras">aquí</a>.</p>
+<h3 id="mejoras-y-extensiones">Mejoras y extensiones<a class="headerlink" href="#mejoras-y-extensiones" title="Permanent link">&para;</a></h3>
+<p>Finalmente, en esta implementación del carro extendido estructurado se han realizado una serie de <strong>mejoras y extensiones</strong> respecto a la versión monolítica, que se explican a continuación.</p>
+<h4 id="implementacion-del-modo-manual-correcta-y-adecuada">Implementación del modo manual correcta y adecuada<a class="headerlink" href="#implementacion-del-modo-manual-correcta-y-adecuada" title="Permanent link">&para;</a></h4>
+<p>A diferencia de como se hacía en la versión monolítica, se ha implementado la identificación del modo manual/automático <strong>sin acceder de manera directa</strong>, en el programa principal <code>MAIN</code>, a la variable asociada al conmutador de selección de modo del panel del operador. Esta gestión se realiza ahora dentro del <strong>FB</strong> de la propia estación, encapsulando esta funcionalidad dentro del mismo y evitando el <em>artificio</em> anterior.</p>
+<p>En este <strong>FB</strong> dispondremos de una variable de estado llamada <code>ModoAutomatico</code> que tomará el valor <code>TRUE</code> cuando el selector de modo así lo indique. Esta variable toma su valor <strong>dentro del método de gestor de entradas</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// en m_GestorEntradas</span>
+<span class="n">ModoAutomatico</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="n">i_SelectorManual</span><span class="o">;</span>
+</code></pre></div>
+<p>y se utiliza en el código principal de la estación de esta manera:</p>
+<div class="highlight"><pre><span></span><code><span class="n">m_GestorEntradas</span><span class="p">()</span><span class="o">;</span><span class="w"> </span><span class="c1">// Acondicionamiento de señales</span>
+<span class="n">m_GestorModo</span><span class="p">()</span><span class="o">;</span><span class="w"> </span><span class="c1">// Toma de decisiones de nivel superior</span>
+
+<span class="c1">// Ejecución de la lógica de control en modo automático</span>
+<span class="k">IF</span><span class="w"> </span><span class="n">ModoAutomatico</span><span class="w"> </span><span class="k">THEN</span>
+<span class="w">    </span><span class="n">m_GestorTareas</span><span class="p">()</span><span class="o">;</span><span class="w"> </span><span class="c1">// Procesamiento del estado</span>
+<span class="w">    </span><span class="n">m_GestorPanel</span><span class="p">()</span><span class="o">;</span><span class="w"> </span><span class="c1">// Gestión de la señalización</span>
+<span class="w">    </span><span class="n">m_GestorAcciones</span><span class="p">()</span><span class="o">;</span><span class="w"> </span><span class="c1">// Procesamiento de las acciones</span>
+<span class="n">END_IF</span><span class="o">;</span>
+</code></pre></div>
+<p>De esta manera, dejamos de exponer, de forma directa, la variable asociada al <em>hardware</em> (<code>i_SelectorManual</code>) a los <strong>FBs</strong> distintos al de la estación.</p>
+<h4 id="implementacion-sencilla-de-la-pausa-a-final-de-ciclo">Implementación sencilla de la pausa a final de ciclo<a class="headerlink" href="#implementacion-sencilla-de-la-pausa-a-final-de-ciclo" title="Permanent link">&para;</a></h4>
+<p>Para implementar la <strong>pausa</strong> (que no parada) al final de ciclo, hemos utilizado la señal <code>Ack</code> de la rutina GRAFCET del <code>Coordinador</code>. Como se explicó en <a href="#rutina-de-coordinacion">su sección correspondiente</a>, el <code>Coordinador</code> implementa un ciclo de producción completo del sistema, finalizando en la etapa <code>End</code> donde quedará a la espera de que la señal <code>Ack</code> se active antes de volver al inicio.</p>
+<p>En la llamada al <strong>FB</strong> del <code>Coordinador</code>, esta señal <code>Ack</code> está asignada a la variable <code>ContinuacionAutorizada</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// en el método m_GestorTareas</span>
+<span class="n">Coordinador</span><span class="p">(</span>
+<span class="w">    </span><span class="n">ManiobrasPendientes</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">ManiobrasPendientes</span><span class="o">,</span>
+<span class="w">    </span><span class="n">ManiobrasRealizadas</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">ManiobrasRealizadas</span><span class="o">,</span>
+<span class="w">    </span><span class="n">SFCReset</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">ReiniciaEstado</span><span class="o">,</span>
+<span class="w">    </span><span class="n">SFCPause</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">OrdenPausa</span><span class="o">,</span>
+<span class="w">    </span><span class="n">Execute</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">Director</span><span class="o">.</span><span class="n">OrdenProduccion</span><span class="o">,</span>
+<span class="w">    </span><span class="n">Ack</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">ContinuacionAutorizada</span><span class="o">,</span><span class="w"> </span><span class="c1">// &lt;---</span>
+<span class="w">    </span><span class="n">VagonetaCargada</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">VagonetaCargar</span><span class="o">.</span><span class="n">Done</span><span class="o">,</span>
+<span class="w">    </span><span class="n">VagonetaTrasladada</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">VagonetaTrasladar</span><span class="o">.</span><span class="n">Done</span><span class="o">,</span>
+<span class="w">    </span><span class="n">CintaEvacuada</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">CintaEvacuar</span><span class="o">.</span><span class="n">Done</span><span class="o">,</span>
+<span class="p">)</span><span class="o">;</span>
+</code></pre></div>
+<p>la cual toma su valor de esta forma:</p>
+<div class="highlight"><pre><span></span><code><span class="n">ContinuacionAutorizada</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="n">PausaTrasCiclo</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">SolicitudMarcha</span><span class="o">;</span>
+</code></pre></div>
+<p>De esta forma, el <code>Coordinador</code> volverá a su etapa inicial si no está activa la señal <code>PausaTrasCiclo</code> (controlada en la visualización) o, si está activa, cuando <code>SolicitudMarcha</code> esté activa. Si observa el método <code>m_GestorEntradas</code>, <code>SolicitudMarcha</code> está asignada a la detección del flanco positivo del pulsador de marcha.</p>
+<div class="highlight"><pre><span></span><code><span class="n">SolicitudMarcha</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">FlancoPulsadorMarcha</span><span class="o">.</span><span class="n">Q</span><span class="o">;</span>
+</code></pre></div>
+<p>Así, cuando la pausa a final de ciclo esté activa, pasaremos al siguiente ciclo cuando se pulse el pulsador de marcha.</p>
+<h4 id="implementacion-sencilla-de-la-parada-pedida">Implementación sencilla de la parada pedida<a class="headerlink" href="#implementacion-sencilla-de-la-parada-pedida" title="Permanent link">&para;</a></h4>
+<p>En esta versión, hemos utilizado la captura del flanco del pulsador de parada para <strong>solicitar la parada de la producción al final del ciclo actual</strong>. De esta manera, cuando se pulse el pulsador de parada durante la ejecución de alguno de los ciclos, el sistema capturará este suceso y, cuando se alcance el final de ciclo, el sistema dejará de producir inmediatamente.</p>
+<p>Esto se realiza en el método de gestión de entradas:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// en m_GestionEntradas</span>
+<span class="n">SolicitudParada</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">FlancoPulsadorParada</span><span class="o">.</span><span class="n">Q</span><span class="o">;</span>
+</code></pre></div>
+<p>que, recuerde, se ejecuta en cada ciclo del PLC.</p>
+<p>Posteriormente, este valor se le pasa como entrada al <code>Director</code> para que evolucione por su rama derecha una vez haya terminado un ciclo.</p>
+<p><img alt="Parada a final de ciclo" src="../../../images/04_tc3_carro_extendido/Carro_Extendido_Estructurado_Parada_Fin_Ciclo.png" width="700px" /></p>
+<p>Fíjese en este trozo de código del <code>FB_Director</code>. En él se puede observar que, una vez dada la orden de producir (<code>OrdenProducción = TRUE</code>, lo que <em>dispara</em> la ejecución del <code>Coordinador</code>), el <code>Director</code> queda a la espera de que ocurra alguna de estas dos situaciones:</p>
+<ol>
+<li>Se acaba la producción (<code>FinProducción = TRUE</code>). En este caso, hemos alcanzado el final de la producción, lo cual ocurre cuando el número de maniobras pendientes ha llegado a <code>0</code> en producción por lotes. Entonces se pasa a <strong>finalizar la producción</strong> y termina el programa.</li>
+<li>Se ha solicitado la parada a final de ciclo (<code>SolicitudParada = TRUE</code>). En este caso, esta variable se ha activado porque <strong>en algún momento</strong> durante la producción se pulsó el pulsador de parada. Entonces, se activa una señal de <code>ParadaSolicitada</code>, que se usará para indicar la solicitud en el panel del operador, y se espera a que alcancemos el final de ciclo. Esto se producirá cuando el <code>Coordinador</code> termine uno de sus ciclos.</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">Consejo</p>
+<p>Inspeccione el código del <strong>FB</strong> del <code>Director</code> y el <code>Coordinador</code> para entender la interacción entre ellos en este caso. Preste especial atención al valor que toman las variables utilizadas en las condiciones de transición entre etapas, ya que se ha utilizado una semántica reforzada para clarificar el proceso.</p>
+</div>
+<h4 id="mejora-de-la-gestion-de-falta-material">Mejora de la gestión de falta material<a class="headerlink" href="#mejora-de-la-gestion-de-falta-material" title="Permanent link">&para;</a></h4>
+<p>En esta versión, señalizaremos la falta de material en dos fases:</p>
+<ul>
+<li>Activación simultánea de avisador sonoro y luminoso (luz de falta material).</li>
+<li>Activación de avisador luminoso (luz de falta material).</li>
+</ul>
+<p><img alt="Falta material" src="../../../images/04_tc3_carro_extendido/Carro_Extendido_Estructurado_FaltaMaterial.png" width="400px" /></p>
+<p>Como se observa en el código de la figura (del <strong>FB</strong> <code>VagonetaCargar</code>), cuando se detecte la falta de material (en este caso <code>SiloNivelBajo = TRUE</code>), inicialmente se entra en una etapa donde se activan ambas señalizaciones y se espera hasta que <code>Resume</code> se active. Esto ocurrirá cuando el operador pulse el botón de marcha indicando que se ha dado por enterado. Entonces se entra en una segunda etapa que mantiene la luz de falta material activa mientras el operador introduce nuevo material. Una vez terminado, el operador pulsará el botón de marcha por segunda vez y el programa volverá a la etapa de comprobación de material, continuando su proceso si vuelve a tener material.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// m_GestorTareas</span>
+<span class="n">VagonetaCargar</span><span class="p">(</span>
+<span class="w">    </span><span class="n">SFCReset</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">OrdenReinicio</span><span class="o">,</span>
+<span class="w">    </span><span class="n">SFCPause</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">OrdenPausa</span><span class="o">,</span>
+<span class="w">    </span><span class="n">Execute</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">Coordinador</span><span class="o">.</span><span class="n">VagonetaCarga</span><span class="o">,</span>
+<span class="w">    </span><span class="n">Resume</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">SolicitudMarcha</span><span class="o">,</span><span class="w"> </span><span class="c1">// &lt;-- flanco positivo del pulsador de marcha</span>
+<span class="w">    </span><span class="n">Ack</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="n">Coordinador</span><span class="o">.</span><span class="n">VagonetaCarga</span><span class="o">,</span>
+<span class="w">    </span><span class="n">TajaderaAbierta</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">i_TajaderaAbierta</span><span class="o">,</span>
+<span class="w">    </span><span class="n">TajaderaCerrada</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">i_TajaderaCerrada</span><span class="o">,</span>
+<span class="w">    </span><span class="n">CargaFinalizada</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">VagonetaCargada</span><span class="o">,</span>
+<span class="w">    </span><span class="n">SiloNivelBajo</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">SiloNivelBajo</span>
+<span class="p">)</span><span class="o">;</span>
+</code></pre></div>
+<p>El flanco positivo del pulsador de marcha se captura en <code>m_GestorEntradas</code> (nótese el uso del operador <code>=&gt;</code>):</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// m_GestorEntradas</span>
+<span class="n">FlancoPulsadorMarcha</span><span class="p">(</span><span class="n">CLK</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">i_PulsadorMarcha</span><span class="o">,</span><span class="w"> </span><span class="n">Q</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">SolicitudMarcha</span><span class="p">)</span><span class="o">;</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/famoreno/tc3_tutorial" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../javascripts/ui-course.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
