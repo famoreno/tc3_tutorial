@@ -71,7 +71,7 @@ El proyecto desarrollado debe tener las siguientes funcionalidades:
 - [ ] Declarar las variables pertinentes en el **FB** según la tabla de entrada y salida de la estación.
 - [ ] Declarar e invocar la instancia `Estacion` de `FB_Estacion` en el programa `MAIN`.
 - [ ] Compilar.
-- [ ] Buscar el *runtime* remoto.
+- [ ] Buscar el controlador remoto.
 - [ ] Configurar entrada/salida (dispositivos y terminales).
 - [ ] Vincular variables.
 - [ ] Activar la configuración.

@@ -197,7 +197,7 @@ Implementa el funcionamiento del sistema de transporte de material que represent
 
     !!! info "**Estructurado**"
         - 🗂️ <span class="fondo-amarillo">**EST**</span> `CV → Automatización → ejemplos → 4_tc3_carro_estructurado → tc3_carro_extendido_estructurado_lite.tnzip`
-        - 🧩 <span class="fondo-rojo">**EST+GEMMA**</span> `CV → Automatización → ejemplos → 4_tc3_carro_estructurado → tc3_carro_extendido_estructurado_basic.tnzip`
+        - 🧩 <span class="fondo-rojo">**EST+GEMMA**</span> `CV → Automatización → ejemplos → 5_tc3_carro_gemma → tc3_carro_extendido_estructurado_basic.tnzip`
 
     <!-- !!! info "🧩 **Funcional**" 
         <span class="fondo-naranja">**Próximamente!**</span> -->
