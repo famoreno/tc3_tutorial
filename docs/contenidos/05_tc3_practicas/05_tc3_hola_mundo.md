@@ -10,7 +10,7 @@ Replicar el ejemplo [**«Hola Mundo»**](../02_tc3_hola_mundo.md) para implement
 - Declarar variables de **memoria interna** (marcas).
 - Declarar **variables localizadas** con **mapeo dinámico** de **entrada** y de **salida**.
 - Implementar un fragmento de código sencillo en el lenguaje **Texto Estructurado (ST)** de la norma IEC 61131-3.
-- Crear una **visualización** sencilla para mostrar y mofificar valores booleanos y numéricos.
+- Crear una **visualización** sencilla para mostrar y modificar valores booleanos y numéricos.
 - Construir un proyecto PLC.
 - Vincular las instancias de las variables de entrada/salida a canales de entrada/salida.
 - Desplegar (poner en marcha) un proyecto PLC.
@@ -26,23 +26,25 @@ A continuación se detallan los pasos necesarios para replicar completamente est
 
 ---
 
-### Sobre el simulador (UmRT_Default)
+### Sobre el simulador
+
+En primer lugar vamos a implementar el proyecto (código y visualización) y ejecutarlo en nuestro ordenador usando el simulador de TwinCAT 3 (`UmRT_Default`).
 
 1. Abrir la aplicación TwinCAT XAE Shell
-1. Crear una solución de TwinCAT 3 con nombre `TC3_Hola_Mundo` [➡️](../../contenidos/01_conceptos/#crear-proyecto-tc3)
-1. Ocultar las configuraciones innecesarias
-1. Crear un proyecto PLC estándar con el nombre `Hola_Mundo_PLC` [➡️](../../contenidos/01_conceptos/#crear-proyecto-plc)
+2. Crear una solución de TwinCAT 3 con nombre `TC3_Hola_Mundo` [➡️](../../contenidos/01_conceptos/#crear-proyecto-tc3)
+3. Ocultar las configuraciones innecesarias
+4. Crear un proyecto PLC estándar con el nombre `Hola_Mundo_PLC` [➡️](../../contenidos/01_conceptos/#crear-proyecto-plc)
 
     !!! warning "Importante"
-        **Nota didáctica:** Para facilitar la comprensión, en este primer ejemplo todo el código se implementa directamente dentro del programa principal (MAIN). Téngase en cuenta que esto se hace exclusivamente con fines pedagógicos. La buena práctica en programación industrial dicta que el MAIN debe actuar únicamente como punto de entrada y organizador, mientras que la lógica de control debe residir en otras unidades de organización del programa (POUs) —fundamentalmente Bloques de Función (FB)— que permiten modularizar, escalar y replicar fácilmente los comportamientos y funcionalidades del sistema.
+        **Nota didáctica:** para facilitar la comprensión, en este primer ejemplo todo el código se implementa directamente dentro del programa principal (MAIN). Téngase en cuenta que esto se hace exclusivamente con fines pedagógicos. La buena práctica en programación industrial dicta que el MAIN debe actuar únicamente como punto de entrada y organizador del proyecto, mientras que la lógica de control debe residir en otras unidades de organización del programa (POUs) —fundamentalmente Bloques de Función (FB)— que permiten modularizar, escalar y replicar fácilmente los comportamientos y funcionalidades del sistema.
 
-1. Localizar en el panel de **explorador de la solución** el programa `MAIN` bajo la carpeta `POUs` e incluir la línea de comentario inicial.
+5. Localizar en el panel de **explorador de la solución** el programa `MAIN` bajo la carpeta `POUs` e incluir la línea de comentario inicial.
 
     ```iecst
     // Hola Mundo de la Programación de PLC
     ```
 
-1. Declarar la variable entera `ContadorCiclos` en la parte de declaración del programa `MAIN`. [➡️](../../contenidos/01_conceptos/#declaracion-de-variables)
+6. Declarar la variable entera `ContadorCiclos` en el bloque `VAR` de la parte de declaración del programa `MAIN`. [➡️](../../contenidos/01_conceptos/#declaracion-de-variables)
 
     ```iecst
     PROGRAM MAIN
@@ -51,37 +53,42 @@ A continuación se detallan los pasos necesarios para replicar completamente est
     END_VAR
     ```
 
-1. Escribir el código correspondiente a la gestión del contador de ciclos en la parte de implemantación del programa `MAIN`.
+7. Escribir el código correspondiente a la gestión del contador de ciclos en la parte de implementación del programa `MAIN`.
 
     ```iecst
     ContadorCiclos := ContadorCiclos + 1;
     ```
 
-1. Construir el proyecto (**Build**) para generar un achivo ejecutable.
+8. Construir el proyecto (**Build**) para generar un archivo ejecutable.
 
     !!! warning "Importante"
         Asegurarse antes de continuar de que el resultado de la construcción del proyecto no arroja errores.
 
-2. Artivar el simulador **UmRT_Default** para disponer de un `runtime` sobre el que ejecutar el código.
-3. Seleccionar UmRT_Default como sistema destino (**Target System**).
-4. Activar la licencia temporal del runtime del sistema destino si es necesario.
-5. Reiniciar el sistema destino en **RUN Mode**.
-6. Activar la configuración en el sistema destino.
-7. Conectarse (**Login**) al sistema destino para enviar el proyecto al runtime e iniciar la monitorización (sesión de depuración en tiempo real) creando el puerto de comunicación 851 para el intercambio de información entre el entorno de programación y el runtime.
-8. Poner el programa de PLC en ejecujción (**Run**) 
-9. Observar cómo el valor de la variable `ContadorCiclos` se incrementa continuamente al ritmo de ejecución del ciclo básico del PLC (típicamente 10 ms). 
-10. Modificar el valor del contador de ciclos  
-11. Desconectarse del sistema destino (**logout**) para continuar con la edición del programa.
-12. Crear un visualización para monitorizar y actulizar el contador de ciclos [➡️](../../contenidos/01_conceptos/#crear-visualizacion)
+9. Activar el simulador **UmRT_Default** para disponer de un `runtime` sobre el que ejecutar el código del proyecto
 
-    ![Imagen](../images/02_tc3_demo/VISU_Demo.png){width=240px}
+    ??? info
+        Para activar el simulador ejecute el *script* de inicio que se encuentra habitualmente en la siguiente ruta:
+        `C:\TwinCAT\3.1\Runtimes\UmRT_Default\Start.bat`
+
+10. Seleccionar UmRT_Default como sistema destino (**Target System**).
+11. Activar la licencia temporal del `runtime` del sistema destino si es necesario.
+12. Reiniciar el sistema destino en **RUN Mode**.
+13. Activar la configuración en el sistema destino.
+14. Conectarse (**Login**) al sistema destino para transferir el proyecto al runtime e iniciar la monitorización (sesión de depuración en tiempo real) creando el puerto de comunicación 851 para el intercambio de información entre el entorno de programación y el `runtime`.
+15. Poner el programa de PLC en ejecución (**Run**).
+16. Observar cómo el valor de la variable `ContadorCiclos` se incrementa continuamente al ritmo de ejecución del ciclo básico del PLC (típicamente 10 ms). 
+17. Modificar el valor del contador de ciclos mediante forzado de variables (**Force values**, **Unforce values**, **Write values**).
+18. Desconectarse del sistema destino (**Logout**) para continuar con la edición del programa.
+19. Crear una visualización para monitorizar y actualizar el contador de ciclos. [➡️](../../contenidos/01_conceptos/#crear-visualizacion)
+
+    ![Imagen](../../images/02_tc3_hola_mundo/V_Hola_Mundo_ContadorCiclos.png){width=660px}
 
     1. Rectángulo (*Rectangle*) para la etiqueta **Contador**.
    
         ??? info "Parámetros"
             - Texts > Text = Contador
 
-    2. Rectángulo (*Rectangle*) para el valor de `ContadorCiclos`.
+    2. Rectángulo (*Rectangle*) para mostrar el valor de `ContadorCiclos`.
 
         ??? info "Parámetros"
             - Color > Normal state > Frame color = [0, 0, 0]
@@ -90,7 +97,7 @@ A continuación se detallan los pasos necesarios para replicar completamente est
                 - *Formato estilo printf que indica que se va a sustituir por un número entero.*
             - Text variables > Text variable = [`MAIN.ContadorCiclos`]
 
-    3. Rectángulo (*Rectangle*) para el valor de `ContadorCiclos`
+    3. Rectángulo (*Rectangle*) para modificar el valor de `ContadorCiclos`.
 
         ??? info "Parámetros"
             - Color > Normal state > Frame color = [0, 0, 0]
@@ -100,7 +107,7 @@ A continuación se detallan los pasos necesarios para replicar completamente est
             - Text variables > Text variable = [`MAIN.ContadorCiclos`]
             - Inputconfiguration > OnMouseClick
 
-    4. Botón (*Button*) para reiniciar el contador
+    4. Botón (*Button*) para reiniciar el valor de la variable `ContadorCiclos`.
 
         ??? info "Parámetros"
             - Texts > Text = [**Reinicia**]
@@ -110,17 +117,19 @@ A continuación se detallan los pasos necesarios para replicar completamente est
     !!! tip "Sugerencia"
         Los colores especificados para los elementos son simplemente un ejemplo, pueden ser escogidos libremente.
 
-13. Volver a conectarse y comprobar que todos los elementos de la visualización funcionan correctamente.
-14. Volver a desconectarse e incluir en la visualización los elementos correspondientes al pulsador y la lámapra.
+20. Volver a conectarse y comprobar que todos los elementos de la visualización funcionan correctamente.
+21. Volver a desconectarse e incluir en la visualización los elementos correspondientes al pulsador y la lámpara.
 
-    1.  Botón (*Button*) para el pulsador
+    ![Imagen](../../images/02_tc3_hola_mundo/V_Hola_Mundo.png){width=688px}
+
+    1.  Botón (*Button*) para modificar el valor de `i_Pulsador`.
 
         ??? info "Parámetros"
             - Texts > Text = [**Pulsador**]
             - Inputconfiguration
                 - Tap > Variable = [`MAIN.i_Pulsador`]
 
-    2.  Rectángulo (*Rectangle*) para la lámpara
+    2.  Rectángulo (*Rectangle*) para mostrar el valor de la variable `o_Lampara`.
 
         ??? info "Parámetros"
             - Colors > Normal state > Frame color = [0, 64, 0]
@@ -130,7 +139,11 @@ A continuación se detallan los pasos necesarios para replicar completamente est
             - Texts > Text = [**Lámpara**]
             - Color variables > Toggle color = [`MAIN.o_Lampara`]
 
-15. Conectarse nuevamente y comprobar que los nuevos elementos de la visualización funcionan correctamente
+    !!! tip "Sugerencia"
+        Complete la visualización con los elementos que considere oportuno para mejorar su apariencia.
+
+
+15. Conectarse nuevamente y comprobar que los nuevos elementos de la visualización funcionan correctamente.
 
 !!! success "¡Enhorabuena! 🎉"
     Has completado con éxito la primera parte de la práctica y has puesto en marcha tu primer proyecto completo de PLC en Texto Estructurado con TwinCAT 3 sobre el simulador UmRT_Default.
@@ -139,31 +152,34 @@ A continuación se detallan los pasos necesarios para replicar completamente est
 
 ### Sobre un controlador
 
-1. Estando desconectado, seleccionar como nuevo sistema destino un **controlador remoto** de Beckhoff presente en la actual red local.
+Ahora vamos a configurar el proyecto para ejecutarlo sobre un controlador Beckhoff real. 
 
+1. Estando desconectado, seleccionar como nuevo sistema destino un **controlador remoto** de Beckhoff presente en la actual red local. Para lo cual será necesario: [➡️](../../contenidos/01b_ejecucion/#busqueda-de-controladores-remotos)
 
-2. **Buscar** el controlador en la red, **escanear** los módulos y **probar** dos terminales/canales, uno de entrada y otro de salida. [➡️](../../contenidos/01b_ejecucion/#busqueda-de-controladores-remotos)
+    -  **Buscar** el controlador.
+    -  **Escanear** la entrada/salida (**I/O**) en busca de dispositivos y terminales.
+    -  **Probar** dos canales digitales, uno de entrada y otro de salida.
 
-    !!! tip "Sugerencia"
-        Buscar la lista de entradas y salidas de la **descripción funcional** del sistema una señal de entrada (preferiblemente un **pulsador**) y otra de salida (preferiblemente una **lámpara**).
+    !!! tip "Sugerencias"
+        - Buscar en la lista de entradas y salidas de la **descripción funcional** del sistema una señal de entrada (preferiblemente un **pulsador**) y otra de salida (preferiblemente una **lámpara**).
+        - **Desactivar** los dispositivos de entrada y salida que no se van a utilizar (todos menos el dispositivo denominado `EtherCAT`).
+2. **Vincular** las variables de entrada y salida con los canales correspondientes. [➡️](../../contenidos/01b_ejecucion/#vinculacion-de-variables-y-es)
+    -  Variable de entrada `i_Pulsador` con un canal de entrada digital.
+    -  Variable de salida `o_Lampara` con un canal de salida digital.
 
-3. **Vincular** los canales correspondientes con las variables de E/S. [➡️](../../contenidos/01b_ejecucion/#vinculacion-de-variables-y-es)
-    1.  Variable de entrada `i_Pulsador`
-    2.  Variable de salida `i_Lampara`
+3. **Activar la configuración** y reiniciar TwinCAT 3 en modo **Ejecución (Run Mode)**. [➡️](../../contenidos/01b_ejecucion/#3-activar-configuracion)
+4. **Transferir el programa** al controlador (**Login**). [➡️](../../contenidos/01b_ejecucion/#4-transferir-programa)
+5. Poner el código en **ejecución** (**Start**). [➡️](../../contenidos/01b_ejecucion/#5-ejecutar-programa)
+6. Comprobar que:
+    - El contador de ciclos sigue incrementándose de forma continua.
+    - Al accionar el pulsador físico se enciende la lámpara física.
 
-4. **Activar la configuración** y reiniciar TwinCAT 3 en modo **Ejecución (Run Mode)** [➡️](../../contenidos/01b_ejecucion/#3-activar-configuracion)
-5. **Transferir el programa** al controlador (**Login**) [➡️](../../contenidos/01b_ejecucion/#4-transferir-programa)
-6. Poner el código en **ejecución** (**Start**) [➡️](../../contenidos/01b_ejecucion/#5-ejecutar-programa)
-7. Comprobar que:
-    1. El contador de ciclos sigue incrementándose de forma continua.
-    2. Al accionar el pulsador físico se enciende la lámpara física.
-
-8. **Utilizar la visualización** integrada en el proyecto PLC para facilitar la prueba:
-    1. Comprobar en la visualización que, accionando el pulsador físico, cambia de estado la lámpara.
-    1. Comprobar en la visualización que, accionando el botón de la visualización, **ni se enciende, ni cambia de estado la lámpara**.
+7. **Utilizar la visualización** integrada en el proyecto PLC para facilitar la prueba:
+    - Comprobar en la visualización que, accionando el pulsador físico, cambia de estado la lámpara.
+    - Comprobar en la visualización que, accionando el botón de la visualización, **NO cambia de estado la lámpara**.
 
         !!! warning "Importante"
-            Esto se debe a que la ejecución del ciclo básico hace que el valor del pulsador **se actualice con el valor del pulsador físico** al inicio de cada ciclo, sobreescribiendo el valor que fija el botón de la visualización.
+            Esto se debe a que la ejecución del ciclo básico hace que el valor del pulsador **se actualice con el valor del pulsador físico** al inicio de cada ciclo básico de ejecución, sobreescribiendo el valor que fija el botón de la visualización.
 
 !!! success "¡Enhorabuena! 🎉"
     Has completado con éxito la segunda parte de la práctica y has puesto en marcha tu primer proyecto completo de PLC en Texto Estructurado con TwinCAT 3 sobre un controlador real.
