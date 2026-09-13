@@ -20,6 +20,7 @@ Bienvenido/a al tutorial de TwinCAT 3. Aquí encontrarás guías y material de a
 ## Ejemplos
 <!-- - [Descripción general](contenidos/01d_ejemplos.md) -->
 - [Ejemplo - Demo](contenidos/02_tc3_demo.md). El «hola mundo» de la automatización industrial.
+- [Ejemplo - Hola Mundo](contenidos/02_tc3_hola_mundo.md) El «hola mundo» de la automatización industrial.
 - [Ejemplo - Carro Básico](contenidos/03_tc3_carro_basico.md). Mi primera máquina de estados.
 - [Ejemplo - Carro Extendido](contenidos/04_tc3_carro_extendido.md). Primera automatización real.
     - [Monolítico](contenidos/04_tc3_carro_extendido/04_tc3_carro_extendido_mono.md)
@@ -27,9 +28,9 @@ Bienvenido/a al tutorial de TwinCAT 3. Aquí encontrarás guías y material de a
     - [Jerárquico](contenidos/04_tc3_carro_extendido/04_tc3_carro_extendido_jerarquico.md)
 
 ## Prácticas
-
 - [Descripción general](contenidos/01e_practicas.md)
 - [Demo](contenidos/05_tc3_practicas/05_tc3_demo.md)
+- [Hola_Mundo](contenidos/05_tc3_practicas/05_tc3_hola_mundo.md)
 <!-- - [Carro básico](contenidos/05_tc3_practicas/05_tc3_carro_basico.md) -->
 - [Semáforo (ArduTC)](contenidos/05_tc3_practicas/05_tc3_semaforo.md)
 - Proyectos

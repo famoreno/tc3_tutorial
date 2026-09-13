@@ -46,6 +46,7 @@ nav:
   - Ejemplos:
     # - ✏️ Descripción general: contenidos/01d_ejemplos.md 
     - 👋 Ej. - Demo: contenidos/02_tc3_demo.md
+    - 👋 Ej. - Hola Mundo: contenidos/02_tc3_hola_mundo.md
     - 🛒 Ej. - Carro Básico: contenidos/03_tc3_carro_basico.md
     - 🚟 Ej. - Carro Extendido: 
       - ✏️ Descripción: contenidos/04_tc3_carro_extendido.md
@@ -56,6 +57,7 @@ nav:
   - Prácticas:
     - ℹ️ Información: contenidos/01e_practicas.md 
     - 👋 Demo: contenidos/05_tc3_practicas/05_tc3_demo.md
+    - 👋 Hola Mundo: contenidos/05_tc3_practicas/05_tc3_hola_mundo.md
     - 🚦 Semáforo (ArduTC): contenidos/05_tc3_practicas/05_tc3_semaforo.md
     # - 🛒 Carro básico: contenidos/05_tc3_practicas/05_tc3_carro_basico.md
     - 🧩 Proyectos:
@@ -87,9 +89,13 @@ markdown_extensions:
   - pymdownx.tasklist:
       # custom_checkbox: true
       clickable_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg      
 
 plugins:
   - search
+  - include-markdown
   - macros:
       include_dir: docs
 
