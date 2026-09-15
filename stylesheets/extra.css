@@ -1,0 +1,391 @@
+/* ===== Definición general de colores (corporativos UMA) ===== */
+:root {
+  --uma-dark-blue: #002e5d;
+  --uma-light-blue: #00aec7;
+  --uma-gray: #63666a;
+  --uma-light-gray: #888b8d;
+  --very-light-gray: #ededed;
+}
+
+:root  > * {
+  --md-primary-fg-color:        var(--uma-dark-blue);
+  --md-primary-fg-color--light: var(--uma-light-blue);
+  --md-primary-fg-color--dark:  var(--uma-gray);
+  --md-typeset-a-color: var(--uma-light-blue);
+}
+
+/* ===== Párrafos ===== */
+.md-typeset p { 
+  line-height: 1.5; 
+}
+
+/* ===== Separadores horizontales ===== */
+.md-typeset hr {
+  border: none;
+  height: 1px;
+  background-color: var(--uma-dark-blue);
+  opacity: 0.3;
+  margin: 2em 0;
+}
+
+/* Dark mode */
+[data-md-color-scheme="slate"] .md-typeset hr {
+  background-color: var(--uma-light-blue);
+}
+
+/* ===== Barra superior color azul UMA ===== */
+.md-header, .md-header__inner {
+  background-color: var(--uma-dark-blue) !important;
+}
+
+/* ===== Headers ===== */
+.md-typeset h1 {
+  color: var(--uma-dark-blue);
+  font-weight: 750;
+  letter-spacing: -0.4px;
+}
+
+.md-typeset h2 {
+  font-weight: 700;
+  font-size: 1.6em;
+  border-left: 6px solid var(--uma-dark-blue);
+  padding-left: 0.6em;
+}
+
+.md-typeset h3 {
+  font-weight: 700;
+  font-size: 1.2em;
+  border-left: 6px solid var(--uma-light-blue);
+  padding-left: 0.6em;
+}
+
+.md-typeset h4 {
+  font-weight: 600;
+  font-size: 1em;
+  border: 1px solid var(--uma-gray);
+  border-left: 4px solid var(--uma-gray);
+  padding-left: 0.6em;
+}
+
+/* Dark mode */
+[data-md-color-scheme="slate"] .md-typeset h1 {
+  color: var(--uma-light-blue);
+}
+
+[data-md-color-scheme="slate"] .md-typeset h2 {
+  border-left-color: var(--uma-light-blue);
+}
+
+[data-md-color-scheme="slate"] .md-typeset pre {
+  border-left-color: var(--uma-light-blue);
+}
+
+/* ===== Código ===== */
+/* Código inline (solo inline, no bloques) ej. `ST_TAPA */
+.md-typeset :not(pre) > code {
+  color: white;
+  background-color: var(--uma-light-blue);
+  padding: 1px 3px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-size: 0.8em;
+}
+
+/* Bloques de código */
+.md-typeset pre {
+  border-left: 4px solid var(--uma-dark-blue);
+  border-radius: 4px;
+}
+
+/* ===== Cuadro de búsqueda ===== */
+.md-search__form {
+  border-radius: 12px;
+  animation: searchInsetPulse 3s infinite !important;
+}
+
+@keyframes searchInsetPulse {
+  0%, 100% {
+    box-shadow: inset 0 0 0 999px rgb(0, 172, 200, 0.5);
+  }
+
+  50% {
+    box-shadow: inset 0 0 0 999px rgba(0, 46, 93, 0.75);
+  }
+}
+
+/* ===== Imágenes ===== */
+.md-typeset img {
+  border-radius: 8px;
+  border: 1px solid var(--very-light-gray);
+  padding: 4px;
+  background-color: white;
+}
+
+/* ===== TOC izquierdo ===== */
+/* Nivel 1 */
+.md-nav__item > .md-nav__link {
+  font-size: 0.8rem;
+}
+
+/* Nivel 2 */
+.md-nav__item .md-nav__item > .md-nav__link {
+  font-size: 0.7rem;
+}
+
+/* Nivel 3 */
+.md-nav__item .md-nav__item .md-nav__item > .md-nav__link {
+  font-size: 0.6rem;
+}
+
+/* ===== TOC derecho ===== */
+/* Elemento activo (resaltado) */
+.md-nav--secondary .md-nav__link--active {
+  color: var(--uma-dark-blue);
+  border-left: 4px solid var(--uma-dark-blue);
+  padding-left: 0.7rem;
+}
+
+/* Colores RGBA porque necesitamos opacidad */
+/* Nivel 1 */
+.md-nav--secondary > .md-nav__list > 
+.md-nav__item > .md-nav__link {
+  background-color: rgba(0, 46, 93, 0.25);
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 0.7rem;
+}
+
+/* Nivel 2 */
+.md-nav--secondary > .md-nav__list >
+.md-nav__item .md-nav__item > .md-nav__link {
+  background-color: rgba(0, 174, 199, 0.15);
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 0.65rem;
+}
+
+/* Nivel 3 */
+.md-nav--secondary > .md-nav__list >
+.md-nav__item .md-nav__item .md-nav__item > .md-nav__link {
+  background-color: rgba(99, 102, 106, 0.15);
+  font-size: 0.55rem;
+}
+
+/* Dark mode */
+[data-md-color-scheme="slate"] .md-nav--secondary .md-nav__link--active {
+  border-left-color: var(--uma-light-blue);
+  color: var(--uma-light-blue);
+}
+
+/* ===== Botones header (hamburguesa + clear highlight) ===== */
+#toggle-sidebar-btn svg,
+#clear-search-highlight-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: currentcolor;
+}
+
+/* ===== Sidebar colapsable estilo “book” (escritorio) ===== */
+@media (min-width: 76.25em) {
+  body.sidebar-collapsed .md-sidebar--primary {
+    transform: translateX(-110%);
+  }
+
+  body.sidebar-collapsed .md-main__inner {
+    margin-left: 0 !important;
+  }
+}
+
+/* ===== Botones custom en header ===== */
+.course-header-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: .2rem;
+  padding: .35rem;
+  border: 0;
+  border-radius: .4rem;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.course-header-btn:hover {
+  background: rgba(0,0,0,0.1);
+}
+
+.course-header-btn svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+/* ===== Tablas ===== */
+.md-typeset table {
+  font-size: 0.85rem;         /* Texto ligeramente más pequeño */
+}
+
+.md-typeset table td,
+.md-typeset table th {
+  padding: 2px 2px;           /* Reduce espacio interno */
+  line-height: 1;             /* Reduce altura de línea */
+}
+
+/* Header de tablas en modo claro */
+.md-typeset table thead {
+  background-color: var(--uma-gray);
+  color: var(--very-light-gray);
+}
+
+/* Dark mode */
+[data-md-color-scheme="slate"] .md-typeset table thead {
+  background-color: var(--uma-dark-blue);
+}
+
+/* ===== Leyenda tipo info (funciona con !!! y ???) ===== */
+/* Tablas dentro de !!! info */
+.md-typeset .admonition.info table,
+.md-typeset details.info table {
+  font-size: 0.95em;
+  border-radius: 4px;
+}
+
+/* Reducir padding de celdas para compactar */
+.md-typeset .admonition.info th,
+.md-typeset .admonition.info td,
+.md-typeset details.info th,
+.md-typeset details.info td {
+  padding: 0.15rem 0.5rem; 
+}
+
+/* Header de tabla */
+.md-typeset .admonition.info th,
+.md-typeset details.info th {
+  background-color: var(--uma-dark-blue);
+  font-weight: 700;
+  color: var(--very-light-gray);
+}
+
+/* Reducir margen vertical que mete Material a las tablas */
+.md-typeset .admonition.info .md-typeset__table,
+.md-typeset details.info .md-typeset__table {
+  margin: 0.4em 0;
+}
+
+/* Dark mode */
+[data-md-color-scheme="slate"] .md-typeset .admonition.info table,
+[data-md-color-scheme="slate"] .md-typeset details.info table {
+  background-color: var(--uma-dark-blue);
+  color: var(--very-light-gray);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .admonition.info th,
+[data-md-color-scheme="slate"] .md-typeset details.info th {
+  background-color: var(--uma-light-blue);
+  font-weight: 700;
+  color: var(--uma-dark-blue);
+}
+
+/* ===== Leyendas ===== */
+/* Reduce espacio del bloque desplegable */
+.md-typeset details {
+  margin: 0.5em 0;          /* menos espacio vertical exterior */
+}
+
+.md-typeset details summary {
+  padding: 0.4em 0.8em;     /* reduce altura del encabezado */
+  min-height: auto;         /* evita altura mínima grande */
+}
+
+/* ===== Fondos de color ===== */
+/* Fondo rojo (texto claro) */
+.fondo-rojo {
+  background-color: #de3744;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Fondo naranja (texto claro) */
+.fondo-naranja {
+  background-color: #ef8f13;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Fondo amarillo (texto oscuro) */
+.fondo-amarillo {
+  background-color: #fcfd41;
+  color: black;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Fondo gris (texto claro) */
+.fondo-gris {
+  background-color: #807f7f;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Fondo verde (texto claro) */
+.fondo-verde {
+  background-color: #4caf50;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Fondo azul (texto claro) */
+.fondo-azul {
+  background-color: #002e5d;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Fondo azul (texto claro) */
+.fondo-azul-lang {
+  background-color: #002e5d;
+  color: white;
+  font-weight: bold;
+  padding: 1px 3px;
+  border-radius: 3px;
+}
+
+/* Fondo rojo (texto claro) */
+.fondo-rojo-lang {
+  background-color: #de3744;
+  color: white;
+  font-weight: bold;
+  padding: 1px 3px;
+  border-radius: 3px;
+}
+
+/* ===== Fuentes ===== */
+/* TODO: pedir permiso para usar la fuente de la UMA en el texto */
+@font-face {
+  font-family: "Malacitana";
+  src: url("../assets/fonts/Malacitana-Sans-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Malacitana";
+  src: url("../assets/fonts/Malacitana-Sans-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Fuente general de Material for MkDocs */
+:root {
+  --md-text-font: "IBM Plex Sans"; /* "Roboto"; "Malacitana"; */
+  --md-code-font: "IBM Plex Mono"; /* "Roboto mono"; "Fira Code"; */
+}
+
+
