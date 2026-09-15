@@ -2,19 +2,20 @@
 
 ## 📝 Descripción del Proyecto
 
-Este proyecto es el **Hola Mundo** para **autómatas programables (PLC)**. 
+Este proyecto es el **Hola Mundo** de la programación de **autómatas programables (PLC)**. 
 
-Hola Mundo está escrito en el lenguaje **Texto Estructurado (ST)** de la norma IEC 61131-3 con TwinCAT 3.
+El proyecto **Hola Mundo** se ha desarrollado en el entorno **TwinCAT 3** empleando el lenguaje **Texto Estructurado (ST)** conforme a la norma **IEC 61131-3**.
 
 Hola Mundo es un proyecto mínimo y funcional, que muestra la declaración y el uso básico de variables booleanas y enteras, ubicadas en los espacios de memoria de marcas, imagen de entrada e imagen de salida. Cubriendo los elementos esenciales de programación del lenguaje ST de la norma **IEC 61131-3** para la programación de PLC.
 
-![Imagen](../images/02_tc3_hola_mundo/V_Hola_Mundo.png){width=430px}
+![V_Hola_Mundo](../images/02_tc3_hola_mundo/V_Hola_Mundo.png)
+<figcaption>Figura 1: Visualización del proyecto Hola Mundo.</figcaption>
 
-Este proyecto incluye además, una **visualización** elemental que permite, mediante objetos gráficos, interactuar con las variables del proyecto. **Formas rectangulares** para mostrar el valor de variables booleanas y numéricas y **botones** para modificar el valor de variables booleanas y numéricas.
+Este proyecto incluye además, una **visualización** elemental que permite, mediante objetos gráficos, interactuar con las variables del proyecto. Utilizando **formas rectangulares**, para mostrar el valor de variables booleanas y numéricas, y **botones**, para modificar el valor de variables booleanas y numéricas.
 
 ---
 
-## Estructura (simplificada) del Proyecto PLC (POUs):
+## Estructura (simplificada) del Proyecto:
 
 ```text
 TC3_Hola_Mundo/
@@ -24,7 +25,7 @@ TC3_Hola_Mundo/
         ├── POUs/
         │   └── MAIN.TcPOU         <-- Programa principal (Código ST)
         └── VISUs/
-            └── V_Hola_Mundo.TcVISU <-- Interfaz gráfica (Visualización)
+            └── V_Hola_Mundo.TcVISU <-- Visualización (Interfaz gráfica)
 ```
 
 --- 
@@ -38,7 +39,7 @@ TC3_Hola_Mundo/
     VAR
         ContadorCiclos: UINT;
         i_Pulsador AT %I*: BOOL;
-        o_Lampara  AT %Q*: BOOL;
+        o_Lampara AT %Q*: BOOL;
     END_VAR
     ```
 
@@ -53,10 +54,10 @@ TC3_Hola_Mundo/
 ## Comentarios
 
 - La interfaz del programa `MAIN` (cabecera y definición de variables) se define en la **Parte de Declaración**. 
-- Los **comentarios** de una línea empiezan con `**`
-- La variable `ContadorCiclos` se declara como un entero sin signo (UINT)
-- La variable `i_Pulsador` se declara como un **booleano** (BOOL) y se sitúa en la **Imagen de Entrada** (AT %I*)
-- La variable `o_Lampara` se declara como un **booleano** (BOOL) y se sitúa en la **Imagen de Salida** (AT %Q*)
+- Los **comentarios** de una línea empiezan con `//`.
+- La variable `ContadorCiclos` se declara como un entero sin signo (`UINT`).
+- La variable `i_Pulsador` se declara como un **booleano** (`BOOL`) y se localiza dinámicamente en la **Imagen de Entrada** (`AT %I*`).
+- La variable `o_Lampara` se declara como un **booleano** (`BOOL`) y se localiza dinámicamente en la **Imagen de Salida** (`AT %Q*`).
 - La variable `ContadorCiclos` se incrementa indefinidamente una vez por **Ciclo Básico** de ejecución del PLC (10 ms).
 - El código del módulo, en lenguaje ST, se incluyue en la **Parte de Implementación**.
 - La variable de salida `o_Lampara` copia, continuamente, el valor de la variable de entrada `i_Pulsador`.
