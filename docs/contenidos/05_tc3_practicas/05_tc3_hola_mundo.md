@@ -1,7 +1,7 @@
 # 👋 Práctica «Hola Mundo»
 
 ## Tarea
-Replicar el ejemplo [**«Hola Mundo»**](../02_tc3_hola_mundo.md) para implementar nuestro primer programa de PLC con TwinCAT 3.
+Replicar el ejemplo [**«Hola Mundo»**](../02_tc3_hola_mundo.md) para implementar nuestro primer programa de PLC con TwinCAT 3 desde cero.
 
 ---
 
@@ -30,21 +30,21 @@ A continuación se detallan los pasos necesarios para replicar completamente est
 
 En primer lugar vamos a implementar el proyecto (código y visualización) y ejecutarlo en nuestro ordenador usando el simulador de TwinCAT 3 (`UmRT_Default`).
 
-1. Abrir la aplicación TwinCAT XAE Shell.
-2. Crear una solución de TwinCAT 3 con nombre `TC3_Hola_Mundo`. [➡️](../../contenidos/01_conceptos/01_tc3_crear_soluciones.md#crear-proyecto-tc3)
+1. Abrir la aplicación TwinCAT XAE. [➡️](../../contenidos/01_conceptos/01_tc3_proyecto_paso_a_paso.md#abrir-twincat-xae)
+2. Crear una solución de TwinCAT 3 con nombre `TC3_Hola_Mundo`. [➡️](../../contenidos/01_conceptos/01_tc3_proyecto_paso_a_paso.md#crear-un-proyecto-twincat-3)
 3. Ocultar las configuraciones innecesarias para dejar el explorador de la solución lo más despejado posible.
-4. Crear un proyecto PLC estándar con el nombre `Hola_Mundo_PLC`. [➡️](../../contenidos/01_conceptos/01_tc3_crear_soluciones.md#crear-proyecto-plc)
+4. Crear un proyecto PLC estándar con el nombre `Hola_Mundo_PLC`. [➡️](../../contenidos/01_conceptos/01_tc3_proyecto_paso_a_paso.md#crear-un-proyecto-plc)
 
     !!! warning "Importante"
         **Nota didáctica:** para facilitar la comprensión, en este primer ejemplo todo el código se implementa directamente dentro del **programa** principal (`MAIN`). Téngase en cuenta que esto se hace exclusivamente con fines pedagógicos. La buena práctica en programación industrial dicta que el MAIN debe actuar únicamente como punto de entrada y organizador del proyecto, mientras que la lógica de control debe residir en otras **Unidades de Organización del Programa** (`POUs`) —fundamentalmente **Bloques de Función** (`FB`)— que permiten modularizar, escalar y replicar fácilmente los comportamientos y funcionalidades del sistema.
 
-5. Localizar en el panel de **explorador de la solución** el programa `MAIN` bajo la carpeta `POUs` e incluir la línea de comentario inicial.
+5. Localizar en el panel de **Explorador de la Solución** el programa `MAIN` bajo la carpeta `POUs` e incluir la línea de comentario inicial sobre el **Encabezado del POU**.
 
     ```iecst
     // Hola Mundo de la Programación de PLC
     ```
 
-6. Declarar la variable entera `ContadorCiclos` en el bloque `VAR` de la parte de declaración del programa `MAIN`. [➡️](../../contenidos/01_conceptos/#declaracion-de-variables)
+6. Declarar la variable entera `ContadorCiclos` como `UINT` en el bloque `VAR` de la parte de declaración del programa `MAIN`. [➡️](../../contenidos/01_conceptos/01_tc3_proyecto_paso_a_paso.md#declarar-una-variable)
 
     ```iecst
     PROGRAM MAIN
@@ -55,13 +55,13 @@ En primer lugar vamos a implementar el proyecto (código y visualización) y eje
     ??? info
         Según el estándar `IEC 61131-3` tipo de dato `UINT` representa un entero sin signo de 16 bits (0 a 65535). 
 
-7. Escribir el código correspondiente a la gestión del contador de ciclos en la parte de implementación del programa `MAIN`.
+7. Escribir en `ST`, utilizando el `Operador de asignación`, el código correspondiente a la gestión del contador de ciclos en la parte de implementación del programa `MAIN`.
 
     ```iecst
     ContadorCiclos := ContadorCiclos + 1;
     ```
 
-8. Construir el proyecto (**Build**) para generar un archivo ejecutable.
+8. Construir el proyecto (**Build**) para generar un archivo ejecutable. [➡️](../../contenidos/01_conceptos/01_tc3_proyecto_paso_a_paso.md#construir-el-proyecto)
 
     !!! warning "Importante"
         Asegurarse antes de continuar de que el resultado de la construcción del proyecto mostrado en la ventana de mensajes no arroja errores.
@@ -70,19 +70,21 @@ En primer lugar vamos a implementar el proyecto (código y visualización) y eje
 
     ??? info
         Para activar el simulador ejecute el *script* de inicio que se encuentra habitualmente en la siguiente ruta:
+        
            - `C:\TwinCAT\3.1\Runtimes\UmRT_Default\Start.bat`.
 
-10. Seleccionar UmRT_Default como sistema destino (**Target System**).
+10. Seleccionar UmRT_Default como sistema destino (**Target System**). [➡️](../../contenidos/01_conceptos/01_tc3_proyecto_paso_a_paso.md#seleccionar-un-sistema-destino)
 11. Activar la licencia temporal del `runtime` del sistema destino si es necesario.
 12. Reiniciar el sistema destino en **RUN Mode**.
 13. Activar la configuración en el sistema destino.
-14. Conectarse (**Login**) al sistema destino.
+14. Conectarse (**Login**) al sistema destino para transferir el proyecto. [➡️](../../contenidos/01_conceptos/01_tc3_proyecto_paso_a_paso.md#transferir-un-proyecto)
    
     ??? info
         - Conectarse al sistema destino implica transferir el proyecto al runtime e iniciar la monitorización (sesión de depuración en tiempo real). 
         - La comuniciación para el intercambio de información entre el entorno de programación y el `runtime` tiene lugar, normalmente, a través del puerto `851 .
 
-15. Poner el programa de PLC en ejecución (**Run**).
+15. Poner el programa de PLC en ejecución (**Run**). [➡️](../../contenidos/01_conceptos/01_tc3_proyecto_paso_a_paso.md#arrancar-un-proyecto)
+   
 16. Observar cómo el valor de la variable `ContadorCiclos` se incrementa continuamente al ritmo de ejecución del ciclo básico del PLC (típicamente 10 ms), lo que prueba que el programa se está ejecutando. 
 17. Modificar el valor del contador de ciclos mediante forzado de variables (**Force values**, **Unforce values**, **Write values**).
 18. Desconectarse del sistema destino (**Logout**) para continuar con la edición del programa.
@@ -253,9 +255,9 @@ Ahora vamos a configurar el proyecto para ejecutarlo sobre un controlador Beckho
     -  Variable de entrada `i_Pulsador` con un canal de entrada digital `Pulsador`.
     -  Variable de salida `o_Lampara` con un canal de salida digital `Lampara`.
 
-15. Activar la configuración (**Activate la configuration**) y reiniciar TwinCAT 3 (**Restart TwinCAT System**). [➡️](../../contenidos/01b_ejecucion.md/#3-activar-configuracion)
-16. Volver a transferir el programa al controlador (**Login**). [➡️](../../contenidos/01b_ejecucion.md/#4-transferir-programa)
-17. Poner el programa en **ejecución** (**Start**). [➡️](../../contenidos/01b_ejecucion.md/#5-ejecutar-programa)
+15. Activar la configuración (**Activate la configuration**) y reiniciar TwinCAT 3 (**Restart TwinCAT System**).
+16. Volver a transferir el programa al controlador (**Login**).
+17. Poner el programa en **ejecución** (**Start**).
 18. Comprobar que:
     - El contador de ciclos sigue incrementándose de forma continua.
     - Al accionar el pulsador físico se enciende la lámpara física.
