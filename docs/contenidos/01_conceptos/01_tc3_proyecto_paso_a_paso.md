@@ -18,34 +18,36 @@ Tras cargar la aplicación se muestra la pantalla inicial de la aplicación.
 ## Crear un [proyecto](../../contenidos/00_terminologia.md/#proyecto-twincat-3) TwinCAT 3
 
 ### Seleccionar ***TwinCAT XAE Project (XML format)***.
-    - En el menú de la aplicación: File > New > Project
-    - En la página de inicio de la aplicación: Open > NewProject > New TwinCAT Project...
-  
-    ![Imagen](../../images/01_tc3_proyecto_paso_a_paso/03_New_Project.png){width=500px}
 
-    ??? info "Parámetros"
-        - Name = nombre del proyecto TwinCAT.
-        - Location = carpeta dónde se alojará la solución.
-        - Solution name = nombre de la solución (normalmente, el mismo que el nombre del proyecto).
-        - Create directory for solution = **SI**/NO (creará la solución dentro de una carpeta con el nombre de la solución).
-        - Create new Git repository = SI/NO (inicia el control de versiones con Git).
+ - En el menú de la aplicación: File > New > Project
+ - En la página de inicio de la aplicación: Open > NewProject > New TwinCAT Project...
 
-    Se mostrará la nueva solución «vacía».
+ ![Imagen](../../images/01_tc3_proyecto_paso_a_paso/03_New_Project.png){width=500px}
 
-    ![Imagen](../../images/01_tc3_proyecto_paso_a_paso/04_Solucion_Vacia.png){with=700px}
+??? info "Parámetros"
+    - Name = nombre del proyecto TwinCAT.
+    - Location = carpeta dónde se alojará la solución.
+    - Solution name = nombre de la solución (normalmente, el mismo que el nombre del proyecto).
+    - Create directory for solution = **SI**/NO (creará la solución dentro de una carpeta con el nombre de la solución).
+    - Create new Git repository = SI/NO (inicia el control de versiones con Git).
+
+ Se mostrará la nueva solución «vacía».
+
+ ![Imagen](../../images/01_tc3_proyecto_paso_a_paso/04_Solucion_Vacia.png){with=700px}
 
 ### Ocultar las configuraciones innecesarias 
-    Para despejar el panel de exploración de la solución, ocultar las configuraciones innecesarias.
 
-    - **CD** sobre la configuración seleccionada y seleccionar **Hide \*\*\* Configuration**.
+Para despejar el panel de exploración de la solución, ocultar las configuraciones innecesarias.
 
-    ![Imagen](../../images/01_tc3_proyecto_paso_a_paso/05_Hide_Configuration.png){width=300px}
+- **CD** sobre la configuración seleccionada y seleccionar **Hide \*\*\* Configuration**.
 
-    !!! note "Recomendación"
-        - Ocultar las configuraciones que no se van a utilizar: `MOTION`, `SAFETY`, `C++`, `VISION`, `ANALYTICS`.
-        - Mantener las configuraciones `SYSTEM`, `PLC` e `I/O`.
+![Imagen](../../images/01_tc3_proyecto_paso_a_paso/05_Hide_Configuration.png){width=300px}
 
-    ![Imagen](../../images/01_tc3_proyecto_paso_a_paso/05_Hide_Configuration_Final.png){width=300px}
+!!! note "Recomendación"
+    - Ocultar las configuraciones que no se van a utilizar: `MOTION`, `SAFETY`, `C++`, `VISION`, `ANALYTICS`.
+    - Mantener las configuraciones `SYSTEM`, `PLC` e `I/O`.
+
+![Imagen](../../images/01_tc3_proyecto_paso_a_paso/05_Hide_Configuration_Final.png){width=300px}
 
 ## Crear un proyecto PLC
 
