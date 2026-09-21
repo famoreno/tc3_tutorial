@@ -81,7 +81,7 @@ En primer lugar vamos a implementar el proyecto (código y visualización) y eje
    
     ??? info
         - Conectarse al sistema destino implica transferir el proyecto al runtime e iniciar la monitorización (sesión de depuración en tiempo real). 
-        - La comuniciación para el intercambio de información entre el entorno de programación y el `runtime` tiene lugar, normalmente, a través del puerto `851 .
+        - La comunicación para el intercambio de información entre el entorno de programación y el `runtime` tiene lugar, normalmente, a través del puerto `851` .
 
 15. Poner el programa de PLC en ejecución (**Run**). [➡️](../../contenidos/01_conceptos/01_tc3_proyecto_paso_a_paso.md#arrancar-un-proyecto)
    
@@ -90,7 +90,7 @@ En primer lugar vamos a implementar el proyecto (código y visualización) y eje
 18. Desconectarse del sistema destino (**Logout**) para continuar con la edición del programa.
 
     ??? info
-        Cuando nos desconectamos de un sistema destino abandonamos la monitorización, pero el programa sigue ejecutándose en el runtime del sistemas destino. Como prueba podremos observar que, cuando nos volvamos a conectar, el contador de ciclos tendrá un valor diferente.
+        Cuando nos desconectamos de un sistema destino abandonamos la monitorización, pero el programa sigue ejecutándose en el runtime del sistema destino. Como prueba podremos observar que, cuando nos volvamos a conectar, el contador de ciclos tendrá un valor diferente.
 
 19. Crear una visualización para monitorizar y actualizar el contador de ciclos. [➡️](../../contenidos/01_conceptos/07_tc3_crear_visualizacion.md)
 
@@ -151,7 +151,7 @@ En primer lugar vamos a implementar el proyecto (código y visualización) y eje
         | `;` | **Terminador** | Delimitador/Terminador de instrucción |
 
 
-22. Incluir el código correspondiente a la activación de la lámpara en parte de implementación del programa `MAIN`.
+22. Incluir el código correspondiente a la activación de la lámpara en la parte de implementación del programa `MAIN`.
 
     ```iecst
     PROGRAM MAIN
@@ -188,7 +188,7 @@ En primer lugar vamos a implementar el proyecto (código y visualización) y eje
         Complete la visualización con los elementos que considere oportuno para mejorar su apariencia.
 
 
-15. Conectarse nuevamente 
+25. Conectarse nuevamente 
     - Modificar el valor de las varaibles forzándolas (Force values, Unforce values, Write values).
     - Comprobar que los nuevos elementos de la visualización funcionan correctamente.
 
@@ -201,7 +201,7 @@ En primer lugar vamos a implementar el proyecto (código y visualización) y eje
 
 Ahora vamos a configurar el proyecto para ejecutarlo sobre un controlador Beckhoff real. 
 
-1. Estando desconectado, seleccionar como nuevo sistema destino un **controlador remoto** de Beckhoff presente en la actual red local. [➡️](../../contenidos/01b_ejecucion.md/#busqueda-de-controladores-remotos)
+1. Estando desconectado, seleccionar como nuevo sistema destino un **controlador remoto** de Beckhoff presente en la actual red local. [➡️](../../contenidos/01b_ejecucion.md#busqueda-de-controladores-remotos)
 2. Activar la configuración en el nuevo sistema destino.
 3. Transferir el programa.
 4. Poner el programa en ejecución.
@@ -225,7 +225,7 @@ Ahora vamos a configurar el proyecto para ejecutarlo sobre un controlador Beckho
     ```
     ??? "Explicación"
         - Para situar las instancias de estas variables en las correspondientes imágenes de E/S (*Process Image*) es necesario especificar sus direcciones usando el modificador `AT`. 
-        - Si no se hiciera, el compilador situaría estas variables en el **espacio de memoria interna** (marcas) y no se gernerarían las correspondientes instancias de E/S y no podrían vincularse (*mapping*) a canales físicos de E/S del controlador.
+        - Si no se hiciera, el compilador situaría estas variables en el **espacio de memoria interna** (marcas) y no se generarían las correspondientes instancias de E/S y no podrían vincularse (*mapping*) a canales físicos de E/S del controlador.
         - El símbolo `%` es el prefijo de ubicación directa.
         - Las letras `I` y `Q` indican el área de memoria (entrada/salida).
         - El símbolo `*` es un comodín que indica asignación dinámica. 
@@ -244,18 +244,18 @@ Ahora vamos a configurar el proyecto para ejecutarlo sobre un controlador Beckho
 9.  Conectarse (**Login**) nuevamente al controlador remoto.
 10. Reiniciar el sistema TwinCAT del controlador remoto en modo Configuración (**Restart TwinCAT (Config Mode)**).
 11. Escanear (**Scan**) la entrada/salida (**I/O**) en busca de dispositivos y terminales.
-12. Localizar, identificar, nominar (`Pulsador`) y probrar una canal de entrada digital para `i_Pulsador`.
-13. Localizar, identificar, nominar (`Lampara`) y probrar una canal de entrada salida para `i_Lampara`.
+12. Localizar, identificar, nominar (`Pulsador`) y probrar un canal de entrada digital para `i_Pulsador`.
+13. Localizar, identificar, nominar (`Lampara`) y probrar un canal de salida digital para `o_Lampara`.
 
     !!! tip "Sugerencias"
         - Buscar en la lista de entradas y salidas de la **descripción funcional** del sistema una señal de entrada (preferiblemente un **pulsador**) y otra de salida (preferiblemente una **lámpara**).
         - **Desactivar** los dispositivos de entrada y salida que no se van a utilizar (todos menos el dispositivo denominado `EtherCAT`).
 
-14. Vincular (**Link**) las instancias de las variables de entrada y salida con los canales correspondientes. [➡️](../../contenidos/01b_ejecucion.md/#vinculacion-de-variables-y-es)
+14. Vincular (**Link**) las instancias de las variables de entrada y salida con los canales correspondientes. [➡️](../../contenidos/01b_ejecucion.md#vinculacion-de-variables-y-es)
     -  Variable de entrada `i_Pulsador` con un canal de entrada digital `Pulsador`.
     -  Variable de salida `o_Lampara` con un canal de salida digital `Lampara`.
 
-15. Activar la configuración (**Activate la configuration**) y reiniciar TwinCAT 3 (**Restart TwinCAT System**).
+15. Activar la configuración (**Activate Configuration**) y reiniciar TwinCAT 3 (**Restart TwinCAT System**).
 16. Volver a transferir el programa al controlador (**Login**).
 17. Poner el programa en **ejecución** (**Start**).
 18. Comprobar que:
@@ -325,7 +325,7 @@ Para la prueba se recomienda implementar una interfaz visual en cada ejercicio a
 ### 4. Lámpara Computada
 **Descripción:**
 
-- La lámpara se enciende tras un determinado numero de pulsaciones (i_Pulsador).
+- La lámpara se enciende tras un determinado número de pulsaciones (i_Pulsador).
 - La lámpara se apaga tras accionar el pulsador de reinicio (i_PulsadorReinicio).
 
 ??? tip "Pista para la solución"
