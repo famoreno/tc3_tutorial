@@ -32,7 +32,7 @@ En primer lugar vamos a implementar el proyecto (código y visualización) y eje
 
 1. Abrir la aplicación TwinCAT XAE. [➡️](../../contenidos/01_conceptos/01_tc3_proyecto_paso_a_paso.md#abrir-twincat-xae)
 2. Crear una solución de TwinCAT 3 con nombre `TC3_Hola_Mundo`. [➡️](../../contenidos/01_conceptos/01_tc3_proyecto_paso_a_paso.md#crear-un-proyecto-twincat-3)
-3. Ocultar las configuraciones innecesarias para dejar el explorador de la solución lo más despejado posible.
+3. Ocultar las configuraciones innecesarias para dejar el explorador de la solución lo más despejado posible.  [➡️](../../contenidos/01_conceptos/01_tc3_proyecto_paso_a_paso.md#ocultar-las-configuraciones-innecesarias)
 4. Crear un proyecto PLC estándar con el nombre `Hola_Mundo_PLC`. [➡️](../../contenidos/01_conceptos/01_tc3_proyecto_paso_a_paso.md#crear-un-proyecto-plc)
 
     !!! warning "Importante"

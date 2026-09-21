@@ -15,7 +15,7 @@ Tras cargar la aplicación se muestra la pantalla inicial de la aplicación.
 
 ![Imagen](../../images/01_tc3_proyecto_paso_a_paso/02_TwinCAT_XAE.png){width=700px}
 
-## Crear un [proyecto](../../contenidos/00_terminologia.md/#proyecto-twincat-3) TwinCAT 3
+## Crear un [proyecto](../../contenidos/00_terminologia.md#proyecto-twincat-3) TwinCAT 3
 
 ### Seleccionar ***TwinCAT XAE Project (XML format)***.
 
@@ -26,14 +26,14 @@ Tras cargar la aplicación se muestra la pantalla inicial de la aplicación.
 
 ??? info "Parámetros"
     - Name = nombre del proyecto TwinCAT.
-    - Location = carpeta dónde se alojará la solución.
+    - Location = carpeta donde se alojará la solución.
     - Solution name = nombre de la solución (normalmente, el mismo que el nombre del proyecto).
     - Create directory for solution = **SI**/NO (creará la solución dentro de una carpeta con el nombre de la solución).
     - Create new Git repository = SI/NO (inicia el control de versiones con Git).
 
  Se mostrará la nueva solución «vacía».
 
- ![Imagen](../../images/01_tc3_proyecto_paso_a_paso/04_Solucion_Vacia.png){with=700px}
+ ![Imagen](../../images/01_tc3_proyecto_paso_a_paso/04_Solucion_Vacia.png){width=700px}
 
 ### Ocultar las configuraciones innecesarias 
 
@@ -69,7 +69,7 @@ Para despejar el panel de exploración de la solución, ocultar las configuracio
         - Project = código fuente estructurado bajo la norma IEC 61131-3.
         - Instance = instancias de las variables de E/S del proyecto para la vinculación con los canales de E/S del sistema.
 
-    Y si se despliega su contendio, se muestra la estructura de carpetas y nodos que contiene.
+    Y si se despliega su contenido, se muestra la estructura de carpetas y nodos que contiene.
 
     ![Imagen](../../images/01_tc3_proyecto_paso_a_paso/09_Proyecto_PLC_Contenido.png){width=400px}
 
@@ -87,7 +87,7 @@ Para despejar el panel de exploración de la solución, ocultar las configuracio
 
         - Una tarea tiempo real `PlcTask` con un tiempo de ciclo de 10 ms.
         - Un programa `MAIN` vinculado a la tarea `PlcTask`.
-        - Un conjunto de librerías básicas: Tc2_Starndar, Tc2_System y Tc3_Module.
+        - Un conjunto de librerías básicas: Tc2_Standard, Tc2_System y Tc3_Module.
         - Un conjunto estructurado de carpetas (DUTs, GVLs, POUs, VISUs).
 
 ### Crear un nuevo POU
@@ -98,7 +98,7 @@ Para despejar el panel de exploración de la solución, ocultar las configuracio
 
     ![Imagen](../../images/01_tc3_proyecto_paso_a_paso/10_POUs_Add_POU.png){width=400px}
 
-2. Cumplimentar los datos correspondites en la ventana emergente **Add POU**.
+2. Cumplimentar los datos correspondientes en la ventana emergente **Add POU**.
 
     ![Imagen](../../images/01_tc3_proyecto_paso_a_paso/11_Add_POU.png){width=300px}
 
@@ -113,7 +113,7 @@ Para despejar el panel de exploración de la solución, ocultar las configuracio
 
 ## Implementar un POU
 
-Al delplegar la carpeta `POUs` se muestra la lista de todos los módulos de programación (programas, bloques funcionales y funciones) que componen el proyecto.
+Al desplegar la carpeta `POUs` se muestra la lista de todos los módulos de programación (programas, bloques funcionales y funciones) que componen el proyecto.
 
 ![Imagen](../../images/01_tc3_proyecto_paso_a_paso/13_Lista_POUs.png){width=400px}
 
@@ -124,7 +124,8 @@ Pulsando sobre cualquiera de ellos podemos acceder a su contenido.
 El contenido de un POU se muestra separado: 
 
 - En la ventana superior denominada `Parte de Declaración` se encuentra el **Encabezado del POU** y los **Bloques de Declaración**. 
-- En la ventana inferior denominada `Parte de Implemntación` se muestra el código del POU en el lenguaje seleccionado.
+- En la ventana inferior denominada `Parte de Implementación` se muestra el código del POU en el lenguaje seleccionado.
+
 
 ### Declarar una variable
 
@@ -138,6 +139,7 @@ Identificador [AT %Localización]: Type [:= ValorInicial];
 2. **Localización** (opcional). La localización o **Ubicación Directa** establece la zona y la posición de memoria en la que se situará la variable. 
     - Modificador de localización `AT`.
     - Dirección. 
+
         ```text
         %[Área] [Tamaño] [Dirección]
         ``` 
@@ -158,7 +160,7 @@ Identificador [AT %Localización]: Type [:= ValorInicial];
                     Pulsador AT %IX0.0: BOOL;
                     ```
 
-            - Inespecificada: utilizando el carácte comodión `\*`
+            - Inespecificada: utilizando el carácter comodín `*`
 
                 ??? info "Ejemplo"
                     ```iecst
@@ -166,8 +168,8 @@ Identificador [AT %Localización]: Type [:= ValorInicial];
                     ```
 
 3. **Separador de tipo:** (obligatorio). Separa el nombre de la variable de su tipo.
-4. **Tipo de dato**: Especifica principalmente el tamaño y el rango de la variable. Puede ser un tipo elementar (BOOL, INT, REAL, TIME,...), complejo (STRUCT, ENUM, ARRAY,...) o de usuario.
-5. **Valor inicial**: Especifica el valor de la variable al iniciar el runtime. Si no se especifica tomará el valor en su defecto según el tipo de la variable.
+4. **Tipo de dato**: Especifica principalmente el tamaño y el rango de la variable. Puede ser un tipo elemental (BOOL, INT, REAL, TIME,...), complejo (STRUCT, ENUM, ARRAY,...) o de usuario.
+5. **Valor inicial**: Especifica el valor de la variable al iniciar el runtime. Si no se especifica tomará el valor predeterminado para ese tipo de variable.
 6. **Delimitador ;** (obligatorio). Terminador de instrucción.  
 
 ### Ámbito de una variable
@@ -178,11 +180,9 @@ El bloque de declaración determina el ámbito y el alcance de la variable espec
    2. `VAR_INPUT ... END_VAR`: parámetros de entrada. Pueden ser escritos desde el exterior.
    3. `VAR_OUTPUT ... END_VAR`: parámetros de salida. Pueden ser leídos desde el exterior.
    4. `VAR_IN_OUT ... END_VAR`: parámetros de entrada/salida por referencia. Punteros a variables externas que pueden leerse y escribirse dentro del POU.
-   5. `VAR_GLOBAL ... END_VAR`: variables globales (GVL). Accesibles desde cualqueir POU del proyecto.
-   6. `VAR_STAT ... END_VAR`: variables estáticas. Variables locales que conservan su valoer entre ciclos de ejecución.
+   5. `VAR_GLOBAL ... END_VAR`: variables globales (GVL). Accesibles desde cualquier POU del proyecto.
+   6. `VAR_STAT ... END_VAR`: variables estáticas. Variables locales que conservan su valor entre ciclos de ejecución.
    7. `VAR_PERSISTENT ... END_VAR`: variables persistentes. Variables que conservan su valor incluso tras la pérdida de alimentación.
-
-## Codificar en Texto Estructurado
 
 ## Desplegar un proyecto
 
@@ -192,7 +192,7 @@ El proceso de despliegue abarca la secuencia desde la validación del código fu
 - El sistema destino (**Target System**) es el *runtime* de tiempo real sobre el que se ejecuta el código máquina del programa.
 - Hay tres tipos de sistemas destino seleccionables:
     * **Local Target**: presente en el mismo ordenador en el que se está desarrollando el programa.
-    * **Remote Target**: equipo físico remoto conectado por EherCAT. 
+    * **Remote Target**: equipo físico remoto conectado por EtherCAT. 
     * **UmRT_Default**: *runtime* que se ejecuta en modo usuario sin capacidades de tiempo real.
 - Para seleccionarlo basta con elegirlo de la lista de runtimes disponibles en la barra de herramientas de TwinCAT.
 
@@ -209,7 +209,8 @@ Construir una solución o un proyecto (**Build**):
 
 ![Imagen](../../images/01_tc3_proyecto_paso_a_paso/16_Menu_Build.png){width=300px}
 
-- El resultado (mensajes, avisos y errores) de la construcción se muestra en el panel de de errores (*Error List*). 
+- El resultado (mensajes, avisos y errores) de la construcción se muestra en el panel de errores (*Error List*). 
+
 
 #### Activar la Configuración
 
@@ -238,7 +239,7 @@ Activar la configuración (**Activate Configuration**):
 
 ![Imagen](../../images/01_tc3_proyecto_paso_a_paso/19_Enter_Security_Code.png){width=300px}
 
-- Finalmente, es necesario confirmar el reinicio del sistemas destino en modo ejecución.
+- Finalmente, es necesario confirmar el reinicio del sistema destino en modo ejecución.
 
 ![Imagen](../../images/01_tc3_proyecto_paso_a_paso/20_Restart_Run_Mode.png){width=300px}
 
@@ -255,7 +256,8 @@ Transferir un proyecto PLC (**Login**):
 ![Imagen](../../images/01_tc3_proyecto_paso_a_paso/21_Login_Create_Port.png){width=300px}
 
 ??? info
-    Si el código presente en el sistema destino difiere significativamente del código que se pretende enviar se solicita autorización para realizar un *Online Change* (cambio en caliente) o una descarga completa (*Cold/Origin Reset Download*).
+    - La primera vez que se realice **Login** sobre un nuevo sistema destino, TwinCAT solicitará la creación del puerto para las comunicaciones entre el entorno de programación (**XAE**) y el sistema de ejecución (**XAR**) del sistema destino.
+    - Si el código presente en el sistema destino difiere significativamente del código que se pretende enviar se solicita autorización para realizar un *Online Change* (cambio en caliente) o una descarga completa (*Cold/Origin Reset Download*).
 
 #### Arrancar un Proyecto
 
@@ -269,12 +271,16 @@ Arrancar o poner en ejecución un proyecto (**Start**):
 ![Imagen](../../images/01_tc3_proyecto_paso_a_paso/22_Monitoring_Online.png){width=600px}
 
 ??? info
-    El **Modo *Online*** o de **Monitorizacion *online*** es el estado de conexión directa e interactiva entre el entorno de desarrollo (**TwinCAT XAE**) y el motor de tiempo real en ejecución (**TwinCAT XAR**/*Target System*).
+    El **Modo *Online*** o de **Monitorización *Online*** es el estado de conexión directa e interactiva entre el entorno de desarrollo (**TwinCAT XAE**) y el motor de tiempo real en ejecución (**TwinCAT XAR**/*Target System*).
     Esta herramienta de supervisión y depuración en tiempo real de TwinCAT 3 permite:
         - Visualizar directamente sobre el código fuente (ST, SFC, etc.) los valores actualizados que de las variables en la memoria RAM del controlador durante cada ciclo de escaneo (Task Scan).
         - Modificar mediante el forzado las variables en tiempo de ejecución.
       
 <!--
+## Codificar en Texto Estructurado
+Codificar un SFC -> documento aparte
+De grafcet a SFC, a ST, a LD
+Explicación del ciclo básico y de las imágenes de entrada y salida (AT), el programa no lee directamente, sino que trabaja con una copia
 Stop ejecución, reiniciar sistema reset cold y reset origin
 Forzado
 Mostrar punto de declaración de una variable
@@ -284,4 +290,8 @@ Configurar la entrada/salida
 Vincular entradas/salidas
 Crear una visualización paso a paso -> esto mejor en otro archivo
 Depurar errores
+
+align=center en imágenes
+incluir títulos explícitos en los bloques info
+
 -->
