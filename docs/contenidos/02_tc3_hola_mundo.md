@@ -73,12 +73,12 @@ TC3_Hola_Mundo/
 
 El código fuente completo de este proyecto **Hola Mundo**, está disponible en GitHub:
 
-* :material-github: **GitHub:** [`vetorres-uma/TC3_Hola_Mundo`](https://github.com/vetorres-uma/TC3_Hola_Mundo)
-* :material-github: **GitHub:** [:material-download: Descarga directa `.zip`](https://github.com/vetorres-uma/TC3_Hola_Mundo/archive/refs/heads/main.zip)
+- :material-github: **GitHub:** [`vetorres-uma/TC3_Hola_Mundo`](https://github.com/vetorres-uma/TC3_Hola_Mundo)
+- :material-github: **GitHub:** [:material-download: Descarga directa `.zip`](https://github.com/vetorres-uma/TC3_Hola_Mundo/archive/refs/heads/main.zip)
 
 También puede descargarse el archivo comprimido de la solución (tnzip) del proyecto desde el siguiente repositorio:
 
-* :material-google-drive: **Google Drive:** [:material-download: Descargar `.tnzip`](https://drive.google.com/file/d/1HiN3VGmpYH63-8s_RbQovNkcL4GJR9_5/view?usp=drive_link)
+- :material-google-drive: **Google Drive:** [:material-download: Descargar `.tnzip`](https://drive.google.com/file/d/1HiN3VGmpYH63-8s_RbQovNkcL4GJR9_5/view?usp=drive_link)
 
 ---
  
