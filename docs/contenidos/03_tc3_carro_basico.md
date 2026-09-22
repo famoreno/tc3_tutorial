@@ -2,7 +2,7 @@
 
 ## 📝 Descripción Funcional
 
-El proyecto **Carro Básico** resuelve el clásico problema de automatización conocido como **el carro va y viene**, que consiste en un móvil que se desplaza longitudinalmente entre los dos extremos (izquierdo y derecho) de un tramo de vía.
+El proyecto **Carro Básico** resuelve el clásico problema de automatización conocido como **««el carro va y viene»»**, que consiste en un móvil que se desplaza longitudinalmente entre los dos extremos (izquierdo y derecho) de un tramo de vía.
 
 ![Esquemático del Carro Básico](../images/03_tc3_carro_basico/Carro_Basico_Esquematico.png){ style="display: block; margin: 0 auto; width: 300px;" }
 
@@ -10,10 +10,10 @@ El proyecto **Carro Básico** resuelve el clásico problema de automatización c
 
 ### Parte Operativa
 
-- Un **motor** con dos señales de mando (izquierda y derecha).
+- Un **motor** con dos señales de mando para la marcha (marcha y marcha).
 - Un par de **sensores finales de carrera** (izquierdo y derecho).
 
- ### Parte de Relación
+### Parte de Relación
  
  Consiste en un panel de operador básico compuesto únicamente por:
 
@@ -26,7 +26,7 @@ El funcionamiento del carro básico es como sigue.
 
 1.  El carro se pone en marcha hacia la derecha cuando se acciona el pulsador de marcha.
 2.  Cuando el carro alcanza el final de carrera derecha invierte el sentido de la marcha.
-3.  El carro se detiene al alcanzar, de nuevo, el final de carrera izquierda (posición inicial).
+3.  El carro se detiene al alcanzar, de nuevo, el final de carrera izquierda.
 
 - **Condición inicial**: carro detenido sobre el final de carrera izquierda.
 
@@ -36,19 +36,19 @@ El proyecto contempla diferentes variantes de complejidad progresiva:
 
 1. **Carro pulsado**. El carro inicia un viaje de ida y vuelta, únicamente, cuando estando en su posición inicial se acciona el pulsador de marcha.
 1. **Carro temporizado**. El carro se detiene durante un determinado tiempo ($T_{espera}$) sobre el final de carrera derecha antes de iniciar el camino de regreso hacia su posición inicial.
-1. **Carro limitado**. El carro realiza un determinado número de viajes de ida y vuelta (tarea) consecutivos cada vez que, estando en su posición inicial, se acciona el pulsador de marcha.
-1. **Carro señalizado**. La lámpara de marcha se enciende de forma permanente para indicar que el carro está en funcionamiento y parpadea para indicar que el carro está en reposo.
+2. **Carro limitado**. El carro realiza un determinado número de viajes consecutivos de ida y vuelta (tarea) cada vez que, estando en su posición inicial, se acciona el pulsador de marcha.
+3. **Carro señalizado**. La lámpara de marcha se enciende de forma permanente para indicar que el carro está en funcionamiento y parpadea para indicar que el carro está en reposo.
 
 ## ⇄ Entradas y salidas
 
 | Nombre | Tipo | Origen | Descripción |
 | :--- | :--- | :--- | :--- |
-| `PM` | `BOOL` | Input | Pulsador de Marcha |
-| `FCI` | `BOOL` | Input | Final de Carrera Izquierda |
-| `FCD` | `BOOL` | Input | Final de Carrera Derecha |
-| `LM` | `BOOL` | Output | Lámpara de Marcha |
-| `MI` | `BOOL` | Output | Marcha Izquierda |
-| `MD` | `BOOL` | Output | Marcha Derecha |
+| `PM` | `BOOL` | Entrada | Pulsador de Marcha |
+| `FCI` | `BOOL` | Entrada | Final de Carrera Izquierda |
+| `FCD` | `BOOL` | Entrada | Final de Carrera Derecha |
+| `LM` | `BOOL` | Salida | Lámpara de Marcha |
+| `MI` | `BOOL` | Salida | Marcha Izquierda |
+| `MD` | `BOOL` | Salida | Marcha Derecha |
 
 ---
 
@@ -66,7 +66,7 @@ Las siguientes especificaciones funcionales describen el comportamiento del carr
 ```text
 TC3_Carro_Basico/
 ├── docs/
-|   ├── diagrams/
+|   └── diagrams/
 │       ├── Carro_Basico_DRC.pdf   <-- Diagrama de Relés y Contactos (PDF)
 │       └── Carro_Basico_GRF.pdf   <-- Diagrama Grafcet (PDF)
 └── src/
@@ -88,7 +88,7 @@ Se implementa el funcionamiento del carro va y viene (pulsado, temporizado, limi
 
 ## 📦 Código Fuente y Descarga
 
-El código fuente completo de este proyecto *Carro Básico**, está disponible en GitHub:
+El código fuente completo de este proyecto **Carro Básico**, está disponible en GitHub:
 
 - :material-github: **GitHub:** [`vetorres-uma/TC3_Carro_Basico`](https://github.com/vetorres-uma/TC3_Carro_Basico)
 - :material-github: **GitHub:** [:material-download: Descarga directa `.zip`](https://github.com/vetorres-uma/TC3_Carro_Basico/archive/refs/heads/main.zip)
