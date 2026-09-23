@@ -272,8 +272,37 @@ Ahora vamos a configurar el proyecto para ejecutarlo sobre un controlador Beckho
 !!! success "¡Enhorabuena! 🎉"
     Has completado con éxito la segunda parte de la práctica y has puesto en marcha tu primer proyecto completo de PLC en Texto Estructurado con TwinCAT 3 sobre un controlador real.
 
+!!! tip "Recomendación"
+    - Para ejecutar el proyecto sobre un controlador real con terminales de E/S asociados es necesario antes de activar la configuración tener HABILITADOS los dispositivos de E/S que se vayan a utilizar.
+    - Para ejecutar el proyecto sobre un runtime sin terminales de E/S asociados (como el simulador UmRT_Default) es necesario antes de activar la configuración tener DESHABILITADOS los dispositivos de E/S ya que no se van a utilizar.
+    - Para conmutar la habilitación, expandir el contenido de **I/O** y en **Devices**:
+        - **CD** sobre el dispositivo y seleccionar lo que corresponda (Enable/Disable).
+
 ---
 
+### Sobre Arduino
+
+También podemos configurar el proyecto para ejecutarlo sobre una placa Arduino utilizando **ArduTC**.
+
+1. Preparar el proyecto TC
+    - Tener preparado un controlador TC: runtime (local o remoto) o simulador (UmRT_Default) 
+    - Deshabilitar todos los dispositivo hardware incluidos en el apartato I/O.
+    - Activar la configuración del proyecto sobre el controlador.
+    - Cargar el proyecto PLC sobre el controlador.
+    - Ponere en ejecución el proyecto en el controlador.
+  
+2. Preparar la placa Arduino
+    - Descargar Telemetrix en la placa Arduino.
+    - Preparar el montaje correspondiente: un pulsador y un led conectados a los pines correspondientes. 
+3. Abrir al aplicación **ArduTC**.
+4. Cargar los símbolos del proyecto TC en ArduTc.
+5. Seleccionar la placa Arduino .
+6. Vincular las variables de E/S del proyecto TC con los pines de la placa Arduino. 
+7. Establecer la dirección AMS Net ID y el puerto de comunicacions del controlador TC.
+8. Conectar ArduTC.
+9. Accionar el pulsador y verificar que se enciende el led.
+
+---
 
 ## 🎯 Ejercicios Propuestos
 
