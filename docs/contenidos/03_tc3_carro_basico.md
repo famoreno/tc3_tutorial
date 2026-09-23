@@ -20,7 +20,7 @@ El proyecto **Carro Básico** resuelve el clásico problema de automatización c
 - Un **pulsador de marcha**, para iniciar el funcionamiento.
 - Una **lámpara de marcha**, para indicar el estado del sistema.
 
-## Descripción del proceso
+## 🗣️Descripción del funcional
 
 El funcionamiento del carro básico es como sigue.
 
@@ -30,7 +30,7 @@ El funcionamiento del carro básico es como sigue.
 
 - **Condición inicial**: carro detenido sobre el final de carrera izquierda.
 
-## Modalidades
+## 🧩 Modalidades
 
 El proyecto contempla diferentes variantes de complejidad progresiva:
 
@@ -52,7 +52,7 @@ El proyecto contempla diferentes variantes de complejidad progresiva:
 
 ---
 
-## 📄 Especificación funcional
+## 📐 Especificación funcional
 
 Las siguientes especificaciones funcionales describen el comportamiento del carro (lógica de control) de una manera precisa utilizando los **Diagramas de Relés y Contactos** y el lenguaje **GRAFCET**.
 

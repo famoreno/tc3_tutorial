@@ -1,414 +1,240 @@
 # 🚦 Semáforo (ArduTC)
 
-!!! info "Nota"
-    Esta práctica **NO** es entregable.
+## 📋 Tarea
 
-## Ejemplo de apoyo
-
-Utilice el ejemplo del [**carro básico**](../contenidos/03_tc3_carro_basico.md) como apoyo para entender la estructura del proyecto.
-
-## Entregables
-
-Ninguno.
-
-## Descripción del proyecto
-
-En esta práctica se implementará el control de un pequeño **semáforo físico** conectado a una placa **Arduino UNO** mediante una *shield* de prácticas. El Arduino actuará como terminal de entradas/salidas para un programa PLC ejecutado en **TwinCAT 3**, utilizando **ArduTC** como interfaz entre ambos.
-
-El objetivo principal es que el alumno programe en TwinCAT 3 una **secuencia de control en lenguaje** {{SFC}} y compruebe su funcionamiento sobre un sistema físico de bajo coste.
-
-El sistema dispone de:
-
-- Un semáforo con tres luces: verde, amarilla y roja.
-- Un pulsador para solicitar el cambio del semáforo.
-- Una placa Arduino UNO y la *shield* de conexión.
-- Un PC con TwinCAT 3 y ArduTC.
-
-En esta segunda práctica, trataremos de aplicar los conocimientos obtenidos en el ejemplo del **carro básico**.
+Implementar la lógica de control de un semáforo de peatones para la regulación del tráfico en una vía de sentido único.
 
 ---
 
-### Elementos constituyentes
+## 🎯 Objetivos
 
-La parte operativa está formada por:
-
-- Una salida digital para la **luz verde**.
-- Una salida digital para la **luz amarilla**.
-- Una salida digital para la **luz roja**.
-- Una entrada digital correspondiente al **pulsador de solicitud**.
-
-La lógica de control se ejecutará íntegramente en el PLC de TwinCAT 3.  
-El Arduino se utilizará únicamente como dispositivo físico de entrada/salida a través de ArduTC.
+- Aprender a editar un bloque funcional (FB) utilizando el lenguaje SFC en TwinCAT 3.
+- Aprender a transcribir máquinas de estado espeficicadas con diagramas grafcet utilizando el lenguaje SFC.
+- Aprender a transcribir máquinas de estado espeficicadas con diagramas grafcet utilizando el lenguaje ST.
+- Aprender a usar ArduTC para utilizar una placa microcontroladora como terminal de E/S de TwinCAT 3.
 
 ---
 
-### Descripción funcional
+## 📝 Descripción funcional
 
-El funcionamiento requerido será el siguiente:
+Inicialmente el semáforo consta únicamente de las luces roja, ámbar y verde para vehículos.
 
-1. Al iniciar el sistema, el semáforo debe permanecer en **verde**.
-2. Mientras no se pulse el botón, el semáforo permanecerá indefinidamente en verde.
-3. Cuando se accione el pulsador:
-    - se registrará una solicitud de cambio;
-    - el semáforo permanecerá todavía en verde durante un breve intervalo;
-    - posteriormente pasará a amarillo;
-    - después pasará a rojo.
-4. El semáforo permanecerá en rojo durante un tiempo determinado.
-5. Finalmente, volverá automáticamente a verde, quedando preparado para una nueva solicitud.
-6. Las pulsaciones realizadas mientras el semáforo está ejecutando una secuencia de cambio no tendrán efecto.
-
-Para esta práctica se utilizarán inicialmente los siguientes tiempos:
+El funcionamiento requerido será la típica secuencia verde -> ámbar -> rojo.
 
 | Parámetro | Valor inicial |
-| --- | ---: |
-| Espera tras pulsar el botón | 2 s |
-| Duración del amarillo | 2 s |
-| Duración del rojo | 5 s |
+| :---: | :---: |
+| $T_{verde}$ | 20 s |
+| $T_{ámbar}$ | 2 s |
+| $T_{rojo}$ | 10 s |
 
-Estos valores deberán declararse como parámetros del bloque funcional para poder modificarlos fácilmente.
-
-### Entradas y salidas
+## ⇄ Entradas y salidas
 
 | Nombre | Tipo | Origen | Descripción |
-| --- | --- | --- | --- |
-| `i_Pulsador` | `BOOL` | Input | Pulsador de solicitud de cambio |
-| `o_Verde` | `BOOL` | Output | Luz verde del semáforo |
-| `o_Amarillo` | `BOOL` | Output | Luz amarilla del semáforo |
-| `o_Rojo` | `BOOL` | Output | Luz roja del semáforo |
-
-!!! note "Asignación de pines"
-    Los pines físicos del Arduino dependerán de la *shield* utilizada en el laboratorio.  
-    La asociación entre estas variables de TwinCAT 3 y los pines reales se realizará posteriormente mediante **ArduTC**.
+| :---: | :---: | :---: | :--- |
+| `o_VerdeVehiculos` | `BOOL` | Salida | Luz verde para vehículos|
+| `o_AmbarVehiculos` | `BOOL` | Salida | Luz ámbar para vehículos |
+| `o_RojoVehiculos` | `BOOL` | Salida | Luz roja para vehículos |
 
 ---
 
-## Especificación funcional
+## 📐 Especificación funcional
 
-La secuencia principal deberá implementarse utilizando {{SFC}}.
+La siguente especificación funcional describe el comportamiento del semáforo de peatones utilizando el lenguaje GRAFCET.
 
-Se propone la siguiente secuencia:
-TODO: Cambiarlo por una imagen.
-
-```text
-                         Pulsador
-                            │
-                            ▼
-                  ┌──────────────────┐
-                  │     S0_VERDE     │
-                  │   Luz verde ON   │
-                  └────────┬─────────┘
-                           │ solicitud
-                           ▼
-                  ┌──────────────────┐
-                  │    S1_ESPERA     │
-                  │   Luz verde ON   │
-                  └────────┬─────────┘
-                           │ t >= T_espera
-                           ▼
-                  ┌──────────────────┐
-                  │   S2_AMARILLO    │
-                  │ Luz amarilla ON  │
-                  └────────┬─────────┘
-                           │ t >= T_amarillo
-                           ▼
-                  ┌──────────────────┐
-                  │      S3_ROJO     │
-                  │    Luz roja ON   │
-                  └────────┬─────────┘
-                           │ t >= T_rojo
-                           └──────────────► S0_VERDE
-```
-
-Las etapas serán:
-
-| Etapa | Función |
-| --- | --- |
-| `S0_VERDE` | Estado inicial. Semáforo verde y espera de una nueva solicitud. |
-| `S1_ESPERA` | Mantiene el verde encendido durante un breve tiempo después de pulsar. |
-| `S2_AMARILLO` | Enciende exclusivamente la luz amarilla. |
-| `S3_ROJO` | Enciende exclusivamente la luz roja. |
-
-Las transiciones serán:
-
-| Transición | Condición |
-| --- | --- |
-| `S0_VERDE → S1_ESPERA` | Detección de una pulsación. |
-| `S1_ESPERA → S2_AMARILLO` | `S1_ESPERA.t >= TiempoEspera` |
-| `S2_AMARILLO → S3_ROJO` | `S2_AMARILLO.t >= TiempoAmarillo` |
-| `S3_ROJO → S0_VERDE` | `S3_ROJO.t >= TiempoRojo` |
-
-!!! info "Temporización en SFC"
-    TwinCAT 3 monitoriza automáticamente el tiempo durante el que una etapa permanece activa. Puede consultarse mediante:
-
-    ```iecst
-    NombreEtapa.t
-    ```
-
-    Por tanto, para esta práctica no será necesario crear bloques `TON` para las temporizaciones principales.
+- Diagrama grafcet (PDF) 🚧 *Proximamente*
 
 ---
 
-## Requisitos del sistema
+## 🧰 Materiales
 
-### Hardware
+Para la realización de esta práctica es necesario disponer de los siguientes materiales adicionales.
 
-- PC compatible con TwinCAT 3.
-- Arduino UNO.
-- *Shield* de prácticas.
-- Semáforo de tres luces.
-- Pulsador.
-- Cables Dupont.
-- Cable USB.
+- Una **placa microcontroladora** compatible con **ArduTC** con **Telemetrix**.
+- Un **cable USB**, para conectar la placa microcontroladora al ordenador.
+- Un **montaje con tres led (verde, amarillo, rojo)** conectados a los correspondientes pines de la placa microcontroladora.
+- Aplicación **ArduTC** instalada.
 
-### Software
+---
 
-- TwinCAT 3 XAE.
-- TwinCAT 3 XAR.
-- ArduTC.
+## 🔨 Guía de implementación
 
-### Lenguajes IEC 61131-3
+### Proyecto TwinCAT 3 en SFC
 
-- {{SFC}} para la implementación de la secuencia principal.
-- {{ST}} únicamente para el programa principal y para pequeñas acciones auxiliares cuando sea necesario.
+A continuación se detallan la secuencia de pasos necesarios para codificar en el lenguaje {{SFC}} la máquina de estados que describe el comportamiento de la lógica de control del semáforo especificada con un diagrama grafcet.
 
-## Funcionalidades
-
-!!! warning "Atención"
-    📃 Versión descargable [aquí](../../pdfs/Checklist_Func_Semaforo.pdf){target="_blank"}.
-
-El proyecto desarrollado debe tener las siguientes funcionalidades:
-
-!!! info "Requeridas"
-    1. Secuencia de producción normal.
-    1. Visualización funcional.
-    1. Modo automático.
-    2. Parametrización de los tiempos.
-
-## Componentes
-
-- {{ST}} `MAIN`: programa principal.
-    - {{SFC}} `FB_Semaforo`: lógica de control.
-- `VISU_Semaforo`: interfaz gráfica
-
-## Itinerario
-
-!!! warning "Atención"
-    La lista es *clickable* pero **NO** guarda el estado; si actualizas o entras/sales de la página se perderán las marcas.
-
-    📃 Versión descargable [aquí](../../pdfs/Checklist_Itinerario_Semaforo.pdf){target="_blank"}.
-
-### Creación del proyecto
-
-- [ ] Crear una solución con el nombre: `XXX_tc3_semaforo_GYY` con `XXX` = iniciales de la asignatura, `YY` = número del grupo.
-    - Menú `New → Solution`.
-- [ ] Crear el proyecto PLC con nombre `Semaforo_PLC`.
-    - **CD** sobre PLC, `New → Project`.
-- [ ] Crear el bloque funcional `FB_Semaforo` en {{SFC}}.
-    - **CD** sobre POUs, `New → POU → Function Block`.
-
-### Declaraciones
-
-- [ ] Declarar los tiempos necesarios como parámetros de entrada del **FB**: `TiempoEspera`, `TiempoAmarillo`, `TiempoRojo`.
-
+1. Abrir la aplicación TwinCAT XAE. [➡️](../../contenidos/01_conceptos/01_tc3_proyecto_paso_a_paso.md#abrir-twincat-xae)
+2. Crear una solución de TwinCAT 3 con nombre `TC3_Semaforo`. [➡️](../../contenidos/01_conceptos/01_tc3_proyecto_paso_a_paso.md#crear-un-proyecto-twincat-3)
+3. Ocultar las configuraciones innecesarias para dejar el explorador de la solución lo más despejado posible.  [➡️](../../contenidos/01_conceptos/01_tc3_proyecto_paso_a_paso.md#ocultar-las-configuraciones-innecesarias)
+4. Crear un proyecto PLC estándar con el nombre `Semaforo_PLC`. [➡️](../../contenidos/01_conceptos/01_tc3_proyecto_paso_a_paso.md#crear-un-proyecto-plc)
+5. Crear un Bloque Funcional denominado `FB_Semaforo_SFC`.
+6. Declarar los parámetros y variables necesarias en `FB_Semaforo_SFC`. [➡️](../../contenidos/01_conceptos/01_tc3_proyecto_paso_a_paso.md#declarar-una-variable)
+   
     ```iecst
+    FUNCTION_BLOCK FB_Semaforo_SFC
     VAR_INPUT
-        TiempoEspera    : TIME := T#2S;
-        TiempoAmarillo  : TIME := T#2S;
-        TiempoRojo      : TIME := T#5S;
+        TiempoVerdeVehiculos: TIME := T#20S;
+        TiempoAmbarVehiculos: TIME := T#2S;
+        TiempoRojoVehiculos: TIME := T#10S;
     END_VAR
-    ```
-
-    De esta forma los tiempos de funcionamiento podrán modificarse desde `MAIN` sin alterar la secuencia {{SFC}}.
-
-    | Variable | Tipo | Descripción |
-    | --- | --- | --- |
-    | `TiempoEspera` | `TIME` | Tiempo que continúa en verde después de recibir la solicitud |
-    | `TiempoAmarillo` | `TIME` | Duración de la fase amarilla |
-    | `TiempoRojo` | `TIME` | Duración de la fase roja |
-
-- [ ] Declarar las variables de entrada y salida en el **FB** según la tabla de E/S del sistema. Declarar también el detector de flanco.
-
-    ```iecst
+    VAR_OUTPUT
+    END_VAR
     VAR
-        // Entrada
-        i_Pulsador   AT %I* : BOOL;
-
-        // Salidas
-        o_Verde      AT %Q* : BOOL;
-        o_Amarillo   AT %Q* : BOOL;
-        o_Rojo       AT %Q* : BOOL;
-
-        // Utilidades
-        FlancoPulsador : R_TRIG;
+        o_VerdeVehiculos AT %Q*: BOOL;
+        o_AmbarVehiculos AT %Q*: BOOL;
+        o_RojoVehiculos AT %Q*: BOOL;
     END_VAR
     ```
+7. Escribir el código en SFC en FB_Semaforo_SFC.
 
-    Las declaraciones `AT %I*` y `AT %Q*` permiten que TwinCAT trate estas variables como entradas y salidas del proceso.
+    ![Imagen](../../images/05_tc3_semaforo/01_FB_Semaforo_SFC.png){width=420px}
 
-    !!! info "Conexión con el *hardware*"
-        Posteriormente, podrán ser asociadas a los pines del Arduino mediante ArduTC.
-
-### Lógica de control
-
-- [ ] Crear la lógica de control en `FB_Semaforo`:
-    - [ ] Renombrar la etapa inicial por `S0_VERDE` y asociar la acción de activación de la luz verde: `o_Verde`.
-        - **CD** sobre la etapa → `Insert action association` y especificar la acción.
-    - [ ] Asociar a la etapa una acción memorizada para el control de flanco del pulsador:
-        - [ ] Crear acción y escribir el código.
-            - **CD** sobre el **FB** → `Add → Action` (nombre: `a_Pulsador`, lenguaje: {{ST}}).
-
-            ```iecst
-            FlancoPulsador(CLK := i_Pulsador);
-            ```
-
-        - [ ] Asociar la acción a la etapa.
-            - **CD** sobre la etapa → `Insert action association` y especificar la acción.
-
-    - [ ] Escribir la condición de la transición entre `S0_VERDE` y `S1_ESPERA`:
-
-        ```iecst
-        FlancoPulsador.Q
-        ```
-
-        La transición se producirá cuando se detecte el flanco de subida del pulsador.
-
-    - [ ] Crear etapa `S1_ESPERA` y asociar la acción de activación de la luz verde: `o_Verde`.
-        - **CD** sobre la transición anterior y `Insert step-transition after`.
-    - [ ] Escribir la condición de la transición hacia `S2_AMARILLO`:
-
-        ```iecst
-        S1_ESPERA.t >= TiempoEspera
-        ```
-
-        El objetivo es simular que la solicitud ha sido recibida, pero que el cambio del semáforo no se produce instantáneamente. La transición se producirá cuando pase el tiempo de espera en esta etapa.
-
-    - [ ] Crear etapa `S2_AMARILLO` y asociar la acción de activación de la luz verde: `o_Amarillo`.
-        - **CD** sobre la transición anterior y `Insert step-transition after`.
-    - [ ] Escribir la condición de la transición hacia `S3_ROJO`:
-
-        ```iecst
-        S2_AMARILLO.t >= TiempoAmarillo
-        ```
-
-        La transición se producirá cuando pase el tiempo de color amarillo en esta etapa.
-
-- [ ] Crear etapa `S3_ROJO` y asociar la acción de activación de la luz verde: `o_Rojo`.
-        - **CD** sobre la transición anterior y `Insert step-transition after`.
-    - [ ] Escribir la condición de la transición hacia `S0_VERDE`:
-
-        ```iecst
-        S3_ROJO.t >= TiempoRojo
-        ```
-
-        La transición se producirá cuando pase el tiempo de color rojo en esta etapa.
-
-### Visualización
-
-Se puede realizar utilizando elementos gráficos sencillos de TwinCAT 3, por ejemplo círculos o lámparas para representar las tres luces del semáforo y el estado del pulsador.
-
-- [ ] Crear un indicador para la **luz verde** asociado a `o_Verde`.
-- [ ] Crear un indicador para la **luz amarilla** asociado a `o_Amarillo`.
-- [ ] Crear un indicador para la **luz roja** asociado a `o_Rojo`.
-- [ ] Crear un indicador del estado del **pulsador** asociado a `i_Pulsador`.
-
-!!! note "Objetivo de la visualización"
-    La visualización no sustituye al semáforo físico conectado mediante ArduTC. Su finalidad es facilitar la depuración y permitir comparar en tiempo real el estado interno del programa PLC con el comportamiento del hardware.
-
-### Ejecución del programa
-
-- [ ] Abrir el programa `MAIN` y declarar una instancia:
+8. Declarar una instancias Semaforo del tipo FB_Semaforo en el programa MAIN.
 
     ```iecst
     PROGRAM MAIN
     VAR
-        Semaforo : FB_Semaforo;
+        Semaforo: FB_Semaforo_SFC;
     END_VAR
     ```
 
-- [ ] En el cuerpo del programa realizar la llamada:
+9.  Invocar la ejecución de la instancia Semaforo en MAIN.
 
     ```iecst
-    Semaforo(
-        TiempoEspera   := T#2S,
-        TiempoAmarillo := T#2S,
-        TiempoRojo     := T#5S
-    );
+    Semaforo();
     ```
 
-- [ ] Compilar.
-      - Menú `Build → Build Solution`.
-- [ ] Seleccionar el controlador local o el emulador.
-- [ ] Activar la configuración.
-      - Menú `TwinCAT → Activate Configuration`
-- [ ] Transferir el proyecto y ponerlo en funcionamiento.
-      - Menú `TwinCAT → Login`. Menú `TwinCAT → Start`.
+10. Construir el proyecto (**Build**) para generar un archivo ejecutable. [➡️](../../contenidos/01_conceptos/01_tc3_proyecto_paso_a_paso.md#construir-el-proyecto)
+11. Activar el simulador **UmRT_Default** para disponer de un `runtime` sobre el que ejecutar el código del proyecto.
 
-### ArduTC
+    !!! warning "Importante"
+        Tomar nota de la dirección **AmsNetId** del simulador UmRT_Default que se muestra en la pantalla de la terminal.
 
-Una vez que el programa PLC funcione correctamente, se conectará a la placa Arduino.
+12. Seleccionar UmRT_Default como sistema destino (***Target System***). [➡️](../../contenidos/01_conceptos/01_tc3_proyecto_paso_a_paso.md#seleccionar-un-sistema-destino)
 
-- [ ] Conectar el Arduino
-      - Conectar la *shield*, el semáforo y el pulsador al Arduino UNO.
-      - Conectar el Arduino al PC mediante USB.
-      - Comprobar el puerto serie asignado por Windows.
+    !!! warning "Importante"
+        Tomar nota del puerto de comunicaciones entre el entorno de programación (**TwinCAT XAE**) y el sistema destino (***Target Syste**m*).
 
-- [ ] Abrir el proyecto en ArduTC
-      - Iniciar ArduTC y seleccionar el proyecto/archivo de símbolos generado por TwinCAT 3.
+13. Activar la licencia temporal del `runtime` del sistema destino si es necesario.
+14. Reiniciar el sistema destino en **RUN Mode**.
+15. Activar la configuración en el sistema destino.
+16. Conectarse (**Login**) al sistema destino para transferir el proyecto. [➡️](../../contenidos/01_conceptos/01_tc3_proyecto_paso_a_paso.md#transferir-un-proyecto)
+17. Poner el programa de PLC en ejecución (**Run**). [➡️](../../contenidos/01_conceptos/01_tc3_proyecto_paso_a_paso.md#arrancar-un-proyecto)
+18. Observar en la ventana de monitorización de la instancia Estacion de FB_Estacion cómo evoluciona el SFC.
 
-      - Localizar las variables:
+    ![Imagen](../../images/05_tc3_semaforo/02_FB_Semaforo_SFC_Online.png){width=600px}
 
-        ```text
-        i_Pulsador
-        o_Verde
-        o_Amarillo
-        o_Rojo
-        ```
+### :material-developer-board: Prueba con ArduTC
 
-        !!! warning "Variables no visibles"
-            Si alguna variable no aparece en ArduTC, comprobar que el proyecto PLC se ha compilado correctamente y que las variables físicas han sido declaradas con `AT %I*` o `AT %Q*`.
+Configuremos el proyecto para utilizar una placa microcontrolador como **Arduino UNO** como terminal de E/S utilizando **ArduTC**.
 
-- [ ] Asociar las variables a los pines
+1. Ya tenemos preparado el proyecto TC
+    - Controlador TC: *runtime* (local o remoto) o simulador (**UmRT_Default**).
+    - Configuración del proyecto activada sobre el controlador.
+    - Proyecto PLC cargado en el controlador.
+    - Proyecto PLC en ejecución en el controlador.
+    - Dirección AMS del controlador y puerto de comunicación del proyecto anotados.
+  
+2. Placa microcontroladora
+    - Telemetrix instalado en la placa microcontroladora.
+    - Montaje con tres led de colores (verde, ámbar y rojo) conectados a los pines correspondientes de la placa.
+  
+3. Abrir al aplicación **ArduTC**.
+4. Cargar los símbolos del proyecto TC en **ArduTc**.
+5. Seleccionar la placa **microcontroladora**.
+6. Vincular las variables de E/S del proyecto TC con los pines corespondientes de la placa **microcontroladora**. 
+7. Establecer la dirección **AMS Net ID** y el **puerto de comunicaciones** del controlador TC en **ArduTC**.
+8. Conectar **ArduTC**.
+9. Observar cómo los led de conectados a la placa microcontroladora se encienden y apagan conforme a la ejecución del SFC.
 
-      - Asignar cada variable de TwinCAT al pin correspondiente de la *shield*:
+!!! success "¡Enhorabuena! 🎉"
+    ¡Has completado con éxito la primera parte de la práctica! Ya has puesto en marcha tu primer proyecto en TwinCAT 3, implementando una secuencia en Diagrama Funcional Secuencial ({{SFC}}) y utilizando una placa microcontroladora como terminal de E/S.
 
-        | Variable TwinCAT | Tipo Arduino | Pin |
-        | --- | --- | --- |
-        | `i_Pulsador` | Digital Input | **según shield** |
-        | `o_Verde` | Digital Output | **según shield** |
-        | `o_Amarillo` | Digital Output | **según shield** |
-        | `o_Rojo` | Digital Output | **según shield** |
+---
 
-      - Guardar la configuración y establecer la comunicación.
+### Proyecto TwinCAT 3 en ST
 
-### Comprobación del funcionamiento
+A continuación se detallan la secuencia de pasos necesarios para codificar en el lenguaje {{ST}} la máquina de estados que describe el comportamiento de la lógica de control del semáforo especificada con un diagrama grafcet. 
 
-Una vez iniciado TwinCAT y establecida la conexión de ArduTC:
+1. Desconectarse del sistema destino (Logout) para continuar con la edición.
+2. Crear un nuevo Bloque Funcional denominado **FB_Semaforo_ST** seleccionando el lenguaje de implementación ***Structured Text (ST)***.
+3. Declarar los mismos parámetros y variables en **FB_Semaforo_ST** que anteriormente en **FB_Semaforo_SFC** pero añadiendo una nueva varaible local para contener la información del estado denominada Estado de tipo Enumeración Implícita.
 
-- [ ] Comprobar que inicialmente está encendida únicamente la luz verde.
-- [ ] Pulsar brevemente el botón.
-- [ ] Verificar que el verde permanece encendido durante `TiempoEspera`.
-- [ ] Comprobar el cambio a amarillo.
-- [ ] Comprobar el cambio a rojo.
-- [ ] Verificar que, transcurrido `TiempoRojo`, vuelve automáticamente a verde.
-- [ ] Volver a pulsar el botón y comprobar que se inicia una nueva secuencia.
-- [ ] Pulsar el botón durante las fases amarilla y roja y verificar que estas pulsaciones no modifican la secuencia en curso.
+    ```iecst
+    FUNCTION_BLOCK FB_Semaforo_ST
+    VAR_INPUT
+        TiempoVerdeVehiculos: TIME := T#20S;
+        TiempoAmbarVehiculos: TIME := T#2S;
+        TiempoRojoVehiculos: TIME := T#10S;
+    END_VAR
+    VAR_OUTPUT
+    END_VAR
+    VAR
+        Estado: (E_VERDE, E_AMBAR, E_ROJO);
+        
+        // Bloques funcionales
+        TemporizadorVerde: TON;
+        TemporizadorAmbar: TON;
+        TemporizadorRojo: TON;
+        
+        // Variables de Salidas
+        o_VerdeVehiculos AT %Q*: BOOL;
+        o_AmbarVehiculos AT %Q*: BOOL;
+        o_RojoVehiculos AT %Q*: BOOL;
+    END_VAR
+    ```
+    
+4. Escribir el código en ST
 
-## Autoevaluación
+    ```iecst
+    // BLOQUES FUNCIONALES
+    TemporizadorVerde(IN := (Estado = E_VERDE), PT := TiempoVerdeVehiculos);
+    TemporizadorAmbar(IN := (Estado = E_AMBAR), PT := TiempoAmbarVehiculos);
+    TemporizadorRojo(IN := (Estado = E_ROJO), PT := TiempoRojoVehiculos);
 
-Una vez finalizada la implementación, responde a las siguientes preguntas:
+    // FUNCION DE ESTADO
+    CASE Estado OF
+        E_VERDE:
+            IF TemporizadorVerde.Q THEN
+                Estado := E_AMBAR;
+            END_IF;
+        E_AMBAR:
+            IF TemporizadorAmbar.Q THEN
+                Estado := E_ROJO;
+            END_IF;
+        E_ROJO:
+            IF TemporizadorRojo.Q THEN
+                Estado := E_VERDE;
+            END_IF;
+    END_CASE;
 
-1.  ¿Qué ventaja tiene utilizar una etapa independiente `S1_ESPERA` en lugar de pasar directamente de verde a amarillo al pulsar?
-2.  ¿Qué ocurriría si se utilizase directamente `i_Pulsador` en la primera transición en lugar de un detector de flanco?
-3.  ¿Qué representa la variable `S2_AMARILLO.t`?
-4.  ¿Qué parte del sistema ejecuta realmente la lógica del PLC: Arduino, ArduTC o TwinCAT 3?
-5.  ¿Qué ventaja aporta separar el programa PLC de la asignación física de pines realizada en ArduTC?
+    // FUNCION DE SALIDA
+    o_VerdeVehiculos := (Estado = E_VERDE);
+    o_AmbarVehiculos := (Estado = E_AMBAR);
+    o_RojoVehiculos := (Estado = E_ROJO);
+    ```
 
-## Ampliaciones opcionales
+5. Añadir una instancia de FB_Semaforo_ST también denominada Semaforo y comentar la anterior.
 
-Una vez completada la versión básica se pueden plantear las siguientes extensiones:
+    ```iecst
+    PROGRAM MAIN
+    VAR
+        // Semaforo: FB_Semaforo_SFC;
+        Semaforo: FB_Semaforo_ST;
+    END_VAR
+    ```
 
-- Hacer parpadear la luz verde durante el último segundo anterior al amarillo.
-- Memorizar una pulsación realizada durante la fase roja para atenderla posteriormente.
-- Permitir modificar los tiempos desde una visualización de TwinCAT 3.
-- Contabilizar el número total de solicitudes atendidas.
-- Añadir un segundo semáforo y coordinar ambos mediante un único SFC.
+... continuar con los pasos 11 en adelante del caso anterior incluyendo la prueba con ArduTC.
+
+!!! success "¡Enhorabuena! 🎉"
+    ¡Has completado con éxito la segunda parte de la práctica! Ya has puesto en marcha tu primer proyecto en TwinCAT 3 que implementa una máquina de estados especificada en lenguaje GRAFCET utilizando el lenguaje Texto Estructurado (ST).
+
+---
+
+## 🎯 Ejercicios Propuestos
+
+- Añadir una visualización que permita monitorizar y parametrizar el funcionamiento completo del semáforo.
+- Añadir luces para los peatones (roja/verde).
+- Añadir la funcionalidad para el acortamiento del tiempo de verde para vehículos (pulse peatón/espere verde).
+- Añadir una avisador acústico para invidentes (frecuencia base).
+- Añadir una fase de aviso previa al verde de vehículos (avisador con frecuencia doble y verde peatones intermitente).
+- Añadir una funcionalidad de deshabilitación (siempre parapdeo ambar).

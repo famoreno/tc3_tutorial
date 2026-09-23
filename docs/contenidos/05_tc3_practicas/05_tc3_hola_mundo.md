@@ -1,11 +1,11 @@
 # 👋 Práctica «Hola Mundo»
 
-## Tarea
+## 📋 Tarea
 Replicar el ejemplo [**«Hola Mundo»**](../02_tc3_hola_mundo.md) para implementar nuestro primer programa de PLC con TwinCAT 3 desde cero.
 
 ---
 
-## Objetivos
+## 🎯 Objetivos
 - Familiarizarse con el entorno de desarrollo **TwinCAT XAE** de TwinCAT 3.
 - Declarar variables de **memoria interna** (marcas).
 - Declarar **variables de entrada y salida**, **localizadas** y con **mapeo dinámico**.
@@ -26,7 +26,7 @@ A continuación se detallan los pasos necesarios para replicar completamente est
 
 ---
 
-### Sobre el simulador
+### 🕹️ Sobre el simulador
 
 En primer lugar vamos a implementar el proyecto (código y visualización) y ejecutarlo en nuestro ordenador usando el simulador de TwinCAT 3 (`UmRT_Default`).
 
@@ -66,7 +66,7 @@ En primer lugar vamos a implementar el proyecto (código y visualización) y eje
     !!! warning "Importante"
         Asegurarse antes de continuar de que el resultado de la construcción del proyecto mostrado en la ventana de mensajes no arroja errores.
 
-9. Activar el simulador **UmRT_Default** para disponer de un `runtime` sobre el que ejecutar el código del proyecto
+9. Activar el simulador **UmRT_Default** para disponer de un `runtime` sobre el que ejecutar el código del proyecto.
 
     ??? info
         Para activar el simulador ejecute el *script* de inicio que se encuentra habitualmente en la siguiente ruta:
@@ -197,7 +197,7 @@ En primer lugar vamos a implementar el proyecto (código y visualización) y eje
 
 ---
 
-### Sobre un controlador
+### 🏭 Sobre un controlador
 
 Ahora vamos a configurar el proyecto para ejecutarlo sobre un controlador Beckhoff real. 
 
@@ -280,26 +280,27 @@ Ahora vamos a configurar el proyecto para ejecutarlo sobre un controlador Beckho
 
 ---
 
-### Sobre Arduino
+### :material-developer-board: Con un microcontrolador
 
-También podemos configurar el proyecto para ejecutarlo sobre una placa Arduino utilizando **ArduTC**.
+También podemos configurar el proyecto para ejecutarlo sobre un runtime (local/remoto) o sobre el simulador (UmRT_Default) y utilizar una placa microcontrolador como **Arduino UNO** como terminal de E/S utilizando **ArduTC**.
 
 1. Preparar el proyecto TC
-    - Tener preparado un controlador TC: runtime (local o remoto) o simulador (UmRT_Default) 
-    - Deshabilitar todos los dispositivo hardware incluidos en el apartato I/O.
+    - Tener preparado un controlador TC: *runtime* (local o remoto) o simulador (**UmRT_Default**).
+    - Deshabilitar todos los dispositivo *hardware* incluidos en el apartato I/O.
     - Activar la configuración del proyecto sobre el controlador.
     - Cargar el proyecto PLC sobre el controlador.
-    - Ponere en ejecución el proyecto en el controlador.
+    - Poner en ejecución el proyecto en el controlador.
   
 2. Preparar la placa Arduino
-    - Descargar Telemetrix en la placa Arduino.
+    - Descargar **Telemetrix** en la placa Arduino.
     - Preparar el montaje correspondiente: un pulsador y un led conectados a los pines correspondientes. 
+
 3. Abrir al aplicación **ArduTC**.
-4. Cargar los símbolos del proyecto TC en ArduTc.
-5. Seleccionar la placa Arduino .
-6. Vincular las variables de E/S del proyecto TC con los pines de la placa Arduino. 
-7. Establecer la dirección AMS Net ID y el puerto de comunicacions del controlador TC.
-8. Conectar ArduTC.
+4. Cargar los símbolos del proyecto TC en **ArduTc**.
+5. Seleccionar la placa **microcontroladora**.
+6. Vincular las variables de E/S del proyecto TC con los pines corespondientes de la placa **microcontroladora**. 
+7. Establecer la dirección **AMS Net ID** y el **puerto de comunicaciones** del controlador TC en **ArduTC**.
+8. Conectar **ArduTC**.
 9. Accionar el pulsador y verificar que se enciende el led.
 
 ---
