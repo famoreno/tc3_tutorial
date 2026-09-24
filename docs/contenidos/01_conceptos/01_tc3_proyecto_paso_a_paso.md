@@ -224,10 +224,10 @@ Activar la configuración (**Activate Configuration**):
 ![Imagen](../../images/01_tc3_proyecto_paso_a_paso/17_Activate_Configuration.png){width=300px}
 
 ??? info "Boot Project"
-    El **Boot Project** (Proyecto de Arranque) es la copia compilada ejecutable del proyecto que se guarda en el almacenamiento no volátil (disco/memoria flash) del sistema destino. Su función es permitir que el runtime de TwinCAT cargue y arranque el programa del PLC de forma automática al encender o reiniciar el equipo, sin necesidad de conectarse desde el entorno de desarrollo (XAE).
+    El ***Boot Project*** (Proyecto de Arranque) es la copia compilada ejecutable del proyecto que se guarda en el almacenamiento no volátil (disco/memoria flash) del sistema destino. Su función es permitir que el runtime de TwinCAT cargue y arranque el programa del PLC de forma automática al encender o reiniciar el equipo, sin necesidad de conectarse desde el entorno de desarrollo (XAE).
 
 !!! warning "Importante"
-    - **NO** activar la generación del proyecto de arranque durante la fase de desarrollo del proyecto. 
+    - **NO** activar la generación del proyecto de arranque (***Boot Project***) durante la fase de desarrollo del proyecto. 
     - Si el código del proyecto de arranque contiene un fallo grave de ejecución (como un bucle infinito en ST, una división por cero o un puntero nulo/inválido) y el Boot Project está activo, el runtime intentará ejecutar ese código defectuoso inmediatamente al arrancar. Esto provocará un colapso (crash) o bloqueo en bucle del runtime de tiempo real en cada reinicio.
 
 
@@ -266,15 +266,16 @@ Arrancar o poner en ejecución un proyecto (**Start**):
 - **Inicio del Bucle de Tiempo Real:** Inicia la ejecución del ciclo básico de funcionamiento (*Task Scan*) asignado en la `PlcTask`.
 - **Procesamiento de Entradas/Salidas:** Se activa el ciclo determinista: lectura de la imagen de proceso de entradas (`%I*`), ejecución de las POUs (`MAIN`) y actualización de las salidas (`%Q*`).
 - **Modo de Ejecución:** Pulsando el botón `Start` (`F5`) o desde el menú `PLC` > `Login` > `Start`.
-- Tras pasar a modo ejecución, en el entorno de programación, el código se muestra en modo **Monitorización *Online***
+- Tras pasar a modo ejecución, en el entorno de programación, el código se muestra en modo **Monitorización *Online***.
 
 ![Imagen](../../images/01_tc3_proyecto_paso_a_paso/22_Monitoring_Online.png){width=600px}
 
 ??? info
     El **Modo *Online*** o de **Monitorización *Online*** es el estado de conexión directa e interactiva entre el entorno de desarrollo (**TwinCAT XAE**) y el motor de tiempo real en ejecución (**TwinCAT XAR**/*Target System*).
     Esta herramienta de supervisión y depuración en tiempo real de TwinCAT 3 permite:
-        - Visualizar directamente sobre el código fuente (ST, SFC, etc.) los valores actualizados que de las variables en la memoria RAM del controlador durante cada ciclo de escaneo (Task Scan).
-        - Modificar mediante el forzado las variables en tiempo de ejecución.
+
+    - Visualizar directamente sobre el código fuente (ST, SFC, etc.) los valores actualizados que de las variables en la memoria RAM del controlador durante cada ciclo de escaneo (Task Scan).
+    - Modificar mediante el forzado las variables en tiempo de ejecución.
       
 <!--
 ## Codificar en Texto Estructurado
