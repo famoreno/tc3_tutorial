@@ -1,0 +1,2113 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://famoreno.github.io/tc3_tutorial/contenidos/05_tc3_practicas/05_tc3_hola_mundo/">
+      
+      
+        <link rel="prev" href="../05_tc3_demo/">
+      
+      
+        <link rel="next" href="../05_tc3_semaforo/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../images/_resource/logo_auto_isa_team.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>👋 Hola Mundo - Tutorial de TwinCAT 3</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,300i,400,400i,700,700i%7CIBM+Plex+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"IBM Plex Sans";--md-code-font:"IBM Plex Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
+          data-cf-beacon='{"token": "4d854f26fec440f88da4a7ee3846cc54"}'></script>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#practica-hola-mundo" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../../.." title="Tutorial de TwinCAT 3" class="md-header__button md-logo" aria-label="Tutorial de TwinCAT 3" data-md-component="logo">
+      
+  <img src="../../../images/_resource/logo_auto_isa_team.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Tutorial de TwinCAT 3
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              👋 Hola Mundo
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Tutorial de TwinCAT 3" class="md-nav__button md-logo" aria-label="Tutorial de TwinCAT 3" data-md-component="logo">
+      
+  <img src="../../../images/_resource/logo_auto_isa_team.png" alt="logo">
+
+    </a>
+    Tutorial de TwinCAT 3
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contenidos generales
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Contenidos generales
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00_presentacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ⚙️ Beckhoff y TwinCAT 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01_conceptos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ✔ Conceptos Generales
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01b_ejecucion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ⚡ Ejecución de Programas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01c_lenguajes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🅰️ Lenguajes de Implementación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01_conceptos/16_ardutc/" class="md-nav__link">
+        
+  
+  
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="32.126026"
+   height="32.126026"
+   viewBox="0 0 8.5000111 8.5000112"
+   version="1.1"
+   id="svg8"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs2" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     transform="translate(48.528482,-136.41461)">
+    <g
+       id="g1"
+       transform="matrix(0.08500011,0,0,0.08500011,-44.403556,124.81935)">
+      <circle
+         style="mix-blend-mode:normal;fill:#00aec7;fill-opacity:1;stroke:#00aec7;stroke-width:0.275075;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path23"
+         cx="1.4715202"
+         cy="186.41461"
+         r="49.862465" />
+      <path
+         d="m -19.817174,170.25348 c -10.941802,-0.87097 -20.134754,12.08085 -15.647582,22.0907 4.372118,10.86126 20.825091,13.80669 28.64888,5.10847 7.58217419,-7.43259 10.5045899,-18.86914 19.789587,-24.73698 9.434573,-6.44312 24.621933,-0.35897 26.462824,11.09137 1.794867,10.96482 -10.021356,21.63048 -20.710035,18.40892 -7.904329,-1.78336 -13.5765783,-8.53713 -16.7981388,-15.64758 -3.9694227,-6.78829 -9.1584364,-14.0368 -17.2583622,-15.87769 -1.438197,-0.32676 -2.922416,-0.45562 -4.395129,-0.45332 z"
+         stroke-width="6.78828"
+         id="path10"
+         style="fill:none;stroke:#000000;stroke-opacity:1" />
+      <path
+         style="fill:#ff0000;stroke:#ff0000;stroke-width:0.0425877px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m -31.486995,183.32804 h 19.94334 v -2.36441 l 6.6499819,4.98625 H -31.486995 Z"
+         id="path59" />
+      <path
+         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.0421004px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 14.172094,185.94988 h 14.958739 v 2.62097 h -8.283224 v 2.36527 z"
+         id="path77" />
+    </g>
+  </g>
+</svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    ArduTC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ejemplos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ejemplos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_tc3_demo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    👋 Ej. - Demo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_tc3_hola_mundo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    👋 Ej. - Hola Mundo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03_tc3_carro_basico/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🛒 Ej. - Carro Básico
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🚟 Ej. - Carro Extendido
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🚟 Ej. - Carro Extendido
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04_tc3_carro_extendido/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ✏️ Descripción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04_tc3_carro_extendido/04_tc3_carro_extendido_mono/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧱 Monolítico
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04_tc3_carro_extendido/04_tc3_carro_extendido_estructurado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🗂️ Estructurado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04_tc3_carro_extendido/04_tc3_carro_extendido_jerarquico/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ⚙️ Jerárquico
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prácticas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Prácticas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01e_practicas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ℹ️ Información
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_tc3_demo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    👋 Demo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    👋 Hola Mundo
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    👋 Hola Mundo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tarea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Tarea
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Objetivos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guia-de-implementacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔨 Guía de implementación
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔨 Guía de implementación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sobre-el-simulador" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🕹️ Sobre el simulador
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sobre-un-controlador" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏭 Sobre un controlador
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#con-un-microcontrolador" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Con un microcontrolador
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios-propuestos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Ejercicios Propuestos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Ejercicios Propuestos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-lampara-memorizada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Lámpara Memorizada
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-lampara-conmutada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Lámpara Conmutada
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-lampara-temporizada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Lámpara Temporizada
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-lampara-computada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Lámpara Computada
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-lampara-intermitente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Lámpara Intermitente
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_tc3_semaforo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🚦 Semáforo (ArduTC)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧩 Proyectos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🧩 Proyectos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_tc3_proyecto_mono/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧱 Monolítico
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_tc3_proyecto_estructurado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🗂️ Estructurado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_tc3_proyecto_jerarquico/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ⚙️ Jerárquico
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tarea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Tarea
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Objetivos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guia-de-implementacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔨 Guía de implementación
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔨 Guía de implementación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sobre-el-simulador" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🕹️ Sobre el simulador
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sobre-un-controlador" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏭 Sobre un controlador
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#con-un-microcontrolador" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Con un microcontrolador
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios-propuestos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Ejercicios Propuestos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Ejercicios Propuestos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-lampara-memorizada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Lámpara Memorizada
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-lampara-conmutada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Lámpara Conmutada
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-lampara-temporizada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Lámpara Temporizada
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-lampara-computada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Lámpara Computada
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-lampara-intermitente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Lámpara Intermitente
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="practica-hola-mundo">👋 Práctica «Hola Mundo»<a class="headerlink" href="#practica-hola-mundo" title="Permanent link">&para;</a></h1>
+<h2 id="tarea">📋 Tarea<a class="headerlink" href="#tarea" title="Permanent link">&para;</a></h2>
+<p>Replicar el ejemplo <a href="../../02_tc3_hola_mundo/"><strong>«Hola Mundo»</strong></a> para implementar nuestro primer programa de PLC con TwinCAT 3 desde cero.</p>
+<hr />
+<h2 id="objetivos">🎯 Objetivos<a class="headerlink" href="#objetivos" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Familiarizarse con el entorno de desarrollo <strong>TwinCAT XAE</strong> de TwinCAT 3.</li>
+<li>Declarar variables de <strong>memoria interna</strong> (marcas).</li>
+<li>Declarar <strong>variables de entrada y salida</strong>, <strong>localizadas</strong> y con <strong>mapeo dinámico</strong>.</li>
+<li>Implementar un fragmento de código sencillo en el lenguaje <strong>Texto Estructurado (ST)</strong> de la norma IEC 61131-3.</li>
+<li>Crear una <strong>visualización</strong> sencilla para mostrar y modificar valores booleanos y numéricos.</li>
+<li>Construir un proyecto PLC para obtener un <strong>archivo ejecutable</strong>.</li>
+<li>Vincular las instancias de las variables de entrada/salida a canales de entrada/salida.</li>
+<li>Desplegar (poner en marcha) un proyecto PLC.</li>
+<li>Validar un proyecto PLC.</li>
+</ul>
+<hr />
+<h2 id="guia-de-implementacion">🔨 Guía de implementación<a class="headerlink" href="#guia-de-implementacion" title="Permanent link">&para;</a></h2>
+<p>A continuación se detallan los pasos necesarios para replicar completamente este proyecto.</p>
+<div class="admonition tip">
+<p class="admonition-title">Sugerencia</p>
+<p>Pulsa en ➡️ para obtener más información sobre cómo realizar el paso especificado.</p>
+</div>
+<hr />
+<h3 id="sobre-el-simulador">🕹️ Sobre el simulador<a class="headerlink" href="#sobre-el-simulador" title="Permanent link">&para;</a></h3>
+<p>En primer lugar vamos a implementar el proyecto (código y visualización) y ejecutarlo en nuestro ordenador usando el simulador de TwinCAT 3 (<code>UmRT_Default</code>).</p>
+<ol>
+<li>Abrir la aplicación TwinCAT XAE. <a href="../../01_conceptos/01_tc3_proyecto_paso_a_paso/#abrir-twincat-xae">➡️</a></li>
+<li>Crear una solución de TwinCAT 3 con nombre <code>TC3_Hola_Mundo</code>. <a href="../../01_conceptos/01_tc3_proyecto_paso_a_paso/#crear-un-proyecto-twincat-3">➡️</a></li>
+<li>Ocultar las configuraciones innecesarias para dejar el explorador de la solución lo más despejado posible.  <a href="../../01_conceptos/01_tc3_proyecto_paso_a_paso/#ocultar-las-configuraciones-innecesarias">➡️</a></li>
+<li>
+<p>Crear un proyecto PLC estándar con el nombre <code>Hola_Mundo_PLC</code>. <a href="../../01_conceptos/01_tc3_proyecto_paso_a_paso/#crear-un-proyecto-plc">➡️</a></p>
+<div class="admonition warning">
+<p class="admonition-title">Importante</p>
+<p><strong>Nota didáctica:</strong> para facilitar la comprensión, en este primer ejemplo todo el código se implementa directamente dentro del <strong>programa</strong> principal (<code>MAIN</code>). Téngase en cuenta que esto se hace exclusivamente con fines pedagógicos. La buena práctica en programación industrial dicta que el MAIN debe actuar únicamente como punto de entrada y organizador del proyecto, mientras que la lógica de control debe residir en otras <strong>Unidades de Organización del Programa</strong> (<code>POUs</code>) —fundamentalmente <strong>Bloques de Función</strong> (<code>FB</code>)— que permiten modularizar, escalar y replicar fácilmente los comportamientos y funcionalidades del sistema.</p>
+</div>
+</li>
+<li>
+<p>Localizar en el panel de <strong>Explorador de la Solución</strong> el programa <code>MAIN</code> bajo la carpeta <code>POUs</code> e incluir la línea de comentario inicial sobre el <strong>Encabezado del POU</strong>.</p>
+<div class="highlight"><pre><span></span><code>// Hola Mundo de la Programación de PLC
+</code></pre></div>
+</li>
+<li>
+<p>Declarar la variable entera <code>ContadorCiclos</code> como <code>UINT</code> en el bloque <code>VAR</code> de la parte de declaración del programa <code>MAIN</code>. <a href="../../01_conceptos/01_tc3_proyecto_paso_a_paso/#declarar-una-variable">➡️</a></p>
+<div class="highlight"><pre><span></span><code>PROGRAM MAIN
+VAR
+    ContadorCiclos: UINT;
+END_VAR
+</code></pre></div>
+<details class="info">
+<summary>Info</summary>
+<p>Según el estándar <code>IEC 61131-3</code> tipo de dato <code>UINT</code> representa un entero sin signo de 16 bits (0 a 65535). </p>
+</details>
+</li>
+<li>
+<p>Escribir en <code>ST</code>, utilizando el <code>Operador de asignación</code>, el código correspondiente a la gestión del contador de ciclos en la parte de implementación del programa <code>MAIN</code>.</p>
+<div class="highlight"><pre><span></span><code>ContadorCiclos := ContadorCiclos + 1;
+</code></pre></div>
+</li>
+<li>
+<p>Construir el proyecto (<strong>Build</strong>) para generar un archivo ejecutable. <a href="../../01_conceptos/01_tc3_proyecto_paso_a_paso/#construir-el-proyecto">➡️</a></p>
+<div class="admonition warning">
+<p class="admonition-title">Importante</p>
+<p>Asegurarse antes de continuar de que el resultado de la construcción del proyecto mostrado en la ventana de mensajes no arroja errores.</p>
+</div>
+</li>
+<li>
+<p>Activar el simulador <strong>UmRT_Default</strong> para disponer de un <code>runtime</code> sobre el que ejecutar el código del proyecto.</p>
+<details class="info">
+<summary>Info</summary>
+<p>Para activar el simulador ejecute el <em>script</em> de inicio que se encuentra habitualmente en la siguiente ruta:</p>
+<ul>
+<li><code>C:\TwinCAT\3.1\Runtimes\UmRT_Default\Start.bat</code>.</li>
+</ul>
+</details>
+</li>
+<li>
+<p>Seleccionar UmRT_Default como sistema destino (<strong>Target System</strong>). <a href="../../01_conceptos/01_tc3_proyecto_paso_a_paso/#seleccionar-un-sistema-destino">➡️</a></p>
+</li>
+<li>Activar la licencia temporal del <code>runtime</code> del sistema destino si es necesario.</li>
+<li>Reiniciar el sistema destino en <strong>RUN Mode</strong>.</li>
+<li>Activar la configuración en el sistema destino.</li>
+<li>
+<p>Conectarse (<strong>Login</strong>) al sistema destino para transferir el proyecto. <a href="../../01_conceptos/01_tc3_proyecto_paso_a_paso/#transferir-un-proyecto">➡️</a></p>
+<details class="info">
+<summary>Info</summary>
+<ul>
+<li>Conectarse al sistema destino implica transferir el proyecto al runtime e iniciar la monitorización (sesión de depuración en tiempo real). </li>
+<li>La comunicación para el intercambio de información entre el entorno de programación y el <code>runtime</code> tiene lugar, normalmente, a través del puerto <code>851</code> .</li>
+</ul>
+</details>
+</li>
+<li>
+<p>Poner el programa de PLC en ejecución (<strong>Run</strong>). <a href="../../01_conceptos/01_tc3_proyecto_paso_a_paso/#arrancar-un-proyecto">➡️</a></p>
+</li>
+<li>
+<p>Observar cómo el valor de la variable <code>ContadorCiclos</code> se incrementa continuamente al ritmo de ejecución del ciclo básico del PLC (típicamente 10 ms), lo que prueba que el programa se está ejecutando. </p>
+</li>
+<li>Modificar el valor del contador de ciclos mediante forzado de variables (<strong>Force values</strong>, <strong>Unforce values</strong>, <strong>Write values</strong>).</li>
+<li>
+<p>Desconectarse del sistema destino (<strong>Logout</strong>) para continuar con la edición del programa.</p>
+<details class="info">
+<summary>Info</summary>
+<p>Cuando nos desconectamos de un sistema destino abandonamos la monitorización, pero el programa sigue ejecutándose en el runtime del sistema destino. Como prueba podremos observar que, cuando nos volvamos a conectar, el contador de ciclos tendrá un valor diferente.</p>
+</details>
+</li>
+<li>
+<p>Crear una visualización para monitorizar y actualizar el contador de ciclos. <a href="../../01_conceptos/07_tc3_crear_visualizacion/">➡️</a></p>
+<p><img alt="Imagen" src="../../../images/02_tc3_hola_mundo/V_Hola_Mundo_ContadorCiclos.png" width="660px" /></p>
+<ol>
+<li>
+<p>Rectángulo (<em>Rectangle</em>) para la etiqueta <strong>Contador</strong>.</p>
+<details class="info">
+<summary>Parámetros</summary>
+<ul>
+<li>Texts &gt; Text = Contador</li>
+</ul>
+</details>
+</li>
+<li>
+<p>Rectángulo (<em>Rectangle</em>) para mostrar el valor de <code>ContadorCiclos</code>.</p>
+<details class="info">
+<summary>Parámetros</summary>
+<ul>
+<li>Color &gt; Normal state &gt; Frame color = [0, 0, 0]</li>
+<li>Color &gt; Normal state &gt; Fill color = [192, 192, 192]</li>
+<li>Texts &gt; Text = [%d]<ul>
+<li><em>Formato estilo printf que indica que se va a sustituir por un número entero.</em></li>
+</ul>
+</li>
+<li>Text variables &gt; Text variable = [<code>MAIN.ContadorCiclos</code>]</li>
+</ul>
+</details>
+</li>
+<li>
+<p>Rectángulo (<em>Rectangle</em>) para modificar el valor de <code>ContadorCiclos</code>.</p>
+<details class="info">
+<summary>Parámetros</summary>
+<ul>
+<li>Color &gt; Normal state &gt; Frame color = [0, 0, 0]</li>
+<li>Color &gt; Normal state &gt; Fill color = [255, 255, 255]</li>
+<li>Texts &gt; Text = [%d]<ul>
+<li><em>Formato estilo printf que indica que se va a sustituir por un número entero.</em></li>
+</ul>
+</li>
+<li>Text variables &gt; Text variable = [<code>MAIN.ContadorCiclos</code>]</li>
+<li>Inputconfiguration &gt; OnMouseClick</li>
+</ul>
+</details>
+</li>
+<li>
+<p>Botón (<em>Button</em>) para reiniciar el valor de la variable <code>ContadorCiclos</code>.</p>
+<details class="info">
+<summary>Parámetros</summary>
+<ul>
+<li>Texts &gt; Text = [<strong>Reinicia</strong>]</li>
+<li>Inputconfiguration<ul>
+<li>OnMouseClick &gt; Configure &gt; Execute ST-Code = [<code>MAIN.ContadorCiclos := 0;</code>]</li>
+</ul>
+</li>
+</ul>
+</details>
+</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Sugerencia</p>
+<p>Los colores especificados para los elementos son simplemente un ejemplo, pueden ser escogidos libremente.</p>
+</div>
+</li>
+<li>
+<p>Volver a conectarse y comprobar que todos los elementos de la visualización funcionan correctamente.</p>
+</li>
+<li>
+<p>Volver a desconectarse e incluir en la parte de declaración del programa <code>MAIN</code> las variables <code>i_Pulsador</code> e <code>o_Lampara</code>.</p>
+<div class="highlight"><pre><span></span><code>PROGRAM MAIN
+VAR
+    i_Pulsador: BOOL;
+    o_Lampara: BOOL;
+END_VAR
+</code></pre></div>
+<details class="info">
+<summary>Explicación</summary>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Elemento</th>
+<th style="text-align: center;">Tipo de componente</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>i_Pulsador</code></td>
+<td style="text-align: center;"><strong>Identificador</strong></td>
+<td style="text-align: left;">Identificador/Nombre de la variable</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>:</code></td>
+<td style="text-align: center;"><strong>Separador</strong></td>
+<td style="text-align: left;">Operador/Separador</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>BOOL</code></td>
+<td style="text-align: center;"><strong>Tipo de dato</strong></td>
+<td style="text-align: left;">Tipo de dato elemental (booleano)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>;</code></td>
+<td style="text-align: center;"><strong>Terminador</strong></td>
+<td style="text-align: left;">Delimitador/Terminador de instrucción</td>
+</tr>
+</tbody>
+</table>
+</details>
+</li>
+<li>
+<p>Incluir el código correspondiente a la activación de la lámpara en la parte de implementación del programa <code>MAIN</code>.</p>
+<div class="highlight"><pre><span></span><code>PROGRAM MAIN
+     o_Lampara := i_Pulsador;
+</code></pre></div>
+</li>
+<li>
+<p>Construir nuevamente el proyecto para comprobar su corrección y generar las instancias de E/S.</p>
+<div class="admonition warning">
+<p class="admonition-title">Importante</p>
+<p>Observa que si la compilación es correcta aparecen bajo el apartado <code>Hola_Mundo_PLC Instance</code> las instancias de las dos nuevas variables. </p>
+</div>
+</li>
+<li>
+<p>Incluir en la visualización los elementos correspondientes al pulsador y la lámpara.</p>
+<p><img alt="Imagen" src="../../../images/02_tc3_hola_mundo/V_Hola_Mundo.png" width="688px" /></p>
+<ol>
+<li>
+<p>Botón (<em>Button</em>) para modificar el valor de <code>i_Pulsador</code>.</p>
+<details class="info">
+<summary>Parámetros</summary>
+<ul>
+<li>Texts &gt; Text = [<strong>Pulsador</strong>]</li>
+<li>Inputconfiguration <ul>
+<li>Tap &gt; Variable = [<code>MAIN.i_Pulsador</code>]</li>
+</ul>
+</li>
+</ul>
+</details>
+</li>
+<li>
+<p>Rectángulo (<em>Rectangle</em>) para mostrar el valor de la variable <code>o_Lampara</code>.</p>
+<details class="info">
+<summary>Parámetros</summary>
+<ul>
+<li>Colors &gt; Normal state &gt; Frame color = [0, 64, 0]</li>
+<li>Colors &gt; Normal state &gt; Fill color = [0, 64, 0]</li>
+<li>Colors &gt; Alarm state &gt; Frame color = [0, 128, 0]</li>
+<li>Colors &gt; Alarm state &gt; Fill color = [0, 128, 0]</li>
+<li>Texts &gt; Text = [<strong>Lámpara</strong>]</li>
+<li>Color variables &gt; Toggle color = [<code>MAIN.o_Lampara</code>]</li>
+</ul>
+</details>
+</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Sugerencia</p>
+<p>Complete la visualización con los elementos que considere oportuno para mejorar su apariencia.</p>
+</div>
+</li>
+<li>
+<p>Conectarse nuevamente </p>
+<ul>
+<li>Modificar el valor de las varaibles forzándolas (Force values, Unforce values, Write values).</li>
+<li>Comprobar que los nuevos elementos de la visualización funcionan correctamente.</li>
+</ul>
+</li>
+</ol>
+<div class="admonition success">
+<p class="admonition-title">¡Enhorabuena! 🎉</p>
+<p>Has completado con éxito la primera parte de la práctica y has puesto en marcha tu primer proyecto completo de PLC en Texto Estructurado con TwinCAT 3 sobre el simulador UmRT_Default.</p>
+</div>
+<hr />
+<h3 id="sobre-un-controlador">🏭 Sobre un controlador<a class="headerlink" href="#sobre-un-controlador" title="Permanent link">&para;</a></h3>
+<p>Ahora vamos a configurar el proyecto para ejecutarlo sobre un controlador Beckhoff real. </p>
+<ol>
+<li>Estando desconectado, seleccionar como nuevo sistema destino un <strong>controlador remoto</strong> de Beckhoff presente en la actual red local. <a href="../../01b_ejecucion/#busqueda-de-controladores-remotos">➡️</a></li>
+<li>Activar la configuración en el nuevo sistema destino.</li>
+<li>Transferir el programa.</li>
+<li>Poner el programa en ejecución.</li>
+<li>Probar el programa forzando las variables.</li>
+<li>
+<p>Probar el programa desde la visualización.</p>
+<div class="admonition warning">
+<p class="admonition-title">Importante</p>
+<p>Para probar el programa con un pulsador y una lámpara real es necesario:</p>
+<ul>
+<li>Modificar y construir el programa.</li>
+<li>Configurar la E/S: escanear, identificar y vincular canales de E/S.</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Volver a desconectarse y modificar, en la parte de declaración del programa <code>MAIN</code>, la declaración de las variables <code>i_Pulsador</code> y <code>o_Lampara</code>.</p>
+<div class="highlight"><pre><span></span><code>PROGRAM MAIN
+VAR
+    i_Pulsador AT %I*: BOOL;
+    o_Lampara AT %Q*: BOOL;
+END_VAR
+</code></pre></div>
+<details>
+<summary>Explicación</summary>
+<ul>
+<li>Para situar las instancias de estas variables en las correspondientes imágenes de E/S (<em>Process Image</em>) es necesario especificar sus direcciones usando el modificador <code>AT</code>. </li>
+<li>Si no se hiciera, el compilador situaría estas variables en el <strong>espacio de memoria interna</strong> (marcas) y no se generarían las correspondientes instancias de E/S y no podrían vincularse (<em>mapping</em>) a canales físicos de E/S del controlador.</li>
+<li>El símbolo <code>%</code> es el prefijo de ubicación directa.</li>
+<li>Las letras <code>I</code> y <code>Q</code> indican el área de memoria (entrada/salida).</li>
+<li>El símbolo <code>*</code> es un comodín que indica asignación dinámica. </li>
+</ul>
+</details>
+</li>
+<li>
+<p>Construir (<strong>Build</strong>) y verificar la ausencia de errores. </p>
+<div class="admonition tip">
+<p class="admonition-title">Sugerencia</p>
+<p>Verificar que las <code>i_Pulsador</code> y <code>o_Lampara</code> aparecen instanciadas.</p>
+<div class="highlight"><pre><span></span><code>Hola_Mundo_PLC Instance/
+├── PLCTask Inputs
+|   └── MAIN.i_Pulsador
+└── PLCTask Outputs
+    └── MAIN.o_Lampara
+</code></pre></div>
+</div>
+</li>
+<li>
+<p>Conectarse (<strong>Login</strong>) nuevamente al controlador remoto.</p>
+</li>
+<li>Reiniciar el sistema TwinCAT del controlador remoto en modo Configuración (<strong>Restart TwinCAT (Config Mode)</strong>).</li>
+<li>Escanear (<strong>Scan</strong>) la entrada/salida (<strong>I/O</strong>) en busca de dispositivos y terminales.</li>
+<li>Localizar, identificar, nominar (<code>Pulsador</code>) y probrar un canal de entrada digital para <code>i_Pulsador</code>.</li>
+<li>
+<p>Localizar, identificar, nominar (<code>Lampara</code>) y probrar un canal de salida digital para <code>o_Lampara</code>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Sugerencias</p>
+<ul>
+<li>Buscar en la lista de entradas y salidas de la <strong>descripción funcional</strong> del sistema una señal de entrada (preferiblemente un <strong>pulsador</strong>) y otra de salida (preferiblemente una <strong>lámpara</strong>).</li>
+<li><strong>Desactivar</strong> los dispositivos de entrada y salida que no se van a utilizar (todos menos el dispositivo denominado <code>EtherCAT</code>).</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Vincular (<strong>Link</strong>) las instancias de las variables de entrada y salida con los canales correspondientes. <a href="../../01b_ejecucion/#vinculacion-de-variables-y-es">➡️</a></p>
+<ul>
+<li>Variable de entrada <code>i_Pulsador</code> con un canal de entrada digital <code>Pulsador</code>.</li>
+<li>Variable de salida <code>o_Lampara</code> con un canal de salida digital <code>Lampara</code>.</li>
+</ul>
+</li>
+<li>
+<p>Activar la configuración (<strong>Activate Configuration</strong>) y reiniciar TwinCAT 3 (<strong>Restart TwinCAT System</strong>).</p>
+</li>
+<li>Volver a transferir el programa al controlador (<strong>Login</strong>).</li>
+<li>Poner el programa en <strong>ejecución</strong> (<strong>Start</strong>).</li>
+<li>
+<p>Comprobar que:</p>
+<ul>
+<li>El contador de ciclos sigue incrementándose de forma continua.</li>
+<li>Al accionar el pulsador físico se enciende la lámpara física.</li>
+</ul>
+</li>
+<li>
+<p>Utilizar la visualización integrada en el proyecto PLC para facilitar la prueba:</p>
+<ul>
+<li>Comprobar en la visualización que, accionando el pulsador físico, cambia de estado la lámpara.</li>
+<li>Comprobar en la visualización que, accionando el botón de la visualización, <strong>NO cambia de estado la lámpara</strong>.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Importante</p>
+<p>Esto se debe a que la ejecución del ciclo básico hace que el valor del pulsador <strong>se actualice con el valor del pulsador físico</strong> al inicio de cada ciclo básico de ejecución, sobreescribiendo el valor que fija el botón de la visualización.</p>
+</div>
+</li>
+</ol>
+<div class="admonition success">
+<p class="admonition-title">¡Enhorabuena! 🎉</p>
+<p>Has completado con éxito la segunda parte de la práctica y has puesto en marcha tu primer proyecto completo de PLC en Texto Estructurado con TwinCAT 3 sobre un controlador real.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Recomendación</p>
+<ul>
+<li>Para ejecutar el proyecto sobre un controlador real con terminales de E/S asociados es necesario antes de activar la configuración tener HABILITADOS los dispositivos de E/S que se vayan a utilizar.</li>
+<li>Para ejecutar el proyecto sobre un runtime sin terminales de E/S asociados (como el simulador UmRT_Default) es necesario antes de activar la configuración tener DESHABILITADOS los dispositivos de E/S ya que no se van a utilizar.</li>
+<li>Para conmutar la habilitación, expandir el contenido de <strong>I/O</strong> y en <strong>Devices</strong>:<ul>
+<li><strong>CD</strong> sobre el dispositivo y seleccionar lo que corresponda (Enable/Disable).</li>
+</ul>
+</li>
+</ul>
+</div>
+<hr />
+<h3 id="con-un-microcontrolador"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 9V7h-2V5a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-2h2v-2h-2v-2h2v-2h-2V9zm-4 10H4V5h14zM6 13h5v4H6zm6-6h4v3h-4zM6 7h5v5H6zm6 4h4v6h-4z"/></svg></span> Con un microcontrolador<a class="headerlink" href="#con-un-microcontrolador" title="Permanent link">&para;</a></h3>
+<p>También podemos configurar el proyecto para ejecutarlo sobre un runtime (local/remoto) o sobre el simulador (UmRT_Default) y utilizar una placa microcontrolador como <strong>Arduino UNO</strong> como terminal de E/S utilizando <strong>ArduTC</strong>.</p>
+<ol>
+<li>
+<p>Preparar el proyecto TC</p>
+<ul>
+<li>Tener preparado un controlador TC: <em>runtime</em> (local o remoto) o simulador (<strong>UmRT_Default</strong>).</li>
+<li>Deshabilitar todos los dispositivo <em>hardware</em> incluidos en el apartato I/O.</li>
+<li>Activar la configuración del proyecto sobre el controlador.</li>
+<li>Cargar el proyecto PLC sobre el controlador.</li>
+<li>Poner en ejecución el proyecto en el controlador.</li>
+</ul>
+</li>
+<li>
+<p>Preparar la placa Arduino</p>
+<ul>
+<li>Descargar <strong>Telemetrix</strong> en la placa Arduino.</li>
+<li>Preparar el montaje correspondiente: un pulsador y un led conectados a los pines correspondientes. </li>
+</ul>
+</li>
+<li>
+<p>Abrir al aplicación <strong>ArduTC</strong>.</p>
+</li>
+<li>Cargar los símbolos del proyecto TC en <strong>ArduTc</strong>.</li>
+<li>Seleccionar la placa <strong>microcontroladora</strong>.</li>
+<li>Vincular las variables de E/S del proyecto TC con los pines corespondientes de la placa <strong>microcontroladora</strong>. </li>
+<li>Establecer la dirección <strong>AMS Net ID</strong> y el <strong>puerto de comunicaciones</strong> del controlador TC en <strong>ArduTC</strong>.</li>
+<li>Conectar <strong>ArduTC</strong>.</li>
+<li>Accionar el pulsador y verificar que se enciende el led.</li>
+</ol>
+<hr />
+<h2 id="ejercicios-propuestos">🎯 Ejercicios Propuestos<a class="headerlink" href="#ejercicios-propuestos" title="Permanent link">&para;</a></h2>
+<p>A continuación se propone una serie de retos para profundizar en los conceptos fundamentales del lenguaje <strong>Texto Estructurado (ST)</strong> y la librería estándar IEC 61131-3. </p>
+<p>Para la prueba se recomienda implementar una interfaz visual en cada ejercicio añadiendo los botones y elementos necesarios en una <strong>visualización</strong>.</p>
+<hr />
+<h3 id="1-lampara-memorizada">1. Lámpara Memorizada<a class="headerlink" href="#1-lampara-memorizada" title="Permanent link">&para;</a></h3>
+<p><strong>Descripción:</strong></p>
+<ul>
+<li>La lámpara se enciende al accionar el pulsador de conexión (i_PulsadorConexion).</li>
+<li>La lámpara se apaga al accionar el pulsador de desconexión (i_PulsadorDesconexion).</li>
+</ul>
+<details class="tip">
+<summary>Pista para la solución</summary>
+<ul>
+<li>Utiliza la <a href="https://infosys.beckhoff.com/english.php?content=../content/1033/tc3_plc_intro/2528275595.html" target="_blank">instrucción condicional IF ... THEN</a>.</li>
+<li>Piensa cuál de las dos condiciones debe prevalecer en caso de que se presionen ambos pulsadores al mismo tiempo (prioridad de activación o de desactivación).</li>
+</ul>
+</details>
+<hr />
+<h3 id="2-lampara-conmutada">2. Lámpara Conmutada<a class="headerlink" href="#2-lampara-conmutada" title="Permanent link">&para;</a></h3>
+<p><strong>Descripción:</strong></p>
+<ul>
+<li>La lámpara se enciende si estando apagada se acciona el pulsador (i_Pulsador).</li>
+<li>La lámpara se apaga si estando encendida se acciona el pulsador (i_Pulsador).</li>
+</ul>
+<details class="tip">
+<summary>Pista para la solución</summary>
+<ul>
+<li>Utiliza el detector de flanco ascendente <a href="https://infosys.beckhoff.com/english.php?content=../content/1033/tcplclib_tc2_standard/74391563.html&amp;id=" target="_blank">R_TRIG</a> de la librería <code>Standard</code>.</li>
+<li>Declara una instancia del bloque funcional detector de flanco ascendente (<code>Pulsación: R_TRIG;</code>).</li>
+<li>Utiliza el <a href="https://infosys.beckhoff.com/english.php?content=../content/1033/tc3_plc_intro/2528902283.html&amp;id=" target="_blank">operador NOT</a> para la conmutación de la salida (<code>o_Lampara := NOT o_Lampara;</code>) cuando se produce un flanco en el pulsador (<code>Pulsacion.Q</code>).</li>
+</ul>
+</details>
+<hr />
+<h3 id="3-lampara-temporizada">3. Lámpara Temporizada<a class="headerlink" href="#3-lampara-temporizada" title="Permanent link">&para;</a></h3>
+<p><strong>Descripción:</strong></p>
+<ul>
+<li>La lámpara se enciende al accionar el pulsador (i_Pulsador).</li>
+<li>La lámpara se apaga transcurrido un cierto tiempo (por ejemplo, 5 segundos).</li>
+</ul>
+<details class="tip">
+<summary>Pista para la solución</summary>
+<ul>
+<li>Utiliza el temporizador de retardo a la conexión <a href="https://infosys.beckhoff.com/english.php?content=../content/1033/tcplclib_tc2_standard/74406539.html&amp;id=" target="_blank">TON</a> de la librería <code>Standard</code>.</li>
+<li>Declara una instancia del temporizador de retardo a la conexión (<code>Temporizador: TON;</code>).</li>
+<li>Utiliza literales de tiempo con la sintaxis de formato de tiempo estándar de IEC (ejemplo: <code>T#5s</code>).</li>
+<li>Parametriza el funcionamiento utilizando una variable (<code>TiempoEncendido</code>) que permita controlar la temporización desde la visualización.</li>
+</ul>
+</details>
+<hr />
+<h3 id="4-lampara-computada">4. Lámpara Computada<a class="headerlink" href="#4-lampara-computada" title="Permanent link">&para;</a></h3>
+<p><strong>Descripción:</strong></p>
+<ul>
+<li>La lámpara se enciende tras un determinado número de pulsaciones (i_Pulsador).</li>
+<li>La lámpara se apaga tras accionar el pulsador de reinicio (i_PulsadorReinicio).</li>
+</ul>
+<details class="tip">
+<summary>Pista para la solución</summary>
+<ul>
+<li>Utiliza el bloque de contador de cuenta regresiva <a href="https://infosys.beckhoff.com/english.php?content=../content/1033/tcplclib_tc2_standard/74398987.html&amp;id=" target="_blank">CTD</a> de la librería <code>Standard</code>.</li>
+<li>Declara una instancia de contador decreciente (<code>Contador: CTD;</code>).</li>
+<li>Parametriza el funcionamiento utilizando una variable (<code>ManiobrasTotales</code>) que controle el contador desde la visualización.</li>
+</ul>
+</details>
+<hr />
+<h3 id="5-lampara-intermitente">5. Lámpara Intermitente<a class="headerlink" href="#5-lampara-intermitente" title="Permanent link">&para;</a></h3>
+<p><strong>Descripción:</strong></p>
+<ul>
+<li>La lámpara parpadéa de forma continua.</li>
+</ul>
+<details class="tip">
+<summary>Pista para la solución</summary>
+<ul>
+<li>Utiliza un temporizador de retardo a la conexión (<code>Temporizador: TON;</code>) para controlar el tiempo de conmutación.</li>
+<li>Cuando finalice el temporizador invierte el estado de la lámpara (<code>o_Lampara := NOT o_Lampara;</code>).</li>
+<li>Parametriza el funcionamiento utilizando una varible (<code>TiempoParpadeo</code>) que permita controlar el temporizador desde la visualización.</li>
+</ul>
+</details>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/famoreno/tc3_tutorial" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/ui-course.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
