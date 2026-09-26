@@ -43,6 +43,7 @@ nav:
     - ✔ Conceptos Generales: contenidos/01_conceptos.md
     - ⚡ Ejecución de Programas: contenidos/01b_ejecucion.md
     - 🅰️ Lenguajes de Implementación: contenidos/01c_lenguajes.md
+    - ArduTC: contenidos/01_conceptos/16_ardutc.md
   - Ejemplos:
     # - ✏️ Descripción general: contenidos/01d_ejemplos.md 
     - 👋 Ej. - Demo: contenidos/02_tc3_demo.md
@@ -91,7 +92,7 @@ markdown_extensions:
       clickable_checkbox: true
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg      
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 plugins:
   - search
