@@ -174,7 +174,6 @@ Crear un proyecto TwinCAT con variables de entrada y salida y desplegarlo sobre 
 
     ![Imagen](../../images/06_ardutc/ardutc_gui_runtime_connected.png){width=600px}
 
-
 2. Con los botones run/stop del panel **RUNTIME** se puede controlar el estado de ejecución/parada del proyecto PLC en TwinCAT.
 3. Se puede obervar que el estado de las variables y los pines en **TwinCAT** y la placa **microcontroladora** cambian sincronizadamente cuando ambos están conectados mediante ArduTC.
 

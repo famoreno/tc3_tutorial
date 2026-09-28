@@ -364,6 +364,16 @@
   border-radius: 3px;
 }
 
+/* Nueva clase para Ladder Diagram (Verde) */
+.fondo-verde-lang {
+  background-color: #2e7d32;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.85em;
+}
+
 /* ===== Fuentes ===== */
 /* TODO: pedir permiso para usar la fuente de la UMA en el texto */
 @font-face {

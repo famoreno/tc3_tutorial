@@ -34,10 +34,10 @@ El funcionamiento básico del carro es como sigue.
 
 El proyecto contempla diferentes variantes de complejidad progresiva.
 
-1. **Carro pulsado**. El carro inicia un viaje de ida y vuelta, únicamente, cuando estando en su posición inicial se acciona el pulsador de marcha.
-1. **Carro temporizado**. El carro se detiene durante un determinado tiempo ($T_{espera}$) sobre el final de carrera derecha antes de iniciar el camino de regreso hacia su posición inicial.
-2. **Carro limitado**. El carro realiza un determinado número de viajes consecutivos de ida y vuelta (tarea) cada vez que, estando en su posición inicial, se acciona el pulsador de marcha.
-3. **Carro señalizado**. La lámpara de marcha se enciende de forma permanente para indicar que el carro está en funcionamiento y parpadea para indicar que el carro está en reposo.
+1.  **Carro pulsado**. El carro inicia un viaje de ida y vuelta, únicamente, cuando estando en su posición inicial se acciona el pulsador de marcha.
+2.  **Carro temporizado**. El carro se detiene durante un determinado tiempo ($T_{espera}$) sobre el final de carrera derecha antes de iniciar el camino de regreso hacia su posición inicial.
+3.  **Carro limitado**. El carro realiza un determinado número de viajes consecutivos de ida y vuelta (tarea) cada vez que, estando en su posición inicial, se acciona el pulsador de marcha.
+4.  **Carro señalizado**. La lámpara de marcha se enciende de forma permanente para indicar que el carro está en funcionamiento y parpadea para indicar que el carro está en reposo.
 
 ## ⇄ Entradas y salidas
 
@@ -75,11 +75,11 @@ TC3_Carro_Basico/
         └── Carro_Basico_PLC/    <-- Proyecto PLC
 ```
 
---- 
+---
 
 ## 💻 Implementación
 
-Se implementa el funcionamiento del carro va y viene (pulsado, temporizado, limitado y señalizado), a partir de sus especificaciones (diagrama de relés y diagrama grafcet) utilizando diferentes lenguajes de programación de la norma IEC 61131-3: *Diagrama Ladder* (LD), *Sequential Function Chart* ({{SFC}}) y *Structured Text* ({{ST}}).
+Se implementa el funcionamiento del carro va y viene (pulsado, temporizado, limitado y señalizado), a partir de sus especificaciones (diagrama de relés y diagrama grafcet) utilizando diferentes lenguajes de programación de la norma IEC 61131-3: *Diagrama Ladder* ({{LD}}), *Sequential Function Chart* ({{SFC}}) y *Structured Text* ({{ST}}).
 
 - DRC → [LD]
 - GRF → [SFC / ST / LD]
