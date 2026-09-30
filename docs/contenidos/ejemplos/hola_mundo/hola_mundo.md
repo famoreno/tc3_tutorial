@@ -2,13 +2,13 @@
 
 ## 📝 Descripción del Proyecto
 
-Este proyecto es el **«Hola Mundo»** de la programación de **autómatas programables (PLC)**. 
+Este proyecto es el **«Hola Mundo»** de la programación de **autómatas programables (PLC)**.
 
 El proyecto **Hola Mundo** se ha desarrollado en el entorno **TwinCAT 3** empleando el lenguaje **Texto Estructurado (ST)** conforme a la norma **IEC 61131-3**.
 
-**Hola Mundo** es un proyecto mínimo y funcional, que muestra la declaración y el uso básico de variables booleanas y enteras, ubicadas en los espacios de memoria de marcas, imagen de entrada e imagen de salida. Cubriendo los elementos esenciales de programación del lenguaje ST de la norma **IEC 61131-3** para la programación de PLC.
+**Hola Mundo** es un proyecto mínimo y funcional, que muestra la declaración y el uso básico de variables booleanas y enteras, ubicadas en los espacios de memoria de marcas, imagen de entrada e imagen de salida. Cubriendo los elementos esenciales de programación del lenguaje {{ST}} de la norma **IEC 61131-3** para la programación de PLC.
 
-![V_Hola_Mundo](../images/02_tc3_hola_mundo/V_Hola_Mundo.png)
+![V_Hola_Mundo](./img/V_Hola_Mundo.png)
 <figcaption>Figura 1: Visualización del proyecto Hola Mundo.</figcaption>
 
 Este proyecto incluye además, una **visualización** elemental que permite, mediante objetos gráficos, interactuar con las variables del proyecto. Utilizando **formas rectangulares**, para mostrar el valor de variables booleanas y numéricas, y **botones** para modificar el valor de variables booleanas y numéricas.
@@ -28,7 +28,7 @@ TC3_Hola_Mundo/
             └── V_Hola_Mundo.TcVISU <-- Visualización (Interfaz gráfica)
 ```
 
---- 
+---
 
 ## Código
 
@@ -89,4 +89,3 @@ También puede descargarse el archivo comprimido de la solución (tnzip) del pro
 - :material-google-drive: **Google Drive:** [:material-download: Descargar `.tnzip`](https://drive.google.com/file/d/1HiN3VGmpYH63-8s_RbQovNkcL4GJR9_5/view?usp=drive_link)
 
 ---
- 

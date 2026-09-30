@@ -43,12 +43,11 @@ nav:
     - ✔ Conceptos Generales: contenidos/01_conceptos.md
     - ⚡ Ejecución de Programas: contenidos/01b_ejecucion.md
     - 🅰️ Lenguajes de Implementación: contenidos/01c_lenguajes.md
-    - ArduTC: contenidos/01_conceptos/16_ardutc.md
+    - ArduTC: contenidos/procedimientos/ardutc/ardutc.md
   - Ejemplos:
     # - ✏️ Descripción general: contenidos/01d_ejemplos.md 
-    - 👋 Ej. - Demo: contenidos/02_tc3_demo.md
-    - 👋 Ej. - Hola Mundo: contenidos/02_tc3_hola_mundo.md
-    - 🛒 Ej. - Carro Básico: contenidos/03_tc3_carro_basico.md
+    - 👋 Ej. - Hola Mundo: contenidos/ejemplos/hola_mundo/hola_mundo.md
+    - 🛒 Ej. - Carro Básico: contenidos/ejemplos/carro_basico/carro_basico.md
     - 🚟 Ej. - Carro Extendido: 
       - ✏️ Descripción: contenidos/04_tc3_carro_extendido.md
       - 🧱 Monolítico: contenidos/04_tc3_carro_extendido/04_tc3_carro_extendido_mono.md
@@ -57,14 +56,13 @@ nav:
       # - 🧩 Impl. Funcional: contenidos/04_tc3_carro_extendido/04_tc3_carro_extendido_funcional.md
   - Prácticas:
     - ℹ️ Información: contenidos/01e_practicas.md 
-    - 👋 Demo: contenidos/05_tc3_practicas/05_tc3_demo.md
-    - 👋 Hola Mundo: contenidos/05_tc3_practicas/05_tc3_hola_mundo.md
-    - 🚦 Semáforo (ArduTC): contenidos/05_tc3_practicas/05_tc3_semaforo.md
+    - 👋 Hola Mundo: contenidos/practicas/hola_mundo/practica_hola_mundo.md
+    - 🚦 Semáforo: contenidos/practicas/semaforo/practica_semaforo.md
     # - 🛒 Carro básico: contenidos/05_tc3_practicas/05_tc3_carro_basico.md
-    - 🧩 Proyectos:
-      - 🧱 Monolítico: contenidos/05_tc3_practicas/05_tc3_proyecto_mono.md
-      - 🗂️ Estructurado: contenidos/05_tc3_practicas/05_tc3_proyecto_estructurado.md
-      - ⚙️ Jerárquico: contenidos/05_tc3_practicas/05_tc3_proyecto_jerarquico.md
+    - 🚀 Proyectos:
+      - 🔲 Monolítico: contenidos/practicas/proyectos/proyecto_monolitico.md
+      - 🗄️Estructurado: contenidos/05_tc3_practicas/05_tc3_proyecto_estructurado.md
+      - 📐 Jerárquico: contenidos/05_tc3_practicas/05_tc3_proyecto_jerarquico.md
       # - 🧩 Funcional: contenidos/05_tc3_practicas/05_tc3_proyecto_funcional.md
 
 markdown_extensions:
@@ -106,7 +104,7 @@ extra:
       link: https://github.com/famoreno/tc3_tutorial
 
 extra_css:
-  - stylesheets/extra.css
+  - assets/stylesheets/extra.css
 
 extra_javascript:
   - javascripts/ui-course.js

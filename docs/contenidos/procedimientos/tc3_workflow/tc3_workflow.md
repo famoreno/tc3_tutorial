@@ -1,28 +1,28 @@
-# 🏗️ Proyecto TwinCAT 3 paso a paso
+# 🏗️ TwinCAT 3 - Flujo de Trabajo
 
 ## Abrir TwinCAT XAE
 
 - Buscar en el menú de inicio de Windows la aplicación `TwinCAT XAE Shell`.
 
-![Imagen](../../images/01_tc3_proyecto_paso_a_paso/01_Abrir_TC3_XAE_Menu_Inicio.png){width=400px}
+![Imagen](./img/01_Abrir_TC3_XAE_Menu_Inicio.png){width=400px}
 
 - También accesible desde la barra de tareas (junto al reloj de Windows).
     -  :material-mouse-right-click: sobre el icono de TwinCAT y seleccionando la opción **TwinCAT XAE (TcXAEShell)**.
 
-![Imagen](../../images/01_tc3_proyecto_paso_a_paso/01a_Abrir_TC3_XAE_Barra_Tareas.png){width=300px}
+![Imagen](./img/01a_Abrir_TC3_XAE_Barra_Tareas.png){width=300px}
 
 Tras cargar la aplicación se muestra la pantalla inicial de la aplicación.
 
-![Imagen](../../images/01_tc3_proyecto_paso_a_paso/02_TwinCAT_XAE.png){width=700px}
+![Imagen](./img/02_TwinCAT_XAE.png){width=700px}
 
-## Crear un [proyecto](../../contenidos/00_terminologia.md#proyecto-twincat-3) TwinCAT 3
+## Crear un [proyecto](../../00_terminologia.md#proyecto-twincat-3) TwinCAT 3
 
 ### Seleccionar ***TwinCAT XAE Project (XML format)***.
 
  - En el menú de la aplicación: File > New > Project
  - En la página de inicio de la aplicación: Open > NewProject > New TwinCAT Project...
 
- ![Imagen](../../images/01_tc3_proyecto_paso_a_paso/03_New_Project.png){width=500px}
+ ![Imagen](./img/03_New_Project.png){width=500px}
 
 ??? info "Parámetros"
     - Name = nombre del proyecto TwinCAT.
@@ -33,7 +33,7 @@ Tras cargar la aplicación se muestra la pantalla inicial de la aplicación.
 
  Se mostrará la nueva solución «vacía».
 
- ![Imagen](../../images/01_tc3_proyecto_paso_a_paso/04_Solucion_Vacia.png){width=700px}
+ ![Imagen](./img/04_Solucion_Vacia.png){width=700px}
 
 ### Ocultar las configuraciones innecesarias 
 
@@ -41,13 +41,13 @@ Para despejar el panel de exploración de la solución, ocultar las configuracio
 
 - :material-mouse-right-click: sobre la configuración seleccionada y seleccionar **Hide \*\*\* Configuration**.
 
-![Imagen](../../images/01_tc3_proyecto_paso_a_paso/05_Hide_Configuration.png){width=300px}
+![Imagen](./img/05_Hide_Configuration.png){width=300px}
 
 !!! note "Recomendación"
     - Ocultar las configuraciones que no se van a utilizar: `MOTION`, `SAFETY`, `C++`, `VISION`, `ANALYTICS`.
     - Mantener las configuraciones `SYSTEM`, `PLC` e `I/O`.
 
-![Imagen](../../images/01_tc3_proyecto_paso_a_paso/05_Hide_Configuration_Final.png){width=300px}
+![Imagen](./img/05_Hide_Configuration_Final.png){width=300px}
 
 ## Crear un proyecto PLC
 
@@ -55,11 +55,11 @@ Para despejar el panel de exploración de la solución, ocultar las configuracio
 
     - :material-mouse-right-click: sobre la configuración `PLC` y seleccionar ***Add New Item***.
 
-    ![Imagen](../../images/01_tc3_proyecto_paso_a_paso/06_PLC_Add_New_Item.png){width=300px}
+    ![Imagen](./img/06_PLC_Add_New_Item.png){width=300px}
 
 2. En la ventana emergente seleccionar ***Standard PLC Project***, darle un nombre al proyecto PLC y pulsar ***Add***. 
 
-    ![Imagen](../../images/01_tc3_proyecto_paso_a_paso/07_PLC_Add_New_Item_Window.png){width=500px}
+    ![Imagen](./img/07_PLC_Add_New_Item_Window.png){width=500px}
 
     ??? info "Proyecto Estándar"
         Al selecionar un proyecto PLC estándar se aplica una plantilla predeterminada que incluye:
@@ -69,11 +69,9 @@ Para despejar el panel de exploración de la solución, ocultar las configuracio
         - Un conjunto de librerías básicas: Tc2_Standard, Tc2_System y Tc3_Module.
         - Un conjunto estructurado de carpetas (DUTs, GVLs, POUs, VISUs).
 
-
-
     Tras la creación, se muestra el nuevo proyecto PLC en el panel del explorador de la solución.
 
-    ![Imagen](../../images/01_tc3_proyecto_paso_a_paso/08_Proyecto_PLC_Vacio.png){width=400px}
+    ![Imagen](./img/08_Proyecto_PLC_Vacio.png){width=400px}
 
     ??? info "Descripción"
         - Project = código fuente estructurado bajo la norma IEC 61131-3.
@@ -81,7 +79,7 @@ Para despejar el panel de exploración de la solución, ocultar las configuracio
 
     Y si se despliega su contenido, se muestra la estructura de carpetas y nodos que contiene.
 
-    ![Imagen](../../images/01_tc3_proyecto_paso_a_paso/09_Proyecto_PLC_Contenido.png){width=400px}
+    ![Imagen](./img/09_Proyecto_PLC_Contenido.png){width=400px}
 
     ??? info "Descripción"
         - External Types = declaración de tipos de datos complejos e interfaces que provienen de bibliotecas externas.
@@ -98,11 +96,11 @@ Para despejar el panel de exploración de la solución, ocultar las configuracio
 
     - :material-mouse-right-click: sobre la carpeta `POU` y seleccionar **Add** y **POU...**.
 
-    ![Imagen](../../images/01_tc3_proyecto_paso_a_paso/10_POUs_Add_POU.png){width=400px}
+    ![Imagen](./img/10_POUs_Add_POU.png){width=400px}
 
 2. Cumplimentar los datos correspondientes en la ventana emergente **Add POU**.
 
-    ![Imagen](../../images/01_tc3_proyecto_paso_a_paso/11_Add_POU.png){width=300px}
+    ![Imagen](./img/11_Add_POU.png){width=300px}
 
     ??? info "Descripción"
         - Name = nombre del POU.
@@ -111,17 +109,17 @@ Para despejar el panel de exploración de la solución, ocultar las configuracio
 
 3. Se mostrará el nuevo POU «vacío».
 
-    ![Imagen](../../images/01_tc3_proyecto_paso_a_paso/12_FB_Vacio.png){width=700px}
+    ![Imagen](./img/12_FB_Vacio.png){width=700px}
 
 ## Implementar un POU
 
 Al desplegar la carpeta `POUs` se muestra la lista de todos los módulos de programación (programas, bloques funcionales y funciones) que componen el proyecto.
 
-![Imagen](../../images/01_tc3_proyecto_paso_a_paso/13_Lista_POUs.png){width=400px}
+![Imagen](./img/13_Lista_POUs.png){width=400px}
 
 Pulsando sobre cualquiera de ellos podemos acceder a su contenido.
 
-![Imagen](../../images/01_tc3_proyecto_paso_a_paso/14_FB_Estacion_Vacio.png){width=700px}
+![Imagen](./img/14_FB_Estacion_Vacio.png){width=700px}
 
 El contenido de un POU se muestra separado: 
 
@@ -140,11 +138,11 @@ Identificador [AT %Localización]: Type [:= ValorInicial];
 1. **Identificador** (obligatorio). Es el nombre único de la variable dentro de su ámbito (scope).
 2. **Localización** (opcional). La localización o **Ubicación Directa** establece la zona y la posición de memoria en la que se situará la variable. 
     - Modificador de localización `AT`.
-    - Dirección. 
+    - Dirección.
 
         ```text
         %[Área] [Tamaño] [Dirección]
-        ``` 
+
         - `%`: prefijo de ubicación.
         - Área: `I` para entradas, `Q` para salidas y `M` para memoria interna (o de marcas).
         - Dirección:
@@ -191,6 +189,7 @@ El bloque de declaración determina el ámbito y el alcance de la variable espec
 El proceso de despliegue abarca la secuencia desde la validación del código fuente hasta la ejecución en tiempo real sobre el runtime  del sistema destino (*Target*).
 
 ### Seleccionar un sistema destino
+
 - El sistema destino (**Target System**) es el *runtime* de tiempo real sobre el que se ejecuta el código máquina del programa.
 - Hay tres tipos de sistemas destino seleccionables:
     * **Local Target**: presente en el mismo ordenador en el que se está desarrollando el programa.
@@ -198,34 +197,35 @@ El proceso de despliegue abarca la secuencia desde la validación del código fu
     * **UmRT_Default**: *runtime* que se ejecuta en modo usuario sin capacidades de tiempo real.
 - Para seleccionarlo basta con elegirlo de la lista de runtimes disponibles en la barra de herramientas de TwinCAT.
 
-![Imagen](../../images/01_tc3_proyecto_paso_a_paso/15_Lista_Sistemas_Destino.png){width=300px}
+![Imagen](./img/15_Lista_Sistemas_Destino.png){width=300px}
 
 #### Activar Licencia
 
 - TwinCAT pone a disposición de aprendices y desarrolladores licencias de pruebas (*trial licenses*) que se solicitan cuando se intenta utilizar determinados servicios o funcionalidades. 
 
-    ![Imagen](../../images/01_tc3_proyecto_paso_a_paso/18_Generate_Trial_License.png){width=400px}
+    ![Imagen](./img/18_Generate_Trial_License.png){width=400px}
 
 - Para activarlas se debe introducir el código de seguridad cuando sea solicitado.
 
-    ![Imagen](../../images/01_tc3_proyecto_paso_a_paso/19_Enter_Security_Code.png){width=400px}
-
+    ![Imagen](./img/19_Enter_Security_Code.png){width=400px}
 
 #### Crear una Ruta
+
 Seguir los siguientes pasos incluir en la lista un sistema destino (**Add Route**)
 
 🚧 *Proximamente*
 
 #### Activar el Simulador
+
 Para activar el simulador (**UmRT_Default**) ejecutar el *script* denominado `Start.bat` que se encuentra normalmente en esta ruta 'C:\TwinCAT\3.1\Runtimes\UmRT_Default\Start.bat'.
 
 - ++win+r++ > `C:\TwinCAT\3.1\Runtimes\UmRT_Default\Start.bat` > ++enter++
 
-    ![Imagen](../../images/01_tc3_proyecto_paso_a_paso/23_Ejecutar_UmRT_Default.png){width=400px}
+    ![Imagen](./img/23_Ejecutar_UmRT_Default.png){width=400px}
 
 - Se abrirá una ventana de terminal que debe permanecer abierta mientras usemos el simulador
 
-    ![Imagen](../../images/01_tc3_proyecto_paso_a_paso/24_Terminal_UmRT_Default.png){width=600px}
+    ![Imagen](./img/24_Terminal_UmRT_Default.png){width=600px}
 
 - Entre otros datos en la ventana de terminal del simulador aparecen los comandos del simulador y su dirección `AmsNetId`
 
@@ -246,7 +246,7 @@ Construir una solución o un proyecto (**Build**):
 - **Ámbito de Compilación:** Se puede construir o reconstruir la solución completa o solo uno de los proyectos de la solución.
 - **Modo de Ejecución:** Desde el menú principal: `Build` > `Build Solution` (o `Build <Nombre_Proyecto>`), o mediante el atajo de teclado `Ctrl + Shift + B`.
 
-![Imagen](../../images/01_tc3_proyecto_paso_a_paso/16_Menu_Build.png){width=300px}
+![Imagen](./img/16_Menu_Build.png){width=300px}
 
 - El resultado (mensajes, avisos y errores) de la construcción se muestra en el panel de errores (*Error List*). 
 
@@ -260,7 +260,7 @@ Activar la configuración (**Activate Configuration**):
 - **Cambio de Estado:** Conmuta el sistema operativo de tiempo real a modo **RUN** (indicado por el icono de TwinCAT en verde en la barra de tareas).
 - **Modo de Ejecución:** Desde el menú principal `TwinCAT` > `Activate Configuration`, o pulsando el icono en la barra de herramientas de TwinCAT.
 
-![Imagen](../../images/01_tc3_proyecto_paso_a_paso/17_Activate_Configuration.png){width=300px}
+![Imagen](./img/17_Activate_Configuration.png){width=300px}
 
 ??? info "Boot Project"
     El ***Boot Project*** (Proyecto de Arranque) es la copia compilada ejecutable del proyecto que se guarda en el almacenamiento no volátil (disco/memoria flash) del sistema destino. Su función es permitir que el runtime de TwinCAT cargue y arranque el programa del PLC de forma automática al encender o reiniciar el equipo, sin necesidad de conectarse desde el entorno de desarrollo (XAE).
@@ -273,7 +273,7 @@ Activar la configuración (**Activate Configuration**):
 - Si no se dispone de una licencia permanente, cada 7 días habrá que reactivar la licencia de prueba ... [➡️](#activar-licencia)
 - Finalmente, es necesario confirmar el reinicio del sistema destino en modo ejecución.
 
-![Imagen](../../images/01_tc3_proyecto_paso_a_paso/20_Restart_Run_Mode.png){width=300px}
+![Imagen](./img/20_Restart_Run_Mode.png){width=300px}
 
 
 ### Transferir un Proyecto
@@ -285,7 +285,7 @@ Transferir un proyecto PLC (**Login**):
 - **Generación de Boot Project:** Eventualmente se crea el proyecto de arranque (*Create Boot Project*) en el almacenamiento no volátil del sistema destino para garantizar que el programa se cargue automáticamente tras una pérdida de alimentación.
 - **Modo de Ejecución:** Pulsando el botón `Login` (`Alt + F8`) en la barra de herramientas de TwinCAT PLC. 
 
-![Imagen](../../images/01_tc3_proyecto_paso_a_paso/21_Login_Create_Port.png){width=300px}
+![Imagen](./img/21_Login_Create_Port.png){width=300px}
 
 ??? info
     - La primera vez que se realice **Login** sobre un nuevo sistema destino, TwinCAT solicitará la creación del puerto para las comunicaciones entre el entorno de programación (**XAE**) y el sistema de ejecución (**XAR**) del sistema destino.
@@ -300,7 +300,7 @@ Arrancar o poner en ejecución un proyecto (**Start**):
 - **Modo de Ejecución:** Pulsando el botón `Start` (`F5`) o desde el menú `PLC` > `Login` > `Start`.
 - Tras pasar a modo ejecución, en el entorno de programación, el código se muestra en modo **Monitorización *Online***.
 
-    ![Imagen](../../images/01_tc3_proyecto_paso_a_paso/22_Monitoring_Online.png){width=600px}
+    ![Imagen](./img/22_Monitoring_Online.png){width=600px}
 
     ??? info
         El **Modo *Online*** o de **Monitorización *Online*** es el estado de conexión directa e interactiva entre el entorno de desarrollo (**TwinCAT XAE**) y el motor de tiempo real en ejecución (**TwinCAT XAR**/*Target System*).

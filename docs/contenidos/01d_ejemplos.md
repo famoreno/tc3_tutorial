@@ -36,7 +36,7 @@ Descripción completa de los ejemplos y qué se va añadiendo en cada paso.
 
 ## CARRO BÁSICO
 
-- Programa: `tc3_carro_basico` [➡️](../contenidos/03_tc3_carro_basico.md)
+- Programa: `tc3_carro_basico` [➡️](./ejemplos/carro_basico/carro_basico.md)
 - **Mi primera máquina de estados**
     - Introducción al GRAFCET
     - Introducción al {{SFC}}

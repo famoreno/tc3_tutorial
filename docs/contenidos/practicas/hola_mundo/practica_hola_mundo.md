@@ -1,11 +1,13 @@
 # 👋 Práctica «Hola Mundo»
 
 ## 📋 Tarea
-Replicar el ejemplo [**«Hola Mundo»**](../02_tc3_hola_mundo.md) para implementar nuestro primer programa de PLC con TwinCAT 3 desde cero.
+
+Replicar el ejemplo [**«Hola Mundo»**](../../ejemplos/hola_mundo/hola_mundo.md) para implementar nuestro primer programa de PLC con TwinCAT 3 desde cero.
 
 ---
 
 ## 🎯 Objetivos
+
 - Familiarizarse con el entorno de desarrollo **TwinCAT XAE** de TwinCAT 3.
 - Declarar variables de **memoria interna** (marcas).
 - Declarar **variables de entrada y salida**, **localizadas** y con **mapeo dinámico**.
@@ -19,6 +21,7 @@ Replicar el ejemplo [**«Hola Mundo»**](../02_tc3_hola_mundo.md) para implement
 ---
 
 ## 🔨 Guía de implementación
+
 A continuación se detallan los pasos necesarios para replicar completamente este proyecto.
 
 !!! tip "Sugerencia"
@@ -30,10 +33,10 @@ A continuación se detallan los pasos necesarios para replicar completamente est
 
 En primer lugar vamos a implementar el proyecto (código y visualización) y ejecutarlo en nuestro ordenador usando el simulador de TwinCAT 3 (`UmRT_Default`).
 
-1. Abrir la aplicación TwinCAT XAE. [➡️](../../contenidos/01_conceptos/01_tc3_proyecto_paso_a_paso.md#abrir-twincat-xae)
-2. Crear una solución de TwinCAT 3 con nombre `TC3_Hola_Mundo`. [➡️](../../contenidos/01_conceptos/01_tc3_proyecto_paso_a_paso.md#crear-un-proyecto-twincat-3)
-3. Ocultar las configuraciones innecesarias para dejar el explorador de la solución lo más despejado posible.  [➡️](../../contenidos/01_conceptos/01_tc3_proyecto_paso_a_paso.md#ocultar-las-configuraciones-innecesarias)
-4. Crear un proyecto PLC estándar con el nombre `Hola_Mundo_PLC`. [➡️](../../contenidos/01_conceptos/01_tc3_proyecto_paso_a_paso.md#crear-un-proyecto-plc)
+1. Abrir la aplicación TwinCAT XAE. [➡️](../../procedimientos/tc3_workflow/tc3_workflow.md#abrir-twincat-xae)
+2. Crear una solución de TwinCAT 3 con nombre `TC3_Hola_Mundo`. [➡️](../../procedimientos/tc3_workflow/tc3_workflow.md#crear-un-proyecto-twincat-3)
+3. Ocultar las configuraciones innecesarias para dejar el explorador de la solución lo más despejado posible.  [➡️](../../procedimientos/tc3_workflow/tc3_workflow.md#ocultar-las-configuraciones-innecesarias)
+4. Crear un proyecto PLC estándar con el nombre `Hola_Mundo_PLC`. [➡️](../../procedimientos/tc3_workflow/tc3_workflow.md#crear-un-proyecto-plc)
 
     !!! warning "Importante"
         **Nota didáctica:** para facilitar la comprensión, en este primer ejemplo todo el código se implementa directamente dentro del **programa** principal (`MAIN`). Téngase en cuenta que esto se hace exclusivamente con fines pedagógicos. La buena práctica en programación industrial dicta que el MAIN debe actuar únicamente como punto de entrada y organizador del proyecto, mientras que la lógica de control debe residir en otras **Unidades de Organización del Programa** (`POUs`) —fundamentalmente **Bloques de Función** (`FB`)— que permiten modularizar, escalar y replicar fácilmente los comportamientos y funcionalidades del sistema.
@@ -44,7 +47,7 @@ En primer lugar vamos a implementar el proyecto (código y visualización) y eje
     // Hola Mundo de la Programación de PLC
     ```
 
-6. Declarar la variable entera `ContadorCiclos` como `UINT` en el bloque `VAR` de la parte de declaración del programa `MAIN`. [➡️](../../contenidos/01_conceptos/01_tc3_proyecto_paso_a_paso.md#declarar-una-variable)
+6. Declarar la variable entera `ContadorCiclos` como `UINT` en el bloque `VAR` de la parte de declaración del programa `MAIN`. [➡️](../../procedimientos/tc3_workflow/tc3_workflow.md#declarar-una-variable)
 
     ```iecst
     PROGRAM MAIN
@@ -52,8 +55,9 @@ En primer lugar vamos a implementar el proyecto (código y visualización) y eje
         ContadorCiclos: UINT;
     END_VAR
     ```
+
     ??? info
-        Según el estándar `IEC 61131-3` tipo de dato `UINT` representa un entero sin signo de 16 bits (0 a 65535). 
+        Según el estándar `IEC 61131-3` tipo de dato `UINT` representa un entero sin signo de 16 bits (0 a 65535).
 
 7. Escribir en `ST`, utilizando el `Operador de asignación`, el código correspondiente a la gestión del contador de ciclos en la parte de implementación del programa `MAIN`.
 
@@ -61,43 +65,42 @@ En primer lugar vamos a implementar el proyecto (código y visualización) y eje
     ContadorCiclos := ContadorCiclos + 1;
     ```
 
-8. Construir el proyecto (**Build**) para generar un archivo ejecutable. [➡️](../../contenidos/01_conceptos/01_tc3_proyecto_paso_a_paso.md#construir-el-proyecto)
+8. Construir el proyecto (**Build**) para generar un archivo ejecutable. [➡️](../../procedimientos/tc3_workflow/tc3_workflow.md#construir-el-proyecto)
 
     !!! warning "Importante"
         Asegurarse antes de continuar de que el resultado de la construcción del proyecto mostrado en la ventana de mensajes no arroja errores.
 
-9. Activar el simulador **UmRT_Default** para disponer de un `runtime` sobre el que ejecutar el código del proyecto.
+9.  Activar el simulador **UmRT_Default** para disponer de un `runtime` sobre el que ejecutar el código del proyecto.
 
     ??? info
         Para activar el simulador ejecute el *script* de inicio que se encuentra habitualmente en la siguiente ruta:
-        
+
            - `C:\TwinCAT\3.1\Runtimes\UmRT_Default\Start.bat`.
 
-10. Seleccionar UmRT_Default como sistema destino (**Target System**). [➡️](../../contenidos/01_conceptos/01_tc3_proyecto_paso_a_paso.md#seleccionar-un-sistema-destino)
+10. Seleccionar UmRT_Default como sistema destino (**Target System**). [➡️](../../procedimientos/tc3_workflow/tc3_workflow.md#seleccionar-un-sistema-destino)
 11. Activar la licencia temporal del `runtime` del sistema destino si es necesario.
 12. Reiniciar el sistema destino en **RUN Mode**.
 13. Activar la configuración en el sistema destino.
-14. Conectarse (**Login**) al sistema destino para transferir el proyecto. [➡️](../../contenidos/01_conceptos/01_tc3_proyecto_paso_a_paso.md#transferir-un-proyecto)
-   
+14. Conectarse (**Login**) al sistema destino para transferir el proyecto. [➡️](../../procedimientos/tc3_workflow/tc3_workflow.md#transferir-un-proyecto)
+
     ??? info
-        - Conectarse al sistema destino implica transferir el proyecto al runtime e iniciar la monitorización (sesión de depuración en tiempo real). 
+        - Conectarse al sistema destino implica transferir el proyecto al runtime e iniciar la monitorización (sesión de depuración en tiempo real).
         - La comunicación para el intercambio de información entre el entorno de programación y el `runtime` tiene lugar, normalmente, a través del puerto `851` .
 
-15. Poner el programa de PLC en ejecución (**Run**). [➡️](../../contenidos/01_conceptos/01_tc3_proyecto_paso_a_paso.md#arrancar-un-proyecto)
-   
-16. Observar cómo el valor de la variable `ContadorCiclos` se incrementa continuamente al ritmo de ejecución del ciclo básico del PLC (típicamente 10 ms), lo que prueba que el programa se está ejecutando. 
+15. Poner el programa de PLC en ejecución (**Run**). [➡️](../../procedimientos/tc3_workflow/tc3_workflow.md#arrancar-un-proyecto)
+16. Observar cómo el valor de la variable `ContadorCiclos` se incrementa continuamente al ritmo de ejecución del ciclo básico del PLC (típicamente 10 ms), lo que prueba que el programa se está ejecutando.
 17. Modificar el valor del contador de ciclos mediante forzado de variables (**Force values**, **Unforce values**, **Write values**).
 18. Desconectarse del sistema destino (**Logout**) para continuar con la edición del programa.
 
     ??? info
         Cuando nos desconectamos de un sistema destino abandonamos la monitorización, pero el programa sigue ejecutándose en el runtime del sistema destino. Como prueba podremos observar que, cuando nos volvamos a conectar, el contador de ciclos tendrá un valor diferente.
 
-19. Crear una visualización para monitorizar y actualizar el contador de ciclos. [➡️](../../contenidos/01_conceptos/07_tc3_crear_visualizacion.md)
+19. Crear una visualización para monitorizar y actualizar el contador de ciclos. [➡️](../../01_conceptos/07_tc3_crear_visualizacion.md)
 
-    ![Imagen](../../images/02_tc3_hola_mundo/V_Hola_Mundo_ContadorCiclos.png){width=660px}
+    ![Imagen](./img/v_hola_mundo_contador.png){width=660px}
 
     1. Rectángulo (*Rectangle*) para la etiqueta **Contador**.
-   
+
         ??? info "Parámetros"
             - Texts > Text = Contador
 
@@ -150,7 +153,6 @@ En primer lugar vamos a implementar el proyecto (código y visualización) y eje
         | `BOOL` | **Tipo de dato** | Tipo de dato elemental (booleano) |
         | `;` | **Terminador** | Delimitador/Terminador de instrucción |
 
-
 22. Incluir el código correspondiente a la activación de la lámpara en la parte de implementación del programa `MAIN`.
 
     ```iecst
@@ -161,20 +163,20 @@ En primer lugar vamos a implementar el proyecto (código y visualización) y eje
 23. Construir nuevamente el proyecto para comprobar su corrección y generar las instancias de E/S.
 
     !!! warning "Importante"
-        Observa que si la compilación es correcta aparecen bajo el apartado `Hola_Mundo_PLC Instance` las instancias de las dos nuevas variables. 
+        Observa que si la compilación es correcta aparecen bajo el apartado `Hola_Mundo_PLC Instance` las instancias de las dos nuevas variables.
 
 24. Incluir en la visualización los elementos correspondientes al pulsador y la lámpara.
 
-    ![Imagen](../../images/02_tc3_hola_mundo/V_Hola_Mundo.png){width=688px}
+    ![Imagen](./img/v_hola_mundo.png){width=688px}
 
-    1.  Botón (*Button*) para modificar el valor de `i_Pulsador`.
+    1. Botón (*Button*) para modificar el valor de `i_Pulsador`.
 
         ??? info "Parámetros"
             - Texts > Text = [**Pulsador**]
-            - Inputconfiguration 
+            - Inputconfiguration
                 - Tap > Variable = [`MAIN.i_Pulsador`]
 
-    2.  Rectángulo (*Rectangle*) para mostrar el valor de la variable `o_Lampara`.
+    2. Rectángulo (*Rectangle*) para mostrar el valor de la variable `o_Lampara`.
 
         ??? info "Parámetros"
             - Colors > Normal state > Frame color = [0, 64, 0]
@@ -187,8 +189,7 @@ En primer lugar vamos a implementar el proyecto (código y visualización) y eje
     !!! tip "Sugerencia"
         Complete la visualización con los elementos que considere oportuno para mejorar su apariencia.
 
-
-25. Conectarse nuevamente 
+25. Conectarse nuevamente
     - Modificar el valor de las varaibles forzándolas (Force values, Unforce values, Write values).
     - Comprobar que los nuevos elementos de la visualización funcionan correctamente.
 
@@ -199,9 +200,9 @@ En primer lugar vamos a implementar el proyecto (código y visualización) y eje
 
 ### 🏭 Sobre un controlador
 
-Ahora vamos a configurar el proyecto para ejecutarlo sobre un controlador Beckhoff real. 
+Ahora vamos a configurar el proyecto para ejecutarlo sobre un controlador Beckhoff real.
 
-1. Estando desconectado, seleccionar como nuevo sistema destino un **controlador remoto** de Beckhoff presente en la actual red local. [➡️](../../contenidos/01b_ejecucion.md#busqueda-de-controladores-remotos)
+1. Estando desconectado, seleccionar como nuevo sistema destino un **controlador remoto** de Beckhoff presente en la actual red local. [➡️](../../../../bck/01b_ejecucion.md#busqueda-de-controladores-remotos)
 2. Activar la configuración en el nuevo sistema destino.
 3. Transferir el programa.
 4. Poner el programa en ejecución.
@@ -214,7 +215,7 @@ Ahora vamos a configurar el proyecto para ejecutarlo sobre un controlador Beckho
         - Modificar y construir el programa.
         - Configurar la E/S: escanear, identificar y vincular canales de E/S.
 
-7.  Volver a desconectarse y modificar, en la parte de declaración del programa `MAIN`, la declaración de las variables `i_Pulsador` y `o_Lampara`.
+7. Volver a desconectarse y modificar, en la parte de declaración del programa `MAIN`, la declaración de las variables `i_Pulsador` y `o_Lampara`.
 
     ```iecst
     PROGRAM MAIN
@@ -223,14 +224,15 @@ Ahora vamos a configurar el proyecto para ejecutarlo sobre un controlador Beckho
         o_Lampara AT %Q*: BOOL;
     END_VAR
     ```
+
     ??? "Explicación"
-        - Para situar las instancias de estas variables en las correspondientes imágenes de E/S (*Process Image*) es necesario especificar sus direcciones usando el modificador `AT`. 
+        - Para situar las instancias de estas variables en las correspondientes imágenes de E/S (*Process Image*) es necesario especificar sus direcciones usando el modificador `AT`.
         - Si no se hiciera, el compilador situaría estas variables en el **espacio de memoria interna** (marcas) y no se generarían las correspondientes instancias de E/S y no podrían vincularse (*mapping*) a canales físicos de E/S del controlador.
         - El símbolo `%` es el prefijo de ubicación directa.
         - Las letras `I` y `Q` indican el área de memoria (entrada/salida).
-        - El símbolo `*` es un comodín que indica asignación dinámica. 
+        - El símbolo `*` es un comodín que indica asignación dinámica.
 
-8. Construir (**Build**) y verificar la ausencia de errores. 
+8. Construir (**Build**) y verificar la ausencia de errores.
 
     !!! tip "Sugerencia"
         Verificar que las `i_Pulsador` y `o_Lampara` aparecen instanciadas.
@@ -241,7 +243,7 @@ Ahora vamos a configurar el proyecto para ejecutarlo sobre un controlador Beckho
             └── PLCTask Outputs
                 └── MAIN.o_Lampara
 
-9.  Conectarse (**Login**) nuevamente al controlador remoto.
+9. Conectarse (**Login**) nuevamente al controlador remoto.
 10. Reiniciar el sistema TwinCAT del controlador remoto en modo Configuración (**Restart TwinCAT (Config Mode)**).
 11. Escanear (**Scan**) la entrada/salida (**I/O**) en busca de dispositivos y terminales.
 12. Localizar, identificar, nominar (`Pulsador`) y probrar un canal de entrada digital para `i_Pulsador`.
@@ -251,9 +253,9 @@ Ahora vamos a configurar el proyecto para ejecutarlo sobre un controlador Beckho
         - Buscar en la lista de entradas y salidas de la **descripción funcional** del sistema una señal de entrada (preferiblemente un **pulsador**) y otra de salida (preferiblemente una **lámpara**).
         - **Desactivar** los dispositivos de entrada y salida que no se van a utilizar (todos menos el dispositivo denominado `EtherCAT`).
 
-14. Vincular (**Link**) las instancias de las variables de entrada y salida con los canales correspondientes. [➡️](../../contenidos/01b_ejecucion.md#vinculacion-de-variables-y-es)
-    -  Variable de entrada `i_Pulsador` con un canal de entrada digital `Pulsador`.
-    -  Variable de salida `o_Lampara` con un canal de salida digital `Lampara`.
+14. Vincular (**Link**) las instancias de las variables de entrada y salida con los canales correspondientes. [➡️](../../../../bck/01b_ejecucion.md#vinculacion-de-variables-y-es)
+    - Variable de entrada `i_Pulsador` con un canal de entrada digital `Pulsador`.
+    - Variable de salida `o_Lampara` con un canal de salida digital `Lampara`.
 
 15. Activar la configuración (**Activate Configuration**) y reiniciar TwinCAT 3 (**Restart TwinCAT System**).
 16. Volver a transferir el programa al controlador (**Login**).
@@ -293,12 +295,12 @@ También podemos configurar el proyecto para ejecutarlo sobre un runtime (local/
   
 2. Preparar la placa Arduino
     - Descargar **Telemetrix** en la placa Arduino.
-    - Preparar el montaje correspondiente: un pulsador y un led conectados a los pines correspondientes. 
+    - Preparar el montaje correspondiente: un pulsador y un led conectados a los pines correspondientes.
 
 3. Abrir al aplicación **ArduTC**.
 4. Cargar los símbolos del proyecto TC en **ArduTc**.
 5. Seleccionar la placa **microcontroladora**.
-6. Vincular las variables de E/S del proyecto TC con los pines corespondientes de la placa **microcontroladora**. 
+6. Vincular las variables de E/S del proyecto TC con los pines corespondientes de la placa **microcontroladora**.
 7. Establecer la dirección **AMS Net ID** y el **puerto de comunicaciones** del controlador TC en **ArduTC**.
 8. Conectar **ArduTC**.
 9. Accionar el pulsador y verificar que se enciende el led.
@@ -307,13 +309,14 @@ También podemos configurar el proyecto para ejecutarlo sobre un runtime (local/
 
 ## 🎯 Ejercicios Propuestos
 
-A continuación se propone una serie de retos para profundizar en los conceptos fundamentales del lenguaje **Texto Estructurado (ST)** y la librería estándar IEC 61131-3. 
+A continuación se propone una serie de retos para profundizar en los conceptos fundamentales del lenguaje **Texto Estructurado (ST)** y la librería estándar IEC 61131-3.
 
 Para la prueba se recomienda implementar una interfaz visual en cada ejercicio añadiendo los botones y elementos necesarios en una **visualización**.
 
 ---
 
 ### 1. Lámpara Memorizada
+
 **Descripción:**
 
 - La lámpara se enciende al accionar el pulsador de conexión (i_PulsadorConexion).
@@ -326,6 +329,7 @@ Para la prueba se recomienda implementar una interfaz visual en cada ejercicio a
 ---
 
 ### 2. Lámpara Conmutada
+
 **Descripción:**
 
 - La lámpara se enciende si estando apagada se acciona el pulsador (i_Pulsador).
@@ -339,6 +343,7 @@ Para la prueba se recomienda implementar una interfaz visual en cada ejercicio a
 ---
 
 ### 3. Lámpara Temporizada
+
 **Descripción:**
 
 - La lámpara se enciende al accionar el pulsador (i_Pulsador).
@@ -353,6 +358,7 @@ Para la prueba se recomienda implementar una interfaz visual en cada ejercicio a
 ---
 
 ### 4. Lámpara Computada
+
 **Descripción:**
 
 - La lámpara se enciende tras un determinado número de pulsaciones (i_Pulsador).
@@ -366,6 +372,7 @@ Para la prueba se recomienda implementar una interfaz visual en cada ejercicio a
 ---
 
 ### 5. Lámpara Intermitente
+
 **Descripción:**
 
 - La lámpara parpadéa de forma continua.

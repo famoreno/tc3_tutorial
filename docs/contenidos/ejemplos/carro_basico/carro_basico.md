@@ -4,7 +4,7 @@
 
 El proyecto **Carro Básico** resuelve el clásico problema de automatización conocido como **«el carro va y viene»**, que consiste en un móvil que se desplaza longitudinalmente entre los dos extremos (izquierdo y derecho) de un tramo de vía.
 
-![Esquemático del Carro Básico](../images/03_tc3_carro_basico/Carro_Basico_Esquematico.png){width: 300px}
+![Esquemático del Carro Básico](./img/carro_basico_esquematico.png){width: 300px}
 
 <figcaption>Figura 1: Representación Esquemática.</figcaption>
 
@@ -56,8 +56,8 @@ El proyecto contempla diferentes variantes de complejidad progresiva.
 
 Las siguientes especificaciones funcionales describen el comportamiento del carro (lógica de control) de una manera precisa utilizando los **Diagramas de Relés y Contactos** y el lenguaje **GRAFCET**.
 
-- [Diagrama de relés y contactos (PDF).](../../pdfs/Carro_Basico_DRC_Final.pdf)
-- [Diagrama grafcet (PDF).](../../pdfs/Carro_Basico_GRF_Final.pdf)
+- [Diagrama de relés y contactos (PDF).](./pdf/carro_basico_drc.pdf)
+- [Diagrama grafcet (PDF).](./pdf/carro_basico_grf.pdf)
 
 ---
 

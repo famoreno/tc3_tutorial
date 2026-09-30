@@ -10,8 +10,8 @@ Tras estas prácticas iniciales, los grupos deberán realizar un **proyecto de a
 
 Las prácticas propuestas están basadas en los ejemplos proporcionados y explicados en esta guía. Así, la hoja de ruta prevista para las prácticas es la siguiente:
 
-1. <span class="fondo-gris">**No entregable**</span> ⌚ **1-2 sesiones**. Replicar el ejemplo **Demo**. [➡️](../contenidos/05_tc3_practicas/05_tc3_demo.md)
-2. <span class="fondo-gris">**No entregable**</span> ⌚ **2-4 sesiones**. Trasladar los conocimientos adquiridos en el ejemplo **Carro básico (señalizado)** explicado en clase para implementar el funcionamiento de semáforo utilizando ArduTC. [➡️](../contenidos/05_tc3_practicas/05_tc3_semaforo.md) <!-- (../contenidos/05_tc3_practicas/05_tc3_carro_basico.md) -->
+1. <span class="fondo-gris">**No entregable**</span> ⌚ **1-2 sesiones**. Replicar el ejemplo **Demo**. [➡️](../../bck/05_tc3_demo.md)
+2. <span class="fondo-gris">**No entregable**</span> ⌚ **2-4 sesiones**. Trasladar los conocimientos adquiridos en el ejemplo **Carro básico (señalizado)** explicado en clase para implementar el funcionamiento de semáforo utilizando ArduTC. [➡️](./practicas/semaforo/practica_semaforo.md) <!-- (../contenidos/05_tc3_practicas/05_tc3_carro_basico.md) -->
 3. <span class="fondo-verde">**Entregable**</span> ⌚ **Resto del curso**. Desarrollar el proyecto de automatización, abordándolo con distintos niveles de complejidad creciente:
       - **Monolítico**. Toda la funcionalidad en un solo bloque funcional. [➡️](../contenidos/05_tc3_practicas/05_tc3_proyecto_mono.md)
       - **Estructurado**. La funcionalidad está dividida en distintos bloques funcionales. [➡️](../contenidos/05_tc3_practicas/05_tc3_proyecto_estructurado.md)

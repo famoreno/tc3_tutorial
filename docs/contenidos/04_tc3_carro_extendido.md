@@ -12,7 +12,7 @@
 
 El **carro extendido** pretende ser una modesta ampliación con fines docentes del famosísimo problema del carro va y viene.
 
-![Esquematico del Carro Básico](../images/03_tc3_carro_basico/Carro_Basico_Esquematico.png){width=300px}
+![Esquematico del Carro Básico](./ejemplos/carro_basico/img/carro_basico_esquematico.png){width=300px}
 
 El carro extendido es un sistema de transporte de material granulado entre los dos puntos extremos de una vía. Esta ampliación, de espíritu realista, pretende ser una propuesta equilibrada que, con fines didácticos, omite los detalles auxiliares de una instalación real, para centrarse en los elementos esenciales que permiten ilustrar claramente el potencial de los paradigmas de programación de la lógica de control monolítico, estructurado y funcional.
 

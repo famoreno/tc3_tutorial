@@ -9,7 +9,7 @@
 
 El **carro va y viene** es un móvil que se desplaza longitudinalmente entre los extremos izquierdo y derecho de un tramo de vía.
 
-![Esquemático del Carro Básico](../images/03_tc3_carro_basico/Carro_Basico_Esquematico.png){width=300px}
+![Esquemático del Carro Básico](./ejemplos/carro_basico/img/carro_basico_esquematico.png){width=300px}
 
 ### Elementos constituyentes
 
@@ -206,7 +206,7 @@ git clone https://github.com/vetorres-uma/TC3_Carro_Basico.git
     ??? info "{{SFC}}"
         4. La conversión de GRAFCET a lenguaje {{SFC}} es más directa que con {{ST}}, al ser un lenguaje gráfico que representa muy claramente la secuencia de estados por la que pasa el sistema.
 
-            ![Código de carro básico SFC](../images/03_tc3_carro_basico/carro_basico_sfc.png){width=500px}
+            ![Código de carro básico SFC](./ejemplos/carro_basico/img/carro_basico_sfc.png){width=500px}
         
         5. El código incluye cinco tipos de acciones ([➡️](../../contenidos/01_conceptos/#asociar-acciones-a-etapas)):
               1. No memorizadas para activar salidas binarias (equivalencia directa con GRAFCET). **Ejemplo**: `o_MarchaDerecha`              
@@ -223,7 +223,7 @@ git clone https://github.com/vetorres-uma/TC3_Carro_Basico.git
 
 1. Diseñar la visualización añadiendo: [➡️](../../contenidos/01_conceptos/#crear-visualizacion)
 
-    ![Imagen](../images/03_tc3_carro_basico/carro_basico_visu.png){width=400px}
+    ![Imagen](./ejemplos/carro_basico/img/carro_basico_visu.png){width=400px}
 
     1. Rectángulos (*Rectangle*) para las etiquetas **Panel**, **Maniobras**, **Tiempos**, etc.
     2. Rectángulos (*Rectangle*) **no editables** para mostrar el valor de `ManiobrasPendientes` y `TiempoRestante`.
@@ -269,7 +269,7 @@ git clone https://github.com/vetorres-uma/TC3_Carro_Basico.git
         Carro();
         ```
 
-2. Compilar y poner el programa en funcionamiento [➡️](../contenidos/01b_ejecucion.md).
+2. Compilar y poner el programa en funcionamiento [➡️](../../bck/01b_ejecucion.md).
 
 ---
 
