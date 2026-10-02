@@ -4,9 +4,9 @@ site_url: https://famoreno.github.io/tc3_tutorial/
 theme:
   name: material
   language: es
-  custom_dir: docs/overrides
-  logo: images/_resource/logo_auto_isa_team.png
-  favicon: images/_resource/logo_auto_isa_team.png
+  custom_dir: overrides
+  logo: assets/img/logo-auto-isa-team.png
+  favicon: assets/img/logo-auto-isa-team.png
 
   palette:
     - scheme: default
@@ -38,32 +38,37 @@ theme:
 
 nav:
   - 🏠 Inicio: index.md
-  - Contenidos generales:
-    - ⚙️ Beckhoff y TwinCAT 3: contenidos/00_presentacion.md
-    - ✔ Conceptos Generales: contenidos/01_conceptos.md
-    - ⚡ Ejecución de Programas: contenidos/01b_ejecucion.md
-    - 🅰️ Lenguajes de Implementación: contenidos/01c_lenguajes.md
-    - ArduTC: contenidos/procedimientos/ardutc/ardutc.md
-  - Ejemplos:
-    # - ✏️ Descripción general: contenidos/01d_ejemplos.md 
-    - 👋 Ej. - Hola Mundo: contenidos/ejemplos/hola_mundo/hola_mundo.md
-    - 🛒 Ej. - Carro Básico: contenidos/ejemplos/carro_basico/carro_basico.md
-    - 🚟 Ej. - Carro Extendido: 
-      - ✏️ Descripción: contenidos/04_tc3_carro_extendido.md
-      - 🧱 Monolítico: contenidos/04_tc3_carro_extendido/04_tc3_carro_extendido_mono.md
-      - 🗂️ Estructurado: contenidos/04_tc3_carro_extendido/04_tc3_carro_extendido_estructurado.md
-      - ⚙️ Jerárquico: contenidos/04_tc3_carro_extendido/04_tc3_carro_extendido_jerarquico.md
-      # - 🧩 Impl. Funcional: contenidos/04_tc3_carro_extendido/04_tc3_carro_extendido_funcional.md
-  - Prácticas:
-    - ℹ️ Información: contenidos/01e_practicas.md 
-    - 👋 Hola Mundo: contenidos/practicas/hola_mundo/practica_hola_mundo.md
-    - 🚦 Semáforo: contenidos/practicas/semaforo/practica_semaforo.md
-    # - 🛒 Carro básico: contenidos/05_tc3_practicas/05_tc3_carro_basico.md
-    - 🚀 Proyectos:
-      - 🔲 Monolítico: contenidos/practicas/proyectos/proyecto_monolitico.md
-      - 🗄️Estructurado: contenidos/05_tc3_practicas/05_tc3_proyecto_estructurado.md
-      - 📐 Jerárquico: contenidos/05_tc3_practicas/05_tc3_proyecto_jerarquico.md
-      # - 🧩 Funcional: contenidos/05_tc3_practicas/05_tc3_proyecto_funcional.md
+
+  - 🏛️ Fundamentos:
+      - ⚙️ TwinCAT: contenidos/fundamentos/twincat/index.md
+      - 🅰️ Lenguajes: contenidos/fundamentos/lenguajes/index.md
+      - ✏️ GRAFCET: contenidos/fundamentos/grafcet/index.md
+      - 🏗️ Arquitecturas: contenidos/fundamentos/arquitecturas/index.md
+      - ArduTC: contenidos/fundamentos/ardutc/index.md
+
+  - 🛠️ Procedimientos:
+      - 1️⃣ TwinCAT 3 - Workflow: contenidos/procedimientos/workflow/index.md
+      - 🔤 Lenguaje LD: contenidos/procedimientos/ladder/index.md
+      - 🔤 Lenguaje SFC: contenidos/procedimientos/sfc/index.md
+      - 🖥️ Visualizaciones: contenidos/procedimientos/visu/index.md
+  
+  - 🔬 Ejemplos:
+      - 👋 Hola Mundo: 
+          - 📝 Descripción: contenidos/ejemplos/hola-mundo/index.md
+          - 🛠️ Guía de Implementación: contenidos/ejemplos/hola-mundo/step-by-step.md
+      - 🛒 Carro Básico:
+          - 📝 Descripción: contenidos/ejemplos/carro-basico/index.md
+          - 🛠️ Guía de Implementación: contenidos/ejemplos/carro-basico/step-by-step.md
+      - 🚟 Carro Extendido: 
+          - 📝 Descripción: contenidos/ejemplos/carro-extendido/index.md
+          - 🛠️ Guía: contenidos/ejemplos/carro-extendido/step-by-step.md
+  
+  - 📋 Prácticas:
+      - 🚦 Semáforo: contenidos/practicas/semaforo/index.md
+      - 🔲 Proyecto Monolítico: contenidos/practicas/proyectos/proyecto-monolitico.md
+      - 🗄️ Proyecto Estructurado: contenidos/practicas/proyectos/proyecto-estructurado.md
+      - 📐 Proyecto Jerárquico: contenidos/practicas/proyectos/proyecto-jerarquico.md
+      - 🧩 Proyecto Funcional: contenidos/practicas/proyectos/proyecto-funcional.md
 
 markdown_extensions:
   - admonition
@@ -73,7 +78,8 @@ markdown_extensions:
       permalink: true
   - pymdownx.snippets:
       check_paths: true
-      base_path: !relative $docs_dir
+      # base_path: !relative $docs_dir
+      base_path: ["docs"]
   - pymdownx.details
   - pymdownx.superfences
   - pymdownx.highlight
@@ -83,6 +89,8 @@ markdown_extensions:
   - pymdownx.keys
   - pymdownx.mark
   - pymdownx.tilde
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.tasklist:
@@ -107,6 +115,7 @@ extra_css:
   - assets/stylesheets/extra.css
 
 extra_javascript:
-  - javascripts/ui-course.js
-  - javascripts/mathjax.js
+  - assets/javascripts/ui-course.js
+  - assets/javascripts/mathjax.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  

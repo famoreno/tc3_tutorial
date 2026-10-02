@@ -1,4 +1,23 @@
+# Python
 __pycache__/
+*.py[cod]
+*$py.class
+
+# Entornos virtuales
 .venv/
+venv/
+ENV/
+
+# Construcción de MkDocs
 site/
+
+# Archivos locales y copias de seguridad
 bck/
+*.bak
+*.tmp
+
+# Editores y sistema operativo
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

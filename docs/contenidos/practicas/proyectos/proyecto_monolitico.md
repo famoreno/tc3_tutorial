@@ -8,23 +8,23 @@ Implementar la lógica de control de un automatismo industrial utilizando la arq
 
 ## 🎯 Objetivos
 
-- Programar la lógica de control de un automatismo industrial en el lenguaje SFC utilizando la arquitectura monolítica.
-- Implantar un modo manual básico.
-- Implantar una tarea (funcionamiento por lotes).
-- Garantizar inicios de producción seguros (condición inicial y condición de marcha).
-- Gestionar las incidencias de material.
-- Desarrollar Interfaces Hombre-Máquina (HMI) básicos utilizando visualizaciones.
-- Realizar la puesta en marcha de un automatismo industrial.
+- Programar la lógica de control de un automatismo industrial en el lenguaje {{SFC}} utilizando la **arquitectura monolítica**.
+- Implantar un **modo manual** básico.
+- Implantar una tarea (**funcionamiento por lotes**).
+- Garantizar inicios de producción seguros (**condición inicial** y **condición de marcha**).
+- Gestionar las **incidencias de material**.
+- Desarrollar Interfaces Hombre-Máquina (**HMI**) básicos utilizando visualizaciones.
+- Realizar la **puesta en marcha** de un automatismo industrial.
 
 ---
 
 ## 📝 Descripción funcional
 
-Para el desarrollo de este proyecto se utilizará como caso de estudio el sistema FMS-200 de SMC International Training. Sin embargo, el procedimiento que se describe a continuación no depende de ese equipo en concreto: los pasos, la metodología y los conceptos de programación en TwinCAT 3 son aplicables a cualquier otro sistema automatizado, maqueta, célula de fabricación o simulador equivalente.
+Para el desarrollo de este proyecto se utilizará como caso de estudio el **Sistema Didáctico Modular de Ensamblaje Flexible (FMS-200)** de **SMC International Training**. Sin embargo, el procedimiento que se describe a continuación no depende de ningún equipo en concreto: los pasos, la metodología y los conceptos de programación en TwinCAT 3 son aplicables a cualquier otro sistema automatizado, maqueta, célula de fabricación o simulador equivalente.
 
 Si no dispones del sistema FMS-200, puedes seguir igualmente la práctica adaptando las entradas/salidas y la configuración de hardware a tu propio sistema. El objetivo no es aprender a programar el sistema FMS-200, sino aprender a programar PLC con TwinCAT 3.
 
-La descripción funcional del Sistema Didáctico Modular de Ensamblaje Flexible FMS-200 de SMC International Training, que incluye las tablas de entradas/salidas, está disponible en el siguiente archivo.
+La descripción funcional del **Sistema Didáctico Modular de Ensamblaje Flexible (FMS-200)** de **SMC International Training**, que incluye las tablas de entradas/salidas, está disponible en el siguiente archivo.
 
 - [FMS-200 Descripción Funcional (PDF).](./pdf/fms_200_descripcion_funcional.pdf){target="_blank"}
 
@@ -36,7 +36,7 @@ La descripción funcional del Sistema Didáctico Modular de Ensamblaje Flexible 
 XXX_TC3_GYY/
 ├── XXX_TC3_GYY.sln                    <-- Solución de Visual Studio (TwinCAT XAE)
 └── 01_FMS_20X_Monolitico/             <-- Proyecto TwinCAT
-    └── Carro_Basico_PLC/              <-- Proyecto PLC
+    └── Monolitico_PLC/                <-- Proyecto PLC
         ├── POUs/
         |   ├── FB_Estacion_SFC.TcPOU  <-- Lógica de control monolítica en SFC
         |   └── MAIN.TcPOU             <-- Programa principal
@@ -46,10 +46,10 @@ XXX_TC3_GYY/
 
 ---
 
-## 🔨 Guía de implementación
+## 📋 Guía de implementación
 
 !!! Info
-    Para el desarrollo de esta práctica puede tomarse como referencia la versión monolítica del proyecto [«Carro Extendido»](../../04_tc3_carro_extendido.md).
+    Para el desarrollo de esta práctica puede tomarse como referencia la versión **monolítica** del proyecto [«Carro Extendido»](../../ejemplos/carro_extendido/index.md).
 
 #### Solución
 
@@ -57,27 +57,27 @@ XXX_TC3_GYY/
 - [ ] Crear un **proyecto (solución) TwinCAT 3**. [➡️](../../procedimientos/tc3_workflow/tc3_workflow.md#crear-un-proyecto-twincat-3)
   
     !!! info "Parámetros"
-        - Nombre de la solución ➔ `**XXX_TC3_GYY**` (XXX = asignatura, YY = grupo).
-        - Nombre del proyecto ➔ 01_FMS_20X_Monolitico (X = número de la estación).
+        - Nombre de la solución ➔ `**XXX_TC3_GYY**` (`XXX` = asignatura, `YY` = grupo).
+        - Nombre del proyecto ➔ `01_FMS_20X_Monolitico` (`X` = número de la estación del sistema FMS-200).
 
-- [ ] Ocultar las **configuraciones** innecesarias para dejar el explorador de la solución lo más despejada posible.  [➡️](../../procedimientos/tc3_workflow/tc3_workflow.md#ocultar-las-configuraciones-innecesarias)
+- [ ] Ocultar las **configuraciones** innecesarias para dejar el explorador de la solución lo más despejada posible. [➡️](../../procedimientos/tc3_workflow/tc3_workflow.md#ocultar-las-configuraciones-innecesarias)
 
 #### Proyecto PLC
 
 - [ ] Crear un **proyecto PLC estándar** con el nombre `Monolitico_PLC`. [➡️](../../procedimientos/tc3_workflow/tc3_workflow.md#crear-un-proyecto-plc)
-- [ ] Crear una nueva **Unidad de Organización de Programa (POU)** de tipo **Bloque Funcional**.
+- [ ] Crear una nueva **Unidad de Organización de Programa (POU)** de tipo **Bloque Funcional**. [➡️](../../procedimientos/tc3_workflow/tc3_workflow.md#crear-un-nuevo-pou)
 
     !!! warning "Parámetros POU"
         - Nombre ➔ `FB_Estacion_SFC`
         - Type ➔ Function Block
-        - Implementation Language ➔ Sequential Function Chart (SFC)
+        - Implementation Language ➔ Sequential Function Chart ({{SFC}})
 
-- [ ] Declarar las **variables de entrada/salida** necesarias  en `FB_Estacion_SFC` como variables locales (`VAR_LOCAL`). [➡️](../../procedimientos/tc3_workflow/tc3_workflow.md#declarar-una-variable)
+- [ ] Declarar las **variables de entrada/salida** necesarias en `FB_Estacion_SFC` como variables locales (`VAR_LOCAL`). [➡️](../../procedimientos/tc3_workflow/tc3_workflow.md#declarar-una-variable)
 
     !!! Info "Entradas/Salidas"
         - Consultar la tabla de entrada/salida de cada estación en la [descripción funcional.](./pdf/fms_200_descripcion_funcional.pdf){target="_blank"}
         - Utilizar el prefijo «i» para las variables de entrada (i_PulsadorMarcha).
-        - Utilizar el prefijo «o» para las variables de salida (o_LamparaMarhca).
+        - Utilizar el prefijo «o» para las variables de salida (o_LamparaMarcha).
 
 - [ ] Declarar una **instancia** `Estacion` del tipo `FB_Estacion` en la parte de implementación del programa `MAIN`.
 
@@ -102,9 +102,9 @@ XXX_TC3_GYY/
 
 #### Entrada/Salida
 
-- [ ] Buscar y seleccionar un controlador remoto.
+- [ ] Buscar y seleccionar un controlador remoto (crear una ruta). [➡️](../../procedimientos/tc3_workflow/tc3_workflow.md#crear-una-ruta)
 - [ ] Poner el sistemas destino en modo configuración.
-- [ ] Escanear la entrada/Salida en búsqueda de dispositivos y terminales.
+- [ ] Escanear la entrada/salida en búsqueda de dispositivos y terminales.
 - [ ] Dehabilitar los dispositivos innecesarios (todos excepto el que contenga las entradas y salidas a utilizar).
 - [ ] Identificar y nominar las señales de entrada y salida (ver tablas de entrada/salida en la descripción).
 - [ ] Vincular las señales con las instancias de las variables de entrada y salida.
