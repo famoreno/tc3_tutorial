@@ -53,26 +53,26 @@ XXX_TC3_GYY/
 
 #### Solución
 
-- [ ] Abrir la aplicación **TwinCAT XAE**. [➡️](../../procedimientos/tc3_workflow/tc3_workflow.md#abrir-twincat-xae)
-- [ ] Crear un **proyecto (solución) TwinCAT 3**. [➡️](../../procedimientos/tc3_workflow/tc3_workflow.md#crear-un-proyecto-twincat-3)
+- [ ] Abrir la aplicación **TwinCAT XAE**. [➡️](../../procedimientos/workflow/index.md#abrir-twincat-xae)
+- [ ] Crear un **proyecto (solución) TwinCAT 3**. [➡️](../../procedimientos/workflow/index.md#crear-un-proyecto-twincat-3)
   
     !!! info "Parámetros"
         - Nombre de la solución ➔ `**XXX_TC3_GYY**` (`XXX` = asignatura, `YY` = grupo).
         - Nombre del proyecto ➔ `01_FMS_20X_Monolitico` (`X` = número de la estación del sistema FMS-200).
 
-- [ ] Ocultar las **configuraciones** innecesarias para dejar el explorador de la solución lo más despejada posible. [➡️](../../procedimientos/tc3_workflow/tc3_workflow.md#ocultar-las-configuraciones-innecesarias)
+- [ ] Ocultar las **configuraciones** innecesarias para dejar el explorador de la solución lo más despejada posible. [➡️](../../procedimientos/workflow/index.md#ocultar-las-configuraciones-innecesarias)
 
 #### Proyecto PLC
 
-- [ ] Crear un **proyecto PLC estándar** con el nombre `Monolitico_PLC`. [➡️](../../procedimientos/tc3_workflow/tc3_workflow.md#crear-un-proyecto-plc)
-- [ ] Crear una nueva **Unidad de Organización de Programa (POU)** de tipo **Bloque Funcional**. [➡️](../../procedimientos/tc3_workflow/tc3_workflow.md#crear-un-nuevo-pou)
+- [ ] Crear un **proyecto PLC estándar** con el nombre `Monolitico_PLC`. [➡️](../../procedimientos/workflow/index.md#crear-un-proyecto-plc)
+- [ ] Crear una nueva **Unidad de Organización de Programa (POU)** de tipo **Bloque Funcional**. [➡️](../../procedimientos/workflow/index.md#crear-un-nuevo-pou)
 
     !!! warning "Parámetros POU"
         - Nombre ➔ `FB_Estacion_SFC`
         - Type ➔ Function Block
         - Implementation Language ➔ Sequential Function Chart ({{SFC}})
 
-- [ ] Declarar las **variables de entrada/salida** necesarias en `FB_Estacion_SFC` como variables locales (`VAR_LOCAL`). [➡️](../../procedimientos/tc3_workflow/tc3_workflow.md#declarar-una-variable)
+- [ ] Declarar las **variables de entrada/salida** necesarias en `FB_Estacion_SFC` como variables locales (`VAR_LOCAL`). [➡️](../../procedimientos/workflow/index.md#declarar-una-variable)
 
     !!! Info "Entradas/Salidas"
         - Consultar la tabla de entrada/salida de cada estación en la [descripción funcional.](./pdf/fms_200_descripcion_funcional.pdf){target="_blank"}
@@ -94,7 +94,7 @@ XXX_TC3_GYY/
     Estacion();
     ```
 
-- [ ] Construir el proyecto (**Build**) para generar un archivo ejecutable. [➡️](../../procedimientos/tc3_workflow/tc3_workflow.md#construir-el-proyecto)
+- [ ] Construir el proyecto (**Build**) para generar un archivo ejecutable. [➡️](../../procedimientos/workflow/index.md#construir-el-proyecto)
 
     !!! Info "Construcción"
         - Verificar la ausencia de errores en el panel **Error List**.
@@ -102,16 +102,15 @@ XXX_TC3_GYY/
 
 #### Entrada/Salida
 
-- [ ] Buscar y seleccionar un controlador remoto (crear una ruta). [➡️](../../procedimientos/tc3_workflow/tc3_workflow.md#crear-una-ruta)
-- [ ] Poner el sistemas destino en modo configuración.
-- [ ] Escanear la entrada/salida en búsqueda de dispositivos y terminales.
-- [ ] Dehabilitar los dispositivos innecesarios (todos excepto el que contenga las entradas y salidas a utilizar).
-- [ ] Identificar y nominar las señales de entrada y salida (ver tablas de entrada/salida en la descripción).
-- [ ] Vincular las señales con las instancias de las variables de entrada y salida.
+- [ ] Buscar y seleccionar un controlador remoto (crear una ruta). [➡️](../../procedimientos/workflow/index.md#crear-una-ruta)
+- [ ] Buscar dispositivos y terminales de entrada/salida. [➡️](../../procedimientos/workflow/index.md#buscar-dispositivos)
+- [ ] Identificar, verificar y nominar las señales de entrada (ver tablas de entrada/salida en la descripción). [➡️](../../procedimientos/workflow/index.md#identificar-entradas)
+- [ ] Identificar, verificar y nominar las señales de salida (ver tablas de entrada/salida en la descripción). [➡️](../../procedimientos/workflow/index.md#identificar-salidas)
+- [ ] Vincular las señales con las instancias de las variables de entrada y salida. [➡️](../../procedimientos/workflow/index.md#vincular-variables)
 - [ ] Desplegar el proyecto
-    - [ ] Activar la configuración
-    - [ ] Transferir el proyecto.
-    - [ ] Ponerlo en funcionamiento.
+    - [ ] Activar la configuración [➡️](../../procedimientos/workflow/index.md#activar-la-configuración)
+    - [ ] Transferir el proyecto. [➡️](../../procedimientos/workflow/index.md#transferir-un-proyecto)
+    - [ ] Ponerlo en funcionamiento. [➡️](../../procedimientos/workflow/index.md#arrancar-un-proyecto)
 - [ ] Monitorizar una variable de entrada.
 - [ ] Forzar una variable de salida.
 

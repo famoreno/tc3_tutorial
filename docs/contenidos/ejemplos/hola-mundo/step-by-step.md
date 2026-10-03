@@ -2,7 +2,7 @@
 title: Hola Mundo - Guía de Implementación
 ---
 
-# 🛠️ Guía de Implementación: Hola Mundo
+# 🛠️ Hola Mundo - Guía de Implementación
 
 ## 📋 Tarea
 

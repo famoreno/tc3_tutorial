@@ -286,45 +286,153 @@ Una ruta sirve básicamente para establecer una relación de confianza entre amb
     !!! success "Resultado de la operación"
         Tras unos instantes se mostrará la lista de dispositivos encontrados.
 
-        ![Imagen](./img/io-devices-found.png){witdh=400}
+        ![Imagen](./img/io-devices-found.png){width=400}
 
 - Seleccionar los dispositivos deseados (al menos seleccionar el dispositivo `EhterCAT`) y pulsar `OK`.
 
     !!! success "Resultado de la operación"
         Los nuevos dispositivos aparecerán bajo el apartado `I/O > Devices` del Explorador de la Solución.
 
-        ![Imagen](./img/io-device-list.png){witdh=400}
+        ![Imagen](./img/io-device-list.png){width=400}
 
 - Autorizar, en la ventana emergente, la búsqueda de terminales (*boxes*).
 
-    ![Imagen](./img/scan-for-boxes.png){witdh=400}
+    ![Imagen](./img/scan-for-boxes.png){width=400}
 
     !!! success "Resultado de la operación"
         Tras unos instantes, los nuevos terminales aparecerán bajo el dispositivo correspondiente.
 
-        ![Imagen](./img/io-boxes-list.png){witdh=400}
+        ![Imagen](./img/io-boxes-list.png){width=400}
 
 - Activar el modo Free Run, pulsando `Sí`.
   
-    ![Imagen](./img/activate-freerun.png){witdh=400}
+    ![Imagen](./img/activate-freerun.png){width=400}
 
     ??? Info "Free Run"
         El modo Free Run es una función especial que permite leer el estado de las entradas y forzar o escribir valores en las salidas físicas sin necesidad de tener un programa (PLC) cargado o ejecutándose.
 
 - Deshabilitar los dispositivos que no se vayan a utilizar pulsando con el botón derecho y seleccionando disable.
 
-    ![Imagen](./img/io-disable-device.png){witdh=400}
+    ![Imagen](./img/io-disable-device.png){width=400}
 
     !!! success "Resultado de la operación"
         Los dispositivo deshabilitados quedan marcados.
 
-        ![Imagen](./img/io-disabled-devices.png){witdh=400}
+        ![Imagen](./img/io-disabled-devices.png){width=400}
 
-#### Identificar señales
+#### Identificar Entradas
 
-- Identificar, comprobar y nominar los canales de entrada y salida (ver descripcióp funcional)
+!!! goal "Objetivo"
+    Lo que se pretende en este paso es localizar, en la sección de entrada/salida (**I/O**) del árbol del Explorador de la Solución, los canales en los que están conectadas físicamente las señales de entrada, verificar su funcionamiento y ponerles un nombre, para posteriormente facilitar su vinculación a sus correspondientes variables del proyecto PLC.
+
+- Hacer doble clic sobre el primer **canal** del primer **terminal** de entrada (`EL1008`) situado bajo **acoplador de bus virtual** `EK1200`.
+
+    ![Imagen](./img/io-el1008-input-channel.png){width=400}
+
+    ??? Info "Cabeceras de Bus"
+        Una cabecera de bus, en el entorno Beckhoff, es cualqueir dispositivo, módulo físico o interfaz virtual, que actúa como punto de entrada, alimentación o pasarela de comunicación para un conjunto de terminales de entrada/salida subordinados.
+
+        - **Acopladores**: cabeceras de bus físicas como el `EK1100`, que extiende el bus más alla del controlador.
+        - **Cabeceras virtuales**: representan la interfaz con el bus interno del controlador (`EK1200`).
+        - **Interfaces de Bus**: cambian las características del bus, como el `BK1250`, que permite la conexión de módulos con **bus K** en un bus **EtherCAT**.
+        - **Maestros de Red**: cabeceras de buses de otros protocolos, como el `KL6211`, que actúa como maestro de bus **ASi**.
+
+- Seleccionar la pestaña Online.
+
+    ![Imagen](./img/io-input-channel-online.png){width=400}
+
+- Localizar, consultando la tabla de entrada/salida en la descripción funcional del sistema el dispositivo conectado a ese canal (por ejemplo, el pulsador de marcha). Activarlo y verificar en la pantalla que cambia de valor la señal mostrada.
+
+    ![Imagen](./img/io-input-channel-online-active.png){width=400}
+
+- Si se reflejan los cambios en la pantalla, queda verificada la correspondiencia entre el canal y el dispositivo. Y se procede a nominar el canal con el nombre del dispositivo en el campo ***Name*** de la pestaña ***Variable***.
+
+    ![Imagen](./img/io-input-channel-variable.png){width=400}
+
+!!! note "🔄 Repetir"
+    Repitir este mismo proceso de identificación para todos los canales de entrada digitales y analógicos del sistema con dispositivos conectados.
+
+!!! success "Resultado de la operación"
+    Todos los canales de entrada del sistema nominados.
+
+    ![Imagen](./img/io-el1008-tagged.png){width=400}    
+
+#### Identificar Salidas
+
+!!! goal "Objetivo"
+    Lo que se pretende en este paso es localizar, en la sección de entrada/salida (**I/O**) del árbol del Explorador de la Solución, los canales en los que están conectadas físicamente las señales de salida, verificar su funcionamiento y ponerles un nombre, para posteriormente facilitar su vinculación a sus correspondientes variables del proyecto PLC.
+
+- Hacer doble clic sobre el primer **canal** del primer **terminal** de salida (`EL2004`) situado bajo **acoplador de bus virtual** `EK1200`.
+
+    ![Imagen](./img/io-el2008-output-channel.png){width=400}
+
+- Seleccionar la pestaña Online.
+
+    ![Imagen](./img/io-output-channel-online.png){width=400}
+
+- Localizar, consultando la tabla de entrada/salida en la descripción funcional del sistema el dispositivo conectado a ese canal (por ejemplo, el lámpara de marcha). Activarla desde TwinCAT pulsado `1` en la pantalla ***Set Value Dialog*** que aparece tras pulsar sobre ***Write***...
+
+    ![Imagen](./img/io-set-value-dialog.png){width=400}
+
+- ...y verificar que el dispositivo físico conectado cambia de valor cuando cambia el valor de la señal mostrada en la pantalla.
+
+    ![Imagen](./img/io-output-channel-online-active.png){width=400}
+
+- Si se reflejan los cambios en el dispositivo, queda verificada la correspondiencia entre el canal y el dispositivo. Y se procede a nominar el canal con el nombre del dispositivo en el campo ***Name*** de la pestaña ***Variable***.
+
+    ![Imagen](./img/io-output-channel-variable.png){width=400}
+
+!!! note "🔄 Repetir"
+    Repetir este mismo proceso de identificación para todos los canales de salida digitales y analógicos del sistema con dispositivos conectados.
+
+!!! success "Resultado de la operación"
+    Todos los canales de salida del sistema nominados.
+
+    ![Imagen](./img/io-el2008-tagged.png){width=400}    
 
 #### Vincular variables
+
+!!! goal "Objetivo"
+    El proceso de vinculación (***linking***) en TwinCAT consiste fundamentalmente en conectar variables lógicas declaradas en el código PLC (*software*) en los espacios de entrada y salida con los canales físicos de los módulos de E/S (***I/O Terminals***) configurados en la sección `I/O` del **Explorador de Proyecto** (*hardware*).
+
+!!! tip
+    Aunque la vinculación de variables puede hacerse desde las instancias de las variables de entrada salida hacia los canales de entrada/salida o viceversa, suele ser mucho más sencillo y rápido hacerlo desde los canales.
+
+##### Desde el canal
+
+- Pulsar el botón derecho sobre un canal de entrada o salida y seleccionar `Change Link...` o con la ventana correspondiente al canal abierta hacer doble clic sobre el canal en la sección `I/O` o pulsando `Linked to...` en la pestaña **Variable** de la ventana del canal.
+
+    ![Imagen](./img/io-input-channel-variable.png){width=400px}
+
+- Seleccionar la variable deseada en la ventana ***Attach Variable*** y pulsar `OK`.
+
+     ![Imagen](./img/io-attach-variable-to-instance.png){width=400px}
+
+!!! success "Resultado de la operación"
+    El resultado de la vinculación aparece junto al botón `Linked to...` en la ventana del canal y cambia el símbolo asociado al canal y a la instancia de la variable ![symbol](./img/io-variable-linked-symbol.png){: style="border:none; background:transparent; box-shadow:none; vertical-align:middle; margin-right:0px; padding:0;"}.
+
+    ![Imagen](./img/io-input-channel-variable_linked.png){width=400px}
+
+!!! note "🔄 Repetir"
+    Repetir este mismo proceso de vinculación para todas las señales de entrada/salida.
+
+##### Desde la instancia
+
+- Pulsar el botón derecho sobre una instancia de una variable de entrada o salida y seleccionar `Change Link...` o con la ventana correspondiente a la instancia abierta hacer doble clic sobre la variable en el apartado `Instance` o pulsando `Linked to...` en la pestaña **Variable** de la ventana de la instancia.
+
+    ![Imagen](./img/io-input-instance-variable.png){width=400px}
+
+- Seleccionar el canal deseado en la ventana ***Attach Variable*** y pulsar `OK`.
+
+     ![Imagen](./img/io-attach-variable-to-channel.png){width=400px}
+
+!!! success "Resultado de la operación"
+    El resultado de la vinculación aparece junto al botón `Linked to...` en la ventana de la instancia y cambia el símbolo asociado a la instancia de la variable y al canal ![symbol](./img/io-variable-linked-symbol.png){: style="border:none; background:transparent; box-shadow:none; vertical-align:middle; margin-right:0px; padding:0;"}.
+
+    ![Imagen](./img/io-input-instance-variable_linked.png){width=400px}
+
+!!! note "🔄 Repetir"
+    Repetir este mismo proceso de vinculación para todas las señales de entrada/salida.
 
 #### Activar el Simulador
 

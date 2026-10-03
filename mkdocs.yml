@@ -55,13 +55,13 @@ nav:
   - 🔬 Ejemplos:
       - 👋 Hola Mundo: 
           - 📝 Descripción: contenidos/ejemplos/hola-mundo/index.md
-          - 🛠️ Guía de Implementación: contenidos/ejemplos/hola-mundo/step-by-step.md
+          - 🛠️ Implementación: contenidos/ejemplos/hola-mundo/step-by-step.md
       - 🛒 Carro Básico:
           - 📝 Descripción: contenidos/ejemplos/carro-basico/index.md
-          - 🛠️ Guía de Implementación: contenidos/ejemplos/carro-basico/step-by-step.md
+          - 🛠️ Implementación: contenidos/ejemplos/carro-basico/step-by-step.md
       - 🚟 Carro Extendido: 
           - 📝 Descripción: contenidos/ejemplos/carro-extendido/index.md
-          - 🛠️ Guía: contenidos/ejemplos/carro-extendido/step-by-step.md
+          - 🛠️ Implementación: contenidos/ejemplos/carro-extendido/step-by-step.md
   
   - 📋 Prácticas:
       - 🚦 Semáforo: contenidos/practicas/semaforo/index.md
@@ -118,4 +118,3 @@ extra_javascript:
   - assets/javascripts/ui-course.js
   - assets/javascripts/mathjax.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
-  
