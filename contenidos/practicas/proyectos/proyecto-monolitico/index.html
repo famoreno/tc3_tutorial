@@ -1,0 +1,2223 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://famoreno.github.io/tc3_tutorial/contenidos/practicas/proyectos/proyecto-monolitico/">
+      
+      
+        <link rel="prev" href="../../semaforo/">
+      
+      
+        <link rel="next" href="../proyecto-estructurado/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/img/logo-auto-isa-team.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>🔲 Proyecto Monolítico - Tutorial de TwinCAT 3</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,300i,400,400i,700,700i%7CIBM+Plex+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"IBM Plex Sans";--md-code-font:"IBM Plex Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
+          data-cf-beacon='{"token": "4d854f26fec440f88da4a7ee3846cc54"}'></script>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#proyecto-monolitico" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../../../.." title="Tutorial de TwinCAT 3" class="md-header__button md-logo" aria-label="Tutorial de TwinCAT 3" data-md-component="logo">
+      
+  <img src="../../../../assets/img/logo-auto-isa-team.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Tutorial de TwinCAT 3
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              🔲 Proyecto Monolítico
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Tutorial de TwinCAT 3" class="md-nav__button md-logo" aria-label="Tutorial de TwinCAT 3" data-md-component="logo">
+      
+  <img src="../../../../assets/img/logo-auto-isa-team.png" alt="logo">
+
+    </a>
+    Tutorial de TwinCAT 3
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏛️ Fundamentos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🏛️ Fundamentos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../fundamentos/twincat/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ⚙️ TwinCAT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../fundamentos/lenguajes/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🅰️ Lenguajes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../fundamentos/grafcet/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ✏️ GRAFCET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../fundamentos/arquitecturas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏗️ Arquitecturas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../fundamentos/ardutc/" class="md-nav__link">
+        
+  
+  
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="16"
+   height="16"
+   viewBox="0 0 4.2333333 4.2333334"
+   version="1.1"
+   id="svg8"
+   sodipodi:docname="ardutc_symbol_16px.svg"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="36.325688"
+     inkscape:cx="16.076777"
+     inkscape:cy="16.063013"
+     inkscape:window-width="2560"
+     inkscape:window-height="1369"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg8" />
+  <defs
+     id="defs2" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     transform="matrix(0.49803859,0,0,0.49803859,24.169056,-67.939741)">
+    <g
+       id="g1"
+       transform="matrix(0.08500011,0,0,0.08500011,-44.403556,124.81935)">
+      <circle
+         style="mix-blend-mode:normal;fill:#00aec7;fill-opacity:1;stroke:#00aec7;stroke-width:0.275075;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path23"
+         cx="1.4715202"
+         cy="186.41461"
+         r="49.862465" />
+      <path
+         d="m -19.817174,170.25348 c -10.941802,-0.87097 -20.134754,12.08085 -15.647582,22.0907 4.372118,10.86126 20.825091,13.80669 28.64888,5.10847 7.58217419,-7.43259 10.5045899,-18.86914 19.789587,-24.73698 9.434573,-6.44312 24.621933,-0.35897 26.462824,11.09137 1.794867,10.96482 -10.021356,21.63048 -20.710035,18.40892 -7.904329,-1.78336 -13.5765783,-8.53713 -16.7981388,-15.64758 -3.9694227,-6.78829 -9.1584364,-14.0368 -17.2583622,-15.87769 -1.438197,-0.32676 -2.922416,-0.45562 -4.395129,-0.45332 z"
+         stroke-width="6.78828"
+         id="path10"
+         style="fill:none;stroke:#000000;stroke-opacity:1" />
+      <path
+         style="fill:#ff0000;stroke:#ff0000;stroke-width:0.0425877px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m -31.486995,183.32804 h 19.94334 v -2.36441 l 6.6499819,4.98625 H -31.486995 Z"
+         id="path59" />
+      <path
+         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.0421004px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 14.172094,185.94988 h 14.958739 v 2.62097 h -8.283224 v 2.36527 z"
+         id="path77" />
+    </g>
+  </g>
+</svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    ArduTC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🛠️ Procedimientos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🛠️ Procedimientos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../procedimientos/workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1️⃣ TwinCAT 3 - Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../procedimientos/ladder/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔤 Lenguaje LD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../procedimientos/sfc/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔤 Lenguaje SFC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../procedimientos/visu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🖥️ Visualizaciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔬 Ejemplos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🔬 Ejemplos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    👋 Hola Mundo
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    👋 Hola Mundo
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ejemplos/hola-mundo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📝 Descripción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ejemplos/hola-mundo/step-by-step/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🛠️ Implementación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🛒 Carro Básico
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🛒 Carro Básico
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ejemplos/carro-basico/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📝 Descripción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ejemplos/carro-basico/step-by-step.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🛠️ Implementación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🚟 Carro Extendido
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🚟 Carro Extendido
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ejemplos/carro-extendido/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📝 Descripción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ejemplos/carro-extendido/step-by-step.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🛠️ Implementación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📋 Prácticas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📋 Prácticas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../semaforo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🚦 Semáforo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔲 Proyecto Monolítico
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔲 Proyecto Monolítico
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tarea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Tarea
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Objetivos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#descripcion-funcional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 Descripción funcional
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estructura-simplificada-del-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📂 Estructura simplificada del proyecto
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guia-de-implementacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Guía de implementación
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📋 Guía de implementación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#solucion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solución
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proyecto-plc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proyecto PLC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entradasalida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entrada/Salida
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visualización
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modo-manual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modo Manual
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#camino-feliz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        «Camino Feliz»
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#condicion-inicial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Condición Inicial
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#faltaexceso-material" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Falta/Exceso Material
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pieza-correcta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pieza Correcta
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#senalizacion-basica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Señalización Básica
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proyecto-estructurado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🗄️ Proyecto Estructurado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proyecto-jerarquico/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📐 Proyecto Jerárquico
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proyecto-funcional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧩 Proyecto Funcional
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tarea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Tarea
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Objetivos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#descripcion-funcional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 Descripción funcional
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estructura-simplificada-del-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📂 Estructura simplificada del proyecto
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guia-de-implementacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Guía de implementación
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📋 Guía de implementación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#solucion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solución
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proyecto-plc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proyecto PLC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entradasalida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entrada/Salida
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visualización
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modo-manual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modo Manual
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#camino-feliz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        «Camino Feliz»
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#condicion-inicial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Condición Inicial
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#faltaexceso-material" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Falta/Exceso Material
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pieza-correcta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pieza Correcta
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#senalizacion-basica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Señalización Básica
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="proyecto-monolitico">🔲 Proyecto Monolítico<a class="headerlink" href="#proyecto-monolitico" title="Permanent link">&para;</a></h1>
+<h2 id="tarea">📋 Tarea<a class="headerlink" href="#tarea" title="Permanent link">&para;</a></h2>
+<p>Implementar la lógica de control de un automatismo industrial utilizando la arquitectura monolítica.</p>
+<hr />
+<h2 id="objetivos">🎯 Objetivos<a class="headerlink" href="#objetivos" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Programar la lógica de control de un automatismo industrial en el lenguaje <span class="fondo-rojo-lang">SFC</span> utilizando la <strong>arquitectura monolítica</strong>.</li>
+<li>Implantar un <strong>modo manual</strong> básico.</li>
+<li>Implantar una tarea (<strong>funcionamiento por lotes</strong>).</li>
+<li>Garantizar inicios de producción seguros (<strong>condición inicial</strong> y <strong>condición de marcha</strong>).</li>
+<li>Gestionar las <strong>incidencias de material</strong>.</li>
+<li>Desarrollar Interfaces Hombre-Máquina (<strong>HMI</strong>) básicos utilizando visualizaciones.</li>
+<li>Realizar la <strong>puesta en marcha</strong> de un automatismo industrial.</li>
+</ul>
+<hr />
+<h2 id="descripcion-funcional">📝 Descripción funcional<a class="headerlink" href="#descripcion-funcional" title="Permanent link">&para;</a></h2>
+<p>Para el desarrollo de este proyecto se utilizará como caso de estudio el <strong>Sistema Didáctico Modular de Ensamblaje Flexible (FMS-200)</strong> de <strong>SMC International Training</strong>. Sin embargo, el procedimiento que se describe a continuación no depende de ningún equipo en concreto: los pasos, la metodología y los conceptos de programación en TwinCAT 3 son aplicables a cualquier otro sistema automatizado, maqueta, célula de fabricación o simulador equivalente.</p>
+<p>Si no dispones del sistema FMS-200, puedes seguir igualmente la práctica adaptando las entradas/salidas y la configuración de hardware a tu propio sistema. El objetivo no es aprender a programar el sistema FMS-200, sino aprender a programar PLC con TwinCAT 3.</p>
+<p>La descripción funcional del <strong>Sistema Didáctico Modular de Ensamblaje Flexible (FMS-200)</strong> de <strong>SMC International Training</strong>, que incluye las tablas de entradas/salidas, está disponible en el siguiente archivo.</p>
+<ul>
+<li><a href="../pdf/fms_200_descripcion_funcional.pdf" target="_blank">FMS-200 Descripción Funcional (PDF).</a></li>
+</ul>
+<hr />
+<h2 id="estructura-simplificada-del-proyecto">📂 Estructura simplificada del proyecto<a class="headerlink" href="#estructura-simplificada-del-proyecto" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>XXX_TC3_GYY/
+├── XXX_TC3_GYY.sln                    &lt;-- Solución de Visual Studio (TwinCAT XAE)
+└── 01_FMS_20X_Monolitico/             &lt;-- Proyecto TwinCAT
+    └── Monolitico_PLC/                &lt;-- Proyecto PLC
+        ├── POUs/
+        |   ├── FB_Estacion_SFC.TcPOU  &lt;-- Lógica de control monolítica en SFC
+        |   └── MAIN.TcPOU             &lt;-- Programa principal
+        └── VISUs
+            └── V_Estacion.TcVIS       &lt;-- Visualización
+</code></pre></div>
+<hr />
+<h2 id="guia-de-implementacion">📋 Guía de implementación<a class="headerlink" href="#guia-de-implementacion" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Para el desarrollo de esta práctica puede tomarse como referencia la versión <strong>monolítica</strong> del proyecto <a href="../../../ejemplos/carro_extendido/">«Carro Extendido»</a>.</p>
+</div>
+<h4 id="solucion">Solución<a class="headerlink" href="#solucion" title="Permanent link">&para;</a></h4>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox"/> Abrir la aplicación <strong>TwinCAT XAE</strong>. <a href="../../../procedimientos/workflow/#abrir-twincat-xae">➡️</a></li>
+<li class="task-list-item">
+<p><input type="checkbox"/> Crear un <strong>proyecto (solución) TwinCAT 3</strong>. <a href="../../../procedimientos/workflow/#crear-un-proyecto-twincat-3">➡️</a></p>
+<div class="admonition info">
+<p class="admonition-title">Parámetros</p>
+<ul>
+<li>Nombre de la solución ➔ <code>**XXX_TC3_GYY**</code> (<code>XXX</code> = asignatura, <code>YY</code> = grupo).</li>
+<li>Nombre del proyecto ➔ <code>01_FMS_20X_Monolitico</code> (<code>X</code> = número de la estación del sistema FMS-200).</li>
+</ul>
+</div>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox"/> Ocultar las <strong>configuraciones</strong> innecesarias para dejar el explorador de la solución lo más despejada posible. <a href="../../../procedimientos/workflow/#ocultar-las-configuraciones-innecesarias">➡️</a></p>
+</li>
+</ul>
+<h4 id="proyecto-plc">Proyecto PLC<a class="headerlink" href="#proyecto-plc" title="Permanent link">&para;</a></h4>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox"/> Crear un <strong>proyecto PLC estándar</strong> con el nombre <code>Monolitico_PLC</code>. <a href="../../../procedimientos/workflow/#crear-un-proyecto-plc">➡️</a></li>
+<li class="task-list-item">
+<p><input type="checkbox"/> Crear una nueva <strong>Unidad de Organización de Programa (POU)</strong> de tipo <strong>Bloque Funcional</strong>. <a href="../../../procedimientos/workflow/#crear-un-nuevo-pou">➡️</a></p>
+<div class="admonition warning">
+<p class="admonition-title">Parámetros POU</p>
+<ul>
+<li>Nombre ➔ <code>FB_Estacion_SFC</code></li>
+<li>Type ➔ Function Block</li>
+<li>Implementation Language ➔ Sequential Function Chart (<span class="fondo-rojo-lang">SFC</span>)</li>
+</ul>
+</div>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox"/> Declarar las <strong>variables de entrada/salida</strong> necesarias en <code>FB_Estacion_SFC</code> como variables locales (<code>VAR_LOCAL</code>). <a href="../../../procedimientos/workflow/#declarar-una-variable">➡️</a></p>
+<div class="admonition info">
+<p class="admonition-title">Entradas/Salidas</p>
+<ul>
+<li>Consultar la tabla de entrada/salida de cada estación en la <a href="../pdf/fms_200_descripcion_funcional.pdf" target="_blank">descripción funcional.</a></li>
+<li>Utilizar el prefijo «i» para las variables de entrada (i_PulsadorMarcha).</li>
+<li>Utilizar el prefijo «o» para las variables de salida (o_LamparaMarcha).</li>
+</ul>
+</div>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox"/> Declarar una <strong>instancia</strong> <code>Estacion</code> del tipo <code>FB_Estacion</code> en la parte de implementación del programa <code>MAIN</code>.</p>
+<div class="highlight"><pre><span></span><code>PROGRAM MAIN
+VAR
+    Estacion: FB_Estacion_SFC;
+END_VAR
+</code></pre></div>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox"/> Invocar la ejecución de la <strong>instancia</strong> <code>Estacion</code> en la parte de implementación de <code>MAIN</code>.</p>
+<div class="highlight"><pre><span></span><code>Estacion();
+</code></pre></div>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox"/> Construir el proyecto (<strong>Build</strong>) para generar un archivo ejecutable. <a href="../../../procedimientos/workflow/#construir-el-proyecto">➡️</a></p>
+<div class="admonition info">
+<p class="admonition-title">Construcción</p>
+<ul>
+<li>Verificar la ausencia de errores en el panel <strong>Error List</strong>.</li>
+<li>Verificar la correcta creación de la instancias de las variables de entrada/salidas bajo el apartado <code>Monolitico_PLC Instance</code>.</li>
+</ul>
+</div>
+</li>
+</ul>
+<h4 id="entradasalida">Entrada/Salida<a class="headerlink" href="#entradasalida" title="Permanent link">&para;</a></h4>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox"/> Buscar y seleccionar un controlador remoto (crear una ruta). <a href="../../../procedimientos/workflow/#crear-una-ruta">➡️</a></li>
+<li class="task-list-item"><input type="checkbox"/> Buscar dispositivos y terminales de entrada/salida. <a href="../../../procedimientos/workflow/#buscar-dispositivos">➡️</a></li>
+<li class="task-list-item"><input type="checkbox"/> Identificar, verificar y nominar las señales de entrada (ver tablas de entrada/salida en la descripción). <a href="../../../procedimientos/workflow/#identificar-entradas">➡️</a></li>
+<li class="task-list-item"><input type="checkbox"/> Identificar, verificar y nominar las señales de salida (ver tablas de entrada/salida en la descripción). <a href="../../../procedimientos/workflow/#identificar-salidas">➡️</a></li>
+<li class="task-list-item"><input type="checkbox"/> Vincular las señales con las instancias de las variables de entrada y salida. <a href="../../../procedimientos/workflow/#vincular-variables">➡️</a></li>
+<li class="task-list-item"><input type="checkbox"/> Desplegar el proyecto<ul class="task-list">
+<li class="task-list-item"><input type="checkbox"/> Activar la configuración <a href="../../../procedimientos/workflow/#activar-la-configuración">➡️</a></li>
+<li class="task-list-item"><input type="checkbox"/> Transferir el proyecto. <a href="../../../procedimientos/workflow/#transferir-un-proyecto">➡️</a></li>
+<li class="task-list-item"><input type="checkbox"/> Ponerlo en funcionamiento. <a href="../../../procedimientos/workflow/#arrancar-un-proyecto">➡️</a></li>
+</ul>
+</li>
+<li class="task-list-item"><input type="checkbox"/> Monitorizar una variable de entrada.</li>
+<li class="task-list-item"><input type="checkbox"/> Forzar una variable de salida.</li>
+</ul>
+<h4 id="visualizacion">Visualización<a class="headerlink" href="#visualizacion" title="Permanent link">&para;</a></h4>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox"/> Crear la visualización básica (V_Estacion)</li>
+<li class="task-list-item">
+<p><input type="checkbox"/> Añadir un rectángulo para monitorizar y modificar el valor de cada una de las variables de e/s.</p>
+<div class="admonition info">
+<p class="admonition-title">Parámetros</p>
+<ul>
+<li>Ajustar según corresponda los parámetros: <em>Position (Width, Height), Colors, Texts, Text properties, inputconfiguration (Toggle/Tap)</em>.</li>
+</ul>
+</div>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox"/> Monitorizar el valor de una variable de entrada (pulsador de marcha) desde V_Estacion.</p>
+</li>
+<li class="task-list-item"><input type="checkbox"/> Forzar el valor una variable de salida (lámpara de marcha) desde V_Estacion.</li>
+</ul>
+<h4 id="modo-manual">Modo Manual<a class="headerlink" href="#modo-manual" title="Permanent link">&para;</a></h4>
+<ul class="task-list">
+<li class="task-list-item">
+<p><input type="checkbox"/> Mover la variable i_SelectorManual del bloque de declaración VAR al bloque de declaración VAR_OUTPUT</p>
+<div class="highlight"><pre><span></span><code>FUNCTION_BLOCK FB_Estacion_SFC
+VAR_OUTPUT
+    i_SelectorManual AT %I*: BOOL;
+END_VAR
+</code></pre></div>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox"/> Condicionar la ejecución de Estacion en MAIN al selector de modo.</p>
+<div class="highlight"><pre><span></span><code>IF NOT i_SelectorManual THEN
+    Estacion();
+END_IF;
+</code></pre></div>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox"/> Verificar la correcta monitorización y modificación de las señales de entrada y salida desde la visualización.</p>
+<details class="info">
+<summary>Info</summary>
+<ul>
+<li>Verificar que desde la visualización el estado de las variables de entrada cambian conforme lo hacen las señales correspondintes. Si se acciona el «pulsador de marcha», el rectángulo que informa del estado de la variable de entrada «pulsador de marcha» cambia de color.</li>
+<li>Verificar que desde la visualización el estado de las señales de salidas cambian conforme lo hacen las variables correspondientes. Si se acciona el rectángulo que gobierna el estado de la variable «lampara de marcha» en la visualización, cambia el estado de la señal de la lámpara de marcha.</li>
+</ul>
+</details>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox"/> Realizar un ciclo completo manualmente desde la visualización.</p>
+<details class="info">
+<summary>Info</summary>
+<p>Utilizando los elementos de la visualización, realizar un ciclo completo de funcionamiento del sistema para comprobar que:</p>
+<ul>
+<li>Todas las señales involucradas en el el proceso funcionan correctamente tanto en le <em>software</em> como en el <em>hardware</em>.</li>
+<li>Se conoce perfectamente todos los pasos del proceso de producción.</li>
+</ul>
+</details>
+</li>
+</ul>
+<h4 id="camino-feliz">«Camino Feliz»<a class="headerlink" href="#camino-feliz" title="Permanent link">&para;</a></h4>
+<ul class="task-list">
+<li class="task-list-item">
+<p><input type="checkbox"/> Implementar únicamente la secuencia principal directa.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<ul>
+<li>No considerar ninguna otra condición de la secuencia que no sea lo que el sistema hace «normalmente».</li>
+<li>No considerar los elementos de señalización.</li>
+</ul>
+</div>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox"/> Considerar como condición para iniciar la secuencia la activación del pulsador de marcha.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox"/> Implementar la secuencia «poco a poco», subsecuencia a subsecuencia, apenas unas etapas cada vez.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<ul>
+<li>Una subsecuencia es un conjunto de etapas que realizan una función «básica» con sentido.</li>
+<li>Utilizar los finales de carrera, cuando estén presentes, como condición de movimiento finalizado.</li>
+<li>Incluir temporizaciones parametrizadas cuando sea necesario (ausencia de sensores).</li>
+<li>Mantener el «sentido físico», una etapa por cada situación que ocurra en la realidad.</li>
+<li>Una etapa para hacer un movimiento, una etapa para deshacerlo.</li>
+<li>Validar las subsecuencias conforme se incluyen.</li>
+</ul>
+</div>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox"/> Añadir los parámetros del sistema (principalmente tiempos) a la visualización.</p>
+</li>
+</ul>
+<h4 id="condicion-inicial">Condición Inicial<a class="headerlink" href="#condicion-inicial" title="Permanent link">&para;</a></h4>
+<div class="admonition info">
+<p class="admonition-title">Condición Inicial</p>
+<ul>
+<li>La condición inicial, es la condición material de los sensores, que indica que el inicio de la producción es seguro.</li>
+<li>La condición inicial incluye la posición de «reposo» conocida de cada actuador.</li>
+</ul>
+</div>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox"/> Calcular la condición inicial en FB_Estación en una acción principal (a_CondicionInicial) asociada a la etapa inicial.</li>
+<li class="task-list-item"><input type="checkbox"/> Ampliar la condición de inicio de secuencia para evitar el inicio del ciclo no-seguro (si no se cumplen las condiciones iniciales).</li>
+<li class="task-list-item"><input type="checkbox"/> Mostrar el estado de la condición inicial en la visualización.</li>
+</ul>
+<h4 id="faltaexceso-material">Falta/Exceso Material<a class="headerlink" href="#faltaexceso-material" title="Permanent link">&para;</a></h4>
+<ul class="task-list">
+<li class="task-list-item">
+<p><input type="checkbox"/> Añadir una condición de falta/exceso de material.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<ul>
+<li>Condición de falta material.<ul>
+<li>FMS-201: No hay base en el alojamiento del cargador.</li>
+<li>FMS-202: No se detecta un rodamiento al intentar sacarlo de su alojamiento (i_PresenciaRodamiento).</li>
+<li>FMS-205: No se detecta una tapa al intentar sacarla de su alojamiento (i_AlimentadorDelante).</li>
+<li>FMS-206: No se detecta tornillo en el desplazador (i_PresenciaTornillo) tras intentar dispensarlo.</li>
+</ul>
+</li>
+<li>Condición de exceso de material.<ul>
+<li>FMS-208: La zona de almacenamiento está llena.</li>
+</ul>
+</li>
+</ul>
+</div>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox"/> Abandonar la secuencia normal ante la falta/exceso de material.</p>
+</li>
+<li class="task-list-item"><input type="checkbox"/> Incluir una secuencia alternativa para atender la falta/execeso de material.<ul>
+<li>Indicar la situación activando la lámpara de material.</li>
+<li>Esperar la acción correspondiente (reposición/desalojo) por parte del operario.</li>
+<li>Esperar la autorización del operario para continuar (i_PulsadorMarcha).</li>
+</ul>
+</li>
+<li class="task-list-item"><input type="checkbox"/> Tras la reanudación volver a verificar, en su caso, la presencia del material.</li>
+</ul>
+<h4 id="pieza-correcta">Pieza Correcta<a class="headerlink" href="#pieza-correcta" title="Permanent link">&para;</a></h4>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox"/> Crear la estrucuta de datos necesaria para determinar el tipo de pieza solicitada.</li>
+<li class="task-list-item"><input type="checkbox"/> Incluir en la visualización los elementos necesarios para establecer en la tarea el tipo de pieza solicitada.</li>
+<li class="task-list-item">
+<p><input type="checkbox"/> Determinar la corrección de la pieza actual utilizando una acción a la entrada (a_PiezaCorrecta) en la etapa que corresponda.</p>
+<div class="admonition info">
+<p class="admonition-title">Pieza Correcta</p>
+<p>La pieza actual es correcta si cumple las condición para ser descargada.</p>
+<ul>
+<li>FMS-201 ➔ está bien posicionada.</li>
+<li>FMS-202 ➔ la pieza actual se corresponde con la pieza solicitada (tipo rodamiento).</li>
+<li>FMS-205 ➔ la pieza actual se corresponde con la pieza solicitada (tipo tapa).</li>
+<li>FMS-206 ➔ no ha lugar</li>
+<li>FMS-208 ➔ no ha lugar</li>
+</ul>
+</div>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox"/> Incluir una secuencia alternativa para atender la situación rechazando la pieza actual.</p>
+</li>
+<li class="task-list-item"><input type="checkbox"/> Tras la acción correctora volver a la secuencia principal e intentarlo con la siguiente pieza.</li>
+<li class="task-list-item"><input type="checkbox"/> Incluir en la visualización un indicador de pieza correcta.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">FMS-205</p>
+<p>La complejidad para determinar la corrección de la «pieza actual» en la estación de Inserción de la Tapa (FMS-205), aconseja que esta funcionalidad se introduzca en varias fases.</p>
+<ul>
+<li>
+<p><strong>Fase 1</strong></p>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox"/> Crear las variables de intención (CargaTapa, VolteaTapa, RechazaTapa, DescargaTapa).</li>
+<li class="task-list-item"><input type="checkbox"/> Incluir en la visualización los elementos gráficos necesarios para cambiar y mostrar el estado de estas variables.</li>
+<li class="task-list-item"><input type="checkbox"/> Utilizar estas variables para establecer saltos hacia delante en la secuencia principal para eludir la ejecución de las subsecuencias correspondites.</li>
+<li class="task-list-item"><input type="checkbox"/> Comprobar que la estación opera adecuadamente en función del valor de estas variables.</li>
+</ul>
+</li>
+<li>
+<p><strong>Fase 2</strong></p>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox"/> Crear la estrucura de datos necesaria para contener y mantener la información de las piezas contenidas en el plato divisor.</li>
+<li class="task-list-item"><input type="checkbox"/> Incluir el código necesario para mentener esta información actualizada según la posición que las piezas ocupen en el plato divisor.</li>
+<li class="task-list-item"><input type="checkbox"/> Comprobar que estos datos se corresponden, en funcionamiento, con el tipo de pieza situada en cada posición del plato.</li>
+</ul>
+</li>
+<li>
+<p><strong>Fase 3</strong></p>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox"/> Incluir en la visualización los elementos necesarios para establecer en la tarea el tipo de pieza solicitada.</li>
+<li class="task-list-item"><input type="checkbox"/> Calcular el valor de las variables de intención en función del tipo de la pieza actual situda en cada posición del plato y el tipo de pieza solicitado.</li>
+</ul>
+</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Se recomiendo posponer la segunda y tercera fase de implementación de esta funcionalidad hasta la finalización completa de la implantación del resto de funcionalidades básicas.</p>
+</div>
+</div>
+<h4 id="tarea_1">Tarea<a class="headerlink" href="#tarea_1" title="Permanent link">&para;</a></h4>
+<ul class="task-list">
+<li class="task-list-item">
+<p><input type="checkbox"/> Incluir las variables UnidadesPendientes y UnidadesSolicitadas necesarias para gestionar la tarea.</p>
+<div class="admonition info">
+<p class="admonition-title">Procesamiento por Lotes</p>
+<ul>
+<li>En el modo de procesameiento por lotes se denomina tarea (cantidad y tipo) al número de piezas/unidades de un determinado tipo que se desea producir.</li>
+<li>En automatización es costumbre contabilizar las unidades pendientes mediante una cuenta regresiva.</li>
+<li>La tarea se finaliza cuando no quedan unidades pendientes que procesar.</li>
+</ul>
+</div>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox"/> Utilizar una acción a la salida (a_PiezasPendientes_Calcular) para actualizar la cantidad de unidades pendientes cada vez que finaliza el ciclo con éxito.</p>
+</li>
+<li class="task-list-item"><input type="checkbox"/> Utilizar acción a la entrada (a_PiezasPendientes_Iniciar) para iniciar la cuenta de unidades pendientes al empezar la tarea.</li>
+<li class="task-list-item">
+<p><input type="checkbox"/> Iniciar la tarea únicamente si se cumplen las condiciones iniciales y, ademas, se ha establecido una tarea válida (MarchaAutorizada).</p>
+<div class="admonition info">
+<p class="admonition-title">Tarea Válida</p>
+<p>Se considera una tarea válida si:</p>
+<ul>
+<li>Hay demanda de producción ➔ el número de piezas solicitadas en mayor que 0.</li>
+<li>El tipo de la pieza solicitado es válido ➔ el tipo de pieza solicitada se corresponde con algún tipo de pieza que la estación puede producir (cuando corresponda).</li>
+</ul>
+</div>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox"/> Utilizar una acción principal a_MarchaAutorizada en la etapa inicial que incluya a_CondidionInicial y la condición de tarea válida.</p>
+</li>
+</ul>
+<h4 id="senalizacion-basica">Señalización Básica<a class="headerlink" href="#senalizacion-basica" title="Permanent link">&para;</a></h4>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox"/> La lámpara de alarma se activa para avisar al operario de una anomalía.<ul>
+<li>El inicio de la producción no es seguro.</li>
+</ul>
+</li>
+<li class="task-list-item"><input type="checkbox"/> La lámpara de marcha se activa para indicar al operarios que el sistema está en producción.</li>
+</ul>
+<hr />
+<!---
+## Funcionalidades Adicionales
+
+1.  Secuencia automática de restauración.
+2.  Secuencia automática de preparación de la producción.
+3.  Modo ciclo-a-ciclo
+4.  Reinicio y pausa del sistemas.
+5.  Normalización y escalado de señales de entrada analógicas.
+6.  Secuencias paralelas.
+--->
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/famoreno/tc3_tutorial" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../../assets/javascripts/ui-course.js"></script>
+      
+        <script src="../../../../assets/javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

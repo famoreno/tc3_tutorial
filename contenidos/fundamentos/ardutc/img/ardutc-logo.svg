@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210.00001 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   sodipodi:docname="ardutc_logo.svg"
+   inkscape:export-filename="/Volumes/GoogleDrive/Mi unidad/proyectos/ArduTC/logo/ArduCT_01.pdf.png"
+   inkscape:export-xdpi="95"
+   inkscape:export-ydpi="95"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.8998411"
+     inkscape:cx="398.29769"
+     inkscape:cy="559.51342"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="true"
+     inkscape:snap-page="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:window-width="2560"
+     inkscape:window-height="1369"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:snap-bbox="true"
+     inkscape:snap-bbox-midpoints="true"
+     inkscape:snap-object-midpoints="true"
+     inkscape:bbox-paths="true"
+     inkscape:bbox-nodes="true"
+     inkscape:snap-bbox-edge-midpoints="true"
+     inkscape:snap-intersection-paths="true"
+     inkscape:snap-midpoints="true"
+     inkscape:showpageshadow="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1">
+    <sodipodi:guide
+       position="105.07934,148.98675"
+       orientation="1,0"
+       id="guide1531"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="105.07933,148.98673"
+       orientation="0,-1"
+       id="guide1473"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="105.07934,148.98674"
+       orientation="0.70710678,-0.70710678"
+       id="guide1475"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="105.07933,148.98673"
+       orientation="0.70710678,0.70710678"
+       id="guide1477"
+       inkscape:label=""
+       inkscape:locked="false"
+       inkscape:color="rgb(0,0,255)" />
+    <inkscape:grid
+       type="xygrid"
+       id="grid912"
+       originx="0"
+       originy="0"
+       spacingy="1"
+       spacingx="1"
+       units="mm" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(103.52848,-37.914611)">
+    <circle
+       style="display:none;fill:none;stroke:#ff0000;stroke-width:0.270836"
+       id="circle1463"
+       cx="174.5755"
+       cy="65.390877"
+       r="44.861809"
+       transform="matrix(-0.34336797,0.93920096,0.93920096,0.34336797,0,0)"
+       inkscape:label="Circulo_1" />
+    <circle
+       style="display:none;fill:none;stroke:#ff0000;stroke-width:0.270844"
+       id="circle1468"
+       cx="185.84258"
+       cy="-14.666516"
+       r="44.863209"
+       transform="matrix(0.08654106,0.99624829,0.99624829,-0.08654106,0,0)"
+       inkscape:label="Circulo_2" />
+    <g
+       id="g1"
+       inkscape:export-filename="\Volumes\GoogleDrive\Mi unidad\proyectos\ArduTC\logo\ardutc_logo.svg"
+       inkscape:export-xdpi="95"
+       inkscape:export-ydpi="95">
+      <circle
+         style="mix-blend-mode:normal;fill:#00aec7;fill-opacity:1;stroke:#00aec7;stroke-width:0.275075;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path23"
+         cx="1.4715202"
+         cy="186.41461"
+         inkscape:export-xdpi="95"
+         inkscape:export-ydpi="95"
+         r="49.862465" />
+      <path
+         d="m -19.817174,170.25348 c -10.941802,-0.87097 -20.134754,12.08085 -15.647582,22.0907 4.372118,10.86126 20.825091,13.80669 28.64888,5.10847 7.58217419,-7.43259 10.5045899,-18.86914 19.789587,-24.73698 9.434573,-6.44312 24.621933,-0.35897 26.462824,11.09137 1.794867,10.96482 -10.021356,21.63048 -20.710035,18.40892 -7.904329,-1.78336 -13.5765783,-8.53713 -16.7981388,-15.64758 -3.9694227,-6.78829 -9.1584364,-14.0368 -17.2583622,-15.87769 -1.438197,-0.32676 -2.922416,-0.45562 -4.395129,-0.45332 z"
+         stroke-width="6.78828"
+         id="path10"
+         style="fill:none;stroke:#000000;stroke-opacity:1" />
+      <path
+         style="fill:#ff0000;stroke:#ff0000;stroke-width:0.0425877px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m -31.486995,183.32804 h 19.94334 v -2.36441 l 6.6499819,4.98625 H -31.486995 Z"
+         id="path59"
+         sodipodi:nodetypes="cccccc" />
+      <path
+         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.0421004px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 14.172094,185.94988 h 14.958739 v 2.62097 h -8.283224 v 2.36527 z"
+         id="path77" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.2889px;line-height:1.25;font-family:'Arial Narrow';-inkscape-font-specification:'Arial Narrow, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.261515;stroke-opacity:1"
+         id="text190"
+         inkscape:label="Texto1"><textPath
+           xlink:href="#circle1463"
+           id="textPath1465">Ardu<tspan
+   style="font-weight:bold"
+   id="tspan1">TC</tspan></textPath></text>
+    </g>
+  </g>
+</svg>
