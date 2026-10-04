@@ -206,7 +206,7 @@ En primer lugar vamos a implementar el proyecto (código y visualización) y eje
 
 Ahora vamos a configurar el proyecto para ejecutarlo sobre un controlador Beckhoff real.
 
-1. Estando desconectado, seleccionar como nuevo sistema destino un **controlador remoto** de Beckhoff presente en la actual red local. [➡️](../../../../bck/01b_ejecucion.md#busqueda-de-controladores-remotos)
+1. Estando desconectado, seleccionar como nuevo sistema destino un **controlador remoto** de Beckhoff presente en la actual red local. [➡️](../../../../bck/open/01b_ejecucion.md#busqueda-de-controladores-remotos)
 2. Activar la configuración en el nuevo sistema destino.
 3. Transferir el programa.
 4. Poner el programa en ejecución.
@@ -257,7 +257,7 @@ Ahora vamos a configurar el proyecto para ejecutarlo sobre un controlador Beckho
         - Buscar en la lista de entradas y salidas de la **descripción funcional** del sistema una señal de entrada (preferiblemente un **pulsador**) y otra de salida (preferiblemente una **lámpara**).
         - **Desactivar** los dispositivos de entrada y salida que no se van a utilizar (todos menos el dispositivo denominado `EtherCAT`).
 
-14. Vincular (**Link**) las instancias de las variables de entrada y salida con los canales correspondientes. [➡️](../../../../bck/01b_ejecucion.md#vinculacion-de-variables-y-es)
+14. Vincular (**Link**) las instancias de las variables de entrada y salida con los canales correspondientes. [➡️](../../../../bck/open/01b_ejecucion.md#vinculacion-de-variables-y-es)
     - Variable de entrada `i_Pulsador` con un canal de entrada digital `Pulsador`.
     - Variable de salida `o_Lampara` con un canal de salida digital `Lampara`.
 

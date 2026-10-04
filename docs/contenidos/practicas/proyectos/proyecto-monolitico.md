@@ -2,18 +2,19 @@
 
 ## 📋 Tarea
 
-Implementar la lógica de control de un automatismo industrial utilizando la arquitectura monolítica.
+Implementar la lógica de control de un automatismo industrial utilizando la [**Arquitectura Monolítica**](../../fundamentos/arquitecturas/index.md#arquitectura-monolitica).
 
 ---
 
 ## 🎯 Objetivos
 
 - Programar la lógica de control de un automatismo industrial en el lenguaje {{SFC}} utilizando la **arquitectura monolítica**.
-- Implantar un **modo manual** básico.
-- Implantar una tarea (**funcionamiento por lotes**).
-- Garantizar inicios de producción seguros (**condición inicial** y **condición de marcha**).
+- Implementar un **modo manual** básico.
+- Garantizar inicios de producción seguros (**condición inicial** y **marcha autorizada**).
+- Implementar un el modo de **funcionamiento por lotes**.
 - Gestionar las **incidencias de material**.
-- Desarrollar Interfaces Hombre-Máquina (**HMI**) básicos utilizando visualizaciones.
+- Implementar una **señalización básica** (alarma, marcha y material).
+- Implementar **Interfaces Hombre-Máquina** básicos utilizando visualizaciones.
 - Realizar la **puesta en marcha** de un automatismo industrial.
 
 ---
@@ -22,7 +23,7 @@ Implementar la lógica de control de un automatismo industrial utilizando la arq
 
 Para el desarrollo de este proyecto se utilizará como caso de estudio el **Sistema Didáctico Modular de Ensamblaje Flexible (FMS-200)** de **SMC International Training**. Sin embargo, el procedimiento que se describe a continuación no depende de ningún equipo en concreto: los pasos, la metodología y los conceptos de programación en TwinCAT 3 son aplicables a cualquier otro sistema automatizado, maqueta, célula de fabricación o simulador equivalente.
 
-Si no dispones del sistema FMS-200, puedes seguir igualmente la práctica adaptando las entradas/salidas y la configuración de hardware a tu propio sistema. El objetivo no es aprender a programar el sistema FMS-200, sino aprender a programar PLC con TwinCAT 3.
+Si no dispones del sistema FMS-200, puedes seguir igualmente la práctica sin disponer de ningún sistema concreto o adaptando las entradas/salidas y la configuración de hardware a tu propio sistema. El objetivo no es aprender a programar el sistema FMS-200, sino aprender a programar PLC con TwinCAT 3.
 
 La descripción funcional del **Sistema Didáctico Modular de Ensamblaje Flexible (FMS-200)** de **SMC International Training**, que incluye las tablas de entradas/salidas, está disponible en el siguiente archivo.
 
@@ -60,7 +61,7 @@ XXX_TC3_GYY/
         - Nombre de la solución ➔ `**XXX_TC3_GYY**` (`XXX` = asignatura, `YY` = grupo).
         - Nombre del proyecto ➔ `01_FMS_20X_Monolitico` (`X` = número de la estación del sistema FMS-200).
 
-- [ ] Ocultar las **configuraciones** innecesarias para dejar el explorador de la solución lo más despejada posible. [➡️](../../procedimientos/workflow/index.md#ocultar-las-configuraciones-innecesarias)
+- [ ] Ocultar las **configuraciones** innecesarias para dejar el Explorador de la Solución lo más despejada posible. [➡️](../../procedimientos/workflow/index.md#ocultar-las-configuraciones-innecesarias)
 
 #### Proyecto PLC
 
@@ -69,17 +70,17 @@ XXX_TC3_GYY/
 
     !!! warning "Parámetros POU"
         - Nombre ➔ `FB_Estacion_SFC`
-        - Type ➔ Function Block
-        - Implementation Language ➔ Sequential Function Chart ({{SFC}})
+        - Type ➔ `Function Block`
+        - Implementation Language ➔ `Sequential Function Chart (SFC)`
 
 - [ ] Declarar las **variables de entrada/salida** necesarias en `FB_Estacion_SFC` como variables locales (`VAR_LOCAL`). [➡️](../../procedimientos/workflow/index.md#declarar-una-variable)
 
     !!! Info "Entradas/Salidas"
         - Consultar la tabla de entrada/salida de cada estación en la [descripción funcional.](./pdf/fms_200_descripcion_funcional.pdf){target="_blank"}
-        - Utilizar el prefijo «i» para las variables de entrada (i_PulsadorMarcha).
-        - Utilizar el prefijo «o» para las variables de salida (o_LamparaMarcha).
+        - Utilizar el prefijo `i` para las variables de entrada (i_PulsadorMarcha).
+        - Utilizar el prefijo `o` para las variables de salida (o_LamparaMarcha).
 
-- [ ] Declarar una **instancia** `Estacion` del tipo `FB_Estacion` en la parte de implementación del programa `MAIN`.
+- [ ] Declarar una **instancia** `Estacion` del tipo `FB_Estacion_SFC` en la parte de implementación del programa `MAIN`.
 
     ```iecst
     PROGRAM MAIN
@@ -97,22 +98,22 @@ XXX_TC3_GYY/
 - [ ] Construir el proyecto (**Build**) para generar un archivo ejecutable. [➡️](../../procedimientos/workflow/index.md#construir-el-proyecto)
 
     !!! Info "Construcción"
-        - Verificar la ausencia de errores en el panel **Error List**.
-        - Verificar la correcta creación de la instancias de las variables de entrada/salidas bajo el apartado `Monolitico_PLC Instance`.
+        - Verificar la ausencia de errores en el panel ***Error List***.
+        - Verificar la correcta creación de la instancias de las variables de entrada/salidas bajo el apartado `Monolitico_PLC Instance` del proyecto `Monolitico_PLC`.
 
 #### Entrada/Salida
 
 - [ ] Buscar y seleccionar un controlador remoto (crear una ruta). [➡️](../../procedimientos/workflow/index.md#crear-una-ruta)
 - [ ] Buscar dispositivos y terminales de entrada/salida. [➡️](../../procedimientos/workflow/index.md#buscar-dispositivos)
-- [ ] Identificar, verificar y nominar las señales de entrada (ver tablas de entrada/salida en la descripción). [➡️](../../procedimientos/workflow/index.md#identificar-entradas)
-- [ ] Identificar, verificar y nominar las señales de salida (ver tablas de entrada/salida en la descripción). [➡️](../../procedimientos/workflow/index.md#identificar-salidas)
-- [ ] Vincular las señales con las instancias de las variables de entrada y salida. [➡️](../../procedimientos/workflow/index.md#vincular-variables)
+- [ ] Identificar, verificar y nominar las señales de entrada (ver tablas de entrada/salida en la [descripción funcional](./pdf/fms_200_descripcion_funcional.pdf){target="_blank"}). [➡️](../../procedimientos/workflow/index.md#identificar-entradas)
+- [ ] Identificar, verificar y nominar las señales de salida (ver tablas de entrada/salida en la [descripción funcional](./pdf/fms_200_descripcion_funcional.pdf){target="_blank"}). [➡️](../../procedimientos/workflow/index.md#identificar-salidas)
+- [ ] Vincular las señales con las instancias de las variables de entrada/salida. [➡️](../../procedimientos/workflow/index.md#vincular-variables)
 - [ ] Desplegar el proyecto
     - [ ] Activar la configuración [➡️](../../procedimientos/workflow/index.md#activar-la-configuración)
     - [ ] Transferir el proyecto. [➡️](../../procedimientos/workflow/index.md#transferir-un-proyecto)
     - [ ] Ponerlo en funcionamiento. [➡️](../../procedimientos/workflow/index.md#arrancar-un-proyecto)
-- [ ] Monitorizar una variable de entrada.
-- [ ] Forzar una variable de salida.
+- [ ] Monitorizar una variable de entrada. [➡️](../../procedimientos/workflow/index.md#monitorizar-variables)
+- [ ] Forzar una variable de salida. [➡️](../../procedimientos/workflow/index.md#forzar-variables)
 
 #### Visualización
 
