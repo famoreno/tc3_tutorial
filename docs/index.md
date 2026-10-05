@@ -29,13 +29,13 @@ Bienvenido/a al tutorial de TwinCAT 3. Aquí encontrarás guías y material de a
 
 ## 🛠️ Procedimientos
 
-- [TwinCAT 3 - Workflow](contenidos/procedimientos/workflow/index.md)
+- [Crear un Proyecto](contenidos/procedimientos/workflow/index.md)
     - Flujo de trabajo con TwiCAT 3 para el desarrollo de proyectos PLC.
-- [Lenguaje LD](contenidos/procedimientos/ladder/index.md) 🚧 *(En construcción)*
+- [Editar un Ladder](contenidos/procedimientos/ladder/index.md) 🚧 *(En construcción)*
     - Cómo programar con el lenguaje *Ladder* ({{LD}}).
-- [Lenguaje SFC](contenidos/procedimientos/sfc/index.md) 🚧 *(En construcción)*
+- [Editar un SFC](contenidos/procedimientos/sfc/index.md) 🚧 *(En construcción)*
     - Cómo programar con Diagramas de Funciones Secuenciales ({{SFC}}).
-- [Visualizaciones](contenidos/procedimientos/visu/index.md) 🚧 *(En construcción)*
+- [Crear una Visualización](contenidos/procedimientos/visu/index.md) 🚧 *(En construcción)*
     - Cómo crear **Interfaces Hombre-Máquina** con `TwinCAT 3 PLC HMI`.
 
 ---

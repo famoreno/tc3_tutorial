@@ -47,10 +47,10 @@ nav:
       - ArduTC: contenidos/fundamentos/ardutc/index.md
 
   - 🛠️ Procedimientos:
-      - 1️⃣ TwinCAT 3 - Workflow: contenidos/procedimientos/workflow/index.md
-      - 🔤 Lenguaje LD: contenidos/procedimientos/ladder/index.md
-      - 🔤 Lenguaje SFC: contenidos/procedimientos/sfc/index.md
-      - 🖥️ Visualizaciones: contenidos/procedimientos/visu/index.md
+      - 1️⃣ Crear un Proyecto: contenidos/procedimientos/workflow/index.md
+      - 🔤 Editar un Ladder: contenidos/procedimientos/ladder/index.md
+      - 🔤 Editar unSFC: contenidos/procedimientos/sfc/index.md
+      - 🖥️ Crear una visualización: contenidos/procedimientos/visu/index.md
   
   - 🔬 Ejemplos:
       - 👋 Hola Mundo: 

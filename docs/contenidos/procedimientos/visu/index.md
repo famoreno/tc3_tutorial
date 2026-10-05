@@ -1,4 +1,4 @@
-🚧 *Proximamente*
+--8<-- "includes/avisos.md:en-construccion"
 
 <!---
 Para desarrollar interfaces de usuario (HMI) en TwinCAT 3, Beckhoff ofrece principalmente dos tecnologías de visualización nativas integradas en su ecosistema, diseñadas para distintas necesidades de complejidad, rendimiento y arquitectura: [1, 2] 
@@ -12,7 +12,7 @@ Es la solución de visualización clásica y está integrada directamente dentro
    * Es ideal para HMIs sencillos o de nivel de máquina, paneles locales y proyectos donde se requiera un desarrollo rápido sin salir del entorno de programación del PLC.
    * Cuenta con elementos estándar de control (botones, barras, histogramas, alarmas, y gestión de usuarios básica). [1, 2, 3] 
 
-## 2. TwinCAT 3 HMI (La nueva generación basada en Web)
+## 2. TwinCAT 3 HMI (La Nueva Generación Basada en Web)
 Es la plataforma de visualización moderna y avanzada de Beckhoff, orientada a arquitecturas modulares, multidispositivo y de alta personalización. [4, 5] 
 
 * Cómo se denomina: Se le conoce comercialmente como TwinCAT 3 HMI. El entorno de ingeniería se integra en Visual Studio (como un tipo de proyecto independiente al del PLC) y su arquitectura se basa en el TwinCAT 3 HMI Server (TF2000). [5, 6] 
@@ -23,7 +23,7 @@ Es la plataforma de visualización moderna y avanzada de Beckhoff, orientada a a
    * Extensibilidad y Soluciones Específicas: Ofrece gran flexibilidad para layouts complejos, gráficos dinámicos avanzados y extensiones específicas de la industria, como los paquetes recientes CNC HMI Base (TF5310) para interfaces avanzadas de control numérico con simulación 3D en tiempo real. [1, 5, 7, 8] 
 
 ------------------------------
-## Resumen comparativo rápido
+## Resumen Comparativo Rápido
 
 | Característica | TwinCAT 3 PLC HMI (TF1800) | TwinCAT 3 HMI (TF2000) |
 |---|---|---|

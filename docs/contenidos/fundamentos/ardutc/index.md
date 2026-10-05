@@ -1,7 +1,7 @@
 ---
 icon: custom/ardutc-symbol-16px
 ---
-# ![ArduTC](./img/ardutc-symbol-32px.png){: style="border:none; background:transparent; box-shadow:none; vertical-align:middle; margin-right:0px; padding:0;" } ArduTC
+# ![Icono de ArduTC](./img/ardutc-symbol-32px.png){ .inline-icon } ArduTC
 
 ## Introducción
 
@@ -10,9 +10,9 @@ icon: custom/ardutc-symbol-16px
 !!! info "Plataformas compatibles"
     **ArduTC** debe funcionar con todas las plataformas compatibles con Telemetrix: Arduino con arquitectura AVR y ARM (UNO, Nano, Mega, Leonardo), Arduino Renesas (Serie UNO R4), Raspberry Pi Pico (RP2040 ), Espressif (ESP8266 y ESP32) y STM32.
 
-**ArduTC** «convierte» una placa microcontroladora conectada a un PC con Windows mediante USB en un terminal de entradas y salidas digitales para **TwinCAT**. De forma que un programa de PLC escrito en un lenguaje de la norma IEC 61131-3, que se procese en cualquier sistema destino (runtime local/remoto o el simulador UmRT_Default), puede emitir y recibir información de entrada y salida hacia y desde una placa microcontroladora.
+**ArduTC** «convierte» una placa microcontroladora conectada a un PC con Windows mediante USB en un terminal de entradas y salidas digitales para **TwinCAT**. De forma que un programa de PLC escrito en un lenguaje de la norma IEC 61131-3, que se procese en cualquier sistema destino (runtime local/remoto o el simulador `UmRT_Default`), puede emitir y recibir información de entrada y salida hacia y desde una placa microcontroladora.
 
-![Imagen](./img/ardutc-scheme.png){width=400px}
+![Diagrama de comunicación de ArduTC entre TwinCAT y una placa microcontroladora](./img/ardutc-scheme.png){ width="400px" }
 
 ??? info
     **ArduTC** utiliza las siguientes librerı́as de software libre escritas en el lenguaje Python.
@@ -68,7 +68,7 @@ El instalador de la aplicación puede descargarse desde el siguiente repositorio
 
 - **TwinCAT**:
     - Entorno de desarrollo **TwinCAT XAE**
-    - Sistema destino **TwinCAT XAR** (runtime local/remoto o simulador UmRT_Default).
+    - Sistema destino **TwinCAT XAR** (runtime local/remoto o simulador `UmRT_Default`).
 - **Drivers** necesarios para la placa microcontroladora.
 - **ArduTC**.
 
@@ -78,7 +78,7 @@ El instalador de la aplicación puede descargarse desde el siguiente repositorio
 
 La interfaz de usuario de ArduTC se divide en cinco áreas/paneles funcionales.
 
-![Imagen](./img/ardutc-gui-run.png){width=600px}
+![Interfaz de ArduTC con sus cinco áreas funcionales](./img/ardutc-gui-run.png){ width="600px" }
 
 1.  **Target:** lista de variables (símbolos) exportadas desde el proyecto TwinCAT. Las entradas digitales se resaltan en <span style="color: #d4ac0d; font-weight: bold;">amarillo</span> y las salidas digitales en <span style="color: #c0392b; font-weight: bold;">rojo</span>.
 2.  **Devices:** lista de pines de conexión disponibles en la placa microcontroladora seleccionada.
@@ -88,7 +88,7 @@ La interfaz de usuario de ArduTC se divide en cinco áreas/paneles funcionales.
 
 ---
 
-## 🛠️ Guía de uso
+## 🛠️ Guía de Uso
 
 #### Proyecto TwinCAT
 
@@ -102,81 +102,81 @@ Crear un proyecto TwinCAT con variables de entrada y salida y desplegarlo sobre 
 
 1. Abrir la aplicación **ArduTC**.
 
-    ![Imagen](./img/ardutc-gui.png){width=600px}
+    ![Ventana principal de ArduTC](./img/ardutc-gui.png){ width="600px" }
 
-2. En **FILES**, :material-mouse-left-click: **clic izquierdo** sobre el botón `Load TMC` y seleccione el archivo `.tmc` generado durante la construcción del proyecto PLC en TwinCAT.
+2. En **FILES**, hacer clic en **Load TMC** y seleccionar el archivo `.tmc` generado durante la construcción del proyecto PLC en TwinCAT.
 
-    ![Imagen](./img/ardutc-gui-files.png){width=400px}
+    ![Panel FILES de ArduTC con la opción Load TMC](./img/ardutc-gui-files.png){ width="400px" }
 
     !!! success "Resultado de la operación"
         Todas las variables de entrada y salida del proyecto PLC aparecerán automáticamente en el panel **Target**.
 
-    ![Imagen](./img/ardutc-gui-symbols.png){width=400px}
+    ![Variables del proyecto PLC cargadas en el panel Target](./img/ardutc-gui-symbols.png){ width="400px" }
 
 #### Seleccionar Placa Microcontroladora
 
 1. Conectar una placa **microcontroladora** mediante el cable USB al ordenador.
-2. En **DEVICES**, hacer :material-mouse-left-click: **clic izquierdo** sobre el botón `+` para buscar las placas conectadas.
+2. En **DEVICES**, hacer clic en **+** para buscar las placas conectadas.
 
     !!! success "Resultado de la operación"
         Se mostrarán, en una ventana emergente, todas las placas microcontroladoras conectadas a los puertos de comunicaciones `COM` correspondientes.
 
-    ![Imagen](./img/ardutc-select-device.png){width=400px}
+    ![Ventana de selección de placas microcontroladoras disponibles](./img/ardutc-select-device.png){ width="400px" }
 
 3. Seleccionar la placa microcontroladora deseada.
 
     !!! success "Resultado de la operación"
         Se mostrará en la **Devices** la lista de pines digitales y analógicos disponibles de la nueva placa añadida.
 
-    ![Imagen](./img/ardutc-gui-pins.png){width=400px}
+    ![Pines digitales y analógicos disponibles en el panel Devices](./img/ardutc-gui-pins.png){ width="400px" }
 
-#### Vincular variables
+#### Vincular Variables
 
 1. En **Target**, hacer **doble clic** sobre la variable que desea enlazar.
 
 2. En el cuadro desplegable ***Link variables***, seleccionar el pin de la placa microcontroladora en el que está conectado físicamente el componente correspondiente que se desea enlazar con la variable.
 
-    ![Imagen](./img/ardutc-link-variables.png){width=200px}
+    ![Lista de pines disponibles para vincular una variable](./img/ardutc-link-variables.png){ width="200px" }
   
-3. Confirmar el vínculo entre variable y pin pulsando :material-mouse-left-click: **clic izquierdo** sobre el botón **`Link`**.
+3. Confirmar el vínculo entre variable y pin pulsando **Link**.
 
     !!! success "Resultado de la operación"
         - Se mostrará en **Target** el nombre del *pin* asignado a la variable.
         - Se mostrará en **Devices** el nombre de la variable asignada al *pin*.
 
-    ![Imagen](./img/ardutc-variable-linked.png){width=600px}
+    ![Variable vinculada a un pin de la placa](./img/ardutc-variable-linked.png){ width="600px" }
 
 4. Repetir esta operación hasta vincular todas las variables necesarias.
 
-    ![Imagen](./img/ardutc-all-variables-linked.png){width=600px}
+    ![Todas las variables vinculadas a pines de la placa](./img/ardutc-all-variables-linked.png){ width="600px" }
 
-#### Configurar comunicaciones
+#### Configurar Comunicaciones
 
 1. En **RUNTIME** introducir la dirección **AMS Net ID** del sistema destino y el puerto de comunicaciones del proyecto PLC.
 
-    ![Imagen](./img/ardutc-gui-runtime.png){width=600px}
+    ![Panel RUNTIME con la dirección AMS Net ID y el puerto del PLC](./img/ardutc-gui-runtime.png){ width="600px" }
 
     ???info
-        - La dirección **AMS Net ID** del sistema destino puede encontrase en el panel de explorador de la solución en `SYSTEM > Routes > NetId Management > Target NetId` (ejemplo de AmsNetId `192.168.4.1.1.1`).
+        - La dirección **AMS Net ID** del sistema destino puede encontrarse en el panel Explorador de la Solución, en **SYSTEM** > **Routes** > **NetId Management** > **Target NetId** (por ejemplo, `192.168.4.1.1.1`).
 
-        ![Imagen](./img/tc3-target-netid.png){width=300px}
+        ![Ubicación de la dirección Target NetId en TwinCAT](./img/tc3-target-netid.png){ width="300px" }
 
-        - El puerto de comunicaciones del proyecto PLC puede encontrase haciendo ***doble-clic*** sobre el nombre del proyecto PLC en `Project > Port` (Normalmente `851`).
+        - El puerto de comunicaciones del proyecto PLC puede encontrarse haciendo **doble clic** en el nombre del proyecto PLC y consultando **Project** > **Port** (normalmente, `851`).
 
-        ![Imagen](./img/tc3-proyecto-plc-propiedades.png){width=300px}
+        ![Propiedades del proyecto PLC con el puerto de comunicaciones](./img/tc3-proyecto-plc-propiedades.png){ width="300px" }
 
 #### Conectar
 
-1. Conectar haciendo :material-mouse-left-click: **clic izquierdo** sobre el botón `CONNECT`.
+1. Conectar haciendo clic en **CONNECT**.
 
     !!! success "Resultado de la operación"
         Si la vinculación es exitosa, la barra de estado inferior mostrará el mensaje `Device connected` y el botón cambiará a color rojo indicando `DISCONNECT`.
 
-    ![Imagen](./img/ardutc-gui-runtime-connected.png){width=600px}
+    ![Panel RUNTIME de ArduTC conectado al sistema TwinCAT](./img/ardutc-gui-runtime-connected.png){ width="600px" }
 
 2. Con los botones run/stop del panel **RUNTIME** se puede controlar el estado de ejecución/parada del proyecto PLC en TwinCAT.
 3. Se puede obervar que el estado de las variables y los pines en **TwinCAT** y la placa **microcontroladora** cambian sincronizadamente cuando ambos están conectados mediante ArduTC.
 
-    ![Imagen](./img/ardutc-gui-connected.png){width=600px}
+    ![Interfaz de ArduTC conectada con variables y pines activos](./img/ardutc-gui-connected.png){ width="600px" }
 
 ---

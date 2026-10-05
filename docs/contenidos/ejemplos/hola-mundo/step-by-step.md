@@ -6,7 +6,7 @@ title: Hola Mundo - Guía de Implementación
 
 ## 📋 Tarea
 
-Replicar el ejemplo [**«Hola Mundo»**](../hola_mundo/index.md) para implementar nuestro primer programa completo de PLC con TwinCAT 3 desde cero.
+Replicar el ejemplo [**«Hola Mundo»**](../hola-mundo/index.md) para implementar nuestro primer programa completo de PLC con TwinCAT 3 desde cero.
 
 ---
 
@@ -24,7 +24,7 @@ Replicar el ejemplo [**«Hola Mundo»**](../hola_mundo/index.md) para implementa
 
 ---
 
-## 🔨 Guía de implementación
+## 🔨 Guía de Implementación
 
 A continuación se detallan los pasos necesarios para replicar completamente este proyecto.
 
@@ -33,14 +33,14 @@ A continuación se detallan los pasos necesarios para replicar completamente est
 
 ---
 
-### 🕹️ Sobre el simulador
+### 🕹️ Sobre el Simulador
 
 En primer lugar vamos a implementar el proyecto (código y visualización) y ejecutarlo en nuestro ordenador usando el simulador de TwinCAT 3 (`UmRT_Default`).
 
-1. Abrir la aplicación TwinCAT XAE. [➡️](../../procedimientos/tc3_workflow/tc3_workflow.md#abrir-twincat-xae)
-2. Crear una solución de TwinCAT 3 con nombre `TC3_Hola_Mundo`. [➡️](../../procedimientos/tc3_workflow/tc3_workflow.md#crear-un-proyecto-twincat-3)
-3. Ocultar las configuraciones innecesarias para dejar el explorador de la solución lo más despejado posible.  [➡️](../../procedimientos/tc3_workflow/tc3_workflow.md#ocultar-las-configuraciones-innecesarias)
-4. Crear un proyecto PLC estándar con el nombre `Hola_Mundo_PLC`. [➡️](../../procedimientos/tc3_workflow/tc3_workflow.md#crear-un-proyecto-plc)
+1. Abrir la aplicación **TwinCAT XAE**. [➡️](../../procedimientos/workflow/index.md#abrir-twincat-xae)
+2. Crear una solución de TwinCAT 3 con nombre `TC3_Hola_Mundo`. [➡️](../../procedimientos/workflow/index.md#crear-un-proyecto-twincat-3)
+3. Ocultar las configuraciones innecesarias para dejar el explorador de la solución lo más despejado posible. [➡️](../../procedimientos/workflow/index.md#ocultar-configuraciones)
+4. Crear un proyecto PLC estándar con el nombre `Hola_Mundo_PLC`. [➡️](../../procedimientos/workflow/index.md#crear-un-proyecto-plc)
 
     !!! warning "Importante"
         **Nota didáctica:** para facilitar la comprensión, en este primer ejemplo todo el código se implementa directamente dentro del **programa** principal (`MAIN`). Téngase en cuenta que esto se hace exclusivamente con fines pedagógicos. La buena práctica en programación industrial dicta que el MAIN debe actuar únicamente como punto de entrada y organizador del proyecto, mientras que la lógica de control debe residir en otras **Unidades de Organización del Programa** (`POUs`) —fundamentalmente **Bloques de Función** (`FB`)— que permiten modularizar, escalar y replicar fácilmente los comportamientos y funcionalidades del sistema.
@@ -51,7 +51,7 @@ En primer lugar vamos a implementar el proyecto (código y visualización) y eje
     // Hola Mundo de la Programación de PLC
     ```
 
-6. Declarar la variable entera `ContadorCiclos` como `UINT` en el bloque `VAR` de la parte de declaración del programa `MAIN`. [➡️](../../procedimientos/tc3_workflow/tc3_workflow.md#declarar-una-variable)
+6. Declarar la variable entera `ContadorCiclos` como `UINT` en el bloque `VAR` de la parte de declaración del programa `MAIN`. [➡️](../../procedimientos/workflow/index.md#declarar-una-variable)
 
     ```iecst
     PROGRAM MAIN
@@ -69,29 +69,29 @@ En primer lugar vamos a implementar el proyecto (código y visualización) y eje
     ContadorCiclos := ContadorCiclos + 1;
     ```
 
-8. Construir el proyecto (**Build**) para generar un archivo ejecutable. [➡️](../../procedimientos/tc3_workflow/tc3_workflow.md#construir-el-proyecto)
+8. Construir el proyecto (**Build**) para generar un archivo ejecutable. [➡️](../../procedimientos/workflow/index.md#construir-el-proyecto)
 
     !!! warning "Importante"
         Asegurarse antes de continuar de que el resultado de la construcción del proyecto mostrado en la ventana de mensajes no arroja errores.
 
-9.  Activar el simulador **UmRT_Default** para disponer de un `runtime` sobre el que ejecutar el código del proyecto.
+9. Activar el simulador `UmRT_Default` para disponer de un runtime sobre el que ejecutar el código del proyecto.
 
     ??? info
         Para activar el simulador ejecute el *script* de inicio que se encuentra habitualmente en la siguiente ruta:
 
            - `C:\TwinCAT\3.1\Runtimes\UmRT_Default\Start.bat`.
 
-10. Seleccionar UmRT_Default como sistema destino (**Target System**). [➡️](../../procedimientos/tc3_workflow/tc3_workflow.md#seleccionar-un-sistema-destino)
-11. Activar la licencia temporal del `runtime` del sistema destino si es necesario.
+10. Seleccionar `UmRT_Default` como sistema destino (**Target System**). [➡️](../../procedimientos/workflow/index.md#seleccionar-sistema-destino)
+11. Activar la licencia temporal del runtime del sistema destino si es necesario. [➡️](../../procedimientos/workflow/index.md#activar-licencia)
 12. Reiniciar el sistema destino en **RUN Mode**.
 13. Activar la configuración en el sistema destino.
-14. Conectarse (**Login**) al sistema destino para transferir el proyecto. [➡️](../../procedimientos/tc3_workflow/tc3_workflow.md#transferir-un-proyecto)
+14. Conectarse (**Login**) al sistema destino para transferir el proyecto. [➡️](../../procedimientos/workflow/index.md#transferir-el-proyecto)
 
     ??? info
         - Conectarse al sistema destino implica transferir el proyecto al runtime e iniciar la monitorización (sesión de depuración en tiempo real).
         - La comunicación para el intercambio de información entre el entorno de programación y el `runtime` tiene lugar, normalmente, a través del puerto `851` .
 
-15. Poner el programa de PLC en ejecución (**Run**). [➡️](../../procedimientos/tc3_workflow/tc3_workflow.md#arrancar-un-proyecto)
+15. Poner el programa de PLC en ejecución (**Run**). [➡️](../../procedimientos/workflow/index.md#arrancar-el-proyecto)
 16. Observar cómo el valor de la variable `ContadorCiclos` se incrementa continuamente al ritmo de ejecución del ciclo básico del PLC (típicamente 10 ms), lo que prueba que el programa se está ejecutando.
 17. Modificar el valor del contador de ciclos mediante forzado de variables (**Force values**, **Unforce values**, **Write values**).
 18. Desconectarse del sistema destino (**Logout**) para continuar con la edición del programa.
@@ -99,9 +99,9 @@ En primer lugar vamos a implementar el proyecto (código y visualización) y eje
     ??? info
         Cuando nos desconectamos de un sistema destino abandonamos la monitorización, pero el programa sigue ejecutándose en el runtime del sistema destino. Como prueba podremos observar que, cuando nos volvamos a conectar, el contador de ciclos tendrá un valor diferente.
 
-19. Crear una visualización para monitorizar y actualizar el contador de ciclos. [➡️](../../01_conceptos/07_tc3_crear_visualizacion.md)
+19. Crear una visualización para monitorizar y actualizar el contador de ciclos. [➡️](../../procedimientos/visu/index.md)
 
-    ![Imagen](./img/v-hola-mundo-contador.png){width=660px}
+    ![Visualización Hola Mundo con el contador de ciclos](./img/v-hola-mundo-contador.png){ width="660px" }
 
     1. Rectángulo (*Rectangle*) para la etiqueta **Contador**.
 
@@ -171,7 +171,7 @@ En primer lugar vamos a implementar el proyecto (código y visualización) y eje
 
 24. Incluir en la visualización los elementos correspondientes al pulsador y la lámpara.
 
-    ![Imagen](./img/v-hola-mundo.png){width=688px}
+    ![Visualización Hola Mundo con el pulsador y la lámpara](./img/v-hola-mundo.png){ width="688px" }
 
     1. Botón (*Button*) para modificar el valor de `i_Pulsador`.
 
@@ -198,15 +198,15 @@ En primer lugar vamos a implementar el proyecto (código y visualización) y eje
     - Comprobar que los nuevos elementos de la visualización funcionan correctamente.
 
 !!! success "¡Enhorabuena! 🎉"
-    Has completado con éxito la primera parte de la práctica y has puesto en marcha tu primer proyecto completo de PLC en Texto Estructurado con TwinCAT 3 sobre el simulador UmRT_Default.
+    Has completado con éxito la primera parte de la práctica y has puesto en marcha tu primer proyecto completo de PLC en Texto Estructurado con TwinCAT 3 sobre el simulador `UmRT_Default`.
 
 ---
 
-### 🏭 Sobre un controlador
+### 🏭 Sobre un Controlador
 
 Ahora vamos a configurar el proyecto para ejecutarlo sobre un controlador Beckhoff real.
 
-1. Estando desconectado, seleccionar como nuevo sistema destino un **controlador remoto** de Beckhoff presente en la actual red local. [➡️](../../../../bck/open/01b_ejecucion.md#busqueda-de-controladores-remotos)
+1. Estando desconectado, seleccionar como nuevo sistema destino un **controlador remoto** de Beckhoff presente en la red local. [➡️](../../procedimientos/workflow/index.md#seleccionar-sistema-destino)
 2. Activar la configuración en el nuevo sistema destino.
 3. Transferir el programa.
 4. Poner el programa en ejecución.
@@ -239,13 +239,15 @@ Ahora vamos a configurar el proyecto para ejecutarlo sobre un controlador Beckho
 8. Construir (**Build**) y verificar la ausencia de errores.
 
     !!! tip "Sugerencia"
-        Verificar que las `i_Pulsador` y `o_Lampara` aparecen instanciadas.
+        Verificar que las variables `i_Pulsador` y `o_Lampara` aparecen instanciadas.
 
+        ```text
             Hola_Mundo_PLC Instance/
             ├── PLCTask Inputs
             |   └── MAIN.i_Pulsador
             └── PLCTask Outputs
                 └── MAIN.o_Lampara
+        ```
 
 9. Conectarse (**Login**) nuevamente al controlador remoto.
 10. Reiniciar el sistema TwinCAT del controlador remoto en modo Configuración (**Restart TwinCAT (Config Mode)**).
@@ -257,7 +259,7 @@ Ahora vamos a configurar el proyecto para ejecutarlo sobre un controlador Beckho
         - Buscar en la lista de entradas y salidas de la **descripción funcional** del sistema una señal de entrada (preferiblemente un **pulsador**) y otra de salida (preferiblemente una **lámpara**).
         - **Desactivar** los dispositivos de entrada y salida que no se van a utilizar (todos menos el dispositivo denominado `EtherCAT`).
 
-14. Vincular (**Link**) las instancias de las variables de entrada y salida con los canales correspondientes. [➡️](../../../../bck/open/01b_ejecucion.md#vinculacion-de-variables-y-es)
+14. Vincular (**Link**) las instancias de las variables de entrada y salida con los canales correspondientes. [➡️](../../procedimientos/workflow/index.md#vincular-variables)
     - Variable de entrada `i_Pulsador` con un canal de entrada digital `Pulsador`.
     - Variable de salida `o_Lampara` con un canal de salida digital `Lampara`.
 
@@ -280,18 +282,18 @@ Ahora vamos a configurar el proyecto para ejecutarlo sobre un controlador Beckho
 
 !!! tip "Recomendación"
     - Para ejecutar el proyecto sobre un controlador real con terminales de E/S asociados es necesario antes de activar la configuración tener HABILITADOS los dispositivos de E/S que se vayan a utilizar.
-    - Para ejecutar el proyecto sobre un runtime sin terminales de E/S asociados (como el simulador UmRT_Default) es necesario antes de activar la configuración tener DESHABILITADOS los dispositivos de E/S ya que no se van a utilizar.
+    - Para ejecutar el proyecto sobre un runtime sin terminales de E/S asociados (como el simulador `UmRT_Default`) es necesario antes de activar la configuración tener DESHABILITADOS los dispositivos de E/S ya que no se van a utilizar.
     - Para conmutar la habilitación, expandir el contenido de **I/O** y en **Devices**:
         - **CD** sobre el dispositivo y seleccionar lo que corresponda (Enable/Disable).
 
 ---
 
-### :material-developer-board: Con un microcontrolador
+### :material-developer-board: Con un Microcontrolador
 
-También podemos configurar el proyecto para ejecutarlo sobre un runtime (local/remoto) o sobre el simulador (UmRT_Default) y utilizar una placa microcontrolador como **Arduino UNO** como terminal de E/S utilizando **ArduTC**.
+También podemos configurar el proyecto para ejecutarlo sobre un runtime (local/remoto) o sobre el simulador (`UmRT_Default`) y utilizar una placa microcontroladora como **Arduino UNO** como terminal de E/S mediante **ArduTC**.
 
 1. Preparar el proyecto TC
-    - Tener preparado un controlador TC: *runtime* (local o remoto) o simulador (**UmRT_Default**).
+    - Tener preparado un controlador TC: runtime (local o remoto) o simulador (`UmRT_Default`).
     - Deshabilitar todos los dispositivo *hardware* incluidos en el apartato I/O.
     - Activar la configuración del proyecto sobre el controlador.
     - Cargar el proyecto PLC sobre el controlador.
@@ -323,8 +325,8 @@ Para la prueba se recomienda implementar una interfaz visual en cada ejercicio a
 
 **Descripción:**
 
-- La lámpara se enciende al accionar el pulsador de conexión (i_PulsadorConexion).
-- La lámpara se apaga al accionar el pulsador de desconexión (i_PulsadorDesconexion).
+- La lámpara se enciende al accionar el pulsador de conexión (`i_PulsadorConexion`).
+- La lámpara se apaga al accionar el pulsador de desconexión (`i_PulsadorDesconexion`).
 
 ??? tip "Pista para la solución"
     - Utiliza la [instrucción condicional IF ... THEN](https://infosys.beckhoff.com/english.php?content=../content/1033/tc3_plc_intro/2528275595.html){ target="_blank" }.
@@ -336,11 +338,11 @@ Para la prueba se recomienda implementar una interfaz visual en cada ejercicio a
 
 **Descripción:**
 
-- La lámpara se enciende si estando apagada se acciona el pulsador (i_Pulsador).
-- La lámpara se apaga si estando encendida se acciona el pulsador (i_Pulsador).
+- La lámpara se enciende si, estando apagada, se acciona el pulsador (`i_Pulsador`).
+- La lámpara se apaga si, estando encendida, se acciona el pulsador (`i_Pulsador`).
 
 ??? tip "Pista para la solución"
-    - Utiliza el detector de flanco ascendente [R_TRIG](https://infosys.beckhoff.com/english.php?content=../content/1033/tcplclib_tc2_standard/74391563.html&id=){ target="_blank" } de la librería `Standard`.
+    - Utiliza el detector de flanco ascendente [`R_TRIG`](https://infosys.beckhoff.com/english.php?content=../content/1033/tcplclib_tc2_standard/74391563.html&id=){ target="_blank" } de la librería `Standard`.
     - Declara una instancia del bloque funcional detector de flanco ascendente (`Pulsación: R_TRIG;`).
     - Utiliza el [operador NOT](https://infosys.beckhoff.com/english.php?content=../content/1033/tc3_plc_intro/2528902283.html&id=){ target="_blank" } para la conmutación de la salida (`o_Lampara := NOT o_Lampara;`) cuando se produce un flanco en el pulsador (`Pulsacion.Q`).
 
@@ -350,11 +352,11 @@ Para la prueba se recomienda implementar una interfaz visual en cada ejercicio a
 
 **Descripción:**
 
-- La lámpara se enciende al accionar el pulsador (i_Pulsador).
+- La lámpara se enciende al accionar el pulsador (`i_Pulsador`).
 - La lámpara se apaga transcurrido un cierto tiempo (por ejemplo, 5 segundos).
 
 ??? tip "Pista para la solución"
-    - Utiliza el temporizador de retardo a la conexión [TON](https://infosys.beckhoff.com/english.php?content=../content/1033/tcplclib_tc2_standard/74406539.html&id=){ target="_blank" } de la librería `Standard`.
+    - Utiliza el temporizador de retardo a la conexión [`TON`](https://infosys.beckhoff.com/english.php?content=../content/1033/tcplclib_tc2_standard/74406539.html&id=){ target="_blank" } de la librería `Standard`.
     - Declara una instancia del temporizador de retardo a la conexión (`Temporizador: TON;`).
     - Utiliza literales de tiempo con la sintaxis de formato de tiempo estándar de IEC (ejemplo: `T#5s`).
     - Parametriza el funcionamiento utilizando una variable (`TiempoEncendido`) que permita controlar la temporización desde la visualización.
@@ -365,11 +367,11 @@ Para la prueba se recomienda implementar una interfaz visual en cada ejercicio a
 
 **Descripción:**
 
-- La lámpara se enciende tras un determinado número de pulsaciones (i_Pulsador).
-- La lámpara se apaga tras accionar el pulsador de reinicio (i_PulsadorReinicio).
+- La lámpara se enciende tras un determinado número de pulsaciones (`i_Pulsador`).
+- La lámpara se apaga tras accionar el pulsador de reinicio (`i_PulsadorReinicio`).
 
 ??? tip "Pista para la solución"
-    - Utiliza el bloque de contador de cuenta regresiva [CTD](https://infosys.beckhoff.com/english.php?content=../content/1033/tcplclib_tc2_standard/74398987.html&id=){ target="_blank" } de la librería `Standard`.
+    - Utiliza el bloque de contador de cuenta regresiva [`CTD`](https://infosys.beckhoff.com/english.php?content=../content/1033/tcplclib_tc2_standard/74398987.html&id=){ target="_blank" } de la librería `Standard`.
     - Declara una instancia de contador decreciente (`Contador: CTD;`).
     - Parametriza el funcionamiento utilizando una variable (`ManiobrasTotales`) que controle el contador desde la visualización.
 

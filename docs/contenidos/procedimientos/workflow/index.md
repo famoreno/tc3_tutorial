@@ -1,4 +1,4 @@
-# 🏗️ TwinCAT 3 - Flujo de Trabajo
+# 🏗️ Crear un Proyecto
 
 ## Abrir TwinCAT XAE
 
@@ -91,7 +91,7 @@ Para despejar el panel de exploración de la solución, ocultar las configuracio
         - **VISUs** = visualizaciones, interfaces gráficas.
         - **PlcTask** = llamada al programa de ejecución cíclica.
 
-### Crear un POU
+### Crear una POU
 
 1. Para añadir un nuevo POU.
 
@@ -142,6 +142,7 @@ Identificador [AT %Localización]: Type [:= ValorInicial];
 
         ```iecst
         %[Área] [Tamaño] [Dirección]
+        ```
 
         - `%`: prefijo de ubicación.
         - Área: `I` para entradas, `Q` para salidas y `M` para memoria interna (o de marcas).
@@ -196,7 +197,7 @@ El proceso de despliegue abarca la secuencia desde la validación del código fu
 - Hay tres tipos de sistemas destino seleccionables:
     - **Local Target**: presente en el mismo ordenador en el que se está desarrollando el programa.
     - **Remote Target**: equipo físico remoto conectado por EtherCAT.
-    - **UmRT_Default**: *runtime* que se ejecuta en modo usuario sin capacidades de tiempo real.
+    - `UmRT_Default`: runtime que se ejecuta en modo usuario sin capacidades de tiempo real.
 - Para seleccionarlo basta con elegirlo de la lista de runtimes disponibles en la barra de herramientas de TwinCAT.
 
 ![Lista de sistemas destino TwinCAT](./img/tc3-xae-target-system-list.png){ width="200px" }
@@ -437,7 +438,7 @@ Una ruta sirve básicamente para establecer una relación de confianza entre amb
 
 #### Activar Simulador
 
-Para activar el simulador (**UmRT_Default**), ejecutar el *script* `Start.bat`, que suele encontrarse en `C:\TwinCAT\3.1\Runtimes\UmRT_Default\Start.bat`.
+Para activar el simulador (`UmRT_Default`), ejecutar el *script* `Start.bat`, que suele encontrarse en `C:\TwinCAT\3.1\Runtimes\UmRT_Default\Start.bat`.
 
 - ++win+r++ > `C:\TwinCAT\3.1\Runtimes\UmRT_Default\Start.bat` > ++enter++
 
@@ -454,7 +455,7 @@ Para activar el simulador (**UmRT_Default**), ejecutar el *script* `Start.bat`, 
     | `c` | Poner TwinCAT en modo configuración (**C**onfig) |
     | `r` | Poner TwinCAT en modo ejecución (**R**un) |
     | `s` | Informar del estado actual de TwinCAT (**S**tatus) |
-    | `x` | Salir del simulador UmRT_Default (E**x**it) |
+    | `x` | Salir del simulador `UmRT_Default` (E**x**it) |
 
 ### Construir el Proyecto
 
@@ -536,7 +537,7 @@ Arrancar o poner en ejecución un proyecto (**Start**):
     - **Forzar una variable:** modifica su valor y lo congela, de forma que no puede cambiar a pesar del código en ejecución o de la entrada.
     - **Persistencia:** Una variable forzada conserva el valor establecido hasta que se libera.
 
-#### Cómo se hace
+#### Cómo Se Hace
 
 1. **Preparar el valor deseado**
 

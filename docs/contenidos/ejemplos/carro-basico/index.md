@@ -4,7 +4,7 @@
 
 El proyecto **Carro Básico** resuelve el clásico problema de automatización conocido como **«el carro va y viene»**, que consiste en un móvil que se desplaza longitudinalmente entre los dos extremos (izquierdo y derecho) de un tramo de vía.
 
-![Esquemático del Carro Básico](./img/carro-basico-esquematico.png){width: 300px}
+![Esquemático del Carro Básico](./img/carro-basico-esquematico.png){ width="300px" }
 
 <figcaption>Figura 1: Representación Esquemática.</figcaption>
 
@@ -20,13 +20,13 @@ El proyecto **Carro Básico** resuelve el clásico problema de automatización c
 - Un **pulsador de marcha**, para iniciar el funcionamiento.
 - Una **lámpara de marcha**, para indicar el estado del sistema.
 
-## 🗣️Descripción funcional
+## 🗣️ Descripción Funcional
 
 El funcionamiento básico del carro es como sigue.
 
-1.  El carro se pone en marcha hacia la derecha cuando se acciona el pulsador de marcha.
-2.  Cuando el carro alcanza el final de carrera derecha invierte el sentido de la marcha.
-3.  El carro se detiene al alcanzar, de nuevo, el final de carrera izquierda.
+1. El carro se pone en marcha hacia la derecha cuando se acciona el pulsador de marcha.
+2. Cuando el carro alcanza el final de carrera derecha, invierte el sentido de la marcha.
+3. El carro se detiene al alcanzar, de nuevo, el final de carrera izquierda.
 
 **Condición inicial**: carro detenido sobre el final de carrera izquierda.
 
@@ -39,7 +39,7 @@ El proyecto contempla diferentes variantes de complejidad progresiva.
 3.  **Carro limitado**. El carro realiza un determinado número de viajes consecutivos de ida y vuelta (tarea) cada vez que, estando en su posición inicial, se acciona el pulsador de marcha.
 4.  **Carro señalizado**. La lámpara de marcha se enciende de forma permanente para indicar que el carro está en funcionamiento y parpadea para indicar que el carro está en reposo.
 
-## ⇄ Entradas y salidas
+## ⇄ Entradas y Salidas
 
 | Nombre | Tipo | Origen | Descripción |
 | :--- | :--- | :--- | :--- |
@@ -52,16 +52,16 @@ El proyecto contempla diferentes variantes de complejidad progresiva.
 
 ---
 
-## 📐 Especificación funcional
+## 📐 Especificación Funcional
 
 Las siguientes especificaciones funcionales describen el comportamiento del carro (lógica de control) de una manera precisa utilizando los **Diagramas de Relés y Contactos** y el lenguaje **GRAFCET**.
 
 - [Diagrama de relés y contactos (PDF).](./pdf/carro_basico_drc.pdf)
-- [Diagrama grafcet (PDF).](./pdf/carro_basico_grf.pdf)
+- [Diagrama GRAFCET (PDF).](./pdf/carro_basico_grf.pdf)
 
 ---
 
-## 📂 Estructura simplificada del repositorio
+## 📂 Estructura Simplificada del Repositorio
 
 ```text
 TC3_Carro_Basico/
