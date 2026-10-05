@@ -61,12 +61,12 @@ XXX_TC3_GYY/
         - Nombre de la solución ➔ `**XXX_TC3_GYY**` (`XXX` = asignatura, `YY` = grupo).
         - Nombre del proyecto ➔ `01_FMS_20X_Monolitico` (`X` = número de la estación del sistema FMS-200).
 
-- [ ] Ocultar las **configuraciones** innecesarias para dejar el Explorador de la Solución lo más despejada posible. [➡️](../../procedimientos/workflow/index.md#ocultar-las-configuraciones-innecesarias)
+- [ ] Ocultar las **configuraciones** innecesarias para dejar el Explorador de la Solución lo más despejada posible. [➡️](../../procedimientos/workflow/index.md#ocultar-configuraciones)
 
 #### Proyecto PLC
 
 - [ ] Crear un **proyecto PLC estándar** con el nombre `Monolitico_PLC`. [➡️](../../procedimientos/workflow/index.md#crear-un-proyecto-plc)
-- [ ] Crear una nueva **Unidad de Organización de Programa (POU)** de tipo **Bloque Funcional**. [➡️](../../procedimientos/workflow/index.md#crear-un-nuevo-pou)
+- [ ] Crear una nueva **Unidad de Organización de Programa (POU)** de tipo **Bloque Funcional**. [➡️](../../procedimientos/workflow/index.md#crear-un-pou)
 
     !!! warning "Parámetros POU"
         - Nombre ➔ `FB_Estacion_SFC`
@@ -109,9 +109,9 @@ XXX_TC3_GYY/
 - [ ] Identificar, verificar y nominar las señales de salida (ver tablas de entrada/salida en la [descripción funcional](./pdf/fms_200_descripcion_funcional.pdf){target="_blank"}). [➡️](../../procedimientos/workflow/index.md#identificar-salidas)
 - [ ] Vincular las señales con las instancias de las variables de entrada/salida. [➡️](../../procedimientos/workflow/index.md#vincular-variables)
 - [ ] Desplegar el proyecto
-    - [ ] Activar la configuración [➡️](../../procedimientos/workflow/index.md#activar-la-configuración)
-    - [ ] Transferir el proyecto. [➡️](../../procedimientos/workflow/index.md#transferir-un-proyecto)
-    - [ ] Ponerlo en funcionamiento. [➡️](../../procedimientos/workflow/index.md#arrancar-un-proyecto)
+    - [ ] Activar la configuración [➡️](../../procedimientos/workflow/index.md#activar-la-configuracion)
+    - [ ] Transferir el proyecto. [➡️](../../procedimientos/workflow/index.md#transferir-el-proyecto)
+    - [ ] Ponerlo en funcionamiento. [➡️](../../procedimientos/workflow/index.md#arrancar-el-proyecto)
 - [ ] Monitorizar una variable de entrada. [➡️](../../procedimientos/workflow/index.md#monitorizar-variables)
 - [ ] Forzar una variable de salida. [➡️](../../procedimientos/workflow/index.md#forzar-variables)
 

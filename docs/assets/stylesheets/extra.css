@@ -398,4 +398,14 @@
   --md-code-font: "IBM Plex Mono"; /* "Roboto mono"; "Fira Code"; */
 }
 
-
+/* Clase para iconos integrados en el texto */
+img.inline-icon {
+  width: 16px;
+  height: auto;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  vertical-align: middle;
+  margin: 0 2px;
+  padding: 0;
+}

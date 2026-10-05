@@ -1,5 +1,8 @@
 # 🏠 Tutorial de TwinCAT 3
 
+!!! warning "Sitio en Desarrollo Continuo"
+    Este tutorial se encuentra en fase de actualización y redacción constante. Es posible que encuentres enlaces en revisión o secciones temporalmente en construcción.
+
 ## 👋 Bienvenida
 
 Bienvenido/a al tutorial de TwinCAT 3. Aquí encontrarás guías y material de apoyo para trabajar con TwinCAT 3 a partir de ejemplos concretos de programas de automatización.
