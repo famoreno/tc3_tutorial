@@ -222,8 +222,8 @@ XXX_TC3_GYY/
         - FMS-201 ➔ está bien posicionada.
         - FMS-202 ➔ la pieza actual se corresponde con la pieza solicitada (tipo rodamiento).
         - FMS-205 ➔ la pieza actual se corresponde con la pieza solicitada (tipo tapa).
-        - FMS-206 ➔ no ha lugar
-        - FMS-208 ➔ no ha lugar
+        - FMS-206 ➔ no ha lugar.
+        - FMS-208 ➔ no ha lugar.
 
 - [ ] Incluir una secuencia alternativa para atender la situación rechazando la pieza actual.
 - [ ] Tras la acción correctora volver a la secuencia principal e intentarlo con la siguiente pieza.

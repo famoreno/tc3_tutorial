@@ -49,8 +49,8 @@ nav:
   - 🛠️ Procedimientos:
       - 1️⃣ Crear un Proyecto: contenidos/procedimientos/workflow/index.md
       - 🔤 Editar un Ladder: contenidos/procedimientos/ladder/index.md
-      - 🔤 Editar unSFC: contenidos/procedimientos/sfc/index.md
-      - 🖥️ Crear una visualización: contenidos/procedimientos/visu/index.md
+      - 🔤 Editar un SFC: contenidos/procedimientos/sfc/index.md
+      - 🖥️ Crear una Visualización: contenidos/procedimientos/visu/index.md
   
   - 🔬 Ejemplos:
       - 👋 Hola Mundo: 
