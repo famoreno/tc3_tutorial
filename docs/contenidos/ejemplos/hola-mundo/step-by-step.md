@@ -99,7 +99,7 @@ En primer lugar vamos a implementar el proyecto (código y visualización) y eje
     ??? info
         Cuando nos desconectamos de un sistema destino abandonamos la monitorización, pero el programa sigue ejecutándose en el runtime del sistema destino. Como prueba podremos observar que, cuando nos volvamos a conectar, el contador de ciclos tendrá un valor diferente.
 
-19. Crear una visualización para monitorizar y actualizar el contador de ciclos. [➡️](../../procedimientos/visu/index.md)
+19. Crear una visualización para monitorizar y actualizar el contador de ciclos. [➡️](../../procedimientos/hmi/index.md)
 
     ![Visualización Hola Mundo con el contador de ciclos](./img/v-hola-mundo-contador.png){ width="660px" }
 

@@ -50,8 +50,11 @@ nav:
       - 1️⃣ Crear un Proyecto: contenidos/procedimientos/workflow/index.md
       - 🔤 Editar un Ladder: contenidos/procedimientos/ladder/index.md
       - 🔤 Editar un SFC: contenidos/procedimientos/sfc/index.md
-      - 🖥️ Crear una Visualización: contenidos/procedimientos/visu/index.md
-  
+      - 🖥️ Crear una Visualización:
+        - 📌 Intoducción: contenidos/procedimientos/hmi/index.md
+        - ⚡ TwinCAT 3 PLC-HMI: contenidos/procedimientos/hmi/tc3-plc-hmi.md
+        - 🌐 TwinCAT 3 HMI: contenidos/procedimientos/hmi/tc3-hmi.md
+
   - 🔬 Ejemplos:
       - 👋 Hola Mundo: 
           - 📝 Descripción: contenidos/ejemplos/hola-mundo/index.md
@@ -67,7 +70,6 @@ nav:
       - 🚦 Semáforo: contenidos/practicas/semaforo/index.md
       - 🔲 Proyecto Monolítico: contenidos/practicas/proyectos/proyecto-monolitico.md
       - 🗄️ Proyecto Estructurado: contenidos/practicas/proyectos/proyecto-estructurado.md
-      - 📐 Proyecto Jerárquico: contenidos/practicas/proyectos/proyecto-jerarquico.md
       - 🧩 Proyecto Funcional: contenidos/practicas/proyectos/proyecto-funcional.md
 
 markdown_extensions:

@@ -24,9 +24,9 @@ El proyecto **Carro Básico** resuelve el clásico problema de automatización c
 
 El funcionamiento básico del carro es como sigue.
 
-1. El carro se pone en marcha hacia la derecha cuando se acciona el pulsador de marcha.
-2. Cuando el carro alcanza el final de carrera derecha, invierte el sentido de la marcha.
-3. El carro se detiene al alcanzar, de nuevo, el final de carrera izquierda.
+1.  El carro se pone en marcha hacia la derecha cuando se acciona el pulsador de marcha.
+2.  Cuando el carro alcanza el final de carrera derecha, invierte el sentido de la marcha.
+3.  El carro se detiene al alcanzar, de nuevo, el final de carrera izquierda.
 
 **Condición inicial**: carro detenido sobre el final de carrera izquierda.
 

@@ -43,7 +43,7 @@ Sin embargo, también presenta inconvenientes importantes, especialmente a medid
 - **Efectos secundarios inesperados:** Un cambio menor en una línea de código puede alterar el comportamiento de secciones no relacionadas dentro del mismo ciclo de ejecución.
 
 !!! warning "Conclusión y Buenas Prácticas"
-    La arquitectura monolítica solo es aconsejable en sistemas didácticos básicos o automatismos extremadamente sencillos. Tan pronto como el sistema se vuelva más complejo o requiera más de un modo de funcionamiento,... debe adoptarse una arquitectura con mayor potencial como la estructurada o la jerárquica.
+    La arquitectura monolítica solo es aconsejable en sistemas didácticos básicos o automatismos extremadamente sencillos. Tan pronto como el sistema se vuelve algo más complejo o requiera más de un modo de funcionamiento,... debe adoptarse una arquitectura con mayor potencial como la estructurada o la jerárquica.
 
 ---
 

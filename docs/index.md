@@ -35,8 +35,8 @@ Bienvenido/a al tutorial de TwinCAT 3. Aquí encontrarás guías y material de a
     - Cómo programar con el lenguaje *Ladder* ({{LD}}).
 - [Editar un SFC](contenidos/procedimientos/sfc/index.md) 🚧 *(En construcción)*
     - Cómo programar con Diagramas de Funciones Secuenciales ({{SFC}}).
-- [Crear una Visualización](contenidos/procedimientos/visu/index.md) 🚧 *(En construcción)*
-    - Cómo crear **Interfaces Hombre-Máquina** con `TwinCAT 3 PLC HMI`.
+- [Crear una Visualización](contenidos/procedimientos/hmi/index.md) 🚧 *(En construcción)*
+    - Cómo crear **Interfaces Hombre-Máquina** con `TwinCAT 3`.
 
 ---
 

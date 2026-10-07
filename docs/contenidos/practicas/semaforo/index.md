@@ -48,8 +48,9 @@ La siguiente especificación funcional describe el comportamiento del semáforo 
 
 Para la realización de esta práctica es necesario disponer de los siguientes materiales adicionales.
 
-- Una **placa microcontroladora** compatible con **ArduTC** con **Telemetrix**.
+- Una **placa microcontroladora** compatible con **ArduTC** y **Telemetrix**.
 - Un **cable USB**, para conectar la placa microcontroladora al ordenador.
+- Una placa de pruebas o una **Sensor Shield V5** (o equivalente).
 - Un **montaje con tres leds (verde, amarillo, rojo)** y un **pulsador** conectados a los correspondientes pines de la placa microcontroladora.
 - Aplicación **ArduTC** instalada.
 
