@@ -37,7 +37,7 @@ Necesitarás Python 3 y las dependencias de MkDocs:
 python -m venv .venv
 .\.venv\Scripts\activate
 python -m pip install --upgrade pip
-pip install mkdocs mkdocs-material mkdocs-macros-plugin
+python -m pip install mkdocs mkdocs-material mkdocs-macros-plugin mkdocs-include-markdown-plugin
 ```
 
 ## Cómo visualizar la documentación localmente
