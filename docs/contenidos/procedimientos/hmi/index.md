@@ -1,8 +1,10 @@
+# :fontawesome-solid-circle-info: Intoducción
+
 🖥️ Crear una Visualización
 
---8<-- "includes/avisos.md:en-construccion"
+--8<-- "snippets/avisos.md:documento-en-construccion"
 
-## Introducción
+## :fontawesome-solid-circle-info: Introducción
 
 > Una visualización en TwinCAT es una interfaz gráfica (HMI) que permite a los operadores ver y controlar máquinas o procesos industriales directamente desde el entorno de Beckhoff TwinCAT.
 
@@ -15,7 +17,7 @@ Es la solución de visualización clásica de TwinCAT. Está basada en CODESYS v
 - Se «programa» utilizando el editro gráfico nativo de CODESYS integrado en Visual Studio (TwinCAT XAE).
 - Se configura fácilmente porque todas las variables del proyecto PLC son accesibles de forma directa.
 - Ideal para paneles locales, proyectos sencillos o desarrollos rápidos sin salir del entorno de programación.
-- Cuenta con una colección suficiente de elementos estándar de control (formas, botones, barras, histogramas, alarmas, gestión básica de usuarios, ...). 
+- Cuenta con una colección suficiente de elementos estándar de control (formas, botones, barras, histogramas, alarmas, gestión básica de usuarios, ...).
 
 ### TwinCAT 3 HMI
 
@@ -31,6 +33,6 @@ Es la nueva generación de interfaces basados en web de Beckhoff, es una platafo
 !!! note
     Adicionalmente, gracias al protocolo abierto TwinCAT ADS, TwinCAT 3 ofrece la posibilidad de desarrollar HMI externos utilizando cualquier lenguaje de programación de terceros como C#, .NET, C++, o frameworks web como React/Angular, comunicándose directamente con las variables del PLC
 
-## Crear una visualización
+## :fontawesome-solid-display: Crear una visualización
 
---8<-- "includes/avisos.md:paso-incompleto"
+--8<-- "snippets/avisos.md:seccion-en-construccion"

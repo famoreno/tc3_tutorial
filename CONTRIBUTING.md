@@ -73,8 +73,8 @@ El tutorial divide el aprendizaje en cuatro pilares fundamentales:
 ## 🚧 Archivos en Desarrollo
 
 - Si una página o sección está incompleta, debe incluirse el snippet correspondiente:
-    - *Página completa:* `--8<-- "includes/avisos.md:en-construccion"`
-    - *Paso puntual:* `--8<-- "includes/avisos.md:paso-incompleto"`
+    - *Página completa:* `--8<-- "snippets/avisos.md:documento-en-construccion"`
+    - *Paso puntual:* `--8<-- "snippets/avisos.md:seccion-en-construccion"`
 
 ---
 
@@ -112,6 +112,7 @@ Para insertar pequeños iconos de la interfaz o símbolos de TwinCAT dentro de u
   En el árbol del proyecto, la variable vinculada mostrará el símbolo ![Indicador de variable enlazada](./img/io-variable-linked-symbol.png){ .inline-icon } justo a la izquierda del nombre.
 
 - **Configuración requerida en `docs/stylesheets/extra.css`:**
+
     ```css
         img.inline-icon {
             width: 16px;

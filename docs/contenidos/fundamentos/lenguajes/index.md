@@ -1,23 +1,31 @@
-# 🅰️ Lenguajes
+---
+icon: fontawesome/solid/language
+---
 
---8<-- "includes/documento-en-construccion.md"
+# :fontawesome-solid-language: Lenguajes
 
-## Introducción
+--8<-- "snippets/avisos.md:documento-en-construccion"
 
---8<-- "includes/avisos.md:paso-incompleto"
+## :fontawesome-solid-circle-info: Introducción
 
-## Parte Común
+--8<-- "snippets/avisos.md:seccion-en-construccion"
 
---8<-- "includes/avisos.md:paso-incompleto"
+## :fontawesome-solid-code-branch: Parte Común
 
-## Lenguaje ST
+--8<-- "snippets/avisos.md:seccion-en-construccion"
 
---8<-- "includes/avisos.md:paso-incompleto"
+## :fontawesome-solid-code: Lenguaje ST
 
-## Lenguje SFC
+--8<-- "snippets/avisos.md:seccion-en-construccion"
 
---8<-- "includes/avisos.md:paso-incompleto"
+## :fontawesome-solid-diagram-project: Lenguje SFC
 
-## Lenguaje LD
+--8<-- "snippets/avisos.md:seccion-en-construccion"
 
---8<-- "includes/avisos.md:paso-incompleto"
+## :fontawesome-solid-network-wired: Lenguaje LD
+
+--8<-- "snippets/avisos.md:seccion-en-construccion"
+
+<!---
+- Entrada comentando las diferencias entre variables de entrada y salida (%I*, %Q* y parámetros de entrada y salida (VAR_IN, VAR_OUT, VAR_IN_OUT)
+--->

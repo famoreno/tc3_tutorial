@@ -1,10 +1,10 @@
 ---
-title: Hola Mundo - Descripción General
+title: Hola Mundo - Descripción
 ---
 
-# 👋 Hola Mundo
+# :fontawesome-solid-file-lines: Hola Mundo
 
-## 📝 Descripción del Proyecto
+## :fontawesome-solid-file-lines: Descripción del Proyecto
 
 Este proyecto es el **«Hola Mundo»** de la programación de **autómatas programables (PLC)**.
 
@@ -19,7 +19,7 @@ Este proyecto incluye además, una **visualización** elemental que permite, med
 
 ---
 
-## Estructura (Simplificada) del Proyecto
+## :fontawesome-solid-folder-tree: Estructura (Simplificada) del Proyecto
 
 ```text
 TC3_Hola_Mundo/
@@ -34,7 +34,7 @@ TC3_Hola_Mundo/
 
 ---
 
-## Código
+## :fontawesome-solid-code: Código
 
 !!! info "Parte de Declaración"
     ```iecst
@@ -55,9 +55,9 @@ TC3_Hola_Mundo/
 
 ---
 
-## Comentarios
+## :fontawesome-solid-comment: Comentarios
 
-#### Parte de Declaración
+### Parte de Declaración
 
 - La interfaz del programa `MAIN` (cabecera y definición de variables) se define en la **Parte de Declaración**.
 - Los **comentarios** de una línea empiezan con `//`.
@@ -65,13 +65,13 @@ TC3_Hola_Mundo/
 - La variable `i_Pulsador` se declara como un ***booleano*** (`BOOL`) y se localiza dinámicamente en la **Imagen de Entrada** (`AT %I*`).
 - La variable `o_Lampara` se declara como un ***booleano*** (`BOOL`) y se localiza dinámicamente en la **Imagen de Salida** (`AT %Q*`).
 
-#### Parte de Implementación
+### Parte de Implementación
 
 - El código del módulo, en lenguaje {{ST}}, se incluyue en la **Parte de Implementación**.
 - La variable `ContadorCiclos` se incrementa indefinidamente una vez por **Ciclo Básico** de ejecución del **PLC** (10 ms).
 - La variable de salida `o_Lampara` copia, continuamente, el valor de la variable de entrada `i_Pulsador`.
 
-#### Visualización
+### Visualización
 
 - El valor de la variable `ContadorCiclos` se muestra en rectángulo gris la visualización.
 - El valor de la variable `ContadorCiclos` se se puede cambiar escribiéndolo en rectángulo blanco la visualización.
@@ -81,14 +81,14 @@ TC3_Hola_Mundo/
 
 ---
 
-## 💻 Implementación
+## :fontawesome-solid-screwdriver-wrench: Implementación
 
 !!! info "🛠️ Guía paso-a-paso"
     Si quieres implementar este proyecto desde cero en TwinCAT 3, sigue la **[Guía Paso a Paso](step-by-step.md)**.
 
 ---
 
-## 📦 Código Fuente y Descarga
+## :fontawesome-solid-download: Código Fuente y Descarga
 
 El código fuente completo de este proyecto **Hola Mundo** está disponible en GitHub:
 

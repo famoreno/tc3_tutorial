@@ -1,12 +1,16 @@
-# 🔲 Proyecto Monolítico
+---
+icon: fontawesome/solid/cube
+---
 
-## 📋 Tarea
+# :fontawesome-solid-cube: Proyecto Monolítico
+
+## :fontawesome-solid-clipboard-list: Tarea
 
 Implementar la lógica de control de un automatismo industrial utilizando la **Arquitectura Monolítica**. [➡️](../../fundamentos/arquitecturas/index.md#arquitectura-monolitica).
 
 ---
 
-## 🎯 Objetivos
+## :fontawesome-solid-bullseye: Objetivos
 
 - Programar la lógica de control de un automatismo industrial en el lenguaje {{SFC}} utilizando la **arquitectura monolítica**.
 - Implementar un **modo manual** básico.
@@ -19,7 +23,7 @@ Implementar la lógica de control de un automatismo industrial utilizando la **A
 
 ---
 
-## 📝 Descripción Funcional
+## :fontawesome-solid-file-lines: Descripción Funcional
 
 Para el desarrollo de este proyecto se utilizará como caso de estudio el **Sistema Didáctico Modular de Ensamblaje Flexible (FMS-200)** de **SMC International Training**. Sin embargo, el procedimiento que se describe a continuación no depende de ningún equipo en concreto: los pasos, la metodología y los conceptos de programación en TwinCAT 3 son aplicables a cualquier otro sistema automatizado, maqueta, célula de fabricación o simulador equivalente.
 
@@ -31,7 +35,7 @@ La descripción funcional del **Sistema Didáctico Modular de Ensamblaje Flexibl
 
 ---
 
-## 📂 Estructura Simplificada del Proyecto
+## :fontawesome-solid-folder-tree: Estructura Simplificada del Proyecto
 
 ```text
 XXX_TC3_GYY/
@@ -47,26 +51,26 @@ XXX_TC3_GYY/
 
 ---
 
-## 📋 Guía de Implementación
+## :fontawesome-solid-screwdriver-wrench: Guía de Implementación
 
 !!! info
     Para el desarrollo de esta práctica puede tomarse como referencia la versión **monolítica** del proyecto [«Carro Extendido»](../../ejemplos/carro-extendido/index.md).
 
-#### Solución
+### Solución
 
 - [ ] Abrir la aplicación **TwinCAT XAE**. [➡️](../../procedimientos/workflow/index.md#abrir-twincat-xae)
 - [ ] Crear un **proyecto (solución) TwinCAT 3**. [➡️](../../procedimientos/workflow/index.md#crear-un-proyecto-twincat-3)
-  
+
     !!! info "Parámetros"
         - Nombre de la solución ➔ `XXX_TC3_GYY` (`XXX` = asignatura, `YY` = grupo).
         - Nombre del proyecto ➔ `01_FMS_20X_Monolitico` (`X` = número de la estación del sistema FMS-200).
 
 - [ ] Ocultar las **configuraciones** innecesarias para dejar el Explorador de la Solución lo más despejada posible. [➡️](../../procedimientos/workflow/index.md#ocultar-configuraciones)
 
-#### Proyecto PLC
+### Proyecto PLC
 
 - [ ] Crear un **proyecto PLC estándar** con el nombre `Monolitico_PLC`. [➡️](../../procedimientos/workflow/index.md#crear-un-proyecto-plc)
-- [ ] Crear una nueva **Unidad de Organización de Programa (POU)** de tipo **Bloque Funcional**. [➡️](../../procedimientos/workflow/index.md#crear-un-pou)
+- [ ] Crear una nueva **Unidad de Organización de Programa (POU)** de tipo **Bloque Funcional**. [➡️](../../procedimientos/workflow/index.md#crear-una-pou)
 
     !!! warning "Parámetros POU"
         - Nombre ➔ `FB_Estacion_SFC`
@@ -101,7 +105,7 @@ XXX_TC3_GYY/
         - Verificar la ausencia de errores en el panel **Error List**.
         - Verificar la correcta creación de la instancias de las variables de entrada/salidas bajo el apartado `Monolitico_PLC Instance` del proyecto `Monolitico_PLC`.
 
-#### Entrada/Salida
+### Entrada/Salida
 
 - [ ] Buscar y seleccionar un controlador remoto (crear una ruta). [➡️](../../procedimientos/workflow/index.md#crear-una-ruta)
 - [ ] Buscar dispositivos y terminales de entrada/salida. [➡️](../../procedimientos/workflow/index.md#buscar-dispositivos)
@@ -115,7 +119,7 @@ XXX_TC3_GYY/
 - [ ] Monitorizar una variable de entrada. [➡️](../../procedimientos/workflow/index.md#monitorizar-variables)
 - [ ] Forzar una variable de salida. [➡️](../../procedimientos/workflow/index.md#forzar-variables)
 
-#### Visualización
+### Visualización
 
 - [ ] Crear la visualización básica (`V_Estacion`).
 - [ ] Añadir un rectángulo para monitorizar y modificar el valor de cada una de las variables de E/S.
@@ -126,7 +130,7 @@ XXX_TC3_GYY/
 - [ ] Monitorizar el valor de una variable de entrada (pulsador de marcha) desde `V_Estacion`.
 - [ ] Forzar el valor de una variable de salida (lámpara de marcha) desde `V_Estacion`.
 
-#### Modo Manual
+### Modo Manual
 
 - [ ] Mover la variable `i_SelectorManual` del bloque de declaración `VAR` al bloque de declaración `VAR_OUTPUT`.
 
@@ -138,7 +142,7 @@ XXX_TC3_GYY/
     ```
 
 - [ ] Condicionar la ejecución de `Estacion` en `MAIN` al selector de modo.
-  
+
     ```iecst
     IF NOT i_SelectorManual THEN
         Estacion();
@@ -159,7 +163,7 @@ XXX_TC3_GYY/
         - Todas las señales involucradas en el proceso funcionan correctamente tanto en el *software* como en el *hardware*.
         - Se conocen todos los pasos del proceso de producción.
 
-#### «Camino Feliz»
+### «Camino Feliz»
 
 - [ ] Implementar únicamente la secuencia principal directa.
 
@@ -180,17 +184,17 @@ XXX_TC3_GYY/
 
 - [ ] Añadir los parámetros del sistema (principalmente tiempos) a la visualización.
 
-#### Condición Inicial
+### Condición Inicial
 
 !!! info "Condición Inicial"
     - La condición inicial, es la condición material de los sensores, que indica que el inicio de la producción es seguro.
     - La condición inicial incluye la posición de «reposo» conocida de cada actuador.
-  
+
 - [ ] Calcular la condición inicial en `FB_Estacion_SFC` mediante una acción principal (`a_CondicionInicial`) asociada a la etapa inicial.
 - [ ] Ampliar la condición de inicio de secuencia para evitar el inicio del ciclo no-seguro (si no se cumplen las condiciones iniciales).
 - [ ] Mostrar el estado de la condición inicial en la visualización.
 
-#### Falta/Exceso de Material
+### Falta/Exceso de Material
 
 - [ ] Añadir una condición de falta/exceso de material.
 
@@ -210,7 +214,7 @@ XXX_TC3_GYY/
     - Esperar la autorización del operario para continuar (`i_PulsadorMarcha`).
 - [ ] Tras la reanudación volver a verificar, en su caso, la presencia del material.
 
-#### Pieza Correcta
+### Pieza Correcta
 
 - [ ] Crear la estructura de datos necesaria para determinar el tipo de pieza solicitada.
 - [ ] Incluir en la visualización los elementos necesarios para establecer en la tarea el tipo de pieza solicitada.
@@ -242,7 +246,7 @@ XXX_TC3_GYY/
         - [ ] Crear la estructura de datos necesaria para contener y mantener la información de las piezas contenidas en el plato divisor.
         - [ ] Incluir el código necesario para mantener esta información actualizada según la posición que las piezas ocupen en el plato divisor.
         - [ ] Comprobar que estos datos se corresponden, en funcionamiento, con el tipo de pieza situada en cada posición del plato.
-    
+
     - **Fase 3**
         - [ ] Incluir en la visualización los elementos necesarios para establecer en la tarea el tipo de pieza solicitada.
         - [ ] Calcular el valor de las variables de intención en función del tipo de la pieza actual situada en cada posición del plato y del tipo de pieza solicitado.
@@ -250,7 +254,7 @@ XXX_TC3_GYY/
     !!! tip
         Se recomienda posponer la segunda y tercera fase de implementación de esta funcionalidad hasta completar el resto de las funcionalidades básicas.
 
-#### Tarea
+### Tarea
 
 - [ ] Incluir las variables `UnidadesPendientes` y `UnidadesSolicitadas` necesarias para gestionar la tarea.
 
@@ -271,7 +275,7 @@ XXX_TC3_GYY/
 
 - [ ] Utilizar una acción principal `a_MarchaAutorizada` en la etapa inicial que incluya `a_CondicionInicial` y la condición de tarea válida.
 
-#### Señalización Básica
+### Señalización Básica
 
 - [ ] La lámpara de alarma se activa para avisar al operario de una anomalía.
     - El inicio de la producción no es seguro.
@@ -280,7 +284,7 @@ XXX_TC3_GYY/
 ---
 
 <!---
-## Funcionalidades Adicionales
+## :fontawesome-solid-puzzle-piece: Funcionalidades Adicionales
 
 1.  Secuencia automática de restauración.
 2.  Secuencia automática de preparación de la producción.

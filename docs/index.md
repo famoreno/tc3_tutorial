@@ -1,9 +1,9 @@
-# 🏠 Tutorial de TwinCAT 3
+# :fontawesome-solid-house: Tutorial de TwinCAT 3
 
 !!! warning "Sitio en Desarrollo Continuo"
     Este tutorial se encuentra en fase de actualización y redacción constante. Es posible que encuentres enlaces en revisión o secciones temporalmente en construcción.
 
-## 👋 Bienvenida
+## :fontawesome-solid-hand: Bienvenida
 
 Bienvenido/a al tutorial de TwinCAT 3. Aquí encontrarás guías y material de apoyo para trabajar con TwinCAT 3 a partir de ejemplos concretos de programas de automatización.
 
@@ -12,7 +12,7 @@ Bienvenido/a al tutorial de TwinCAT 3. Aquí encontrarás guías y material de a
 
 ---
 
-## 🏛️ Fundamentos
+## :fontawesome-solid-landmark: Fundamentos
 
 - [TwinCAT 3](contenidos/fundamentos/twincat/index.md) 🚧 *(En construcción)*
     - Introducción a TwinCAT XAE, entorno de programación de Beckhoff.
@@ -27,7 +27,7 @@ Bienvenido/a al tutorial de TwinCAT 3. Aquí encontrarás guías y material de a
 
 ---
 
-## 🛠️ Procedimientos
+## :fontawesome-solid-screwdriver-wrench: Procedimientos
 
 - [Crear un Proyecto](contenidos/procedimientos/workflow/index.md)
     - Flujo de trabajo con TwiCAT 3 para el desarrollo de proyectos PLC.
@@ -40,7 +40,7 @@ Bienvenido/a al tutorial de TwinCAT 3. Aquí encontrarás guías y material de a
 
 ---
 
-## 🔬 Ejemplos
+## :fontawesome-solid-flask: Ejemplos
 
 - [Hola Mundo](contenidos/ejemplos/hola-mundo/index.md)
     - El «hola mundo» de la automatización industrial.
@@ -51,7 +51,7 @@ Bienvenido/a al tutorial de TwinCAT 3. Aquí encontrarás guías y material de a
 
 ---
 
-## 📋 Prácticas
+## :fontawesome-solid-list-check: Prácticas
 
 - [Semáforo](contenidos/practicas/semaforo/index.md)
     - Implementación de máquinas de estado en {{LD}}, {{SFC}}, {{ST}}.

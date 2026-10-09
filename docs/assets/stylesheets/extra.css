@@ -15,8 +15,8 @@
 }
 
 /* ===== Párrafos ===== */
-.md-typeset p { 
-  line-height: 1.5; 
+.md-typeset p {
+  line-height: 1.5;
 }
 
 /* ===== Separadores horizontales ===== */
@@ -81,10 +81,12 @@
 }
 
 /* ===== Código ===== */
-/* Código inline (solo inline, no bloques) ej. `ST_TAPA */
+/* Código inline (solo inline, no bloques) ej. `ST_TAPA` */
 .md-typeset :not(pre) > code {
-  color: white;
-  background-color: var(--uma-light-blue);
+  /* color: white; */
+  color: #24292f;
+  /* background-color: var(--uma-light-blue); */
+  background-color: #f0f0f0;
   padding: 1px 3px;
   border-radius: 4px;
   font-weight: 400;
@@ -147,7 +149,7 @@
 
 /* Colores RGBA porque necesitamos opacidad */
 /* Nivel 1 */
-.md-nav--secondary > .md-nav__list > 
+.md-nav--secondary > .md-nav__list >
 .md-nav__item > .md-nav__link {
   background-color: rgba(0, 46, 93, 0.25);
   border-radius: 4px;
@@ -255,7 +257,7 @@
 .md-typeset .admonition.info td,
 .md-typeset details.info th,
 .md-typeset details.info td {
-  padding: 0.15rem 0.5rem; 
+  padding: 0.15rem 0.5rem;
 }
 
 /* Header de tabla */
@@ -408,4 +410,9 @@ img.inline-icon {
   vertical-align: middle;
   margin: 0 2px;
   padding: 0;
+}
+
+.md-typeset h1 img.inline-icon {
+  width: 1em;
+  height: 1em;
 }

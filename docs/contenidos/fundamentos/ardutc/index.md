@@ -1,9 +1,10 @@
 ---
-icon: custom/ardutc-symbol-16px
+icon: custom/ardutc-icon-16px
 ---
-# ![Icono de ArduTC](./img/ardutc-symbol-32px.png){ .inline-icon } ArduTC
 
-## Introducción
+# :custom-ardutc-icon-16px: ArduTC
+
+## :fontawesome-solid-circle-info: Introducción
 
 **ArduTC** es una aplicación informática de software libre desarrollada por el equipo **AutoISATeam** de la **Universidad de Málaga** que permite la interacción de un **runtime** de **TwinCAT** con plataformas microcontroladoras y placas de desarrollo *hardware*.
 
@@ -17,7 +18,7 @@ icon: custom/ardutc-symbol-16px
 ??? info
     **ArduTC** utiliza las siguientes librerı́as de software libre escritas en el lenguaje Python.
 
-    - **pyADS** (Stefan Lehmann): para la comunicación con **TwinCAT**. 
+    - **pyADS** (Stefan Lehmann): para la comunicación con **TwinCAT**.
     - **Telemetrix** (Alan Yorinks): para la comunicación con la placa microcontroladora.
     - **PyQT5** (Riverbank Computing Limited): para la interfaz gráfica.
 
@@ -41,7 +42,7 @@ Adquiriendo una placa microcontroladora compatible y algunos componentes electr�
 
 ---
 
-## 📦 Código Fuente y Descarga
+## :fontawesome-solid-download: Código Fuente y Descarga
 
 <!--
 El código fuente completo de este proyecto **Hola Mundo** está disponible en GitHub:
@@ -56,7 +57,7 @@ El instalador de la aplicación puede descargarse desde el siguiente repositorio
 
 ---
 
-## 🧰 Materiales y Requisitos
+## :fontawesome-solid-toolbox: Materiales y Requisitos
 
 ### Hardware
 
@@ -74,7 +75,7 @@ El instalador de la aplicación puede descargarse desde el siguiente repositorio
 
 ---
 
-## 📐 Interfaz de ArduTC
+## :fontawesome-solid-display: Interfaz de ArduTC
 
 La interfaz de usuario de ArduTC se divide en cinco áreas/paneles funcionales.
 
@@ -88,9 +89,9 @@ La interfaz de usuario de ArduTC se divide en cinco áreas/paneles funcionales.
 
 ---
 
-## 🛠️ Guía de Uso
+## :fontawesome-solid-list-check: Guía de Uso
 
-#### Proyecto TwinCAT
+### Proyecto TwinCAT
 
 Crear un proyecto TwinCAT con variables de entrada y salida y desplegarlo sobre un sistema destino. [➡️](../../procedimientos/workflow/index.md)
 
@@ -98,7 +99,7 @@ Crear un proyecto TwinCAT con variables de entrada y salida y desplegarlo sobre 
     - Tras la construcción del proyecto se crear el archivo Archivo de Descripción de Módulo `.tmc` (***TwinCAT Module Class***) que describe la interfáz pública y la estructura interna del proyecto PLC y la lista de símbolos (que incluye variables de entrada y salida).
     - Este archivo se encuentra dentro de la carpeta del proyecto PLC.
 
-#### Cargar Símbolos
+### Cargar Símbolos
 
 1. Abrir la aplicación **ArduTC**.
 
@@ -113,7 +114,7 @@ Crear un proyecto TwinCAT con variables de entrada y salida y desplegarlo sobre 
 
     ![Variables del proyecto PLC cargadas en el panel Target](./img/ardutc-gui-symbols.png){ width="400px" }
 
-#### Seleccionar Placa Microcontroladora
+### Seleccionar Placa Microcontroladora
 
 1. Conectar una placa **microcontroladora** mediante el cable USB al ordenador.
 2. En **DEVICES**, hacer clic en **+** para buscar las placas conectadas.
@@ -130,14 +131,14 @@ Crear un proyecto TwinCAT con variables de entrada y salida y desplegarlo sobre 
 
     ![Pines digitales y analógicos disponibles en el panel Devices](./img/ardutc-gui-pins.png){ width="400px" }
 
-#### Vincular Variables
+### Vincular Variables
 
 1. En **Target**, hacer **doble clic** sobre la variable que desea enlazar.
 
 2. En el cuadro desplegable ***Link variables***, seleccionar el pin de la placa microcontroladora en el que está conectado físicamente el componente correspondiente que se desea enlazar con la variable.
 
     ![Lista de pines disponibles para vincular una variable](./img/ardutc-link-variables.png){ width="200px" }
-  
+
 3. Confirmar el vínculo entre variable y pin pulsando **Link**.
 
     !!! success "Resultado de la operación"
@@ -150,7 +151,7 @@ Crear un proyecto TwinCAT con variables de entrada y salida y desplegarlo sobre 
 
     ![Todas las variables vinculadas a pines de la placa](./img/ardutc-all-variables-linked.png){ width="600px" }
 
-#### Configurar Comunicaciones
+### Configurar Comunicaciones
 
 1. En **RUNTIME** introducir la dirección **AMS Net ID** del sistema destino y el puerto de comunicaciones del proyecto PLC.
 
@@ -165,7 +166,7 @@ Crear un proyecto TwinCAT con variables de entrada y salida y desplegarlo sobre 
 
         ![Propiedades del proyecto PLC con el puerto de comunicaciones](./img/tc3-proyecto-plc-propiedades.png){ width="300px" }
 
-#### Conectar
+### Conectar
 
 1. Conectar haciendo clic en **CONNECT**.
 

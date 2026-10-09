@@ -1,12 +1,16 @@
-# 🚦 Semáforo
+---
+icon: fontawesome/solid/traffic-light
+---
 
-## 📋 Tarea
+# :fontawesome-solid-traffic-light: Semáforo
+
+## :fontawesome-solid-clipboard-list: Tarea
 
 Implementar la lógica de control de un semáforo simple de peatones para la regulación del tráfico en una vía de sentido único.
 
 ---
 
-## 🎯 Objetivos
+## :fontawesome-solid-bullseye: Objetivos
 
 - Aprender a transcribir máquinas de estado especificadas con diagramas GRAFCET utilizando los lenguajes {{SFC}}, {{ST}} y {{LD}}.
 - Aprender a editar un **bloque funcional (FB)** utilizando el lenguaje {{SFC}} en **TwinCAT 3**.
@@ -14,7 +18,7 @@ Implementar la lógica de control de un semáforo simple de peatones para la reg
 
 ---
 
-## 📝 Descripción Funcional
+## :fontawesome-solid-file-lines: Descripción Funcional
 
 Inicialmente el semáforo consta únicamente de las luces roja, ámbar y verde para vehículos.
 
@@ -26,7 +30,7 @@ El funcionamiento requerido será la secuencia típica verde -> ámbar -> rojo.
 | $T_{ámbar}$ | 3 s |
 | $T_{rojo}$ | 10 s |
 
-## ⇄ Entradas y Salidas
+## :fontawesome-solid-arrows-left-right: Entradas y Salidas
 
 | Nombre | Tipo | Origen | Descripción |
 | :---: | :---: | :---: | :--- |
@@ -36,15 +40,15 @@ El funcionamiento requerido será la secuencia típica verde -> ámbar -> rojo.
 
 ---
 
-## 📐 Especificación Funcional
+## :fontawesome-solid-diagram-project: Especificación Funcional
 
 La siguiente especificación funcional describe el comportamiento del semáforo utilizando el lenguaje GRAFCET.
 
---8<-- "includes/avisos.md:paso-incompleto"
+--8<-- "snippets/avisos.md:seccion-en-construccion"
 
 ---
 
-## 🧰 Materiales
+## :fontawesome-solid-toolbox: Materiales
 
 Para la realización de esta práctica es necesario disponer de los siguientes materiales adicionales.
 
@@ -59,7 +63,7 @@ Para la realización de esta práctica es necesario disponer de los siguientes m
 <figcaption>Figura 1: Montaje con Arduino UNO y una Sensor Shield V5.</figcaption>
 ---
 
-## 🔨 Guía de Implementación
+## :fontawesome-solid-screwdriver-wrench: Guía de Implementación
 
 ### Proyecto TwinCAT 3 en SFC
 
@@ -69,7 +73,7 @@ A continuación, se detalla la secuencia de pasos necesarios para codificar, en 
 2. Crear un **proyecto (solución) TwinCAT 3** con nombre `TC3_Semaforo`. [➡️](../../procedimientos/workflow/index.md#crear-un-proyecto-twincat-3)
 3. Ocultar las **configuraciones** innecesarias para dejar el explorador de la solución lo más despejada posible. [➡️](../../procedimientos/workflow/index.md#ocultar-configuraciones)
 4. Crear un **proyecto PLC estándar** con el nombre `Semaforo_PLC`. [➡️](../../procedimientos/workflow/index.md#crear-un-proyecto-plc)
-5. Crear una nueva **Unidad de Organización de Programa (POU)** de tipo **Bloque Funcional**. [➡️](../../procedimientos/workflow/index.md#crear-un-pou)
+5. Crear una nueva **Unidad de Organización de Programa (POU)** de tipo **Bloque Funcional**. [➡️](../../procedimientos/workflow/index.md#crear-una-pou)
 
     !!! warning "Parámetros POU"
         - Nombre ➔ `FB_Semaforo_SFC`
@@ -132,7 +136,7 @@ A continuación, se detalla la secuencia de pasos necesarios para codificar, en 
 
     ![Monitorización en línea de la implementación SFC del semáforo](./img/02-fb-semaforo-sfc-online.png){ width="600px" }
 
-### :material-developer-board: Prueba con ArduTC
+### Prueba con ArduTC
 
 Configuremos el proyecto para utilizar una placa microcontroladora, como **Arduino UNO**, como terminal de E/S mediante **ArduTC**.
 
@@ -144,7 +148,7 @@ Configuremos el proyecto para utilizar una placa microcontroladora, como **Ardui
     - Configuración del proyecto activada sobre el sistema destino.
     - Proyecto PLC cargado en el *runtime* del sistema destino.
     - Proyecto PLC en ejecución en el *runtime* del sistema destino.
-  
+
 2. **Placa microcontroladora**
 
     Como terminal de entrada/salida necesitamos:
@@ -152,7 +156,7 @@ Configuremos el proyecto para utilizar una placa microcontroladora, como **Ardui
     - Una **placa microcontroladora** compatible con **ArduTC**.
     - **Telemetrix** instalado en la **placa microcontroladora**.
     - Montaje con tres LED de colores (verde, ámbar y rojo) conectados a los pines correspondientes de la **placa microcontroladora**.
-  
+
 3. Abrir la aplicación **ArduTC**.
 4. Cargar los símbolos del proyecto TC3 en **ArduTC**. [➡️](../../fundamentos/ardutc/index.md#cargar-simbolos)
 5. Seleccionar la **placa microcontroladora**.  [➡️](../../fundamentos/ardutc/index.md#seleccionar-placa-microcontroladora)
@@ -185,12 +189,12 @@ A continuación, se detalla la secuencia de pasos necesarios para codificar en e
     END_VAR
     VAR
         Estado: (E_VERDE, E_AMBAR, E_ROJO);
-        
+
         // Bloques funcionales
         TemporizadorVerde: TON;
         TemporizadorAmbar: TON;
         TemporizadorRojo: TON;
-        
+
         // Variables de Salidas
         o_VerdeVehiculos AT %Q*: BOOL;
         o_AmbarVehiculos AT %Q*: BOOL;
@@ -245,11 +249,11 @@ A continuación, se detalla la secuencia de pasos necesarios para codificar en e
 
 ---
 
-## 🎯 Ejercicios Propuestos
+## :fontawesome-solid-puzzle-piece: Ejercicios Propuestos
 
-1. Añadir una visualización que permita monitorizar y parametrizar el funcionamiento completo del semáforo.
-2. Añadir luces para los peatones: roja y verde (fija e intermitente).
-3. Añadir la funcionalidad para acortar el tiempo de verde para vehículos (pulse «peatón» y espere al verde).
-4. Añadir un avisador acústico para personas con discapacidad visual (frecuencia base/rápida).
+1.  Añadir una visualización que permita monitorizar y parametrizar el funcionamiento completo del semáforo.
+2.  Añadir luces para los peatones: roja y verde (fija e intermitente).
+3.  Añadir la funcionalidad para acortar el tiempo de verde para vehículos (pulse «peatón» y espere al verde).
+4.  Añadir un avisador acústico para personas con discapacidad visual (frecuencia base/rápida).
 
 ---

@@ -1,6 +1,10 @@
-# 🏗️ Crear un Proyecto
+---
+icon: fontawesome/solid/folder-plus
+---
 
-## Abrir TwinCAT XAE
+# :fontawesome-solid-folder-plus: Crear un Proyecto
+
+## :fontawesome-solid-folder-open: Abrir TwinCAT XAE
 
 - Buscar en el menú de inicio de Windows la aplicación **TwinCAT XAE Shell**.
 
@@ -15,7 +19,7 @@ Tras cargar la aplicación se muestra la pantalla inicial de la aplicación.
 
 ![Ventana principal de TwinCAT XAE](./img/tc3-xae-main-window.png){ width="600px" }
 
-## Crear un Proyecto TwinCAT 3
+## :fontawesome-solid-folder-plus: Crear un Proyecto TwinCAT 3
 
 ### Seleccionar el Tipo del Proyecto
 
@@ -50,7 +54,7 @@ Para despejar el panel de exploración de la solución, ocultar las configuracio
 
 ![Configuraciones ocultas en el explorador de la solución](./img/tc3-xae-configuration-hidden.png){ width="300px" }
 
-## Crear un Proyecto PLC
+## :fontawesome-solid-microchip: Crear un Proyecto PLC
 
 1. Para crear un nuevo proyecto PLC, dentro de un proyecto TC.
 
@@ -112,7 +116,7 @@ Para despejar el panel de exploración de la solución, ocultar las configuracio
 
     ![Editor con un POU vacío](./img/tc3-xae-blank-sfc-fb.png){ width="500px" }
 
-## Implementar un POU
+## :fontawesome-solid-code: Implementar un POU
 
 Al desplegar **POUs** se muestra la lista de módulos de programación (programas, bloques funcionales y funciones) del proyecto.
 
@@ -172,7 +176,7 @@ Identificador [AT %Localización]: Type [:= ValorInicial];
 
 4. **Tipo de dato**: Especifica principalmente el tamaño y el rango de la variable. Puede ser un tipo elemental (BOOL, INT, REAL, TIME,...), complejo (STRUCT, ENUM, ARRAY,...) o de usuario.
 5. **Valor inicial**: Especifica el valor de la variable al iniciar el runtime. Si no se especifica tomará el valor predeterminado para ese tipo de variable.
-6. **Delimitador ;** (obligatorio). Terminador de instrucción.  
+6. **Delimitador ;** (obligatorio). Terminador de instrucción.
 
 ### Ámbito de una Variable
 
@@ -186,7 +190,7 @@ El bloque de declaración determina el ámbito y el alcance de la variable espec
    6.  `VAR_STAT ... END_VAR`: variables estáticas. Variables locales que conservan su valor entre ciclos de ejecución.
    7.  `VAR_PERSISTENT ... END_VAR`: variables persistentes. Variables que conservan su valor incluso tras la pérdida de alimentación.
 
-## Desplegar un Proyecto
+## :fontawesome-solid-upload: Desplegar un Proyecto
 
 El proceso de despliegue abarca la secuencia desde la validación del código fuente hasta la ejecución en tiempo real sobre el runtime  del sistema destino (*Target*).
 
@@ -223,11 +227,11 @@ Una ruta sirve básicamente para establecer una relación de confianza entre amb
     ![Lista de sistemas destino](./img/lista-sistemas-destino.png){ width="200px" }
 
 - En la ventana emergente **Choose Target System...**, pulsar **Search (Ethernet)...** para buscar sistemas TwinCAT en la red.
-  
+
     ![Ventana inicial para elegir el sistema destino](<./img/choose-target-system-window-initial.png>){ width="400px" }
 
 - Pulsar Aceptar si aparece el aviso TcXaeShell indicando que para buscar sistemas remotos debe hacerse desde el sistema local.
-  
+
     ![Aviso para volver al sistema local antes de buscar rutas](./img/tcxaeshell-back-to-local.png){ width="300px" }
 
 - En la ventana emergente **Select Adapter(s)**, seleccionar los dispositivos de red a través de los cuales se va a realizar la búsqueda y pulsar **OK**.
@@ -247,7 +251,7 @@ Una ruta sirve básicamente para establecer una relación de confianza entre amb
     ![Resultados de la búsqueda de sistemas TwinCAT](./img/add-remote-route-2.png){ width="400px" }
 
 - A continuación se mostrará la ventana **Add Remote Route** para conectar con el sistema destino. Desmarcar la casilla **Secure ADS** si no se exige una conexión segura.
-  
+
     ![Credenciales para una ruta remota segura](./img/add-remote-route-credentials-secure.png){ width="400px" }
 
 - Introducir las credenciales de usuario y contraseña del |dispositivo seleccionado.
@@ -307,7 +311,7 @@ Una ruta sirve básicamente para establecer una relación de confianza entre amb
         ![Terminales detectados bajo el dispositivo EtherCAT](./img/io-boxes-list.png){ width="300px" }
 
 - Activar el modo Free Run pulsando **Sí**.
-  
+
     ![Confirmación para activar el modo Free Run](./img/activate-freerun.png){ width="200px" }
 
     ??? Info "Free Run"
@@ -561,7 +565,7 @@ Arrancar o poner en ejecución un proyecto (**Start**):
 ---
 
 <!--
-## Codificar en Texto Estructurado
+## :fontawesome-solid-code-branch: Codificar en Texto Estructurado
 Codificar un SFC -> documento aparte
 De grafcet a SFC, a ST, a LD
 Explicación del ciclo básico y de las imágenes de entrada y salida (AT), el programa no lee directamente, sino que trabaja con una copia
@@ -573,9 +577,9 @@ Depurar errores
 
 align=center en imágenes
 incluir títulos explícitos en los bloques info
-dirección AMS 
+dirección AMS
 puerto de comunicaciones
 
-Instancia FB 
+Instancia FB
 
 -->

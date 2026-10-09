@@ -2,15 +2,15 @@
 title: Hola Mundo - Guía de Implementación
 ---
 
-# 🛠️ Hola Mundo - Guía de Implementación
+# :fontawesome-solid-screwdriver-wrench: Hola Mundo - Guía de Implementación
 
-## 📋 Tarea
+## :fontawesome-solid-clipboard-list: Tarea
 
 Replicar el ejemplo [**«Hola Mundo»**](../hola-mundo/index.md) para implementar nuestro primer programa completo de PLC con TwinCAT 3 desde cero.
 
 ---
 
-## 🎯 Objetivos
+## :fontawesome-solid-bullseye: Objetivos
 
 - Familiarizarse con el entorno de desarrollo **TwinCAT XAE** de TwinCAT 3.
 - Declarar variables de **memoria interna** (marcas).
@@ -24,7 +24,7 @@ Replicar el ejemplo [**«Hola Mundo»**](../hola-mundo/index.md) para implementa
 
 ---
 
-## 🔨 Guía de Implementación
+## :fontawesome-solid-list-check: Guía de Implementación
 
 A continuación se detallan los pasos necesarios para replicar completamente este proyecto.
 
@@ -33,7 +33,7 @@ A continuación se detallan los pasos necesarios para replicar completamente est
 
 ---
 
-### 🕹️ Sobre el Simulador
+### Sobre el Simulador
 
 En primer lugar vamos a implementar el proyecto (código y visualización) y ejecutarlo en nuestro ordenador usando el simulador de TwinCAT 3 (`UmRT_Default`).
 
@@ -202,7 +202,7 @@ En primer lugar vamos a implementar el proyecto (código y visualización) y eje
 
 ---
 
-### 🏭 Sobre un Controlador
+### Sobre un Controlador
 
 Ahora vamos a configurar el proyecto para ejecutarlo sobre un controlador Beckhoff real.
 
@@ -288,7 +288,7 @@ Ahora vamos a configurar el proyecto para ejecutarlo sobre un controlador Beckho
 
 ---
 
-### :material-developer-board: Con un Microcontrolador
+### Con un Microcontrolador
 
 También podemos configurar el proyecto para ejecutarlo sobre un runtime (local/remoto) o sobre el simulador (`UmRT_Default`) y utilizar una placa microcontroladora como **Arduino UNO** como terminal de E/S mediante **ArduTC**.
 
@@ -298,7 +298,7 @@ También podemos configurar el proyecto para ejecutarlo sobre un runtime (local/
     - Activar la configuración del proyecto sobre el controlador.
     - Cargar el proyecto PLC sobre el controlador.
     - Poner en ejecución el proyecto en el controlador.
-  
+
 2. Preparar la placa Arduino
     - Descargar **Telemetrix** en la placa Arduino.
     - Preparar el montaje correspondiente: un pulsador y un led conectados a los pines correspondientes.
@@ -313,7 +313,7 @@ También podemos configurar el proyecto para ejecutarlo sobre un runtime (local/
 
 ---
 
-## 🎯 Ejercicios Propuestos
+## :fontawesome-solid-puzzle-piece: Ejercicios Propuestos
 
 A continuación se propone una serie de retos para profundizar en los conceptos fundamentales del lenguaje **Texto Estructurado (ST)** y la librería estándar IEC 61131-3.
 

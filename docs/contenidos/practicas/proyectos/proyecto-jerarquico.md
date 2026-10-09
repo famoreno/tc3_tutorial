@@ -1,1 +1,7 @@
---8<-- "includes/documento-en-construccion.md"
+---
+icon: fontawesome/solid/sitemap
+---
+
+# :fontawesome-solid-sitemap: Proyecto Jerárquico
+
+--8<-- "snippets/avisos.md:documento-en-construccion"

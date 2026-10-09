@@ -13,13 +13,13 @@ theme:
       primary: custom #002e5d #blue grey
       # accent: indigo
       toggle:
-        icon: material/weather-night
+        icon: fontawesome/solid/moon
         name: Modo oscuro
     - scheme: slate
       primary: custom #002e5d  #blue grey
       # accent: indigo
       toggle:
-        icon: material/weather-sunny
+        icon: fontawesome/solid/sun
         name: Modo claro
 
   font:
@@ -37,40 +37,44 @@ theme:
     - content.code.copy
 
 nav:
-  - 🏠 Inicio: index.md
+    - ":fontawesome-solid-house: Inicio": index.md
 
-  - 🏛️ Fundamentos:
-      - ⚙️ TwinCAT: contenidos/fundamentos/twincat/index.md
-      - 🅰️ Lenguajes: contenidos/fundamentos/lenguajes/index.md
-      - ✏️ GRAFCET: contenidos/fundamentos/grafcet/index.md
-      - 🏗️ Arquitecturas: contenidos/fundamentos/arquitecturas/index.md
+    - ":fontawesome-solid-landmark: Fundamentos":
+      - ":fontawesome-solid-gears: TwinCAT": contenidos/fundamentos/twincat/index.md
+      - ":fontawesome-solid-language: Lenguajes": contenidos/fundamentos/lenguajes/index.md
+      - ":fontawesome-solid-diagram-project: GRAFCET": contenidos/fundamentos/grafcet/index.md
+      - ":fontawesome-solid-sitemap: Arquitecturas": contenidos/fundamentos/arquitecturas/index.md
       - ArduTC: contenidos/fundamentos/ardutc/index.md
 
-  - 🛠️ Procedimientos:
-      - 1️⃣ Crear un Proyecto: contenidos/procedimientos/workflow/index.md
-      - 🔤 Editar un Ladder: contenidos/procedimientos/ladder/index.md
-      - 🔤 Editar un SFC: contenidos/procedimientos/sfc/index.md
-      - 🖥️ Crear una Visualización:
-        - 📌 Intoducción: contenidos/procedimientos/hmi/index.md
-        - ⚡ TwinCAT 3 PLC-HMI: contenidos/procedimientos/hmi/tc3-plc-hmi.md
-        - 🌐 TwinCAT 3 HMI: contenidos/procedimientos/hmi/tc3-hmi.md
+    - ":fontawesome-solid-screwdriver-wrench: Procedimientos":
+      - ":fontawesome-solid-folder-plus: Crear un Proyecto": contenidos/procedimientos/workflow/index.md
+      - ":fontawesome-solid-network-wired: Editar un Ladder": contenidos/procedimientos/ladder/index.md
+      - ":fontawesome-solid-diagram-project: Editar un SFC": contenidos/procedimientos/sfc/index.md
+      - ":fontawesome-solid-display: Crear una Visualización":
+        - ":fontawesome-solid-circle-info: Intoducción": contenidos/procedimientos/hmi/index.md
+        - ":fontawesome-solid-bolt: TwinCAT 3 PLC-HMI": contenidos/procedimientos/hmi/tc3-plc-hmi.md
+        - ":fontawesome-solid-globe: TwinCAT 3 HMI": contenidos/procedimientos/hmi/tc3-hmi.md
 
-  - 🔬 Ejemplos:
-      - 👋 Hola Mundo: 
-          - 📝 Descripción: contenidos/ejemplos/hola-mundo/index.md
-          - 🛠️ Implementación: contenidos/ejemplos/hola-mundo/step-by-step.md
-      - 🛒 Carro Básico:
-          - 📝 Descripción: contenidos/ejemplos/carro-basico/index.md
-          - 🛠️ Implementación: contenidos/ejemplos/carro-basico/step-by-step.md
-      - 🚟 Carro Extendido: 
-          - 📝 Descripción: contenidos/ejemplos/carro-extendido/index.md
-          - 🛠️ Implementación: contenidos/ejemplos/carro-extendido/step-by-step.md
-  
-  - 📋 Prácticas:
-      - 🚦 Semáforo: contenidos/practicas/semaforo/index.md
-      - 🔲 Proyecto Monolítico: contenidos/practicas/proyectos/proyecto-monolitico.md
-      - 🗄️ Proyecto Estructurado: contenidos/practicas/proyectos/proyecto-estructurado.md
-      - 🧩 Proyecto Funcional: contenidos/practicas/proyectos/proyecto-funcional.md
+    - ":fontawesome-solid-flask: Ejemplos":
+      - ":fontawesome-solid-hand: Hola Mundo":
+        - ":fontawesome-solid-file-lines: Descripción": contenidos/ejemplos/hola-mundo/index.md
+        - ":fontawesome-solid-screwdriver-wrench: Implementación": contenidos/ejemplos/hola-mundo/step-by-step.md
+      - ":fontawesome-solid-cart-shopping: Carro Básico":
+        - ":fontawesome-solid-file-lines: Descripción": contenidos/ejemplos/carro-basico/index.md
+        - ":fontawesome-solid-screwdriver-wrench: Implementación": contenidos/ejemplos/carro-basico/step-by-step.md
+      - ":fontawesome-solid-cart-flatbed: Carro Extendido":
+        - ":fontawesome-solid-file-lines: Descripción": contenidos/ejemplos/carro-extendido/index.md
+        - ":fontawesome-solid-screwdriver-wrench: Implementación": contenidos/ejemplos/carro-extendido/step-by-step.md
+
+    - ":fontawesome-solid-list-check: Prácticas":
+      - ":fontawesome-solid-traffic-light: Semáforo": contenidos/practicas/semaforo/index.md
+      - ":fontawesome-solid-cube: Proyecto Monolítico": contenidos/practicas/proyectos/proyecto-monolitico.md
+      - ":fontawesome-solid-boxes-stacked: Proyecto Estructurado": contenidos/practicas/proyectos/proyecto-estructurado.md
+      - Proyecto Jerárquico: contenidos/practicas/proyectos/proyecto-jerarquico.md
+      - ":fontawesome-solid-puzzle-piece: Proyecto Funcional": contenidos/practicas/proyectos/proyecto-funcional.md
+
+hooks:
+  - hooks/nav_icons.py
 
 markdown_extensions:
   - admonition
@@ -81,7 +85,7 @@ markdown_extensions:
   - pymdownx.snippets:
       check_paths: true
       # base_path: !relative $docs_dir
-      base_path: ["docs"]
+      base_path: ["."]
   - pymdownx.details
   - pymdownx.superfences
   - pymdownx.highlight
@@ -101,6 +105,9 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      options:
+        custom_icons:
+          - overrides/.icons
 
 plugins:
   - search

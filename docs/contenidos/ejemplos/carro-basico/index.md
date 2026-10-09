@@ -1,6 +1,10 @@
-# 🛒 Carro Básico (TwinCAT 3)
+---
+title: Carro Básico - Descripción
+---
 
-## 📝 Descripción Funcional
+# :fontawesome-solid-cart-shopping: Carro Básico (TwinCAT 3)
+
+## :fontawesome-solid-file-lines: Descripción Funcional
 
 El proyecto **Carro Básico** resuelve el clásico problema de automatización conocido como **«el carro va y viene»**, que consiste en un móvil que se desplaza longitudinalmente entre los dos extremos (izquierdo y derecho) de un tramo de vía.
 
@@ -14,13 +18,13 @@ El proyecto **Carro Básico** resuelve el clásico problema de automatización c
 - Un par de **sensores finales de carrera** (izquierdo y derecho).
 
 ### Parte de Relación
- 
+
  Consiste en un panel de operador básico compuesto únicamente por:
 
 - Un **pulsador de marcha**, para iniciar el funcionamiento.
 - Una **lámpara de marcha**, para indicar el estado del sistema.
 
-## 🗣️ Descripción Funcional
+## :fontawesome-solid-circle-info: Descripción Funcional
 
 El funcionamiento básico del carro es como sigue.
 
@@ -30,7 +34,7 @@ El funcionamiento básico del carro es como sigue.
 
 **Condición inicial**: carro detenido sobre el final de carrera izquierda.
 
-## 🧩 Modalidades
+## :fontawesome-solid-layer-group: Modalidades
 
 El proyecto contempla diferentes variantes de complejidad progresiva.
 
@@ -39,7 +43,7 @@ El proyecto contempla diferentes variantes de complejidad progresiva.
 3.  **Carro limitado**. El carro realiza un determinado número de viajes consecutivos de ida y vuelta (tarea) cada vez que, estando en su posición inicial, se acciona el pulsador de marcha.
 4.  **Carro señalizado**. La lámpara de marcha se enciende de forma permanente para indicar que el carro está en funcionamiento y parpadea para indicar que el carro está en reposo.
 
-## ⇄ Entradas y Salidas
+## :fontawesome-solid-arrows-left-right: Entradas y Salidas
 
 | Nombre | Tipo | Origen | Descripción |
 | :--- | :--- | :--- | :--- |
@@ -52,7 +56,7 @@ El proyecto contempla diferentes variantes de complejidad progresiva.
 
 ---
 
-## 📐 Especificación Funcional
+## :fontawesome-solid-diagram-project: Especificación Funcional
 
 Las siguientes especificaciones funcionales describen el comportamiento del carro (lógica de control) de una manera precisa utilizando los **Diagramas de Relés y Contactos** y el lenguaje **GRAFCET**.
 
@@ -61,7 +65,7 @@ Las siguientes especificaciones funcionales describen el comportamiento del carr
 
 ---
 
-## 📂 Estructura Simplificada del Repositorio
+## :fontawesome-solid-folder-tree: Estructura Simplificada del Repositorio
 
 ```text
 TC3_Carro_Basico/
@@ -77,7 +81,7 @@ TC3_Carro_Basico/
 
 ---
 
-## 💻 Implementación
+## :fontawesome-solid-screwdriver-wrench: Implementación
 
 Se implementa el funcionamiento del carro va y viene (pulsado, temporizado, limitado y señalizado), a partir de sus especificaciones (diagrama de relés y diagrama grafcet) utilizando diferentes lenguajes de programación de la norma IEC 61131-3: *Diagrama Ladder* ({{LD}}), *Sequential Function Chart* ({{SFC}}) y *Structured Text* ({{ST}}).
 
@@ -86,7 +90,7 @@ Se implementa el funcionamiento del carro va y viene (pulsado, temporizado, limi
 
 ---
 
-## 📦 Código Fuente y Descarga
+## :fontawesome-solid-download: Código Fuente y Descarga
 
 El código fuente completo de este proyecto **Carro Básico**, está disponible en GitHub:
 
