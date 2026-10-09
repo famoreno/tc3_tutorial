@@ -4,7 +4,7 @@ title: Carro Básico - Guía de Implementación
 
 # 🛒 Carro Básico - Guía de Implementación
 
---8<-- "includes/documento-en-construccion.md"
+--8<-- "snippets/avisos.md:documento-en-construccion"
 
 ## 📋 Tarea
 
