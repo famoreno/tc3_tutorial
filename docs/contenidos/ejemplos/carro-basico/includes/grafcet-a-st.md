@@ -31,7 +31,7 @@
     END_VAR
     ```
 
-3. Escribir el código {{ST}} correspondiente al carro básico.
+3. Escribir el código <span class="fondo-azul-lang">ST</span> correspondiente al carro básico.
 
     ```iecst
     // FUNCION DE ESTADO

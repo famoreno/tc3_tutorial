@@ -8,11 +8,13 @@ title: Carro Básico - Guía de Implementación
 
 ## :fontawesome-solid-circle-info: Introducción
 
-Las **máquinas de estados** que representan el comportamiento (lógica de control) de un automatismo industrial puede representarse utilizando diversos «lenguajes» de especificación. Tradicionales como los **diagramas de relés y contactos** o más actuales como el lenguaje **GRAFCET**.
+Las **máquinas de estados** que representan el comportamiento (lógica de control) de un automatismo industrial pueden representarse utilizando diversos «lenguajes» de especificación. Tradicionales como los **diagramas de relés y contactos** o más actuales como el lenguaje **GRAFCET**.
 
 El comportamiento especificado en estos diagramas, finalmente debe codificarse en un determinado lenguaje de programación para ser procesado por un PLC.
 
-En esta guía se muestra como replicar paso a paso el [**«Carro Básico»**](../carro-basico/index.md) en todas sus modalidades (básico, pulsado, temporizado, computado y señalizado), para lo que será necersario:
+En esta guía se muestra como replicar paso a paso el [**«Carro Básico»**](../carro-basico/index.md) en todas sus modalidades (básico, pulsado, temporizado, computado y señalizado).
+
+A lo largo de este proceso se mostrará cómo:
 
 - Especificar una **máquina de estados** con el lenguaje **GRAFCET**.
 - Especificar una **máquina de estados** con **diagramas de relés y contactos**.
@@ -22,20 +24,22 @@ En esta guía se muestra como replicar paso a paso el [**«Carro Básico»**](..
 
 !!! tip "Sugerencia"
     Pulsa en ➡️ para obtener más información sobre cómo realizar el paso especificado.
+
 ---
 
 ## :fontawesome-solid-list-check: Especificación con GRAFCET
 
 ### Carro Básico
 
-El carro básico se desplaza longitudinalmente entre los extermos de una vía.
+> El carro básico se desplaza longitudinalmente entre los extermos de una vía.
 
 ![Carro Básico](./img/carro-basico-grf.svg){ width="200px" }
 
-- Inicialmente el carro se encuentra detenido en la izquerda.
-- Cuando se acciona el pulsador, se pone en marcha hacia la derecha.
-- Cuando alcanza el extermo derecho, invierte el sentido de la marcha.
-- Cuando alcanza el extremo izquierdo, se detiene.
+!!! note "Comentarios"
+    - Inicialmente el carro se encuentra detenido en la izquerda.
+    - Cuando se acciona el pulsador, se pone en marcha hacia la derecha.
+    - Cuando alcanza el extermo derecho, invierte el sentido de la marcha.
+    - Cuando alcanza el extremo izquierdo, se detiene.
 
 ??? info "Tabla de Variables"
 
@@ -53,37 +57,52 @@ El carro básico se desplaza longitudinalmente entre los extermos de una vía.
 
 ### Carro Pulsado
 
-El carro pulsado inicia su viaje de ida y vuelta, únicamente, cuando estando en su posición inicial se acciona el pulsador de marcha.
+> El carro pulsado inicia su viaje de ida y vuelta, únicamente, cuando estando en su posición inicial se acciona el pulsador de marcha.
 
 ![Carro Pulsado](./img/carro-pulsado-grf.svg){ width="200px" }
 
-- Se añade la detección del flanco positivo del pulsador de marcha, que se representa en GRAFCET con el símbolo `↑`.
+!!! note "Comentarios"
+    - El símbolo `↑` representa en el lenguaje **GRAFCET** el flanco ascendente de una variable lógica.
 
 ### Carro Temporizado
 
-El carro temporizado se detiene durante un determinado tiempo ($T_{espera}$) sobre el final de carrera derecha antes de iniciar el camino de regreso hacia su posición inicial.
+> El carro temporizado se detiene durante un determinado tiempo ($T_{espera}$) sobre el final de carrera derecha antes de iniciar el camino de regreso hacia su posición inicial.
 
 ![Carro Temporizado](./img/carro-temporizado-grf.svg){ width="200px" }
 
-- La expresión `(TE)/X2` es el símbolo **GRAFCET** (condición de transición dependiente del tiempo simplificada) utilizado para indicar que se esperará en la etapa `2` la cantidad de tiempo indicada por `TE`.
+!!! note "Comentarios"
+    - La expresión `(TE)/X2` es el símbolo **GRAFCET** (condición de transición dependiente del tiempo simplificada) utilizado para indicar que se esperará en la etapa `2` la cantidad de tiempo indicada por `TE`.
 
 ### Carro Computado
 
-El carro computado realiza un determinado número de viajes consecutivos de ida y vuelta (tarea) cada vez que, estando en su posición inicial, se acciona el pulsador de marcha.
+> El carro computado realiza un determinado número de viajes consecutivos de ida y vuelta (tarea) cada vez que, estando en su posición inicial, se acciona el pulsador de marcha.
 
 ??? info "Procesamiento por lotes"
-    Con el carro computado se introduce el concepto de trabajo por lotes. En el trabajo por lotes el sistema hace una tarea por cada activación del pulsador de marcha sin intervención del operario, por lo que es necesario llevar la cuenta de los viajes (maniobras) que realiza el carro.
+    Con el carro computado se introduce el concepto de *procesamiento por lotes*. En el trabajo por lotes el sistema hace una tarea por cada activación del pulsador de marcha sin intervención del operario, por lo que es necesario llevar la cuenta de los viajes (maniobras) que realiza el carro.
 
 ![Carro Computado](./img/carro-computado-grf.svg){ width="400px" }
 
-Para llevar esta cuenta en GRAFCET se acostumbra a distribuir esta funcionalidad entre la estructura y la interpretación.
+!!! note "Comentarios"
 
-- En la estructura se introduce una nueva etapa (`4`) y una rama alternativa (`4a`) con la que evaluar si se la tareas ha terminado.
-- En la interpretación se incluyen dos acciones memorizadas, una asociada a la activación de la etapa inicial (`S0`) para iniciar el contador de viajes pendientes y otra asociada a la entrada de la etapa final (`S4`) para actualizar el contador con cada maniobra finalizada.
+    Para llevar esta cuenta en **GRAFCET** se acostumbra a distribuir esta funcionalidad entre la estructura y la interpretación.
+
+    - En la **estructura** se introduce una nueva etapa (`4`) y una rama alternativa (`4a`) con la que evaluar si se la tareas ha terminado.
+    - En la **interpretación** se incluyen dos acciones memorizadas, una asociada a la activación de la etapa inicial (`S0`) para reiniciar el contador de viajes pendientes y otra asociada a la entrada de la etapa final (`S4`) para actualizar el contador con cada maniobra finalizada.
 
 ??? info "Contadores"
     Por razones históricas, en automatización se suele utilizar **cuentas regresivas**. En los antiguos sistemas electromecánicos y de electrónica discreta, comprobar si un contador había finalizado su tarea era drásticamente más simple y económico si se comparaba con el **cero absoluto**. Esta comparación requiere únicamente un contacto físico o una sola compuerta lógica (`NOR`), independientemente del valor de la cuenta.
     Esta lógica de diseño se heredada para optimizar el rendimiento en los procesadores de los PLC modernos, los cuales activan un indicador de estado (*Zero Flag*) al alcanzar el cero, evitando instrucciones de comparación adicionales y ofreciendo un control intrínsecamente más seguro ante desbordamientos.
+
+### Carro Señalizado
+
+> La lámpara de marcha se enciende de forma permanente para indicar que el carro está en funcionamiento y parpadea para indicar que el carro está en reposo.
+
+![Carro Señalizado](./img/carro-senalizado-grf.svg){ width="400px" }
+
+!!! note "Comentarios"
+
+    - La señal de salida `LM` se activa de forma intermitente mediante una acción condicionada a la señal oscilante `BLK`.
+    - La señal de salida `LM` se activa mediante una acción continua para que permanezca fija en el resto de las etapas.
 
 ---
 
@@ -93,9 +112,13 @@ Para llevar esta cuenta en GRAFCET se acostumbra a distribuir esta funcionalidad
 
 --8<-- "docs/contenidos/ejemplos/carro-basico/includes/grafcet-a-sfc.md"
 
+---
+
 ### GRAFCET a ST
 
 --8<-- "docs/contenidos/ejemplos/carro-basico/includes/grafcet-a-st.md"
+
+---
 
 ### GRAFCET a LD
 
@@ -108,3 +131,5 @@ Para llevar esta cuenta en GRAFCET se acostumbra a distribuir esta funcionalidad
 ### Diagramas de relés a LD
 
 --8<-- "docs/contenidos/ejemplos/carro-basico/includes/reles-a-ld.md"
+
+---
