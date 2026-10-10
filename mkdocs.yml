@@ -1,6 +1,9 @@
 site_name: Tutorial de TwinCAT 3
 site_url: https://famoreno.github.io/tc3_tutorial/
 
+exclude_docs: |
+  contenidos/ejemplos/carro-basico/includes/**
+
 theme:
   name: material
   language: es
@@ -43,6 +46,7 @@ nav:
       - ":fontawesome-solid-gears: TwinCAT": contenidos/fundamentos/twincat/index.md
       - ":fontawesome-solid-language: Lenguajes": contenidos/fundamentos/lenguajes/index.md
       - ":fontawesome-solid-diagram-project: GRAFCET": contenidos/fundamentos/grafcet/index.md
+      - ":fontawesome-solid-bolt: DRC": contenidos/fundamentos/reles-contactos/index.md
       - ":fontawesome-solid-sitemap: Arquitecturas": contenidos/fundamentos/arquitecturas/index.md
       - ArduTC: contenidos/fundamentos/ardutc/index.md
 

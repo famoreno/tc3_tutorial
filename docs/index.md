@@ -20,6 +20,8 @@ Bienvenido/a al tutorial de TwinCAT 3. Aquí encontrarás guías y material de a
     - Lenguajes de la norma IEC 61131-3: {{LD}}, {{ST}} y {{SFC}}
 - [GRAFCET](contenidos/fundamentos/grafcet/index.md) 🚧 *(En construcción)*
     - Lenguaje normalizado para la especificación de automatismos IEC 60848 (**GRAFCET**).
+- [Diagramas de Relés y Contactos (DRC)](contenidos/fundamentos/reles-contactos/index.md) 🚧 *(En construcción)*
+    - Representación cableada de la lógica de control mediante relés y contactos.
 - [Arquitecturas](contenidos/fundamentos/arquitecturas/index.md) 🚧 *(En construcción)*
     - Paradigmas de diseño de *software* para la automatización.
 - [ArduTC](contenidos/fundamentos/ardutc/index.md)
