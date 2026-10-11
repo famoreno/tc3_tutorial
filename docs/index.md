@@ -16,16 +16,16 @@ Bienvenido/a al tutorial de TwinCAT 3. Aquí encontrarás guías y material de a
 
 ---
 
-## :fontawesome-solid-landmark: Fundamentos
+## :fontawesome-solid-landmark: [Fundamentos](contenidos/fundamentos/index.md)
 
-- [TwinCAT 3](contenidos/fundamentos/twincat/index.md) 🚧 *(En construcción)*
+- [TwinCAT](contenidos/fundamentos/twincat/index.md) 🚧 *(En construcción)*
     - Introducción a TwinCAT XAE, entorno de programación de Beckhoff.
-- [Lenguajes de Implementación](contenidos/fundamentos/lenguajes/index.md) 🚧 *(En construcción)*
-    - Lenguajes de la norma IEC 61131-3: {{LD}}, {{ST}} y {{SFC}}
 - [GRAFCET](contenidos/fundamentos/grafcet/index.md) 🚧 *(En construcción)*
     - Lenguaje normalizado para la especificación de automatismos IEC 60848 (**GRAFCET**).
 - [Diagramas de Relés y Contactos (DRC)](contenidos/fundamentos/reles-contactos/index.md) 🚧 *(En construcción)*
     - Representación cableada de la lógica de control mediante relés y contactos.
+- [Lenguajes](contenidos/fundamentos/lenguajes/index.md) 🚧 *(En construcción)*
+    - Lenguajes de la norma IEC 61131-3: {{LD}}, {{ST}} y {{SFC}}
 - [Arquitecturas](contenidos/fundamentos/arquitecturas/index.md) 🚧 *(En construcción)*
     - Paradigmas de diseño de *software* para la automatización.
 - [ArduTC](contenidos/fundamentos/ardutc/index.md)
@@ -33,7 +33,7 @@ Bienvenido/a al tutorial de TwinCAT 3. Aquí encontrarás guías y material de a
 
 ---
 
-## :fontawesome-solid-screwdriver-wrench: Procedimientos
+## :fontawesome-solid-screwdriver-wrench: [Procedimientos](contenidos/procedimientos/index.md)
 
 - [Crear un Proyecto](contenidos/procedimientos/workflow/index.md)
     - Flujo de trabajo con TwiCAT 3 para el desarrollo de proyectos PLC.
@@ -41,12 +41,12 @@ Bienvenido/a al tutorial de TwinCAT 3. Aquí encontrarás guías y material de a
     - Cómo programar con el lenguaje *Ladder* ({{LD}}).
 - [Editar un SFC](contenidos/procedimientos/sfc/index.md) 🚧 *(En construcción)*
     - Cómo programar con Diagramas de Funciones Secuenciales ({{SFC}}).
-- [Crear una Visualización](contenidos/procedimientos/hmi/index.md) 🚧 *(En construcción)*
+- [Crear un HMI](contenidos/procedimientos/hmi/index.md) 🚧 *(En construcción)*
     - Cómo crear **Interfaces Hombre-Máquina** con `TwinCAT 3`.
 
 ---
 
-## :fontawesome-solid-flask: Ejemplos
+## :fontawesome-solid-flask: [Ejemplos](contenidos/ejemplos/index.md)
 
 - [Hola Mundo](contenidos/ejemplos/hola-mundo/index.md)
     - El «hola mundo» de la automatización industrial.
@@ -57,7 +57,7 @@ Bienvenido/a al tutorial de TwinCAT 3. Aquí encontrarás guías y material de a
 
 ---
 
-## :fontawesome-solid-list-check: Prácticas
+## :fontawesome-solid-list-check: [Prácticas](contenidos/practicas/index.md)
 
 - [Semáforo](contenidos/practicas/semaforo/index.md)
     - Implementación de máquinas de estado en {{LD}}, {{SFC}}, {{ST}}.

@@ -11,4 +11,4 @@ Guías paso a paso para configurar TwinCAT 3 y desarrollar proyectos de automati
 - [Crear un Proyecto](workflow/index.md)
 - [Editar un Ladder](ladder/index.md)
 - [Editar un SFC](sfc/index.md)
-- [Crear una Visualización](hmi/index.md)
+- [Crear un HMI](hmi/index.md)

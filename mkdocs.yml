@@ -4,6 +4,48 @@ site_url: https://famoreno.github.io/tc3_tutorial/
 exclude_docs: |
   contenidos/ejemplos/carro-basico/includes/**
 
+nav:
+    - Inicio: index.md
+
+    - Fundamentos:
+      - contenidos/fundamentos/index.md
+      - TwinCAT: contenidos/fundamentos/twincat/index.md
+      - GRAFCET: contenidos/fundamentos/grafcet/index.md
+      - DRC: contenidos/fundamentos/reles-contactos/index.md
+      - Lenguajes: contenidos/fundamentos/lenguajes/index.md
+      - Arquitecturas: contenidos/fundamentos/arquitecturas/index.md
+      - ArduTC: contenidos/fundamentos/ardutc/index.md
+
+    - Procedimientos:
+      - contenidos/procedimientos/index.md
+      - Crear un Proyecto: contenidos/procedimientos/workflow/index.md
+      - Editar un Ladder: contenidos/procedimientos/ladder/index.md
+      - Editar un SFC: contenidos/procedimientos/sfc/index.md
+      - Crear un HMI:
+        - contenidos/procedimientos/hmi/index.md
+        - TwinCAT 3 PLC-HMI: contenidos/procedimientos/hmi/tc3-plc-hmi.md
+        - TwinCAT 3 HMI: contenidos/procedimientos/hmi/tc3-hmi.md
+
+    - Ejemplos:
+      - contenidos/ejemplos/index.md
+      - Hola Mundo:
+        - contenidos/ejemplos/hola-mundo/index.md
+        - Implementación: contenidos/ejemplos/hola-mundo/step-by-step.md
+      - Carro Básico:
+        - contenidos/ejemplos/carro-basico/index.md
+        - Implementación: contenidos/ejemplos/carro-basico/step-by-step.md
+      - Carro Extendido:
+        - contenidos/ejemplos/carro-extendido/index.md
+        - Implementación: contenidos/ejemplos/carro-extendido/step-by-step.md
+
+    - Prácticas:
+      - contenidos/practicas/index.md
+      - Semáforo: contenidos/practicas/semaforo/index.md
+      - Proyecto Monolítico: contenidos/practicas/proyectos/proyecto-monolitico.md
+      - Proyecto Estructurado: contenidos/practicas/proyectos/proyecto-estructurado.md
+      - Proyecto Jerárquico: contenidos/practicas/proyectos/proyecto-jerarquico.md
+      - Proyecto Funcional: contenidos/practicas/proyectos/proyecto-funcional.md
+
 theme:
   name: material
   language: es
@@ -32,7 +74,7 @@ theme:
   features:
     - navigation.sections
     - navigation.indexes
-    - navigation.expand
+    # - navigation.expand
     - navigation.top
     - navigation.tracking
     - toc.follow
@@ -40,47 +82,14 @@ theme:
     - search.highlight
     - content.code.copy
 
-nav:
-    - Inicio: index.md
-
-    - Fundamentos:
-      - contenidos/fundamentos/index.md
-      - TwinCAT: contenidos/fundamentos/twincat/index.md
-      - GRAFCET: contenidos/fundamentos/grafcet/index.md
-      - DRC: contenidos/fundamentos/reles-contactos/index.md
-      - Lenguajes: contenidos/fundamentos/lenguajes/index.md
-      - Arquitecturas: contenidos/fundamentos/arquitecturas/index.md
-      - ArduTC: contenidos/fundamentos/ardutc/index.md
-
-    - Procedimientos:
-      - contenidos/procedimientos/index.md
-      - Crear un Proyecto: contenidos/procedimientos/workflow/index.md
-      - Editar un Ladder: contenidos/procedimientos/ladder/index.md
-      - Editar un SFC: contenidos/procedimientos/sfc/index.md
-      - Crear una Visualización:
-        - contenidos/procedimientos/hmi/index.md
-        - TwinCAT 3 PLC-HMI: contenidos/procedimientos/hmi/tc3-plc-hmi.md
-        - TwinCAT 3 HMI: contenidos/procedimientos/hmi/tc3-hmi.md
-
-    - Ejemplos:
-      - contenidos/ejemplos/index.md
-      - Hola Mundo:
-        - contenidos/ejemplos/hola-mundo/index.md
-        - Implementación: contenidos/ejemplos/hola-mundo/step-by-step.md
-      - Carro Básico:
-        - contenidos/ejemplos/carro-basico/index.md
-        - Implementación: contenidos/ejemplos/carro-basico/step-by-step.md
-      - Carro Extendido:
-        - contenidos/ejemplos/carro-extendido/index.md
-        - Implementación: contenidos/ejemplos/carro-extendido/step-by-step.md
-
-    - Prácticas:
-      - contenidos/practicas/index.md
-      - Semáforo: contenidos/practicas/semaforo/index.md
-      - Proyecto Monolítico: contenidos/practicas/proyectos/proyecto-monolitico.md
-      - Proyecto Estructurado: contenidos/practicas/proyectos/proyecto-estructurado.md
-      - Proyecto Jerárquico: contenidos/practicas/proyectos/proyecto-jerarquico.md
-      - Proyecto Funcional: contenidos/practicas/proyectos/proyecto-funcional.md
+plugins:
+  - search
+  - include-markdown
+  - git-revision-date-localized:
+      locale: es
+      type: date
+  - macros:
+      include_dir: docs
 
 markdown_extensions:
   - admonition
@@ -115,16 +124,6 @@ markdown_extensions:
         custom_icons:
           - overrides/.icons
 
-plugins:
-  - search
-  - include-markdown
-  - macros:
-      include_dir: docs
-
-extra:
-  social:
-
-
 extra_css:
   - assets/stylesheets/extra.css
 
@@ -132,3 +131,6 @@ extra_javascript:
   - assets/javascripts/ui-course.js
   - assets/javascripts/mathjax.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+extra:
+  social:
