@@ -31,6 +31,7 @@ theme:
 
   features:
     - navigation.sections
+    - navigation.indexes
     - navigation.expand
     - navigation.top
     - navigation.tracking
@@ -40,45 +41,46 @@ theme:
     - content.code.copy
 
 nav:
-    - ":fontawesome-solid-house: Inicio": index.md
+    - Inicio: index.md
 
-    - ":fontawesome-solid-landmark: Fundamentos":
-      - ":fontawesome-solid-gears: TwinCAT": contenidos/fundamentos/twincat/index.md
-      - ":fontawesome-solid-language: Lenguajes": contenidos/fundamentos/lenguajes/index.md
-      - ":fontawesome-solid-diagram-project: GRAFCET": contenidos/fundamentos/grafcet/index.md
-      - ":fontawesome-solid-bolt: DRC": contenidos/fundamentos/reles-contactos/index.md
-      - ":fontawesome-solid-sitemap: Arquitecturas": contenidos/fundamentos/arquitecturas/index.md
+    - Fundamentos:
+      - contenidos/fundamentos/index.md
+      - TwinCAT: contenidos/fundamentos/twincat/index.md
+      - GRAFCET: contenidos/fundamentos/grafcet/index.md
+      - DRC: contenidos/fundamentos/reles-contactos/index.md
+      - Lenguajes: contenidos/fundamentos/lenguajes/index.md
+      - Arquitecturas: contenidos/fundamentos/arquitecturas/index.md
       - ArduTC: contenidos/fundamentos/ardutc/index.md
 
-    - ":fontawesome-solid-screwdriver-wrench: Procedimientos":
-      - ":fontawesome-solid-folder-plus: Crear un Proyecto": contenidos/procedimientos/workflow/index.md
-      - ":fontawesome-solid-network-wired: Editar un Ladder": contenidos/procedimientos/ladder/index.md
-      - ":fontawesome-solid-diagram-project: Editar un SFC": contenidos/procedimientos/sfc/index.md
-      - ":fontawesome-solid-display: Crear una Visualización":
-        - ":fontawesome-solid-circle-info: Intoducción": contenidos/procedimientos/hmi/index.md
-        - ":fontawesome-solid-bolt: TwinCAT 3 PLC-HMI": contenidos/procedimientos/hmi/tc3-plc-hmi.md
-        - ":fontawesome-solid-globe: TwinCAT 3 HMI": contenidos/procedimientos/hmi/tc3-hmi.md
+    - Procedimientos:
+      - contenidos/procedimientos/index.md
+      - Crear un Proyecto: contenidos/procedimientos/workflow/index.md
+      - Editar un Ladder: contenidos/procedimientos/ladder/index.md
+      - Editar un SFC: contenidos/procedimientos/sfc/index.md
+      - Crear una Visualización:
+        - contenidos/procedimientos/hmi/index.md
+        - TwinCAT 3 PLC-HMI: contenidos/procedimientos/hmi/tc3-plc-hmi.md
+        - TwinCAT 3 HMI: contenidos/procedimientos/hmi/tc3-hmi.md
 
-    - ":fontawesome-solid-flask: Ejemplos":
-      - ":fontawesome-solid-hand: Hola Mundo":
-        - ":fontawesome-solid-file-lines: Descripción": contenidos/ejemplos/hola-mundo/index.md
-        - ":fontawesome-solid-screwdriver-wrench: Implementación": contenidos/ejemplos/hola-mundo/step-by-step.md
-      - ":fontawesome-solid-cart-shopping: Carro Básico":
-        - ":fontawesome-solid-file-lines: Descripción": contenidos/ejemplos/carro-basico/index.md
-        - ":fontawesome-solid-screwdriver-wrench: Implementación": contenidos/ejemplos/carro-basico/step-by-step.md
-      - ":fontawesome-solid-cart-flatbed: Carro Extendido":
-        - ":fontawesome-solid-file-lines: Descripción": contenidos/ejemplos/carro-extendido/index.md
-        - ":fontawesome-solid-screwdriver-wrench: Implementación": contenidos/ejemplos/carro-extendido/step-by-step.md
+    - Ejemplos:
+      - contenidos/ejemplos/index.md
+      - Hola Mundo:
+        - contenidos/ejemplos/hola-mundo/index.md
+        - Implementación: contenidos/ejemplos/hola-mundo/step-by-step.md
+      - Carro Básico:
+        - contenidos/ejemplos/carro-basico/index.md
+        - Implementación: contenidos/ejemplos/carro-basico/step-by-step.md
+      - Carro Extendido:
+        - contenidos/ejemplos/carro-extendido/index.md
+        - Implementación: contenidos/ejemplos/carro-extendido/step-by-step.md
 
-    - ":fontawesome-solid-list-check: Prácticas":
-      - ":fontawesome-solid-traffic-light: Semáforo": contenidos/practicas/semaforo/index.md
-      - ":fontawesome-solid-cube: Proyecto Monolítico": contenidos/practicas/proyectos/proyecto-monolitico.md
-      - ":fontawesome-solid-boxes-stacked: Proyecto Estructurado": contenidos/practicas/proyectos/proyecto-estructurado.md
+    - Prácticas:
+      - contenidos/practicas/index.md
+      - Semáforo: contenidos/practicas/semaforo/index.md
+      - Proyecto Monolítico: contenidos/practicas/proyectos/proyecto-monolitico.md
+      - Proyecto Estructurado: contenidos/practicas/proyectos/proyecto-estructurado.md
       - Proyecto Jerárquico: contenidos/practicas/proyectos/proyecto-jerarquico.md
-      - ":fontawesome-solid-puzzle-piece: Proyecto Funcional": contenidos/practicas/proyectos/proyecto-funcional.md
-
-hooks:
-  - hooks/nav_icons.py
+      - Proyecto Funcional: contenidos/practicas/proyectos/proyecto-funcional.md
 
 markdown_extensions:
   - admonition
@@ -121,8 +123,7 @@ plugins:
 
 extra:
   social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/famoreno/tc3_tutorial
+
 
 extra_css:
   - assets/stylesheets/extra.css

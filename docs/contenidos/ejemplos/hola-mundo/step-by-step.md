@@ -1,5 +1,6 @@
 ---
 title: Hola Mundo - Guía de Implementación
+icon: fontawesome/solid/screwdriver-wrench
 ---
 
 # :fontawesome-solid-screwdriver-wrench: Hola Mundo - Guía de Implementación

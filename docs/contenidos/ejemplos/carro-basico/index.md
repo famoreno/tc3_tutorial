@@ -1,5 +1,6 @@
 ---
 title: Carro Básico - Descripción
+icon: fontawesome/solid/cart-shopping
 ---
 
 # :fontawesome-solid-cart-shopping: Carro Básico (TwinCAT 3)

@@ -1,5 +1,6 @@
 ---
 title: Hola Mundo - Descripción
+icon: fontawesome/solid/hand
 ---
 
 # :fontawesome-solid-file-lines: Hola Mundo

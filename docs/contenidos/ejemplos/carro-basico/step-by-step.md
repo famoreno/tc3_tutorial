@@ -1,5 +1,6 @@
 ---
 title: Carro Básico - Guía de Implementación
+icon: fontawesome/solid/screwdriver-wrench
 ---
 
 # :fontawesome-solid-screwdriver-wrench: Carro Básico - Guía de Implementación
@@ -101,8 +102,8 @@ A lo largo de este proceso se mostrará cómo:
 
 !!! note "Comentarios"
 
-    - La señal de salida `LM` se activa de forma intermitente mediante una acción condicionada a la señal oscilante `BLK`.
-    - La señal de salida `LM` se activa mediante una acción continua para que permanezca fija en el resto de las etapas.
+    - La señal de salida `LM` se activa de forma intermitente mediante una **acción condicionada** a la señal oscilante `BLK`.
+    - La señal de salida `LM` se activa mediante una **acción continua** para que permanezca fija en el resto de las etapas.
 
 ---
 

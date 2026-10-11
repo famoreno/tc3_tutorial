@@ -1,3 +1,7 @@
+---
+icon: fontawesome/solid/house
+---
+
 # :fontawesome-solid-house: Tutorial de TwinCAT 3
 
 !!! warning "Sitio en Desarrollo Continuo"

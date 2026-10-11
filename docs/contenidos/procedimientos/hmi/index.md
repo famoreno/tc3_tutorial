@@ -1,3 +1,7 @@
+---
+icon: fontawesome/solid/display
+---
+
 # :fontawesome-solid-circle-info: Intoducción
 
 🖥️ Crear una Visualización

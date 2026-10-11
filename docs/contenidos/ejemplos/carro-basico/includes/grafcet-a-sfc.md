@@ -268,7 +268,7 @@
 
 1. Añadir la librería `Util` a las referencias (`References`) del proyecto.
 2. Añadir en la parte de declaración de `FB_Carro_GRF_SFC`:
-    - Una instancia del bloque funcional `BLINK` de la librería `Util`, que implementa una intermitencia.
+    - Una instancia `Intermitencia` del bloque funcional `BLINK` de la librería `Util`, que implementa una intermitencia.
 
     ```iecst {hl_lines="13"}
     FUNCTION_BLOCK FB_Carro_GRF_SFC
@@ -311,3 +311,5 @@
             ```
 
         - Incluir la acción `a_LamparaMarcha` en todas las etapas tal y como figura en el diagrama grafcet.
+
+4. Proceder como en la sección anterior para probar el programa desde la visualización.
