@@ -19,17 +19,17 @@ Bienvenido/a al tutorial de TwinCAT 3. Aquí encontrarás guías y material de a
 ## :fontawesome-solid-landmark: [Fundamentos](contenidos/fundamentos/index.md)
 
 - [TwinCAT](contenidos/fundamentos/twincat/index.md) 🚧 *(En construcción)*
-    - Introducción a TwinCAT XAE, entorno de programación de Beckhoff.
+    - Introducción a TwinCAT, plataforma software para la automatización industrial de Beckhoff.
 - [GRAFCET](contenidos/fundamentos/grafcet/index.md) 🚧 *(En construcción)*
-    - Lenguaje normalizado para la especificación de automatismos IEC 60848 (**GRAFCET**).
+    - Lenguaje normalizado para la especificación de automatismos (IEC 60848).
 - [Diagramas de Relés y Contactos (DRC)](contenidos/fundamentos/reles-contactos/index.md) 🚧 *(En construcción)*
     - Representación cableada de la lógica de control mediante relés y contactos.
 - [Lenguajes](contenidos/fundamentos/lenguajes/index.md) 🚧 *(En construcción)*
-    - Lenguajes de la norma IEC 61131-3: {{LD}}, {{ST}} y {{SFC}}
+    - Lenguajes de la norma IEC 61131-3 para la programación de PLC.
 - [Arquitecturas](contenidos/fundamentos/arquitecturas/index.md) 🚧 *(En construcción)*
     - Paradigmas de diseño de *software* para la automatización.
 - [ArduTC](contenidos/fundamentos/ardutc/index.md)
-    - Aplicación que «convierte» una placa microcontrolador en un terminal E/S para TwinCAT.
+    - Aplicación que «convierte» una placa microcontroladora en un terminal E/S para TwinCAT.
 
 ---
 

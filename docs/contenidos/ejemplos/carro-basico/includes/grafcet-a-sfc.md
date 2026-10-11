@@ -1,4 +1,4 @@
-#### Carro Básico (GRAFCET a SFC)
+#### Carro Básico
 
 1. Abrir la aplicación **TwinCAT XAE**. [➡️](../../procedimientos/workflow/index.md#abrir-twincat-xae)
 2. Crear una solución de TwinCAT 3 con nombre `TC3_Carro_Basico`. [➡️](../../procedimientos/workflow/index.md#crear-un-proyecto-twincat-3)
@@ -33,7 +33,7 @@
     END_VAR
     ```
 
-    ??? info "Variables de Entrada y Salida"
+    ??? info "Comentarios Declaración"
         - **Ocultamiento**: las variables de entrada y salida se declaran como **locales** (`VAR`) para ocultarlas, para protegerlas, para que no sean accesibles desde fuera del bloque funcional.
         - **Direccionamiento**: se declaran con el modificador `AT` para situarlas, según corresponda, en la **Imagen de Entrada** (`%I`) o en la **Imagen de Salida** (`%Q`). No se especifica la posición de memoria (`*`) para dejar que TwinCAT se encargue de asignarle una dirección. Cuando se construya el proyecto las instancias correspondientes a estas variables estarán disponibles en la sección `I/O` para ser vinculadas con las señales presentes en los canales de entrada y salida.
         - **Valor Inicial**: La variable `i_FinalCarreraIzquierda` se inicia a `TRUE`. Aunque sea totalmente innecesario e incluso contradictorio, ya que las variables de entrada tomarán en el primer ciclo el valor que le corresponda según la señal de entrada a la que estén vinculadas. Establecer el valor inicial de algunas variables de entrada puede ser conveniente, desde un punto de vista práctico, cuando se ejecuta el código sin *hardware* (UmRT_Default), ya que así, cada vez que se reinicie la ejecución no hay que escribir uno a uno el valor de las variables que forman parte de la condición inicial.
@@ -42,7 +42,7 @@
 
     ![FB_Carro_GRF_SFC Basico](./img/fb-carro-grf-sfc-basico.png){ width="400px" }
 
-    ??? info "Código SFC"
+    ??? info "Comentarios Código"
         - En la transición S0➔S1, `i_FinalCarreraIzquierda` es la **Condicion Inicial** y `i_PulsadorMarcha` es el evento que dispara la transición.
         - La **Condición Inicial** es la condición material (estado de los sensores) que se debe cumplir para iniciar la secuencia de funcionamiento con seguridad.
 
@@ -99,8 +99,7 @@
         - Conocer el valor de las variables de salida por su color de desactivación/activación.
         - Modificar el valor de las variables de entrada pulsando sobre el objeto gráfico.
 
-
-#### Carro Pulsado (GRAFCET a SFC)
+#### Carro Pulsado
 
 1. Añadir en la declaración de `FB_Carro_GRF_SFC`:
     - Una instancia del bloque funcional `R_TRIG` de la librería estándar (`Tc2_Standard`) para la detección del flanco positivo del pulsador de marcha.
@@ -132,7 +131,7 @@
 
     ![FB_Carro_GRF_SFC Pulsado](./img/fb-carro-grf-sfc-pulsado.png){ width="400px" }
 
-    !!! info "Código SFC"
+    !!! info "Comentarios Código"
         - Añadir a `FB_Carro_GRF_SFC` una acción `a_FlancoPulsadorMarcha_Evaluar` (ST), en la que se invoque la ejecución del detector de flanco `FlancoPulsadorMarcha`.
 
             ```iesst
@@ -144,7 +143,7 @@
 
 3. Poner el programa en ejecución y comprobar que no basta para iniciar la marcha con que el pulsador de marcha esté activado, sino que es necesario que se realice una acción de impulso.
 
-#### Carro Temporizado (GRAFCET a SFC)
+#### Carro Temporizado
 
 1. Añadir en la parte de declaración de `FB_Carro_GRF_SFC`:
     - Un parámetro de entrada `TiempoEspera` de tipo `TIME` en el bloque de declaración `VAR_INPUT`. Esto permitirá que este parámetro pueda ser modificado desde fuera del bloque funcional. Eventualmente, puede indicarse un valor inicial en su defecto (`T#2S`).
@@ -204,7 +203,7 @@
 
 4. Proceder como en la sección anterior para probar el programa desde la visualización.
 
-#### Carro Computado (GRAFCET a SFC)
+#### Carro Computado
 
 1. Añadir en la parte de declaración de `FB_Carro_GRF_SFC`:
     - Un parámetro entero de entrada `ManiobrasTotales` en el bloque de declaración `VAR_INPUT` para contener el valor del número total de maniobras deseadas. Eventualmente, puede indicarse un valor inicial en su defecto (`1`);
@@ -260,11 +259,11 @@
             ```
 3. Incluir en la visualización `V_Carro` un objeto gráfico que permita introducir el valor de las maniobras totales y otro que muestre las maniobras pendientes.
 
-    ![Visualizacion Carro Computado](./img/v-carro-computado.png){ width="400px" }
+    ![V_Carro Computado](./img/v-carro-computado.png){ width="400px" }
 
 4. Proceder como en la sección anterior para probar el programa desde la visualización.
 
-### Carro Señalizado (GRAFCET a SFC)
+#### Carro Señalizado
 
 1. Añadir la librería `Util` a las referencias (`References`) del proyecto.
 2. Añadir en la parte de declaración de `FB_Carro_GRF_SFC`:
@@ -281,11 +280,11 @@
         ManiobrasPendientes: UINT;
     END_VAR
     VAR
-    // Bloques Funcionales
-    FlancoPulsadorMarcha: R_TRIG;
-    Intermitencia: BLINK;
+        // Bloques Funcionales
+        FlancoPulsadorMarcha: R_TRIG;
+        Intermitencia: BLINK;
 
-    // Entradas
+        // Entradas
         i_PulsadorMarcha AT %I*: BOOL;
         i_FinalCarreraIzquierda AT %I*: BOOL := TRUE;
         i_FinalCarreraDerecha AT %I*: BOOL;

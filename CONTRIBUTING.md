@@ -127,3 +127,8 @@ Para insertar pequeños iconos de la interfaz o símbolos de TwinCAT dentro de u
     ```
 
   ---
+
+### Iconos
+
+- Font Awesome solid para navegación y conceptos
+- Simple Icons, para marcas

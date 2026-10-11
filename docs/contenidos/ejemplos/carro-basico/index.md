@@ -95,11 +95,11 @@ Se implementa el funcionamiento del carro va y viene (pulsado, temporizado, limi
 
 El código fuente completo de este proyecto **Carro Básico**, está disponible en GitHub:
 
-- :material-github: **GitHub:** [`vetorres-uma/TC3_Carro_Basico`](https://github.com/vetorres-uma/TC3_Carro_Basico)
-- :material-github: **GitHub:** [:material-download: Descarga directa `.zip`](https://github.com/vetorres-uma/TC3_Carro_Basico/archive/refs/heads/main.zip)
+- :simple-github: **GitHub:** [`vetorres-uma/TC3_Carro_Basico`](https://github.com/vetorres-uma/TC3_Carro_Basico)
+- :simple-github: **GitHub:** [:material-download: Descarga directa `.zip`](https://github.com/vetorres-uma/TC3_Carro_Basico/archive/refs/heads/main.zip)
 
 También puede descargarse el archivo comprimido de la solución (tnzip) del proyecto desde el siguiente repositorio:
 
-- :material-google-drive: **Google Drive:** [:material-download: Descargar `.tnzip`](https://drive.google.com/file/d/1-Gh4Smocq3HyR27G86v25gKdr8F6hRN4/view?usp=drive_link)
+- :simple-googledrive: **Google Drive:** [:material-download: Descargar `.tnzip`](https://drive.google.com/file/d/1-Gh4Smocq3HyR27G86v25gKdr8F6hRN4/view?usp=drive_link)
 
 ---

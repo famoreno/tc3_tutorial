@@ -1,15 +1,19 @@
-#### Carro Básico (GRAFCET a LD)
+#### Carro Básico
 
 --8<-- "snippets/avisos.md:seccion-en-construccion"
 
-#### Carro Pulsado (GRAFCET a LD)
+#### Carro Pulsado
 
 --8<-- "snippets/avisos.md:seccion-en-construccion"
 
-#### Carro Temporizado (GRAFCET a LD)
+#### Carro Temporizado
 
 --8<-- "snippets/avisos.md:seccion-en-construccion"
 
-#### Carro Computado (GRAFCET a LD)
+#### Carro Computado
+
+--8<-- "snippets/avisos.md:seccion-en-construccion"
+
+#### Carro Señalizado
 
 --8<-- "snippets/avisos.md:seccion-en-construccion"

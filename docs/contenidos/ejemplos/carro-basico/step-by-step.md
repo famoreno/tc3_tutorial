@@ -131,6 +131,6 @@ A lo largo de este proceso se mostrará cómo:
 
 ### Diagramas de relés a LD
 
---8<-- "docs/contenidos/ejemplos/carro-basico/includes/reles-a-ld.md"
+--8<-- "docs/contenidos/ejemplos/carro-basico/includes/drc-a-ld.md"
 
 ---

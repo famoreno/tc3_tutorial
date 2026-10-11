@@ -153,6 +153,29 @@
   padding-left: 0.7rem;
 }
 
+/* Navegación anterior/siguiente */
+.md-footer__inner {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.md-footer__link {
+  margin-top: 0.25rem;
+  margin-bottom: 0.1rem;
+}
+
+.md-footer__title {
+  font-size: 0.6rem;
+  margin-bottom: 0.1rem;
+}
+
+.md-footer__button {
+  margin-top: 0.1rem;
+  margin-bottom: 0.1rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+}
+
 /* Colores RGBA porque necesitamos opacidad */
 /* Nivel 1 */
 .md-nav--secondary > .md-nav__list >

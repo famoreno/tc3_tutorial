@@ -1,13 +1,16 @@
-#### Carro Básico (GRAFCET a ST)
+#### Carro Básico
 
-1. Añadir al proyecto un nuevo bloque funcional (`FB`) al proyecto `Carro_Basico_PLC`. [➡️](../../procedimientos/workflow/index.md#crear-una-pou)
+!!! tip "Punto de Partida"
+    Esta sección continúa el trabajo de la lección anterior, por lo que aprovecharemos la estructura existente para integrar en ella la implementación en ST.
+
+1. Crear una nueva POU. [➡️](../../procedimientos/workflow/index.md#crear-una-pou)
 
     !!! warning "Parámetros POU"
-        - Nombre ➔ `FB_Carro_GRF_ST`
-        - Type ➔ `Function Block`
-        - Implementation Language ➔ `Structured Text`
+        - *Nombre* ➔ `FB_Carro_GRF_ST`
+        - *Type* ➔ `Function Block`
+        - *Implementation Language* ➔ `Structured Text`
 
-2. Copiar el bloque de declaración de variables locales (`VAR`) del FB anterior (`FB_Carro_GRF_SFC`), añadiendo una variable entera `Estado` para contener el valor del estado actual.
+2. Cómo en la sección anterior, declarar todas las variables de entrada/salida del sistema en `FB_Carro_GRF_ST` como variables locales (`VAR_LOCAL`), e incluir una entera `Estado` para contener el valor del estado actual. [➡️](../../procedimientos/workflow/index.md#declarar-una-variable)
 
     ```iecst {hl_lines="8"}
     FUNCTION_BLOCK FB_Carro_GRF_ST
@@ -30,6 +33,10 @@
         o_LamparaMarcha AT %Q*: BOOL;
     END_VAR
     ```
+
+    ??? info "Comentarios Declaración"
+        - A diferencia de <span class="fondo-rojo-lang">SFC</span>, que gestiona las etapas de forma implícita mediante su propia sintaxis gráfica, en <span class="fondo-azul-lang">ST</span> es necesario declarar una variable numérica explícita para registrar el **estado activo** del sistema.
+        - Esta forma de gestionar el estado es válida únicamente para máquinas de **estado concentrado**, en las que toda la actividad del sistema reside en una única etapa en cada instante.
 
 3. Escribir el código <span class="fondo-azul-lang">ST</span> correspondiente al carro básico.
 
@@ -55,7 +62,7 @@
     o_MarchaIzquierda := (Estado = 2);
     ```
 
-    ??? info "Implementación FB_Carro_GRF_ST"
+    ??? info "Comentarios Código"
         - La estructura de selección múltiple `CASE`, permite evaluar elegantemente la función de transición entre estados expresada en el diagrama grafcet. Así, dependiendo del estado en el que se encuentre el sistemas ([0, 1, 2]) y los eventos de entrada (`i_FinalCarreraDerecha`, `i_FinalCarreraIzquierda`,... ) se calcula el nuevo estado asignando un nuevo valor a la variable Estado.
         - Las salidas se calculan, tal y como se especifica en el diagrama grafcet, a partir del estado (**Salidas Continuas**).
 
@@ -69,15 +76,14 @@
     END_VAR
     ```
 
-    ??? info "Implementación MAIN"
+    ??? info "Comentarios a MAIN"
         Al compartir ambos bloques funcionales las mismas variables de entrada y salida:
 
         - No es necesario volver a activar la configuración.
         - Las rutas de los enlaces de los objetos gráficos con las variables son los mismos.
 
-5. Repetir los pasos 10 a 16 de la sección anterior.
-6. Probar el programa desde la visualización accionando las entradas.
-7. Cambiar la declaración de la variable Estación a tipo enumerado implícito/local.
+5. Probar el programa desde la visualización accionando las entradas.
+6. Cambiar la declaración de la variable Estación a tipo enumerado implícito/local.
 
     ```iecst {hl_lines="8"}
     FUNCTION_BLOCK FB_Carro_GRF_ST
@@ -101,9 +107,9 @@
     END_VAR
     ```
 
-8. Modificar la implementación sustituyendo los valores numéricos del estado por las etiquetas del tipo enumerado.
+7. Modificar la implementación sustituyendo los valores numéricos del estado por las etiquetas del tipo enumerado.
 
-    ```iecst
+    ```iecst {hl_lines="3-14 18-19"}
     // FUNCION DE ESTADO
     CASE Estado OF
         E_REPOSO:
@@ -128,10 +134,11 @@
     ??? Info "Enumerados"
         - Puede observarse la evidente mejora semántica que produce la utilización de enumerados. No es lo mismo referirse a los distintos estados con un simple número (que no dice nada) que con una etiqueta descriptiva.
         - La utilización de enumerados hace innecesairo el uso de comentarios para aclarar el significado de los estados.
+        - En estos casos, la utilización de enumerados se considera una buena práctica de código limpio.
 
-#### Carro Pulsado (GRAFCET a ST)
+#### Carro Pulsado
 
-1. Añadir en `FB_Carro_GRF_ST` la declaración de una instancia del bloque funcional `R_TRIG` de la librería estándar (`Tc2_Standard`) para la detección del flanco positivo del pulsador de marcha.
+1. Añadir en la declaración de `FB_Carro_GRF_ST` una instancia del bloque funcional `R_TRIG` de la librería estándar (`Tc2_Standard`) para la detección del flanco positivo del pulsador de marcha.
 
     ```iecst {hl_lines="10-11"}
     FUNCTION_BLOCK FB_Carro_GRF_ST
@@ -158,7 +165,7 @@
     END_VAR
     ```
 
-2. Modifica en la parte de implementación de `FB_Carro_GRF_ST` el código:
+2. Modifica el código, en la parte de implementación de `FB_Carro_GRF_ST`:
     - Añadir la instrucción correspondiente a la invocación del detector de flanco `FlancoPulsadorMarcha(CLK := i_PulsadorMarcha)`.
     - Sustituir en la expresión de la condición de transición de la etapa `E_REPOSO` ➔ `E_MARCHA_DERECHA`, `PulsadorMarcha` por la salida de la instancia del bloque funcional que detecta los flancos positivos en la variable (`FlancoPulsadorMarcha.Q`).
 
@@ -187,22 +194,11 @@
     o_MarchaIzquierda := (Estado = E_MARCHA_IZQUIERDA);
     ```
 
-3. Modificar, una vez más, el programa principal `MAIN` para que la instancia que se invoque ejecute el código de `FB_Carro_GRF_ST`, dejando sin comentar la acción correspondiente.
+3. Poner el programa en ejecución y comprobar que no basta para iniciar la marcha con que el pulsador de marcha esté activado, sino que es necesario que se realice una acción de impulso.
 
-    ```iecst {hl_lines="4"}
-    PROGRAM MAIN
-    VAR
-        // Carro: FB_Carro_GRF_SFC;
-        Carro: FB_Carro_GRF_ST;
-        // Carro: FB_Carro_GRF_LD;
-    END_VAR
-    ```
+#### Carro Temporizado
 
-4. Poner el programa en ejecución y comprobar que no basta para iniciar la marcha con que el pulsador de marcha esté activado, sino que es necesario que se realice una acción de impulso.
-
-#### Carro Temporizado (GRAFCET a ST)
-
-1. Añadir en `FB_Carro_GRF_ST` la declaración:
+1. Añadir en la parte de declaración del `FB_Carro_GRF_ST`:
     - Un parámetro de entrada `TiempoEspera` de tipo `TIME` en el bloque de declaración `VAR_INPUT`. Esto permitirá que este parámetro pueda ser modificado desde fuera del bloque funcional. Eventualmente, puede indicarse un valor inicial en su defecto (`T#2S`).
     - Un parámetro de salida `TiempoPendiente` en el bloque de declaración `VAR_OUTPUT` para informar del tiempo de espera pendiente.
     - Una nueva etiqueta `E_ESPERA` correspondiente al estado de espera.
@@ -236,10 +232,13 @@
     END_VAR
     ```
 
-2. Modificar en la parte de implementación de `FB_Carro_GRF_ST` el código:
+??? info "Comentarios Código"
+        - A diferencia de <span class="fondo-rojo-lang">SFC</span>, que gestiona automáticamene el tiempo que lleva activa una determinada etapa (`.t`), en <span class="fondo-azul-lang">ST</span> es necesario implentar esta temporización de forma explícita por ejemplo, mediante una instancia de un temporizador.
+
+1. Modificar el código, en la parte de implementación de `FB_Carro_GRF_ST`:
     - Añadir la llamada a TemporizadorEspera.
-    - Modificar el estado futuro (E_MARCHA_IZQUIERDA ➔ E_ESPERA) de E_MARCHA_DERECHA
-    - Incluir el fragmento de código correspondiente al estado E_ESPERA.
+    - Modificar el estado futuro de `E_MARCHA_DERECHA`, antes `E_MARCHA_IZQUIERDA`, ahora `E_ESPERA`.
+    - Incluir el fragmento de código correspondiente al estado `E_ESPERA`.
 
     ```iecst {hl_lines="2 15 17-25"}
     // BLOQUES FUNCIONALES
@@ -278,8 +277,12 @@
     o_MarchaIzquierda := (Estado = E_MARCHA_IZQUIERDA);
     ```
 
-3. Proceder como en la sección anterior probar el programa desde la visualización.
+2. Proceder como en la sección anterior probar el programa desde la visualización.
 
----
+#### Carro Computado
 
-#### Carro Computado (GRAFCET a ST)
+--8<-- "snippets/avisos.md:seccion-en-construccion"
+
+#### Carro Señalizado
+
+--8<-- "snippets/avisos.md:seccion-en-construccion"
