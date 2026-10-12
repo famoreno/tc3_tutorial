@@ -13,7 +13,7 @@ El proyecto **Hola Mundo** se ha desarrollado en el entorno **TwinCAT 3** emplea
 
 **Hola Mundo** es un proyecto mínimo y funcional, que muestra la declaración y el uso básico de variables booleanas y enteras, ubicadas en los espacios de memoria de marcas, imagen de entrada e imagen de salida. Cubriendo los elementos esenciales de programación del lenguaje {{ST}} de la norma **IEC 61131-3** para la programación de PLC.
 
-![Visualización del proyecto Hola Mundo](./img/v-hola-mundo.png){ width="500px" }
+![Visualización del proyecto Hola Mundo](./img/v-hola-mundo.png){ .screenshot }
 <figcaption>Figura 1: Visualización del proyecto Hola Mundo.</figcaption>
 
 Este proyecto incluye además, una **visualización** elemental que permite, mediante objetos gráficos, interactuar con las variables del proyecto. Utilizando **formas rectangulares**, para mostrar el valor de variables booleanas y numéricas, y **botones** para modificar el valor de variables booleanas y numéricas.

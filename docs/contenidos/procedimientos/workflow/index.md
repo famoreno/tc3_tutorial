@@ -8,16 +8,16 @@ icon: fontawesome/solid/folder-plus
 
 - Buscar en el menú de inicio de Windows la aplicación **TwinCAT XAE Shell**.
 
-![Acceso a TwinCAT XAE desde el menú Inicio](./img/open-tc3-xae-start-menu.png){ width="400px" }
+![Acceso a TwinCAT XAE desde el menú Inicio](./img/open-tc3-xae-start-menu.png){ .screenshot }
 
 - También es accesible desde la barra de tareas (junto al reloj de Windows).
     - Hacer clic derecho en :material-mouse-right-click: **TwinCAT** y seleccionar **TwinCAT XAE (TcXAEShell)**.
 
-![Icono de TwinCAT XAE en la barra de tareas](./img/open-tc3-xae-taskbar.png){ width="300px" }
+![Icono de TwinCAT XAE en la barra de tareas](./img/open-tc3-xae-taskbar.png){ .screenshot }
 
 Tras cargar la aplicación se muestra la pantalla inicial de la aplicación.
 
-![Ventana principal de TwinCAT XAE](./img/tc3-xae-main-window.png){ width="600px" }
+![Ventana principal de TwinCAT XAE](./img/tc3-xae-main-window.png){ .screenshot }
 
 ## :fontawesome-solid-folder-plus: Crear un Proyecto TwinCAT 3
 
@@ -27,7 +27,7 @@ Tras cargar la aplicación se muestra la pantalla inicial de la aplicación.
 - En el menú de la aplicación: **File** > **New** > **Project**.
 - En la página de inicio: **Open** > **New Project** > **New TwinCAT Project...**.
 
- ![Selección del tipo de proyecto TwinCAT](./img/tc3-xae-new-project.png){ width="400px" }
+ ![Selección del tipo de proyecto TwinCAT](./img/tc3-xae-new-project.png){ .screenshot }
 
 ??? info "Parámetros"
     - **Name** = nombre del proyecto TwinCAT.
@@ -38,7 +38,7 @@ Tras cargar la aplicación se muestra la pantalla inicial de la aplicación.
 
  Se mostrará la nueva solución «vacía».
 
- ![Solución TwinCAT recién creada](./img/tc3-xae-empty-twincat-project.png){ width="600px" }
+ ![Solución TwinCAT recién creada](./img/tc3-xae-empty-twincat-project.png){ .screenshot }
 
 ### Ocultar Configuraciones
 
@@ -46,13 +46,13 @@ Para despejar el panel de exploración de la solución, ocultar las configuracio
 
 - Hacer clic derecho en :material-mouse-right-click: **[configuración]** y seleccionar **Hide [configuración] Configuration**.
 
-![Menú contextual para ocultar una configuración](./img/tc3-xae-hide-configuration-command.png){ width="200px" }
+![Menú contextual para ocultar una configuración](./img/tc3-xae-hide-configuration-command.png){ .screenshot }
 
 !!! note "Recomendación"
     - Ocultar las configuraciones que no se van a utilizar: `MOTION`, `SAFETY`, `C++`, `VISION`, `ANALYTICS`.
     - Mantener las configuraciones **SYSTEM**, **PLC** e **I/O**.
 
-![Configuraciones ocultas en el explorador de la solución](./img/tc3-xae-configuration-hidden.png){ width="300px" }
+![Configuraciones ocultas en el explorador de la solución](./img/tc3-xae-configuration-hidden.png){ .screenshot }
 
 ## :fontawesome-solid-microchip: Crear un Proyecto PLC
 
@@ -60,11 +60,11 @@ Para despejar el panel de exploración de la solución, ocultar las configuracio
 
     - Hacer clic derecho en :material-mouse-right-click: **PLC** > **Add New Item**.
 
-    ![Menú para añadir un elemento al proyecto PLC](./img/tc3-xae-plc-add-new-item.png){ width="200px" }
+    ![Menú para añadir un elemento al proyecto PLC](./img/tc3-xae-plc-add-new-item.png){ .screenshot }
 
 2. En la ventana emergente, seleccionar **Standard PLC Project**, asignarle un nombre al proyecto PLC y pulsar **Add**.
 
-    ![Ventana para crear un proyecto PLC](./img/tc3-xae-plc-add-new-item-window.png){ width="400px" }
+    ![Ventana para crear un proyecto PLC](./img/tc3-xae-plc-add-new-item-window.png){ .screenshot }
 
     ??? info "Proyecto Estándar"
         Al selecionar un proyecto PLC estándar se aplica una plantilla predeterminada que incluye:
@@ -76,7 +76,7 @@ Para despejar el panel de exploración de la solución, ocultar las configuracio
 
     Tras la creación, se muestra el nuevo proyecto PLC en el panel del explorador de la solución.
 
-    ![Proyecto PLC recién creado en el explorador](./img/tc3-xae-blank-plc-project.png){ width="300px" }
+    ![Proyecto PLC recién creado en el explorador](./img/tc3-xae-blank-plc-project.png){ .screenshot }
 
     ??? info "Descripción"
         - **Project** = código fuente estructurado bajo la norma IEC 61131-3.
@@ -84,7 +84,7 @@ Para despejar el panel de exploración de la solución, ocultar las configuracio
 
     Y si se despliega su contenido, se muestra la estructura de carpetas y nodos que contiene.
 
-    ![Árbol expandido del proyecto PLC](./img/tc3-xae-plc-project-expanded.png){ width="300px" }
+    ![Árbol expandido del proyecto PLC](./img/tc3-xae-plc-project-expanded.png){ .screenshot }
 
     ??? info "Descripción"
         - **External Types** = declaración de tipos de datos complejos e interfaces que provienen de bibliotecas externas.
@@ -101,11 +101,11 @@ Para despejar el panel de exploración de la solución, ocultar las configuracio
 
     - Hacer clic derecho en :material-mouse-right-click: **POUs** > **Add** > **POU...**.
 
-    ![Menú contextual para añadir un POU](./img/tc3-xae-add-pou-command.png){ width="400px" }
+    ![Menú contextual para añadir un POU](./img/tc3-xae-add-pou-command.png){ .screenshot }
 
 2. Cumplimentar los datos correspondientes en la ventana emergente **Add POU**.
 
-    ![Ventana de creación de un POU](./img/tc3-xae-add-pou-window.png){ width="300px" }
+    ![Ventana de creación de un POU](./img/tc3-xae-add-pou-window.png){ .screenshot }
 
     ??? info "Descripción"
         - **Name** = nombre del POU.
@@ -114,17 +114,17 @@ Para despejar el panel de exploración de la solución, ocultar las configuracio
 
 3. Se mostrará el nuevo POU «vacío».
 
-    ![Editor con un POU vacío](./img/tc3-xae-blank-sfc-fb.png){ width="500px" }
+    ![Editor con un POU vacío](./img/tc3-xae-blank-sfc-fb.png){ .screenshot }
 
 ## :fontawesome-solid-code: Implementar un POU
 
 Al desplegar **POUs** se muestra la lista de módulos de programación (programas, bloques funcionales y funciones) del proyecto.
 
-![Lista de POUs del proyecto](./img/tc3-xae-pou-list.png){ width="300px" }
+![Lista de POUs del proyecto](./img/tc3-xae-pou-list.png){ .screenshot }
 
 Hacer clic en **POUs** > **[POU]** para abrir su contenido.
 
-![Editor con un POU vacío](./img/tc3-xae-blank-sfc-fb.png){ width="500px" }
+![Editor con un POU vacío](./img/tc3-xae-blank-sfc-fb.png){ .screenshot }
 
 El contenido de un POU se muestra separado:
 
@@ -204,17 +204,17 @@ El proceso de despliegue abarca la secuencia desde la validación del código fu
     - `UmRT_Default`: runtime que se ejecuta en modo usuario sin capacidades de tiempo real.
 - Para seleccionarlo basta con elegirlo de la lista de runtimes disponibles en la barra de herramientas de TwinCAT.
 
-![Lista de sistemas destino TwinCAT](./img/tc3-xae-target-system-list.png){ width="200px" }
+![Lista de sistemas destino TwinCAT](./img/tc3-xae-target-system-list.png){ .screenshot }
 
 #### Activar Licencia
 
 - TwinCAT pone a disposición de aprendices y desarrolladores licencias de pruebas (*trial licenses*) que se solicitan cuando se intenta utilizar determinados servicios o funcionalidades.
 
-    ![Ventana para generar una licencia de prueba](./img/tc3-xae-generate-trial-licenses-window.png){ width="300px" }
+    ![Ventana para generar una licencia de prueba](./img/tc3-xae-generate-trial-licenses-window.png){ .screenshot }
 
 - Para activarlas se debe introducir el código de seguridad cuando sea solicitado.
 
-    ![Ventana para introducir el código de seguridad](./img/tc3-xae-enter-security-code-window.png){ width="300px" }
+    ![Ventana para introducir el código de seguridad](./img/tc3-xae-enter-security-code-window.png){ .screenshot }
 
 #### Crear una Ruta
 
@@ -224,59 +224,59 @@ Una ruta sirve básicamente para establecer una relación de confianza entre amb
 
 - Seleccionar en la lista de sistemas destino **Choose Target System...**.
 
-    ![Lista de sistemas destino](./img/lista-sistemas-destino.png){ width="200px" }
+    ![Lista de sistemas destino](./img/lista-sistemas-destino.png){ .screenshot }
 
 - En la ventana emergente **Choose Target System...**, pulsar **Search (Ethernet)...** para buscar sistemas TwinCAT en la red.
 
-    ![Ventana inicial para elegir el sistema destino](<./img/choose-target-system-window-initial.png>){ width="400px" }
+    ![Ventana inicial para elegir el sistema destino](<./img/choose-target-system-window-initial.png>){ .screenshot }
 
 - Pulsar Aceptar si aparece el aviso TcXaeShell indicando que para buscar sistemas remotos debe hacerse desde el sistema local.
 
-    ![Aviso para volver al sistema local antes de buscar rutas](./img/tcxaeshell-back-to-local.png){ width="300px" }
+    ![Aviso para volver al sistema local antes de buscar rutas](./img/tcxaeshell-back-to-local.png){ .screenshot }
 
 - En la ventana emergente **Select Adapter(s)**, seleccionar los dispositivos de red a través de los cuales se va a realizar la búsqueda y pulsar **OK**.
 
-    ![Selección de adaptadores de red](./img/select-adapter-window.png){ width="300px" }
+    ![Selección de adaptadores de red](./img/select-adapter-window.png){ .screenshot }
 
 - Si la ventana emergente **Add Remote Route** aparece reducida, seleccionar **Advanced Settings** para mostrar todas las opciones.
 
-    ![Ventana de ruta remota con opciones avanzadas](./img/add-remote-route-1.png){ width="400px" }
+    ![Ventana de ruta remota con opciones avanzadas](./img/add-remote-route-1.png){ .screenshot }
 
 - Con todas las opciones disponibles, seleccionar **IP Address** y pulsar **Broadcast Search...**.
 
-    ![Configuración de búsqueda de sistemas TwinCAT por difusión](./img/add-remote-route-2.png){ width="400px" }
+    ![Configuración de búsqueda de sistemas TwinCAT por difusión](./img/add-remote-route-2.png){ .screenshot }
 
 - Se actualizará la lista de dispositivos TwinCAT encontrados. Seleccionar el sistema destino y pulsar **Add Route...**.
 
-    ![Resultados de la búsqueda de sistemas TwinCAT](./img/add-remote-route-2.png){ width="400px" }
+    ![Resultados de la búsqueda de sistemas TwinCAT](./img/add-remote-route-2.png){ .screenshot }
 
 - A continuación se mostrará la ventana **Add Remote Route** para conectar con el sistema destino. Desmarcar la casilla **Secure ADS** si no se exige una conexión segura.
 
-    ![Credenciales para una ruta remota segura](./img/add-remote-route-credentials-secure.png){ width="400px" }
+    ![Credenciales para una ruta remota segura](./img/add-remote-route-credentials-secure.png){ .screenshot }
 
 - Introducir las credenciales de usuario y contraseña del |dispositivo seleccionado.
 
     ??? Info "credenciales"
         Con los ajustes de fábrica el usuario es `Administrator` y la contraseña `1`.
 
-    ![Credenciales para una ruta remota no segura](./img/add-remote-route-credentials-non-secure.png){ width="400px" }
+    ![Credenciales para una ruta remota no segura](./img/add-remote-route-credentials-non-secure.png){ .screenshot }
 
 - Si la ruta se crea correctamente, aparecerá una `x` en el campo **Connected**, junto al nombre del sistema destino (CX-840BD9), en la ventana **Add Remote Dialog**.
 
-    ![Ruta remota conectada en el diálogo](./img/add-remote-dialog-connected.png){ width="400px" }
+    ![Ruta remota conectada en el diálogo](./img/add-remote-dialog-connected.png){ .screenshot }
 
 - Tras cerrar la ventana **Add Remote Dialog** pulsando **Close**, seleccionar el sistema destino (CX-840BD9) en la lista y pulsar **OK**.
 
-    ![Ventana para confirmar el sistema destino seleccionado](<./img/choose-target-system-window-final.png>){ width="300px" }
+    ![Ventana para confirmar el sistema destino seleccionado](<./img/choose-target-system-window-final.png>){ .screenshot }
 
 - Pulsar **Sí** en la ventana emergente **TcXaeShell** para permitir que el compilador genere código compatible con la plataforma del sistema destino si difiere de la plataforma actual.
 
-    ![Confirmación para cambiar la plataforma de la solución](./img/tcxaeshell-change-solution-platform.png){ width="300px" }
+    ![Confirmación para cambiar la plataforma de la solución](./img/tcxaeshell-change-solution-platform.png){ .screenshot }
 
 !!! success "Resultado de la operación"
     Finalmente, nuevo sistema destino (CX-840BD9) y la versión de la plataforma (TwinCAT RT (x86)) aparecerán actualizados en la barra de botones de la aplicación.
 
-    ![Sistema destino y plataforma seleccionados en TwinCAT](./img/target-on-button-bar-zoom.png){ width="600px" }
+    ![Sistema destino y plataforma seleccionados en TwinCAT](./img/target-on-button-bar-zoom.png){ .screenshot }
 
 ### Configurar Entrada/Salida
 
@@ -287,44 +287,44 @@ Una ruta sirve básicamente para establecer una relación de confianza entre amb
 - Poner el sistema en modo configuración pulsando **Restart TwinCAT (Config Mode)** en la barra de TwinCAT o seleccionando **TwinCAT** > **Restart TwinCAT (Config Mode)**.
 - Buscar dispositivos en **I/O** > **Devices** del Explorador de la Solución y pulsar **Scan** en la barra de TwinCAT; alternativamente, hacer clic derecho en :material-mouse-right-click: **Device** > **Scan** o elegir **TwinCAT** > **Scan**.
 
-    ![Menú contextual para buscar dispositivos](./img/command-scan-popup.png){ width="200px" }
+    ![Menú contextual para buscar dispositivos](./img/command-scan-popup.png){ .screenshot }
 
     !!! success "Resultado de la operación"
         Tras unos instantes se mostrará la lista de dispositivos encontrados.
 
-        ![Lista de dispositivos encontrados en el escaneo](./img/io-devices-found.png){ width="400px" }
+        ![Lista de dispositivos encontrados en el escaneo](./img/io-devices-found.png){ .screenshot }
 
 - Seleccionar los dispositivos deseados (al menos el dispositivo `EtherCAT`) y pulsar **OK**.
 
     !!! success "Resultado de la operación"
         Los nuevos dispositivos aparecerán bajo **I/O** > **Devices** en el Explorador de la Solución.
 
-        ![Dispositivos EtherCAT en el árbol de E/S](./img/io-device-list.png){ width="300px" }
+        ![Dispositivos EtherCAT en el árbol de E/S](./img/io-device-list.png){ .screenshot }
 
 - Autorizar, en la ventana emergente, la búsqueda de terminales (*boxes*).
 
-    ![Confirmación para buscar terminales EtherCAT](./img/scan-for-boxes.png){ width="200px" }
+    ![Confirmación para buscar terminales EtherCAT](./img/scan-for-boxes.png){ .screenshot }
 
     !!! success "Resultado de la operación"
         Tras unos instantes, los nuevos terminales aparecerán bajo el dispositivo correspondiente.
 
-        ![Terminales detectados bajo el dispositivo EtherCAT](./img/io-boxes-list.png){ width="300px" }
+        ![Terminales detectados bajo el dispositivo EtherCAT](./img/io-boxes-list.png){ .screenshot }
 
 - Activar el modo Free Run pulsando **Sí**.
 
-    ![Confirmación para activar el modo Free Run](./img/activate-freerun.png){ width="200px" }
+    ![Confirmación para activar el modo Free Run](./img/activate-freerun.png){ .screenshot }
 
     ??? Info "Free Run"
         El modo Free Run es una función especial que permite leer el estado de las entradas y forzar o escribir valores en las salidas físicas sin necesidad de tener un programa (PLC) cargado o ejecutándose.
 
 - Deshabilitar los dispositivos que no se vayan a utilizar: hacer clic derecho en :material-mouse-right-click: **[dispositivo]** y seleccionar **Disable**.
 
-    ![Menú contextual para deshabilitar un dispositivo](./img/io-disable-device.png){ width="300px" }
+    ![Menú contextual para deshabilitar un dispositivo](./img/io-disable-device.png){ .screenshot }
 
     !!! success "Resultado de la operación"
         Los dispositivo deshabilitados quedan marcados.
 
-        ![Dispositivos deshabilitados en el árbol de E/S](./img/io-disabled-devices.png){ width="300px" }
+        ![Dispositivos deshabilitados en el árbol de E/S](./img/io-disabled-devices.png){ .screenshot }
 
 #### Identificar Entradas
 
@@ -333,7 +333,7 @@ Una ruta sirve básicamente para establecer una relación de confianza entre amb
 
 - Hacer **doble clic** sobre el primer **canal** del primer **terminal** de entrada (`EL1008`) situado bajo **acoplador de bus virtual** `EK1200`.
 
-    ![Canal de entrada del terminal EL1008](./img/io-el1008-input-channel.png){ width="300px" }
+    ![Canal de entrada del terminal EL1008](./img/io-el1008-input-channel.png){ .screenshot }
 
     ??? Info "Cabeceras de Bus"
         Una cabecera de bus, en el entorno Beckhoff, es cualqueir dispositivo, módulo físico o interfaz virtual, que actúa como punto de entrada, alimentación o pasarela de comunicación para un conjunto de terminales de entrada/salida subordinados.
@@ -345,15 +345,15 @@ Una ruta sirve básicamente para establecer una relación de confianza entre amb
 
 - Seleccionar la pestaña **Online**.
 
-    ![Pestaña Online del canal de entrada](./img/io-input-channel-online.png){ width="300px" }
+    ![Pestaña Online del canal de entrada](./img/io-input-channel-online.png){ .screenshot }
 
 - Localizar, consultando la tabla de entrada/salida en la descripción funcional del sistema el dispositivo conectado a ese canal (por ejemplo, el pulsador de marcha). Activarlo y verificar en la pantalla que cambia de valor la señal mostrada.
 
-    ![Canal de entrada activado en la vista Online](./img/io-input-channel-online-active.png){ width="300px" }
+    ![Canal de entrada activado en la vista Online](./img/io-input-channel-online-active.png){ .screenshot }
 
 - Si se reflejan los cambios en la pantalla, queda verificada la correspondencia entre el canal y el dispositivo. Nombrar el canal con el nombre del dispositivo en el campo **Name** de la pestaña **Variable**.
 
-    ![Nombre asignado al canal de entrada](./img/io-input-channel-variable.png){ width="300px" }
+    ![Nombre asignado al canal de entrada](./img/io-input-channel-variable.png){ .screenshot }
 
 !!! note "🔄 Repetir"
     Repetir este proceso de identificación para todos los canales de entrada digitales y analógicos conectados.
@@ -361,7 +361,7 @@ Una ruta sirve básicamente para establecer una relación de confianza entre amb
 !!! success "Resultado de la operación"
     Todos los canales de entrada del sistema nominados.
 
-    ![Canales del terminal EL1008 con nombre](./img/io-el1008-tagged.png){ width="300px" }
+    ![Canales del terminal EL1008 con nombre](./img/io-el1008-tagged.png){ .screenshot }
 
 #### Identificar Salidas
 
@@ -370,23 +370,23 @@ Una ruta sirve básicamente para establecer una relación de confianza entre amb
 
 - Hacer **doble clic** sobre el primer **canal** del primer **terminal** de salida (`EL2004`) situado bajo **acoplador de bus virtual** `EK1200`.
 
-    ![Canal de salida del terminal EL2008](./img/io-el2008-output-channel.png){ width="300px" }
+    ![Canal de salida del terminal EL2008](./img/io-el2008-output-channel.png){ .screenshot }
 
 - Seleccionar la pestaña **Online**.
 
-    ![Pestaña Online del canal de salida](./img/io-output-channel-online.png){ width="300px" }
+    ![Pestaña Online del canal de salida](./img/io-output-channel-online.png){ .screenshot }
 
 - Consultar la tabla de entrada/salida de la descripción funcional para identificar el dispositivo conectado al canal (por ejemplo, la lámpara de marcha). Activarla desde TwinCAT escribiendo `1` en **Set Value Dialog**, que aparece al pulsar **Write**.
 
-    ![Diálogo para escribir un valor en la salida](./img/io-set-value-dialog.png){ width="200px" }
+    ![Diálogo para escribir un valor en la salida](./img/io-set-value-dialog.png){ .screenshot }
 
 - ...y verificar que el dispositivo físico conectado cambia de valor cuando cambia el valor de la señal mostrada en la pantalla.
 
-    ![Canal de salida activado en la vista Online](./img/io-output-channel-online-active.png){ width="300px" }
+    ![Canal de salida activado en la vista Online](./img/io-output-channel-online-active.png){ .screenshot }
 
 - Si se reflejan los cambios en el dispositivo, queda verificada la correspondencia entre el canal y el dispositivo. Nombrar el canal con el nombre del dispositivo en el campo **Name** de la pestaña **Variable**.
 
-    ![Nombre asignado al canal de salida](./img/io-output-channel-variable.png){ width="300px" }
+    ![Nombre asignado al canal de salida](./img/io-output-channel-variable.png){ .screenshot }
 
 !!! note "🔄 Repetir"
     Repetir este proceso de identificación para todos los canales de salida digitales y analógicos conectados.
@@ -394,7 +394,7 @@ Una ruta sirve básicamente para establecer una relación de confianza entre amb
 !!! success "Resultado de la operación"
     Todos los canales de salida del sistema nominados.
 
-    ![Canales del terminal EL2008 con nombre](./img/io-el2008-tagged.png){ width="300px" }
+    ![Canales del terminal EL2008 con nombre](./img/io-el2008-tagged.png){ .screenshot }
 
 #### Vincular Variables
 
@@ -408,16 +408,16 @@ Una ruta sirve básicamente para establecer una relación de confianza entre amb
 
 - Hacer clic derecho en :material-mouse-right-click: **I/O** > **[canal]** > **Change Link...**. También se puede abrir su ventana con **doble clic** en **I/O** > **[canal]**, o pulsar **Linked to...** en **Variable**.
 
-    ![Canal de entrada con acceso a la variable enlazada](./img/io-input-channel-variable.png){ width="300px" }
+    ![Canal de entrada con acceso a la variable enlazada](./img/io-input-channel-variable.png){ .screenshot }
 
 - Seleccionar la variable deseada en la ventana **Attach Variable** y pulsar **OK**.
 
-    ![Selección de una variable para enlazar con el canal](./img/io-attach-variable-to-instance.png){ width="300px" }
+    ![Selección de una variable para enlazar con el canal](./img/io-attach-variable-to-instance.png){ .screenshot }
 
 !!! success "Resultado de la operación"
     El resultado de la vinculación aparece junto al botón **Linked to...** en la ventana del canal y cambia el símbolo asociado al canal y a la instancia de la variable ![Indicador de variable enlazada](./img/io-variable-linked-symbol.png){ .inline-icon }.
 
-    ![Canal de entrada enlazado a una variable](./img/io-input-channel-variable-linked.png){ width="300px" }
+    ![Canal de entrada enlazado a una variable](./img/io-input-channel-variable-linked.png){ .screenshot }
 
 !!! note "🔄 Repetir"
     Repetir este mismo proceso de vinculación para todas las señales de entrada/salida.
@@ -426,16 +426,16 @@ Una ruta sirve básicamente para establecer una relación de confianza entre amb
 
 - Hacer clic derecho en :material-mouse-right-click: **PLC** > **[proyecto]** > **Instance** > **[variable]** > **Change Link...**. También se puede abrir su ventana con **doble clic** sobre la variable, o pulsar **Linked to...** en **Variable**.
 
-    ![Instancia de variable en el proyecto PLC](./img/io-input-instance-variable.png){ width="300px" }
+    ![Instancia de variable en el proyecto PLC](./img/io-input-instance-variable.png){ .screenshot }
 
 - Seleccionar el canal deseado en la ventana **Attach Variable** y pulsar **OK**.
 
-    ![Selección de un canal para enlazar con la variable](./img/io-attach-variable-to-channel.png){ width="300px" }
+    ![Selección de un canal para enlazar con la variable](./img/io-attach-variable-to-channel.png){ .screenshot }
 
 !!! success "Resultado de la operación"
     El resultado de la vinculación aparece junto al botón **Linked to...** en la ventana de la instancia y cambia el símbolo asociado a la instancia de la variable y al canal ![Indicador de variable enlazada](./img/io-variable-linked-symbol.png){ .inline-icon }
 
-    ![Instancia de variable enlazada a un canal](./img/io-input-instance-variable-linked.png){ width="300px" }
+    ![Instancia de variable enlazada a un canal](./img/io-input-instance-variable-linked.png){ .screenshot }
 
 !!! note "🔄 Repetir"
     Repetir este mismo proceso de vinculación para todas las señales de entrada/salida.
@@ -446,11 +446,11 @@ Para activar el simulador (`UmRT_Default`), ejecutar el *script* `Start.bat`, qu
 
 - ++win+r++ > `C:\TwinCAT\3.1\Runtimes\UmRT_Default\Start.bat` > ++enter++
 
-    ![Cuadro Ejecutar de Windows con la ruta al simulador](./img/win-run-umrt-default.png){ width="200px" }
+    ![Cuadro Ejecutar de Windows con la ruta al simulador](./img/win-run-umrt-default.png){ .screenshot }
 
 - Se abrirá una ventana de terminal que debe permanecer abierta mientras usemos el simulador
 
-    ![Terminal del simulador UmRT_Default en ejecución](./img/win-umrt-default-terminal-window.png){ width="500px" }
+    ![Terminal del simulador UmRT_Default en ejecución](./img/win-umrt-default-terminal-window.png){ .screenshot }
 
 - Entre otros datos en la ventana de terminal del simulador aparecen los comandos del simulador y su dirección `AmsNetId`
 
@@ -470,7 +470,7 @@ Construir una solución o un proyecto (**Build**):
 - **Ámbito de Compilación:** Se puede construir o reconstruir la solución completa o solo uno de los proyectos de la solución.
 - **Modo de ejecución:** Desde el menú **Build** > **Build Solution** (o **Build** > **[Nombre del proyecto]**), o mediante ++ctrl+shift+b++.
 
-![Comando para compilar la solución TwinCAT](./img/tc3-xae-build-solution-command.png){ width="200px" }
+![Comando para compilar la solución TwinCAT](./img/tc3-xae-build-solution-command.png){ .screenshot }
 
 - El resultado (mensajes, avisos y errores) de la construcción se muestra en el panel de errores (*Error List*).
 
@@ -483,7 +483,7 @@ Activar la configuración (**Activate Configuration**):
 - **Cambio de Estado:** Conmuta el sistema operativo de tiempo real a modo **RUN** (indicado por el icono de TwinCAT en verde en la barra de tareas).
 - **Modo de ejecución:** Desde el menú **TwinCAT** > **Activate Configuration**, o pulsando **Activate Configuration** en la barra de herramientas.
 
-![Ventana de confirmación para activar la configuración](./img/tc3-xae-activate-configuration-window.png){ width="200px" }
+![Ventana de confirmación para activar la configuración](./img/tc3-xae-activate-configuration-window.png){ .screenshot }
 
 ??? info "Boot Project"
     El **Boot Project** (proyecto de arranque) es la copia ejecutable compilada que se guarda en el almacenamiento no volátil del sistema destino. Permite que TwinCAT cargue y arranque automáticamente el programa PLC al encender o reiniciar el equipo, sin conectarse desde el entorno de desarrollo (XAE).
@@ -495,7 +495,7 @@ Activar la configuración (**Activate Configuration**):
 - Si no se dispone de una licencia permanente, cada 7 días habrá que reactivar la licencia de prueba ... [➡️](#activar-licencia)
 - Finalmente, es necesario confirmar el reinicio del sistema destino en modo ejecución.
 
-![Ventana para confirmar el reinicio de TwinCAT en modo ejecución](./img/tc3-xae-restart-run-mode-window.png){ width="200px" }
+![Ventana para confirmar el reinicio de TwinCAT en modo ejecución](./img/tc3-xae-restart-run-mode-window.png){ .screenshot }
 
 ### Transferir el Proyecto
 
@@ -506,7 +506,7 @@ Transferir un proyecto PLC (**Login**):
 - **Generación de Boot Project:** Eventualmente se crea el proyecto de arranque (*Create Boot Project*) en el almacenamiento no volátil del sistema destino para garantizar que el programa se cargue automáticamente tras una pérdida de alimentación.
 - **Modo de ejecución:** Pulsar **Login** (atajo ++alt+f8++) en la barra de herramientas de TwinCAT PLC.
 
-![Solicitud para crear el puerto ADS durante el inicio de sesión](./img/tc3-xae-login-create-port-window.png){ width="200px" }
+![Solicitud para crear el puerto ADS durante el inicio de sesión](./img/tc3-xae-login-create-port-window.png){ .screenshot }
 
 ??? info
     - La primera vez que se realice **Login** sobre un nuevo sistema destino, TwinCAT solicitará la creación del puerto para las comunicaciones entre el entorno de programación (**XAE**) y el sistema de ejecución (**XAR**) del sistema destino.
@@ -524,7 +524,7 @@ Arrancar o poner en ejecución un proyecto (**Start**):
 
 - Tras pasar a modo ejecución, en el entorno de programación, el código se muestra en modo **Monitorización *Online***.
 
-    ![Código PLC con valores de variables en monitorización Online](./img/tc3-xae-monitoring-online.png){ width="500px" }
+    ![Código PLC con valores de variables en monitorización Online](./img/tc3-xae-monitoring-online.png){ .screenshot }
 
     !!! info
         El **Modo *Online*** o de **Monitorización *Online*** es el estado de conexión directa e interactiva entre el entorno de desarrollo (**TwinCAT XAE**) y el motor de tiempo real en ejecución (**TwinCAT XAR**/*Target System*).
@@ -555,12 +555,12 @@ Arrancar o poner en ejecución un proyecto (**Start**):
     !!! success "Resultado de la operación"
         Las variables que están forzadas se muestran con una F sobre fondo rojo ![Forzadp](./img/forced-value-icon.png){ .inline-icon }.
 
-        ![Variables forzadas](./img/tc3-xae-forced-values.png){ width="500px" }
+        ![Variables forzadas](./img/tc3-xae-forced-values.png){ .screenshot }
 
     - Para liberar una variable, seleccionar la opción del menú **PLC** > **Unforce values**, o pulsar el botón ![Liberar](./img/unforce-value-button.png){ .inline-icon } o simplemente pulsar ++ctrl+shift+f7++.
     - Para modificar el valor de forzado de una única variable, hacer doble clic en la celda correspondiente a la variable en la columna **Prepared value** y seleccionar lo que corresponda en la ventana.
 
-    ![Ventana para preparar el valor de una variable](./img/tc3-xae-prepare-value-window.png){ width="200px" }
+    ![Ventana para preparar el valor de una variable](./img/tc3-xae-prepare-value-window.png){ .screenshot }
 
 ---
 

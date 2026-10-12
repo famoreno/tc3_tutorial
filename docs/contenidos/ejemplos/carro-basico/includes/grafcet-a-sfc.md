@@ -40,8 +40,7 @@
 
 7. Escribir el código <span class="fondo-rojo-lang">SFC</span> correspondiente al carro básico.
 
-    ![FB_Carro_GRF_SFC Basico](./img/fb-carro-grf-sfc-basico.png){ width="400px" }
-
+    ![FB_Carro_GRF_SFC Basico](./img/fb-carro-grf-sfc-basico.png){ .screenshot }
     ??? info "Comentarios Código"
         - En la transición S0➔S1, `i_FinalCarreraIzquierda` es la **Condicion Inicial** y `i_PulsadorMarcha` es el evento que dispara la transición.
         - La **Condición Inicial** es la condición material (estado de los sensores) que se debe cumplir para iniciar la secuencia de funcionamiento con seguridad.
@@ -70,8 +69,7 @@
 16. Poner el programa de PLC en ejecución (**Run**). [➡️](../../procedimientos/workflow/index.md#arrancar-el-proyecto)
 17. Probar el programa forzando las variables de entrada en el modo de **Monitorización *Online***. [➡️](../../procedimientos/workflow/index.md#forzar-variables)
 
-    ![FB_Carro_GRF_SFC Basico Online](./img/fb-carro-grf-sfc-basico-online.png){ width="400px" }
-
+    ![FB_Carro_GRF_SFC Basico Online](./img/fb-carro-grf-sfc-basico-online.png){ .screenshot }
     ??? info "Monitorización Online"
         En el modo **Monitorización *Online*** se muestra:
 
@@ -80,8 +78,7 @@
 
 18. Crear una visualización mínima `V_Carro` que facilite la prueba.
 
-    ![V_Carro Basico](./img/v-carro-basico.png){ width="400px" }
-
+    ![V_Carro Basico](./img/v-carro-basico.png){ .screenshot }
     ??? info "Visualización"
         - La visualización debe disponer al menos de:
             -  Un elemento gráfico para modificar el valor de cada sensor.
@@ -91,9 +88,8 @@
 
 19. Probar el programa cambiando el valor de las entradas desde la visualización.
 
-    ![V_Carro Basico Online](./img/v-carro-basico-online.png){ width="400px" }
-
-    ??? info "Visualización* Online*"
+    ![V_Carro Basico Online](./img/v-carro-basico-online.png){ .screenshot }
+    ??? info "Visualización en línea"
         Con la visualización *Online* se puede:
 
         - Conocer el valor de las variables de salida por su color de desactivación/activación.
@@ -129,8 +125,7 @@
 
 2. Modificar el código de  `FB_Carro_GRF_SFC`
 
-    ![FB_Carro_GRF_SFC Pulsado](./img/fb-carro-grf-sfc-pulsado.png){ width="400px" }
-
+    ![FB_Carro_GRF_SFC Pulsado](./img/fb-carro-grf-sfc-pulsado.png){ .screenshot }
     !!! info "Comentarios Código"
         - Añadir a `FB_Carro_GRF_SFC` una acción `a_FlancoPulsadorMarcha_Evaluar` (ST), en la que se invoque la ejecución del detector de flanco `FlancoPulsadorMarcha`.
 
@@ -176,8 +171,7 @@
 
 2. Modificar el código de `FB_Carro_GRF_SFC`:
 
-    ![FB_Carro_GRF_SFC Temporizado](./img/fb-carro-grf-sfc-temporizado.png){ width="400px" }
-
+    ![FB_Carro_GRF_SFC Temporizado](./img/fb-carro-grf-sfc-temporizado.png){ .screenshot }
     !!! Info "Código SFC"
         - Añadir una nueva etapa (`S2`) para representar el estado de espera e incluir en su transición de salida la condición `S2.t > TiempoEspera`, equivalente a la condición de tiempo del diagrama grafcet `TE/X2`.
 
@@ -199,8 +193,7 @@
 
 3. Incluir en la visualización `V_Carro` un objeto gráfico que permita introducir el tiempo de espera deseado y otro que informe del tiempo pendiente.
 
-    ![V_Carro Temporizado](./img/v-carro-temporizado.png){ width="400px" }
-
+    ![V_Carro Temporizado](./img/v-carro-temporizado.png){ .screenshot }
 4. Proceder como en la sección anterior para probar el programa desde la visualización.
 
 #### Carro Computado
@@ -237,8 +230,7 @@
 
 2. Modificar el código:
 
-    ![FB_Carro_GRF_SFC Computado](./img/fb-carro-grf-sfc-computado.png){ width="400px" }
-
+    ![FB_Carro_GRF_SFC Computado](./img/fb-carro-grf-sfc-computado.png){ .screenshot }
     !!! info "Código SFC"
         - Incluir una nueva etapa (`S4`)al final de las secuencia para evaluar si terminó la tarea.
         - Incluir una rama alternativa con salto atrás a la primera etapa de la secuancia (`S1`).
@@ -259,8 +251,7 @@
             ```
 3. Incluir en la visualización `V_Carro` un objeto gráfico que permita introducir el valor de las maniobras totales y otro que muestre las maniobras pendientes.
 
-    ![V_Carro Computado](./img/v-carro-computado.png){ width="400px" }
-
+    ![V_Carro Computado](./img/v-carro-computado.png){ .screenshot }
 4. Proceder como en la sección anterior para probar el programa desde la visualización.
 
 #### Carro Señalizado
@@ -298,8 +289,7 @@
 
 3. Modificar el código:
 
-    ![FB_Carro_GRF_SFC Senalizado](./img/fb-carro-grf-sfc-senalizado.png){ width="400px" }
-
+    ![FB_Carro_GRF_SFC Senalizado](./img/fb-carro-grf-sfc-senalizado.png){ .screenshot }
     !!! info "Código SFC"
         - Incluir una acción `a_LamparaMarcha` para establecer el valor de `o_LamparaMarcha`, implementando tanto la acción condicionada a `BLK` en la etapa inicial (`SO`)como la acción continua en el resto de etapas.
 

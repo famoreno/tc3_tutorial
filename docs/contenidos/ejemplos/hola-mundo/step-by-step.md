@@ -102,8 +102,7 @@ En primer lugar vamos a implementar el proyecto (código y visualización) y eje
 
 19. Crear una visualización para monitorizar y actualizar el contador de ciclos. [➡️](../../procedimientos/hmi/index.md)
 
-    ![Visualización Hola Mundo con el contador de ciclos](./img/v-hola-mundo-contador.png){ width="660px" }
-
+    ![Visualización Hola Mundo con el contador de ciclos](./img/v-hola-mundo-contador.png){ .screenshot }
     1. Rectángulo (*Rectangle*) para la etiqueta **Contador**.
 
         ??? info "Parámetros"
@@ -172,8 +171,7 @@ En primer lugar vamos a implementar el proyecto (código y visualización) y eje
 
 24. Incluir en la visualización los elementos correspondientes al pulsador y la lámpara.
 
-    ![Visualización Hola Mundo con el pulsador y la lámpara](./img/v-hola-mundo.png){ width="688px" }
-
+    ![Visualización Hola Mundo con el pulsador y la lámpara](./img/v-hola-mundo.png){ .screenshot }
     1. Botón (*Button*) para modificar el valor de `i_Pulsador`.
 
         ??? info "Parámetros"

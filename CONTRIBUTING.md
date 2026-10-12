@@ -22,21 +22,29 @@ El tutorial divide el aprendizaje en cuatro pilares fundamentales:
 - **Nombres de archivos y carpetas:** Utilizar siempre minúsculas y guiones medios.
     - *Correcto:* `contenidos/ejemplos/carro-basico/step-by-step.md`
     - *Incorrecto:* `contenidos/ejemplos/carro_basico/step_by_step.md`
-- **Estructura de Ejemplos:** Cada subsección debe organizarse dentro de su propia carpeta:
-    - `index.md` ➔ Ficha técnica, descripción y especificación del problema.
-    - `step-by-step.md` ➔ Guía de desarrollo e implementación paso a paso.
-- **Imágenes:** Guardar en la subcarpeta `./img/` local en minusculas y separadas por guiones.
-    - *Ejemplo:* `![Configurar E/S](./img/io-attach-variable.png){ width="400px" }`
+- **Estructura de Contenidos:**
+    - `docs/index.md` ➔ Índice general del tutorial; sus secciones deben seguir la estructura y los nombres de `nav` en `mkdocs.yml`.
+    - `docs/contenidos/{fundamentos,procedimientos,ejemplos,practicas}/index.md` ➔ Portada e introducción de cada sección principal.
+    - `index.md` dentro de un tema o ejemplo ➔ Descripción, especificación y recursos del tema.
+    - `step-by-step.md` ➔ Guía de implementación paso a paso, cuando corresponda.
+    - `includes/` ➔ Fragmentos compartidos o incluidos en otras páginas; no son páginas independientes del sitio.
+- **Navegación:** Con `navigation.indexes`, la portada `index.md` debe ser el primer elemento de su sección en `mkdocs.yml`. El título del grupo enlaza a esa portada y no se debe repetir como hijo.
+- **Imágenes:** Guardar en la subcarpeta `./img/` local en minúsculas y separar las palabras con guiones.
+    - **Capturas de pantalla:** usar la clase `.screenshot`; conserva el tamaño original si cabe y reduce proporcionalmente la imagen cuando supera el 90 % del contenedor.
+    - **Otras imágenes:** usar `.image-centered` para centrarlas y mantener el ancho en píxeles indicado mediante `attr_list`.
+    - **Iconos inline:** usar `.inline-icon`, que mantiene un tamaño fijo adecuado para el texto.
+    - *Captura:* `![Ventana principal de TwinCAT XAE](./img/tc3-xae-main-window.png){ .screenshot }`
+    - *Otra imagen:* `![Esquema del proyecto](./img/esquema.png){ width="400px" .image-centered }`
 
 ---
 
 ## 🖱️ Interacciones de Interfaz y Ratón
 
-- **Clic izquierdo:** Usar **negrita** sin recargar con iconos.
+- **Clic izquierdo:** Escribir «hacer clic» y poner el control en **negrita**. Se entiende que es clic izquierdo salvo que se indique lo contrario; no añadir icono.
     - *Sintaxis:* Hacer clic en **Activate Configuration**.
-- **Clic derecho:** Usar el icono `:material-mouse-right-click:` o la acción explícita.
+- **Clic derecho:** Indicar la acción explícitamente y acompañarla, cuando ayude, con `:material-mouse-right-click:`.
     - *Sintaxis:* Hacer clic derecho en :material-mouse-right-click: **POUs** > **Add** > **POU...**
-- **Doble clic:** Indicar explícitamente en **negrita**.
+- **Doble clic:** Escribir «hacer doble clic» y poner el elemento en **negrita**. No hay un icono específico de doble clic en la colección Material configurada.
     - *Sintaxis:* Hacer doble clic en **MAIN (PRG)**.
 - **Rutas de menús:** Usar el separador `>` con elementos en **negrita**.
     - *Sintaxis:* **TwinCAT** > **Restart TwinCAT (Config Mode)**.
@@ -55,16 +63,26 @@ El tutorial divide el aprendizaje en cuatro pilares fundamentales:
 ## 💻 Nomenclatura Técnica (TwinCAT / IEC 61131-3)
 
 - **Variables y funciones:** Siempre en código en línea `` ` variable ` ``.
-    - *Ejemplo:* La variable `bStart` activa el temporizador `tonDelay`.
+    - *Ejemplo:* La variable `i_PulsadorMarcha` activa el temporizador `TemporizadorEspera`.
 - **Bloques de código:** Usar identificador `iecst` para código Structured Text.
 - **Rutas de árbol del proyecto:** Usar **negrita** y separadores `>`.
     - *Ejemplo:* **PLC** > **[Proyecto]** > **POUs** > **MAIN**.
 
 ---
 
+## 🔤 Abreviaturas Globales
+
+Las abreviaturas compartidas por todo el sitio se definen una sola vez en `snippets/abreviaturas.md`. `pymdownx.snippets` las añade automáticamente a cada documento mediante `auto_append` en `mkdocs.yml`; no hay que repetir las definiciones en las páginas.
+
+- **Sintaxis:** `*[PLC]: Controlador lógico programable.`
+- **Al añadir una sigla:** mantener la lista alfabética y usar una definición breve y clara.
+- **Al usarla:** escribir la sigla exactamente como aparece en la definición para que se muestre su descripción al pasar el cursor.
+
+---
+
 ## 🖼️ Imágenes y Capturas de Pantalla
 
-- **Ancho explícito:** Especificar siempre el ancho en píxeles mediante `{ width="400px" }` o unidades % para evitar desproporciones.
+- **Proporción:** No deformar las imágenes. La clase `.screenshot` conserva su proporción original automáticamente.
 - **Texto alternativo:** Incluir siempre un título descriptivo en el `alt` de la imagen.
     - *Sintaxis:* `![Pantalla de enlace de variables](./img/ejemplo.png){ width="500px" }`
 
@@ -111,7 +129,7 @@ Para insertar pequeños iconos de la interfaz o símbolos de TwinCAT dentro de u
 - **Ejemplo de uso:**
   En el árbol del proyecto, la variable vinculada mostrará el símbolo ![Indicador de variable enlazada](./img/io-variable-linked-symbol.png){ .inline-icon } justo a la izquierda del nombre.
 
-- **Configuración requerida en `docs/stylesheets/extra.css`:**
+- **Configuración requerida en `docs/assets/stylesheets/extra.css`:**
 
     ```css
         img.inline-icon {
@@ -126,9 +144,36 @@ Para insertar pequeños iconos de la interfaz o símbolos de TwinCAT dentro de u
         }
     ```
 
-  ---
+---
 
-### Iconos
+## Iconos
 
-- Font Awesome solid para navegación y conceptos
-- Simple Icons, para marcas
+- **Icono de una página:** declarar `icon:` en el frontmatter del Markdown, por ejemplo `icon: fontawesome/solid/screwdriver-wrench`. En las páginas índice, este icono también se usa en la entrada de navegación asociada.
+- **Títulos y conceptos:** usar iconos Font Awesome Solid con la sintaxis `:fontawesome-solid-screwdriver-wrench:`.
+- **Marcas y productos:** usar Simple Icons, por ejemplo `:simple-github:` o `:simple-googledrive:`.
+- **Acciones e iconos de interfaz:** usar Material Design Icons, por ejemplo `:material-download:` o `:material-mouse-right-click:`.
+- Evitar duplicar el icono de una página en el título de `nav` si ya procede de su frontmatter.
+
+---
+
+## ✅ Validación Local
+
+Antes de proponer cambios, activar el entorno virtual del proyecto y compilar la documentación desde la raíz del repositorio:
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+mkdocs build
+```
+
+Si la compilación falla, corregir los errores antes de enviar la contribución. Para revisar los cambios en el navegador, ejecutar `mkdocs serve` en la misma terminal donde se activó `.venv`.
+
+---
+
+## ☑️ Progreso en Listas de Tareas
+
+Las casillas Markdown (`- [ ]` / `- [x]`) son interactivas. `docs/assets/javascripts/tasklist.js` guarda su estado en `localStorage`, asociándolo a la ruta de la página y al texto de la tarea.
+
+- El progreso permanece en el mismo navegador, perfil y origen del sitio; no se sincroniza entre dispositivos ni se comparte mediante Git.
+- Si se cambia el texto de una tarea, puede dejar de coincidir con la marca guardada anteriormente. Al reordenar tareas con el mismo texto, se distinguen por su orden de aparición.
+- Para validar el comportamiento, marcar una casilla, recargar la página y comprobar que conserva su estado.
+- Borrar los datos locales del sitio en el navegador elimina también el progreso guardado.

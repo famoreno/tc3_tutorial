@@ -58,8 +58,7 @@ Para la realización de esta práctica es necesario disponer de los siguientes m
 - Un **montaje con tres leds (verde, amarillo, rojo)** y un **pulsador** conectados a los correspondientes pines de la placa microcontroladora.
 - Aplicación **ArduTC** instalada.
 
-![Montaje de semáforo con Arduino UNO y Sensor Shield V5](./img/03-semaforo-montaje-arduino-uno.jpeg){ width="300px" }
-
+![Montaje de semáforo con Arduino UNO y Sensor Shield V5](./img/03-semaforo-montaje-arduino-uno.jpeg){ width="300px" .image-centered }
 <figcaption>Figura 1: Montaje con Arduino UNO y una Sensor Shield V5.</figcaption>
 ---
 
@@ -100,8 +99,7 @@ A continuación, se detalla la secuencia de pasos necesarios para codificar, en 
 
 7. Escribir el **código** en {{SFC}} en la parte de implementación de `FB_Semaforo_SFC`.
 
-    ![Implementación SFC del bloque funcional FB_Semaforo_SFC](./img/01-fb-semaforo-sfc.png){ width="420px" }
-
+    ![Implementación SFC del bloque funcional FB_Semaforo_SFC](./img/01-fb-semaforo-sfc.png){ .screenshot }
 8. Declarar una **instancia** `Semaforo` del tipo `FB_Semaforo_SFC` en la parte de declaración del programa `MAIN`.
 
     ```iecst
@@ -134,8 +132,7 @@ A continuación, se detalla la secuencia de pasos necesarios para codificar, en 
 16. Poner el programa de PLC en ejecución (**Run**). [➡️](../../procedimientos/workflow/index.md#arrancar-el-proyecto)
 17. Observar en la ventana de monitorización de la instancia `Semaforo` de `FB_Semaforo_SFC` cómo evoluciona el {{SFC}}.
 
-    ![Monitorización en línea de la implementación SFC del semáforo](./img/02-fb-semaforo-sfc-online.png){ width="600px" }
-
+    ![Monitorización en línea de la implementación SFC del semáforo](./img/02-fb-semaforo-sfc-online.png){ .screenshot }
 ### Prueba con ArduTC
 
 Configuremos el proyecto para utilizar una placa microcontroladora, como **Arduino UNO**, como terminal de E/S mediante **ArduTC**.

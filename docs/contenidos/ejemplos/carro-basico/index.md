@@ -9,8 +9,7 @@ icon: fontawesome/solid/cart-shopping
 
 El proyecto **Carro Básico** resuelve el clásico problema de automatización conocido como **«el carro va y viene»**, que consiste en un móvil que se desplaza longitudinalmente entre los dos extremos (izquierdo y derecho) de un tramo de vía.
 
-![Esquemático del Carro Básico](./img/carro-basico-esquematico.png){ width="300px" }
-
+![Esquemático del Carro Básico](./img/carro-basico-esquematico.png){ width="300px" .image-centered }
 <figcaption>Figura 1: Representación Esquemática.</figcaption>
 
 ### Parte Operativa

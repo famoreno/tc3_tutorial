@@ -34,8 +34,7 @@ A lo largo de este proceso se mostrará cómo:
 
 > El carro básico se desplaza longitudinalmente entre los extermos de una vía.
 
-![Carro Básico](./img/carro-basico-grf.svg){ width="200px" }
-
+![Carro Básico](./img/carro-basico-grf.svg){ width="200px" .image-centered }
 !!! note "Comentarios"
     - Inicialmente el carro se encuentra detenido en la izquerda.
     - Cuando se acciona el pulsador, se pone en marcha hacia la derecha.
@@ -60,8 +59,7 @@ A lo largo de este proceso se mostrará cómo:
 
 > El carro pulsado inicia su viaje de ida y vuelta, únicamente, cuando estando en su posición inicial se acciona el pulsador de marcha.
 
-![Carro Pulsado](./img/carro-pulsado-grf.svg){ width="200px" }
-
+![Carro Pulsado](./img/carro-pulsado-grf.svg){ width="200px" .image-centered }
 !!! note "Comentarios"
     - El símbolo `↑` representa en el lenguaje **GRAFCET** el flanco ascendente de una variable lógica.
 
@@ -69,8 +67,7 @@ A lo largo de este proceso se mostrará cómo:
 
 > El carro temporizado se detiene durante un determinado tiempo ($T_{espera}$) sobre el final de carrera derecha antes de iniciar el camino de regreso hacia su posición inicial.
 
-![Carro Temporizado](./img/carro-temporizado-grf.svg){ width="200px" }
-
+![Carro Temporizado](./img/carro-temporizado-grf.svg){ width="200px" .image-centered }
 !!! note "Comentarios"
     - La expresión `(TE)/X2` es el símbolo **GRAFCET** (condición de transición dependiente del tiempo simplificada) utilizado para indicar que se esperará en la etapa `2` la cantidad de tiempo indicada por `TE`.
 
@@ -81,8 +78,7 @@ A lo largo de este proceso se mostrará cómo:
 ??? info "Procesamiento por lotes"
     Con el carro computado se introduce el concepto de *procesamiento por lotes*. En el trabajo por lotes el sistema hace una tarea por cada activación del pulsador de marcha sin intervención del operario, por lo que es necesario llevar la cuenta de los viajes (maniobras) que realiza el carro.
 
-![Carro Computado](./img/carro-computado-grf.svg){ width="400px" }
-
+![Carro Computado](./img/carro-computado-grf.svg){ width="400px" .image-centered }
 !!! note "Comentarios"
 
     Para llevar esta cuenta en **GRAFCET** se acostumbra a distribuir esta funcionalidad entre la estructura y la interpretación.
@@ -98,8 +94,7 @@ A lo largo de este proceso se mostrará cómo:
 
 > La lámpara de marcha se enciende de forma permanente para indicar que el carro está en funcionamiento y parpadea para indicar que el carro está en reposo.
 
-![Carro Señalizado](./img/carro-senalizado-grf.svg){ width="400px" }
-
+![Carro Señalizado](./img/carro-senalizado-grf.svg){ width="400px" .image-centered }
 !!! note "Comentarios"
 
     - La señal de salida `LM` se activa de forma intermitente mediante una **acción condicionada** a la señal oscilante `BLK`.
