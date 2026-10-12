@@ -1,85 +1,60 @@
 # Tutorial de TwinCAT 3
 
-Este repositorio contiene la documentación y los materiales del tutorial de TwinCAT 3, organizado como un sitio web estático con MkDocs y el tema Material for MkDocs.
+Material didáctico para aprender y enseñar automatización industrial con TwinCAT 3. El tutorial combina fundamentos, procedimientos, ejemplos y prácticas, con referencias a los lenguajes IEC 61131-3 y a GRAFCET.
 
-## Descripción
+El contenido evoluciona de forma continua; algunas páginas pueden estar incompletas.
 
-El proyecto documenta conceptos, ejemplos y prácticas para trabajar con TwinCAT 3, incluyendo:
+**Sitio publicado:** [Tutorial de TwinCAT 3](https://famoreno.github.io/tc3_tutorial/)
 
-- fundamentos y presentación del ecosistema Beckhoff
-- conceptos generales de programación y configuración
-- ejecución y puesta en marcha de programas
-- lenguajes de implementación
-- ejemplos de automatización
-- prácticas guiadas y proyectos de referencia
+## Contenidos
 
-## Estructura del repositorio
+La navegación del sitio se organiza en cuatro áreas:
 
-- `mkdocs.yml`: configuración principal de MkDocs y navegación del sitio.
-- `main.py`: script de soporte asociado al proyecto.
-- `README.md`: documentación general del repositorio.
-- `docs/`: contenido de la documentación.
-  - `index.md`: página de inicio del tutorial.
-  - `contenidos/`: módulos, capítulos y materiales didácticos.
-  - `images/`: recursos gráficos e ilustraciones.
-  - `javascripts/`: scripts personalizados para la web.
-  - `stylesheets/`: estilos personalizados.
-  - `overrides/`: personalización del tema Material.
-  - `pdfs/`: documentos PDF generados o almacenados.
-- `.github/`: configuración y automatizaciones del repositorio.
-- `.gitignore`: reglas de exclusión de Git.
+- **Fundamentos:** conceptos, normas y arquitecturas de automatización.
+- **Procedimientos:** flujos de trabajo para desarrollar con TwinCAT 3.
+- **Ejemplos:** soluciones guiadas y acotadas.
+- **Prácticas:** retos y proyectos para aplicar lo aprendido.
 
-## Requisitos
+Consulta el [índice del tutorial](docs/index.md) para explorar las páginas disponibles. La estructura y el estado de cada sección se reflejan en la navegación del sitio.
 
-Necesitarás Python 3 y las dependencias de MkDocs:
+## Desarrollo local
+
+Se necesita Python 3. Desde la raíz del repositorio, crea y activa un entorno virtual.
+
+Windows (PowerShell):
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+```
+
+Linux o macOS:
 
 ```bash
-python -m venv .venv
-.\.venv\Scripts\activate
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+Instala las dependencias empleadas para publicar el sitio:
+
+```bash
 python -m pip install --upgrade pip
 python -m pip install mkdocs mkdocs-material mkdocs-macros-plugin mkdocs-include-markdown-plugin mkdocs-git-revision-date-localized-plugin
 ```
 
-## Cómo visualizar la documentación localmente
+Inicia el servidor de desarrollo:
 
-1. Entra al directorio del proyecto.
-2. Ejecuta el servidor de MkDocs:
+```bash
+mkdocs serve
+```
 
-   ```bash
-   mkdocs serve
-   ```
+Abre <http://127.0.0.1:8000/>. Para generar el sitio estático localmente, ejecuta `mkdocs build`; el resultado se guarda en `site/`, que no se versiona.
 
-3. Abre en tu navegador:
+## Contribuir
 
-   ```bash
-   http://localhost:8000
-   ```
+Si encuentras un error o tienes una propuesta, puedes [abrir un issue](https://github.com/famoreno/tc3_tutorial/issues). Para enviar cambios, crea una rama y abre un *pull request*.
 
-## Cómo compilar el sitio
-
-Para generar la versión estática del sitio:
-
-   ```bash
-   mkdocs build
-   ```
-
-El resultado se genera normalmente en la carpeta `site/`.
-
-## Organización del contenido
-
-La documentación está dividida en varias secciones:
-
-- Presentación y contexto general
-- Conceptos básicos de TwinCAT 3
-- Ejecución de programas
-- Lenguajes de implementación
-- Ejemplos prácticos
-- Casos de uso y prácticas
-- Proyectos estructurados, monolíticos y jerárquicos
-
-## Contribuciones
-
-Las contribuciones son bienvenidas. Si quieres mejorar el contenido, corregir errores o añadir nuevos ejemplos, puedes abrir un *issue* o enviar un pull request.
+Antes de editar o enviar contenido, consulta [CONTRIBUTING.md](CONTRIBUTING.md), que reúne las convenciones editoriales, de estructura y de validación del proyecto.
 
 ---
 
