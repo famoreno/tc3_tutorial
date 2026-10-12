@@ -1990,7 +1990,7 @@
 <p><strong>ArduTC</strong> debe funcionar con todas las plataformas compatibles con Telemetrix: Arduino con arquitectura AVR y ARM (UNO, Nano, Mega, Leonardo), Arduino Renesas (Serie UNO R4), Raspberry Pi Pico (RP2040 ), Espressif (ESP8266 y ESP32) y STM32.</p>
 </div>
 <p><strong>ArduTC</strong> «convierte» una placa microcontroladora conectada a un PC con Windows mediante USB en un terminal de entradas y salidas digitales para <strong><abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr></strong>. De forma que un programa de <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr> escrito en un lenguaje de la norma IEC 61131-3, que se procese en cualquier sistema destino (runtime local/remoto o el simulador <code>UmRT_Default</code>), puede emitir y recibir información de entrada y salida hacia y desde una placa microcontroladora.</p>
-<p><img alt="Diagrama de comunicación de ArduTC entre TwinCAT y una placa microcontroladora" src="img/ardutc-scheme.png" width="400px" /></p>
+<p><img alt="Diagrama de comunicación de ArduTC entre TwinCAT y una placa microcontroladora" class="image-centered" src="img/ardutc-scheme.png" width="400px" /></p>
 <details class="info">
 <summary>Info</summary>
 <p><strong>ArduTC</strong> utiliza las siguientes librerı́as de software libre escritas en el lenguaje Python.</p>
@@ -2055,7 +2055,7 @@ El código fuente completo de este proyecto **Hola Mundo** está disponible en G
 <hr />
 <h2 id="interfaz-de-ardutc"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M448 96v256H64V96zM64 32C28.7 32 0 60.7 0 96v256c0 35.3 28.7 64 64 64h144l-16 48h-72c-13.3 0-24 10.7-24 24s10.7 24 24 24h272c13.3 0 24-10.7 24-24s-10.7-24-24-24h-72l-16-48h144c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64z"/></svg></span> Interfaz de ArduTC<a class="headerlink" href="#interfaz-de-ardutc" title="Permanent link">&para;</a></h2>
 <p>La interfaz de usuario de ArduTC se divide en cinco áreas/paneles funcionales.</p>
-<p><img alt="Interfaz de ArduTC con sus cinco áreas funcionales" src="img/ardutc-gui-run.png" width="600px" /></p>
+<p><img alt="Interfaz de ArduTC con sus cinco áreas funcionales" class="screenshot" src="img/ardutc-gui-run.png" /></p>
 <ol>
 <li><strong>Target:</strong> lista de variables (símbolos) exportadas desde el proyecto <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr>. Las entradas digitales se resaltan en <span style="color: #d4ac0d; font-weight: bold;">amarillo</span> y las salidas digitales en <span style="color: #c0392b; font-weight: bold;">rojo</span>.</li>
 <li><strong>Devices:</strong> lista de pines de conexión disponibles en la placa microcontroladora seleccionada.</li>
@@ -2078,16 +2078,16 @@ El código fuente completo de este proyecto **Hola Mundo** está disponible en G
 <ol>
 <li>
 <p>Abrir la aplicación <strong>ArduTC</strong>.</p>
-<p><img alt="Ventana principal de ArduTC" src="img/ardutc-gui.png" width="600px" /></p>
+<p><img alt="Ventana principal de ArduTC" class="screenshot" src="img/ardutc-gui.png" /></p>
 </li>
 <li>
 <p>En <strong>FILES</strong>, hacer clic en <strong>Load TMC</strong> y seleccionar el archivo <code>.tmc</code> generado durante la construcción del proyecto <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr> en <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr>.</p>
-<p><img alt="Panel FILES de ArduTC con la opción Load TMC" src="img/ardutc-gui-files.png" width="400px" /></p>
+<p><img alt="Panel FILES de ArduTC con la opción Load TMC" class="screenshot" src="img/ardutc-gui-files.png" /></p>
 <div class="admonition success">
 <p class="admonition-title">Resultado de la operación</p>
 <p>Todas las variables de entrada y salida del proyecto <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr> aparecerán automáticamente en el panel <strong>Target</strong>.</p>
 </div>
-<p><img alt="Variables del proyecto PLC cargadas en el panel Target" src="img/ardutc-gui-symbols.png" width="400px" /></p>
+<p><img alt="Variables del proyecto PLC cargadas en el panel Target" class="screenshot" src="img/ardutc-gui-symbols.png" /></p>
 </li>
 </ol>
 <h3 id="seleccionar-placa-microcontroladora">Seleccionar Placa Microcontroladora<a class="headerlink" href="#seleccionar-placa-microcontroladora" title="Permanent link">&para;</a></h3>
@@ -2099,7 +2099,7 @@ El código fuente completo de este proyecto **Hola Mundo** está disponible en G
 <p class="admonition-title">Resultado de la operación</p>
 <p>Se mostrarán, en una ventana emergente, todas las placas microcontroladoras conectadas a los puertos de comunicaciones <code>COM</code> correspondientes.</p>
 </div>
-<p><img alt="Ventana de selección de placas microcontroladoras disponibles" src="img/ardutc-select-device.png" width="400px" /></p>
+<p><img alt="Ventana de selección de placas microcontroladoras disponibles" class="screenshot" src="img/ardutc-select-device.png" /></p>
 </li>
 <li>
 <p>Seleccionar la placa microcontroladora deseada.</p>
@@ -2107,7 +2107,7 @@ El código fuente completo de este proyecto **Hola Mundo** está disponible en G
 <p class="admonition-title">Resultado de la operación</p>
 <p>Se mostrará en la <strong>Devices</strong> la lista de pines digitales y analógicos disponibles de la nueva placa añadida.</p>
 </div>
-<p><img alt="Pines digitales y analógicos disponibles en el panel Devices" src="img/ardutc-gui-pins.png" width="400px" /></p>
+<p><img alt="Pines digitales y analógicos disponibles en el panel Devices" class="screenshot" src="img/ardutc-gui-pins.png" /></p>
 </li>
 </ol>
 <h3 id="vincular-variables">Vincular Variables<a class="headerlink" href="#vincular-variables" title="Permanent link">&para;</a></h3>
@@ -2117,7 +2117,7 @@ El código fuente completo de este proyecto **Hola Mundo** está disponible en G
 </li>
 <li>
 <p>En el cuadro desplegable <strong><em>Link variables</em></strong>, seleccionar el pin de la placa microcontroladora en el que está conectado físicamente el componente correspondiente que se desea enlazar con la variable.</p>
-<p><img alt="Lista de pines disponibles para vincular una variable" src="img/ardutc-link-variables.png" width="200px" /></p>
+<p><img alt="Lista de pines disponibles para vincular una variable" class="screenshot" src="img/ardutc-link-variables.png" /></p>
 </li>
 <li>
 <p>Confirmar el vínculo entre variable y pin pulsando <strong>Link</strong>.</p>
@@ -2128,28 +2128,26 @@ El código fuente completo de este proyecto **Hola Mundo** está disponible en G
 <li>Se mostrará en <strong>Devices</strong> el nombre de la variable asignada al <em>pin</em>.</li>
 </ul>
 </div>
-<p><img alt="Variable vinculada a un pin de la placa" src="img/ardutc-variable-linked.png" width="600px" /></p>
+<p><img alt="Variable vinculada a un pin de la placa" class="screenshot" src="img/ardutc-variable-linked.png" /></p>
 </li>
 <li>
 <p>Repetir esta operación hasta vincular todas las variables necesarias.</p>
-<p><img alt="Todas las variables vinculadas a pines de la placa" src="img/ardutc-all-variables-linked.png" width="600px" /></p>
+<p><img alt="Todas las variables vinculadas a pines de la placa" class="screenshot" src="img/ardutc-all-variables-linked.png" /></p>
 </li>
 </ol>
 <h3 id="configurar-comunicaciones">Configurar Comunicaciones<a class="headerlink" href="#configurar-comunicaciones" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>En <strong>RUNTIME</strong> introducir la dirección <strong>AMS Net ID</strong> del sistema destino y el puerto de comunicaciones del proyecto <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr>.</p>
-<p><img alt="Panel RUNTIME con la dirección AMS Net ID y el puerto del PLC" src="img/ardutc-gui-runtime.png" width="600px" /></p>
+<p><img alt="Panel RUNTIME con la dirección AMS Net ID y el puerto del PLC" class="screenshot" src="img/ardutc-gui-runtime.png" /></p>
 <details class="info">
 <summary>Info</summary>
 <ul>
 <li>La dirección <strong>AMS Net ID</strong> del sistema destino puede encontrarse en el panel Explorador de la Solución, en <strong>SYSTEM</strong> &gt; <strong>Routes</strong> &gt; <strong>NetId Management</strong> &gt; <strong>Target NetId</strong> (por ejemplo, <code>192.168.4.1.1.1</code>).</li>
 </ul>
-<p><img alt="Ubicación de la dirección Target NetId en TwinCAT" src="img/tc3-target-netid.png" width="300px" /></p>
-<ul>
-<li>El puerto de comunicaciones del proyecto <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr> puede encontrarse haciendo <strong>doble clic</strong> en el nombre del proyecto <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr> y consultando <strong>Project</strong> &gt; <strong>Port</strong> (normalmente, <code>851</code>).</li>
-</ul>
-<p><img alt="Propiedades del proyecto PLC con el puerto de comunicaciones" src="img/tc3-proyecto-plc-propiedades.png" width="300px" /></p>
+<p><img alt="Ubicación de la dirección Target NetId en TwinCAT" class="screenshot" src="img/tc3-target-netid.png" />
+- El puerto de comunicaciones del proyecto <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr> puede encontrarse haciendo <strong>doble clic</strong> en el nombre del proyecto <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr> y consultando <strong>Project</strong> &gt; <strong>Port</strong> (normalmente, <code>851</code>).</p>
+<p><img alt="Propiedades del proyecto PLC con el puerto de comunicaciones" class="screenshot" src="img/tc3-proyecto-plc-propiedades.png" /></p>
 </details>
 </li>
 </ol>
@@ -2161,14 +2159,14 @@ El código fuente completo de este proyecto **Hola Mundo** está disponible en G
 <p class="admonition-title">Resultado de la operación</p>
 <p>Si la vinculación es exitosa, la barra de estado inferior mostrará el mensaje <code>Device connected</code> y el botón cambiará a color rojo indicando <code>DISCONNECT</code>.</p>
 </div>
-<p><img alt="Panel RUNTIME de ArduTC conectado al sistema TwinCAT" src="img/ardutc-gui-runtime-connected.png" width="600px" /></p>
+<p><img alt="Panel RUNTIME de ArduTC conectado al sistema TwinCAT" class="screenshot" src="img/ardutc-gui-runtime-connected.png" /></p>
 </li>
 <li>
 <p>Con los botones run/stop del panel <strong>RUNTIME</strong> se puede controlar el estado de ejecución/parada del proyecto <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr> en <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr>.</p>
 </li>
 <li>
 <p>Se puede obervar que el estado de las variables y los pines en <strong><abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr></strong> y la placa <strong>microcontroladora</strong> cambian sincronizadamente cuando ambos están conectados mediante ArduTC.</p>
-<p><img alt="Interfaz de ArduTC conectada con variables y pines activos" src="img/ardutc-gui-connected.png" width="600px" /></p>
+<p><img alt="Interfaz de ArduTC conectada con variables y pines activos" class="screenshot" src="img/ardutc-gui-connected.png" /></p>
 </li>
 </ol>
 <hr />
@@ -2192,7 +2190,7 @@ El código fuente completo de este proyecto **Hola Mundo** está disponible en G
     <span class="md-icon" title="Última actualización">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="11 de octubre de 2026 22:21:04 UTC">11 de octubre de 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="12 de octubre de 2026 15:33:25 UTC">12 de octubre de 2026</span>
   </span>
 
     

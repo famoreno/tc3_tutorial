@@ -2421,7 +2421,7 @@
 <blockquote>
 <p>El carro básico se desplaza longitudinalmente entre los extermos de una vía.</p>
 </blockquote>
-<p><img alt="Carro Básico" src="../img/carro-basico-grf.svg" width="200px" /></p>
+<p><img alt="Carro Básico" class="image-centered" src="../img/carro-basico-grf.svg" width="200px" /></p>
 <div class="admonition note">
 <p class="admonition-title">Comentarios</p>
 <ul>
@@ -2493,7 +2493,7 @@
 <blockquote>
 <p>El carro pulsado inicia su viaje de ida y vuelta, únicamente, cuando estando en su posición inicial se acciona el pulsador de marcha.</p>
 </blockquote>
-<p><img alt="Carro Pulsado" src="../img/carro-pulsado-grf.svg" width="200px" /></p>
+<p><img alt="Carro Pulsado" class="image-centered" src="../img/carro-pulsado-grf.svg" width="200px" /></p>
 <div class="admonition note">
 <p class="admonition-title">Comentarios</p>
 <ul>
@@ -2504,7 +2504,7 @@
 <blockquote>
 <p>El carro temporizado se detiene durante un determinado tiempo (<span class="arithmatex">\(T_{espera}\)</span>) sobre el final de carrera derecha antes de iniciar el camino de regreso hacia su posición inicial.</p>
 </blockquote>
-<p><img alt="Carro Temporizado" src="../img/carro-temporizado-grf.svg" width="200px" /></p>
+<p><img alt="Carro Temporizado" class="image-centered" src="../img/carro-temporizado-grf.svg" width="200px" /></p>
 <div class="admonition note">
 <p class="admonition-title">Comentarios</p>
 <ul>
@@ -2519,7 +2519,7 @@
 <summary>Procesamiento por lotes</summary>
 <p>Con el carro computado se introduce el concepto de <em>procesamiento por lotes</em>. En el trabajo por lotes el sistema hace una tarea por cada activación del pulsador de marcha sin intervención del operario, por lo que es necesario llevar la cuenta de los viajes (maniobras) que realiza el carro.</p>
 </details>
-<p><img alt="Carro Computado" src="../img/carro-computado-grf.svg" width="400px" /></p>
+<p><img alt="Carro Computado" class="image-centered" src="../img/carro-computado-grf.svg" width="400px" /></p>
 <div class="admonition note">
 <p class="admonition-title">Comentarios</p>
 <p>Para llevar esta cuenta en <strong><abbr title="Gráfico funcional de control etapa-transición (Graphe Fonctionnel de Commande Étapes/Transitions).">GRAFCET</abbr></strong> se acostumbra a distribuir esta funcionalidad entre la estructura y la interpretación.</p>
@@ -2537,7 +2537,7 @@ Esta lógica de diseño se heredada para optimizar el rendimiento en los procesa
 <blockquote>
 <p>La lámpara de marcha se enciende de forma permanente para indicar que el carro está en funcionamiento y parpadea para indicar que el carro está en reposo.</p>
 </blockquote>
-<p><img alt="Carro Señalizado" src="../img/carro-senalizado-grf.svg" width="400px" /></p>
+<p><img alt="Carro Señalizado" class="image-centered" src="../img/carro-senalizado-grf.svg" width="400px" /></p>
 <div class="admonition note">
 <p class="admonition-title">Comentarios</p>
 <ul>
@@ -2596,7 +2596,7 @@ VAR
 </li>
 <li>
 <p>Escribir el código <span class="fondo-rojo-lang"><abbr title="Diagrama de funciones secuenciales (Sequential Function Chart), lenguaje de la norma IEC 61131-3.">SFC</abbr></span> correspondiente al carro básico.</p>
-<p><img alt="FB_Carro_GRF_SFC Basico" src="../img/fb-carro-grf-sfc-basico.png" width="400px" /></p>
+<p><img alt="FB_Carro_GRF_SFC Basico" class="screenshot" src="../img/fb-carro-grf-sfc-basico.png" /></p>
 <details class="info">
 <summary>Comentarios Código</summary>
 <ul>
@@ -2629,7 +2629,7 @@ VAR
 <li>Poner el programa de <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr> en ejecución (<strong>Run</strong>). <a href="../../../procedimientos/workflow/#arrancar-el-proyecto">➡️</a></li>
 <li>
 <p>Probar el programa forzando las variables de entrada en el modo de <strong>Monitorización <em>Online</em></strong>. <a href="../../../procedimientos/workflow/#forzar-variables">➡️</a></p>
-<p><img alt="FB_Carro_GRF_SFC Basico Online" src="../img/fb-carro-grf-sfc-basico-online.png" width="400px" /></p>
+<p><img alt="FB_Carro_GRF_SFC Basico Online" class="screenshot" src="../img/fb-carro-grf-sfc-basico-online.png" /></p>
 <details class="info">
 <summary>Monitorización Online</summary>
 <p>En el modo <strong>Monitorización <em>Online</em></strong> se muestra:</p>
@@ -2641,7 +2641,7 @@ VAR
 </li>
 <li>
 <p>Crear una visualización mínima <code>V_Carro</code> que facilite la prueba.</p>
-<p><img alt="V_Carro Basico" src="../img/v-carro-basico.png" width="400px" /></p>
+<p><img alt="V_Carro Basico" class="screenshot" src="../img/v-carro-basico.png" /></p>
 <details class="info">
 <summary>Visualización</summary>
 <ul>
@@ -2657,9 +2657,9 @@ VAR
 </li>
 <li>
 <p>Probar el programa cambiando el valor de las entradas desde la visualización.</p>
-<p><img alt="V_Carro Basico Online" src="../img/v-carro-basico-online.png" width="400px" /></p>
+<p><img alt="V_Carro Basico Online" class="screenshot" src="../img/v-carro-basico-online.png" /></p>
 <details class="info">
-<summary>Visualización<em> Online</em></summary>
+<summary>Visualización en línea</summary>
 <p>Con la visualización <em>Online</em> se puede:</p>
 <ul>
 <li>Conocer el valor de las variables de salida por su color de desactivación/activación.</li>
@@ -2699,7 +2699,7 @@ END_VAR
 </li>
 <li>
 <p>Modificar el código de  <code>FB_Carro_GRF_SFC</code></p>
-<p><img alt="FB_Carro_GRF_SFC Pulsado" src="../img/fb-carro-grf-sfc-pulsado.png" width="400px" /></p>
+<p><img alt="FB_Carro_GRF_SFC Pulsado" class="screenshot" src="../img/fb-carro-grf-sfc-pulsado.png" /></p>
 <div class="admonition info">
 <p class="admonition-title">Comentarios Código</p>
 <ul>
@@ -2753,7 +2753,7 @@ END_VAR
 </li>
 <li>
 <p>Modificar el código de <code>FB_Carro_GRF_SFC</code>:</p>
-<p><img alt="FB_Carro_GRF_SFC Temporizado" src="../img/fb-carro-grf-sfc-temporizado.png" width="400px" /></p>
+<p><img alt="FB_Carro_GRF_SFC Temporizado" class="screenshot" src="../img/fb-carro-grf-sfc-temporizado.png" /></p>
 <div class="admonition info">
 <p class="admonition-title">Código <abbr title="Diagrama de funciones secuenciales (Sequential Function Chart), lenguaje de la norma IEC 61131-3.">SFC</abbr></p>
 <ul>
@@ -2785,10 +2785,8 @@ END_IF;
 </li>
 <li>
 <p>Incluir en la visualización <code>V_Carro</code> un objeto gráfico que permita introducir el tiempo de espera deseado y otro que informe del tiempo pendiente.</p>
-<p><img alt="V_Carro Temporizado" src="../img/v-carro-temporizado.png" width="400px" /></p>
-</li>
-<li>
-<p>Proceder como en la sección anterior para probar el programa desde la visualización.</p>
+<p><img alt="V_Carro Temporizado" class="screenshot" src="../img/v-carro-temporizado.png" />
+4. Proceder como en la sección anterior para probar el programa desde la visualización.</p>
 </li>
 </ol>
 <h4 id="carro-computado_1">Carro Computado<a class="headerlink" href="#carro-computado_1" title="Permanent link">&para;</a></h4>
@@ -2826,7 +2824,7 @@ END_VAR
 </li>
 <li>
 <p>Modificar el código:</p>
-<p><img alt="FB_Carro_GRF_SFC Computado" src="../img/fb-carro-grf-sfc-computado.png" width="400px" /></p>
+<p><img alt="FB_Carro_GRF_SFC Computado" class="screenshot" src="../img/fb-carro-grf-sfc-computado.png" /></p>
 <div class="admonition info">
 <p class="admonition-title">Código <abbr title="Diagrama de funciones secuenciales (Sequential Function Chart), lenguaje de la norma IEC 61131-3.">SFC</abbr></p>
 <ul>
@@ -2851,10 +2849,8 @@ END_IF;
 <ol>
 <li>Incluir en la visualización <code>V_Carro</code> un objeto gráfico que permita introducir el valor de las maniobras totales y otro que muestre las maniobras pendientes.</li>
 </ol>
-<p><img alt="V_Carro Computado" src="../img/v-carro-computado.png" width="400px" /></p>
-</li>
-<li>
-<p>Proceder como en la sección anterior para probar el programa desde la visualización.</p>
+<p><img alt="V_Carro Computado" class="screenshot" src="../img/v-carro-computado.png" />
+4. Proceder como en la sección anterior para probar el programa desde la visualización.</p>
 </li>
 </ol>
 <h4 id="carro-senalizado_1">Carro Señalizado<a class="headerlink" href="#carro-senalizado_1" title="Permanent link">&para;</a></h4>
@@ -2893,7 +2889,7 @@ END_VAR
 </li>
 <li>
 <p>Modificar el código:</p>
-<p><img alt="FB_Carro_GRF_SFC Senalizado" src="../img/fb-carro-grf-sfc-senalizado.png" width="400px" /></p>
+<p><img alt="FB_Carro_GRF_SFC Senalizado" class="screenshot" src="../img/fb-carro-grf-sfc-senalizado.png" /></p>
 <div class="admonition info">
 <p class="admonition-title">Código <abbr title="Diagrama de funciones secuenciales (Sequential Function Chart), lenguaje de la norma IEC 61131-3.">SFC</abbr></p>
 <ul>
@@ -3291,7 +3287,7 @@ o_MarchaIzquierda := (Estado = E_MARCHA_IZQUIERDA);
     <span class="md-icon" title="Última actualización">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="11 de octubre de 2026 22:21:04 UTC">11 de octubre de 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="12 de octubre de 2026 15:33:25 UTC">12 de octubre de 2026</span>
   </span>
 
     

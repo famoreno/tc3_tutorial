@@ -123,6 +123,22 @@
   background-color: white;
 }
 
+/* Capturas: respetar el tamaño original y reducir solo si exceden el contenido */
+.md-typeset img.screenshot {
+  display: block;
+  width: auto;
+  max-width: 90%;
+  height: auto;
+  margin-inline: auto;
+}
+
+.md-typeset img.image-centered {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-inline: auto;
+}
+
 /* ===== TOC izquierdo ===== */
 /* Nivel 1 */
 .md-nav__item > .md-nav__link {
