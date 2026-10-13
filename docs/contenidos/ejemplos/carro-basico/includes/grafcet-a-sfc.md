@@ -81,24 +81,23 @@
     ![V_Carro Basico](./img/v-carro-basico.png){ .screenshot }
     ??? info "Visualización"
         - La visualización debe disponer al menos de:
-            -  Un elemento gráfico para modificar el valor de cada sensor.
+            -  Un elemento gráfico para mostrar y modificar el valor de cada sensor.
             -  Un elemento gráfico para mostrar el valor de cada actuador.
-        - Sin embargo, resulta conveniente, que tanto los objetos gráficos destinados a los sensores como a los actuadores permitan leer y escribir las señales correspondientes. De esta forma se facilitará la prueba cuando se ejecuta con el simulador (UmRt_Default) sin *hardware* asociado y se facilitará el modo manual cuando se ejecutA sobre un controlador con *hardware* asociado.
+        - Sin embargo, resulta conveniente, que tanto los objetos gráficos destinados a los sensores como a los actuadores permitan leer y escribir las señales correspondientes. De esta forma se facilitará la prueba cuando se ejecuta con el simulador (UmRt_Default) sin *hardware* asociado y se facilitará el modo manual cuando se ejecuta sobre un controlador con *hardware* asociado.
         - Conviene establecer un código de colores coherente para facilitar la interpretación y disminuir la carga congnitiva del usuario.
 
 19. Probar el programa cambiando el valor de las entradas desde la visualización.
 
     ![V_Carro Basico Online](./img/v-carro-basico-online.png){ .screenshot }
     ??? info "Visualización en línea"
-        Con la visualización *Online* se puede:
+        Con la visualización en modo *Online* se puede:
 
         - Conocer el valor de las variables de salida por su color de desactivación/activación.
         - Modificar el valor de las variables de entrada pulsando sobre el objeto gráfico.
 
 #### Carro Pulsado
 
-1. Añadir en la declaración de `FB_Carro_GRF_SFC`:
-    - Una instancia del bloque funcional `R_TRIG` de la librería estándar (`Tc2_Standard`) para la detección del flanco positivo del pulsador de marcha.
+1. Modificar la parte de declaración.
 
     ```iecst {hl_lines="8-9"}
     FUNCTION_BLOCK FB_Carro_GRF_SFC
@@ -123,10 +122,15 @@
     END_VAR
     ```
 
+    ??? info "Comentarios"
+        - Añadir una instancia del bloque funcional `R_TRIG` de la librería estándar (`Tc2_Standard`) para la detección del flanco positivo del pulsador de marcha (`FlancoPulsadorMarcha`).
+        - La librería `Tc2_Standard` se incluye automáticamente, al crear un proyecto PLC estándar.
+
 2. Modificar el código de  `FB_Carro_GRF_SFC`
 
     ![FB_Carro_GRF_SFC Pulsado](./img/fb-carro-grf-sfc-pulsado.png){ .screenshot }
-    !!! info "Comentarios Código"
+
+    !!! info "Comentarios"
         - Añadir a `FB_Carro_GRF_SFC` una acción `a_FlancoPulsadorMarcha_Evaluar` (ST), en la que se invoque la ejecución del detector de flanco `FlancoPulsadorMarcha`.
 
             ```iesst
@@ -134,15 +138,13 @@
             ```
 
         - Incluir la acción `a_FlancoPulsadorMarcha_Evaluar` como acción principal (`Main action`) en la etapa inicial (`S0`), para que se ejecute continuamente (una vez por ciclo) mientras el sistema esté en la etapa inicial.
-        - Sustituir `i_PulsadorMarcha` por `FlancoPulsadorMarcha.Q`, en la condición de la transición de salida de la etapa inicial.
+        - Sustituir en la expresión de la condición de transición de la etapa `S0` ➔ `S1`, `PulsadorMarcha` por la salida de la instancia del bloque funcional que detecta los flancos positivos en la variable (`FlancoPulsadorMarcha.Q`).
 
-3. Poner el programa en ejecución y comprobar que no basta para iniciar la marcha con que el pulsador de marcha esté activado, sino que es necesario que se realice una acción de impulso.
+3. Poner el programa en ejecución y comprobar, con la ayudad de la visualización, que no basta para iniciar la marcha con que el pulsador de marcha esté activado, sino que es necesario que se realice una acción de impulso.
 
 #### Carro Temporizado
 
-1. Añadir en la parte de declaración de `FB_Carro_GRF_SFC`:
-    - Un parámetro de entrada `TiempoEspera` de tipo `TIME` en el bloque de declaración `VAR_INPUT`. Esto permitirá que este parámetro pueda ser modificado desde fuera del bloque funcional. Eventualmente, puede indicarse un valor inicial en su defecto (`T#2S`).
-    - Un parámetro de salida `TiempoPendiente` en el bloque de declaración `VAR_OUTPUT` para informar del tiempo de espera pendiente.
+1. Modificar la parte de declaración.
 
     ```iecst {hl_lines="4 7"}
     FUNCTION_BLOCK FB_Carro_GRF_SFC
@@ -169,11 +171,16 @@
     END_VAR
     ```
 
-2. Modificar el código de `FB_Carro_GRF_SFC`:
+    ??? info "Comentarios"
+        - Añadir un parámetro de entrada `TiempoEspera` de tipo `TIME` en el bloque de declaración `VAR_INPUT`. Esto permite que este parámetro pueda ser modificado desde fuera del bloque funcional. Eventualmente, puede indicarse un valor inicial en su defecto (`T#2S`).
+        - Añadir un parámetro de salida `TiempoPendiente` en el bloque de declaración `VAR_OUTPUT` para informar del tiempo de espera pendiente.
+
+2. Modificar la parte de implementación.
 
     ![FB_Carro_GRF_SFC Temporizado](./img/fb-carro-grf-sfc-temporizado.png){ .screenshot }
-    !!! Info "Código SFC"
-        - Añadir una nueva etapa (`S2`) para representar el estado de espera e incluir en su transición de salida la condición `S2.t > TiempoEspera`, equivalente a la condición de tiempo del diagrama grafcet `TE/X2`.
+
+    !!! Info "Comentarios"
+        - Añadir una nueva etapa (`S2`), para representar el estado de espera, e incluir en su transición de salida la condición `S2.t > TiempoEspera`, equivalente a la condición de tiempo del diagrama grafcet `TE/X2`.
 
         - Añadir a `FB_Carro_GRF_SFC` una acción denominda `a_TiempoPendiente_Calcular` (<span class="fondo-azul-lang">ST</span>), para calcular el tiempo de espera pendiente.
 
@@ -191,16 +198,18 @@
         - Además, la estructura `ELSE` garantiza el **determinismo del PLC** al forzar explícitamente la variable a `T#0S`, evitando que `TiempoPendiente` retenga valores obsoletos de ciclos anteriores si la condición no se cumple.
         - La **Programación Defensiva** usada en su justa medida se considera una buena práctica de programación que favorece el **Código Limpio**.
 
-3. Incluir en la visualización `V_Carro` un objeto gráfico que permita introducir el tiempo de espera deseado y otro que informe del tiempo pendiente.
+3. Modificar la visualización.
 
     ![V_Carro Temporizado](./img/v-carro-temporizado.png){ .screenshot }
-4. Proceder como en la sección anterior para probar el programa desde la visualización.
+
+    ??? info "Comentario"
+        Incluir en la visualización `V_Carro` un objeto gráfico que permita introducir el tiempo de espera deseado y otro que informe del tiempo pendiente.
+
+4. Proceder como en el apartado anterior para probar el programa desde la visualización.
 
 #### Carro Computado
 
-1. Añadir en la parte de declaración de `FB_Carro_GRF_SFC`:
-    - Un parámetro entero de entrada `ManiobrasTotales` en el bloque de declaración `VAR_INPUT` para contener el valor del número total de maniobras deseadas. Eventualmente, puede indicarse un valor inicial en su defecto (`1`);
-    - Un parámetro entero de salida `ManiobrasPendientes` en el bloque de declaración `VAR_OUTPUT` para contener el número de maniobras pendientes de realizar.
+1. Modificar la parte de declaración:
 
     ```iecst {hl_lines="4 8"}
     FUNCTION_BLOCK FB_Carro_GRF_SFC
@@ -228,12 +237,17 @@
     END_VAR
     ```
 
+    ??? info "Comentarios"
+        - El parámetro entero de entrada `ManiobrasTotales` del bloque de declaración `VAR_INPUT` continene el valor del número total de maniobras deseadas. Eventualmente, puede indicarse un valor inicial en su defecto (`1`).
+        - El parámetro entero de salida `ManiobrasPendientes`del bloque de declaración `VAR_OUTPUT` contiene el número de maniobras pendientes de realizar.
+
 2. Modificar el código:
 
     ![FB_Carro_GRF_SFC Computado](./img/fb-carro-grf-sfc-computado.png){ .screenshot }
-    !!! info "Código SFC"
-        - Incluir una nueva etapa (`S4`)al final de las secuencia para evaluar si terminó la tarea.
-        - Incluir una rama alternativa con salto atrás a la primera etapa de la secuancia (`S1`).
+
+    !!! info "Comentarios"
+        - Incluir una nueva etapa (`S4`) al final de las secuencia para evaluar si terminó la tarea.
+        - Incluir una rama alternativa con salto atrás a la última etapa de la secuencia (`S4`).
         - Se regresa a la etapa inicial por la rama principal si terminó la tarea (`ManiobrasPendientes = 0`).
         - Se vuelve a la primera etapa de la secuencia (`S1`) si quedan maniobra por realizar (`ManiobrasPendientes > 0`).
         - Incluir una acción `a_ManiobrasPendientes_Reiniciar` para establecer el valor de la cuenta al iniciar la tarea y asociarla como acción a la salida a la etapa inicial (`S0`).
@@ -242,23 +256,26 @@
             ManiobrasPendientes := ManiobrasTotales;
             ```
 
-        - Incluir una acción a_ManiobrasPendientes_Calcular para decrementar el valor de la cuenta con la finalización de cada maniobra y asociarla como acción a la entrada a la etapa final (`S4`).
+        - Incluir una acción `a_ManiobrasPendientes_Calcular` para decrementar el valor de la cuenta con la finalización de cada maniobra y asociarla como acción a la entrada a la etapa final (`S4`).
 
             ```iecst
             IF (ManiobrasPendientes > 0) THEN
                 ManiobrasPendientes := ManiobrasPendientes - 1;
             END_IF;
             ```
-3. Incluir en la visualización `V_Carro` un objeto gráfico que permita introducir el valor de las maniobras totales y otro que muestre las maniobras pendientes.
+3. Modificar la visualización.
 
     ![V_Carro Computado](./img/v-carro-computado.png){ .screenshot }
-4. Proceder como en la sección anterior para probar el programa desde la visualización.
+
+    ??? info "Comentarios"
+    Incluir en la visualización `V_Carro` un objeto gráfico que permita introducir el valor de las maniobras totales y otro que muestre las maniobras pendientes.
+
+4. Proceder como en el apartado anterior para probar el programa desde la visualización.
 
 #### Carro Señalizado
 
-1. Añadir la librería `Util` a las referencias (`References`) del proyecto.
-2. Añadir en la parte de declaración de `FB_Carro_GRF_SFC`:
-    - Una instancia `Intermitencia` del bloque funcional `BLINK` de la librería `Util`, que implementa una intermitencia.
+1. Incluir la librería `Util.lib` en las referencias (`References`) del proyecto.
+2. Modificar l parte de declaración.
 
     ```iecst {hl_lines="13"}
     FUNCTION_BLOCK FB_Carro_GRF_SFC
@@ -287,11 +304,15 @@
     END_VAR
     ```
 
-3. Modificar el código:
+    ??? info "Comentarios"
+        - Añade una instancia `Intermitencia` del bloque funcional `BLINK` de la librería `Util`, que implementa una intermitencia.
+
+3. Modificar la parte de implementación.
 
     ![FB_Carro_GRF_SFC Senalizado](./img/fb-carro-grf-sfc-senalizado.png){ .screenshot }
-    !!! info "Código SFC"
-        - Incluir una acción `a_LamparaMarcha` para establecer el valor de `o_LamparaMarcha`, implementando tanto la acción condicionada a `BLK` en la etapa inicial (`SO`)como la acción continua en el resto de etapas.
+
+    !!! info "Comentarios"
+        - Se incluye una acción `a_LamparaMarcha` para establecer el valor de `o_LamparaMarcha`, implementando tanto la acción condicionada a `BLK` en la etapa inicial (`SO`) como la acción continua en el resto de etapas.
 
             ```iecst
             Intermitencia(Enable := S0.x);
@@ -299,6 +320,6 @@
             o_LamparaMarcha := (S0.x AND Intermitencia.OUT) OR S1.x OR S2.x OR S3.x OR S4.x;
             ```
 
-        - Incluir la acción `a_LamparaMarcha` en todas las etapas tal y como figura en el diagrama grafcet.
+        - Incluir esta acción `a_LamparaMarcha` en todas las etapas tal y como figura en el diagrama grafcet.
 
-4. Proceder como en la sección anterior para probar el programa desde la visualización.
+4. Proceder como en el apartado anterior para probar el programa desde la visualización.

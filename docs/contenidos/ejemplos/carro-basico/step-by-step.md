@@ -106,19 +106,22 @@ A lo largo de este proceso se mostrará cómo:
 
 ### GRAFCET a SFC
 
---8<-- "docs/contenidos/ejemplos/carro-basico/includes/grafcet-a-sfc.md"
+??? info "Mostrar pasos de implementación"
+    --8<-- "docs/contenidos/ejemplos/carro-basico/includes/grafcet-a-sfc.md"
 
 ---
 
 ### GRAFCET a ST
 
---8<-- "docs/contenidos/ejemplos/carro-basico/includes/grafcet-a-st.md"
+??? info "Mostrar pasos de implementación"
+    --8<-- "docs/contenidos/ejemplos/carro-basico/includes/grafcet-a-st.md"
 
 ---
 
 ### GRAFCET a LD
 
---8<-- "docs/contenidos/ejemplos/carro-basico/includes/grafcet-a-ld.md"
+??? info "Mostrar pasos de implementación"
+    --8<-- "docs/contenidos/ejemplos/carro-basico/includes/grafcet-a-ld.md"
 
 ---
 
@@ -126,6 +129,7 @@ A lo largo de este proceso se mostrará cómo:
 
 ### Diagramas de relés a LD
 
---8<-- "docs/contenidos/ejemplos/carro-basico/includes/drc-a-ld.md"
+??? info "Mostrar pasos de implementación"
+    --8<-- "docs/contenidos/ejemplos/carro-basico/includes/drc-a-ld.md"
 
 ---
