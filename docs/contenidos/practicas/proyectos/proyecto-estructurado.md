@@ -38,6 +38,8 @@ icon: fontawesome/solid/boxes-stacked
 **** no entiendo porqué pero hay que volver a vincular las variables
 **** Eliminar los parametros del sistemas de estación y dejarlos solo en las tareas?
 
+Only unused, exclude disabled
+
 1.  Implementar las tareas (funcionalidades)
             - Crea los bloques funcionales de cada tarea una por una
             - Dotar a cada bloque funcional de tarea de la estructura de rutina (Execute, Ack, Ready, Done)
