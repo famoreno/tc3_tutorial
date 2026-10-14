@@ -65,6 +65,7 @@ El tutorial divide el aprendizaje en cuatro pilares fundamentales:
 - **Variables y funciones:** Siempre en código en línea `` ` variable ` ``.
     - *Ejemplo:* La variable `i_PulsadorMarcha` activa el temporizador `TemporizadorEspera`.
 - **Bloques de código:** Usar identificador `iecst` para código Structured Text.
+- **Ejemplos progresivos:** Mantener coherentes los identificadores de variables, estados y bloques entre sus declaraciones, el código y las explicaciones. Si un paso renombra un identificador, actualizar también sus referencias en los pasos posteriores.
 - **Rutas de árbol del proyecto:** Usar **negrita** y separadores `>`.
     - *Ejemplo:* **PLC** > **[Proyecto]** > **POUs** > **MAIN**.
 

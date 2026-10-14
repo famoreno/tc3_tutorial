@@ -93,7 +93,7 @@
     VAR_OUTPUT
     END_VAR
     VAR
-        Estado: (E_INICIO, E_MARCHA_DERECHA, E_MARCHA_IZQUIERDA);
+        Estado: (E_INICIAL, E_MARCHA_DERECHA, E_MARCHA_IZQUIERDA);
 
         // Entradas
         i_PulsadorMarcha AT %I*: BOOL;
@@ -112,7 +112,7 @@
     ```iecst {hl_lines="3-14 18-19"}
     // FUNCION DE ESTADO
     CASE Estado OF
-        E_INICIO:
+        E_INICIAL:
             IF i_FinalCarreraIzquierda AND i_PulsadorMarcha THEN
                 Estado := E_MARCHA_DERECHA;
             END_IF;
@@ -122,7 +122,7 @@
             END_IF;
         E_MARCHA_IZQUIERDA: // Marcha Izquierda
             IF i_FinalCarreraIzquierda THEN
-                Estado := E_INICIO;
+                Estado := E_INICIAL;
             END_IF;
     END_CASE;
 
@@ -148,7 +148,7 @@
     VAR_OUTPUT
     END_VAR
     VAR
-        Estado: (E_INICIO, E_MARCHA_DERECHA, E_MARCHA_IZQUIERDA);
+        Estado: (E_INICIAL, E_MARCHA_DERECHA, E_MARCHA_IZQUIERDA);
 
         // Bloques Funcionales
         FlancoPulsadorMarcha: R_TRIG;
@@ -174,7 +174,7 @@
     ```iecst {hl_lines="4-5 7"}
     // FUNCION DE ESTADO
     CASE Estado OF
-        E_INICIO:
+        E_INICIAL:
             // Acción principal
             FlancoPulsadorMarcha(CLK := i_PulsadorMarcha);
 
@@ -187,7 +187,7 @@
             END_IF;
         E_MARCHA_IZQUIERDA: // Marcha Izquierda
             IF i_FinalCarreraIzquierda THEN
-                Estado := E_INICIO;
+                Estado := E_INICIAL;
             END_IF;
     END_CASE;
 
@@ -198,7 +198,7 @@
 
     ??? info "Comentarios"
         - Añadir la instrucción correspondiente a la invocación del detector de flanco `FlancoPulsadorMarcha(CLK := i_PulsadorMarcha)`.
-        - Sustituir en la expresión de la condición de transición de la etapa `E_INICIO` ➔ `E_MARCHA_DERECHA`, `PulsadorMarcha` por la salida de la instancia del bloque funcional que detecta los flancos positivos en la variable (`FlancoPulsadorMarcha.Q`).
+        - Sustituir en la expresión de la condición de transición de la etapa `E_INICIAL` ➔ `E_MARCHA_DERECHA`, `PulsadorMarcha` por la salida de la instancia del bloque funcional que detecta los flancos positivos en la variable (`FlancoPulsadorMarcha.Q`).
 
 3. Poner el programa en ejecución y comprobar, con la ayudad de la visualización, que no basta para iniciar la marcha con que el pulsador de marcha esté activado, sino que es necesario que se realice una acción de impulso.
 
@@ -216,7 +216,7 @@
         TiempoPendiente: TIME;
     END_VAR
     VAR
-        Estado: (E_INICIO, E_MARCHA_DERECHA, E_ESPERA, E_MARCHA_IZQUIERDA);
+        Estado: (E_INICIAL, E_MARCHA_DERECHA, E_ESPERA, E_MARCHA_IZQUIERDA);
 
         // Bloques Funcionales
         FlancoPulsadorMarcha: R_TRIG;
@@ -251,7 +251,7 @@
 
     // FUNCION DE ESTADO
     CASE Estado OF
-        E_INICIO:
+        E_INICIAL:
             // Acción principal
             FlancoPulsadorMarcha(CLK := i_PulsadorMarcha);
 
@@ -273,7 +273,7 @@
             END_IF;
         E_MARCHA_IZQUIERDA:
             IF i_FinalCarreraIzquierda THEN
-                Estado := E_INICIO;
+                Estado := E_INICIAL;
             END_IF;
     END_CASE;
 
@@ -289,7 +289,7 @@
 
 3. Proceder como en el apartador anterior probar el programa desde la visualización.
 
-#### Carro Computado
+#### Carro limitado
 
 1. Modificar la parte de declaración.
 
@@ -305,7 +305,7 @@
         ManiobrasPendientes: UINT;
     END_VAR
     VAR
-        Estado: (E_INICIO, E_MARCHA_DERECHA, E_ESPERA, E_MARCHA_IZQUIERDA, E_FIN);
+        Estado: (E_INICIAL, E_MARCHA_DERECHA, E_ESPERA, E_MARCHA_IZQUIERDA, E_FINAL);
 
         // Bloques Funcionales
         FlancoPulsadorMarcha: R_TRIG;
@@ -326,7 +326,7 @@
     ??? info "Comentarios"
         - El parámetro entero de entrada `ManiobrasTotales` del bloque de declaración `VAR_INPUT` continene el valor del número total de maniobras deseadas. Eventualmente, puede indicarse un valor inicial en su defecto (`1`).
         - El parámetro entero de salida `ManiobrasPendientes`del bloque de declaración `VAR_OUTPUT` contiene el número de maniobras pendientes de realizar.
-        - La lineral de enumeración `E_FIN`, representa el estado correpondiente a la nueva etapa `S4`, en el que se calcula en nuevo valor de las maniobras pendientes y se decide si continuar con la siguiente maniobra o detenerse en la etapa inicial.
+        - La lineral de enumeración `E_FINAL`, representa el estado correpondiente a la nueva etapa `S4`, en el que se calcula en nuevo valor de las maniobras pendientes y se decide si continuar con la siguiente maniobra o detenerse en la etapa inicial.
 
 2. Modificar la parte de implementación.
 
@@ -336,7 +336,7 @@
 
     // FUNCION DE ESTADO
     CASE Estado OF
-        E_INICIO:
+        E_INICIAL:
             // Acción principal
             FlancoPulsadorMarcha(CLK := i_PulsadorMarcha);
 
@@ -366,11 +366,11 @@
                     ManiobrasPendientes := ManiobrasPendientes - 1;
                 END_IF;
 
-                Estado := E_FIN;
+                Estado := E_FINAL;
             END_IF;
-        E_FIN:
+        E_FINAL:
             IF (ManiobrasPendientes = 0) THEN
-                Estado := E_INICIO;
+                Estado := E_INICIAL;
             ELSIF (ManiobrasPendientes > 0) THEN
                 Estado := E_MARCHA_DERECHA;
             END_IF;
@@ -382,10 +382,10 @@
     ```
 
     ??? info "Comentarios"
-        - Se incluye la acción de salida de la etapa `E_INICIO` (`S0`) para establecer el valor inicial de la cuenta de maniobras pendientes.
-        - Se incluye la acción de entrada de la etapa `E_FINAL` (`S4`) para decrementar el valor de la cuenta de maniobras pendientes.
-        - Se modifica el estado futuro de `E_MARCHA_IZQUIERDA` (`S2`): `E_INICIO` ➔ `E_FIN`.
-        - Se incluye el estado E_FIN (`S4`), con su código correspondiente.
+        - Se incluye la acción de salida de la etapa `E_INICIAL` (`S0`) para establecer el valor inicial de la cuenta de maniobras pendientes.
+        - Se incluye la acción de entrada de la etapa `E_FINALAL` (`S4`) para decrementar el valor de la cuenta de maniobras pendientes.
+        - Se modifica el estado futuro de `E_MARCHA_IZQUIERDA` (`S2`): `E_INICIAL` ➔ `E_FINAL`.
+        - Se incluye el estado E_FINAL (`S4`), con su código correspondiente.
 
 3. Probar el código desde la visualización.
 
@@ -406,7 +406,7 @@
         ManiobrasPendientes: UINT;
     END_VAR
     VAR
-        Estado: (E_INICIO, E_MARCHA_DERECHA, E_ESPERA, E_MARCHA_IZQUIERDA, E_FIN);
+        Estado: (E_INICIAL, E_MARCHA_DERECHA, E_ESPERA, E_MARCHA_IZQUIERDA, E_FINAL);
 
         // Bloques Funcionales
         FlancoPulsadorMarcha: R_TRIG;
@@ -433,11 +433,11 @@
     ```iecst {hl_lines="3 54"}
     // BLOQUES FUNCIONALES
     TemporizadorEspera(IN := (Estado = E_ESPERA), PT := TiempoEspera);
-    Intermitencia(ENABLE := (Estado = E_INICIO));
+    Intermitencia(ENABLE := (Estado = E_INICIAL));
 
     // FUNCION DE ESTADO
     CASE Estado OF
-        E_INICIO:
+        E_INICIAL:
             // Acción principal
             FlancoPulsadorMarcha(CLK := i_PulsadorMarcha);
 
@@ -467,11 +467,11 @@
                     ManiobrasPendientes := ManiobrasPendientes - 1;
                 END_IF;
 
-                Estado := E_FIN;
+                Estado := E_FINAL;
             END_IF;
-        E_FIN:
+        E_FINAL:
             IF (ManiobrasPendientes = 0) THEN
-                Estado := E_INICIO;
+                Estado := E_INICIAL;
             ELSIF (ManiobrasPendientes > 0) THEN
                 Estado := E_MARCHA_DERECHA;
             END_IF;
@@ -480,11 +480,11 @@
     // FUNCION DE SALIDA
     o_MarchaDerecha := (Estado = E_MARCHA_DERECHA);
     o_MarchaIzquierda := (Estado = E_MARCHA_IZQUIERDA);
-    o_LamparaMarcha := (Estado <> E_INICIO) OR Intermitencia.Q;
+    o_LamparaMarcha := (Estado <> E_INICIAL) OR Intermitencia.Q;
     ```
 
     ??? info "Comentarios"
-        - Se incluye la llamada al bloque `Intermitencia` para activarlo en la etapa `E_INICIO`.
+        - Se incluye la llamada al bloque `Intermitencia` para activarlo en la etapa `E_INICIAL`.
         - Se calcula el valor de `o_LamparaMarcha`, para que sea encienda permanentemente cuando el carro está en marcha e intermitente cuando esté esperando la orden de marcha en la etapa inicial.
 
 4. Probar el código desde la visualización.

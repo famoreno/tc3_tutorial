@@ -207,7 +207,7 @@
 
 4. Proceder como en el apartado anterior para probar el programa desde la visualización.
 
-#### Carro Computado
+#### Carro limitado
 
 1. Modificar la parte de declaración:
 
@@ -243,7 +243,7 @@
 
 2. Modificar el código:
 
-    ![FB_Carro_GRF_SFC Computado](./img/fb-carro-grf-sfc-computado.png){ .screenshot }
+    ![FB_Carro_GRF_SFC limitado](./img/fb-carro-grf-sfc-limitado.png){ .screenshot }
 
     !!! info "Comentarios"
         - Incluir una nueva etapa (`S4`) al final de las secuencia para evaluar si terminó la tarea.
@@ -265,7 +265,7 @@
             ```
 3. Modificar la visualización.
 
-    ![V_Carro Computado](./img/v-carro-computado.png){ .screenshot }
+    ![V_Carro limitado](./img/v-carro-limitado.png){ .screenshot }
 
     ??? info "Comentarios"
     Incluir en la visualización `V_Carro` un objeto gráfico que permita introducir el valor de las maniobras totales y otro que muestre las maniobras pendientes.

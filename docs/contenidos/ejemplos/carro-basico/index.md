@@ -3,19 +3,19 @@ title: Carro Básico - Descripción
 icon: fontawesome/solid/cart-shopping
 ---
 
-# :fontawesome-solid-cart-shopping: Carro Básico (TwinCAT 3)
+# :fontawesome-solid-cart-shopping: Carro Básico
 
 ## :fontawesome-solid-file-lines: Descripción Funcional
 
-El proyecto **Carro Básico** resuelve el clásico problema de automatización conocido como **«el carro va y viene»**, que consiste en un móvil que se desplaza longitudinalmente entre los dos extremos (izquierdo y derecho) de un tramo de vía.
+El proyecto **Carro Básico** es una adaptación del clásico problema de automatización conocido como **«el carro va y viene»**, que consiste en un móvil que se desplaza longitudinalmente entre los dos extremos (izquierdo y derecho) de un tramo de vía.
 
 ![Esquemático del Carro Básico](./img/carro-basico-esquematico.png){ width="300px" .image-centered }
 <figcaption>Figura 1: Representación Esquemática.</figcaption>
 
 ### Parte Operativa
 
-- Un **motor** con dos señales de mando para la marcha (marcha y marcha).
-- Un par de **sensores finales de carrera** (izquierdo y derecho).
+- Un **motor** con dos señales de mando para controlar su movimiento:  **marcha derecha** y **marcha izquierda**.
+- Un par de sensores:  **final de carrera izquierdo** y **final de carrera derecho**.
 
 ### Parte de Relación
 
@@ -30,29 +30,29 @@ El funcionamiento básico del carro es como sigue.
 
 1.  El carro se pone en marcha hacia la derecha cuando se acciona el pulsador de marcha.
 2.  Cuando el carro alcanza el final de carrera derecha, invierte el sentido de la marcha.
-3.  El carro se detiene al alcanzar, de nuevo, el final de carrera izquierda.
+3.  El carro se detiene al alcanzar, de nuevo, el final de carrera izquierdo.
 
-**Condición inicial**: carro detenido sobre el final de carrera izquierda.
+**Condición inicial**: carro detenido sobre el final de carrera izquierdo.
 
 ## :fontawesome-solid-layer-group: Modalidades
 
 El proyecto contempla diferentes variantes de complejidad progresiva.
 
 1.  **Carro pulsado**. El carro inicia un viaje de ida y vuelta, únicamente, cuando estando en su posición inicial se acciona el pulsador de marcha.
-2.  **Carro temporizado**. El carro se detiene durante un determinado tiempo ($T_{espera}$) sobre el final de carrera derecha antes de iniciar el camino de regreso hacia su posición inicial.
+2.  **Carro temporizado**. El carro se detiene durante un determinado tiempo ($T_{espera}$) sobre el final de carrera derecho antes de iniciar el camino de regreso hacia su posición inicial.
 3.  **Carro limitado**. El carro realiza un determinado número de viajes consecutivos de ida y vuelta (tarea) cada vez que, estando en su posición inicial, se acciona el pulsador de marcha.
 4.  **Carro señalizado**. La lámpara de marcha se enciende de forma permanente para indicar que el carro está en funcionamiento y parpadea para indicar que el carro está en reposo.
 
 ## :fontawesome-solid-arrows-left-right: Entradas y Salidas
 
 | Nombre | Tipo | Origen | Descripción |
-| :--- | :--- | :--- | :--- |
-| `PM` | `BOOL` | Entrada | Pulsador de Marcha |
-| `FCI` | `BOOL` | Entrada | Final de Carrera Izquierda |
-| `FCD` | `BOOL` | Entrada | Final de Carrera Derecha |
-| `LM` | `BOOL` | Salida | Lámpara de Marcha |
-| `MI` | `BOOL` | Salida | Marcha Izquierda |
-| `MD` | `BOOL` | Salida | Marcha Derecha |
+| :---: | :---: | :---: | :--- |
+| `PM` | `Binario` | Entrada | Pulsador de Marcha |
+| `FCI` | `Binario` | Entrada | Final de Carrera Izquierda |
+| `FCD` | `Binario` | Entrada | Final de Carrera Derecha |
+| `LM` | `Binario` | Salida | Lámpara de Marcha |
+| `MI` | `Binario` | Salida | Marcha Izquierda |
+| `MD` | `Binario` | Salida | Marcha Derecha |
 
 ---
 
@@ -85,8 +85,8 @@ TC3_Carro_Basico/
 
 Se implementa el funcionamiento del carro va y viene (pulsado, temporizado, limitado y señalizado), a partir de sus especificaciones (diagrama de relés y diagrama grafcet) utilizando diferentes lenguajes de programación de la norma IEC 61131-3: *Diagrama Ladder* ({{LD}}), *Sequential Function Chart* ({{SFC}}) y *Structured Text* ({{ST}}).
 
-- DRC → [LD]
-- GRF → [SFC / ST / LD]
+- DRC ➔ [LD]
+- GRF ➔ [SFC / ST / LD]
 
 ---
 
@@ -94,11 +94,11 @@ Se implementa el funcionamiento del carro va y viene (pulsado, temporizado, limi
 
 El código fuente completo de este proyecto **Carro Básico**, está disponible en GitHub:
 
-- :simple-github: **GitHub:** [`vetorres-uma/TC3_Carro_Basico`](https://github.com/vetorres-uma/TC3_Carro_Basico)
-- :simple-github: **GitHub:** [:material-download: Descarga directa `.zip`](https://github.com/vetorres-uma/TC3_Carro_Basico/archive/refs/heads/main.zip)
+- :simple-github: **Repositorio:** [:material-link-variant: vetorres-uma/TC3_Carro_Basico](https://github.com/vetorres-uma/TC3_Carro_Basico)
+- :simple-github: **Descargar:** [:material-download: Archivo fuente `.zip`](https://github.com/vetorres-uma/TC3_Carro_Basico/archive/refs/heads/main.zip)
 
-También puede descargarse el archivo comprimido de la solución (tnzip) del proyecto desde el siguiente repositorio:
+Los miembros de la **Universidad de Málaga**, también pueden descargarse el archivo comprimido de la solución (tnzip) del proyecto desde el siguiente repositorio:
 
-- :simple-googledrive: **Google Drive:** [:material-download: Descargar `.tnzip`](https://drive.google.com/file/d/1-Gh4Smocq3HyR27G86v25gKdr8F6hRN4/view?usp=drive_link)
+- :simple-googledrive: **Descargar:** [:material-download: Solución comprimida `.tnzip`](https://drive.google.com/file/d/1-Gh4Smocq3HyR27G86v25gKdr8F6hRN4/view?usp=drive_link)
 
 ---

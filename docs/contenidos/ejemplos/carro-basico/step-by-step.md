@@ -13,7 +13,7 @@ Las **máquinas de estados** que representan el comportamiento (lógica de contr
 
 El comportamiento especificado en estos diagramas, finalmente debe codificarse en un determinado lenguaje de programación para ser procesado por un PLC.
 
-En esta guía se muestra como replicar paso a paso el [**«Carro Básico»**](../carro-basico/index.md) en todas sus modalidades (básico, pulsado, temporizado, computado y señalizado).
+En esta guía se muestra como replicar paso a paso el [**«Carro Básico»**](../carro-basico/index.md) en todas sus modalidades (básico, pulsado, temporizado, limitado y señalizado).
 
 A lo largo de este proceso se mostrará cómo:
 
@@ -71,14 +71,14 @@ A lo largo de este proceso se mostrará cómo:
 !!! note "Comentarios"
     - La expresión `(TE)/X2` es el símbolo **GRAFCET** (condición de transición dependiente del tiempo simplificada) utilizado para indicar que se esperará en la etapa `2` la cantidad de tiempo indicada por `TE`.
 
-### Carro Computado
+### Carro limitado
 
-> El carro computado realiza un determinado número de viajes consecutivos de ida y vuelta (tarea) cada vez que, estando en su posición inicial, se acciona el pulsador de marcha.
+> El carro limitado realiza un determinado número de viajes consecutivos de ida y vuelta (tarea) cada vez que, estando en su posición inicial, se acciona el pulsador de marcha.
 
 ??? info "Procesamiento por lotes"
-    Con el carro computado se introduce el concepto de *procesamiento por lotes*. En el trabajo por lotes el sistema hace una tarea por cada activación del pulsador de marcha sin intervención del operario, por lo que es necesario llevar la cuenta de los viajes (maniobras) que realiza el carro.
+    Con el carro limitado se introduce el concepto de *procesamiento por lotes*. En el trabajo por lotes el sistema hace una tarea por cada activación del pulsador de marcha sin intervención del operario, por lo que es necesario llevar la cuenta de los viajes (maniobras) que realiza el carro.
 
-![Carro Computado](./img/carro-computado-grf.svg){ width="400px" .image-centered }
+![Carro limitado](./img/carro-limitado-grf.svg){ width="400px" .image-centered }
 !!! note "Comentarios"
 
     Para llevar esta cuenta en **GRAFCET** se acostumbra a distribuir esta funcionalidad entre la estructura y la interpretación.
