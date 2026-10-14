@@ -1255,10 +1255,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#carro-computado" class="md-nav__link">
+  <a href="#carro-limitado" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Carro Computado
+        Carro limitado
       
     </span>
   </a>
@@ -1339,10 +1339,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#carro-computado_1" class="md-nav__link">
+  <a href="#carro-limitado_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Carro Computado
+        Carro limitado
       
     </span>
   </a>
@@ -1411,10 +1411,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#carro-computado_2" class="md-nav__link">
+  <a href="#carro-limitado_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Carro Computado
+        Carro limitado
       
     </span>
   </a>
@@ -1483,7 +1483,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#carro-computado_3" class="md-nav__link">
+  <a href="#carro-computado" class="md-nav__link">
     <span class="md-ellipsis">
       
         Carro Computado
@@ -2041,10 +2041,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#carro-computado" class="md-nav__link">
+  <a href="#carro-limitado" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Carro Computado
+        Carro limitado
       
     </span>
   </a>
@@ -2125,10 +2125,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#carro-computado_1" class="md-nav__link">
+  <a href="#carro-limitado_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Carro Computado
+        Carro limitado
       
     </span>
   </a>
@@ -2197,10 +2197,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#carro-computado_2" class="md-nav__link">
+  <a href="#carro-limitado_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Carro Computado
+        Carro limitado
       
     </span>
   </a>
@@ -2269,7 +2269,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#carro-computado_3" class="md-nav__link">
+  <a href="#carro-computado" class="md-nav__link">
     <span class="md-ellipsis">
       
         Carro Computado
@@ -2402,7 +2402,7 @@
 <h2 id="introduccion"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512m-32-352a32 32 0 1 1 64 0 32 32 0 1 1-64 0m-8 64h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24"/></svg></span> Introducción<a class="headerlink" href="#introduccion" title="Permanent link">&para;</a></h2>
 <p>Las <strong>máquinas de estados</strong> que representan el comportamiento (lógica de control) de un automatismo industrial pueden representarse utilizando diversos «lenguajes» de especificación. Tradicionales como los <strong>diagramas de relés y contactos</strong> o más actuales como el lenguaje <strong><abbr title="Gráfico funcional de control etapa-transición (Graphe Fonctionnel de Commande Étapes/Transitions).">GRAFCET</abbr></strong>.</p>
 <p>El comportamiento especificado en estos diagramas, finalmente debe codificarse en un determinado lenguaje de programación para ser procesado por un <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr>.</p>
-<p>En esta guía se muestra como replicar paso a paso el <a href="../"><strong>«Carro Básico»</strong></a> en todas sus modalidades (básico, pulsado, temporizado, computado y señalizado).</p>
+<p>En esta guía se muestra como replicar paso a paso el <a href="../"><strong>«Carro Básico»</strong></a> en todas sus modalidades (básico, pulsado, temporizado, limitado y señalizado).</p>
 <p>A lo largo de este proceso se mostrará cómo:</p>
 <ul>
 <li>Especificar una <strong>máquina de estados</strong> con el lenguaje <strong><abbr title="Gráfico funcional de control etapa-transición (Graphe Fonctionnel de Commande Étapes/Transitions).">GRAFCET</abbr></strong>.</li>
@@ -2511,15 +2511,15 @@
 <li>La expresión <code>(TE)/X2</code> es el símbolo <strong><abbr title="Gráfico funcional de control etapa-transición (Graphe Fonctionnel de Commande Étapes/Transitions).">GRAFCET</abbr></strong> (condición de transición dependiente del tiempo simplificada) utilizado para indicar que se esperará en la etapa <code>2</code> la cantidad de tiempo indicada por <code>TE</code>.</li>
 </ul>
 </div>
-<h3 id="carro-computado">Carro Computado<a class="headerlink" href="#carro-computado" title="Permanent link">&para;</a></h3>
+<h3 id="carro-limitado">Carro limitado<a class="headerlink" href="#carro-limitado" title="Permanent link">&para;</a></h3>
 <blockquote>
-<p>El carro computado realiza un determinado número de viajes consecutivos de ida y vuelta (tarea) cada vez que, estando en su posición inicial, se acciona el pulsador de marcha.</p>
+<p>El carro limitado realiza un determinado número de viajes consecutivos de ida y vuelta (tarea) cada vez que, estando en su posición inicial, se acciona el pulsador de marcha.</p>
 </blockquote>
 <details class="info">
 <summary>Procesamiento por lotes</summary>
-<p>Con el carro computado se introduce el concepto de <em>procesamiento por lotes</em>. En el trabajo por lotes el sistema hace una tarea por cada activación del pulsador de marcha sin intervención del operario, por lo que es necesario llevar la cuenta de los viajes (maniobras) que realiza el carro.</p>
+<p>Con el carro limitado se introduce el concepto de <em>procesamiento por lotes</em>. En el trabajo por lotes el sistema hace una tarea por cada activación del pulsador de marcha sin intervención del operario, por lo que es necesario llevar la cuenta de los viajes (maniobras) que realiza el carro.</p>
 </details>
-<p><img alt="Carro Computado" class="image-centered" src="../img/carro-computado-grf.svg" width="400px" /></p>
+<p><img alt="Carro limitado" class="image-centered" src="./img/carro-limitado-grf.svg" width="400px" /></p>
 <div class="admonition note">
 <p class="admonition-title">Comentarios</p>
 <p>Para llevar esta cuenta en <strong><abbr title="Gráfico funcional de control etapa-transición (Graphe Fonctionnel de Commande Étapes/Transitions).">GRAFCET</abbr></strong> se acostumbra a distribuir esta funcionalidad entre la estructura y la interpretación.</p>
@@ -2804,7 +2804,7 @@ END_IF;
 <p>Proceder como en el apartado anterior para probar el programa desde la visualización.</p>
 </li>
 </ol>
-<h4 id="carro-computado_1">Carro Computado<a class="headerlink" href="#carro-computado_1" title="Permanent link">&para;</a></h4>
+<h4 id="carro-limitado_1">Carro limitado<a class="headerlink" href="#carro-limitado_1" title="Permanent link">&para;</a></h4>
 <ol>
 <li>
 <p>Modificar la parte de declaración:</p>
@@ -2842,7 +2842,7 @@ END_VAR
 </li>
 <li>
 <p>Modificar el código:</p>
-<p><img alt="FB_Carro_GRF_SFC Computado" class="screenshot" src="../img/fb-carro-grf-sfc-computado.png" /></p>
+<p><img alt="FB_Carro_GRF_SFC limitado" class="screenshot" src="./img/fb-carro-grf-sfc-limitado.png" /></p>
 <div class="admonition info">
 <p class="admonition-title">Comentarios</p>
 <ul>
@@ -2867,7 +2867,7 @@ END_IF;
 </li>
 <li>
 <p>Modificar la visualización.</p>
-<p><img alt="V_Carro Computado" class="screenshot" src="../img/v-carro-computado.png" /></p>
+<p><img alt="V_Carro limitado" class="screenshot" src="./img/v-carro-limitado.png" /></p>
 <details class="info">
 <summary>Comentarios</summary>
 </details>
@@ -3048,7 +3048,7 @@ END_VAR
 VAR_OUTPUT
 END_VAR
 VAR
-<span class="hll">    Estado: (E_INICIO, E_MARCHA_DERECHA, E_MARCHA_IZQUIERDA);
+<span class="hll">    Estado: (E_INICIAL, E_MARCHA_DERECHA, E_MARCHA_IZQUIERDA);
 </span>
     // Entradas
     i_PulsadorMarcha AT %I*: BOOL;
@@ -3066,7 +3066,7 @@ END_VAR
 <p>Modificar la implementación sustituyendo los valores numéricos del estado por los correspondientes miembros del tipo enumerado (literales de enumeración).</p>
 <div class="highlight"><pre><span></span><code>// FUNCION DE ESTADO
 CASE Estado OF
-<span class="hll">    E_INICIO:
+<span class="hll">    E_INICIAL:
 </span><span class="hll">        IF i_FinalCarreraIzquierda AND i_PulsadorMarcha THEN
 </span><span class="hll">            Estado := E_MARCHA_DERECHA;
 </span><span class="hll">        END_IF;
@@ -3076,7 +3076,7 @@ CASE Estado OF
 </span><span class="hll">        END_IF;
 </span><span class="hll">    E_MARCHA_IZQUIERDA: // Marcha Izquierda
 </span><span class="hll">        IF i_FinalCarreraIzquierda THEN
-</span><span class="hll">            Estado := E_INICIO;
+</span><span class="hll">            Estado := E_INICIAL;
 </span><span class="hll">        END_IF;
 </span>END_CASE;
 
@@ -3105,7 +3105,7 @@ END_VAR
 VAR_OUTPUT
 END_VAR
 VAR
-    Estado: (E_INICIO, E_MARCHA_DERECHA, E_MARCHA_IZQUIERDA);
+    Estado: (E_INICIAL, E_MARCHA_DERECHA, E_MARCHA_IZQUIERDA);
 
 <span class="hll">    // Bloques Funcionales
 </span><span class="hll">    FlancoPulsadorMarcha: R_TRIG;
@@ -3133,7 +3133,7 @@ END_VAR
 <p>Modificar la parte de implementación.</p>
 <div class="highlight"><pre><span></span><code>// FUNCION DE ESTADO
 CASE Estado OF
-    E_INICIO:
+    E_INICIAL:
 <span class="hll">        // Acción principal
 </span><span class="hll">        FlancoPulsadorMarcha(CLK := i_PulsadorMarcha);
 </span>
@@ -3146,7 +3146,7 @@ CASE Estado OF
         END_IF;
     E_MARCHA_IZQUIERDA: // Marcha Izquierda
         IF i_FinalCarreraIzquierda THEN
-            Estado := E_INICIO;
+            Estado := E_INICIAL;
         END_IF;
 END_CASE;
 
@@ -3158,7 +3158,7 @@ o_MarchaIzquierda := (Estado = E_MARCHA_IZQUIERDA);
 <summary>Comentarios</summary>
 <ul>
 <li>Añadir la instrucción correspondiente a la invocación del detector de flanco <code>FlancoPulsadorMarcha(CLK := i_PulsadorMarcha)</code>.</li>
-<li>Sustituir en la expresión de la condición de transición de la etapa <code>E_INICIO</code> ➔ <code>E_MARCHA_DERECHA</code>, <code>PulsadorMarcha</code> por la salida de la instancia del bloque funcional que detecta los flancos positivos en la variable (<code>FlancoPulsadorMarcha.Q</code>).</li>
+<li>Sustituir en la expresión de la condición de transición de la etapa <code>E_INICIAL</code> ➔ <code>E_MARCHA_DERECHA</code>, <code>PulsadorMarcha</code> por la salida de la instancia del bloque funcional que detecta los flancos positivos en la variable (<code>FlancoPulsadorMarcha.Q</code>).</li>
 </ul>
 </details>
 </li>
@@ -3179,7 +3179,7 @@ VAR_OUTPUT
 <span class="hll">    TiempoPendiente: TIME;
 </span>END_VAR
 VAR
-<span class="hll">    Estado: (E_INICIO, E_MARCHA_DERECHA, E_ESPERA, E_MARCHA_IZQUIERDA);
+<span class="hll">    Estado: (E_INICIAL, E_MARCHA_DERECHA, E_ESPERA, E_MARCHA_IZQUIERDA);
 </span>
     // Bloques Funcionales
     FlancoPulsadorMarcha: R_TRIG;
@@ -3217,7 +3217,7 @@ END_VAR
 </span>
 // FUNCION DE ESTADO
 CASE Estado OF
-    E_INICIO:
+    E_INICIAL:
         // Acción principal
         FlancoPulsadorMarcha(CLK := i_PulsadorMarcha);
 
@@ -3239,7 +3239,7 @@ CASE Estado OF
 </span><span class="hll">        END_IF;
 </span>    E_MARCHA_IZQUIERDA:
         IF i_FinalCarreraIzquierda THEN
-            Estado := E_INICIO;
+            Estado := E_INICIAL;
         END_IF;
 END_CASE;
 
@@ -3260,7 +3260,7 @@ o_MarchaIzquierda := (Estado = E_MARCHA_IZQUIERDA);
 <p>Proceder como en el apartador anterior probar el programa desde la visualización.</p>
 </li>
 </ol>
-<h4 id="carro-computado_2">Carro Computado<a class="headerlink" href="#carro-computado_2" title="Permanent link">&para;</a></h4>
+<h4 id="carro-limitado_2">Carro limitado<a class="headerlink" href="#carro-limitado_2" title="Permanent link">&para;</a></h4>
 <ol>
 <li>
 <p>Modificar la parte de declaración.</p>
@@ -3275,7 +3275,7 @@ VAR_OUTPUT
 <span class="hll">    ManiobrasPendientes: UINT;
 </span>END_VAR
 VAR
-<span class="hll">    Estado: (E_INICIO, E_MARCHA_DERECHA, E_ESPERA, E_MARCHA_IZQUIERDA, E_FIN);
+<span class="hll">    Estado: (E_INICIAL, E_MARCHA_DERECHA, E_ESPERA, E_MARCHA_IZQUIERDA, E_FINAL);
 </span>
     // Bloques Funcionales
     FlancoPulsadorMarcha: R_TRIG;
@@ -3297,7 +3297,7 @@ END_VAR
 <ul>
 <li>El parámetro entero de entrada <code>ManiobrasTotales</code> del bloque de declaración <code>VAR_INPUT</code> continene el valor del número total de maniobras deseadas. Eventualmente, puede indicarse un valor inicial en su defecto (<code>1</code>).</li>
 <li>El parámetro entero de salida <code>ManiobrasPendientes</code>del bloque de declaración <code>VAR_OUTPUT</code> contiene el número de maniobras pendientes de realizar.</li>
-<li>La lineral de enumeración <code>E_FIN</code>, representa el estado correpondiente a la nueva etapa <code>S4</code>, en el que se calcula en nuevo valor de las maniobras pendientes y se decide si continuar con la siguiente maniobra o detenerse en la etapa inicial.</li>
+<li>La lineral de enumeración <code>E_FINAL</code>, representa el estado correpondiente a la nueva etapa <code>S4</code>, en el que se calcula en nuevo valor de las maniobras pendientes y se decide si continuar con la siguiente maniobra o detenerse en la etapa inicial.</li>
 </ul>
 </details>
 </li>
@@ -3308,7 +3308,7 @@ TemporizadorEspera(IN := (Estado = E_ESPERA), PT := TiempoEspera);
 
 // FUNCION DE ESTADO
 CASE Estado OF
-    E_INICIO:
+    E_INICIAL:
         // Acción principal
         FlancoPulsadorMarcha(CLK := i_PulsadorMarcha);
 
@@ -3338,11 +3338,11 @@ CASE Estado OF
                 ManiobrasPendientes := ManiobrasPendientes - 1;
             END_IF;
 <span class="hll">
-</span><span class="hll">            Estado := E_FIN;
+</span><span class="hll">            Estado := E_FINAL;
 </span><span class="hll">        END_IF;
-</span><span class="hll">    E_FIN:
+</span><span class="hll">    E_FINAL:
 </span>        IF (ManiobrasPendientes = 0) THEN
-<span class="hll">            Estado := E_INICIO;
+<span class="hll">            Estado := E_INICIAL;
 </span>        ELSIF (ManiobrasPendientes &gt; 0) THEN
 <span class="hll">            Estado := E_MARCHA_DERECHA;
 </span><span class="hll">        END_IF;
@@ -3355,10 +3355,10 @@ CASE Estado OF
 <details class="info">
 <summary>Comentarios</summary>
 <ul>
-<li>Se incluye la acción de salida de la etapa <code>E_INICIO</code> (<code>S0</code>) para establecer el valor inicial de la cuenta de maniobras pendientes.</li>
-<li>Se incluye la acción de entrada de la etapa <code>E_FINAL</code> (<code>S4</code>) para decrementar el valor de la cuenta de maniobras pendientes.</li>
-<li>Se modifica el estado futuro de <code>E_MARCHA_IZQUIERDA</code> (<code>S2</code>): <code>E_INICIO</code> ➔ <code>E_FIN</code>.</li>
-<li>Se incluye el estado E_FIN (<code>S4</code>), con su código correspondiente.</li>
+<li>Se incluye la acción de salida de la etapa <code>E_INICIAL</code> (<code>S0</code>) para establecer el valor inicial de la cuenta de maniobras pendientes.</li>
+<li>Se incluye la acción de entrada de la etapa <code>E_FINALAL</code> (<code>S4</code>) para decrementar el valor de la cuenta de maniobras pendientes.</li>
+<li>Se modifica el estado futuro de <code>E_MARCHA_IZQUIERDA</code> (<code>S2</code>): <code>E_INICIAL</code> ➔ <code>E_FINAL</code>.</li>
+<li>Se incluye el estado E_FINAL (<code>S4</code>), con su código correspondiente.</li>
 </ul>
 </details>
 </li>
@@ -3382,7 +3382,7 @@ VAR_OUTPUT
     ManiobrasPendientes: UINT;
 END_VAR
 VAR
-    Estado: (E_INICIO, E_MARCHA_DERECHA, E_ESPERA, E_MARCHA_IZQUIERDA, E_FIN);
+    Estado: (E_INICIAL, E_MARCHA_DERECHA, E_ESPERA, E_MARCHA_IZQUIERDA, E_FINAL);
 
     // Bloques Funcionales
     FlancoPulsadorMarcha: R_TRIG;
@@ -3411,11 +3411,11 @@ END_VAR
 <p>Modificar la parte de implementación.</p>
 <div class="highlight"><pre><span></span><code>// BLOQUES FUNCIONALES
 TemporizadorEspera(IN := (Estado = E_ESPERA), PT := TiempoEspera);
-<span class="hll">Intermitencia(ENABLE := (Estado = E_INICIO));
+<span class="hll">Intermitencia(ENABLE := (Estado = E_INICIAL));
 </span>
 // FUNCION DE ESTADO
 CASE Estado OF
-    E_INICIO:
+    E_INICIAL:
         // Acción principal
         FlancoPulsadorMarcha(CLK := i_PulsadorMarcha);
 
@@ -3445,11 +3445,11 @@ CASE Estado OF
                 ManiobrasPendientes := ManiobrasPendientes - 1;
             END_IF;
 
-            Estado := E_FIN;
+            Estado := E_FINAL;
         END_IF;
-    E_FIN:
+    E_FINAL:
         IF (ManiobrasPendientes = 0) THEN
-            Estado := E_INICIO;
+            Estado := E_INICIAL;
         ELSIF (ManiobrasPendientes &gt; 0) THEN
             Estado := E_MARCHA_DERECHA;
         END_IF;
@@ -3458,12 +3458,12 @@ END_CASE;
 // FUNCION DE SALIDA
 o_MarchaDerecha := (Estado = E_MARCHA_DERECHA);
 o_MarchaIzquierda := (Estado = E_MARCHA_IZQUIERDA);
-o_LamparaMarcha := (Estado &lt;&gt; E_INICIO) OR Intermitencia.Q;
+o_LamparaMarcha := (Estado &lt;&gt; E_INICIAL) OR Intermitencia.Q;
 </code></pre></div>
 <details class="info">
 <summary>Comentarios</summary>
 <ul>
-<li>Se incluye la llamada al bloque <code>Intermitencia</code> para activarlo en la etapa <code>E_INICIO</code>.</li>
+<li>Se incluye la llamada al bloque <code>Intermitencia</code> para activarlo en la etapa <code>E_INICIAL</code>.</li>
 <li>Se calcula el valor de <code>o_LamparaMarcha</code>, para que sea encienda permanentemente cuando el carro está en marcha e intermitente cuando esté esperando la orden de marcha en la etapa inicial.</li>
 </ul>
 </details>
@@ -3489,7 +3489,7 @@ o_LamparaMarcha := (Estado &lt;&gt; E_INICIO) OR Intermitencia.Q;
 <div class="admonition warning">
 <p class="admonition-title">🚧 SECCIÓN EN CONSTRUCCIÓN</p>
 </div>
-<h4 id="carro-computado_3">Carro Computado<a class="headerlink" href="#carro-computado_3" title="Permanent link">&para;</a></h4>
+<h4 id="carro-computado">Carro Computado<a class="headerlink" href="#carro-computado" title="Permanent link">&para;</a></h4>
 <div class="admonition warning">
 <p class="admonition-title">🚧 SECCIÓN EN CONSTRUCCIÓN</p>
 </div>
@@ -3541,7 +3541,7 @@ o_LamparaMarcha := (Estado &lt;&gt; E_INICIO) OR Intermitencia.Q;
     <span class="md-icon" title="Última actualización">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="13 de octubre de 2026 22:16:49 UTC">13 de octubre de 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="14 de octubre de 2026 14:11:24 UTC">14 de octubre de 2026</span>
   </span>
 
     

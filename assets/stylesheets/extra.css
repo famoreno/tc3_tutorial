@@ -139,6 +139,10 @@
   margin-inline: auto;
 }
 
+.md-typeset figcaption {
+  text-align: center;
+}
+
 /* ===== TOC izquierdo ===== */
 /* Nivel 1 */
 .md-nav__item > .md-nav__link {
