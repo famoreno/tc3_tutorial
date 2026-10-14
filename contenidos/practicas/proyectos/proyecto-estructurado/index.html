@@ -1562,6 +1562,59 @@
 <div class="admonition warning">
 <p class="admonition-title">🚧 DOCUMENTO EN CONSTRUCCIÓN</p>
 </div>
+<ol>
+<li>Crear un proyecto twinCAT nuevo (sobre la solución) 02_Estructurado</li>
+<li>eliminar configuraciones</li>
+<li>Crear un nuevo proyecto plc Estructurado_PLC</li>
+<li>Crear dos carpetas (Estacion, Tareas)</li>
+<li>Crear fb_Estacion <abbr title="Texto estructurado (Structured Text), lenguaje de la norma IEC 61131-3.">ST</abbr> en estacion</li>
+<li>Copiar todas la variables del anterior</li>
+<li>Colocar i_SelectorManual en su sitio</li>
+<li>en main declarar y llamar a estacion</li>
+<li>Copiar VISU</li>
+<li>copy paste dispositivos</li>
+<li>Deshabilitar monolitico</li>
+<li>Definir las tareas-susbsecuencias-funcionalidades (verbos)</li>
+<li>Añadir la pou de la primera taera en sfc</li>
+<li>Añadir el interfaz de sincronización de la tarea ((Execute, Ack, Ready, Done))</li>
+<li>Incluir los parametros correspondientes a los sensores y actuadores</li>
+<li>Incluir el resto de parámetros necesarios con las adaptacions necesarias.</li>
+<li>Crer la estructura vacía de la tarea Initial, End</li>
+<li>Implementar el resto de la secuencia</li>
+<li>Declarar una instancia de la tarea en Estación</li>
+<li>Invocar la tarea con execute = Pulsador Marcha y entradas y salidas</li>
+<li>escribir las lineas de las salidas</li>
+<li>Verificar su buen funcionameinto.</li>
+<li>Seleccionar sistemas destino</li>
+<li>activar configuració</li>
+<li>login</li>
+<li>run</li>
+<li>probar</li>
+</ol>
+<p>**** copiar los dispositivos despues de compilar... para mantener los vinculos Copiar con los vínculos.
+**** no entiendo porqué pero hay que volver a vincular las variables
+**** Eliminar los parametros del sistemas de estación y dejarlos solo en las tareas?</p>
+<ol>
+<li>Implementar las tareas (funcionalidades)
+            - Crea los bloques funcionales de cada tarea una por una
+            - Dotar a cada bloque funcional de tarea de la estructura de rutina (Execute, Ack, Ready, Done)
+            - Incluir en cada tarea un parámetro de entrada para cada sensor y un parámetro de salida para cada actuador que necesite para cumplir su función
+            - Integrar cada tarea en la estación (declaración, invocación y parámetros de entrada y salida)
+            - Validad cada tarea antes de iniciar la siguiente
+            - El pulsador de marcha inicia la tarea seleccionada
+        [ ] Crear un coordinador de tareas secuencial (FB_EstacionCoordinador)
+            - Dotar al bloque funcional de coordinación de la estructura de rutina
+            - Implementar únicamente la secuencia principal «directa»
+            - El coordinador dispondrá de parámetros de entrada y salidas para comunicarse con cada tareas de forma que, al menos, tenga un parámetro de salida (imperativo) para dar la orden de ejecución de la funcionalidad y un parámetro de entrada (participio pasado) para recibir la respuesta de que la tarea se ha completado satisfactoriamente
+            - Integrar el coordinador de tareas en la estación (declaración, invocación y parámetros de entrada y salida)
+            - Integrar el coordinador con cada una de las tareas (parámetos de entrada/salida)
+            - El pulsador de marcha inicia la ejecución del coordinador
+        [ ] Incluir la gestión de las condiciones iniciales
+        [ ] Incluir la gestión de la tarea         <br />
+        [ ] Incluir la gestión de la falta de material
+        [ ] Incluir la gestión del tipo de pieza
+        [ ] Incluir la gestión del panel de operador (señalización)</li>
+</ol>
 
 
 
@@ -1582,7 +1635,7 @@
     <span class="md-icon" title="Última actualización">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="9 de octubre de 2026 18:24:40 UTC">9 de octubre de 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="14 de octubre de 2026 17:57:45 UTC">14 de octubre de 2026</span>
   </span>
 
     
