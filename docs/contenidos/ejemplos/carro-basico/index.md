@@ -5,7 +5,7 @@ icon: fontawesome/solid/cart-shopping
 
 # :fontawesome-solid-cart-shopping: Carro Básico
 
-## :fontawesome-solid-file-lines: Descripción Funcional
+## :fontawesome-solid-file-lines: Descripción
 
 El proyecto **Carro Básico** es una adaptación del clásico problema de automatización conocido como **«el carro va y viene»**, que consiste en un móvil que se desplaza longitudinalmente entre los dos extremos (izquierdo y derecho) de un tramo de vía.
 
@@ -24,7 +24,7 @@ El proyecto **Carro Básico** es una adaptación del clásico problema de automa
 - Un **pulsador de marcha**, para iniciar el funcionamiento.
 - Una **lámpara de marcha**, para indicar el estado del sistema.
 
-## :fontawesome-solid-circle-info: Descripción Funcional
+## :fontawesome-solid-gear: Descripción Funcional
 
 El funcionamiento básico del carro es como sigue.
 
@@ -56,9 +56,9 @@ El proyecto contempla diferentes variantes de complejidad progresiva.
 
 ---
 
-## :fontawesome-solid-diagram-project: Especificación Funcional
+## :fontawesome-solid-brain: Especificación Funcional
 
-Las siguientes especificaciones funcionales describen el comportamiento del carro (lógica de control) de una manera precisa utilizando los **Diagramas de Relés y Contactos** y el lenguaje **GRAFCET**.
+Las siguientes especificaciones funcionales describen el comportamiento del carro (lógica de control) de una manera precisa utilizando **Diagramas de Relés y Contactos** y lenguaje **GRAFCET**.
 
 - [Diagrama de relés y contactos (PDF).](./pdf/carro_basico_drc.pdf)
 - [Diagrama GRAFCET (PDF).](./pdf/carro_basico_grf.pdf)
@@ -87,6 +87,9 @@ Se implementa el funcionamiento del carro va y viene (pulsado, temporizado, limi
 
 - DRC ➔ [LD]
 - GRF ➔ [SFC / ST / LD]
+
+!!! info "Guía de implementación"
+    Para implementar  este proyecto desde cero en TwinCAT 3, seguir la **[Guía de implementación](step-by-step.md)**.
 
 ---
 

@@ -23,7 +23,7 @@ Este proyecto incluye además, una **visualización** elemental que permite, med
 
 ---
 
-## :fontawesome-solid-folder-tree: Estructura (Simplificada) del Proyecto
+## :fontawesome-solid-folder-tree: Estructura Simplificada del Proyecto
 
 ```text
 TC3_Hola_Mundo/

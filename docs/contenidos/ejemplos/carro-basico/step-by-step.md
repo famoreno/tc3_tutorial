@@ -13,7 +13,9 @@ Las **máquinas de estados** que representan el comportamiento (lógica de contr
 
 El comportamiento especificado en estos diagramas, finalmente debe codificarse en un determinado lenguaje de programación para ser procesado por un PLC.
 
-En esta guía se muestra como replicar paso a paso el [**«Carro Básico»**](../carro-basico/index.md) en todas sus modalidades (básico, pulsado, temporizado, limitado y señalizado).
+## :fontawesome-solid-bullseye: Objetivos
+
+En esta guía se muestra como replicar paso a paso el ejemplo [**«Carro Básico»**](../carro-basico/index.md) en todas sus modalidades (básico, pulsado, temporizado, limitado y señalizado).
 
 A lo largo de este proceso se mostrará cómo:
 
@@ -102,7 +104,7 @@ A lo largo de este proceso se mostrará cómo:
 
 ---
 
-## Implementación por tipo de transcripción
+## :fontawesome-solid-list-check: Guía de Implementación
 
 ### GRAFCET a SFC
 
