@@ -46,6 +46,12 @@ nav:
       - Proyecto Jerárquico: contenidos/practicas/proyectos/proyecto-jerarquico.md
       - Proyecto Funcional: contenidos/practicas/proyectos/proyecto-funcional.md
 
+    - Licencia:
+      - licencia.md
+
+copyright: |
+  Material original bajo <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>, excepto código PLC (<a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank" rel="noopener">GPLv3</a>) y recursos de terceros.
+
 theme:
   name: material
   language: es
@@ -139,3 +145,9 @@ extra_javascript:
 
 extra:
   social:
+    - icon: fontawesome/brands/creative-commons
+      link: https://creativecommons.org/licenses/by-sa/4.0/
+      name: Licencia de Contenidos (CC BY-SA 4.0)
+    - icon: simple/gnu
+      link: https://www.gnu.org/licenses/gpl-3.0.html
+      name: Licencia de Código (GPLv3)

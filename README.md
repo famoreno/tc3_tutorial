@@ -58,4 +58,11 @@ Antes de editar o enviar contenido, consulta [CONTRIBUTING.md](CONTRIBUTING.md),
 
 ---
 
+## Licencia
+
+- El código fuente PLC de los proyectos y los fragmentos IEC 61131-3 incluidos en la documentación, normalmente en bloques `iecst`, se distribuyen bajo la licencia **GNU General Public License, versión 3.0 (GPLv3)**.
+- El texto explicativo y los recursos originales creados para el tutorial se distribuyen bajo la licencia **Creative Commons Atribución-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)**. Los bloques de código y los materiales de terceros quedan excluidos de esta licencia.
+
+---
+
 © 2026 AutoISATeam TC3 Tutorial.
