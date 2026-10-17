@@ -20,7 +20,7 @@
         
       
       
-      <link rel="icon" href="../../../assets/img/logo-auto-isa-team.svg">
+      <link rel="icon" href="../../../assets/img/auto-isa-team-icon-alt.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
@@ -100,7 +100,7 @@
   <nav class="md-header__inner md-grid" aria-label="Cabecera">
     <a href="../../.." title="Tutorial de TwinCAT 3" class="md-header__button md-logo" aria-label="Tutorial de TwinCAT 3" data-md-component="logo">
       
-  <img src="../../../assets/img/logo-auto-isa-team.svg" alt="logo">
+  <img src="../../../assets/img/auto-isa-team-logo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -225,7 +225,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="Tutorial de TwinCAT 3" class="md-nav__button md-logo" aria-label="Tutorial de TwinCAT 3" data-md-component="logo">
       
-  <img src="../../../assets/img/logo-auto-isa-team.svg" alt="logo">
+  <img src="../../../assets/img/auto-isa-team-logo.svg" alt="logo">
 
     </a>
     Tutorial de TwinCAT 3
@@ -1374,7 +1374,7 @@
   <span class="md-ellipsis">
     
   
-    Semáforo
+    Semáforo de Peatones
   
 
     
@@ -1775,8 +1775,8 @@
 
 <h3 id="parte-operativa">Parte Operativa<a class="headerlink" href="#parte-operativa" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Un <strong>motor</strong> con dos señales de mando para controlar su movimiento:  <strong>marcha derecha</strong> y <strong>marcha izquierda</strong>.</li>
-<li>Un par de sensores:  <strong>final de carrera izquierdo</strong> y <strong>final de carrera derecho</strong>.</li>
+<li>Un <strong>motor</strong> con dos señales de mando para controlar su movimiento: <strong>marcha derecha</strong> y <strong>marcha izquierda</strong>.</li>
+<li>Un par de sensores: <strong>final de carrera izquierdo</strong> y <strong>final de carrera derecho</strong>.</li>
 </ul>
 <h3 id="parte-de-relacion">Parte de Relación<a class="headerlink" href="#parte-de-relacion" title="Permanent link">&para;</a></h3>
 <p>Consiste en un panel de operador básico compuesto únicamente por:</p>
@@ -1788,17 +1788,17 @@
 <p>El funcionamiento básico del carro es como sigue.</p>
 <ol>
 <li>El carro se pone en marcha hacia la derecha cuando se acciona el pulsador de marcha.</li>
-<li>Cuando el carro alcanza el final de carrera derecha, invierte el sentido de la marcha.</li>
+<li>Cuando el carro alcanza el final de carrera derecho, invierte el sentido de la marcha.</li>
 <li>El carro se detiene al alcanzar, de nuevo, el final de carrera izquierdo.</li>
 </ol>
 <p><strong>Condición inicial</strong>: carro detenido sobre el final de carrera izquierdo.</p>
 <h2 id="modalidades"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M232.5 5.2c14.9-6.9 32.1-6.9 47 0l218.6 101c8.5 3.9 13.9 12.4 13.9 21.8s-5.4 17.9-13.9 21.8l-218.6 101c-14.9 6.9-32.1 6.9-47 0l-218.6-101C5.4 145.8 0 137.3 0 128s5.4-17.9 13.9-21.8zM48.1 218.4l164.3 75.9c27.7 12.8 59.6 12.8 87.3 0L464 218.4l34.1 15.8c8.5 3.9 13.9 12.4 13.9 21.8s-5.4 17.9-13.9 21.8l-218.6 101c-14.9 6.9-32.1 6.9-47 0l-218.6-101C5.4 273.8 0 265.3 0 256s5.4-17.9 13.9-21.8L48 218.4zM13.9 362.2 48 346.4l164.3 75.9c27.7 12.8 59.6 12.8 87.3 0l164.3-75.9 34.1 15.8c8.5 3.9 13.9 12.4 13.9 21.8s-5.4 17.9-13.9 21.8l-218.6 101c-14.9 6.9-32.1 6.9-47 0l-218.5-101C5.4 401.8 0 393.3 0 384s5.4-17.9 13.9-21.8"/></svg></span> Modalidades<a class="headerlink" href="#modalidades" title="Permanent link">&para;</a></h2>
 <p>El proyecto contempla diferentes variantes de complejidad progresiva.</p>
 <ol>
-<li><strong>Carro pulsado</strong>. El carro inicia un viaje de ida y vuelta, únicamente, cuando estando en su posición inicial se acciona el pulsador de marcha.</li>
-<li><strong>Carro temporizado</strong>. El carro se detiene durante un determinado tiempo (<span class="arithmatex">\(T_{espera}\)</span>) sobre el final de carrera derecho antes de iniciar el camino de regreso hacia su posición inicial.</li>
-<li><strong>Carro limitado</strong>. El carro realiza un determinado número de viajes consecutivos de ida y vuelta (tarea) cada vez que, estando en su posición inicial, se acciona el pulsador de marcha.</li>
-<li><strong>Carro señalizado</strong>. La lámpara de marcha se enciende de forma permanente para indicar que el carro está en funcionamiento y parpadea para indicar que el carro está en reposo.</li>
+<li><strong>Carro Pulsado</strong>. El carro inicia un viaje de ida y vuelta únicamente cuando, estando en su posición inicial, se acciona el pulsador de marcha.</li>
+<li><strong>Carro Temporizado</strong>. El carro se detiene durante un tiempo determinado (<span class="arithmatex">\(T_{espera}\)</span>) sobre el final de carrera derecho antes de iniciar el regreso a su posición inicial.</li>
+<li><strong>Carro Limitado</strong>. El carro realiza un número determinado de viajes consecutivos de ida y vuelta (tarea) cada vez que, estando en su posición inicial, se acciona el pulsador de marcha.</li>
+<li><strong>Carro Señalizado</strong>. La lámpara de marcha permanece encendida mientras el carro está en funcionamiento y parpadea cuando está en reposo.</li>
 </ol>
 <h2 id="entradas-y-salidas"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="m470.6 374.6 96-96c12.5-12.5 12.5-32.8 0-45.3l-96-96c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l41.4 41.4H109.2l41.4-41.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-96 96c-6 6-9.4 14.1-9.4 22.6s3.4 16.6 9.4 22.6l96 96c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-41.4-41.4h357.5l-41.4 41.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0z"/></svg></span> Entradas y Salidas<a class="headerlink" href="#entradas-y-salidas" title="Permanent link">&para;</a></h2>
 <table>
@@ -1821,13 +1821,13 @@
 <td style="text-align: center;"><code>FCI</code></td>
 <td style="text-align: center;"><code>Binario</code></td>
 <td style="text-align: center;">Entrada</td>
-<td style="text-align: left;">Final de Carrera Izquierda</td>
+<td style="text-align: left;">Final de carrera izquierdo</td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>FCD</code></td>
 <td style="text-align: center;"><code>Binario</code></td>
 <td style="text-align: center;">Entrada</td>
-<td style="text-align: left;">Final de Carrera Derecha</td>
+<td style="text-align: left;">Final de carrera derecho</td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>LM</code></td>
@@ -1851,7 +1851,7 @@
 </table>
 <hr />
 <h2 id="especificacion-funcional"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M120 56c0-30.9 25.1-56 56-56h24c17.7 0 32 14.3 32 32v448c0 17.7-14.3 32-32 32h-32c-29.8 0-54.9-20.4-62-48h-2c-44.2 0-80-35.8-80-80 0-18 6-34.6 16-48-19.4-14.6-32-37.8-32-64 0-30.9 17.6-57.8 43.2-71.1-7.1-12-11.2-26-11.2-40.9 0-44.2 35.8-80 80-80zm272 0v24c44.2 0 80 35.8 80 80 0 15-4.1 29-11.2 40.9C486.5 214.2 504 241 504 272c0 26.2-12.6 49.4-32 64 10 13.4 16 30 16 48 0 44.2-35.8 80-80 80h-2c-7.1 27.6-32.2 48-62 48h-32c-17.7 0-32-14.3-32-32V32c0-17.7 14.3-32 32-32h24c30.9 0 56 25.1 56 56"/></svg></span> Especificación Funcional<a class="headerlink" href="#especificacion-funcional" title="Permanent link">&para;</a></h2>
-<p>Las siguientes especificaciones funcionales describen el comportamiento del carro (lógica de control) de una manera precisa utilizando <strong>Diagramas de Relés y Contactos</strong> y lenguaje <strong><abbr title="Gráfico funcional de control etapa-transición (Graphe Fonctionnel de Commande Étapes/Transitions).">GRAFCET</abbr></strong>.</p>
+<p>Las siguientes especificaciones funcionales describen con precisión el comportamiento del carro (lógica de control) mediante <strong>Diagramas de Relés y Contactos</strong> y el lenguaje <strong><abbr title="Gráfico funcional de control etapa-transición (Graphe Fonctionnel de Commande Étapes/Transitions).">GRAFCET</abbr></strong>.</p>
 <ul>
 <li><a href="pdf/carro_basico_drc.pdf">Diagrama de relés y contactos (PDF).</a></li>
 <li><a href="pdf/carro_basico_grf.pdf">Diagrama <abbr title="Gráfico funcional de control etapa-transición (Graphe Fonctionnel de Commande Étapes/Transitions).">GRAFCET</abbr> (PDF).</a></li>
@@ -1870,23 +1870,23 @@
 </code></pre></div>
 <hr />
 <h2 id="implementacion"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M70.8-6.7c5.4-5.4 13.8-6.2 20.2-2l118.9 79.2c8.9 5.9 14.2 15.9 14.2 26.6v49.6l90.8 90.8c33.3-15 73.9-8.9 101.2 18.5l126.1 126.1c18.7 18.7 18.7 49.1 0 67.9l-60.1 60.1c-18.7 18.7-49.1 18.7-67.9 0L288.1 384c-27.4-27.4-33.5-67.9-18.5-101.2L178.8 192h-49.6c-10.7 0-20.7-5.3-26.6-14.2L23.4 58.9c-4.2-6.3-3.4-14.8 2-20.2zm145 303.5c-6.3 36.9 2.3 75.9 26.2 107.2l-94.9 95c-28.1 28.1-73.7 28.1-101.8 0s-28.1-73.7 0-101.8l135.4-135.5 35.2 35.1zM384.1 0c20.1 0 39.4 3.7 57.1 10.5 10 3.8 11.8 16.5 4.3 24.1l-56.7 56.7c-3 3-4.7 7.1-4.7 11.3V144c0 8.8 7.2 16 16 16h41.4c4.2 0 8.3-1.7 11.3-4.7l56.7-56.7c7.6-7.5 20.3-5.7 24.1 4.3 6.8 17.7 10.5 37 10.5 57.1 0 43.2-17.2 82.3-45 111.1L450 222c-33.1-33-78.5-45.7-121.1-38.4l-56.8-56.8V97.1l-.2-5c-.8-12.4-4.4-24.3-10.5-34.9C290.8 22.2 334.8 0 384.1-.1z"/></svg></span> Implementación<a class="headerlink" href="#implementacion" title="Permanent link">&para;</a></h2>
-<p>Se implementa el funcionamiento del carro va y viene (pulsado, temporizado, limitado y señalizado), a partir de sus especificaciones (diagrama de relés y diagrama grafcet) utilizando diferentes lenguajes de programación de la norma IEC 61131-3: <em>Diagrama Ladder</em> (<span class="fondo-verde-lang"><abbr title="Diagrama de contactos (Ladder Diagram), lenguaje de la norma IEC 61131-3.">LD</abbr></span>), <em>Sequential Function Chart</em> (<span class="fondo-rojo-lang"><abbr title="Diagrama de funciones secuenciales (Sequential Function Chart), lenguaje de la norma IEC 61131-3.">SFC</abbr></span>) y <em>Structured Text</em> (<span class="fondo-azul-lang"><abbr title="Texto estructurado (Structured Text), lenguaje de la norma IEC 61131-3.">ST</abbr></span>).</p>
+<p>El funcionamiento del carro va y viene (pulsado, temporizado, limitado y señalizado) se implementa a partir de sus especificaciones (diagramas de relés y <abbr title="Gráfico funcional de control etapa-transición (Graphe Fonctionnel de Commande Étapes/Transitions).">GRAFCET</abbr>) mediante los lenguajes de programación de la norma IEC 61131-3: <em>Diagrama Ladder</em> (<span class="fondo-verde-lang"><abbr title="Diagrama de contactos (Ladder Diagram), lenguaje de la norma IEC 61131-3.">LD</abbr></span>), <em>Sequential Function Chart</em> (<span class="fondo-rojo-lang"><abbr title="Diagrama de funciones secuenciales (Sequential Function Chart), lenguaje de la norma IEC 61131-3.">SFC</abbr></span>) y <em>Structured Text</em> (<span class="fondo-azul-lang"><abbr title="Texto estructurado (Structured Text), lenguaje de la norma IEC 61131-3.">ST</abbr></span>).</p>
 <ul>
 <li><abbr title="Diagrama de Relés y Contactos.">DRC</abbr> ➔ [<abbr title="Diagrama de contactos (Ladder Diagram), lenguaje de la norma IEC 61131-3.">LD</abbr>]</li>
 <li>GRF ➔ [<abbr title="Diagrama de funciones secuenciales (Sequential Function Chart), lenguaje de la norma IEC 61131-3.">SFC</abbr> / <abbr title="Texto estructurado (Structured Text), lenguaje de la norma IEC 61131-3.">ST</abbr> / <abbr title="Diagrama de contactos (Ladder Diagram), lenguaje de la norma IEC 61131-3.">LD</abbr>]</li>
 </ul>
 <div class="admonition info">
-<p class="admonition-title">Guía de implementación</p>
-<p>Para implementar  este proyecto desde cero en <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> 3, seguir la <strong><a href="step-by-step/">Guía de implementación</a></strong>.</p>
+<p class="admonition-title">Paso a paso</p>
+<p>Para implementar este proyecto desde cero en <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> 3, sigue su <strong><a href="step-by-step/">guía de implementación</a></strong>.</p>
 </div>
 <hr />
 <h2 id="codigo-fuente-y-descarga"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M256 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v210.7l-41.4-41.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0l96-96c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 242.7zM64 320c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64h-46.9l-56.6 56.6c-31.2 31.2-81.9 31.2-113.1 0L110.9 320zm304 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48"/></svg></span> Código Fuente y Descarga<a class="headerlink" href="#codigo-fuente-y-descarga" title="Permanent link">&para;</a></h2>
-<p>El código fuente completo de este proyecto <strong>Carro Básico</strong>, está disponible en GitHub:</p>
+<p>El código fuente completo de este proyecto está disponible en GitHub:</p>
 <ul>
 <li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></span> <strong>Repositorio:</strong> <a href="https://github.com/vetorres-uma/TC3_Carro_Basico"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.98 2.98 0 0 0 0-4.24 2.98 2.98 0 0 0-4.24 0l-3.53 3.53a2.98 2.98 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.98 2.98 0 0 0 0 4.24 2.98 2.98 0 0 0 4.24 0l3.53-3.53a2.98 2.98 0 0 0 0-4.24.973.973 0 0 1 0-1.42"/></svg></span> vetorres-uma/TC3_Carro_Basico</a></li>
 <li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></span> <strong>Descargar:</strong> <a href="https://github.com/vetorres-uma/TC3_Carro_Basico/archive/refs/heads/main.zip"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"/></svg></span> Archivo fuente <code>.zip</code></a></li>
 </ul>
-<p>Los miembros de la <strong>Universidad de Málaga</strong>, también pueden descargarse el archivo comprimido de la solución (tnzip) del proyecto desde el siguiente repositorio:</p>
+<p>Los miembros de la <strong>Universidad de Málaga</strong> también pueden descargar el archivo comprimido de la solución (<code>.tnzip</code>) del proyecto desde el siguiente repositorio:</p>
 <ul>
 <li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.01 1.485c-2.082 0-3.754.02-3.743.047.01.02 1.708 3.001 3.774 6.62l3.76 6.574h3.76c2.081 0 3.753-.02 3.742-.047-.005-.02-1.708-3.001-3.775-6.62l-3.76-6.574zm-4.76 1.73a789.828 789.861 0 0 0-3.63 6.319L0 15.868l1.89 3.298 1.885 3.297 3.62-6.335 3.618-6.33-1.88-3.287C8.1 4.704 7.255 3.22 7.25 3.214zm2.259 12.653-.203.348c-.114.198-.96 1.672-1.88 3.287a423.93 423.948 0 0 1-1.698 2.97c-.01.026 3.24.042 7.222.042h7.244l1.796-3.157c.992-1.734 1.85-3.23 1.906-3.323l.104-.167h-7.249z"/></svg></span> <strong>Descargar:</strong> <a href="https://drive.google.com/file/d/1-Gh4Smocq3HyR27G86v25gKdr8F6hRN4/view?usp=drive_link"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"/></svg></span> Solución comprimida <code>.tnzip</code></a></li>
 </ul>
@@ -1911,7 +1911,7 @@
     <span class="md-icon" title="Última actualización">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="15 de octubre de 2026 05:42:43 UTC">15 de octubre de 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="17 de octubre de 2026 22:00:06 UTC">17 de octubre de 2026</span>
   </span>
 
     

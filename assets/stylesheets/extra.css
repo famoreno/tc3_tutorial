@@ -272,33 +272,40 @@
 }
 
 /* ===== Tablas ===== */
-.md-typeset table {
-  font-size: 0.85rem;         /* Texto ligeramente más pequeño */
+.md-typeset table:not([class]) {
+  font-size: 0.72rem;
+  border-collapse: collapse;
+  margin: 1em 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Sombra muy suave opcional */
 }
 
+/* Forzamos que las celdas de código dentro de tablas no salten de línea */
+.md-typeset table td code,
+.md-typeset table td {
+  white-space: nowrap;        /* Evita que los textos/variables se dividan en 2 líneas */
+}
+
+/* Espaciado interno cómodo (respiración de filas) */
 .md-typeset table td,
 .md-typeset table th {
-  padding: 2px 2px;           /* Reduce espacio interno */
-  line-height: 1;             /* Reduce altura de línea */
+  padding: 0.25rem 0.25rem;    /* Relleno cómodo arriba/abajo e izquierda/derecha */
+  line-height: 1.25           /* Lectura fluida */
 }
 
-/* Header de tablas en modo claro */
+/* Cabecera sutil en modo claro (Soft Gray) */
 .md-typeset table thead {
-  background-color: var(--uma-gray);
-  color: var(--very-light-gray);
+  background-color: #f1f3f5;  /* Gris suave y elegante */
+  color: var(--uma-dark-blue); /* Texto en azul UMA para coherencia */
 }
 
-/* Dark mode */
-[data-md-color-scheme="slate"] .md-typeset table thead {
-  background-color: var(--uma-dark-blue);
+.md-typeset table th {
+  font-weight: 650;
+  border-bottom: 2px solid var(--uma-light-blue); /* Sutil acento azul UMA */
 }
 
-/* ===== Leyenda tipo info (funciona con !!! y ???) ===== */
-/* Tablas dentro de !!! info */
-.md-typeset .admonition.info table,
-.md-typeset details.info table {
-  font-size: 0.95em;
-  border-radius: 4px;
+/* Filas alternas para facilitar la lectura de datos */
+.md-typeset table tbody tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.015);
 }
 
 /* Reducir padding de celdas para compactar */
@@ -306,38 +313,36 @@
 .md-typeset .admonition.info td,
 .md-typeset details.info th,
 .md-typeset details.info td {
-  padding: 0.15rem 0.5rem;
-}
-
-/* Header de tabla */
-.md-typeset .admonition.info th,
-.md-typeset details.info th {
-  background-color: var(--uma-dark-blue);
-  font-weight: 700;
-  color: var(--very-light-gray);
+  padding: 0.25rem 0.5rem;
 }
 
 /* Reducir margen vertical que mete Material a las tablas */
 .md-typeset .admonition.info .md-typeset__table,
 .md-typeset details.info .md-typeset__table {
-  margin: 0.4em 0;
+  margin: 0em 0;
 }
 
-/* Dark mode */
-[data-md-color-scheme="slate"] .md-typeset .admonition.info table,
-[data-md-color-scheme="slate"] .md-typeset details.info table {
-  background-color: var(--uma-dark-blue);
-  color: var(--very-light-gray);
+/* ===== Dark mode (slate) ===== */
+[data-md-color-scheme="slate"] .md-typeset table thead {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--uma-light-blue);
 }
 
-[data-md-color-scheme="slate"] .md-typeset .admonition.info th,
-[data-md-color-scheme="slate"] .md-typeset details.info th {
-  background-color: var(--uma-light-blue);
-  font-weight: 700;
-  color: var(--uma-dark-blue);
+[data-md-color-scheme="slate"] .md-typeset table th {
+  border-bottom-color: var(--uma-light-blue);
 }
 
-/* ===== Leyendas ===== */
+[data-md-color-scheme="slate"] .md-typeset table tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* ===== Leyendas / Admonitions ===== */
+/* Restablecer colores nativos de Material para las llamadas de atención */
+.md-typeset .admonition,
+.md-typeset details {
+  --md-primary-fg-color: initial;
+}
+
 /* Reduce espacio del bloque desplegable */
 .md-typeset details {
   margin: 0.5em 0;          /* menos espacio vertical exterior */
@@ -464,4 +469,23 @@ img.inline-icon {
 .md-typeset h1 img.inline-icon {
   width: 1em;
   height: 1em;
+}
+
+/* Badge para Objetivos en las Guías */
+.objetivo-hito {
+  display: inline-block;
+  background-color: var(--uma-dark-blue);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  /* text-transform: uppercase; */
+  padding: 2px 4px; /* padding: 2px 8px; */
+  border-radius: 4px;
+  margin-right: 0px; /* margin-right: 6px; */
+  vertical-align: middle;
+}
+
+[data-md-color-scheme="slate"] .objetivo-hito {
+  background-color: var(--uma-light-blue);
+  color: var(--uma-dark-blue);
 }
