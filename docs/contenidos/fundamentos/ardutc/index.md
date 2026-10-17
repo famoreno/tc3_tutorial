@@ -1,8 +1,8 @@
 ---
-icon: custom/ardutc-icon-16px
+icon: custom/ardutc-icon-dynamic
 ---
 
-# :custom-ardutc-icon-16px: ArduTC
+# :custom-ardutc-icon-dynamic: ArduTC
 
 ## :fontawesome-solid-circle-info: Introducción
 

@@ -3,6 +3,7 @@ site_url: https://famoreno.github.io/tc3_tutorial/
 
 exclude_docs: |
   contenidos/ejemplos/carro-basico/includes/**
+  contenidos/ejemplos/hola-mundo/includes/**
 
 nav:
     - Inicio: index.md
@@ -40,7 +41,7 @@ nav:
 
     - Prácticas:
       - contenidos/practicas/index.md
-      - Semáforo: contenidos/practicas/semaforo/index.md
+      - Semáforo de Peatones: contenidos/practicas/semaforo/index.md
       - Proyecto Monolítico: contenidos/practicas/proyectos/proyecto-monolitico.md
       - Proyecto Estructurado: contenidos/practicas/proyectos/proyecto-estructurado.md
       - Proyecto Jerárquico: contenidos/practicas/proyectos/proyecto-jerarquico.md
@@ -56,8 +57,8 @@ theme:
   name: material
   language: es
   custom_dir: overrides
-  logo: assets/img/logo-auto-isa-team.svg
-  favicon: assets/img/logo-auto-isa-team.svg
+  logo: assets/img/auto-isa-team-logo.svg
+  favicon: assets/img/auto-isa-team-icon-alt.svg
 
   palette:
     - scheme: default

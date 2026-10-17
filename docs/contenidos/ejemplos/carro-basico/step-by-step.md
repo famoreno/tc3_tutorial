@@ -5,28 +5,23 @@ icon: fontawesome/solid/screwdriver-wrench
 
 # :fontawesome-solid-screwdriver-wrench: Carro Básico - Guía de Implementación
 
---8<-- "snippets/avisos.md:documento-en-construccion"
-
 ## :fontawesome-solid-circle-info: Introducción
 
 Las **máquinas de estados** que representan el comportamiento (lógica de control) de un automatismo industrial pueden representarse utilizando diversos «lenguajes» de especificación. Tradicionales como los **diagramas de relés y contactos** o más actuales como el lenguaje **GRAFCET**.
 
 El comportamiento especificado en estos diagramas, finalmente debe codificarse en un determinado lenguaje de programación para ser procesado por un PLC.
 
-## :fontawesome-solid-bullseye: Objetivos
-
 En esta guía se muestra como replicar paso a paso el ejemplo [**«Carro Básico»**](../carro-basico/index.md) en todas sus modalidades (básico, pulsado, temporizado, limitado y señalizado).
+
+## :fontawesome-solid-bullseye: Objetivos
 
 A lo largo de este proceso se mostrará cómo:
 
 - Especificar una **máquina de estados** con el lenguaje **GRAFCET**.
 - Especificar una **máquina de estados** con **diagramas de relés y contactos**.
 - Implementar un **GRAFCET**, utilizando los lenguajes {{SFC}}, {{ST}} y {{LD}} de la norma **IEC 61131-3**.
-- Implementar un **diagrama de relés y contactos**, utiliando el lenguaje {{LD}} de la norma **IEC 61131-3**.
-- Utilizar los elementos básicos presentes en casi cualquier automatismo industrial: **detección de flancos**, **evaluación de lapsos de tiempo**, **contaje de eventos**.
-
-!!! tip "Sugerencia"
-    Pulsa en ➡️ para obtener más información sobre cómo realizar el paso especificado.
+- Implementar un **diagrama de relés y contactos** utilizando el lenguaje {{LD}} de la norma **IEC 61131-3**.
+- Utilizar los elementos básicos presentes en casi cualquier automatismo industrial: **detección de flancos**, **evaluación de lapsos de tiempo**, **contaje de eventos** e **intermitencias**.
 
 ---
 
@@ -34,24 +29,27 @@ A lo largo de este proceso se mostrará cómo:
 
 ### Carro Básico
 
-> El carro básico se desplaza longitudinalmente entre los extermos de una vía.
+Empecemos <span class="objetivo-hito">especificando en el lenguaje GRAFCET la máquina de estados</span> correspondiente al carro básico.
+<!--- todo: cómo se construye un grafcet --->
+
+> El carro básico se desplaza longitudinalmente entre los extremos de una vía.
 
 ![Carro Básico](./img/carro-basico-grf.svg){ width="200px" .image-centered }
 !!! note "Comentarios"
-    - Inicialmente el carro se encuentra detenido en la izquerda.
+    - Inicialmente el carro se encuentra detenido a la izquierda.
     - Cuando se acciona el pulsador, se pone en marcha hacia la derecha.
-    - Cuando alcanza el extermo derecho, invierte el sentido de la marcha.
+    - Cuando alcanza el extremo derecho, invierte el sentido de la marcha.
     - Cuando alcanza el extremo izquierdo, se detiene.
 
 ??? info "Tabla de Variables"
+    | Etiqueta | Origen | Tipo | Variable | Descripción |
+    | :---: | :---: | :---: | :--- | :--- |
+    | PM | Entrada | Binaria | `i_PulsadorMarcha` | Pulsador de Marcha |
+    | FCI | Entrada | Binaria | `i_FinalCarreraIzquierda` | Final de Carrera izquierda |
+    | FCD | Entrada | Binaria | `i_FinalCarreraDerecha` | Final de Carrera Derecha |
+    | MD | Salida | Binaria | `o_MarchaDerecha` | Marcha Derecha |
+    | MI | Salida | Binaria | `o_MarchaIzquierda` | Marcha Izquierda |
 
-    | Etiqueta | Origen | Tipo| Variable | Descripción |
-    |:---:|:---:|:---:|---|---|
-    | PM | Entrada| Binaria | i_PulsadorMarcha | Pulsador de Marcha |
-    | FCI | Entrada| Binaria | i_FinalCarreraIzquierda | Final de Carrera izquierda |
-    | FCD | Entrada| Binaria | i_FinalCarreraDerecha | Final de Carrera Derecha |
-    | MD | Salida| Binaria | o_MarchaDerecha | Marcha Derecha |
-    | MI | Salida| Binaria | o_MarchaIzquierda | Marcha Izquierda |
 
 ??? warning "Nomenclatura"
     - Por conveniencia, en el diagrama *grafcet* se utilizan nombres cortos (etiquetas).
@@ -63,34 +61,35 @@ A lo largo de este proceso se mostrará cómo:
 
 ![Carro Pulsado](./img/carro-pulsado-grf.svg){ width="200px" .image-centered }
 !!! note "Comentarios"
-    - El símbolo `↑` representa en el lenguaje **GRAFCET** el flanco ascendente de una variable lógica.
+    - El símbolo `↑` representa, en el lenguaje **GRAFCET**, el flanco ascendente de una variable lógica.
 
 ### Carro Temporizado
 
-> El carro temporizado se detiene durante un determinado tiempo ($T_{espera}$) sobre el final de carrera derecha antes de iniciar el camino de regreso hacia su posición inicial.
+> El carro temporizado se detiene durante un instante ($T_{espera}$) sobre el final de carrera derecho antes de iniciar el regreso a su posición inicial.
 
 ![Carro Temporizado](./img/carro-temporizado-grf.svg){ width="200px" .image-centered }
 !!! note "Comentarios"
-    - La expresión `(TE)/X2` es el símbolo **GRAFCET** (condición de transición dependiente del tiempo simplificada) utilizado para indicar que se esperará en la etapa `2` la cantidad de tiempo indicada por `TE`.
+    - La expresión `(TE)/X2` es el símbolo **GRAFCET** (condición de transición dependiente del tiempo simplificada) utilizado para indicar que se esperará en la etapa `2` la cantidad de tiempo indicada por la variable `TE`.
+    - El término `X2` es la variable asociada a la etapa 2 que indica su estado de actividad (`X2` es `TRUE` si la etapa 2 está activada).
 
-### Carro limitado
+### Carro Limitado
 
 > El carro limitado realiza un determinado número de viajes consecutivos de ida y vuelta (tarea) cada vez que, estando en su posición inicial, se acciona el pulsador de marcha.
 
 ??? info "Procesamiento por lotes"
-    Con el carro limitado se introduce el concepto de *procesamiento por lotes*. En el trabajo por lotes el sistema hace una tarea por cada activación del pulsador de marcha sin intervención del operario, por lo que es necesario llevar la cuenta de los viajes (maniobras) que realiza el carro.
+    Con el carro limitado se introduce el concepto de **procesamiento por lotes**. Cuando se trabaja por lotes el sistema hace una tarea por cada activación del pulsador de marcha sin intervención del operario, por lo que es necesario llevar la cuenta de los viajes (maniobras) que realiza el carro.
 
-![Carro limitado](./img/carro-limitado-grf.svg){ width="400px" .image-centered }
+![Carro Limitado](./img/carro-limitado-grf.svg){ width="400px" .image-centered }
 !!! note "Comentarios"
 
-    Para llevar esta cuenta en **GRAFCET** se acostumbra a distribuir esta funcionalidad entre la estructura y la interpretación.
+    Para llevar la cuenta de las maniobras (viajes) pendientes en **GRAFCET** se acostumbra a distribuir esta funcionalidad entre la estructura y la interpretación.
 
-    - En la **estructura** se introduce una nueva etapa (`4`) y una rama alternativa (`4a`) con la que evaluar si se la tareas ha terminado.
+    - En la **estructura** se introduce una nueva etapa (`4`) y una rama alternativa (`4a`) para evaluar si la tarea ha terminado.
     - En la **interpretación** se incluyen dos acciones memorizadas, una asociada a la activación de la etapa inicial (`S0`) para reiniciar el contador de viajes pendientes y otra asociada a la entrada de la etapa final (`S4`) para actualizar el contador con cada maniobra finalizada.
 
 ??? info "Contadores"
     Por razones históricas, en automatización se suele utilizar **cuentas regresivas**. En los antiguos sistemas electromecánicos y de electrónica discreta, comprobar si un contador había finalizado su tarea era drásticamente más simple y económico si se comparaba con el **cero absoluto**. Esta comparación requiere únicamente un contacto físico o una sola compuerta lógica (`NOR`), independientemente del valor de la cuenta.
-    Esta lógica de diseño se heredada para optimizar el rendimiento en los procesadores de los PLC modernos, los cuales activan un indicador de estado (*Zero Flag*) al alcanzar el cero, evitando instrucciones de comparación adicionales y ofreciendo un control intrínsecamente más seguro ante desbordamientos.
+    Esta lógica de diseño se hereda para optimizar el rendimiento en los procesadores de PLC modernos, que activan un indicador de estado (*Zero Flag*) al alcanzar el cero. Así se evitan instrucciones de comparación adicionales y se ofrece un control intrínsecamente más seguro ante desbordamientos.
 
 ### Carro Señalizado
 
@@ -106,32 +105,17 @@ A lo largo de este proceso se mostrará cómo:
 
 ## :fontawesome-solid-list-check: Guía de Implementación
 
-### GRAFCET a SFC
+!!! tip "Sugerencia"
+    Pulsa en ➡️ para obtener más información sobre cómo realizar el paso especificado.
 
-??? info "Mostrar pasos de implementación"
-    --8<-- "docs/contenidos/ejemplos/carro-basico/includes/grafcet-a-sfc.md"
-
----
-
-### GRAFCET a ST
-
-??? info "Mostrar pasos de implementación"
-    --8<-- "docs/contenidos/ejemplos/carro-basico/includes/grafcet-a-st.md"
+--8<-- "docs/contenidos/ejemplos/carro-basico/includes/grafcet-a-sfc.md"
 
 ---
 
-### GRAFCET a LD
-
-??? info "Mostrar pasos de implementación"
-    --8<-- "docs/contenidos/ejemplos/carro-basico/includes/grafcet-a-ld.md"
+--8<-- "docs/contenidos/ejemplos/carro-basico/includes/grafcet-a-st.md"
 
 ---
 
-## :fontawesome-solid-bolt: Especificación con Diagramas de Relés
-
-### Diagramas de relés a LD
-
-??? info "Mostrar pasos de implementación"
-    --8<-- "docs/contenidos/ejemplos/carro-basico/includes/drc-a-ld.md"
+--8<-- "docs/contenidos/ejemplos/carro-basico/includes/grafcet-a-ld.md"
 
 ---

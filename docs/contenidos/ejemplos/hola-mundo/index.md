@@ -18,7 +18,7 @@ El proyecto **Hola Mundo** se ha desarrollado con el entorno **TwinCAT 3** emple
 
 Este proyecto incluye además, una **visualización** elemental que permite, mediante objetos gráficos, interactuar con las variables del proyecto. Utilizando **formas rectangulares**, para mostrar el valor de variables booleanas y numéricas, y **botones** para modificar sus valores.
 
-!!! important "Objetivo Principal del Proyecto"
+!!! info "Aportación"
     El valor fundamental de este ejemplo radica en que, con muy pocos elementos, ilustra el **flujo de trabajo completo** (*workflow*) requerido para crear, configurar y desplegar un proyecto en **TwinCAT 3**.
 
 ---
@@ -68,7 +68,7 @@ ContadorCiclos := ContadorCiclos + 1;
 o_Lampara := i_Pulsador;
 ```
 
-!!! note "Comentarios"
+!!! note "Comnentarios"
     - El código del módulo, en lenguaje {{ST}}, se incluyue en la **Parte de Implementación**.
     - La variable `ContadorCiclos` se incrementa indefinidamente una vez por **Ciclo Básico** de ejecución del **PLC** (10 ms).
     - La variable de salida `o_Lampara` copia, continuamente, el valor de la variable de entrada `i_Pulsador`.
@@ -79,7 +79,7 @@ o_Lampara := i_Pulsador;
 
 ![Visualización del proyecto Hola Mundo](./img/v-hola-mundo-offline.png){ .screenshot }
 
-!!! note "Comnentarios"
+!!! note "Comentarios"
     - El valor de la variable `ContadorCiclos` se muestra en rectángulo gris la visualización.
     - El valor de la variable `ContadorCiclos` se se puede cambiar escribiéndolo en rectángulo blanco la visualización.
     - La variable `ContadorCiclos` puede reiniciarse accionando el pulsador `Reinicia`.
@@ -90,19 +90,19 @@ o_Lampara := i_Pulsador;
 
 ## :fontawesome-solid-screwdriver-wrench: Implementación
 
-!!! info "Guía de implementación"
-    Para implementar  este proyecto desde cero en TwinCAT 3, seguir la **[Guía de implementación](step-by-step.md)**.
+!!! info "Paso a paso"
+    Para implementar  este proyecto desde cero en TwinCAT 3, seguir su **[guía de implementación](step-by-step.md)**.
 
 ---
 
 ## :fontawesome-solid-download: Código Fuente y Descarga
 
-El código fuente completo de este proyecto **Hola Mundo** está disponible en GitHub:
+El código fuente completo de este proyecto está disponible en GitHub:
 
 - :simple-github: **Repositorio:** [:material-link-variant: vetorres-uma/TC3_Hola_Mundo](https://github.com/vetorres-uma/TC3_Hola_Mundo)
 - :simple-github: **Descargar:** [:material-download: Archivo fuente `.zip`](https://github.com/vetorres-uma/TC3_Hola_Mundo/archive/refs/heads/main.zip)
 
-Los miembros de la **Universidad de Málaga**, también pueden descargarse el archivo comprimido de la solución (tnzip) del proyecto desde el siguiente repositorio:
+Los miembros de la **Universidad de Málaga**, también pueden descargarse el archivo comprimido de la solución (`.tnzip`) del proyecto desde el siguiente repositorio:
 
 - :simple-googledrive: **Descargar:** [:material-download: Solución comprimida `.tnzip`](https://drive.google.com/file/d/1HiN3VGmpYH63-8s_RbQovNkcL4GJR9_5/view?usp=drive_link)
 

@@ -1,3 +1,5 @@
+### GRAFCET ➔ LD
+
 #### Carro Básico
 
 --8<-- "snippets/avisos.md:seccion-en-construccion"
@@ -10,7 +12,7 @@
 
 --8<-- "snippets/avisos.md:seccion-en-construccion"
 
-#### Carro Computado
+#### Carro Limitado
 
 --8<-- "snippets/avisos.md:seccion-en-construccion"
 

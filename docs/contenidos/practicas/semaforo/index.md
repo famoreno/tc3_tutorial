@@ -2,7 +2,7 @@
 icon: fontawesome/solid/traffic-light
 ---
 
-# :fontawesome-solid-traffic-light: Semáforo
+# :fontawesome-solid-traffic-light: Semáforo de Peatones
 
 ## :fontawesome-solid-clipboard-list: Tarea
 

@@ -40,12 +40,12 @@ El tutorial divide el aprendizaje en cuatro pilares fundamentales:
 
 ## 🖱️ Interacciones de Interfaz y Ratón
 
-- **Clic izquierdo:** Escribir «hacer clic» y poner el control en **negrita**. Se entiende que es clic izquierdo salvo que se indique lo contrario; no añadir icono.
-    - *Sintaxis:* Hacer clic en **Activate Configuration**.
-- **Clic derecho:** Indicar la acción explícitamente y acompañarla, cuando ayude, con `:material-mouse-right-click:`.
-    - *Sintaxis:* Hacer clic derecho en :material-mouse-right-click: **POUs** > **Add** > **POU...**
-- **Doble clic:** Escribir «hacer doble clic» y poner el elemento en **negrita**. No hay un icono específico de doble clic en la colección Material configurada.
-    - *Sintaxis:* Hacer doble clic en **MAIN (PRG)**.
+- **Clic izquierdo:** Usar el imperativo «haz clic» y poner el control en **negrita**. Se entiende que es clic izquierdo salvo que se indique lo contrario; no añadir icono.
+    - *Sintaxis:* Haz clic en **Activate Configuration**.
+- **Clic derecho:** Indicar explícitamente la acción y acompañarla, cuando ayude, con `:material-mouse-right-click:`.
+    - *Sintaxis:* Haz clic derecho en :material-mouse-right-click: **POUs** > **Add** > **POU...**
+- **Doble clic:** Usar el imperativo «haz doble clic» y poner el elemento en **negrita**. No hay un icono específico de doble clic en la colección Material configurada.
+    - *Sintaxis:* Haz doble clic en **MAIN (PRG)**.
 - **Rutas de menús:** Usar el separador `>` con elementos en **negrita**.
     - *Sintaxis:* **TwinCAT** > **Restart TwinCAT (Config Mode)**.
 
@@ -57,6 +57,25 @@ El tutorial divide el aprendizaje en cuatro pilares fundamentales:
     - *Sintaxis:* Pulsar ++f5++ para iniciar el Runtime o ++ctrl+shift+f2++ para compilar.
 - **Botones de la interfaz:** Nombre exacto en **negrita**.
     - *Sintaxis:* Pulsar **OK** o seleccionar **Attach Variable**.
+
+---
+
+## 🗣️ Voz y Tratamiento
+
+- **Instrucciones directas:** dirigirse al lector de tú y usar el imperativo: *Haz clic*, *selecciona*, *comprueba*. Evitar el tratamiento de usted (*haga clic*, *seleccione*).
+- **Explicaciones:** preferir la forma impersonal (*Para declarar una variable, se utiliza...*) o la primera persona del plural (*En esta sección configuramos...*), según el contexto.
+- Mantener el mismo tratamiento dentro de cada sección y conservar sin cambios los nombres oficiales de controles y comandos.
+
+---
+
+## Ejemplos y Guías Paso a Paso
+
+- **Índice de ejemplo (`index.md`):** presentar brevemente el objetivo y el funcionamiento del ejemplo, e incluir especificaciones, código o recursos cuando aporten contexto. Enlazar la guía de implementación en lugar de duplicar sus pasos.
+- **Guía de implementación (`step-by-step.md`):** introducir el entorno y los objetivos antes del procedimiento. Organizar recorridos alternativos —por ejemplo, simulador, controlador o hardware externo— en secciones `###` y numerar sus pasos de forma independiente.
+- **Pasos:** redactar las acciones en imperativo de tú, preferiblemente una acción principal por paso. Añadir junto al paso las advertencias, explicaciones y resultados que ayuden a completarlo o verificarlo.
+- **Fragmentos incluidos (`includes/`):** comenzar cada fragmento con un título `###` descriptivo e insertarlo directamente en la guía anfitriona. No envolver el recorrido completo en un admonition colapsable; reservar los admonitions para información complementaria. Excluir los fragmentos de la navegación y validar el resultado desde la página que los incluye.
+- **Admonitions:** usar tipos reconocidos por Material (`note`, `info`, `tip`, `warning`, `success`, entre otros). Para un tipo personalizado, definir también su estilo en CSS.
+- Estas estructuras son una guía flexible: omitir secciones que no aporten al ejemplo y no inventar información solo para completar una plantilla.
 
 ---
 

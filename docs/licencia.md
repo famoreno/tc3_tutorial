@@ -26,6 +26,20 @@ El sitio utiliza recursos gráficos de las siguientes colecciones. Sus licencias
 
 Los iconos de marca siguen sujetos a los derechos de marca de sus respectivos titulares. Su inclusión identifica el producto o servicio y no implica patrocinio ni respaldo.
 
+## :fontawesome-solid-screwdriver-wrench: Tecnologías y Reconocimientos
+
+Este sitio se construye con software libre y se apoya en productos de terceros que se citan solo con fines educativos:
+
+- **[MkDocs](https://www.mkdocs.org/)** (BSD-2-Clause) y **[Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)** (MIT): generación y tema del sitio.
+- **Extensiones de Python Markdown y plugins** (PyMdown Extensions, `mkdocs-macros-plugin`, `mkdocs-include-markdown-plugin`, `mkdocs-git-revision-date-localized-plugin`): cada uno con su licencia.
+- **[MathJax](https://www.mathjax.org/)** (Apache 2.0): representación de fórmulas.
+- **[IBM Plex](https://github.com/IBM/plex)** (SIL OFL 1.1): tipografías del sitio.
+- **[TwinCAT 3](https://www.beckhoff.com/twincat3/)**, de Beckhoff Automation: entorno de desarrollo y runtime PLC.
+- **Sistema FMS-200**, de SMC International Training: estación didáctica de referencia para los ejemplos y prácticas.
+- **[Arduino](https://www.arduino.cc/)**: plataforma empleada en ArduTC.
+
+TwinCAT, Beckhoff, FMS-200, SMC y Arduino son marcas de sus respectivos titulares. Este proyecto es independiente y no está afiliado, patrocinado ni respaldado por ellos.
+
 ## :fontawesome-solid-copyright: Material de Terceros
 
 Las capturas de TwinCAT XAE, los iconos obtenidos de Beckhoff InfoSys, los nombres y logotipos de Beckhoff y cualquier otro recurso de terceros no están incluidos en las licencias GPLv3 o CC BY-SA 4.0 de este proyecto. Los derechos y condiciones aplicables a esos recursos corresponden a sus respectivos titulares. Beckhoff publica sus [términos de uso](https://www.beckhoff.com/en-en/terms-of-use/) y su [declaración de marcas](https://www.beckhoff.com/en-en/trademarks/); deben consultarse para cada uso.

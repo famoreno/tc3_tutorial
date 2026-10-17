@@ -1,3 +1,5 @@
+### DRC ➔ LD
+
 #### Carro Básico (DRC a LD)
 
 --8<-- "snippets/avisos.md:seccion-en-construccion"
@@ -10,6 +12,6 @@
 
 --8<-- "snippets/avisos.md:seccion-en-construccion"
 
-#### Carro Computado (DRC a LD)
+#### Carro Limitado (DRC a LD)
 
 --8<-- "snippets/avisos.md:seccion-en-construccion"

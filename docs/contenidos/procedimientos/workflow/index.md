@@ -216,6 +216,10 @@ El proceso de despliegue abarca la secuencia desde la validación del código fu
 
     ![Ventana para introducir el código de seguridad](./img/tc3-xae-enter-security-code-window.png){ .screenshot }
 
+- Confirmar, si es necesario, el reinicio del sistema destino en modo ejecución.
+
+![Ventana para confirmar el reinicio de TwinCAT en modo ejecución](./img/tc3-xae-restart-run-mode-window.png){ .screenshot }
+
 #### Crear una Ruta
 
 > En TwinCAT una ruta (route) es una conexión lógica entre dos entornos TwinCAT. Habitualmente se establece una ruta entre el entorno de ingeniería (TwinCAT XAE) en el que se desarrolla el proyecto y el runtime o entorno de ejecución (TwinCAT XAR) en el que se ejecuta el proyecto.
@@ -284,7 +288,7 @@ Una ruta sirve básicamente para establecer una relación de confianza entre amb
 
 #### Buscar Dispositivos
 
-- Poner el sistema en modo configuración pulsando **Restart TwinCAT (Config Mode)** en la barra de TwinCAT o seleccionando **TwinCAT** > **Restart TwinCAT (Config Mode)**.
+- Poner el sistema, si no lo estuviera, en modo configuración pulsando **Restart TwinCAT (Config Mode)** en la barra de TwinCAT o seleccionando **TwinCAT** > **Restart TwinCAT (Config Mode)**.
 - Buscar dispositivos en **I/O** > **Devices** del Explorador de la Solución y pulsar **Scan** en la barra de TwinCAT; alternativamente, hacer clic derecho en :material-mouse-right-click: **Device** > **Scan** o elegir **TwinCAT** > **Scan**.
 
     ![Menú contextual para buscar dispositivos](./img/command-scan-popup.png){ .screenshot }
