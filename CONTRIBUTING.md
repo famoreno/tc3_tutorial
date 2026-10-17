@@ -105,6 +105,7 @@ Las abreviaturas compartidas por todo el sitio se definen una sola vez en `snipp
 - **Proporción:** No deformar las imágenes. La clase `.screenshot` conserva su proporción original automáticamente.
 - **Texto alternativo:** Incluir siempre un título descriptivo en el `alt` de la imagen.
     - *Sintaxis:* `![Pantalla de enlace de variables](./img/ejemplo.png){ width="500px" }`
+- **Archivos SVG:** guardarlos siempre con saltos de línea `LF`. Lo fuerzan `.gitattributes` (`*.svg text eol=lf`) y `.editorconfig`; si un editor externo genera `CRLF`, convertir el archivo antes de hacer commit.
 
 ---
 
