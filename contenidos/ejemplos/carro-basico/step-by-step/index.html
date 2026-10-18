@@ -2356,11 +2356,11 @@
 
 <h1 id="carro-basico-guia-de-implementacion"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M70.8-6.7c5.4-5.4 13.8-6.2 20.2-2l118.9 79.2c8.9 5.9 14.2 15.9 14.2 26.6v49.6l90.8 90.8c33.3-15 73.9-8.9 101.2 18.5l126.1 126.1c18.7 18.7 18.7 49.1 0 67.9l-60.1 60.1c-18.7 18.7-49.1 18.7-67.9 0L288.1 384c-27.4-27.4-33.5-67.9-18.5-101.2L178.8 192h-49.6c-10.7 0-20.7-5.3-26.6-14.2L23.4 58.9c-4.2-6.3-3.4-14.8 2-20.2zm145 303.5c-6.3 36.9 2.3 75.9 26.2 107.2l-94.9 95c-28.1 28.1-73.7 28.1-101.8 0s-28.1-73.7 0-101.8l135.4-135.5 35.2 35.1zM384.1 0c20.1 0 39.4 3.7 57.1 10.5 10 3.8 11.8 16.5 4.3 24.1l-56.7 56.7c-3 3-4.7 7.1-4.7 11.3V144c0 8.8 7.2 16 16 16h41.4c4.2 0 8.3-1.7 11.3-4.7l56.7-56.7c7.6-7.5 20.3-5.7 24.1 4.3 6.8 17.7 10.5 37 10.5 57.1 0 43.2-17.2 82.3-45 111.1L450 222c-33.1-33-78.5-45.7-121.1-38.4l-56.8-56.8V97.1l-.2-5c-.8-12.4-4.4-24.3-10.5-34.9C290.8 22.2 334.8 0 384.1-.1z"/></svg></span> Carro Básico - Guía de Implementación<a class="headerlink" href="#carro-basico-guia-de-implementacion" title="Permanent link">&para;</a></h1>
 <h2 id="introduccion"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512m-32-352a32 32 0 1 1 64 0 32 32 0 1 1-64 0m-8 64h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24"/></svg></span> Introducción<a class="headerlink" href="#introduccion" title="Permanent link">&para;</a></h2>
-<p>Las <strong>máquinas de estados</strong> que representan el comportamiento (lógica de control) de un automatismo industrial pueden representarse utilizando diversos «lenguajes» de especificación. Tradicionales como los <strong>diagramas de relés y contactos</strong> o más actuales como el lenguaje <strong><abbr title="Gráfico funcional de control etapa-transición (Graphe Fonctionnel de Commande Étapes/Transitions).">GRAFCET</abbr></strong>.</p>
+<p>Las <strong>máquinas de estados</strong> que representan el comportamiento (lógica de control) de un automatismo industrial pueden representarse utilizando diversos «lenguajes» de especificación, tradicionales como los <strong>diagramas de relés y contactos</strong> o más actuales como el lenguaje <strong><abbr title="Gráfico funcional de control etapa-transición (Graphe Fonctionnel de Commande Étapes/Transitions).">GRAFCET</abbr></strong>.</p>
 <p>El comportamiento especificado en estos diagramas, finalmente debe codificarse en un determinado lenguaje de programación para ser procesado por un <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr>.</p>
-<p>En esta guía se muestra como replicar paso a paso el ejemplo <a href="../"><strong>«Carro Básico»</strong></a> en todas sus modalidades (básico, pulsado, temporizado, limitado y señalizado).</p>
+<p>En esta guía se muestra cómo replicar paso a paso el ejemplo <a href="../"><strong>«Carro Básico»</strong></a> en todas sus modalidades (básico, pulsado, temporizado, limitado y señalizado).</p>
 <h2 id="objetivos"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M448 256a192 192 0 1 0-384 0 192 192 0 1 0 384 0M0 256a256 256 0 1 1 512 0 256 256 0 1 1-512 0m256 80a80 80 0 1 0 0-160 80 80 0 1 0 0 160m0-224a144 144 0 1 1 0 288 144 144 0 1 1 0-288m-32 144a32 32 0 1 1 64 0 32 32 0 1 1-64 0"/></svg></span> Objetivos<a class="headerlink" href="#objetivos" title="Permanent link">&para;</a></h2>
-<p>A lo largo de este proceso se mostrará cómo:</p>
+<p>A lo largo de este proceso aprenderás a:</p>
 <ul>
 <li>Especificar una <strong>máquina de estados</strong> con el lenguaje <strong><abbr title="Gráfico funcional de control etapa-transición (Graphe Fonctionnel de Commande Étapes/Transitions).">GRAFCET</abbr></strong>.</li>
 <li>Especificar una <strong>máquina de estados</strong> con <strong>diagramas de relés y contactos</strong>.</li>
@@ -2371,13 +2371,13 @@
 <hr />
 <h2 id="especificacion-con-grafcet"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M133.8 36.3c10.9 7.6 13.5 22.6 5.9 33.4l-56 80c-4.1 5.8-10.5 9.5-17.6 10.1S52 158 47 153L7 113c-9.3-9.4-9.3-24.6 0-34s24.6-9.3 34 0l19.8 19.8 39.6-56.6c7.6-10.9 22.6-13.5 33.4-5.9m0 160c10.9 7.6 13.5 22.6 5.9 33.4l-56 80c-4.1 5.8-10.5 9.5-17.6 10.1S52 318 47 313L7 273c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l19.8 19.8 39.6-56.6c7.6-10.9 22.6-13.5 33.4-5.9zM224 96c0-17.7 14.3-32 32-32h224c17.7 0 32 14.3 32 32s-14.3 32-32 32H256c-17.7 0-32-14.3-32-32m0 160c0-17.7 14.3-32 32-32h224c17.7 0 32 14.3 32 32s-14.3 32-32 32H256c-17.7 0-32-14.3-32-32m-64 160c0-17.7 14.3-32 32-32h288c17.7 0 32 14.3 32 32s-14.3 32-32 32H192c-17.7 0-32-14.3-32-32m-96-40a40 40 0 1 1 0 80 40 40 0 1 1 0-80"/></svg></span> Especificación con <abbr title="Gráfico funcional de control etapa-transición (Graphe Fonctionnel de Commande Étapes/Transitions).">GRAFCET</abbr><a class="headerlink" href="#especificacion-con-grafcet" title="Permanent link">&para;</a></h2>
 <h3 id="carro-basico">Carro Básico<a class="headerlink" href="#carro-basico" title="Permanent link">&para;</a></h3>
-<p>Empecemos <span class="objetivo-hito">especificando en el lenguaje <abbr title="Gráfico funcional de control etapa-transición (Graphe Fonctionnel de Commande Étapes/Transitions).">GRAFCET</abbr> la máquina de estados</span> correspondiente al carro básico.</p>
+<p>Empieza <span class="objetivo-hito">especificando en el lenguaje <abbr title="Gráfico funcional de control etapa-transición (Graphe Fonctionnel de Commande Étapes/Transitions).">GRAFCET</abbr> la máquina de estados</span> correspondiente al carro básico.</p>
 <!--- todo: cómo se construye un grafcet --->
 
 <blockquote>
 <p>El carro básico se desplaza longitudinalmente entre los extremos de una vía.</p>
 </blockquote>
-<p><img alt="Carro Básico" class="image-centered" src="../img/carro-basico-grf.svg" width="200px" /></p>
+<p><img alt="Diagrama GRAFCET del carro básico" class="image-centered" src="../img/carro-basico-grf.svg" width="200px" /></p>
 <div class="admonition note">
 <p class="admonition-title">Comentarios</p>
 <ul>
@@ -2412,14 +2412,14 @@
 <td style="text-align: center;">Entrada</td>
 <td style="text-align: center;">Binaria</td>
 <td style="text-align: left;"><code>i_FinalCarreraIzquierda</code></td>
-<td style="text-align: left;">Final de Carrera izquierda</td>
+<td style="text-align: left;">Final de carrera izquierda</td>
 </tr>
 <tr>
 <td style="text-align: center;">FCD</td>
 <td style="text-align: center;">Entrada</td>
 <td style="text-align: center;">Binaria</td>
 <td style="text-align: left;"><code>i_FinalCarreraDerecha</code></td>
-<td style="text-align: left;">Final de Carrera Derecha</td>
+<td style="text-align: left;">Final de carrera derecha</td>
 </tr>
 <tr>
 <td style="text-align: center;">MD</td>
@@ -2449,7 +2449,7 @@
 <blockquote>
 <p>El carro pulsado inicia su viaje de ida y vuelta, únicamente, cuando estando en su posición inicial se acciona el pulsador de marcha.</p>
 </blockquote>
-<p><img alt="Carro Pulsado" class="image-centered" src="../img/carro-pulsado-grf.svg" width="200px" /></p>
+<p><img alt="Diagrama GRAFCET del carro pulsado" class="image-centered" src="../img/carro-pulsado-grf.svg" width="200px" /></p>
 <div class="admonition note">
 <p class="admonition-title">Comentarios</p>
 <ul>
@@ -2460,7 +2460,7 @@
 <blockquote>
 <p>El carro temporizado se detiene durante un instante (<span class="arithmatex">\(T_{espera}\)</span>) sobre el final de carrera derecho antes de iniciar el regreso a su posición inicial.</p>
 </blockquote>
-<p><img alt="Carro Temporizado" class="image-centered" src="../img/carro-temporizado-grf.svg" width="200px" /></p>
+<p><img alt="Diagrama GRAFCET del carro temporizado" class="image-centered" src="../img/carro-temporizado-grf.svg" width="200px" /></p>
 <div class="admonition note">
 <p class="admonition-title">Comentarios</p>
 <ul>
@@ -2473,10 +2473,10 @@
 <p>El carro limitado realiza un determinado número de viajes consecutivos de ida y vuelta (tarea) cada vez que, estando en su posición inicial, se acciona el pulsador de marcha.</p>
 </blockquote>
 <details class="info">
-<summary>Procesamiento por lotes</summary>
+<summary>Procesamiento por Lotes</summary>
 <p>Con el carro limitado se introduce el concepto de <strong>procesamiento por lotes</strong>. Cuando se trabaja por lotes el sistema hace una tarea por cada activación del pulsador de marcha sin intervención del operario, por lo que es necesario llevar la cuenta de los viajes (maniobras) que realiza el carro.</p>
 </details>
-<p><img alt="Carro Limitado" class="image-centered" src="../img/carro-limitado-grf.svg" width="400px" /></p>
+<p><img alt="Diagrama GRAFCET del carro limitado" class="image-centered" src="../img/carro-limitado-grf.svg" width="400px" /></p>
 <div class="admonition note">
 <p class="admonition-title">Comentarios</p>
 <p>Para llevar la cuenta de las maniobras (viajes) pendientes en <strong><abbr title="Gráfico funcional de control etapa-transición (Graphe Fonctionnel de Commande Étapes/Transitions).">GRAFCET</abbr></strong> se acostumbra a distribuir esta funcionalidad entre la estructura y la interpretación.</p>
@@ -2494,7 +2494,7 @@ Esta lógica de diseño se hereda para optimizar el rendimiento en los procesado
 <blockquote>
 <p>La lámpara de marcha se enciende de forma permanente para indicar que el carro está en funcionamiento y parpadea para indicar que el carro está en reposo.</p>
 </blockquote>
-<p><img alt="Carro Señalizado" class="image-centered" src="../img/carro-senalizado-grf.svg" width="400px" /></p>
+<p><img alt="Diagrama GRAFCET del carro señalizado" class="image-centered" src="../img/carro-senalizado-grf.svg" width="400px" /></p>
 <div class="admonition note">
 <p class="admonition-title">Comentarios</p>
 <ul>
@@ -2506,18 +2506,18 @@ Esta lógica de diseño se hereda para optimizar el rendimiento en los procesado
 <h2 id="guia-de-implementacion"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M133.8 36.3c10.9 7.6 13.5 22.6 5.9 33.4l-56 80c-4.1 5.8-10.5 9.5-17.6 10.1S52 158 47 153L7 113c-9.3-9.4-9.3-24.6 0-34s24.6-9.3 34 0l19.8 19.8 39.6-56.6c7.6-10.9 22.6-13.5 33.4-5.9m0 160c10.9 7.6 13.5 22.6 5.9 33.4l-56 80c-4.1 5.8-10.5 9.5-17.6 10.1S52 318 47 313L7 273c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l19.8 19.8 39.6-56.6c7.6-10.9 22.6-13.5 33.4-5.9zM224 96c0-17.7 14.3-32 32-32h224c17.7 0 32 14.3 32 32s-14.3 32-32 32H256c-17.7 0-32-14.3-32-32m0 160c0-17.7 14.3-32 32-32h224c17.7 0 32 14.3 32 32s-14.3 32-32 32H256c-17.7 0-32-14.3-32-32m-64 160c0-17.7 14.3-32 32-32h288c17.7 0 32 14.3 32 32s-14.3 32-32 32H192c-17.7 0-32-14.3-32-32m-96-40a40 40 0 1 1 0 80 40 40 0 1 1 0-80"/></svg></span> Guía de Implementación<a class="headerlink" href="#guia-de-implementacion" title="Permanent link">&para;</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">Sugerencia</p>
-<p>Pulsa en ➡️ para obtener más información sobre cómo realizar el paso especificado.</p>
+<p>Pulsa en <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span> para obtener más información sobre cómo realizar el paso especificado.</p>
 </div>
 <h3 id="grafcet-sfc"><abbr title="Gráfico funcional de control etapa-transición (Graphe Fonctionnel de Commande Étapes/Transitions).">GRAFCET</abbr> ➔ <abbr title="Diagrama de funciones secuenciales (Sequential Function Chart), lenguaje de la norma IEC 61131-3.">SFC</abbr><a class="headerlink" href="#grafcet-sfc" title="Permanent link">&para;</a></h3>
-<p><span class="objetivo-hito">Implementemos un diagrama grafcet en el lenguaje <abbr title="Diagrama de funciones secuenciales (Sequential Function Chart), lenguaje de la norma IEC 61131-3.">SFC</abbr></span></p>
+<p><span class="objetivo-hito">Implementa un diagrama grafcet en el lenguaje <abbr title="Diagrama de funciones secuenciales (Sequential Function Chart), lenguaje de la norma IEC 61131-3.">SFC</abbr></span></p>
 <h4 id="carro-basico_1">Carro Básico<a class="headerlink" href="#carro-basico_1" title="Permanent link">&para;</a></h4>
 <ol>
-<li>Abre la aplicación <strong><abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> <abbr title="eXtended Automation Engineering, entorno de ingeniería de TwinCAT.">XAE</abbr></strong>. <a href="../../../procedimientos/workflow/#abrir-twincat-xae">➡️</a></li>
-<li>Crea una solución de <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> 3 con nombre <code>TC3_Carro_Basico</code>. <a href="../../../procedimientos/workflow/#crear-un-proyecto-twincat-3">➡️</a></li>
-<li>Oculta las configuraciones innecesarias para dejar el explorador de la solución lo más despejado posible. <a href="../../../procedimientos/workflow/#ocultar-configuraciones">➡️</a></li>
-<li>Crea un proyecto <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr> estándar con el nombre <code>Carro_Basico_PLC</code>. <a href="../../../procedimientos/workflow/#crear-un-proyecto-plc">➡️</a></li>
+<li>Abre la aplicación <strong><abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> <abbr title="eXtended Automation Engineering, entorno de ingeniería de TwinCAT.">XAE</abbr></strong>. <a href="../../../procedimientos/workflow/#abrir-twincat-xae"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></li>
+<li>Crea una solución de <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> 3 con nombre <code>TC3_Carro_Basico</code>. <a href="../../../procedimientos/workflow/#crear-un-proyecto-twincat-3"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></li>
+<li>Oculta las configuraciones innecesarias para dejar el explorador de la solución lo más despejado posible. <a href="../../../procedimientos/workflow/#ocultar-configuraciones"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></li>
+<li>Crea un proyecto <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr> estándar con el nombre <code>Carro_Basico_PLC</code>. <a href="../../../procedimientos/workflow/#crear-un-proyecto-plc"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></li>
 <li>
-<p>Crea una nueva <strong>Unidad de Organización de Programa (<abbr title="Unidad de Organización de Programa (Program Organization Unit).">POU</abbr>)</strong> de tipo <strong>Bloque Funcional</strong>. <a href="../../../procedimientos/workflow/#crear-una-pou">➡️</a></p>
+<p>Crea una nueva <strong>Unidad de Organización de Programa (<abbr title="Unidad de Organización de Programa (Program Organization Unit).">POU</abbr>)</strong> de tipo <strong>Bloque Funcional</strong>. <a href="../../../procedimientos/workflow/#crear-una-pou"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></p>
 <div class="admonition note">
 <p class="admonition-title">Parámetros <abbr title="Unidad de Organización de Programa (Program Organization Unit).">POU</abbr></p>
 <ul>
@@ -2528,7 +2528,7 @@ Esta lógica de diseño se hereda para optimizar el rendimiento en los procesado
 </div>
 </li>
 <li>
-<p>Declara todas las <strong>variables de entrada/salida</strong> del sistema en <code>FB_Carro_GRF_SFC</code> como variables locales (<code>VAR_LOCAL</code>). <a href="../../../procedimientos/workflow/#declarar-una-variable">➡️</a></p>
+<p>Declara todas las <strong>variables de entrada/salida</strong> del sistema en <code>FB_Carro_GRF_SFC</code> como variables locales (<code>VAR</code>). <a href="../../../procedimientos/workflow/#declarar-una-variable"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></p>
 <div class="highlight"><pre><span></span><code>FUNCTION_BLOCK FB_Carro_GRF_SFC
 // Transcripción del grafcet (GRF -&gt; SFC)
 VAR_INPUT
@@ -2548,19 +2548,19 @@ VAR
 </span>END_VAR
 </code></pre></div>
 <details class="info">
-<summary>Comentarios Declaración</summary>
+<summary>Comentarios</summary>
 <ul>
 <li><strong>Ocultamiento</strong>: las variables de entrada y salida se declaran como <strong>locales</strong> (<code>VAR</code>) para ocultarlas, para protegerlas, para que no sean accesibles desde fuera del bloque funcional.</li>
 <li><strong>Direccionamiento</strong>: se declaran con el modificador <code>AT</code> para situarlas, según corresponda, en la <strong>Imagen de Entrada</strong> (<code>%I</code>) o en la <strong>Imagen de Salida</strong> (<code>%Q</code>). No se especifica la posición de memoria (<code>*</code>) para dejar que <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> se encargue de asignarle una dirección. Cuando se construya el proyecto las instancias correspondientes a estas variables estarán disponibles en la sección <code>I/O</code> para ser vinculadas con las señales presentes en los canales de entrada y salida.</li>
-<li><strong>Valor Inicial</strong>: La variable <code>i_FinalCarreraIzquierda</code> se inicia a <code>TRUE</code>. Aunque sea totalmente innecesario e incluso contradictorio, ya que las variables de entrada tomarán en el primer ciclo el valor que le corresponda según la señal de entrada a la que estén vinculadas. Establecer el valor inicial de algunas variables de entrada puede ser conveniente, desde un punto de vista práctico, cuando se ejecuta el código sin <em>hardware</em> (UmRT_Default), ya que así, cada vez que se reinicie la ejecución no hay que escribir uno a uno el valor de las variables que forman parte de la condición inicial.</li>
+<li><strong>Valor inicial</strong>: la variable <code>i_FinalCarreraIzquierda</code> se inicia a <code>TRUE</code>. Aunque es innecesario e incluso contradictorio, ya que las variables de entrada toman en el primer ciclo el valor de la señal a la que estén vinculadas, establecer el valor inicial de algunas variables de entrada puede ser conveniente, desde un punto de vista práctico, cuando se ejecuta el código sin <em>hardware</em> (<code>UmRT_Default</code>): así no hay que escribir uno a uno el valor de las variables que forman parte de la condición inicial cada vez que se reinicia la ejecución.</li>
 </ul>
 </details>
 </li>
 <li>
 <p>Escribe el código <span class="fondo-rojo-lang"><abbr title="Diagrama de funciones secuenciales (Sequential Function Chart), lenguaje de la norma IEC 61131-3.">SFC</abbr></span> correspondiente al carro básico.</p>
-<p><img alt="FB_Carro_GRF_SFC Basico" class="screenshot" src="../img/fb-carro-grf-sfc-basico.png" /></p>
+<p><img alt="Código SFC del bloque FB_Carro_GRF_SFC para el carro básico" class="screenshot" src="../img/fb-carro-grf-sfc-basico.png" /></p>
 <details class="info">
-<summary>Comentarios Código</summary>
+<summary>Comentarios</summary>
 <ul>
 <li>En la transición <code>S0</code> ➔ <code>S1</code>, <code>i_FinalCarreraIzquierda</code> es la <strong>condición inicial</strong> y <code>i_PulsadorMarcha</code> es el evento que dispara la transición.</li>
 <li>La <strong>Condición Inicial</strong> es la condición material (estado de los sensores) que se debe cumplir para iniciar la secuencia de funcionamiento con seguridad.</li>
@@ -2581,29 +2581,29 @@ VAR
 </code></pre></div>
 </li>
 <li>
-<p>Construye el proyecto (<strong>Build</strong>) para generar un archivo ejecutable. <a href="../../../procedimientos/workflow/#construir-el-proyecto">➡️</a></p>
+<p>Construye el proyecto (<strong>Build</strong>) para generar un archivo ejecutable. <a href="../../../procedimientos/workflow/#construir-el-proyecto"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></p>
 </li>
-<li>Si no se dispone de ningún sistema destino (local o remoto) con un <em>runtime</em> sobre el que ejecutar el código, activar el simulador <code>UmRT_Default</code>. <a href="../../../procedimientos/workflow/#activar-simulador">➡️</a></li>
-<li>Selecciona el sistema destino (<strong>Target System</strong>) sobre el que se vaya a ejecutar el programa (<code>UmRT_Default</code>). <a href="../../../procedimientos/workflow/#seleccionar-sistema-destino">➡️</a></li>
-<li>Activa la licencia temporal del <em>runtime</em> del sistema destino si es necesario. <a href="../../../procedimientos/workflow/#activar-licencia">➡️</a></li>
-<li>Activa la configuración en el sistema destino (<strong>Activate Configuration</strong>).  <a href="../../../procedimientos/workflow/#activar-la-configuracion">➡️</a></li>
-<li>Conéctate (<strong>Login</strong>) al sistema destino para transferir el proyecto. <a href="../../../procedimientos/workflow/#transferir-el-proyecto">➡️</a></li>
-<li>Pon el programa de <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr> en ejecución (<strong>Run</strong>). <a href="../../../procedimientos/workflow/#arrancar-el-proyecto">➡️</a></li>
+<li>Si no dispones de ningún sistema destino (local o remoto) con un <em>runtime</em> sobre el que ejecutar el código, activa el simulador <code>UmRT_Default</code>. <a href="../../../procedimientos/workflow/#activar-simulador"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></li>
+<li>Selecciona el sistema destino (<strong>Target System</strong>) sobre el que se vaya a ejecutar el programa (<code>UmRT_Default</code>). <a href="../../../procedimientos/workflow/#seleccionar-sistema-destino"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></li>
+<li>Activa la licencia temporal del <em>runtime</em> del sistema destino si es necesario. <a href="../../../procedimientos/workflow/#activar-licencia"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></li>
+<li>Activa la configuración en el sistema destino (<strong>Activate Configuration</strong>). <a href="../../../procedimientos/workflow/#activar-la-configuracion"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></li>
+<li>Conéctate (<strong>Login</strong>) al sistema destino para transferir el proyecto. <a href="../../../procedimientos/workflow/#transferir-el-proyecto"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></li>
+<li>Pon el programa de <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr> en ejecución (<strong>Run</strong>). <a href="../../../procedimientos/workflow/#arrancar-el-proyecto"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></li>
 <li>
-<p>Prueba el programa forzando las variables de entrada en el modo de <strong>Monitorización <em>Online</em></strong>. <a href="../../../procedimientos/workflow/#forzar-variables">➡️</a></p>
-<p><img alt="FB_Carro_GRF_SFC Basico Online" class="screenshot" src="../img/fb-carro-grf-sfc-basico-online.png" /></p>
+<p>Prueba el programa forzando las variables de entrada en el modo de <strong>Monitorización <em>Online</em></strong>. <a href="../../../procedimientos/workflow/#forzar-variables"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></p>
+<p><img alt="Monitorización online del bloque FB_Carro_GRF_SFC para el carro básico" class="screenshot" src="../img/fb-carro-grf-sfc-basico-online.png" /></p>
 <details class="info">
 <summary>Monitorización Online</summary>
 <p>En el modo <strong>Monitorización <em>Online</em></strong> se muestra:</p>
 <ul>
 <li>En la parte de declaración ➔ el valor de las variables.</li>
-<li>En la parte de implementación ➔ las etapas y transiciones activas .</li>
+<li>En la parte de implementación ➔ las etapas y transiciones activas.</li>
 </ul>
 </details>
 </li>
 <li>
 <p>Crea una visualización mínima <code>V_Carro</code> que facilite la prueba.</p>
-<p><img alt="V_Carro Basico" class="screenshot" src="../img/v-carro-basico.png" /></p>
+<p><img alt="Visualización V_Carro del carro básico" class="screenshot" src="../img/v-carro-basico.png" /></p>
 <details class="info">
 <summary>Visualización</summary>
 <ul>
@@ -2612,26 +2612,26 @@ VAR
 <li>Un elemento gráfico para mostrar el valor de cada actuador.</li>
 </ul>
 </li>
-<li>Sin embargo, resulta conveniente, que tanto los objetos gráficos destinados a los sensores como a los actuadores permitan leer y escribir las señales correspondientes. De esta forma se facilitará la prueba cuando se ejecuta con el simulador (UmRt_Default) sin <em>hardware</em> asociado y se facilitará el modo manual cuando se ejecuta sobre un controlador con <em>hardware</em> asociado.</li>
+<li>Sin embargo, resulta conveniente que tanto los objetos gráficos destinados a los sensores como a los actuadores permitan leer y escribir las señales correspondientes. De esta forma se facilitará la prueba cuando se ejecuta con el simulador (<code>UmRT_Default</code>) sin <em>hardware</em> asociado y se facilitará el modo manual cuando se ejecuta sobre un controlador con <em>hardware</em> asociado.</li>
 <li>Conviene establecer un código de colores coherente para facilitar la interpretación y reducir la carga cognitiva del usuario.</li>
 </ul>
 </details>
 </li>
 <li>
 <p>Prueba el programa cambiando el valor de las entradas desde la visualización.</p>
-<p><img alt="V_Carro Basico Online" class="screenshot" src="../img/v-carro-basico-online.png" /></p>
+<p><img alt="Visualización V_Carro del carro básico en modo online" class="screenshot" src="../img/v-carro-basico-online.png" /></p>
 <details class="info">
-<summary>Visualización en línea</summary>
+<summary>Visualización en Línea</summary>
 <p>Con la visualización en modo <em>Online</em> se puede:</p>
 <ul>
 <li>Conocer el valor de las variables de salida por su color de desactivación/activación.</li>
-<li>Modifica el valor de las variables de entrada pulsando sobre el objeto gráfico.</li>
+<li>Modificar el valor de las variables de entrada pulsando sobre el objeto gráfico.</li>
 </ul>
 </details>
 </li>
 </ol>
 <h4 id="carro-pulsado_1">Carro Pulsado<a class="headerlink" href="#carro-pulsado_1" title="Permanent link">&para;</a></h4>
-<p><span class="objetivo-hito">Implementemos un detector de flancos en <abbr title="Diagrama de funciones secuenciales (Sequential Function Chart), lenguaje de la norma IEC 61131-3.">SFC</abbr></span></p>
+<p><span class="objetivo-hito">Implementa un detector de flancos en <abbr title="Diagrama de funciones secuenciales (Sequential Function Chart), lenguaje de la norma IEC 61131-3.">SFC</abbr></span></p>
 <ol>
 <li>
 <p>Modifica la parte de declaración.</p>
@@ -2665,8 +2665,8 @@ END_VAR
 </details>
 </li>
 <li>
-<p>Modifica el código de  <code>FB_Carro_GRF_SFC</code></p>
-<p><img alt="FB_Carro_GRF_SFC Pulsado" class="screenshot" src="../img/fb-carro-grf-sfc-pulsado.png" /></p>
+<p>Modifica el código de <code>FB_Carro_GRF_SFC</code>.</p>
+<p><img alt="Código SFC del bloque FB_Carro_GRF_SFC para el carro pulsado" class="screenshot" src="../img/fb-carro-grf-sfc-pulsado.png" /></p>
 <div class="admonition info">
 <p class="admonition-title">Comentarios</p>
 <ul>
@@ -2678,7 +2678,7 @@ END_VAR
 <li>
 <p>Incluye la acción <code>a_FlancoPulsadorMarcha_Evaluar</code> como acción principal (<code>Main action</code>) en la etapa inicial (<code>S0</code>), para que se ejecute continuamente (una vez por ciclo) mientras el sistema esté en la etapa inicial.</p>
 </li>
-<li>Sustituye en la expresión de la condición de transición de la etapa <code>S0</code> ➔ <code>S1</code>, <code>PulsadorMarcha</code> por la salida de la instancia del bloque funcional que detecta los flancos positivos en la variable (<code>FlancoPulsadorMarcha.Q</code>).</li>
+<li>Sustituye en la expresión de la condición de transición de la etapa <code>S0</code> ➔ <code>S1</code>, <code>i_PulsadorMarcha</code> por la salida de la instancia del bloque funcional que detecta los flancos positivos en la variable (<code>FlancoPulsadorMarcha.Q</code>).</li>
 </ul>
 </div>
 </li>
@@ -2687,7 +2687,7 @@ END_VAR
 </li>
 </ol>
 <h4 id="carro-temporizado_1">Carro Temporizado<a class="headerlink" href="#carro-temporizado_1" title="Permanent link">&para;</a></h4>
-<p><span class="objetivo-hito">Implementemos una temporización en <abbr title="Diagrama de funciones secuenciales (Sequential Function Chart), lenguaje de la norma IEC 61131-3.">SFC</abbr></span></p>
+<p><span class="objetivo-hito">Implementa una temporización en <abbr title="Diagrama de funciones secuenciales (Sequential Function Chart), lenguaje de la norma IEC 61131-3.">SFC</abbr></span></p>
 <ol>
 <li>
 <p>Modifica la parte de declaración.</p>
@@ -2724,15 +2724,15 @@ END_VAR
 </li>
 <li>
 <p>Modifica la parte de implementación.</p>
-<p><img alt="FB_Carro_GRF_SFC Temporizado" class="screenshot" src="../img/fb-carro-grf-sfc-temporizado.png" /></p>
-<div class="admonition info">
-<p class="admonition-title">Comentarios</p>
+<p><img alt="Código SFC del bloque FB_Carro_GRF_SFC para el carro temporizado" class="screenshot" src="../img/fb-carro-grf-sfc-temporizado.png" /></p>
+<details class="info">
+<summary>Comentarios</summary>
 <ul>
 <li>
-<p>Añade una nueva etapa (<code>S2</code>), para representar el estado de espera, e incluir en su transición de salida la condición <code>S2.t &gt; TiempoEspera</code>, equivalente a la condición de tiempo del diagrama grafcet <code>TE/X2</code>.</p>
+<p>Añade una nueva etapa (<code>S2</code>), para representar el estado de espera, e incluye en su transición de salida la condición <code>S2.t &gt; TiempoEspera</code>, equivalente a la condición de tiempo del diagrama grafcet <code>TE/X2</code>.</p>
 </li>
 <li>
-<p>Añade a <code>FB_Carro_GRF_SFC</code> una acción denominda <code>a_TiempoPendiente_Calcular</code> (<span class="fondo-azul-lang"><abbr title="Texto estructurado (Structured Text), lenguaje de la norma IEC 61131-3.">ST</abbr></span>), para calcular el tiempo de espera pendiente.</p>
+<p>Añade a <code>FB_Carro_GRF_SFC</code> una acción denominada <code>a_TiempoPendiente_Calcular</code> (<span class="fondo-azul-lang"><abbr title="Texto estructurado (Structured Text), lenguaje de la norma IEC 61131-3.">ST</abbr></span>), para calcular el tiempo de espera pendiente.</p>
 <div class="highlight"><pre><span></span><code>IF TiempoEspera &gt;= S2.t THEN
     TiempoPendiente := TiempoEspera - S2.t;
 ELSE
@@ -2744,7 +2744,7 @@ END_IF;
 <p>Incluye la acción <code>a_TiempoPendiente_Calcular</code> como acción principal (<strong>Main action</strong>) en la etapa de espera (<code>S2</code>).</p>
 </li>
 </ul>
-</div>
+</details>
 <details class="info">
 <summary>Programación Defensiva</summary>
 <ul>
@@ -2756,7 +2756,7 @@ END_IF;
 </li>
 <li>
 <p>Modifica la visualización.</p>
-<p><img alt="V_Carro Temporizado" class="screenshot" src="../img/v-carro-temporizado.png" /></p>
+<p><img alt="Visualización V_Carro del carro temporizado" class="screenshot" src="../img/v-carro-temporizado.png" /></p>
 <details class="info">
 <summary>Comentario</summary>
 <p>Incluye en la visualización <code>V_Carro</code> un objeto gráfico para introducir el tiempo de espera deseado y otro para mostrar el tiempo pendiente.</p>
@@ -2767,10 +2767,10 @@ END_IF;
 </li>
 </ol>
 <h4 id="carro-limitado_1">Carro Limitado<a class="headerlink" href="#carro-limitado_1" title="Permanent link">&para;</a></h4>
-<p><span class="objetivo-hito">Implementemos una cuenta en <abbr title="Diagrama de funciones secuenciales (Sequential Function Chart), lenguaje de la norma IEC 61131-3.">SFC</abbr></span></p>
+<p><span class="objetivo-hito">Implementa una cuenta en <abbr title="Diagrama de funciones secuenciales (Sequential Function Chart), lenguaje de la norma IEC 61131-3.">SFC</abbr></span></p>
 <ol>
 <li>
-<p>Modifica la parte de declaración:</p>
+<p>Modifica la parte de declaración.</p>
 <div class="highlight"><pre><span></span><code>FUNCTION_BLOCK FB_Carro_GRF_SFC
 VAR_INPUT
     TiempoEspera: TIME := T#2S;
@@ -2781,10 +2781,10 @@ VAR_OUTPUT
 <span class="hll">    ManiobrasPendientes: UINT;
 </span>END_VAR
 VAR
-// Bloques Funcionales
-FlancoPulsadorMarcha: R_TRIG;
+    // Bloques Funcionales
+    FlancoPulsadorMarcha: R_TRIG;
 
-// Entradas
+    // Entradas
     i_PulsadorMarcha AT %I*: BOOL;
     i_FinalCarreraIzquierda AT %I*: BOOL := TRUE;
     i_FinalCarreraDerecha AT %I*: BOOL;
@@ -2804,44 +2804,44 @@ END_VAR
 </details>
 </li>
 <li>
-<p>Modifica el código:</p>
-<p><img alt="FB_Carro_GRF_SFC limitado" class="screenshot" src="../img/fb-carro-grf-sfc-limitado.png" /></p>
-<div class="admonition info">
-<p class="admonition-title">Comentarios</p>
+<p>Modifica la parte de implementación.</p>
+<p><img alt="Código SFC del bloque FB_Carro_GRF_SFC para el carro limitado" class="screenshot" src="../img/fb-carro-grf-sfc-limitado.png" /></p>
+<details class="info">
+<summary>Comentarios</summary>
 <ul>
 <li>Incluye una nueva etapa (<code>S4</code>) al final de la secuencia para evaluar si terminó la tarea.</li>
 <li>Incluye una rama alternativa con salto atrás a la etapa <code>S4</code>.</li>
-<li>Se regresa a la etapa inicial por la rama principal si terminó la tarea (<code>ManiobrasPendientes = 0</code>).</li>
-<li>Se vuelve a la primera etapa de la secuencia (<code>S1</code>) si quedan maniobras por realizar (<code>ManiobrasPendientes &gt; 0</code>).</li>
+<li>Regresa a la etapa inicial por la rama principal si terminó la tarea (<code>ManiobrasPendientes = 0</code>).</li>
+<li>Vuelve a la primera etapa de la secuencia (<code>S1</code>) si quedan maniobras por realizar (<code>ManiobrasPendientes &gt; 0</code>).</li>
 <li>
-<p>Incluye una acción <code>a_ManiobrasPendientes_Reiniciar</code> para establecer el valor de la cuenta al iniciar la tarea y asociarla como acción a la salida a la etapa inicial (<code>S0</code>).</p>
+<p>Incluye una acción <code>a_ManiobrasPendientes_Reiniciar</code> para establecer el valor de la cuenta al iniciar la tarea y asóciala como acción a la salida de la etapa inicial (<code>S0</code>).</p>
 <div class="highlight"><pre><span></span><code>ManiobrasPendientes := ManiobrasTotales;
 </code></pre></div>
 </li>
 <li>
-<p>Incluye una acción <code>a_ManiobrasPendientes_Calcular</code> para decrementar el valor de la cuenta con la finalización de cada maniobra y asociarla como acción a la entrada a la etapa final (<code>S4</code>).</p>
+<p>Incluye una acción <code>a_ManiobrasPendientes_Calcular</code> para decrementar el valor de la cuenta con la finalización de cada maniobra y asóciala como acción a la entrada de la etapa final (<code>S4</code>).</p>
 <div class="highlight"><pre><span></span><code>IF (ManiobrasPendientes &gt; 0) THEN
     ManiobrasPendientes := ManiobrasPendientes - 1;
 END_IF;
 </code></pre></div>
 </li>
 </ul>
-</div>
-<ol>
-<li>Modifica la visualización.</li>
-</ol>
-<p><img alt="V_Carro Limitado" class="screenshot" src="../img/v-carro-limitado.png" /></p>
+</details>
+</li>
+<li>
+<p>Modifica la visualización.</p>
+<p><img alt="Visualización V_Carro del carro limitado" class="screenshot" src="../img/v-carro-limitado.png" /></p>
 <details class="info">
 <summary>Comentarios</summary>
-</details>
 <p>Incluye en la visualización <code>V_Carro</code> un objeto gráfico para introducir el número total de maniobras y otro para mostrar las maniobras pendientes.</p>
+</details>
 </li>
 <li>
 <p>Procede como en el apartado anterior para probar el programa desde la visualización.</p>
 </li>
 </ol>
 <h4 id="carro-senalizado_1">Carro Señalizado<a class="headerlink" href="#carro-senalizado_1" title="Permanent link">&para;</a></h4>
-<p><span class="objetivo-hito">Implementemos una intermitencia en <abbr title="Diagrama de funciones secuenciales (Sequential Function Chart), lenguaje de la norma IEC 61131-3.">SFC</abbr></span></p>
+<p><span class="objetivo-hito">Implementa una intermitencia en <abbr title="Diagrama de funciones secuenciales (Sequential Function Chart), lenguaje de la norma IEC 61131-3.">SFC</abbr></span></p>
 <ol>
 <li>Incluye la librería <code>Util.lib</code> en las referencias (<code>References</code>) del proyecto.</li>
 <li>
@@ -2880,12 +2880,12 @@ END_VAR
 </li>
 <li>
 <p>Modifica la parte de implementación.</p>
-<p><img alt="FB_Carro_GRF_SFC Senalizado" class="screenshot" src="../img/fb-carro-grf-sfc-senalizado.png" /></p>
-<div class="admonition info">
-<p class="admonition-title">Comentarios</p>
+<p><img alt="Código SFC del bloque FB_Carro_GRF_SFC para el carro señalizado" class="screenshot" src="../img/fb-carro-grf-sfc-senalizado.png" /></p>
+<details class="info">
+<summary>Comentarios</summary>
 <ul>
 <li>
-<p>Se incluye una acción <code>a_LamparaMarcha</code> para establecer el valor de <code>o_LamparaMarcha</code>, implementando tanto la acción condicionada a <code>BLK</code> en la etapa inicial (<code>SO</code>) como la acción continua en el resto de etapas.</p>
+<p>Incluye una acción <code>a_LamparaMarcha</code> para establecer el valor de <code>o_LamparaMarcha</code>, implementando tanto la acción condicionada a <code>BLK</code> en la etapa inicial (<code>S0</code>) como la acción continua en el resto de etapas.</p>
 <div class="highlight"><pre><span></span><code>Intermitencia(Enable := S0.x);
 
 o_LamparaMarcha := (S0.x AND Intermitencia.OUT) OR S1.x OR S2.x OR S3.x OR S4.x;
@@ -2895,34 +2895,39 @@ o_LamparaMarcha := (S0.x AND Intermitencia.OUT) OR S1.x OR S2.x OR S3.x OR S4.x;
 <p>Incluye esta acción <code>a_LamparaMarcha</code> en todas las etapas tal y como figura en el diagrama grafcet.</p>
 </li>
 </ul>
-</div>
+</details>
 </li>
 <li>
 <p>Procede como en el apartado anterior para probar el programa desde la visualización.</p>
 </li>
 </ol>
+<div class="admonition success">
+<p class="admonition-title"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M144.3 0h224c26.5 0 48.1 21.8 47.1 48.2-.2 5.3-.4 10.6-.7 15.8h49.6c26.1 0 49.1 21.6 47.1 49.8-7.5 103.7-60.5 160.7-118 190.5-15.8 8.2-31.9 14.3-47.2 18.8-20.2 28.6-41.2 43.7-57.9 51.8V448h64c17.7 0 32 14.3 32 32s-14.3 32-32 32h-192c-17.7 0-32-14.3-32-32s14.3-32 32-32h64v-73.1c-16-7.7-35.9-22-55.3-48.3-18.4-4.8-38.4-12.1-57.9-23.1C57 273.2 8.2 216.1 1.2 113.6c-1.9-28.1 21-49.7 47.1-49.7h49.6c-.3-5.2-.5-10.4-.7-15.8-1-26.5 20.6-48.2 47.1-48.2zm-42.8 112H49.1c6.2 84.7 45.1 127.1 85.2 149.6-14.4-37.3-26.3-86-32.8-149.6M380 256.8c40.5-23.8 77.1-66.1 83.3-144.8H411c-6.2 60.9-17.4 108.2-31 144.8"/></svg></span> ¡Enhorabuena!</p>
+<p>Has completado con éxito la primera parte de esta guía de implementación.</p>
+<p>Has transcrito a lenguaje <span class="fondo-rojo-lang"><abbr title="Diagrama de funciones secuenciales (Sequential Function Chart), lenguaje de la norma IEC 61131-3.">SFC</abbr></span> una máquina de estados especificada con el lenguaje <strong><abbr title="Gráfico funcional de control etapa-transición (Graphe Fonctionnel de Commande Étapes/Transitions).">GRAFCET</abbr></strong>.</p>
+</div>
 <hr />
 <h3 id="grafcet-st"><abbr title="Gráfico funcional de control etapa-transición (Graphe Fonctionnel de Commande Étapes/Transitions).">GRAFCET</abbr> ➔ <abbr title="Texto estructurado (Structured Text), lenguaje de la norma IEC 61131-3.">ST</abbr><a class="headerlink" href="#grafcet-st" title="Permanent link">&para;</a></h3>
-<p><span class="objetivo-hito">Implementemos un diagrama grafcet en el lenguaje <abbr title="Texto estructurado (Structured Text), lenguaje de la norma IEC 61131-3.">ST</abbr></span></p>
+<p><span class="objetivo-hito">Implementa un diagrama grafcet en el lenguaje <abbr title="Texto estructurado (Structured Text), lenguaje de la norma IEC 61131-3.">ST</abbr></span></p>
 <h4 id="carro-basico_2">Carro Básico<a class="headerlink" href="#carro-basico_2" title="Permanent link">&para;</a></h4>
 <div class="admonition tip">
 <p class="admonition-title">Punto de Partida</p>
-<p>Esta sección continúa el trabajo de la sección anterior, por lo que aprovecharemos la estructura existente para integrar en ella la implementación en <abbr title="Texto estructurado (Structured Text), lenguaje de la norma IEC 61131-3.">ST</abbr>.</p>
+<p>Esta sección continúa el trabajo de la sección anterior y aprovecha la estructura existente para integrar en ella la implementación en <abbr title="Texto estructurado (Structured Text), lenguaje de la norma IEC 61131-3.">ST</abbr>.</p>
 </div>
 <ol>
 <li>
-<p>Crea una nueva <abbr title="Unidad de Organización de Programa (Program Organization Unit).">POU</abbr>. <a href="../../../procedimientos/workflow/#crear-una-pou">➡️</a></p>
-<div class="admonition warning">
+<p>Crea una nueva <abbr title="Unidad de Organización de Programa (Program Organization Unit).">POU</abbr>. <a href="../../../procedimientos/workflow/#crear-una-pou"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></p>
+<div class="admonition note">
 <p class="admonition-title">Parámetros <abbr title="Unidad de Organización de Programa (Program Organization Unit).">POU</abbr></p>
 <ul>
-<li><em>Nombre</em> ➔ <code>FB_Carro_GRF_ST</code></li>
+<li><em>Name</em> ➔ <code>FB_Carro_GRF_ST</code></li>
 <li><em>Type</em> ➔ <code>Function Block</code></li>
 <li><em>Implementation Language</em> ➔ <code>Structured Text</code></li>
 </ul>
 </div>
 </li>
 <li>
-<p>Cómo en la sección anterior, declarar todas las variables de entrada/salida del sistema en <code>FB_Carro_GRF_ST</code> como variables locales (<code>VAR_LOCAL</code>), e incluir una variable entera para contener el valor del estado actual (<code>Estado</code>). <a href="../../../procedimientos/workflow/#declarar-una-variable">➡️</a></p>
+<p>Como en la sección anterior, declara todas las variables de entrada/salida del sistema en <code>FB_Carro_GRF_ST</code> como variables locales (<code>VAR</code>) e incluye una variable entera para contener el valor del estado actual (<code>Estado</code>). <a href="../../../procedimientos/workflow/#declarar-una-variable"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></p>
 <div class="highlight"><pre><span></span><code>FUNCTION_BLOCK FB_Carro_GRF_ST
 // Transcripción del grafcet (GRF -&gt; ST)
 VAR_INPUT
@@ -2947,7 +2952,7 @@ END_VAR
 <summary>Comentarios Declaración</summary>
 <ul>
 <li>A diferencia de <span class="fondo-rojo-lang"><abbr title="Diagrama de funciones secuenciales (Sequential Function Chart), lenguaje de la norma IEC 61131-3.">SFC</abbr></span>, que gestiona las etapas de forma implícita mediante su propia sintaxis gráfica, en <span class="fondo-azul-lang"><abbr title="Texto estructurado (Structured Text), lenguaje de la norma IEC 61131-3.">ST</abbr></span> es necesario declarar una variable numérica explícita para registrar el <strong>estado activo</strong> del sistema.</li>
-<li>Esta forma de gestionar el estado es válida únicamente para máquinas de <strong>estado concentrado</strong>, en las que toda la actividad del sistema reside en una única etapa, sólo tienen activa una etapa en cada instante.</li>
+<li>Esta forma de gestionar el estado es válida únicamente para máquinas de <strong>estado concentrado</strong>, en las que solo hay una etapa activa en cada instante.</li>
 </ul>
 </details>
 </li>
@@ -2976,13 +2981,13 @@ o_MarchaIzquierda := (Estado = 2);
 <details class="info">
 <summary>Comentarios</summary>
 <ul>
-<li>La estructura de selección múltiple <code>CASE</code>, permite evaluar elegantemente la <strong>Función de Estado</strong> expresada en el diagrama grafcet. Así, dependiendo del estado en el que se encuentre el sistemas ([0, 1, 2]) y los eventos de entrada (<code>i_FinalCarreraDerecha</code>, <code>i_FinalCarreraIzquierda</code>,... ) se calcula el nuevo estado asignando un nuevo valor a la variable <code>Estado</code>.</li>
+<li>La estructura de selección múltiple <code>CASE</code>, permite evaluar elegantemente la <strong>Función de Estado</strong> expresada en el diagrama grafcet. Así, dependiendo del estado en el que se encuentre el sistema ([0, 1, 2]) y los eventos de entrada (<code>i_FinalCarreraDerecha</code>, <code>i_FinalCarreraIzquierda</code>,... ) se calcula el nuevo estado asignando un nuevo valor a la variable <code>Estado</code>.</li>
 <li>Las salidas se calculan, tal y como se especifica en el diagrama <em>grafcet</em>, a partir del estado (<strong>Salidas Continuas</strong>).</li>
 </ul>
 </details>
 </li>
 <li>
-<p>Añade a <code>MAIN</code> la declaración de una nueva instancia <code>Carro</code> de tipo <code>FB_Carro_GRF_ST</code> y comentar la anterior.</p>
+<p>Añade a <code>MAIN</code> la declaración de una nueva instancia <code>Carro</code> de tipo <code>FB_Carro_GRF_ST</code> y comenta la anterior.</p>
 <div class="highlight"><pre><span></span><code>PROGRAM MAIN
 VAR
     // Carro: FB_Carro_GRF_SFC;
@@ -3057,7 +3062,7 @@ CASE Estado OF
 </li>
 </ol>
 <h4 id="carro-pulsado_2">Carro Pulsado<a class="headerlink" href="#carro-pulsado_2" title="Permanent link">&para;</a></h4>
-<p><span class="objetivo-hito">Implementemos un detector de flancos en <abbr title="Texto estructurado (Structured Text), lenguaje de la norma IEC 61131-3.">ST</abbr></span></p>
+<p><span class="objetivo-hito">Implementa un detector de flancos en <abbr title="Texto estructurado (Structured Text), lenguaje de la norma IEC 61131-3.">ST</abbr></span></p>
 <ol>
 <li>
 <p>Modifica la parte de declaración.</p>
@@ -3121,7 +3126,7 @@ o_MarchaIzquierda := (Estado = E_MARCHA_IZQUIERDA);
 <summary>Comentarios</summary>
 <ul>
 <li>Añade la instrucción correspondiente a la invocación del detector de flanco <code>FlancoPulsadorMarcha(CLK := i_PulsadorMarcha)</code>.</li>
-<li>Sustituye en la expresión de la condición de transición de la etapa <code>E_INICIAL</code> ➔ <code>E_MARCHA_DERECHA</code>, <code>PulsadorMarcha</code> por la salida de la instancia del bloque funcional que detecta los flancos positivos en la variable (<code>FlancoPulsadorMarcha.Q</code>).</li>
+<li>Sustituye en la expresión de la condición de transición de la etapa <code>E_INICIAL</code> ➔ <code>E_MARCHA_DERECHA</code>, <code>i_PulsadorMarcha</code> por la salida de la instancia del bloque funcional que detecta los flancos positivos en la variable (<code>FlancoPulsadorMarcha.Q</code>).</li>
 </ul>
 </details>
 </li>
@@ -3130,7 +3135,7 @@ o_MarchaIzquierda := (Estado = E_MARCHA_IZQUIERDA);
 </li>
 </ol>
 <h4 id="carro-temporizado_2">Carro Temporizado<a class="headerlink" href="#carro-temporizado_2" title="Permanent link">&para;</a></h4>
-<p><span class="objetivo-hito">Implementemos un temporizador en <abbr title="Texto estructurado (Structured Text), lenguaje de la norma IEC 61131-3.">ST</abbr></span></p>
+<p><span class="objetivo-hito">Implementa un temporizador en <abbr title="Texto estructurado (Structured Text), lenguaje de la norma IEC 61131-3.">ST</abbr></span></p>
 <ol>
 <li>
 <p>Modifica la parte de declaración.</p>
@@ -3198,7 +3203,7 @@ CASE Estado OF
 </span><span class="hll">            TiempoPendiente := TiempoEspera - TemporizadorEspera.ET;
 </span><span class="hll">        END_IF;
 </span><span class="hll">
-</span><span class="hll">        IF TemporizadorEspera.Q  THEN
+</span><span class="hll">        IF TemporizadorEspera.Q THEN
 </span><span class="hll">            Estado := E_MARCHA_IZQUIERDA;
 </span><span class="hll">        END_IF;
 </span>    E_MARCHA_IZQUIERDA:
@@ -3214,9 +3219,9 @@ o_MarchaIzquierda := (Estado = E_MARCHA_IZQUIERDA);
 <details class="info">
 <summary>Comentarios</summary>
 <ul>
-<li>Se añade la llamada al <code>TemporizadorEspera</code>.</li>
-<li>Se modifica el estado futuro de <code>E_MARCHA_DERECHA</code>: <code>E_MARCHA_IZQUIERDA</code> ➔ <code>E_ESPERA</code>.</li>
-<li>Se incluye el fragmento de código correspondiente al estado <code>E_ESPERA</code>. Este fragmento evalúa la función de estado y ejecuta la acción principal asociada a la etapa para calcular el tiempo de espera pendiente.</li>
+<li>Añade la llamada al <code>TemporizadorEspera</code>.</li>
+<li>Modifica el estado futuro de <code>E_MARCHA_DERECHA</code>: <code>E_MARCHA_IZQUIERDA</code> ➔ <code>E_ESPERA</code>.</li>
+<li>Incluye el fragmento de código correspondiente al estado <code>E_ESPERA</code>. Este fragmento evalúa la función de estado y ejecuta la acción principal asociada a la etapa para calcular el tiempo de espera pendiente.</li>
 </ul>
 </details>
 </li>
@@ -3225,7 +3230,7 @@ o_MarchaIzquierda := (Estado = E_MARCHA_IZQUIERDA);
 </li>
 </ol>
 <h4 id="carro-limitado_2">Carro Limitado<a class="headerlink" href="#carro-limitado_2" title="Permanent link">&para;</a></h4>
-<p><span class="objetivo-hito">Implementemos una cuenta en <abbr title="Texto estructurado (Structured Text), lenguaje de la norma IEC 61131-3.">ST</abbr></span></p>
+<p><span class="objetivo-hito">Implementa una cuenta en <abbr title="Texto estructurado (Structured Text), lenguaje de la norma IEC 61131-3.">ST</abbr></span></p>
 <ol>
 <li>
 <p>Modifica la parte de declaración.</p>
@@ -3261,7 +3266,7 @@ END_VAR
 <summary>Comentarios</summary>
 <ul>
 <li>El parámetro entero de entrada <code>ManiobrasTotales</code>, declarado en <code>VAR_INPUT</code>, contiene el número total de maniobras deseadas. Puedes establecer un valor inicial, por ejemplo, <code>1</code>.</li>
-<li>El parámetro entero de salida <code>ManiobrasPendientes</code>del bloque de declaración <code>VAR_OUTPUT</code> contiene el número de maniobras pendientes de realizar.</li>
+<li>El parámetro entero de salida <code>ManiobrasPendientes</code> del bloque de declaración <code>VAR_OUTPUT</code> contiene el número de maniobras pendientes de realizar.</li>
 <li>El literal de enumeración <code>E_FINAL</code> representa el estado correspondiente a la nueva etapa <code>S4</code>. En ese estado se actualizan las maniobras pendientes y se decide si el carro continúa o vuelve a la etapa inicial.</li>
 </ul>
 </details>
@@ -3278,10 +3283,10 @@ CASE Estado OF
         FlancoPulsadorMarcha(CLK := i_PulsadorMarcha);
 
         IF i_FinalCarreraIzquierda AND FlancoPulsadorMarcha.Q THEN
-<span class="hll">        // Acción de salida
-</span><span class="hll">        ManiobrasPendientes := ManiobrasTotales;
+<span class="hll">            // Acción de salida
+</span><span class="hll">            ManiobrasPendientes := ManiobrasTotales;
 </span>
-        Estado := E_MARCHA_DERECHA;
+            Estado := E_MARCHA_DERECHA;
         END_IF;
     E_MARCHA_DERECHA:
         IF i_FinalCarreraDerecha THEN
@@ -3293,7 +3298,7 @@ CASE Estado OF
             TiempoPendiente := TiempoEspera - TemporizadorEspera.ET;
         END_IF;
 
-        IF TemporizadorEspera.Q  THEN
+        IF TemporizadorEspera.Q THEN
             Estado := E_MARCHA_IZQUIERDA;
         END_IF;
     E_MARCHA_IZQUIERDA:
@@ -3320,10 +3325,10 @@ CASE Estado OF
 <details class="info">
 <summary>Comentarios</summary>
 <ul>
-<li>Se incluye la acción de salida de la etapa <code>E_INICIAL</code> (<code>S0</code>) para establecer el valor inicial de la cuenta de maniobras pendientes.</li>
-<li>Se incluye la acción de entrada de la etapa <code>E_FINAL</code> (<code>S4</code>) para decrementar el valor de la cuenta de maniobras pendientes.</li>
-<li>Se modifica el estado futuro de <code>E_MARCHA_IZQUIERDA</code> (<code>S2</code>): <code>E_INICIAL</code> ➔ <code>E_FINAL</code>.</li>
-<li>Se incluye el estado E_FINAL (<code>S4</code>), con su código correspondiente.</li>
+<li>Incluye la acción de salida de la etapa <code>E_INICIAL</code> (<code>S0</code>) para establecer el valor inicial de la cuenta de maniobras pendientes.</li>
+<li>Incluye la acción de entrada de la etapa <code>E_FINAL</code> (<code>S4</code>) para decrementar el valor de la cuenta de maniobras pendientes.</li>
+<li>Modifica el estado futuro de <code>E_MARCHA_IZQUIERDA</code> (<code>S2</code>): <code>E_INICIAL</code> ➔ <code>E_FINAL</code>.</li>
+<li>Incluye el estado <code>E_FINAL</code> (<code>S4</code>), con su código correspondiente.</li>
 </ul>
 </details>
 </li>
@@ -3332,7 +3337,7 @@ CASE Estado OF
 </li>
 </ol>
 <h4 id="carro-senalizado_2">Carro Señalizado<a class="headerlink" href="#carro-senalizado_2" title="Permanent link">&para;</a></h4>
-<p><span class="objetivo-hito">Implementemos una intermitencia en <abbr title="Texto estructurado (Structured Text), lenguaje de la norma IEC 61131-3.">ST</abbr></span></p>
+<p><span class="objetivo-hito">Implementa una intermitencia en <abbr title="Texto estructurado (Structured Text), lenguaje de la norma IEC 61131-3.">ST</abbr></span></p>
 <ol>
 <li>Incluye la librería <code>Util.lib</code> en las referencias (<code>References</code>) del proyecto.</li>
 <li>
@@ -3386,10 +3391,10 @@ CASE Estado OF
         FlancoPulsadorMarcha(CLK := i_PulsadorMarcha);
 
         IF i_FinalCarreraIzquierda AND FlancoPulsadorMarcha.Q THEN
-        // Acción de salida
-        ManiobrasPendientes := ManiobrasTotales;
+            // Acción de salida
+            ManiobrasPendientes := ManiobrasTotales;
 
-        Estado := E_MARCHA_DERECHA;
+            Estado := E_MARCHA_DERECHA;
         END_IF;
     E_MARCHA_DERECHA:
         IF i_FinalCarreraDerecha THEN
@@ -3401,7 +3406,7 @@ CASE Estado OF
             TiempoPendiente := TiempoEspera - TemporizadorEspera.ET;
         END_IF;
 
-        IF TemporizadorEspera.Q  THEN
+        IF TemporizadorEspera.Q THEN
             Estado := E_MARCHA_IZQUIERDA;
         END_IF;
     E_MARCHA_IZQUIERDA:
@@ -3429,8 +3434,8 @@ o_LamparaMarcha := (Estado &lt;&gt; E_INICIAL) OR Intermitencia.Q;
 <details class="info">
 <summary>Comentarios</summary>
 <ul>
-<li>Se incluye la llamada al bloque <code>Intermitencia</code> para activarlo en la etapa <code>E_INICIAL</code>.</li>
-<li>Se calcula el valor de <code>o_LamparaMarcha</code>, para que sea encienda permanentemente cuando el carro está en marcha e intermitente cuando esté esperando la orden de marcha en la etapa inicial.</li>
+<li>Incluye la llamada al bloque <code>Intermitencia</code> para activarlo en la etapa <code>E_INICIAL</code>.</li>
+<li>Calcula el valor de <code>o_LamparaMarcha</code> para que se encienda permanentemente cuando el carro está en marcha e intermitente cuando espera la orden de marcha en la etapa inicial.</li>
 </ul>
 </details>
 </li>
@@ -3438,6 +3443,11 @@ o_LamparaMarcha := (Estado &lt;&gt; E_INICIAL) OR Intermitencia.Q;
 <p>Prueba el código desde la visualización.</p>
 </li>
 </ol>
+<div class="admonition success">
+<p class="admonition-title"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M144.3 0h224c26.5 0 48.1 21.8 47.1 48.2-.2 5.3-.4 10.6-.7 15.8h49.6c26.1 0 49.1 21.6 47.1 49.8-7.5 103.7-60.5 160.7-118 190.5-15.8 8.2-31.9 14.3-47.2 18.8-20.2 28.6-41.2 43.7-57.9 51.8V448h64c17.7 0 32 14.3 32 32s-14.3 32-32 32h-192c-17.7 0-32-14.3-32-32s14.3-32 32-32h64v-73.1c-16-7.7-35.9-22-55.3-48.3-18.4-4.8-38.4-12.1-57.9-23.1C57 273.2 8.2 216.1 1.2 113.6c-1.9-28.1 21-49.7 47.1-49.7h49.6c-.3-5.2-.5-10.4-.7-15.8-1-26.5 20.6-48.2 47.1-48.2zm-42.8 112H49.1c6.2 84.7 45.1 127.1 85.2 149.6-14.4-37.3-26.3-86-32.8-149.6M380 256.8c40.5-23.8 77.1-66.1 83.3-144.8H411c-6.2 60.9-17.4 108.2-31 144.8"/></svg></span> ¡Enhorabuena!</p>
+<p>Has completado con éxito la segunda parte de esta guía de implementación.</p>
+<p>Has transcrito a lenguaje  <span class="fondo-azul-lang"><abbr title="Texto estructurado (Structured Text), lenguaje de la norma IEC 61131-3.">ST</abbr></span> una máquina de estados especificada con el lenguaje <strong><abbr title="Gráfico funcional de control etapa-transición (Graphe Fonctionnel de Commande Étapes/Transitions).">GRAFCET</abbr></strong>.</p>
+</div>
 <hr />
 <h3 id="grafcet-ld"><abbr title="Gráfico funcional de control etapa-transición (Graphe Fonctionnel de Commande Étapes/Transitions).">GRAFCET</abbr> ➔ <abbr title="Diagrama de contactos (Ladder Diagram), lenguaje de la norma IEC 61131-3.">LD</abbr><a class="headerlink" href="#grafcet-ld" title="Permanent link">&para;</a></h3>
 <h4 id="carro-basico_3">Carro Básico<a class="headerlink" href="#carro-basico_3" title="Permanent link">&para;</a></h4>
@@ -3481,7 +3491,7 @@ o_LamparaMarcha := (Estado &lt;&gt; E_INICIAL) OR Intermitencia.Q;
     <span class="md-icon" title="Última actualización">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="17 de octubre de 2026 22:00:06 UTC">17 de octubre de 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="18 de octubre de 2026 18:45:04 UTC">18 de octubre de 2026</span>
   </span>
 
     

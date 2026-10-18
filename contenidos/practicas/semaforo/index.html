@@ -2042,12 +2042,12 @@
 <h3 id="proyecto-twincat-3-en-sfc">Proyecto <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> 3 en <abbr title="Diagrama de funciones secuenciales (Sequential Function Chart), lenguaje de la norma IEC 61131-3.">SFC</abbr><a class="headerlink" href="#proyecto-twincat-3-en-sfc" title="Permanent link">&para;</a></h3>
 <p>A continuación, se detalla la secuencia de pasos necesarios para codificar, en el lenguaje <span class="fondo-rojo-lang"><abbr title="Diagrama de funciones secuenciales (Sequential Function Chart), lenguaje de la norma IEC 61131-3.">SFC</abbr></span>, la máquina de estados que describe el comportamiento de la lógica de control del semáforo simple especificada con un diagrama <abbr title="Gráfico funcional de control etapa-transición (Graphe Fonctionnel de Commande Étapes/Transitions).">GRAFCET</abbr>.</p>
 <ol>
-<li>Abrir la aplicación <strong><abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> <abbr title="eXtended Automation Engineering, entorno de ingeniería de TwinCAT.">XAE</abbr></strong>. <a href="../../procedimientos/workflow/#abrir-twincat-xae">➡️</a></li>
-<li>Crear un <strong>proyecto (solución) <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> 3</strong> con nombre <code>TC3_Semaforo</code>. <a href="../../procedimientos/workflow/#crear-un-proyecto-twincat-3">➡️</a></li>
-<li>Ocultar las <strong>configuraciones</strong> innecesarias para dejar el explorador de la solución lo más despejada posible. <a href="../../procedimientos/workflow/#ocultar-configuraciones">➡️</a></li>
-<li>Crear un <strong>proyecto <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr> estándar</strong> con el nombre <code>Semaforo_PLC</code>. <a href="../../procedimientos/workflow/#crear-un-proyecto-plc">➡️</a></li>
+<li>Abrir la aplicación <strong><abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> <abbr title="eXtended Automation Engineering, entorno de ingeniería de TwinCAT.">XAE</abbr></strong>. <a href="../../procedimientos/workflow/#abrir-twincat-xae"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></li>
+<li>Crear un <strong>proyecto (solución) <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> 3</strong> con nombre <code>TC3_Semaforo</code>. <a href="../../procedimientos/workflow/#crear-un-proyecto-twincat-3"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></li>
+<li>Ocultar las <strong>configuraciones</strong> innecesarias para dejar el explorador de la solución lo más despejada posible. <a href="../../procedimientos/workflow/#ocultar-configuraciones"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></li>
+<li>Crear un <strong>proyecto <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr> estándar</strong> con el nombre <code>Semaforo_PLC</code>. <a href="../../procedimientos/workflow/#crear-un-proyecto-plc"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></li>
 <li>
-<p>Crear una nueva <strong>Unidad de Organización de Programa (<abbr title="Unidad de Organización de Programa (Program Organization Unit).">POU</abbr>)</strong> de tipo <strong>Bloque Funcional</strong>. <a href="../../procedimientos/workflow/#crear-una-pou">➡️</a></p>
+<p>Crear una nueva <strong>Unidad de Organización de Programa (<abbr title="Unidad de Organización de Programa (Program Organization Unit).">POU</abbr>)</strong> de tipo <strong>Bloque Funcional</strong>. <a href="../../procedimientos/workflow/#crear-una-pou"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></p>
 <div class="admonition warning">
 <p class="admonition-title">Parámetros <abbr title="Unidad de Organización de Programa (Program Organization Unit).">POU</abbr></p>
 <ul>
@@ -2058,7 +2058,7 @@
 </div>
 </li>
 <li>
-<p>Declarar los <strong>parámetros y variables</strong> necesarios en <code>FB_Semaforo_SFC</code>. <a href="../../procedimientos/workflow/#declarar-una-variable">➡️</a></p>
+<p>Declarar los <strong>parámetros y variables</strong> necesarios en <code>FB_Semaforo_SFC</code>. <a href="../../procedimientos/workflow/#declarar-una-variable"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></p>
 <div class="highlight"><pre><span></span><code>FUNCTION_BLOCK FB_Semaforo_SFC
 VAR_INPUT
     TiempoVerdeVehiculos: TIME := T#20S;
@@ -2090,28 +2090,28 @@ END_VAR
 </code></pre></div>
 </li>
 <li>
-<p>Construir el proyecto (<strong>Build</strong>) para generar un archivo ejecutable. <a href="../../procedimientos/workflow/#construir-el-proyecto">➡️</a></p>
+<p>Construir el proyecto (<strong>Build</strong>) para generar un archivo ejecutable. <a href="../../procedimientos/workflow/#construir-el-proyecto"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></p>
 </li>
 <li>
-<p>Activar el simulador <code>UmRT_Default</code> para disponer de un runtime sobre el que ejecutar el código del proyecto. <a href="../../procedimientos/workflow/#activar-simulador">➡️</a></p>
+<p>Activar el simulador <code>UmRT_Default</code> para disponer de un runtime sobre el que ejecutar el código del proyecto. <a href="../../procedimientos/workflow/#activar-simulador"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></p>
 <div class="admonition warning">
 <p class="admonition-title">Importante</p>
 <p>Tomar nota de la dirección <strong>AmsNetId</strong> del simulador <code>UmRT_Default</code> que se muestra en la pantalla de la terminal (por ejemplo, <code>192.168.4.1.1.1</code>).</p>
 </div>
 </li>
 <li>
-<p>Seleccionar <code>UmRT_Default</code> como sistema destino (<strong>Target System</strong>). <a href="../../procedimientos/workflow/#seleccionar-sistema-destino">➡️</a></p>
+<p>Seleccionar <code>UmRT_Default</code> como sistema destino (<strong>Target System</strong>). <a href="../../procedimientos/workflow/#seleccionar-sistema-destino"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></p>
 <div class="admonition warning">
 <p class="admonition-title">Importante</p>
 <p>Tomar nota del puerto de comunicaciones entre el entorno de programación (<strong><abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> <abbr title="eXtended Automation Engineering, entorno de ingeniería de TwinCAT.">XAE</abbr></strong>) y el sistema destino (<strong>Target System</strong>).</p>
 </div>
 </li>
 <li>
-<p>Activar la licencia temporal del <code>runtime</code> del sistema destino si es necesario.  <a href="../../procedimientos/workflow/#activar-licencia">➡️</a></p>
+<p>Activar la licencia temporal del <code>runtime</code> del sistema destino si es necesario.  <a href="../../procedimientos/workflow/#activar-licencia"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></p>
 </li>
-<li>Activar la configuración (<strong>Activate Configuration</strong>) y confirmar el reinicio del sistema destino en modo ejecución (<strong>Run Mode</strong>). <a href="../../procedimientos/workflow/#activar-la-configuracion">➡️</a></li>
-<li>Conectarse (<strong>Login</strong>) al sistema destino para transferir el proyecto. <a href="../../procedimientos/workflow/#transferir-el-proyecto">➡️</a></li>
-<li>Poner el programa de <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr> en ejecución (<strong>Run</strong>). <a href="../../procedimientos/workflow/#arrancar-el-proyecto">➡️</a></li>
+<li>Activar la configuración (<strong>Activate Configuration</strong>) y confirmar el reinicio del sistema destino en modo ejecución (<strong>Run Mode</strong>). <a href="../../procedimientos/workflow/#activar-la-configuracion"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></li>
+<li>Conectarse (<strong>Login</strong>) al sistema destino para transferir el proyecto. <a href="../../procedimientos/workflow/#transferir-el-proyecto"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></li>
+<li>Poner el programa de <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr> en ejecución (<strong>Run</strong>). <a href="../../procedimientos/workflow/#arrancar-el-proyecto"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></li>
 <li>
 <p>Observar en la ventana de monitorización de la instancia <code>Semaforo</code> de <code>FB_Semaforo_SFC</code> cómo evoluciona el <span class="fondo-rojo-lang"><abbr title="Diagrama de funciones secuenciales (Sequential Function Chart), lenguaje de la norma IEC 61131-3.">SFC</abbr></span>.</p>
 <p><img alt="Monitorización en línea de la implementación SFC del semáforo" class="screenshot" src="img/02-fb-semaforo-sfc-online.png" /></p>
@@ -2142,15 +2142,15 @@ END_VAR
 <li>
 <p>Abrir la aplicación <strong>ArduTC</strong>.</p>
 </li>
-<li>Cargar los símbolos del proyecto <abbr title="TwinCAT 3 (The WINdows Control Automation Technology).">TC3</abbr> en <strong>ArduTC</strong>. <a href="../../fundamentos/ardutc/#cargar-simbolos">➡️</a></li>
-<li>Seleccionar la <strong>placa microcontroladora</strong>.  <a href="../../fundamentos/ardutc/#seleccionar-placa-microcontroladora">➡️</a></li>
-<li>Vincular las variables de E/S del proyecto <abbr title="TwinCAT 3 (The WINdows Control Automation Technology).">TC3</abbr> con los pines correspondientes de la <strong>placa microcontroladora</strong>. <a href="../../fundamentos/ardutc/#vincular-variables">➡️</a></li>
-<li>Configurar la comunicación con <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr>. <a href="../../fundamentos/ardutc/#configurar-comunicaciones">➡️</a></li>
-<li>Conectar el proyecto <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> con la placa microcontroladora. <a href="../../fundamentos/ardutc/#conectar">➡️</a></li>
+<li>Cargar los símbolos del proyecto <abbr title="TwinCAT 3 (The WINdows Control Automation Technology).">TC3</abbr> en <strong>ArduTC</strong>. <a href="../../fundamentos/ardutc/#cargar-simbolos"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></li>
+<li>Seleccionar la <strong>placa microcontroladora</strong>.  <a href="../../fundamentos/ardutc/#seleccionar-placa-microcontroladora"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></li>
+<li>Vincular las variables de E/S del proyecto <abbr title="TwinCAT 3 (The WINdows Control Automation Technology).">TC3</abbr> con los pines correspondientes de la <strong>placa microcontroladora</strong>. <a href="../../fundamentos/ardutc/#vincular-variables"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></li>
+<li>Configurar la comunicación con <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr>. <a href="../../fundamentos/ardutc/#configurar-comunicaciones"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></li>
+<li>Conectar el proyecto <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> con la placa microcontroladora. <a href="../../fundamentos/ardutc/#conectar"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></li>
 <li>Observar cómo los LED conectados a la <strong>placa microcontroladora</strong> se encienden y apagan conforme se ejecuta el <span class="fondo-rojo-lang"><abbr title="Diagrama de funciones secuenciales (Sequential Function Chart), lenguaje de la norma IEC 61131-3.">SFC</abbr></span>.</li>
 </ol>
 <div class="admonition success">
-<p class="admonition-title">¡Enhorabuena! 🎉</p>
+<p class="admonition-title"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M144.3 0h224c26.5 0 48.1 21.8 47.1 48.2-.2 5.3-.4 10.6-.7 15.8h49.6c26.1 0 49.1 21.6 47.1 49.8-7.5 103.7-60.5 160.7-118 190.5-15.8 8.2-31.9 14.3-47.2 18.8-20.2 28.6-41.2 43.7-57.9 51.8V448h64c17.7 0 32 14.3 32 32s-14.3 32-32 32h-192c-17.7 0-32-14.3-32-32s14.3-32 32-32h64v-73.1c-16-7.7-35.9-22-55.3-48.3-18.4-4.8-38.4-12.1-57.9-23.1C57 273.2 8.2 216.1 1.2 113.6c-1.9-28.1 21-49.7 47.1-49.7h49.6c-.3-5.2-.5-10.4-.7-15.8-1-26.5 20.6-48.2 47.1-48.2zm-42.8 112H49.1c6.2 84.7 45.1 127.1 85.2 149.6-14.4-37.3-26.3-86-32.8-149.6M380 256.8c40.5-23.8 77.1-66.1 83.3-144.8H411c-6.2 60.9-17.4 108.2-31 144.8"/></svg></span> ¡Enhorabuena!</p>
 <p>¡Has completado con éxito la primera parte de la práctica! Ya has puesto en marcha tu primer proyecto en <strong><abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> 3</strong> que implementa una <strong>máquina de estados</strong> especificada en lenguaje <strong><abbr title="Gráfico funcional de control etapa-transición (Graphe Fonctionnel de Commande Étapes/Transitions).">GRAFCET</abbr></strong>, utilizando el lenguaje <strong>Diagrama Funcional Secuencial</strong> (<span class="fondo-rojo-lang"><abbr title="Diagrama de funciones secuenciales (Sequential Function Chart), lenguaje de la norma IEC 61131-3.">SFC</abbr></span>) de la <strong>norma IEC 61131-3</strong> y una placa <strong>microcontroladora</strong> como terminal de E/S gracias a <strong>ArduTC</strong>.</p>
 </div>
 <hr />
@@ -2225,7 +2225,7 @@ END_VAR
 </ol>
 <p>... Continuar con los pasos 10 en adelante del caso anterior, incluida la prueba con <strong>ArduTC</strong>.</p>
 <div class="admonition success">
-<p class="admonition-title">¡Enhorabuena! 🎉</p>
+<p class="admonition-title"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M144.3 0h224c26.5 0 48.1 21.8 47.1 48.2-.2 5.3-.4 10.6-.7 15.8h49.6c26.1 0 49.1 21.6 47.1 49.8-7.5 103.7-60.5 160.7-118 190.5-15.8 8.2-31.9 14.3-47.2 18.8-20.2 28.6-41.2 43.7-57.9 51.8V448h64c17.7 0 32 14.3 32 32s-14.3 32-32 32h-192c-17.7 0-32-14.3-32-32s14.3-32 32-32h64v-73.1c-16-7.7-35.9-22-55.3-48.3-18.4-4.8-38.4-12.1-57.9-23.1C57 273.2 8.2 216.1 1.2 113.6c-1.9-28.1 21-49.7 47.1-49.7h49.6c-.3-5.2-.5-10.4-.7-15.8-1-26.5 20.6-48.2 47.1-48.2zm-42.8 112H49.1c6.2 84.7 45.1 127.1 85.2 149.6-14.4-37.3-26.3-86-32.8-149.6M380 256.8c40.5-23.8 77.1-66.1 83.3-144.8H411c-6.2 60.9-17.4 108.2-31 144.8"/></svg></span> ¡Enhorabuena!</p>
 <p>¡Has completado con éxito la segunda parte de la práctica! Ya has puesto en marcha un proyecto en <strong><abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> 3</strong> que implementa una <strong>máquina de estados</strong> especificada en lenguaje <strong><abbr title="Gráfico funcional de control etapa-transición (Graphe Fonctionnel de Commande Étapes/Transitions).">GRAFCET</abbr></strong>, utilizando el lenguaje <strong>Texto Estructurado</strong> (<span class="fondo-azul-lang"><abbr title="Texto estructurado (Structured Text), lenguaje de la norma IEC 61131-3.">ST</abbr></span>) de la <strong>norma IEC 61131-3</strong> y una placa <strong>microcontroladora</strong> como terminal de E/S gracias a <strong>ArduTC</strong>.</p>
 </div>
 <hr />
@@ -2257,7 +2257,7 @@ END_VAR
     <span class="md-icon" title="Última actualización">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="17 de octubre de 2026 22:00:06 UTC">17 de octubre de 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="18 de octubre de 2026 18:45:04 UTC">18 de octubre de 2026</span>
   </span>
 
     
