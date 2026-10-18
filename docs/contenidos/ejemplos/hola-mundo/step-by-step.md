@@ -7,24 +7,24 @@ icon: fontawesome/solid/screwdriver-wrench
 
 ## :fontawesome-solid-circle-info: Introducción
 
-El proyecto [**«Hola Mundo»**](../hola-mundo/index.md) nos permite dar nuestros primeros pasos en TwinCAT XAE, el entorno de ingeniería de Beckhoff para la configuración y del desarrollo de aplicaciones de automatización.
+El proyecto [**«Hola Mundo»**](../hola-mundo/index.md) te permite dar tus primeros pasos en TwinCAT XAE, el entorno de ingeniería de Beckhoff para la configuración y el desarrollo de aplicaciones de automatización.
 
-Aprovecharemos este ejemplo para presentar el flujo de trabajo completo del desarrollo de un programa de PLC desde la creación del proyecto hasta su puesta a punto sobre un ordenador embebido.
+Este ejemplo presenta el flujo de trabajo completo del desarrollo de un programa de PLC, desde la creación del proyecto hasta su puesta a punto sobre un ordenador embebido.
 
-En esta guía se muestra como replicarlo paso a paso, para implementar nuestro primer programa completo de PLC con TwinCAT 3 desde cero.
+En esta guía se muestra cómo replicarlo paso a paso para implementar tu primer programa completo de PLC con TwinCAT 3 desde cero.
 
 ---
 
 ## :fontawesome-solid-bullseye: Objetivos
 
-A lo largo de este proceso se aprenderá a cómo:
+A lo largo de este proceso aprenderás a:
 
 - Utilizar el entorno de ingeniería **TwinCAT XAE** de TwinCAT 3.
 - Declarar variables de **memoria interna** (marcas).
 - Declarar **variables de entrada y salida localizadas** con **mapeo dinámico**.
 - Implementar un sencillo fragmento de código en el lenguaje **Texto Estructurado (ST)** de la norma **IEC 61131-3**.
-- Monitorizar y modificar los valores de variables booleanas desde una visulización.
-- Monitorizar y modificar los valores de variables numéricas desde una visulización.
+- Monitorizar y modificar los valores de variables booleanas desde una visualización.
+- Monitorizar y modificar los valores de variables numéricas desde una visualización.
 - Desplegar (poner en marcha) un proyecto PLC.
     - Construir un proyecto.
     - Seleccionar un *runtime*.
@@ -39,7 +39,7 @@ A lo largo de este proceso se aprenderá a cómo:
 ## :fontawesome-solid-list-check: Guía de Implementación
 
 !!! tip "Sugerencia"
-    Pulsa en ➡️ para obtener más información sobre cómo realizar el paso especificado.
+    Pulsa en :material-arrow-right-bold-box: para obtener más información sobre cómo realizar el paso especificado.
 
 --8<-- "docs/contenidos/ejemplos/hola-mundo/includes/sobre-simulador.md"
 

@@ -1,164 +1,167 @@
 ### Sobre el Simulador
 
-Empecemos por <span class="objetivo-hito">utilizar el entorno de ingeniería TwinCAT XAE de TwinCAT 3</span> para crear nuestro primer proyecto con el entorno de ingeniería TwinCAT XAE.
+Empieza por <span class="objetivo-hito">utilizar el entorno de ingeniería TwinCAT XAE de TwinCAT 3</span> para crear tu primer proyecto.
 <!--- todo: explicación, qué es TwinCAT XAE --->
 
-Si tiene instalado TwinCAT 3 en su ordenador puede implementar el proyecto completo (código y visualización) y ejecutarlo en el simulador `UmRT_Default`.
+Si tienes instalado TwinCAT 3 en tu ordenador, aunque no tengas ningún controlador Beckhoff, puedes implementar el proyecto completo (código y visualización) y ejecutarlo en el simulador `UmRT_Default`.
 <!--- todo: guía instalación TC3 --->
 <!--- todo: explicación, qué es UmRT_Default --->
 
-1. Abrir la aplicación **TwinCAT XAE**. [➡️](../../procedimientos/workflow/index.md#abrir-twincat-xae)
-2. Crear una solución de TwinCAT 3 con nombre `TC3_Hola_Mundo`. [➡️](../../procedimientos/workflow/index.md#crear-un-proyecto-twincat-3)
-3. Ocultar las configuraciones innecesarias para dejar el explorador de la solución lo más despejado posible. [➡️](../../procedimientos/workflow/index.md#ocultar-configuraciones)
-4. Crear un proyecto PLC estándar con el nombre `Hola_Mundo_PLC`. [➡️](../../procedimientos/workflow/index.md#crear-un-proyecto-plc)
+1. Abre la aplicación **TwinCAT XAE**. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#abrir-twincat-xae)
+2. Crea una solución de TwinCAT 3 con nombre `TC3_Hola_Mundo`. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#crear-un-proyecto-twincat-3)
+3. Oculta las configuraciones innecesarias para dejar el explorador de la solución lo más despejado posible. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#ocultar-configuraciones)
+4. Crea un proyecto PLC estándar con el nombre `Hola_Mundo_PLC`. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#crear-un-proyecto-plc)
 
-    ??? warning "Aviso"
-        **Nota didáctica:** para facilitar la comprensión, en este primer ejemplo todo el código se implementa directamente dentro del **programa** principal (`MAIN`). Téngase en cuenta que esto se hace exclusivamente con fines pedagógicos. La buena práctica en programación industrial dicta que el `MAIN` debe actuar únicamente como punto de entrada y organizador del proyecto, mientras que la lógica de control debe residir en otras **Unidades de Organización del Programa** (`POUs`) —fundamentalmente **Bloques de Función** (`FB`)— que permiten modularizar, escalar y replicar fácilmente los comportamientos y las funcionalidades del sistema.
+    ??? warning "Nota Didáctica"
+        Ten en cuenta que, para facilitar la comprensión, en este primer ejemplo todo el código se implementa directamente dentro del **programa** principal (`MAIN`), exclusivamente con fines pedagógicos.
 
-5. Localizar en el panel de **Explorador de la Solución** el programa `MAIN` bajo la carpeta `POUs` e incluir la línea de comentario inicial sobre el **encabezado del POU**.
+        La buena práctica en programación industrial dicta que el `MAIN` debe actuar únicamente como punto de entrada y organizador del proyecto, mientras que la lógica de control debe residir en otras **Unidades de Organización del Programa** (`POUs`) —fundamentalmente **Bloques de Función** (`FB`)— que permiten modularizar, escalar y replicar fácilmente los comportamientos y las funcionalidades del sistema.
 
-    ```iecst
+5. Localiza en el panel **Explorador de la Solución** el programa `MAIN` bajo la carpeta `POUs` e incluye un **comentario de línea** inicial sobre el **encabezado del POU** utilizando `//`.
+
+    ```iecst {hl_lines="1"}
     // Hola Mundo de la Programación de PLC
+    PROGRAM MAIN
+    VAR
+    END_VAR
     ```
 
-6. <span class="objetivo-hito">Declarar la variable de memoria interna</span> `ContadorCiclos` como un entero sin signo `UINT` en el bloque `VAR` de la parte de declaración del programa `MAIN`. [➡️](../../procedimientos/workflow/index.md#declarar-una-variable)
+6. <span class="objetivo-hito">Declara la variable de memoria interna</span> `ContadorCiclos` como un entero sin signo (`UINT`) en el bloque `VAR` de la parte de declaración del programa `MAIN`. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#declarar-una-variable)
 
-    ```iecst
+    ```iecst {hl_lines="4"}
+    // Hola Mundo de la Programación de PLC
     PROGRAM MAIN
     VAR
         ContadorCiclos: UINT;
     END_VAR
     ```
 
-    ??? info
-        Según el estándar `IEC 61131-3` tipo de dato `UINT` representa un entero sin signo de 16 bits (0 a 65535).
+    ??? info "Tipo UINT"
+        Según el estándar **IEC 61131-3**, el tipo de dato `UINT` representa un entero sin signo de 16 bits (0 a 65535).
 
-7. <span class="objetivo-hito">Implementar un sencillo fragmento de código en el lenguaje Texto Estructurado (ST)</span> para a la gestión del contador de ciclos en la parte de implementación del programa `MAIN`.
+7. <span class="objetivo-hito">Implementa un sencillo fragmento de código en el lenguaje Texto Estructurado (ST)</span> para la gestión del contador de ciclos en la parte de implementación del programa `MAIN`, utilizando el operador de asignación (`:=`).
 
     ```iecst
     ContadorCiclos := ContadorCiclos + 1;
     ```
 
-8. <span class="objetivo-hito">Construir el proyecto</span> para obtener un archivo ejecutable [➡️](../../procedimientos/workflow/index.md#construir-el-proyecto)
+8. <span class="objetivo-hito">Construye el proyecto</span> para obtener un archivo ejecutable. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#construir-el-proyecto)
 
-    ??? warning "Aviso"
-        Asegurarse antes de continuar de que el resultado de la construcción del proyecto mostrado en la ventana de mensajes no arroja errores.
+    ??? warning "Error List"
+        Asegúrate, antes de continuar, de que el resultado de la construcción del proyecto mostrado en la ventana de mensajes **Error List** no arroja errores.
 
-9. Activar el simulador `UmRT_Default` para disponer de un *runtime* sobre el que ejecutar el código del proyecto. [➡️](../../procedimientos/workflow/index.md#activar-simulador)
-10. <span class="objetivo-hito">Seleccionar como sistema destino</span> (**Target System**) el simulador `UmRT_Default`. [➡️](../../procedimientos/workflow/index.md#seleccionar-sistema-destino)
-11. Activar la licencia temporal del runtime del sistema destino si es necesario. [➡️](../../procedimientos/workflow/index.md#activar-licencia)
-12. Activar la configuración en el sistema destino.  [➡️](../../procedimientos/workflow/index.md#activar-la-configuracion)
-13. <span class="objetivo-hito">Transferir el proyecto</span> conectándose (**Login**) al sistema destino. [➡️](../../procedimientos/workflow/index.md#transferir-el-proyecto)
+9. Activa el simulador `UmRT_Default` para disponer de un *runtime* sobre el que ejecutar el código del proyecto. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#activar-simulador)
+10. <span class="objetivo-hito">Selecciona como sistema destino</span> (**Target System**) el simulador `UmRT_Default`. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#seleccionar-sistema-destino)
+11. Activa la licencia temporal del *runtime* del sistema destino si es necesario. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#activar-licencia)
+12. Activa la configuración en el sistema destino. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#activar-la-configuracion)
+13. <span class="objetivo-hito">Transfiere el proyecto</span> conectándote (**Login**) al sistema destino. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#transferir-el-proyecto)
 
-    ??? info
+    ??? info "Modo Online"
         - Conectarse al sistema destino implica transferir el proyecto al runtime e iniciar la monitorización (sesión de depuración en tiempo real).
-        - La comunicación para el intercambio de información entre el entorno de programación y el `runtime` tiene lugar, normalmente, a través del puerto `851` .
+        - La comunicación para el intercambio de información entre el entorno de programación y el *`runtime`* tiene lugar, normalmente, a través del puerto `851` .
 
-14. <span class="objetivo-hito">Poner el programa en ejecución</span> (**Run**). [➡️](../../procedimientos/workflow/index.md#arrancar-el-proyecto)
-15. Observar cómo el valor de la variable `ContadorCiclos` se incrementa continuamente al ritmo de ejecución del ciclo básico del PLC (típicamente 10 ms), lo que prueba que el programa se está ejecutando.
-16. Modificar el valor del contador de ciclos mediante forzado de variables (**Force values**, **Unforce values**, **Write values**). [➡️](../../procedimientos/workflow/index.md#forzar-variables)
-17. Desconectarse del sistema destino (**Logout**) para continuar con la edición del programa. <!--- todo: incluir enlace a workout: desconetar --->
+14. <span class="objetivo-hito">Pon el programa en ejecución</span> (**Run**). [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#arrancar-el-proyecto)
+15. Observa cómo el valor de la variable `ContadorCiclos` se incrementa continuamente al ritmo de ejecución del ciclo básico del PLC (típicamente 10 ms), lo que prueba que el programa se está ejecutando localmente en el *runtime* del simulador en tu ordenador.
+16. Modifica el valor del contador de ciclos mediante forzado de variables (**Force values**, **Unforce values**, **Write values**). [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#forzar-variables)
+17. Desconéctate del sistema destino (**Logout**) para continuar con la edición del programa. <!--- todo: incluir enlace a workout: desconetar --->
 
-    ??? info
-        Cuando nos desconectamos de un sistema destino abandonamos la monitorización, pero el programa sigue ejecutándose en el *runtime* del sistema destino. Como prueba podremos observar que, cuando nos volvamos a conectar, el contador de ciclos tendrá un valor diferente.
+    ??? info "Logout"
+        Cuando te desconectas de un sistema destino abandonas la monitorización, pero el programa sigue ejecutándose en su *runtime*. Como prueba, observarás que, cuando vuelvas a conectarte, el contador de ciclos tendrá un valor diferente.
 
-18. Crear una sencilla visualización para <span class="objetivo-hito">monitorizar y modificar el valor del dato numérico</span> del contador de ciclos. [➡️](../../procedimientos/hmi/index.md)
+18. Crea una sencilla visualización para <span class="objetivo-hito">monitorizar y modificar el valor del dato numérico</span> del contador de ciclos. [:material-arrow-right-bold-box:](../../procedimientos/hmi/index.md)
 
     ![Visualización Hola Mundo con el contador de ciclos](./img/v-hola-mundo-contador.png){ .screenshot }
 
     1. Rectángulo (*Rectangle*) para la etiqueta **Contador**.
 
-        ??? note "Notas"
-            - Texts > Text = Contador
+        ??? note "Parámetros"
+            - **Colors** > **Normal state** > **Frame color** ➔ [0, 0, 0]
+            - **Colors** > **Normal state** > **Fill color** ➔ [0, 0, 0]
+            - **Texts** > **Text** ➔ [Contador]
+            - **Text properties** > **Font** ➔ [Arial, 12]
+            - **Text properties** > **Font Color** ➔ [255, 255, 255]
 
     2. Rectángulo (*Rectangle*) para mostrar el valor de `ContadorCiclos`.
 
-        ??? note "Notas"
-            - Color > Normal state > Frame color = [0, 0, 0]
-            - Color > Normal state > Fill color = [192, 192, 192]
-            - Texts > Text = [%d]
-                - *Formato estilo printf que indica que se va a sustituir por un número entero.*
-            - Text variables > Text variable = [`MAIN.ContadorCiclos`]
+        ??? note "Parámetros"
+            - **Colors** > **Normal state** > **Frame color** ➔ [0, 0, 0]
+            - **Colors** > **Normal state** > **Fill color** ➔ [192, 192, 192]
+            - **Texts** > **Text** ➔ [%d]
+                - *Formato estilo printf que, en este caso, indica que el dato a mostrar se formateará como un número entero (`%d`).*
+            - **Text variables** > **Text variable** ➔ [`MAIN.ContadorCiclos`]
 
     3. Rectángulo (*Rectangle*) para modificar el valor de `ContadorCiclos`.
 
-        ??? note "Notas"
-            - Color > Normal state > Frame color = [0, 0, 0]
-            - Color > Normal state > Fill color = [255, 255, 255]
-            - Texts > Text = [%d]
-                - *Formato estilo printf que indica que se va a sustituir por un número entero.*
-            - Text variables > Text variable = [`MAIN.ContadorCiclos`]
-            - Inputconfiguration > OnMouseClick
+        ??? note "Parámetros"
+            - **Colors** > **Normal state** > **Frame color** ➔ [0, 0, 0]
+            - **Colors** > **Normal state** > **Fill color** ➔ [255, 255, 255]
+            - **Texts** > **Text** ➔ [%d]
+            - **Text variables** > **Text variable** ➔ [`MAIN.ContadorCiclos`]
+            - **Inputconfiguration** > **OnMouseClick**
 
     4. Botón (*Button*) para reiniciar el valor de la variable `ContadorCiclos`.
 
-        ??? note "Notas"
-            - Texts > Text = [**Reinicia**]
-            - Inputconfiguration
-                - OnMouseClick > Configure > Execute ST-Code = [`MAIN.ContadorCiclos := 0;`]
+        ??? note "Parámetros"
+            - **Texts** > **Text** ➔ [**Reinicia**]
+            - **Inputconfiguration**
+                - **OnMouseClick** > **Configure** > **Execute ST-Code** ➔ [`MAIN.ContadorCiclos := 0;`]
 
     ??? tip "Sugerencia"
-        Los colores especificados para los elementos son simplemente un ejemplo, pueden ser escogidos libremente.
+        Los colores asignados a los elementos son meramente ilustrativos; su selección es completamente libre.
 
-19. Volver a conectarse (**Login**) y comprobar que todos los elementos de la visualización funcionan correctamente.
-20. Volver a desconectarse (**Logout**) e incluir en la parte de declaración del programa `MAIN` las variables `i_Pulsador` y `o_Lampara`.
+19. Vuelve a conectarte (**Login**) y comprueba que todos los elementos de la visualización funcionan correctamente.
+20. Vuelve a desconectarte (**Logout**) e incluye en la parte de declaración del programa `MAIN` las variables `i_Pulsador` y `o_Lampara`.
 
-    ```iecst
+    ```iecst {hl_lines="6-7"}
+    // Hola Mundo de la Programación de PLC
     PROGRAM MAIN
     VAR
+        ContadorCiclos: UINT;
+
         i_Pulsador: BOOL;
         o_Lampara: BOOL;
     END_VAR
     ```
 
-    ??? info
+21. Incluye el código correspondiente a la activación de la lámpara en la parte de implementación del programa `MAIN`.
 
-        | Elemento | Tipo de componente | Descripción |
-        | :---: | :---: | :--- |
-        | `i_Pulsador` | **Identificador** | Identificador/Nombre de la variable |
-        | `:` | **Separador** | Operador/Separador |
-        | `BOOL` | **Tipo de dato** | Tipo de dato elemental (booleano) |
-        | `;` | **Terminador** | Delimitador/Terminador de instrucción |
-
-21. Incluir el código correspondiente a la activación de la lámpara en la parte de implementación del programa `MAIN`.
-
-    ```iecst
+    ```iecst {hl_lines="2"}
+    ContadorCiclos := ContadorCiclos + 1;
     o_Lampara := i_Pulsador;
     ```
 
-22. Construir (**Build**) nuevamente el proyecto para comprobar su corrección y generar las instancias de E/S.
-
-    ??? warning "Aviso"
-        Observa que si la compilación es correcta aparecen bajo el apartado `Hola_Mundo_PLC Instance` las instancias de las dos nuevas variables.
-
-23. Incluir en la **visualización** los elementos correspondientes para <span class="objetivo-hito">monitorizar y modificar los valores de las variables booleanas</span> correspondientes al pulsador y la lámpara.
+22. Incluye en la **visualización** los elementos correspondientes para <span class="objetivo-hito">monitorizar y modificar los valores de las variables booleanas</span> correspondientes al pulsador y a la lámpara.
 
     ![Visualización Hola Mundo con el pulsador y la lámpara](./img/v-hola-mundo.png){ .screenshot }
 
     1. Botón (*Button*) para modificar el valor de `i_Pulsador`.
 
-        ??? note "Notas"
-            - Texts > Text = [**Pulsador**]
-            - Inputconfiguration
-                - Tap > Variable = [`MAIN.i_Pulsador`]
+        ??? note "Parámetros"
+            - **Texts** > **Text** ➔ [**Pulsador**]
+            - **Inputconfiguration**
+                - **Tap** > **Variable** ➔ [`MAIN.i_Pulsador`]
 
     2. Rectángulo (*Rectangle*) para mostrar el valor de la variable `o_Lampara`.
 
-        ??? note "Notas"
-            - Colors > Normal state > Frame color = [0, 64, 0]
-            - Colors > Normal state > Fill color = [0, 64, 0]
-            - Colors > Alarm state > Frame color = [0, 128, 0]
-            - Colors > Alarm state > Fill color = [0, 128, 0]
-            - Texts > Text = [**Lámpara**]
-            - Color variables > Toggle color = [`MAIN.o_Lampara`]
+        ??? note "Parámetros"
+            - **Colors** > **Normal state** > **Frame color** ➔ [0, 64, 0]
+            - **Colors** > **Normal state** > **Fill color** ➔ [0, 64, 0]
+            - **Colors** > **Alarm state** > **Frame color** ➔ [0, 128, 0]
+            - **Colors** > **Alarm state** > **Fill color** ➔ [0, 128, 0]
+            - **Texts** > **Text** ➔ [**Lámpara**]
+            - **Color variables** > **Toggle color** ➔ [`MAIN.o_Lampara`]
 
     !!! tip "Sugerencia"
-        Complete la visualización con los elementos que considere oportuno para mejorar su apariencia.
+        Completa la visualización con los elementos que consideres oportunos para mejorar su apariencia.
 
-24. Conectarse nuevamente (**Login**) para <span class="objetivo-hito">validar el proyecto</span>.
+23. Conéctate nuevamente (**Login**) para <span class="objetivo-hito">validar el proyecto</span> desde la visualización.
 
-    - Modificar los valores de las variables forzándolas (**Force values**, **Unforce values**, **Write values**).
-    - Comprobar que los nuevos elementos de la visualización funcionan correctamente.
+    ??? warning "Compilación Implícita"
+        Si, tras modificar el programa de PLC, intentas conectarte (**Login**) al *runtime* sin compilar previamente, TwinCAT compilará por ti.
 
-!!! success "¡Enhorabuena! 🎉"
-    Has completado con éxito la primera parte de esta guía de implementación. Has puesto en marcha tu primer **proyecto de PLC** completo en **Texto Estructurado** con **TwinCAT 3** sobre el simulador **UmRT_Default**.
+        La transferencia del nuevo código queda supeditada a que el resultado de la compilación sea exitoso.
+
+!!! success ":fontawesome-solid-trophy: ¡Enhorabuena!"
+    Has completado con éxito la primera parte de esta guía de implementación.
+
+    Has puesto en marcha tu primer **proyecto de PLC** completo en **Texto Estructurado** con **TwinCAT 3** sobre el simulador **UmRT_Default**.

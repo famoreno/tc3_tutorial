@@ -6,7 +6,7 @@ icon: fontawesome/solid/cube
 
 ## :fontawesome-solid-clipboard-list: Tarea
 
-Implementar la lógica de control de un automatismo industrial utilizando la **Arquitectura Monolítica**. [➡️](../../fundamentos/arquitecturas/index.md#arquitectura-monolitica).
+Implementar la lógica de control de un automatismo industrial utilizando la **Arquitectura Monolítica**. [:material-arrow-right-bold-box:](../../fundamentos/arquitecturas/index.md#arquitectura-monolitica).
 
 ---
 
@@ -58,26 +58,26 @@ XXX_TC3_GYY/
 
 ### Solución
 
-- [ ] Abrir la aplicación **TwinCAT XAE**. [➡️](../../procedimientos/workflow/index.md#abrir-twincat-xae)
-- [ ] Crear un **proyecto (solución) TwinCAT 3**. [➡️](../../procedimientos/workflow/index.md#crear-un-proyecto-twincat-3)
+- [ ] Abrir la aplicación **TwinCAT XAE**. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#abrir-twincat-xae)
+- [ ] Crear un **proyecto (solución) TwinCAT 3**. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#crear-un-proyecto-twincat-3)
 
     !!! info "Parámetros"
         - Nombre de la solución ➔ `XXX_TC3_GYY` (`XXX` = asignatura, `YY` = grupo).
         - Nombre del proyecto ➔ `01_FMS_20X_Monolitico` (`X` = número de la estación del sistema FMS-200).
 
-- [ ] Ocultar las **configuraciones** innecesarias para dejar el Explorador de la Solución lo más despejada posible. [➡️](../../procedimientos/workflow/index.md#ocultar-configuraciones)
+- [ ] Ocultar las **configuraciones** innecesarias para dejar el Explorador de la Solución lo más despejada posible. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#ocultar-configuraciones)
 
 ### Proyecto PLC
 
-- [ ] Crear un **proyecto PLC estándar** con el nombre `Monolitico_PLC`. [➡️](../../procedimientos/workflow/index.md#crear-un-proyecto-plc)
-- [ ] Crear una nueva **Unidad de Organización de Programa (POU)** de tipo **Bloque Funcional**. [➡️](../../procedimientos/workflow/index.md#crear-una-pou)
+- [ ] Crear un **proyecto PLC estándar** con el nombre `Monolitico_PLC`. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#crear-un-proyecto-plc)
+- [ ] Crear una nueva **Unidad de Organización de Programa (POU)** de tipo **Bloque Funcional**. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#crear-una-pou)
 
     !!! warning "Parámetros POU"
         - Nombre ➔ `FB_Estacion_SFC`
         - Type ➔ `Function Block`
         - Implementation Language ➔ `Sequential Function Chart (SFC)`
 
-- [ ] Declarar las **variables de entrada/salida** necesarias en `FB_Estacion_SFC` como variables locales (`VAR_LOCAL`). [➡️](../../procedimientos/workflow/index.md#declarar-una-variable)
+- [ ] Declarar las **variables de entrada/salida** necesarias en `FB_Estacion_SFC` como variables locales (`VAR_LOCAL`). [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#declarar-una-variable)
 
     !!! info "Entradas/Salidas"
         - Consultar la tabla de entrada/salida de cada estación en la [descripción funcional.](./pdf/fms_200_descripcion_funcional.pdf){target="_blank"}
@@ -99,7 +99,7 @@ XXX_TC3_GYY/
     Estacion();
     ```
 
-- [ ] Construir el proyecto (**Build**) para generar un archivo ejecutable. [➡️](../../procedimientos/workflow/index.md#construir-el-proyecto)
+- [ ] Construir el proyecto (**Build**) para generar un archivo ejecutable. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#construir-el-proyecto)
 
     !!! info "Construcción"
         - Verificar la ausencia de errores en el panel **Error List**.
@@ -107,17 +107,17 @@ XXX_TC3_GYY/
 
 ### Entrada/Salida
 
-- [ ] Buscar y seleccionar un controlador remoto (crear una ruta). [➡️](../../procedimientos/workflow/index.md#crear-una-ruta)
-- [ ] Buscar dispositivos y terminales de entrada/salida. [➡️](../../procedimientos/workflow/index.md#buscar-dispositivos)
-- [ ] Identificar, verificar y nominar las señales de entrada (ver tablas de entrada/salida en la [descripción funcional](./pdf/fms_200_descripcion_funcional.pdf){target="_blank"}). [➡️](../../procedimientos/workflow/index.md#identificar-entradas)
-- [ ] Identificar, verificar y nominar las señales de salida (ver tablas de entrada/salida en la [descripción funcional](./pdf/fms_200_descripcion_funcional.pdf){target="_blank"}). [➡️](../../procedimientos/workflow/index.md#identificar-salidas)
-- [ ] Vincular las señales con las instancias de las variables de entrada/salida. [➡️](../../procedimientos/workflow/index.md#vincular-variables)
+- [ ] Buscar y seleccionar un controlador remoto (crear una ruta). [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#crear-una-ruta)
+- [ ] Buscar dispositivos y terminales de entrada/salida. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#buscar-dispositivos)
+- [ ] Identificar, verificar y nominar las señales de entrada (ver tablas de entrada/salida en la [descripción funcional](./pdf/fms_200_descripcion_funcional.pdf){target="_blank"}). [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#identificar-entradas)
+- [ ] Identificar, verificar y nominar las señales de salida (ver tablas de entrada/salida en la [descripción funcional](./pdf/fms_200_descripcion_funcional.pdf){target="_blank"}). [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#identificar-salidas)
+- [ ] Vincular las señales con las instancias de las variables de entrada/salida. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#vincular-variables)
 - [ ] Desplegar el proyecto
-    - [ ] Activar la configuración [➡️](../../procedimientos/workflow/index.md#activar-la-configuracion)
-    - [ ] Transferir el proyecto. [➡️](../../procedimientos/workflow/index.md#transferir-el-proyecto)
-    - [ ] Ponerlo en funcionamiento. [➡️](../../procedimientos/workflow/index.md#arrancar-el-proyecto)
-- [ ] Monitorizar una variable de entrada. [➡️](../../procedimientos/workflow/index.md#monitorizar-variables)
-- [ ] Forzar una variable de salida. [➡️](../../procedimientos/workflow/index.md#forzar-variables)
+    - [ ] Activar la configuración [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#activar-la-configuracion)
+    - [ ] Transferir el proyecto. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#transferir-el-proyecto)
+    - [ ] Ponerlo en funcionamiento. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#arrancar-el-proyecto)
+- [ ] Monitorizar una variable de entrada. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#monitorizar-variables)
+- [ ] Forzar una variable de salida. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#forzar-variables)
 
 ### Visualización
 

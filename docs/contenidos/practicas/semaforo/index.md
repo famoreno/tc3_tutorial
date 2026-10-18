@@ -68,18 +68,18 @@ Para la realización de esta práctica es necesario disponer de los siguientes m
 
 A continuación, se detalla la secuencia de pasos necesarios para codificar, en el lenguaje {{SFC}}, la máquina de estados que describe el comportamiento de la lógica de control del semáforo simple especificada con un diagrama GRAFCET.
 
-1. Abrir la aplicación **TwinCAT XAE**. [➡️](../../procedimientos/workflow/index.md#abrir-twincat-xae)
-2. Crear un **proyecto (solución) TwinCAT 3** con nombre `TC3_Semaforo`. [➡️](../../procedimientos/workflow/index.md#crear-un-proyecto-twincat-3)
-3. Ocultar las **configuraciones** innecesarias para dejar el explorador de la solución lo más despejada posible. [➡️](../../procedimientos/workflow/index.md#ocultar-configuraciones)
-4. Crear un **proyecto PLC estándar** con el nombre `Semaforo_PLC`. [➡️](../../procedimientos/workflow/index.md#crear-un-proyecto-plc)
-5. Crear una nueva **Unidad de Organización de Programa (POU)** de tipo **Bloque Funcional**. [➡️](../../procedimientos/workflow/index.md#crear-una-pou)
+1. Abrir la aplicación **TwinCAT XAE**. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#abrir-twincat-xae)
+2. Crear un **proyecto (solución) TwinCAT 3** con nombre `TC3_Semaforo`. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#crear-un-proyecto-twincat-3)
+3. Ocultar las **configuraciones** innecesarias para dejar el explorador de la solución lo más despejada posible. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#ocultar-configuraciones)
+4. Crear un **proyecto PLC estándar** con el nombre `Semaforo_PLC`. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#crear-un-proyecto-plc)
+5. Crear una nueva **Unidad de Organización de Programa (POU)** de tipo **Bloque Funcional**. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#crear-una-pou)
 
     !!! warning "Parámetros POU"
         - Nombre ➔ `FB_Semaforo_SFC`
         - **Type** ➔ **Function Block**
         - **Implementation Language** ➔ **Sequential Function Chart (SFC)**
 
-6. Declarar los **parámetros y variables** necesarios en `FB_Semaforo_SFC`. [➡️](../../procedimientos/workflow/index.md#declarar-una-variable)
+6. Declarar los **parámetros y variables** necesarios en `FB_Semaforo_SFC`. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#declarar-una-variable)
 
     ```iecst
     FUNCTION_BLOCK FB_Semaforo_SFC
@@ -115,21 +115,21 @@ A continuación, se detalla la secuencia de pasos necesarios para codificar, en 
     Semaforo();
     ```
 
-10. Construir el proyecto (**Build**) para generar un archivo ejecutable. [➡️](../../procedimientos/workflow/index.md#construir-el-proyecto)
-11. Activar el simulador `UmRT_Default` para disponer de un runtime sobre el que ejecutar el código del proyecto. [➡️](../../procedimientos/workflow/index.md#activar-simulador)
+10. Construir el proyecto (**Build**) para generar un archivo ejecutable. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#construir-el-proyecto)
+11. Activar el simulador `UmRT_Default` para disponer de un runtime sobre el que ejecutar el código del proyecto. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#activar-simulador)
 
     !!! warning "Importante"
         Tomar nota de la dirección **AmsNetId** del simulador `UmRT_Default` que se muestra en la pantalla de la terminal (por ejemplo, `192.168.4.1.1.1`).
 
-12. Seleccionar `UmRT_Default` como sistema destino (**Target System**). [➡️](../../procedimientos/workflow/index.md#seleccionar-sistema-destino)
+12. Seleccionar `UmRT_Default` como sistema destino (**Target System**). [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#seleccionar-sistema-destino)
 
     !!! warning "Importante"
         Tomar nota del puerto de comunicaciones entre el entorno de programación (**TwinCAT XAE**) y el sistema destino (**Target System**).
 
-13. Activar la licencia temporal del `runtime` del sistema destino si es necesario.  [➡️](../../procedimientos/workflow/index.md#activar-licencia)
-14. Activar la configuración (**Activate Configuration**) y confirmar el reinicio del sistema destino en modo ejecución (**Run Mode**). [➡️](../../procedimientos/workflow/index.md#activar-la-configuracion)
-15. Conectarse (**Login**) al sistema destino para transferir el proyecto. [➡️](../../procedimientos/workflow/index.md#transferir-el-proyecto)
-16. Poner el programa de PLC en ejecución (**Run**). [➡️](../../procedimientos/workflow/index.md#arrancar-el-proyecto)
+13. Activar la licencia temporal del `runtime` del sistema destino si es necesario.  [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#activar-licencia)
+14. Activar la configuración (**Activate Configuration**) y confirmar el reinicio del sistema destino en modo ejecución (**Run Mode**). [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#activar-la-configuracion)
+15. Conectarse (**Login**) al sistema destino para transferir el proyecto. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#transferir-el-proyecto)
+16. Poner el programa de PLC en ejecución (**Run**). [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#arrancar-el-proyecto)
 17. Observar en la ventana de monitorización de la instancia `Semaforo` de `FB_Semaforo_SFC` cómo evoluciona el {{SFC}}.
 
     ![Monitorización en línea de la implementación SFC del semáforo](./img/02-fb-semaforo-sfc-online.png){ .screenshot }
@@ -155,14 +155,14 @@ Configuremos el proyecto para utilizar una placa microcontroladora, como **Ardui
     - Montaje con tres LED de colores (verde, ámbar y rojo) conectados a los pines correspondientes de la **placa microcontroladora**.
 
 3. Abrir la aplicación **ArduTC**.
-4. Cargar los símbolos del proyecto TC3 en **ArduTC**. [➡️](../../fundamentos/ardutc/index.md#cargar-simbolos)
-5. Seleccionar la **placa microcontroladora**.  [➡️](../../fundamentos/ardutc/index.md#seleccionar-placa-microcontroladora)
-6. Vincular las variables de E/S del proyecto TC3 con los pines correspondientes de la **placa microcontroladora**. [➡️](../../fundamentos/ardutc/index.md#vincular-variables)
-7. Configurar la comunicación con TwinCAT. [➡️](../../fundamentos/ardutc/index.md#configurar-comunicaciones)
-8. Conectar el proyecto TwinCAT con la placa microcontroladora. [➡️](../../fundamentos/ardutc/index.md#conectar)
+4. Cargar los símbolos del proyecto TC3 en **ArduTC**. [:material-arrow-right-bold-box:](../../fundamentos/ardutc/index.md#cargar-simbolos)
+5. Seleccionar la **placa microcontroladora**.  [:material-arrow-right-bold-box:](../../fundamentos/ardutc/index.md#seleccionar-placa-microcontroladora)
+6. Vincular las variables de E/S del proyecto TC3 con los pines correspondientes de la **placa microcontroladora**. [:material-arrow-right-bold-box:](../../fundamentos/ardutc/index.md#vincular-variables)
+7. Configurar la comunicación con TwinCAT. [:material-arrow-right-bold-box:](../../fundamentos/ardutc/index.md#configurar-comunicaciones)
+8. Conectar el proyecto TwinCAT con la placa microcontroladora. [:material-arrow-right-bold-box:](../../fundamentos/ardutc/index.md#conectar)
 9. Observar cómo los LED conectados a la **placa microcontroladora** se encienden y apagan conforme se ejecuta el {{SFC}}.
 
-!!! success "¡Enhorabuena! 🎉"
+!!! success ":fontawesome-solid-trophy: ¡Enhorabuena!"
     ¡Has completado con éxito la primera parte de la práctica! Ya has puesto en marcha tu primer proyecto en **TwinCAT 3** que implementa una **máquina de estados** especificada en lenguaje **GRAFCET**, utilizando el lenguaje **Diagrama Funcional Secuencial** ({{SFC}}) de la **norma IEC 61131-3** y una placa **microcontroladora** como terminal de E/S gracias a **ArduTC**.
 
 ---
@@ -241,7 +241,7 @@ A continuación, se detalla la secuencia de pasos necesarios para codificar en e
 
 ... Continuar con los pasos 10 en adelante del caso anterior, incluida la prueba con **ArduTC**.
 
-!!! success "¡Enhorabuena! 🎉"
+!!! success ":fontawesome-solid-trophy: ¡Enhorabuena!"
     ¡Has completado con éxito la segunda parte de la práctica! Ya has puesto en marcha un proyecto en **TwinCAT 3** que implementa una **máquina de estados** especificada en lenguaje **GRAFCET**, utilizando el lenguaje **Texto Estructurado** ({{ST}}) de la **norma IEC 61131-3** y una placa **microcontroladora** como terminal de E/S gracias a **ArduTC**.
 
 ---

@@ -11,7 +11,7 @@ Este proyecto es el **«Hola Mundo»** de la programación de **autómatas progr
 
 El proyecto **Hola Mundo** se ha desarrollado con el entorno **TwinCAT 3** empleando el lenguaje **Texto Estructurado (ST)** conforme a la norma **IEC 61131-3**.
 
-**Hola Mundo** es un proyecto mínimo y funcional, que muestra la declaración y el uso básico de variables booleanas y enteras, ubicadas en los espacios de memoria de marcas, imagen de entrada e imagen de salida. Cubriendo los elementos esenciales de programación del lenguaje {{ST}} de la norma **IEC 61131-3** para la programación de PLC.
+**Hola Mundo** es un proyecto mínimo y funcional, que muestra la declaración y el uso básico de variables booleanas y enteras, ubicadas en los espacios de memoria de marcas, imagen de entrada e imagen de salida, y cubre los elementos esenciales del lenguaje {{ST}} de la norma **IEC 61131-3** para la programación de PLC.
 
 ![Visualización del proyecto Hola Mundo](./img/v-hola-mundo.png){ .screenshot }
 <figcaption>Figura 1: Visualización del proyecto Hola Mundo.</figcaption>
@@ -68,8 +68,8 @@ ContadorCiclos := ContadorCiclos + 1;
 o_Lampara := i_Pulsador;
 ```
 
-!!! note "Comnentarios"
-    - El código del módulo, en lenguaje {{ST}}, se incluyue en la **Parte de Implementación**.
+!!! note "Comentarios"
+    - El código del módulo, en lenguaje {{ST}}, se incluye en la **Parte de Implementación**.
     - La variable `ContadorCiclos` se incrementa indefinidamente una vez por **Ciclo Básico** de ejecución del **PLC** (10 ms).
     - La variable de salida `o_Lampara` copia, continuamente, el valor de la variable de entrada `i_Pulsador`.
 
@@ -80,8 +80,8 @@ o_Lampara := i_Pulsador;
 ![Visualización del proyecto Hola Mundo](./img/v-hola-mundo-offline.png){ .screenshot }
 
 !!! note "Comentarios"
-    - El valor de la variable `ContadorCiclos` se muestra en rectángulo gris la visualización.
-    - El valor de la variable `ContadorCiclos` se se puede cambiar escribiéndolo en rectángulo blanco la visualización.
+    - El valor de la variable `ContadorCiclos` se muestra en el rectángulo gris de la visualización.
+    - El valor de la variable `ContadorCiclos` se puede cambiar escribiéndolo en el rectángulo blanco de la visualización.
     - La variable `ContadorCiclos` puede reiniciarse accionando el pulsador `Reinicia`.
     - El valor de la variable `o_Lampara` se muestra con el cambio de color del rectángulo `Lampara` (verde claro ➔ `FALSE`, verde oscuro ➔ `TRUE`).
     - El valor de la variable `i_Pulsador` cambia cuando se acciona el botón `Pulsador`.
@@ -91,7 +91,7 @@ o_Lampara := i_Pulsador;
 ## :fontawesome-solid-screwdriver-wrench: Implementación
 
 !!! info "Paso a paso"
-    Para implementar  este proyecto desde cero en TwinCAT 3, seguir su **[guía de implementación](step-by-step.md)**.
+    Para implementar este proyecto desde cero en TwinCAT 3, sigue su **[guía de implementación](step-by-step.md)**.
 
 ---
 

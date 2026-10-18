@@ -1,21 +1,20 @@
 ### GRAFCET ➔ ST
 
-<span class="objetivo-hito">Implementemos un diagrama grafcet en el lenguaje ST</span>
-
+<span class="objetivo-hito">Implementa un diagrama grafcet en el lenguaje ST</span>
 
 #### Carro Básico
 
 !!! tip "Punto de Partida"
-    Esta sección continúa el trabajo de la sección anterior, por lo que aprovecharemos la estructura existente para integrar en ella la implementación en ST.
+    Esta sección continúa el trabajo de la sección anterior y aprovecha la estructura existente para integrar en ella la implementación en ST.
 
-1. Crea una nueva POU. [➡️](../../procedimientos/workflow/index.md#crear-una-pou)
+1. Crea una nueva POU. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#crear-una-pou)
 
-    !!! warning "Parámetros POU"
-        - *Nombre* ➔ `FB_Carro_GRF_ST`
+    !!! note "Parámetros POU"
+        - *Name* ➔ `FB_Carro_GRF_ST`
         - *Type* ➔ `Function Block`
         - *Implementation Language* ➔ `Structured Text`
 
-2. Cómo en la sección anterior, declarar todas las variables de entrada/salida del sistema en `FB_Carro_GRF_ST` como variables locales (`VAR_LOCAL`), e incluir una variable entera para contener el valor del estado actual (`Estado`). [➡️](../../procedimientos/workflow/index.md#declarar-una-variable)
+2. Como en la sección anterior, declara todas las variables de entrada/salida del sistema en `FB_Carro_GRF_ST` como variables locales (`VAR`) e incluye una variable entera para contener el valor del estado actual (`Estado`). [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#declarar-una-variable)
 
     ```iecst {hl_lines="8"}
     FUNCTION_BLOCK FB_Carro_GRF_ST
@@ -41,7 +40,7 @@
 
     ??? info "Comentarios Declaración"
         - A diferencia de <span class="fondo-rojo-lang">SFC</span>, que gestiona las etapas de forma implícita mediante su propia sintaxis gráfica, en <span class="fondo-azul-lang">ST</span> es necesario declarar una variable numérica explícita para registrar el **estado activo** del sistema.
-        - Esta forma de gestionar el estado es válida únicamente para máquinas de **estado concentrado**, en las que toda la actividad del sistema reside en una única etapa, sólo tienen activa una etapa en cada instante.
+        - Esta forma de gestionar el estado es válida únicamente para máquinas de **estado concentrado**, en las que solo hay una etapa activa en cada instante.
 
 3. Escribe el código <span class="fondo-azul-lang">ST</span> correspondiente al carro básico.
 
@@ -68,10 +67,10 @@
     ```
 
     ??? info "Comentarios"
-        - La estructura de selección múltiple `CASE`, permite evaluar elegantemente la **Función de Estado** expresada en el diagrama grafcet. Así, dependiendo del estado en el que se encuentre el sistemas ([0, 1, 2]) y los eventos de entrada (`i_FinalCarreraDerecha`, `i_FinalCarreraIzquierda`,... ) se calcula el nuevo estado asignando un nuevo valor a la variable `Estado`.
+        - La estructura de selección múltiple `CASE`, permite evaluar elegantemente la **Función de Estado** expresada en el diagrama grafcet. Así, dependiendo del estado en el que se encuentre el sistema ([0, 1, 2]) y los eventos de entrada (`i_FinalCarreraDerecha`, `i_FinalCarreraIzquierda`,... ) se calcula el nuevo estado asignando un nuevo valor a la variable `Estado`.
         - Las salidas se calculan, tal y como se especifica en el diagrama *grafcet*, a partir del estado (**Salidas Continuas**).
 
-4. Añade a `MAIN` la declaración de una nueva instancia `Carro` de tipo `FB_Carro_GRF_ST` y comentar la anterior.
+4. Añade a `MAIN` la declaración de una nueva instancia `Carro` de tipo `FB_Carro_GRF_ST` y comenta la anterior.
 
     ```iecst {hl_lines="4"}
     PROGRAM MAIN
@@ -143,7 +142,7 @@
 
 #### Carro Pulsado
 
-<span class="objetivo-hito">Implementemos un detector de flancos en ST</span>
+<span class="objetivo-hito">Implementa un detector de flancos en ST</span>
 
 1. Modifica la parte de declaración.
 
@@ -205,13 +204,13 @@
 
     ??? info "Comentarios"
         - Añade la instrucción correspondiente a la invocación del detector de flanco `FlancoPulsadorMarcha(CLK := i_PulsadorMarcha)`.
-        - Sustituye en la expresión de la condición de transición de la etapa `E_INICIAL` ➔ `E_MARCHA_DERECHA`, `PulsadorMarcha` por la salida de la instancia del bloque funcional que detecta los flancos positivos en la variable (`FlancoPulsadorMarcha.Q`).
+        - Sustituye en la expresión de la condición de transición de la etapa `E_INICIAL` ➔ `E_MARCHA_DERECHA`, `i_PulsadorMarcha` por la salida de la instancia del bloque funcional que detecta los flancos positivos en la variable (`FlancoPulsadorMarcha.Q`).
 
 3. Pon el programa en ejecución y comprueba, con ayuda de la visualización, que no basta con mantener activado el pulsador de marcha: es necesario generar un pulso.
 
 #### Carro Temporizado
 
-<span class="objetivo-hito">Implementemos un temporizador en ST</span>
+<span class="objetivo-hito">Implementa un temporizador en ST</span>
 
 1. Modifica la parte de declaración.
 
@@ -277,7 +276,7 @@
                 TiempoPendiente := TiempoEspera - TemporizadorEspera.ET;
             END_IF;
 
-            IF TemporizadorEspera.Q  THEN
+            IF TemporizadorEspera.Q THEN
                 Estado := E_MARCHA_IZQUIERDA;
             END_IF;
         E_MARCHA_IZQUIERDA:
@@ -292,15 +291,15 @@
     ```
 
     ??? info "Comentarios"
-        - Se añade la llamada al `TemporizadorEspera`.
-        - Se modifica el estado futuro de `E_MARCHA_DERECHA`: `E_MARCHA_IZQUIERDA` ➔ `E_ESPERA`.
-        - Se incluye el fragmento de código correspondiente al estado `E_ESPERA`. Este fragmento evalúa la función de estado y ejecuta la acción principal asociada a la etapa para calcular el tiempo de espera pendiente.
+        - Añade la llamada al `TemporizadorEspera`.
+        - Modifica el estado futuro de `E_MARCHA_DERECHA`: `E_MARCHA_IZQUIERDA` ➔ `E_ESPERA`.
+        - Incluye el fragmento de código correspondiente al estado `E_ESPERA`. Este fragmento evalúa la función de estado y ejecuta la acción principal asociada a la etapa para calcular el tiempo de espera pendiente.
 
 3. Procede como en el apartado anterior y prueba el programa desde la visualización.
 
 #### Carro Limitado
 
-<span class="objetivo-hito">Implementemos una cuenta en ST</span>
+<span class="objetivo-hito">Implementa una cuenta en ST</span>
 
 1. Modifica la parte de declaración.
 
@@ -336,7 +335,7 @@
 
     ??? info "Comentarios"
         - El parámetro entero de entrada `ManiobrasTotales`, declarado en `VAR_INPUT`, contiene el número total de maniobras deseadas. Puedes establecer un valor inicial, por ejemplo, `1`.
-        - El parámetro entero de salida `ManiobrasPendientes`del bloque de declaración `VAR_OUTPUT` contiene el número de maniobras pendientes de realizar.
+        - El parámetro entero de salida `ManiobrasPendientes` del bloque de declaración `VAR_OUTPUT` contiene el número de maniobras pendientes de realizar.
         - El literal de enumeración `E_FINAL` representa el estado correspondiente a la nueva etapa `S4`. En ese estado se actualizan las maniobras pendientes y se decide si el carro continúa o vuelve a la etapa inicial.
 
 2. Modifica la parte de implementación.
@@ -352,10 +351,10 @@
             FlancoPulsadorMarcha(CLK := i_PulsadorMarcha);
 
             IF i_FinalCarreraIzquierda AND FlancoPulsadorMarcha.Q THEN
-            // Acción de salida
-            ManiobrasPendientes := ManiobrasTotales;
+                // Acción de salida
+                ManiobrasPendientes := ManiobrasTotales;
 
-            Estado := E_MARCHA_DERECHA;
+                Estado := E_MARCHA_DERECHA;
             END_IF;
         E_MARCHA_DERECHA:
             IF i_FinalCarreraDerecha THEN
@@ -367,7 +366,7 @@
                 TiempoPendiente := TiempoEspera - TemporizadorEspera.ET;
             END_IF;
 
-            IF TemporizadorEspera.Q  THEN
+            IF TemporizadorEspera.Q THEN
                 Estado := E_MARCHA_IZQUIERDA;
             END_IF;
         E_MARCHA_IZQUIERDA:
@@ -393,16 +392,16 @@
     ```
 
     ??? info "Comentarios"
-        - Se incluye la acción de salida de la etapa `E_INICIAL` (`S0`) para establecer el valor inicial de la cuenta de maniobras pendientes.
-        - Se incluye la acción de entrada de la etapa `E_FINAL` (`S4`) para decrementar el valor de la cuenta de maniobras pendientes.
-        - Se modifica el estado futuro de `E_MARCHA_IZQUIERDA` (`S2`): `E_INICIAL` ➔ `E_FINAL`.
-        - Se incluye el estado E_FINAL (`S4`), con su código correspondiente.
+        - Incluye la acción de salida de la etapa `E_INICIAL` (`S0`) para establecer el valor inicial de la cuenta de maniobras pendientes.
+        - Incluye la acción de entrada de la etapa `E_FINAL` (`S4`) para decrementar el valor de la cuenta de maniobras pendientes.
+        - Modifica el estado futuro de `E_MARCHA_IZQUIERDA` (`S2`): `E_INICIAL` ➔ `E_FINAL`.
+        - Incluye el estado `E_FINAL` (`S4`), con su código correspondiente.
 
 3. Prueba el código desde la visualización.
 
 #### Carro Señalizado
 
-<span class="objetivo-hito">Implementemos una intermitencia en ST</span>
+<span class="objetivo-hito">Implementa una intermitencia en ST</span>
 
 1. Incluye la librería `Util.lib` en las referencias (`References`) del proyecto.
 2. Modifica la parte de declaración.
@@ -455,10 +454,10 @@
             FlancoPulsadorMarcha(CLK := i_PulsadorMarcha);
 
             IF i_FinalCarreraIzquierda AND FlancoPulsadorMarcha.Q THEN
-            // Acción de salida
-            ManiobrasPendientes := ManiobrasTotales;
+                // Acción de salida
+                ManiobrasPendientes := ManiobrasTotales;
 
-            Estado := E_MARCHA_DERECHA;
+                Estado := E_MARCHA_DERECHA;
             END_IF;
         E_MARCHA_DERECHA:
             IF i_FinalCarreraDerecha THEN
@@ -470,7 +469,7 @@
                 TiempoPendiente := TiempoEspera - TemporizadorEspera.ET;
             END_IF;
 
-            IF TemporizadorEspera.Q  THEN
+            IF TemporizadorEspera.Q THEN
                 Estado := E_MARCHA_IZQUIERDA;
             END_IF;
         E_MARCHA_IZQUIERDA:
@@ -497,7 +496,12 @@
     ```
 
     ??? info "Comentarios"
-        - Se incluye la llamada al bloque `Intermitencia` para activarlo en la etapa `E_INICIAL`.
-        - Se calcula el valor de `o_LamparaMarcha`, para que sea encienda permanentemente cuando el carro está en marcha e intermitente cuando esté esperando la orden de marcha en la etapa inicial.
+        - Incluye la llamada al bloque `Intermitencia` para activarlo en la etapa `E_INICIAL`.
+        - Calcula el valor de `o_LamparaMarcha` para que se encienda permanentemente cuando el carro está en marcha e intermitente cuando espera la orden de marcha en la etapa inicial.
 
 4. Prueba el código desde la visualización.
+
+!!! success ":fontawesome-solid-trophy: ¡Enhorabuena!"
+    Has completado con éxito la segunda parte de esta guía de implementación.
+
+    Has transcrito a lenguaje  <span class="fondo-azul-lang">ST</span> una máquina de estados especificada con el lenguaje **GRAFCET**.

@@ -92,7 +92,7 @@ La interfaz de usuario de ArduTC se divide en cinco áreas/paneles funcionales.
 
 ### Proyecto TwinCAT
 
-Crear un proyecto TwinCAT con variables de entrada y salida y desplegarlo sobre un sistema destino. [➡️](../../procedimientos/workflow/index.md)
+Crear un proyecto TwinCAT con variables de entrada y salida y desplegarlo sobre un sistema destino. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md)
 
 ??? Info
     - Tras la construcción del proyecto se crear el archivo Archivo de Descripción de Módulo `.tmc` (***TwinCAT Module Class***) que describe la interfáz pública y la estructura interna del proyecto PLC y la lista de símbolos (que incluye variables de entrada y salida).

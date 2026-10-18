@@ -496,7 +496,7 @@ Activar la configuración (**Activate Configuration**):
     - **NO** activar la generación del **Boot Project** durante la fase de desarrollo.
     - Si el código del proyecto de arranque contiene un fallo grave de ejecución (como un bucle infinito en ST, una división por cero o un puntero nulo/inválido) y el Boot Project está activo, el runtime intentará ejecutar ese código defectuoso inmediatamente al arrancar. Esto provocará un colapso (crash) o bloqueo en bucle del runtime de tiempo real en cada reinicio.
 
-- Si no se dispone de una licencia permanente, cada 7 días habrá que reactivar la licencia de prueba ... [➡️](#activar-licencia)
+- Si no se dispone de una licencia permanente, cada 7 días habrá que reactivar la licencia de prueba ... [:material-arrow-right-bold-box:](#activar-licencia)
 - Finalmente, es necesario confirmar el reinicio del sistema destino en modo ejecución.
 
 ![Ventana para confirmar el reinicio de TwinCAT en modo ejecución](./img/tc3-xae-restart-run-mode-window.png){ .screenshot }

@@ -28,9 +28,9 @@ Consiste en un panel de operador básico compuesto únicamente por:
 
 El funcionamiento básico del carro es como sigue.
 
-1.  El carro se pone en marcha hacia la derecha cuando se acciona el pulsador de marcha.
-2.  Cuando el carro alcanza el final de carrera derecho, invierte el sentido de la marcha.
-3.  El carro se detiene al alcanzar, de nuevo, el final de carrera izquierdo.
+1. El carro se pone en marcha hacia la derecha cuando se acciona el pulsador de marcha.
+2. Cuando el carro alcanza el final de carrera derecho, invierte el sentido de la marcha.
+3. El carro se detiene al alcanzar, de nuevo, el final de carrera izquierdo.
 
 **Condición inicial**: carro detenido sobre el final de carrera izquierdo.
 
@@ -38,10 +38,10 @@ El funcionamiento básico del carro es como sigue.
 
 El proyecto contempla diferentes variantes de complejidad progresiva.
 
-1.  **Carro Pulsado**. El carro inicia un viaje de ida y vuelta únicamente cuando, estando en su posición inicial, se acciona el pulsador de marcha.
-2.  **Carro Temporizado**. El carro se detiene durante un tiempo determinado ($T_{espera}$) sobre el final de carrera derecho antes de iniciar el regreso a su posición inicial.
-3.  **Carro Limitado**. El carro realiza un número determinado de viajes consecutivos de ida y vuelta (tarea) cada vez que, estando en su posición inicial, se acciona el pulsador de marcha.
-4.  **Carro Señalizado**. La lámpara de marcha permanece encendida mientras el carro está en funcionamiento y parpadea cuando está en reposo.
+1. **Carro Pulsado**. El carro inicia un viaje de ida y vuelta únicamente cuando, estando en su posición inicial, se acciona el pulsador de marcha.
+2. **Carro Temporizado**. El carro se detiene durante un tiempo determinado ($T_{espera}$) sobre el final de carrera derecho antes de iniciar el regreso a su posición inicial.
+3. **Carro Limitado**. El carro realiza un número determinado de viajes consecutivos de ida y vuelta (tarea) cada vez que, estando en su posición inicial, se acciona el pulsador de marcha.
+4. **Carro Señalizado**. La lámpara de marcha permanece encendida mientras el carro está en funcionamiento y parpadea cuando está en reposo.
 
 ## :fontawesome-solid-arrows-left-right: Entradas y Salidas
 
@@ -60,8 +60,8 @@ El proyecto contempla diferentes variantes de complejidad progresiva.
 
 Las siguientes especificaciones funcionales describen con precisión el comportamiento del carro (lógica de control) mediante **Diagramas de Relés y Contactos** y el lenguaje **GRAFCET**.
 
-- [Diagrama de relés y contactos (PDF).](./pdf/carro_basico_drc.pdf)
-- [Diagrama GRAFCET (PDF).](./pdf/carro_basico_grf.pdf)
+- [Diagrama de relés y contactos (PDF)](./pdf/carro_basico_drc.pdf).
+- [Diagrama GRAFCET (PDF)](./pdf/carro_basico_grf.pdf).
 
 ---
 
@@ -70,7 +70,7 @@ Las siguientes especificaciones funcionales describen con precisión el comporta
 ```text
 TC3_Carro_Basico/
 ├── docs/
-|   └── diagrams/
+│   └── diagrams/
 │       ├── Carro_Basico_DRC.pdf <-- Diagrama de Relés y Contactos (PDF)
 │       └── Carro_Basico_GRF.pdf <-- Diagrama Grafcet (PDF)
 └── src/
@@ -83,7 +83,7 @@ TC3_Carro_Basico/
 
 ## :fontawesome-solid-screwdriver-wrench: Implementación
 
-El funcionamiento del carro va y viene (pulsado, temporizado, limitado y señalizado) se implementa a partir de sus especificaciones (diagramas de relés y GRAFCET) mediante los lenguajes de programación de la norma IEC 61131-3: *Diagrama Ladder* ({{LD}}), *Sequential Function Chart* ({{SFC}}) y *Structured Text* ({{ST}}).
+El funcionamiento del carro va y viene (pulsado, temporizado, limitado y señalizado) se implementa a partir de sus especificaciones (diagramas de relés y GRAFCET) mediante los lenguajes de programación de la norma **IEC 61131-3**: *Diagrama Ladder* ({{LD}}), *Sequential Function Chart* ({{SFC}}) y *Structured Text* ({{ST}}).
 
 - DRC ➔ [LD]
 - GRF ➔ [SFC / ST / LD]
