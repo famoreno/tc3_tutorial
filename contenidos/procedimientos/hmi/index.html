@@ -14,25 +14,25 @@
         <link rel="prev" href="../sfc/">
       
       
-        <link rel="next" href="tc3-plc-hmi/">
+        <link rel="next" href="includes/tc3-plc-hmi/">
       
       
         
       
       
       <link rel="icon" href="../../../assets/img/auto-isa-team-icon-alt.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
-        <title>Intoducción - Tutorial de TwinCAT 3</title>
+        <title>Crear una HMI - Tutorial de TwinCAT 3</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#intoduccion" class="md-skip">
+        <a href="#crear-una-hmi" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Intoducción
+              Crear una HMI
             
           </span>
         </div>
@@ -774,7 +774,7 @@
   <span class="md-ellipsis">
     
   
-    Crear un HMI
+    Crear una HMI
   
 
     
@@ -796,7 +796,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Crear un HMI
+    Crear una HMI
   
 
           </label>
@@ -811,7 +811,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tc3-plc-hmi/" class="md-nav__link">
+      <a href="includes/tc3-plc-hmi/" class="md-nav__link">
         
   
   
@@ -841,7 +841,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tc3-hmi/" class="md-nav__link">
+      <a href="includes/tc3-hmi/" class="md-nav__link">
         
   
   
@@ -1674,10 +1674,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#crear-una-visualizacion" class="md-nav__link">
+  <a href="#icon-fontawesomesolidbolt" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Crear una visualización
+        icon: fontawesome/solid/bolt
       
     </span>
   </a>
@@ -1701,42 +1701,75 @@
 
 
 
-<h1 id="intoduccion"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512m-32-352a32 32 0 1 1 64 0 32 32 0 1 1-64 0m-8 64h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24"/></svg></span> Intoducción<a class="headerlink" href="#intoduccion" title="Permanent link">&para;</a></h1>
-<p>🖥️ Crear una Visualización</p>
-<div class="admonition warning">
-<p class="admonition-title">🚧 DOCUMENTO EN CONSTRUCCIÓN</p>
-</div>
+<h1 id="crear-una-hmi"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512m-32-352a32 32 0 1 1 64 0 32 32 0 1 1-64 0m-8 64h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24"/></svg></span> Crear una <abbr title="Interfaz hombre-máquina (Human-Machine Interface).">HMI</abbr><a class="headerlink" href="#crear-una-hmi" title="Permanent link">&para;</a></h1>
 <h2 id="introduccion"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512m-32-352a32 32 0 1 1 64 0 32 32 0 1 1-64 0m-8 64h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24"/></svg></span> Introducción<a class="headerlink" href="#introduccion" title="Permanent link">&para;</a></h2>
 <blockquote>
-<p>Una visualización en <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> es una interfaz gráfica (<abbr title="Interfaz hombre-máquina (Human-Machine Interface).">HMI</abbr>) que permite a los operadores ver y controlar máquinas o procesos industriales directamente desde el entorno de Beckhoff <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr>.</p>
+<p>Una <strong>Interface Hombre-Máquina</strong> (<code>HMI</code> ➔ <em>Human-Machine Inferface</em>) es el componente de un sistema de automatización que permite a los operarios interactuar con los procesos industriales de manera visual.</p>
 </blockquote>
-<p>Para desarrollar interfaces de usuario (<abbr title="Interfaz hombre-máquina (Human-Machine Interface).">HMI</abbr>) en <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> 3, Beckhoff ofrece principalmente dos tecnologías de visualización nativas integradas en su ecosistema, diseñadas para distintas necesidades de complejidad, rendimiento y arquitectura.</p>
+<p>Entre las funciones principales de un <abbr title="Interfaz hombre-máquina (Human-Machine Interface).">HMI</abbr> se encuentran:</p>
+<ul>
+<li>Monitorizar del estado del proceso en tiempo real.</li>
+<li>Controlar el proceso permitiendo arrancarlo, detenerlo, establecer y modificar parámetros de su funcionamiento, ...</li>
+<li>Gestionar alarmas y notificando los fallos.</li>
+<li>Registrar datos que permitan analizar el rendimiento y evaluar la producción.</li>
+</ul>
+<p>Para desarrollar estas interfaces de usuario en <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> 3, Beckhoff ofrece principalmente dos tecnologías de visualización nativas integradas en su ecosistema, diseñadas para distintas necesidades de complejidad, rendimiento y arquitectura.</p>
 <h3 id="twincat-3-plc-hmi"><abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> 3 <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr> <abbr title="Interfaz hombre-máquina (Human-Machine Interface).">HMI</abbr><a class="headerlink" href="#twincat-3-plc-hmi" title="Permanent link">&para;</a></h3>
 <p>Es la solución de visualización clásica de <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr>. Está basada en CODESYS v3 y se encuentra integrada directamente dentro del entorno de desarrollo del <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr>. Se puede ejecutar localmente (TF1800), mostrándose en una pantalla conectada directamente al propio PC Industrial de Beckhoff o puede renderizarse en HTML5 (TF1810) para visualizarse remotamente en un navegador web.</p>
 <ul>
-<li>Se «programa» utilizando el editro gráfico nativo de CODESYS integrado en Visual Studio (<abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> <abbr title="eXtended Automation Engineering, entorno de ingeniería de TwinCAT.">XAE</abbr>).</li>
+<li>Se «programa» utilizando el editor gráfico nativo de CODESYS integrado en Visual Studio (<abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> <abbr title="eXtended Automation Engineering, entorno de ingeniería de TwinCAT.">XAE</abbr>).</li>
 <li>Se configura fácilmente porque todas las variables del proyecto <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr> son accesibles de forma directa.</li>
 <li>Ideal para paneles locales, proyectos sencillos o desarrollos rápidos sin salir del entorno de programación.</li>
 <li>Cuenta con una colección suficiente de elementos estándar de control (formas, botones, barras, histogramas, alarmas, gestión básica de usuarios, ...).</li>
 </ul>
 <h3 id="twincat-3-hmi"><abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> 3 <abbr title="Interfaz hombre-máquina (Human-Machine Interface).">HMI</abbr><a class="headerlink" href="#twincat-3-hmi" title="Permanent link">&para;</a></h3>
-<p>Es la nueva generación de interfaces basados en web de Beckhoff, es una plataforma de visualización moderna y avanzada de Beckhoff, orientada a arquitecturas modulares, multidispositivo y de alta personalización.</p>
+<p>Es la nueva generación de interfaces basados en web de Beckhoff, es una plataforma de visualización moderna y avanzada, orientada a arquitecturas modulares, multidispositivo y de alta personalización.</p>
 <ul>
 <li>Integrada en Visual Studio (<abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> <abbr title="eXtended Automation Engineering, entorno de ingeniería de TwinCAT.">XAE</abbr>).</li>
 <li>Se crea como un proyecto independiente al del <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr>.</li>
 <li>Arquitectura basada en el <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> <abbr title="Interfaz hombre-máquina (Human-Machine Interface).">HMI</abbr> Server (TF2000).</li>
-<li>Utiliza tecnologías Web estándar (HTML5, JavaScript y CSS)</li>
+<li>Utiliza tecnologías Web estándar (HTML5, JavaScript y CSS).</li>
 <li>Aunque se diseña de manera visual mediante "arrastrar y soltar", permite añadir código personalizado y animaciones CSS avanzadas.</li>
 <li>Utiliza una arquitectura Cliente-Servidor. El servidor de <abbr title="Interfaz hombre-máquina (Human-Machine Interface).">HMI</abbr> puede comunicarse simultáneamente con múltiples PLCs (mediante el protocolo ADS de Beckhoff u OPC UA) y servir la interfaz a múltiples pantallas de forma independiente.</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Adicionalmente, gracias al protocolo abierto <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> ADS, <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> 3 ofrece la posibilidad de desarrollar <abbr title="Interfaz hombre-máquina (Human-Machine Interface).">HMI</abbr> externos utilizando cualquier lenguaje de programación de terceros como C#, .NET, C++, o frameworks web como React/Angular, comunicándose directamente con las variables del <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr></p>
+<p>Adicionalmente, gracias al protocolo abierto <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> ADS, <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> 3 ofrece la posibilidad de desarrollar <abbr title="Interfaz hombre-máquina (Human-Machine Interface).">HMI</abbr> externos utilizando cualquier lenguaje de programación de terceros como C#, .NET, C++, o frameworks web como React/Angular, comunicándose directamente con las variables del <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr>.</p>
 </div>
-<h2 id="crear-una-visualizacion"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M448 96v256H64V96zM64 32C28.7 32 0 60.7 0 96v256c0 35.3 28.7 64 64 64h144l-16 48h-72c-13.3 0-24 10.7-24 24s10.7 24 24 24h272c13.3 0 24-10.7 24-24s-10.7-24-24-24h-72l-16-48h144c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64z"/></svg></span> Crear una visualización<a class="headerlink" href="#crear-una-visualizacion" title="Permanent link">&para;</a></h2>
+<hr />
+<hr />
+<h2 id="icon-fontawesomesolidbolt">icon: fontawesome/solid/bolt<a class="headerlink" href="#icon-fontawesomesolidbolt" title="Permanent link">&para;</a></h2>
+<h1 id="twincat-3-plc-hmi_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M338.8-9.9c11.9 8.6 16.3 24.2 10.9 37.8L271.3 224H416c13.5 0 25.5 8.4 30.1 21.1s.7 26.9-9.6 35.5l-288 240c-11.3 9.4-27.4 9.9-39.3 1.3s-16.3-24.2-10.9-37.8L176.7 288H32c-13.5 0-25.5-8.4-30.1-21.1s-.7-26.9 9.6-35.5l288-240c11.3-9.4 27.4-9.9 39.3-1.3"/></svg></span> <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> 3 <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr>-<abbr title="Interfaz hombre-máquina (Human-Machine Interface).">HMI</abbr><a class="headerlink" href="#twincat-3-plc-hmi_1" title="Permanent link">&para;</a></h1>
 <div class="admonition warning">
-<p class="admonition-title">🚧 SECCIÓN EN CONSTRUCCIÓN</p>
+<p class="admonition-title">🚧 DOCUMENTO EN CONSTRUCCIÓN</p>
 </div>
+<h2 id="crear-una-visualizacion"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M448 96v256H64V96zM64 32C28.7 32 0 60.7 0 96v256c0 35.3 28.7 64 64 64h144l-16 48h-72c-13.3 0-24 10.7-24 24s10.7 24 24 24h272c13.3 0 24-10.7 24-24s-10.7-24-24-24h-72l-16-48h144c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64z"/></svg></span> Crear una Visualización<a class="headerlink" href="#crear-una-visualizacion" title="Permanent link">&para;</a></h2>
+<p>Para crear una visualización básica utilizando <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> 3 <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr> <abbr title="Interfaz hombre-máquina (Human-Machine Interface).">HMI</abbr>, haz clic derecho  <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V1.07A8.007 8.007 0 0 1 19.75 7c.16.64.25 1.31.25 2zm4.66-2c-.48-1.35-1.43-2.5-2.66-3.19V7zM11 9V1.07C7.06 1.56 4 4.92 4 9zM6.34 20.66A8 8 0 0 1 4 15v-4h16v4c0 2.12-.84 4.16-2.34 5.66A8 8 0 0 1 12 23c-2.12 0-4.16-.84-5.66-2.34"/></svg></span> sobre la carpeta <strong>VISUs</strong> y selecciona la opción <strong>Add New Item</strong>.</p>
+<!--
+En la ventana emergente escribir un nombre para la visualización y pulsar **Open**.
+parámetros VisuSymbols (System)
+
+aparacerá un lienzo sobre el que colocar los diferentes objetos gráficos...
+-->
+
+<h3 id="agregar-un-objeto">Agregar un objeto<a class="headerlink" href="#agregar-un-objeto" title="Permanent link">&para;</a></h3>
+<!-->
+Toolbox... arrastrar y soltar y parametrizar para agregar un objeto
+-->
+
+<h3 id="rectangulo">Rectángulo<a class="headerlink" href="#rectangulo" title="Permanent link">&para;</a></h3>
+<!--
+Los rectángulos son...
+
+y son generales y pueden servir para mostrar y cambiar el valor de variables booleanas y numéricas, etiquetas...
+
+parámetros...
+
+Ajuste generales para la visualización y activación del grid
+-->
+
+<h3 id="boton">Botón<a class="headerlink" href="#boton" title="Permanent link">&para;</a></h3>
+<hr />
 
 
 
@@ -1757,7 +1790,7 @@
     <span class="md-icon" title="Última actualización">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="11 de octubre de 2026 06:57:38 UTC">11 de octubre de 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="30 de octubre de 2026 06:46:49 UTC">30 de octubre de 2026</span>
   </span>
 
     
@@ -1810,7 +1843,7 @@
         
         
           
-          <a href="tc3-plc-hmi/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: TwinCAT 3 PLC-HMI">
+          <a href="includes/tc3-plc-hmi/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: TwinCAT 3 PLC-HMI">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Siguiente
@@ -1879,10 +1912,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.indexes", "navigation.top", "navigation.tracking", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.indexes", "navigation.top", "navigation.tracking", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../../../assets/javascripts/ui-course.js"></script>
       

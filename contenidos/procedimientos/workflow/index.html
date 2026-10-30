@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../assets/img/auto-isa-team-icon-alt.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -29,10 +29,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -830,6 +830,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#guardar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Guardar
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#desplegar-un-proyecto" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1025,6 +1036,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#desconectar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Desconectar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#monitorizar-variables" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1043,23 +1065,6 @@
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Forzar Variables">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#como-se-hace" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cómo Se Hace
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1177,7 +1182,7 @@
   <span class="md-ellipsis">
     
   
-    Crear un HMI
+    Crear una HMI
   
 
     
@@ -1199,7 +1204,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Crear un HMI
+    Crear una HMI
   
 
           </label>
@@ -1214,7 +1219,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../hmi/tc3-plc-hmi/" class="md-nav__link">
+      <a href="../hmi/includes/tc3-plc-hmi/" class="md-nav__link">
         
   
   
@@ -1244,7 +1249,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../hmi/tc3-hmi/" class="md-nav__link">
+      <a href="../hmi/includes/tc3-hmi/" class="md-nav__link">
         
   
   
@@ -2155,6 +2160,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#guardar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Guardar
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#desplegar-un-proyecto" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2350,6 +2366,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#desconectar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Desconectar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#monitorizar-variables" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2368,23 +2395,6 @@
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Forzar Variables">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#como-se-hace" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cómo Se Hace
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -2413,40 +2423,49 @@
 <h1 id="crear-un-proyecto"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M512 384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96c0-35.3 28.7-64 64-64h138.7c13.8 0 27.3 4.5 38.4 12.8l38.4 28.8c5.5 4.2 12.3 6.4 19.2 6.4H448c35.3 0 64 28.7 64 64zM256 160c-13.3 0-24 10.7-24 24v48h-48c-13.3 0-24 10.7-24 24s10.7 24 24 24h48v48c0 13.3 10.7 24 24 24s24-10.7 24-24v-48h48c13.3 0 24-10.7 24-24s-10.7-24-24-24h-48v-48c0-13.3-10.7-24-24-24"/></svg></span> Crear un Proyecto<a class="headerlink" href="#crear-un-proyecto" title="Permanent link">&para;</a></h1>
 <h2 id="abrir-twincat-xae"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="m56 225.6-23.6 70.6V96c0-35.3 28.7-64 64-64h138.7c13.8 0 27.3 4.5 38.4 12.8l38.4 28.8c5.5 4.2 12.3 6.4 19.2 6.4h117.3c35.3 0 64 28.7 64 64v16H147c-41.3 0-78 26.4-91.1 65.6zM477.8 448H99c-32.8 0-55.9-32.1-45.5-63.2l48-144C108 221.2 126.4 208 147 208h378.8c32.8 0 55.9 32.1 45.5 63.2l-48 144c-6.5 19.6-24.9 32.8-45.5 32.8"/></svg></span> Abrir <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> <abbr title="eXtended Automation Engineering, entorno de ingeniería de TwinCAT.">XAE</abbr><a class="headerlink" href="#abrir-twincat-xae" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Buscar en el menú de inicio de Windows la aplicación <strong><abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> <abbr title="eXtended Automation Engineering, entorno de ingeniería de TwinCAT.">XAE</abbr> Shell</strong>.</li>
+<li>Busca en el menú de inicio de Windows la aplicación <strong><abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> <abbr title="eXtended Automation Engineering, entorno de ingeniería de TwinCAT.">XAE</abbr> Shell</strong>.</li>
 </ul>
 <p><img alt="Acceso a TwinCAT XAE desde el menú Inicio" class="screenshot" src="img/open-tc3-xae-start-menu.png" /></p>
 <ul>
 <li>También es accesible desde la barra de tareas (junto al reloj de Windows).<ul>
-<li>Hacer clic derecho en <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V1.07A8.007 8.007 0 0 1 19.75 7c.16.64.25 1.31.25 2zm4.66-2c-.48-1.35-1.43-2.5-2.66-3.19V7zM11 9V1.07C7.06 1.56 4 4.92 4 9zM6.34 20.66A8 8 0 0 1 4 15v-4h16v4c0 2.12-.84 4.16-2.34 5.66A8 8 0 0 1 12 23c-2.12 0-4.16-.84-5.66-2.34"/></svg></span> <strong><abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr></strong> y seleccionar <strong><abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> <abbr title="eXtended Automation Engineering, entorno de ingeniería de TwinCAT.">XAE</abbr> (TcXAEShell)</strong>.</li>
+<li>Haz clic sobre el icono de <strong><abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr></strong> <img alt="Símbolo TwinCAT Running" class="inline-icon" src="img/symbol-command-restart-twincat-system.png" /> o <img alt="Símbolo TwinCAT Config" class="inline-icon" src="img/symbol-command-restart-twincat-config-mode.png" /> y seleccionar <strong><abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> <abbr title="eXtended Automation Engineering, entorno de ingeniería de TwinCAT.">XAE</abbr> (TcXAEShell)</strong>.</li>
 </ul>
 </li>
 </ul>
-<p><img alt="Icono de TwinCAT XAE en la barra de tareas" class="screenshot" src="img/open-tc3-xae-taskbar.png" /></p>
-<p>Tras cargar la aplicación se muestra la pantalla inicial de la aplicación.</p>
+<p><img alt="Menu TwinCAT XAE en la barra de tareas" class="screenshot" src="img/open-tc3-xae-taskbar.png" /></p>
+<div class="admonition success">
+<p class="admonition-title">Resultado de la operación</p>
+<p>Tras abrir <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> <abbr title="eXtended Automation Engineering, entorno de ingeniería de TwinCAT.">XAE</abbr> se muestra la pantalla inicial de la aplicación.</p>
 <p><img alt="Ventana principal de TwinCAT XAE" class="screenshot" src="img/tc3-xae-main-window.png" /></p>
+</div>
 <h2 id="crear-un-proyecto-twincat-3"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M512 384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96c0-35.3 28.7-64 64-64h138.7c13.8 0 27.3 4.5 38.4 12.8l38.4 28.8c5.5 4.2 12.3 6.4 19.2 6.4H448c35.3 0 64 28.7 64 64zM256 160c-13.3 0-24 10.7-24 24v48h-48c-13.3 0-24 10.7-24 24s10.7 24 24 24h48v48c0 13.3 10.7 24 24 24s24-10.7 24-24v-48h48c13.3 0 24-10.7 24-24s-10.7-24-24-24h-48v-48c0-13.3-10.7-24-24-24"/></svg></span> Crear un Proyecto <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> 3<a class="headerlink" href="#crear-un-proyecto-twincat-3" title="Permanent link">&para;</a></h2>
 <h3 id="seleccionar-el-tipo-del-proyecto">Seleccionar el Tipo del Proyecto<a class="headerlink" href="#seleccionar-el-tipo-del-proyecto" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Seleccioanr el tipo de proyecto: <strong><abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> <abbr title="eXtended Automation Engineering, entorno de ingeniería de TwinCAT.">XAE</abbr> Project (XML format)</strong></li>
-<li>En el menú de la aplicación: <strong>File</strong> &gt; <strong>New</strong> &gt; <strong>Project</strong>.</li>
-<li>En la página de inicio: <strong>Open</strong> &gt; <strong>New Project</strong> &gt; <strong>New <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> Project...</strong>.</li>
+<li>En la ventana de incio (<em>Start Page</em>) haz clic sobre la opción <code>New TwinCAT Project...</code> o selecciona la opción del menú <strong>File</strong> &gt; <strong>New</strong> &gt; <strong>Project</strong></li>
+</ul>
+<p><img alt="Start Page" class="screenshot" src="img/tc3-xae-start-page.png" /></p>
+<ul>
+<li>En la ventana emergente <em>New Project</em> selecciona el tipo de proyecto: <strong><abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> <abbr title="eXtended Automation Engineering, entorno de ingeniería de TwinCAT.">XAE</abbr> Project (XML format)</strong></li>
 </ul>
 <p><img alt="Selección del tipo de proyecto TwinCAT" class="screenshot" src="img/tc3-xae-new-project.png" /></p>
 <details class="info">
 <summary>Parámetros</summary>
 <ul>
-<li><strong>Name</strong> = nombre del proyecto <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr>.</li>
-<li><strong>Location</strong> = carpeta donde se alojará la solución.</li>
-<li><strong>Solution name</strong> = nombre de la solución (normalmente, el mismo que el nombre del proyecto).</li>
-<li><strong>Create directory for solution</strong> = <strong>SI</strong>/<strong>NO</strong> (creará la solución dentro de una carpeta con el nombre de la solución).</li>
-<li><strong>Create new Git repository</strong> = <strong>SI</strong>/<strong>NO</strong> (inicia el control de versiones con Git).</li>
+<li><strong>Name</strong> ➔ nombre del proyecto <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr>.</li>
+<li><strong>Location</strong> ➔ carpeta donde se alojará la solución.</li>
+<li><strong>Solution name</strong> ➔ nombre de la solución (normalmente, el mismo que el nombre del proyecto).</li>
+<li><strong>Create directory for solution</strong> ➔ activar para crear la solución dentro de una carpeta con el nombre su nombre.</li>
+<li><strong>Create new Git repository</strong> ➔ activar para inicia el control de versiones con Git desde <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> <abbr title="eXtended Automation Engineering, entorno de ingeniería de TwinCAT.">XAE</abbr>.</li>
 </ul>
 </details>
+<div class="admonition success">
+<p class="admonition-title">Resultado de la operación</p>
 <p>Se mostrará la nueva solución «vacía».</p>
 <p><img alt="Solución TwinCAT recién creada" class="screenshot" src="img/tc3-xae-empty-twincat-project.png" /></p>
+</div>
 <h3 id="ocultar-configuraciones">Ocultar Configuraciones<a class="headerlink" href="#ocultar-configuraciones" title="Permanent link">&para;</a></h3>
-<p>Para despejar el panel de exploración de la solución, ocultar las configuraciones innecesarias.</p>
+<p>Para despejar el panel del Explorador de la Solución, ocultar las configuraciones innecesarias.</p>
+<p><img alt="Panel del Explorador de la Solución" class="screenshot" src="img/tc3-xae-solution-explorer.png" /></p>
 <ul>
 <li>Hacer clic derecho en <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V1.07A8.007 8.007 0 0 1 19.75 7c.16.64.25 1.31.25 2zm4.66-2c-.48-1.35-1.43-2.5-2.66-3.19V7zM11 9V1.07C7.06 1.56 4 4.92 4 9zM6.34 20.66A8 8 0 0 1 4 15v-4h16v4c0 2.12-.84 4.16-2.34 5.66A8 8 0 0 1 12 23c-2.12 0-4.16-.84-5.66-2.34"/></svg></span> <strong>[configuración]</strong> y seleccionar <strong>Hide [configuración] Configuration</strong>.</li>
 </ul>
@@ -2458,50 +2477,56 @@
 <li>Mantener las configuraciones <strong>SYSTEM</strong>, <strong><abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr></strong> e <strong>I/O</strong>.</li>
 </ul>
 </div>
-<p><img alt="Configuraciones ocultas en el explorador de la solución" class="screenshot" src="img/tc3-xae-configuration-hidden.png" /></p>
+<div class="admonition success">
+<p class="admonition-title">Resultado de la operación</p>
+<p><img alt="Configuraciones ocultas en el explorador de la solución" class="screenshot" src="img/tc3-xae-solution-explorer-neat.png" /></p>
+</div>
 <h2 id="crear-un-proyecto-plc"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M176 24c0-13.3-10.7-24-24-24s-24 10.7-24 24v40c-35.3 0-64 28.7-64 64H24c-13.3 0-24 10.7-24 24s10.7 24 24 24h40v56H24c-13.3 0-24 10.7-24 24s10.7 24 24 24h40v56H24c-13.3 0-24 10.7-24 24s10.7 24 24 24h40c0 35.3 28.7 64 64 64v40c0 13.3 10.7 24 24 24s24-10.7 24-24v-40h56v40c0 13.3 10.7 24 24 24s24-10.7 24-24v-40h56v40c0 13.3 10.7 24 24 24s24-10.7 24-24v-40c35.3 0 64-28.7 64-64h40c13.3 0 24-10.7 24-24s-10.7-24-24-24h-40v-56h40c13.3 0 24-10.7 24-24s-10.7-24-24-24h-40v-56h40c13.3 0 24-10.7 24-24s-10.7-24-24-24h-40c0-35.3-28.7-64-64-64V24c0-13.3-10.7-24-24-24s-24 10.7-24 24v40h-56V24c0-13.3-10.7-24-24-24s-24 10.7-24 24v40h-56zm-16 104h192c17.7 0 32 14.3 32 32v192c0 17.7-14.3 32-32 32H160c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32m16 48v160h160V176z"/></svg></span> Crear un Proyecto <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr><a class="headerlink" href="#crear-un-proyecto-plc" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
-<p>Para crear un nuevo proyecto <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr>, dentro de un proyecto TC.</p>
+<p>Para crear un nuevo proyecto <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr>, dentro de un proyecto <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr>.</p>
 <ul>
-<li>Hacer clic derecho en <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V1.07A8.007 8.007 0 0 1 19.75 7c.16.64.25 1.31.25 2zm4.66-2c-.48-1.35-1.43-2.5-2.66-3.19V7zM11 9V1.07C7.06 1.56 4 4.92 4 9zM6.34 20.66A8 8 0 0 1 4 15v-4h16v4c0 2.12-.84 4.16-2.34 5.66A8 8 0 0 1 12 23c-2.12 0-4.16-.84-5.66-2.34"/></svg></span> <strong><abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr></strong> &gt; <strong>Add New Item</strong>.</li>
+<li>En el Exprolardor de la Solución, haz clic derecho <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V1.07A8.007 8.007 0 0 1 19.75 7c.16.64.25 1.31.25 2zm4.66-2c-.48-1.35-1.43-2.5-2.66-3.19V7zM11 9V1.07C7.06 1.56 4 4.92 4 9zM6.34 20.66A8 8 0 0 1 4 15v-4h16v4c0 2.12-.84 4.16-2.34 5.66A8 8 0 0 1 12 23c-2.12 0-4.16-.84-5.66-2.34"/></svg></span> sobre el nodo <strong><abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr></strong> y selecciona la opción <strong>Add New Item</strong>.</li>
 </ul>
-<p><img alt="Menú para añadir un elemento al proyecto PLC" class="screenshot" src="img/tc3-xae-plc-add-new-item.png" /></p>
+<p><img alt="Menú para añadir un elemento al proyecto PLC" class="screenshot" src="img/tc3-xae-plc-add-new-item_2.png" /></p>
 </li>
 <li>
-<p>En la ventana emergente, seleccionar <strong>Standard <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr> Project</strong>, asignarle un nombre al proyecto <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr> y pulsar <strong>Add</strong>.</p>
+<p>En la ventana emergente <em>Add New Item</em> , seleccionar <strong>Standard <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr> Project</strong>, asignarle un nombre al proyecto <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr> y pulsar <strong>Add</strong>.</p>
 <p><img alt="Ventana para crear un proyecto PLC" class="screenshot" src="img/tc3-xae-plc-add-new-item-window.png" /></p>
 <details class="info">
 <summary>Proyecto Estándar</summary>
 <p>Al selecionar un proyecto <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr> estándar se aplica una plantilla predeterminada que incluye:</p>
 <ul>
 <li>Una tarea tiempo real <code>PlcTask</code> con un tiempo de ciclo de 10 ms.</li>
-<li>Un programa <code>MAIN</code> vinculado a la tarea <code>PlcTask</code>.</li>
+<li>Un programa <code>MAIN</code>, en lenguje <span class="fondo-azul-lang"><abbr title="Texto estructurado (Structured Text), lenguaje de la norma IEC 61131-3.">ST</abbr></span>, vinculado a la tarea <code>PlcTask</code>.</li>
 <li>Un conjunto de librerías básicas: Tc2_Standard, Tc2_System y Tc3_Module.</li>
-<li>Un conjunto estructurado de carpetas (DUTs, GVLs, POUs, VISUs).</li>
+<li>Una conveniente estructura de carpetas (DUTs, GVLs, POUs, VISUs) para alojar los diferentes componente del proyecto.</li>
 </ul>
 </details>
-<p>Tras la creación, se muestra el nuevo proyecto <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr> en el panel del explorador de la solución.</p>
+<div class="admonition success">
+<p class="admonition-title">Resultado de la operación</p>
+<p>Tras su creación, se muestra el nuevo proyecto <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr> en el panel del Explorador de la Solución.</p>
 <p><img alt="Proyecto PLC recién creado en el explorador" class="screenshot" src="img/tc3-xae-blank-plc-project.png" /></p>
 <details class="info">
 <summary>Descripción</summary>
 <ul>
-<li><strong>Project</strong> = código fuente estructurado bajo la norma IEC 61131-3.</li>
-<li><strong>Instance</strong> = instancias de las variables de E/S del proyecto para la vinculación con los canales de E/S del sistema.</li>
+<li><strong>Project</strong> ➔ código fuente estructurado bajo la norma IEC 61131-3.</li>
+<li><strong>Instance</strong> ➔ instancias de las variables de E/S del proyecto para la vinculación con los canales de E/S del sistema.</li>
 </ul>
 </details>
-<p>Y si se despliega su contenido, se muestra la estructura de carpetas y nodos que contiene.</p>
+</div>
+<p>Si se despliega su contenido, se muestra la estructura de carpetas y nodos que contiene.</p>
 <p><img alt="Árbol expandido del proyecto PLC" class="screenshot" src="img/tc3-xae-plc-project-expanded.png" /></p>
 <details class="info">
 <summary>Descripción</summary>
 <ul>
-<li><strong>External Types</strong> = declaración de tipos de datos complejos e interfaces que provienen de bibliotecas externas.</li>
-<li><strong>References</strong> = listado de bibliotecas vinculadas al proyecto.</li>
-<li><strong>DUTs</strong> (<em>Data Unit Types</em>) = declaración de los tipos de datos de usuario.</li>
-<li><strong>GVLs</strong> (<em>Global Variable Lists</em>) = listas de variables globales.</li>
-<li><strong>POUs</strong> (<em>Program Organization Units</em>) = conjunto de módulos que componen el proyecto.</li>
-<li><strong>VISUs</strong> = visualizaciones, interfaces gráficas.</li>
-<li><strong>PlcTask</strong> = llamada al programa de ejecución cíclica.</li>
+<li><strong>External Types</strong> ➔ declaración de tipos de datos complejos e interfaces que provienen de bibliotecas externas.</li>
+<li><strong>References</strong> ➔ listado de bibliotecas vinculadas al proyecto.</li>
+<li><strong>DUTs</strong> (<em>Data Unit Types</em>) ➔ declaración de los tipos de datos de usuario.</li>
+<li><strong>GVLs</strong> (<em>Global Variable Lists</em>) ➔ listas de variables globales.</li>
+<li><strong>POUs</strong> (<em>Program Organization Units</em>) ➔ conjunto de módulos que componen el proyecto.</li>
+<li><strong>VISUs</strong> ➔ visualizaciones, interfaces gráficas.</li>
+<li><strong>PlcTask</strong> ➔ llamada al programa de ejecución cíclica.</li>
 </ul>
 </details>
 </li>
@@ -2610,17 +2635,26 @@
 <li><code>VAR_STAT ... END_VAR</code>: variables estáticas. Variables locales que conservan su valor entre ciclos de ejecución.</li>
 <li><code>VAR_PERSISTENT ... END_VAR</code>: variables persistentes. Variables que conservan su valor incluso tras la pérdida de alimentación.</li>
 </ol>
+<h2 id="guardar"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64V173.3c0-17-6.7-33.3-18.7-45.3L352 50.7c-12-12-28.3-18.7-45.3-18.7zm32 96c0-17.7 14.3-32 32-32h160c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32H128c-17.7 0-32-14.3-32-32zm128 160a64 64 0 1 1 0 128 64 64 0 1 1 0-128"/></svg></span> Guardar<a class="headerlink" href="#guardar" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Guardar archivo actual.<ul>
+<li><strong>Desde el menú</strong> ➔ <strong>File</strong> &gt; <strong>Save [nombre-archivo]</strong>.</li>
+<li><strong>Atajo de teclado</strong> ➔ <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-s">S</kbd></span>.</li>
+<li><strong>Barra de herramientas</strong> ➔ Haz clic en el botón <img alt="Botón Save" class="inline-icon" src="img/symbol-command-save.png" />.</li>
+</ul>
+</li>
+</ul>
 <h2 id="desplegar-un-proyecto"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M256 109.3V320c0 17.7-14.3 32-32 32s-32-14.3-32-32V109.3l-41.4 41.4c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l96-96c12.5-12.5 32.8-12.5 45.3 0l96 96c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0zM224 400c44.2 0 80-35.8 80-80h80c35.3 0 64 28.7 64 64v32c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64v-32c0-35.3 28.7-64 64-64h80c0 44.2 35.8 80 80 80m144 24a24 24 0 1 0 0-48 24 24 0 1 0 0 48"/></svg></span> Desplegar un Proyecto<a class="headerlink" href="#desplegar-un-proyecto" title="Permanent link">&para;</a></h2>
 <p>El proceso de despliegue abarca la secuencia desde la validación del código fuente hasta la ejecución en tiempo real sobre el runtime  del sistema destino (<em>Target</em>).</p>
 <h3 id="seleccionar-sistema-destino">Seleccionar Sistema Destino<a class="headerlink" href="#seleccionar-sistema-destino" title="Permanent link">&para;</a></h3>
 <blockquote>
-<p>El sistema destino (<strong>Target System</strong>) es el <em>runtime</em> de tiempo real sobre el que se ejecuta el código máquina del programa.</p>
+<p>El sistema destino (<strong>Target System</strong>) continene el <em>runtime</em> de tiempo real sobre el que se ejecuta el código máquina del programa.</p>
 </blockquote>
 <ul>
 <li>Hay tres tipos de sistemas destino seleccionables:<ul>
-<li><strong>Local Target</strong>: presente en el mismo ordenador en el que se está desarrollando el programa.</li>
-<li><strong>Remote Target</strong>: equipo físico remoto conectado por EtherCAT.</li>
-<li><code>UmRT_Default</code>: runtime que se ejecuta en modo usuario sin capacidades de tiempo real.</li>
+<li><strong>Local Target</strong>: servicio presente en el mismo ordenador en el que se está desarrollando el programa.</li>
+<li><strong>Remote Target</strong>: servicio presente equipo físico remoto conectado por EtherCAT.</li>
+<li><strong>UmRT_Default</strong>: aplicación que se ejecuta en modo usuario sin capacidades de tiempo real.</li>
 </ul>
 </li>
 <li>Para seleccionarlo basta con elegirlo de la lista de runtimes disponibles en la barra de herramientas de <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr>.</li>
@@ -2890,12 +2924,15 @@
 <p><span class="keys"><kbd class="key-windows">Win</kbd><span>+</span><kbd class="key-r">R</kbd></span> &gt; <code>C:\TwinCAT\3.1\Runtimes\UmRT_Default\Start.bat</code> &gt; <span class="keys"><kbd class="key-enter">Enter</kbd></span></p>
 <p><img alt="Cuadro Ejecutar de Windows con la ruta al simulador" class="screenshot" src="img/win-run-umrt-default.png" /></p>
 </li>
-<li>
+</ul>
+<div class="admonition success">
+<p class="admonition-title">Resultado de la operación</p>
 <p>Se abrirá una ventana de terminal que debe permanecer abierta mientras usemos el simulador</p>
 <p><img alt="Terminal del simulador UmRT_Default en ejecución" class="screenshot" src="img/win-umrt-default-terminal-window.png" /></p>
-</li>
-<li>
-<p>Entre otros datos en la ventana de terminal del simulador aparecen los comandos del simulador y su dirección <code>AmsNetId</code></p>
+</div>
+<details class="info">
+<summary>Comentarios</summary>
+<p>Entre otros datos en la ventana de terminal del simulador aparecen los comandos del simulador y su dirección <code>AmsNetId</code>.</p>
 <table>
 <thead>
 <tr>
@@ -2922,28 +2959,33 @@
 </tr>
 </tbody>
 </table>
-</li>
-</ul>
+</details>
 <h3 id="construir-el-proyecto">Construir el Proyecto<a class="headerlink" href="#construir-el-proyecto" title="Permanent link">&para;</a></h3>
 <p>Construir una solución o un proyecto (<strong>Build</strong>):</p>
 <ul>
-<li><strong>Análisis Sintáctico y Estático:</strong> El compilador analiza el código fuente (<abbr title="Texto estructurado (Structured Text), lenguaje de la norma IEC 61131-3.">ST</abbr>, <abbr title="Diagrama de funciones secuenciales (Sequential Function Chart), lenguaje de la norma IEC 61131-3.">SFC</abbr>, etc.) verificando la sintaxis, compatibilidad de tipos de datos y reglas de la norma IEC 61131-3.</li>
+<li><strong>Análisis Sintáctico y Estático:</strong> El compilador analiza el código fuente (<span class="fondo-azul-lang"><abbr title="Texto estructurado (Structured Text), lenguaje de la norma IEC 61131-3.">ST</abbr></span>, <span class="fondo-rojo-lang"><abbr title="Diagrama de funciones secuenciales (Sequential Function Chart), lenguaje de la norma IEC 61131-3.">SFC</abbr></span>, etc.) verificando la sintaxis, compatibilidad de tipos de datos y reglas de la norma IEC 61131-3.</li>
 <li><strong>Generación de Código Máquina:</strong> Traduce las POUs a instrucciones binarias optimizadas para la arquitectura del procesador del sistema destino (x86/x64).</li>
 <li><strong>Ámbito de Compilación:</strong> Se puede construir o reconstruir la solución completa o solo uno de los proyectos de la solución.</li>
-<li><strong>Modo de ejecución:</strong> Desde el menú <strong>Build</strong> &gt; <strong>Build Solution</strong> (o <strong>Build</strong> &gt; <strong>[Nombre del proyecto]</strong>), o mediante <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-b">B</kbd></span>.</li>
+<li><strong>Modo de ejecución:</strong> Desde el menú <strong>Build</strong> &gt; <strong>Build Solution</strong> (o <strong>Build</strong> &gt; <strong>[nombre-proyecto]</strong>), o mediante <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-b">B</kbd></span>.</li>
 </ul>
 <p><img alt="Comando para compilar la solución TwinCAT" class="screenshot" src="img/tc3-xae-build-solution-command.png" /></p>
 <ul>
 <li>El resultado (mensajes, avisos y errores) de la construcción se muestra en el panel de errores (<em>Error List</em>).</li>
 </ul>
 <h3 id="activar-la-configuracion">Activar la Configuración<a class="headerlink" href="#activar-la-configuracion" title="Permanent link">&para;</a></h3>
-<p>Activar la configuración (<strong>Activate Configuration</strong>):</p>
+<p>Activar la configuración (<strong>Activate Configuration</strong>) implica:</p>
 <ul>
 <li><strong>Carga de Hardware y Mapeo:</strong> Transfiere al Kernel de tiempo real la configuración física de dispositivos, terminales,..., la asignación de tareas (<em>Tasks</em>) y las tablas de enrutamiento de E/S (<code>AT %I*</code>/<code>AT %Q*</code>).</li>
 <li><strong>Instanciación en el Kernel:</strong> Reinicia el Kernel de <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> en el sistema destino para aplicar los cambios de infraestructura e instanciar los servicios de memoria RAM necesarios.</li>
-<li><strong>Cambio de Estado:</strong> Conmuta el sistema operativo de tiempo real a modo <strong>RUN</strong> (indicado por el icono de <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> en verde en la barra de tareas).</li>
-<li><strong>Modo de ejecución:</strong> Desde el menú <strong><abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr></strong> &gt; <strong>Activate Configuration</strong>, o pulsando <strong>Activate Configuration</strong> en la barra de herramientas.</li>
+<li><strong>Cambio de Estado:</strong> Conmuta el sistema operativo de tiempo real a modo <strong>RUN</strong> (indicado por el icono de <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> en verde  <img alt="Botón Activar Configuración" class="inline-icon" src="img/symbol-command-restart-twincat-system.png" />en la barra de tareas).</li>
 </ul>
+<div class="admonition tip">
+<p class="admonition-title">Cómo se hace</p>
+<ul>
+<li>Desde el <strong>menú de la aplicación</strong> ➔ <strong><abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr></strong> &gt; <strong>Activate Configuration</strong>.</li>
+<li>Desde la <strong>barra de herramientos</strong> ➔ pulsando <img alt="Botón Activar Configuración" class="inline-icon" src="img/symbol-command-activate-configuration.png" />.</li>
+</ul>
+</div>
 <p><img alt="Ventana de confirmación para activar la configuración" class="screenshot" src="img/tc3-xae-activate-configuration-window.png" /></p>
 <details class="info">
 <summary>Boot Project</summary>
@@ -2962,35 +3004,64 @@
 </ul>
 <p><img alt="Ventana para confirmar el reinicio de TwinCAT en modo ejecución" class="screenshot" src="img/tc3-xae-restart-run-mode-window.png" /></p>
 <h3 id="transferir-el-proyecto">Transferir el Proyecto<a class="headerlink" href="#transferir-el-proyecto" title="Permanent link">&para;</a></h3>
-<p>Transferir un proyecto <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr> (<strong>Login</strong>):</p>
+<p>Transferir un proyecto <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr> (<strong>Login</strong>) implica:</p>
 <ul>
-<li><strong>Conexión vía ADS:</strong> Se establece la sesión de comunicación con la instancia del <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr> a través del puerto de sistema ADS (por defecto, <strong>Puerto ADS 851</strong>).</li>
+<li><strong>Conexión vía ADS:</strong> Se establece la sesión de comunicación con la instancia del <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr> a través del puerto de sistema ADS (por defecto, <strong>Puerto ADS 851</strong>), para el intercambio de información entre el entorno de programación (<abbr title="eXtended Automation Engineering, entorno de ingeniería de TwinCAT.">XAE</abbr>) y el runtime del sistema destino (<abbr title="eXtended Automation Runtime, runtime de TwinCAT.">XAR</abbr>).</li>
 <li><strong>Transferencia de Binarios:</strong> Se descarga el código compilado (<em>Bytecode</em>) a la memoria RAM asignada a la instancia del <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr> en el controlador.</li>
 <li><strong>Generación de Boot Project:</strong> Eventualmente se crea el proyecto de arranque (<em>Create Boot Project</em>) en el almacenamiento no volátil del sistema destino para garantizar que el programa se cargue automáticamente tras una pérdida de alimentación.</li>
-<li><strong>Modo de ejecución:</strong> Pulsar <strong>Login</strong> (atajo <span class="keys"><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-f8">F8</kbd></span>) en la barra de herramientas de <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr>.</li>
+<li>Iniciar la <strong>monitorización <em>online</em></strong>, que permite la visualización y le escritura/forzado de variables en tiempo real.</li>
 </ul>
+<div class="admonition tip">
+<p class="admonition-title">Cómo se hace</p>
+<ul>
+<li>Desde el menú de la aplicación ➔ <strong><abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr></strong> &gt; <strong>Login</strong>.</li>
+<li>Desde la barra de herramientas ➔ <img alt="Login" class="inline-icon" src="img/symbol-command-login.png" /></li>
+<li>Con el atajo de teclado ➔ <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-l">L</kbd></span></li>
+</ul>
+</div>
 <p><img alt="Solicitud para crear el puerto ADS durante el inicio de sesión" class="screenshot" src="img/tc3-xae-login-create-port-window.png" /></p>
 <details class="info">
-<summary>Info</summary>
+<summary>Puerto de la aplicación</summary>
 <ul>
-<li>La primera vez que se realice <strong>Login</strong> sobre un nuevo sistema destino, <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> solicitará la creación del puerto para las comunicaciones entre el entorno de programación (<strong><abbr title="eXtended Automation Engineering, entorno de ingeniería de TwinCAT.">XAE</abbr></strong>) y el sistema de ejecución (<strong><abbr title="eXtended Automation Runtime, runtime de TwinCAT.">XAR</abbr></strong>) del sistema destino.</li>
+<li>La primera vez que se realice <strong>Login</strong> sobre un nuevo sistema destino, <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> solicitará la creación del puerto para las comunicaciones entre el entorno de programación (<strong><abbr title="eXtended Automation Engineering, entorno de ingeniería de TwinCAT.">XAE</abbr></strong>) y el sistema de ejecución (<strong><abbr title="eXtended Automation Runtime, runtime de TwinCAT.">XAR</abbr></strong>) del sistema destino (nomalmente a través del puerto <code>851</code> y siguientes).</li>
 <li>Si el código presente en el sistema destino difiere significativamente del código que se pretende enviar se solicita autorización para realizar un <em>Online Change</em> (cambio en caliente) o una descarga completa (<em>Cold/Origin Reset Download</em>).</li>
 </ul>
 </details>
 <h3 id="arrancar-el-proyecto">Arrancar el Proyecto<a class="headerlink" href="#arrancar-el-proyecto" title="Permanent link">&para;</a></h3>
-<p>Arrancar o poner en ejecución un proyecto (<strong>Start</strong>):</p>
+<p>Arrancar o poner en ejecución un proyecto (<strong>Start</strong>) implica:</p>
 <ul>
-<li><strong>Inicio del Bucle de Tiempo Real:</strong> Inicia la ejecución del ciclo básico de funcionamiento (<em>Task Scan</em>) asignado en la <code>PlcTask</code>.</li>
-<li><strong>Procesamiento de Entradas/Salidas:</strong> Se activa el ciclo determinista: lectura de la imagen de proceso de entradas (<code>%I*</code>), ejecución de las POUs (<code>MAIN</code>) y actualización de las salidas (<code>%Q*</code>).</li>
-<li><strong>Modo de ejecución:</strong> Pulsar <strong>Start</strong> (atajo <span class="keys"><kbd class="key-f5">F5</kbd></span>) o seleccionar <strong><abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr></strong> &gt; <strong>Login</strong> &gt; <strong>Start</strong>.</li>
+<li>El inicio del <strong>Bucle de Tiempo Real:</strong> ejecución del ciclo básico de funcionamiento (<em>Task Scan</em>) asignado en la <code>PlcTask</code>.</li>
+<li>El <strong>Procesamiento de Entradas/Salidas:</strong> se activa el ciclo determinista: lectura de la imagen de proceso de entradas (<code>%I*</code>), ejecución de las POUs (<code>MAIN</code>) y actualización de las salidas (<code>%Q*</code>).</li>
 </ul>
+<div class="admonition tip">
+<p class="admonition-title">Cómo se hace</p>
+<ul>
+<li>Desde el menú de la aplicación ➔ <strong><abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr></strong> &gt; <strong>Login</strong> &gt; <strong>Start</strong></li>
+<li>Desde la barra de herramientas ➔ <img alt="Login" class="inline-icon" src="img/symbol-command-start.png" /></li>
+<li>Con el atajo de teclado ➔ <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-l">L</kbd></span></li>
+</ul>
+</div>
+<h3 id="desconectar">Desconectar<a class="headerlink" href="#desconectar" title="Permanent link">&para;</a></h3>
+<p>El comando de desconexión (<strong>Logout</strong>), termina la conexión con el sistema destino y finaliza el modo de monitorización online.</p>
+<div class="admonition tip">
+<p class="admonition-title">Cómo se hace</p>
+<ul>
+<li>Desde el menú de la aplicación ➔ <strong><abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr></strong> &gt; <strong>Logout</strong></li>
+<li>Desde la barra de herramientas ➔ <img alt="Login" class="inline-icon" src="img/symbol-command-logout.png" /></li>
+<li>Ccn el atajo de teclado ➔ <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-u">U</kbd></span></li>
+</ul>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Consecuencias</p>
+<p>Cuando te desconectas de un sistema destino abandonas la monitorización, pero el programa sigue ejecutándose en su <em>runtime</em>.</p>
+</div>
 <h3 id="monitorizar-variables">Monitorizar Variables<a class="headerlink" href="#monitorizar-variables" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p>Tras pasar a modo ejecución, en el entorno de programación, el código se muestra en modo <strong>Monitorización <em>Online</em></strong>.</p>
 <p><img alt="Código PLC con valores de variables en monitorización Online" class="screenshot" src="img/tc3-xae-monitoring-online.png" /></p>
 <div class="admonition info">
-<p class="admonition-title">Info</p>
+<p class="admonition-title">Comentarios</p>
 <p>El <strong>Modo <em>Online</em></strong> o de <strong>Monitorización <em>Online</em></strong> es el estado de conexión directa e interactiva entre el entorno de desarrollo (<strong><abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> <abbr title="eXtended Automation Engineering, entorno de ingeniería de TwinCAT.">XAE</abbr></strong>) y el motor de tiempo real en ejecución (<strong><abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> <abbr title="eXtended Automation Runtime, runtime de TwinCAT.">XAR</abbr></strong>/<em>Target System</em>).
 Esta herramienta de supervisión y depuración en tiempo real de <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> 3 permite:</p>
 <ul>
@@ -3002,19 +3073,20 @@ Esta herramienta de supervisión y depuración en tiempo real de <abbr title="Th
 </ul>
 <h3 id="forzar-variables">Forzar Variables<a class="headerlink" href="#forzar-variables" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
-<p class="admonition-title">Info</p>
+<p class="admonition-title">Escribir vs Forzar</p>
 <ul>
-<li><strong>Escribir una variable:</strong> modifica su valor, pero la variable puede cambiar por que lo exiga el código o por el cambio de una entrada.</li>
-<li><strong>Forzar una variable:</strong> modifica su valor y lo congela, de forma que no puede cambiar a pesar del código en ejecución o de la entrada.</li>
-<li><strong>Persistencia:</strong> Una variable forzada conserva el valor establecido hasta que se libera.</li>
+<li><strong>Escribir una variable:</strong> modifica su valor, pero la variable puede cambiar por que lo exiga el código en ejecución o por el cambio de una entrada.</li>
+<li><strong>Forzar una variable:</strong> modifica su valor y lo congela, de forma que no puede cambiar a pesar del código en ejecución o por el cambio de una entrada.</li>
+<li><strong>Persistencia:</strong> una variable forzada conserva el valor establecido hasta que se libera.</li>
 </ul>
 </div>
-<h4 id="como-se-hace">Cómo Se Hace<a class="headerlink" href="#como-se-hace" title="Permanent link">&para;</a></h4>
+<div class="admonition tip">
+<p class="admonition-title">Cómo se hace</p>
 <ol>
 <li>
 <p><strong>Preparar el valor deseado</strong></p>
 <ul>
-<li>Para forzar/escribir una variable, en primer lugar introducir el valor deseado en la columna <strong>Prepared value</strong>. Si la variable es de tipo BOOL, hacer doble clic en la celda correpondiente para conmutar entre los valores <code>TRUE</code>/<code>FALSE</code>.</li>
+<li>Para forzar/escribir una variable, en primer lugar introducir el valor deseado en la columna <strong>Prepared value</strong> y pulsar <span class="keys"><kbd class="key-enter">Enter</kbd></span>. Si la variable es de tipo BOOL, basta con hacer doble clic en la celda correpondiente para conmutar entre los valores <code>TRUE</code>/<code>FALSE</code>.</li>
 </ul>
 </li>
 <li>
@@ -3029,12 +3101,13 @@ Esta herramienta de supervisión y depuración en tiempo real de <abbr title="Th
 <p><img alt="Variables forzadas" class="screenshot" src="img/tc3-xae-forced-values.png" /></p>
 </div>
 <ul>
-<li>Para liberar una variable, seleccionar la opción del menú <strong><abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr></strong> &gt; <strong>Unforce values</strong>, o pulsar el botón <img alt="Liberar" class="inline-icon" src="img/unforce-value-button.png" /> o simplemente pulsar <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-f7">F7</kbd></span>.</li>
-<li>Para modificar el valor de forzado de una única variable, hacer doble clic en la celda correspondiente a la variable en la columna <strong>Prepared value</strong> y seleccionar lo que corresponda en la ventana.</li>
+<li>Para liberar una variable, seleccionar la opción del menú <strong><abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr></strong> &gt; <strong>Unforce values</strong>, o pulsar el botón <img alt="Liberar" class="inline-icon" src="img/unforce-value-button.png" /> o simplemente pulsar <span class="keys"><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-f7">F7</kbd></span>.</li>
+<li>Cuando hay forzadas varias variables se puede  modificar el valor de forzado de una única variable, haciendo doble clic en la celda correspondiente a la variable en la columna <strong>Prepared value</strong> y seleccionar lo que corresponda en la ventana.</li>
 </ul>
 <p><img alt="Ventana para preparar el valor de una variable" class="screenshot" src="img/tc3-xae-prepare-value-window.png" /></p>
 </li>
 </ol>
+</div>
 <hr />
 <!--
 ## :fontawesome-solid-code-branch: Codificar en Texto Estructurado
@@ -3075,7 +3148,7 @@ Instancia FB
     <span class="md-icon" title="Última actualización">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="18 de octubre de 2026 18:45:04 UTC">18 de octubre de 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="30 de octubre de 2026 06:46:49 UTC">30 de octubre de 2026</span>
   </span>
 
     
@@ -3197,10 +3270,10 @@ Instancia FB
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.indexes", "navigation.top", "navigation.tracking", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.indexes", "navigation.top", "navigation.tracking", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../../../assets/javascripts/ui-course.js"></script>
       
