@@ -6,43 +6,49 @@ icon: fontawesome/solid/folder-plus
 
 ## :fontawesome-solid-folder-open: Abrir TwinCAT XAE
 
-- Buscar en el menú de inicio de Windows la aplicación **TwinCAT XAE Shell**.
+- Busca en el menú de inicio de Windows la aplicación **TwinCAT XAE Shell**.
 
 ![Acceso a TwinCAT XAE desde el menú Inicio](./img/open-tc3-xae-start-menu.png){ .screenshot }
 
 - También es accesible desde la barra de tareas (junto al reloj de Windows).
-    - Hacer clic derecho en :material-mouse-right-click: **TwinCAT** y seleccionar **TwinCAT XAE (TcXAEShell)**.
+    - Haz clic sobre el icono de **TwinCAT** ![Símbolo TwinCAT Running](./img/symbol-command-restart-twincat-system.png){ .inline-icon } o ![Símbolo TwinCAT Config](./img/symbol-command-restart-twincat-config-mode.png){ .inline-icon } y seleccionar **TwinCAT XAE (TcXAEShell)**.
 
-![Icono de TwinCAT XAE en la barra de tareas](./img/open-tc3-xae-taskbar.png){ .screenshot }
+![Menu TwinCAT XAE en la barra de tareas](./img/open-tc3-xae-taskbar.png){ .screenshot }
 
-Tras cargar la aplicación se muestra la pantalla inicial de la aplicación.
+!!! success "Resultado de la operación"
+    Tras abrir TwinCAT XAE se muestra la pantalla inicial de la aplicación.
 
-![Ventana principal de TwinCAT XAE](./img/tc3-xae-main-window.png){ .screenshot }
+    ![Ventana principal de TwinCAT XAE](./img/tc3-xae-main-window.png){ .screenshot }
 
 ## :fontawesome-solid-folder-plus: Crear un Proyecto TwinCAT 3
 
 ### Seleccionar el Tipo del Proyecto
 
-- Seleccioanr el tipo de proyecto: **TwinCAT XAE Project (XML format)**
-- En el menú de la aplicación: **File** > **New** > **Project**.
-- En la página de inicio: **Open** > **New Project** > **New TwinCAT Project...**.
+- En la ventana de incio (*Start Page*) haz clic sobre la opción `New TwinCAT Project...` o selecciona la opción del menú **File** > **New** > **Project**
 
- ![Selección del tipo de proyecto TwinCAT](./img/tc3-xae-new-project.png){ .screenshot }
+![Start Page](./img/tc3-xae-start-page.png){ .screenshot }
+
+- En la ventana emergente *New Project* selecciona el tipo de proyecto: **TwinCAT XAE Project (XML format)**
+
+![Selección del tipo de proyecto TwinCAT](./img/tc3-xae-new-project.png){ .screenshot }
 
 ??? info "Parámetros"
-    - **Name** = nombre del proyecto TwinCAT.
-    - **Location** = carpeta donde se alojará la solución.
-    - **Solution name** = nombre de la solución (normalmente, el mismo que el nombre del proyecto).
-    - **Create directory for solution** = **SI**/**NO** (creará la solución dentro de una carpeta con el nombre de la solución).
-    - **Create new Git repository** = **SI**/**NO** (inicia el control de versiones con Git).
+    - **Name** ➔ nombre del proyecto TwinCAT.
+    - **Location** ➔ carpeta donde se alojará la solución.
+    - **Solution name** ➔ nombre de la solución (normalmente, el mismo que el nombre del proyecto).
+    - **Create directory for solution** ➔ activar para crear la solución dentro de una carpeta con el nombre su nombre.
+    - **Create new Git repository** ➔ activar para inicia el control de versiones con Git desde TwinCAT XAE.
 
- Se mostrará la nueva solución «vacía».
+!!! success "Resultado de la operación"
+    Se mostrará la nueva solución «vacía».
 
- ![Solución TwinCAT recién creada](./img/tc3-xae-empty-twincat-project.png){ .screenshot }
+    ![Solución TwinCAT recién creada](./img/tc3-xae-empty-twincat-project.png){ .screenshot }
 
 ### Ocultar Configuraciones
 
-Para despejar el panel de exploración de la solución, ocultar las configuraciones innecesarias.
+Para despejar el panel del Explorador de la Solución, ocultar las configuraciones innecesarias.
+
+![Panel del Explorador de la Solución](./img/tc3-xae-solution-explorer.png){ .screenshot }
 
 - Hacer clic derecho en :material-mouse-right-click: **[configuración]** y seleccionar **Hide [configuración] Configuration**.
 
@@ -52,17 +58,18 @@ Para despejar el panel de exploración de la solución, ocultar las configuracio
     - Ocultar las configuraciones que no se van a utilizar: `MOTION`, `SAFETY`, `C++`, `VISION`, `ANALYTICS`.
     - Mantener las configuraciones **SYSTEM**, **PLC** e **I/O**.
 
-![Configuraciones ocultas en el explorador de la solución](./img/tc3-xae-configuration-hidden.png){ .screenshot }
+!!! success "Resultado de la operación"
+    ![Configuraciones ocultas en el explorador de la solución](./img/tc3-xae-solution-explorer-neat.png){ .screenshot }
 
 ## :fontawesome-solid-microchip: Crear un Proyecto PLC
 
-1. Para crear un nuevo proyecto PLC, dentro de un proyecto TC.
+1. Para crear un nuevo proyecto PLC, dentro de un proyecto TwinCAT.
 
-    - Hacer clic derecho en :material-mouse-right-click: **PLC** > **Add New Item**.
+    - En el Exprolardor de la Solución, haz clic derecho :material-mouse-right-click: sobre el nodo **PLC** y selecciona la opción **Add New Item**.
 
-    ![Menú para añadir un elemento al proyecto PLC](./img/tc3-xae-plc-add-new-item.png){ .screenshot }
+    ![Menú para añadir un elemento al proyecto PLC](./img/tc3-xae-plc-add-new-item_2.png){ .screenshot }
 
-2. En la ventana emergente, seleccionar **Standard PLC Project**, asignarle un nombre al proyecto PLC y pulsar **Add**.
+2. En la ventana emergente *Add New Item* , seleccionar **Standard PLC Project**, asignarle un nombre al proyecto PLC y pulsar **Add**.
 
     ![Ventana para crear un proyecto PLC](./img/tc3-xae-plc-add-new-item-window.png){ .screenshot }
 
@@ -70,30 +77,31 @@ Para despejar el panel de exploración de la solución, ocultar las configuracio
         Al selecionar un proyecto PLC estándar se aplica una plantilla predeterminada que incluye:
 
         - Una tarea tiempo real `PlcTask` con un tiempo de ciclo de 10 ms.
-        - Un programa `MAIN` vinculado a la tarea `PlcTask`.
+        - Un programa `MAIN`, en lenguje {{ST}}, vinculado a la tarea `PlcTask`.
         - Un conjunto de librerías básicas: Tc2_Standard, Tc2_System y Tc3_Module.
-        - Un conjunto estructurado de carpetas (DUTs, GVLs, POUs, VISUs).
+        - Una conveniente estructura de carpetas (DUTs, GVLs, POUs, VISUs) para alojar los diferentes componente del proyecto.
 
-    Tras la creación, se muestra el nuevo proyecto PLC en el panel del explorador de la solución.
+    !!! success "Resultado de la operación"
+        Tras su creación, se muestra el nuevo proyecto PLC en el panel del Explorador de la Solución.
 
-    ![Proyecto PLC recién creado en el explorador](./img/tc3-xae-blank-plc-project.png){ .screenshot }
+        ![Proyecto PLC recién creado en el explorador](./img/tc3-xae-blank-plc-project.png){ .screenshot }
 
-    ??? info "Descripción"
-        - **Project** = código fuente estructurado bajo la norma IEC 61131-3.
-        - **Instance** = instancias de las variables de E/S del proyecto para la vinculación con los canales de E/S del sistema.
+        ??? info "Descripción"
+            - **Project** ➔ código fuente estructurado bajo la norma IEC 61131-3.
+            - **Instance** ➔ instancias de las variables de E/S del proyecto para la vinculación con los canales de E/S del sistema.
 
-    Y si se despliega su contenido, se muestra la estructura de carpetas y nodos que contiene.
+    Si se despliega su contenido, se muestra la estructura de carpetas y nodos que contiene.
 
     ![Árbol expandido del proyecto PLC](./img/tc3-xae-plc-project-expanded.png){ .screenshot }
 
     ??? info "Descripción"
-        - **External Types** = declaración de tipos de datos complejos e interfaces que provienen de bibliotecas externas.
-        - **References** = listado de bibliotecas vinculadas al proyecto.
-        - **DUTs** (*Data Unit Types*) = declaración de los tipos de datos de usuario.
-        - **GVLs** (*Global Variable Lists*) = listas de variables globales.
-        - **POUs** (*Program Organization Units*) = conjunto de módulos que componen el proyecto.
-        - **VISUs** = visualizaciones, interfaces gráficas.
-        - **PlcTask** = llamada al programa de ejecución cíclica.
+        - **External Types** ➔ declaración de tipos de datos complejos e interfaces que provienen de bibliotecas externas.
+        - **References** ➔ listado de bibliotecas vinculadas al proyecto.
+        - **DUTs** (*Data Unit Types*) ➔ declaración de los tipos de datos de usuario.
+        - **GVLs** (*Global Variable Lists*) ➔ listas de variables globales.
+        - **POUs** (*Program Organization Units*) ➔ conjunto de módulos que componen el proyecto.
+        - **VISUs** ➔ visualizaciones, interfaces gráficas.
+        - **PlcTask** ➔ llamada al programa de ejecución cíclica.
 
 ### Crear una POU
 
@@ -190,18 +198,25 @@ El bloque de declaración determina el ámbito y el alcance de la variable espec
    6.  `VAR_STAT ... END_VAR`: variables estáticas. Variables locales que conservan su valor entre ciclos de ejecución.
    7.  `VAR_PERSISTENT ... END_VAR`: variables persistentes. Variables que conservan su valor incluso tras la pérdida de alimentación.
 
+## :fontawesome-solid-floppy-disk: Guardar
+
+- Guardar archivo actual.
+    - **Desde el menú** ➔ **File** > **Save [nombre-archivo]**.
+    - **Atajo de teclado** ➔ ++ctrl+s++.
+    - **Barra de herramientas** ➔ Haz clic en el botón ![Botón Save](./img/symbol-command-save.png){ .inline-icon }.
+
 ## :fontawesome-solid-upload: Desplegar un Proyecto
 
 El proceso de despliegue abarca la secuencia desde la validación del código fuente hasta la ejecución en tiempo real sobre el runtime  del sistema destino (*Target*).
 
 ### Seleccionar Sistema Destino
 
-> El sistema destino (**Target System**) es el *runtime* de tiempo real sobre el que se ejecuta el código máquina del programa.
+> El sistema destino (**Target System**) continene el *runtime* de tiempo real sobre el que se ejecuta el código máquina del programa.
 
 - Hay tres tipos de sistemas destino seleccionables:
-    - **Local Target**: presente en el mismo ordenador en el que se está desarrollando el programa.
-    - **Remote Target**: equipo físico remoto conectado por EtherCAT.
-    - `UmRT_Default`: runtime que se ejecuta en modo usuario sin capacidades de tiempo real.
+    - **Local Target**: servicio presente en el mismo ordenador en el que se está desarrollando el programa.
+    - **Remote Target**: servicio presente equipo físico remoto conectado por EtherCAT.
+    - **UmRT_Default**: aplicación que se ejecuta en modo usuario sin capacidades de tiempo real.
 - Para seleccionarlo basta con elegirlo de la lista de runtimes disponibles en la barra de herramientas de TwinCAT.
 
 ![Lista de sistemas destino TwinCAT](./img/tc3-xae-target-system-list.png){ .screenshot }
@@ -452,11 +467,13 @@ Para activar el simulador (`UmRT_Default`), ejecutar el *script* `Start.bat`, qu
 
     ![Cuadro Ejecutar de Windows con la ruta al simulador](./img/win-run-umrt-default.png){ .screenshot }
 
-- Se abrirá una ventana de terminal que debe permanecer abierta mientras usemos el simulador
+!!! success "Resultado de la operación"
+    Se abrirá una ventana de terminal que debe permanecer abierta mientras usemos el simulador
 
     ![Terminal del simulador UmRT_Default en ejecución](./img/win-umrt-default-terminal-window.png){ .screenshot }
 
-- Entre otros datos en la ventana de terminal del simulador aparecen los comandos del simulador y su dirección `AmsNetId`
+??? info "Comentarios"
+    Entre otros datos en la ventana de terminal del simulador aparecen los comandos del simulador y su dirección `AmsNetId`.
 
     | Comando | Descripción |
     | :---: | :--- |
@@ -469,10 +486,10 @@ Para activar el simulador (`UmRT_Default`), ejecutar el *script* `Start.bat`, qu
 
 Construir una solución o un proyecto (**Build**):
 
-- **Análisis Sintáctico y Estático:** El compilador analiza el código fuente (ST, SFC, etc.) verificando la sintaxis, compatibilidad de tipos de datos y reglas de la norma IEC 61131-3.
+- **Análisis Sintáctico y Estático:** El compilador analiza el código fuente ({{ST}}, {{SFC}}, etc.) verificando la sintaxis, compatibilidad de tipos de datos y reglas de la norma IEC 61131-3.
 - **Generación de Código Máquina:** Traduce las POUs a instrucciones binarias optimizadas para la arquitectura del procesador del sistema destino (x86/x64).
 - **Ámbito de Compilación:** Se puede construir o reconstruir la solución completa o solo uno de los proyectos de la solución.
-- **Modo de ejecución:** Desde el menú **Build** > **Build Solution** (o **Build** > **[Nombre del proyecto]**), o mediante ++ctrl+shift+b++.
+- **Modo de ejecución:** Desde el menú **Build** > **Build Solution** (o **Build** > **[nombre-proyecto]**), o mediante ++ctrl+shift+b++.
 
 ![Comando para compilar la solución TwinCAT](./img/tc3-xae-build-solution-command.png){ .screenshot }
 
@@ -480,12 +497,15 @@ Construir una solución o un proyecto (**Build**):
 
 ### Activar la Configuración
 
-Activar la configuración (**Activate Configuration**):
+Activar la configuración (**Activate Configuration**) implica:
 
 - **Carga de Hardware y Mapeo:** Transfiere al Kernel de tiempo real la configuración física de dispositivos, terminales,..., la asignación de tareas (*Tasks*) y las tablas de enrutamiento de E/S (`AT %I*`/`AT %Q*`).
 - **Instanciación en el Kernel:** Reinicia el Kernel de TwinCAT en el sistema destino para aplicar los cambios de infraestructura e instanciar los servicios de memoria RAM necesarios.
-- **Cambio de Estado:** Conmuta el sistema operativo de tiempo real a modo **RUN** (indicado por el icono de TwinCAT en verde en la barra de tareas).
-- **Modo de ejecución:** Desde el menú **TwinCAT** > **Activate Configuration**, o pulsando **Activate Configuration** en la barra de herramientas.
+- **Cambio de Estado:** Conmuta el sistema operativo de tiempo real a modo **RUN** (indicado por el icono de TwinCAT en verde  ![Botón Activar Configuración](./img/symbol-command-restart-twincat-system.png){ .inline-icon }en la barra de tareas).
+
+!!! tip "Cómo se hace"
+    - Desde el **menú de la aplicación** ➔ **TwinCAT** > **Activate Configuration**.
+    - Desde la **barra de herramientos** ➔ pulsando ![Botón Activar Configuración](./img/symbol-command-activate-configuration.png){ .inline-icon }.
 
 ![Ventana de confirmación para activar la configuración](./img/tc3-xae-activate-configuration-window.png){ .screenshot }
 
@@ -503,26 +523,47 @@ Activar la configuración (**Activate Configuration**):
 
 ### Transferir el Proyecto
 
-Transferir un proyecto PLC (**Login**):
+Transferir un proyecto PLC (**Login**) implica:
 
-- **Conexión vía ADS:** Se establece la sesión de comunicación con la instancia del PLC a través del puerto de sistema ADS (por defecto, **Puerto ADS 851**).
+- **Conexión vía ADS:** Se establece la sesión de comunicación con la instancia del PLC a través del puerto de sistema ADS (por defecto, **Puerto ADS 851**), para el intercambio de información entre el entorno de programación (XAE) y el runtime del sistema destino (XAR).
 - **Transferencia de Binarios:** Se descarga el código compilado (*Bytecode*) a la memoria RAM asignada a la instancia del PLC en el controlador.
 - **Generación de Boot Project:** Eventualmente se crea el proyecto de arranque (*Create Boot Project*) en el almacenamiento no volátil del sistema destino para garantizar que el programa se cargue automáticamente tras una pérdida de alimentación.
-- **Modo de ejecución:** Pulsar **Login** (atajo ++alt+f8++) en la barra de herramientas de TwinCAT PLC.
+- Iniciar la **monitorización *online***, que permite la visualización y le escritura/forzado de variables en tiempo real.
+
+!!! tip "Cómo se hace"
+    - Desde el menú de la aplicación ➔ **PLC** > **Login**.
+    - Desde la barra de herramientas ➔ ![Login](./img/symbol-command-login.png){ .inline-icon }
+    - Con el atajo de teclado ➔ ++ctrl+alt+l++
 
 ![Solicitud para crear el puerto ADS durante el inicio de sesión](./img/tc3-xae-login-create-port-window.png){ .screenshot }
 
-??? info
-    - La primera vez que se realice **Login** sobre un nuevo sistema destino, TwinCAT solicitará la creación del puerto para las comunicaciones entre el entorno de programación (**XAE**) y el sistema de ejecución (**XAR**) del sistema destino.
+??? info "Puerto de la aplicación"
+    - La primera vez que se realice **Login** sobre un nuevo sistema destino, TwinCAT solicitará la creación del puerto para las comunicaciones entre el entorno de programación (**XAE**) y el sistema de ejecución (**XAR**) del sistema destino (nomalmente a través del puerto `851` y siguientes).
     - Si el código presente en el sistema destino difiere significativamente del código que se pretende enviar se solicita autorización para realizar un *Online Change* (cambio en caliente) o una descarga completa (*Cold/Origin Reset Download*).
 
 ### Arrancar el Proyecto
 
-Arrancar o poner en ejecución un proyecto (**Start**):
+Arrancar o poner en ejecución un proyecto (**Start**) implica:
 
-- **Inicio del Bucle de Tiempo Real:** Inicia la ejecución del ciclo básico de funcionamiento (*Task Scan*) asignado en la `PlcTask`.
-- **Procesamiento de Entradas/Salidas:** Se activa el ciclo determinista: lectura de la imagen de proceso de entradas (`%I*`), ejecución de las POUs (`MAIN`) y actualización de las salidas (`%Q*`).
-- **Modo de ejecución:** Pulsar **Start** (atajo ++f5++) o seleccionar **PLC** > **Login** > **Start**.
+- El inicio del **Bucle de Tiempo Real:** ejecución del ciclo básico de funcionamiento (*Task Scan*) asignado en la `PlcTask`.
+- El **Procesamiento de Entradas/Salidas:** se activa el ciclo determinista: lectura de la imagen de proceso de entradas (`%I*`), ejecución de las POUs (`MAIN`) y actualización de las salidas (`%Q*`).
+
+!!! tip "Cómo se hace"
+    - Desde el menú de la aplicación ➔ **PLC** > **Login** > **Start**
+    - Desde la barra de herramientas ➔ ![Login](./img/symbol-command-start.png){ .inline-icon }
+    - Con el atajo de teclado ➔ ++ctrl+alt+l++
+
+### Desconectar
+
+El comando de desconexión (**Logout**), termina la conexión con el sistema destino y finaliza el modo de monitorización online.
+
+!!! tip "Cómo se hace"
+    - Desde el menú de la aplicación ➔ **PLC** > **Logout**
+    - Desde la barra de herramientas ➔ ![Login](./img/symbol-command-logout.png){ .inline-icon }
+    - Ccn el atajo de teclado ➔ ++ctrl+alt+u++
+
+!!! info "Consecuencias"
+    Cuando te desconectas de un sistema destino abandonas la monitorización, pero el programa sigue ejecutándose en su *runtime*.
 
 ### Monitorizar Variables
 
@@ -530,7 +571,7 @@ Arrancar o poner en ejecución un proyecto (**Start**):
 
     ![Código PLC con valores de variables en monitorización Online](./img/tc3-xae-monitoring-online.png){ .screenshot }
 
-    !!! info
+    !!! info "Comentarios"
         El **Modo *Online*** o de **Monitorización *Online*** es el estado de conexión directa e interactiva entre el entorno de desarrollo (**TwinCAT XAE**) y el motor de tiempo real en ejecución (**TwinCAT XAR**/*Target System*).
         Esta herramienta de supervisión y depuración en tiempo real de TwinCAT 3 permite:
 
@@ -539,32 +580,32 @@ Arrancar o poner en ejecución un proyecto (**Start**):
 
 ### Forzar Variables
 
-!!! info
+!!! info "Escribir vs Forzar"
 
-    - **Escribir una variable:** modifica su valor, pero la variable puede cambiar por que lo exiga el código o por el cambio de una entrada.
-    - **Forzar una variable:** modifica su valor y lo congela, de forma que no puede cambiar a pesar del código en ejecución o de la entrada.
-    - **Persistencia:** Una variable forzada conserva el valor establecido hasta que se libera.
+    - **Escribir una variable:** modifica su valor, pero la variable puede cambiar por que lo exiga el código en ejecución o por el cambio de una entrada.
+    - **Forzar una variable:** modifica su valor y lo congela, de forma que no puede cambiar a pesar del código en ejecución o por el cambio de una entrada.
+    - **Persistencia:** una variable forzada conserva el valor establecido hasta que se libera.
 
-#### Cómo Se Hace
+!!! tip "Cómo se hace"
 
-1. **Preparar el valor deseado**
+    1. **Preparar el valor deseado**
 
-     - Para forzar/escribir una variable, en primer lugar introducir el valor deseado en la columna **Prepared value**. Si la variable es de tipo BOOL, hacer doble clic en la celda correpondiente para conmutar entre los valores `TRUE`/`FALSE`.
+         - Para forzar/escribir una variable, en primer lugar introducir el valor deseado en la columna **Prepared value** y pulsar ++enter++. Si la variable es de tipo BOOL, basta con hacer doble clic en la celda correpondiente para conmutar entre los valores `TRUE`/`FALSE`.
 
-2. **Ejecutar la acción correspondiente**
+    2. **Ejecutar la acción correspondiente**
 
-    - Para escribir una variable, seleccionar la opción del menú **PLC** > **Write values**, o pulsar el botón ![Escribir](./img/write-value-button.png){ .inline-icon } o simplemente pulsar ++ctrl+f7++.
-    - Para forzar una variable, seleccionar la opción del menú **PLC** > **Force values**, o pulsar el botón ![Forzar](./img/force-value-button.png){ .inline-icon } o simplemente pulsar ++f7++.
+        - Para escribir una variable, seleccionar la opción del menú **PLC** > **Write values**, o pulsar el botón ![Escribir](./img/write-value-button.png){ .inline-icon } o simplemente pulsar ++ctrl+f7++.
+        - Para forzar una variable, seleccionar la opción del menú **PLC** > **Force values**, o pulsar el botón ![Forzar](./img/force-value-button.png){ .inline-icon } o simplemente pulsar ++f7++.
 
-    !!! success "Resultado de la operación"
-        Las variables que están forzadas se muestran con una F sobre fondo rojo ![Forzadp](./img/forced-value-icon.png){ .inline-icon }.
+        !!! success "Resultado de la operación"
+            Las variables que están forzadas se muestran con una F sobre fondo rojo ![Forzadp](./img/forced-value-icon.png){ .inline-icon }.
 
-        ![Variables forzadas](./img/tc3-xae-forced-values.png){ .screenshot }
+            ![Variables forzadas](./img/tc3-xae-forced-values.png){ .screenshot }
 
-    - Para liberar una variable, seleccionar la opción del menú **PLC** > **Unforce values**, o pulsar el botón ![Liberar](./img/unforce-value-button.png){ .inline-icon } o simplemente pulsar ++ctrl+shift+f7++.
-    - Para modificar el valor de forzado de una única variable, hacer doble clic en la celda correspondiente a la variable en la columna **Prepared value** y seleccionar lo que corresponda en la ventana.
+        - Para liberar una variable, seleccionar la opción del menú **PLC** > **Unforce values**, o pulsar el botón ![Liberar](./img/unforce-value-button.png){ .inline-icon } o simplemente pulsar ++shift+f7++.
+        - Cuando hay forzadas varias variables se puede  modificar el valor de forzado de una única variable, haciendo doble clic en la celda correspondiente a la variable en la columna **Prepared value** y seleccionar lo que corresponda en la ventana.
 
-    ![Ventana para preparar el valor de una variable](./img/tc3-xae-prepare-value-window.png){ .screenshot }
+        ![Ventana para preparar el valor de una variable](./img/tc3-xae-prepare-value-window.png){ .screenshot }
 
 ---
 

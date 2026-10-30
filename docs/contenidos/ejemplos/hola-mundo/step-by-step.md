@@ -7,11 +7,11 @@ icon: fontawesome/solid/screwdriver-wrench
 
 ## :fontawesome-solid-circle-info: Introducción
 
-El proyecto [**«Hola Mundo»**](../hola-mundo/index.md) te permite dar tus primeros pasos en TwinCAT XAE, el entorno de ingeniería de Beckhoff para la configuración y el desarrollo de aplicaciones de automatización.
+El proyecto [**«Hola Mundo»**](../hola-mundo/index.md) nos permitirá dar nuestros primeros pasos en TwinCAT XAE, el entorno de ingeniería de Beckhoff para la configuración y el desarrollo de aplicaciones de automatización.
 
-Este ejemplo presenta el flujo de trabajo completo del desarrollo de un programa de PLC, desde la creación del proyecto hasta su puesta a punto sobre un ordenador embebido.
+En esta guía se presenta el flujo de trabajo completo del desarrollo de un programa de PLC, desde la creación del proyecto hasta su puesta a punto sobre un ordenador embebido.
 
-En esta guía se muestra cómo replicarlo paso a paso para implementar tu primer programa completo de PLC con TwinCAT 3 desde cero.
+A continuación se muestra cómo replicar este proyecto paso a paso para implementar tu primer programa completo de PLC con TwinCAT 3 desde cero.
 
 ---
 
@@ -22,7 +22,8 @@ A lo largo de este proceso aprenderás a:
 - Utilizar el entorno de ingeniería **TwinCAT XAE** de TwinCAT 3.
 - Declarar variables de **memoria interna** (marcas).
 - Declarar **variables de entrada y salida localizadas** con **mapeo dinámico**.
-- Implementar un sencillo fragmento de código en el lenguaje **Texto Estructurado (ST)** de la norma **IEC 61131-3**.
+- Editar un sencillo fragmento de código en el lenguaje **Texto Estructurado (ST)** de la norma **IEC 61131-3**.
+- Monitorizar y modificar (escribir/forzar) los valores de las variables en el modo de **Monitorización *online***.
 - Monitorizar y modificar los valores de variables booleanas desde una visualización.
 - Monitorizar y modificar los valores de variables numéricas desde una visualización.
 - Desplegar (poner en marcha) un proyecto PLC.

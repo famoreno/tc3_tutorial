@@ -19,8 +19,8 @@ El proyecto **Hola Mundo** se ha desarrollado con el entorno **TwinCAT 3** emple
 Este proyecto incluye además, una **visualización** elemental que permite, mediante objetos gráficos, interactuar con las variables del proyecto. Utilizando **formas rectangulares**, para mostrar el valor de variables booleanas y numéricas, y **botones** para modificar sus valores.
 
 !!! info "Aportación"
-    El valor fundamental de este ejemplo radica en que, con muy pocos elementos, ilustra el **flujo de trabajo completo** (*workflow*) requerido para crear, configurar y desplegar un proyecto en **TwinCAT 3**.
 
+    El valor fundamental de este ejemplo radica en que, con muy pocos elementos, ilustra el **flujo de trabajo completo** (*workflow*) requerido para crear, configurar y desplegar un proyecto en **TwinCAT 3**.
 ---
 
 ## :fontawesome-solid-folder-tree: Estructura Simplificada del Proyecto
@@ -52,12 +52,13 @@ VAR
 END_VAR
 ```
 
-!!! note "Comentarios"
-    - La interfaz del programa `MAIN` (cabecera y definición de variables) se define en la **Parte de Declaración**.
+??? note "Comentarios"
     - Los **comentarios** de una línea empiezan con `//`.
+    - La interfaz del programa `MAIN` (cabecera y definición de variables) se define en la **Parte de Declaración**.
+    - Las palabras reservadas `VAR` y `END_VAR` delimitan el bloque de declaración para las variables locales.
     - La variable `ContadorCiclos` se declara como un entero sin signo (`UINT`).
-    - La variable `i_Pulsador` se declara como un ***booleano*** (`BOOL`) y se localiza dinámicamente en la **Imagen de Entrada** (`AT %I*`).
-    - La variable `o_Lampara` se declara como un ***booleano*** (`BOOL`) y se localiza dinámicamente en la **Imagen de Salida** (`AT %Q*`).
+    - La variable `i_Pulsador` se declara como un *booleano* (`BOOL`) y se localiza dinámicamente en la **Imagen de Entrada** (`AT %I*`).
+    - La variable `o_Lampara` se declara como un *booleano* (`BOOL`) y se localiza dinámicamente en la **Imagen de Salida** (`AT %Q*`).
 
 ---
 
@@ -68,7 +69,7 @@ ContadorCiclos := ContadorCiclos + 1;
 o_Lampara := i_Pulsador;
 ```
 
-!!! note "Comentarios"
+??? note "Comentarios"
     - El código del módulo, en lenguaje {{ST}}, se incluye en la **Parte de Implementación**.
     - La variable `ContadorCiclos` se incrementa indefinidamente una vez por **Ciclo Básico** de ejecución del **PLC** (10 ms).
     - La variable de salida `o_Lampara` copia, continuamente, el valor de la variable de entrada `i_Pulsador`.
@@ -77,9 +78,9 @@ o_Lampara := i_Pulsador;
 
 ### Visualización
 
-![Visualización del proyecto Hola Mundo](./img/v-hola-mundo-offline.png){ .screenshot }
+![Visualización del proyecto Hola Mundo](./img/v-hola-mundo-online.png){ .screenshot }
 
-!!! note "Comentarios"
+??? note "Comentarios"
     - El valor de la variable `ContadorCiclos` se muestra en el rectángulo gris de la visualización.
     - El valor de la variable `ContadorCiclos` se puede cambiar escribiéndolo en el rectángulo blanco de la visualización.
     - La variable `ContadorCiclos` puede reiniciarse accionando el pulsador `Reinicia`.
@@ -102,7 +103,7 @@ El código fuente completo de este proyecto está disponible en GitHub:
 - :simple-github: **Repositorio:** [:material-link-variant: vetorres-uma/TC3_Hola_Mundo](https://github.com/vetorres-uma/TC3_Hola_Mundo)
 - :simple-github: **Descargar:** [:material-download: Archivo fuente `.zip`](https://github.com/vetorres-uma/TC3_Hola_Mundo/archive/refs/heads/main.zip)
 
-Los miembros de la **Universidad de Málaga**, también pueden descargarse el archivo comprimido de la solución (`.tnzip`) del proyecto desde el siguiente repositorio:
+Los miembros de la **Universidad de Málaga**, también pueden descargar el archivo comprimido de la solución del proyecto (`.tnzip`) desde el siguiente enlace:
 
 - :simple-googledrive: **Descargar:** [:material-download: Solución comprimida `.tnzip`](https://drive.google.com/file/d/1HiN3VGmpYH63-8s_RbQovNkcL4GJR9_5/view?usp=drive_link)
 

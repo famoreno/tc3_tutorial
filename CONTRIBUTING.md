@@ -198,3 +198,8 @@ Las casillas Markdown (`- [ ]` / `- [x]`) son interactivas. `docs/assets/javascr
 - Si se cambia el texto de una tarea, puede dejar de coincidir con la marca guardada anteriormente. Al reordenar tareas con el mismo texto, se distinguen por su orden de aparición.
 - Para validar el comportamiento, marcar una casilla, recargar la página y comprobar que conserva su estado.
 - Borrar los datos locales del sitio en el navegador elimina también el progreso guardado.
+
+
+
+<span class="fondo-rojo-lang">SFC</span>
+<span class="fondo-azul-lang">ST</span>

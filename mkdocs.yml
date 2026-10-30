@@ -22,10 +22,10 @@ nav:
       - Crear un Proyecto: contenidos/procedimientos/workflow/index.md
       - Editar un Ladder: contenidos/procedimientos/ladder/index.md
       - Editar un SFC: contenidos/procedimientos/sfc/index.md
-      - Crear un HMI:
+      - Crear una HMI:
         - contenidos/procedimientos/hmi/index.md
-        - TwinCAT 3 PLC-HMI: contenidos/procedimientos/hmi/tc3-plc-hmi.md
-        - TwinCAT 3 HMI: contenidos/procedimientos/hmi/tc3-hmi.md
+        - TwinCAT 3 PLC-HMI: contenidos/procedimientos/hmi/includes/tc3-plc-hmi.md
+        - TwinCAT 3 HMI: contenidos/procedimientos/hmi/includes/tc3-hmi.md
 
     - Ejemplos:
       - contenidos/ejemplos/index.md
