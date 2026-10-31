@@ -26,7 +26,7 @@ Empiecemos por <span class="objetivo-hito">utilizar el entorno de ingeniería Tw
 
         La buena práctica en programación industrial dicta que el `MAIN` debe actuar únicamente como punto de entrada y organizador del proyecto, mientras que la lógica de control debe residir en otras **Unidades de Organización del Programa** (`POUs`) —fundamentalmente **Bloques de Función** (`FB`)— que permiten modularizar, escalar y replicar fácilmente los comportamientos y las funcionalidades del sistema.
 
-6. <span class="objetivo-hito">Declara la variable local de memoria interna</span> `ContadorCiclos` como un entero sin signo (`UINT`) en el bloque `VAR` de la parte de declaración del programa `MAIN`. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#declarar-una-variable)
+6. <span class="objetivo-hito">Declara la variable local de memoria interna</span> `ContadorCiclos` como un entero sin signo (`UINT`) en el bloque `VAR` de la parte de declaración del programa `MAIN`. [:material-arrow-right-bold-box:](../../fundamentos/lenguajes/index.md#declarar-una-variable)
 
     ```iecst {hl_lines="4"}
     // Hola Mundo de la Programación de PLC
@@ -64,14 +64,15 @@ Empiecemos por <span class="objetivo-hito">utilizar el entorno de ingeniería Tw
     !!! success "Resultado de la operación"
         ![MAIN V1](../img/hola-mundo-main-v1-online.png){ .screenshot }
 
-16. Observa cómo el valor de la variable `ContadorCiclos` se incrementa continuamente al ritmo de ejecución del ciclo básico del PLC (típicamente 10 ms), lo que prueba que el programa se está ejecutando localmente en el *runtime* del simulador `UmRT_Default` en tu ordenador.
-17. Modifica el valor del contador de ciclos mediante forzado de variables (**Force values**, **Unforce values**, **Write values**). [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#forzar-variables)
-18. Desconéctate del sistema destino (**Logout**) para continuar con la edición del programa. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#desconectar)
+        Observa cómo el valor de la variable `ContadorCiclos` se incrementa continuamente al ritmo de ejecución del ciclo básico del PLC (típicamente 10 ms), lo que prueba que el programa se está ejecutando localmente en el *runtime* del simulador `UmRT_Default` en tu ordenador.
+
+16. Modifica el valor del contador de ciclos mediante forzado de variables (**Force values**, **Unforce values**, **Write values**). [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#forzar-variables)
+17. Desconéctate del sistema destino (**Logout**) para continuar con la edición del programa. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#desconectar)
 
     ??? info "Logout"
         Cuando te desconectas de un sistema destino abandonas la monitorización, pero el programa sigue ejecutándose en su *runtime*. Como prueba, observarás que, cuando vuelvas a conectarte, el contador de ciclos tendrá un valor diferente.
 
-19. Para <span class="objetivo-hito">monitorizar y modificar el valor del dato numérico</span> del contador de ciclos, crea una sencilla visualización (`V_Hola_Mundo`). [:material-arrow-right-bold-box:](../../procedimientos/hmi/includes/tc3-plc-hmi.md)
+18. Para <span class="objetivo-hito">monitorizar y modificar el valor del dato numérico</span> del contador de ciclos más fácilmente, crea una sencilla visualización (`V_Hola_Mundo`). [:material-arrow-right-bold-box:](../../procedimientos/hmi/includes/tc3-plc-hmi.md)
 
     !!! success "Resultado de la operación"
         - Tras crear la visualización podremos observar como en el Explorador de la Solución se han incluido la visualización en el nodo en `VISUs` y las librerías para la gestión de la visualizaicón en el nodo `References`...
@@ -82,7 +83,7 @@ Empiecemos por <span class="objetivo-hito">utilizar el entorno de ingeniería Tw
 
         ![Librerias Visu](../img/hola-mundo-visu-blank-canvas.png){ .screenshot }
 
-20. Agregar los objetos gráficos necesarios. [:material-arrow-right-bold-box:](../../procedimientos/hmi/includes/tc3-plc-hmi.md#agregar-un-objeto)
+19. Agregar los objetos gráficos necesarios. [:material-arrow-right-bold-box:](../../procedimientos/hmi/includes/tc3-plc-hmi.md#agregar-un-objeto)
 
     1. Un rectángulo (*Rectangle*) para la **etiqueta** «Contador». [:material-arrow-right-bold-box:](../../procedimientos/hmi/includes/tc3-plc-hmi.md#rentangulos)
 
@@ -92,7 +93,7 @@ Empiecemos por <span class="objetivo-hito">utilizar el entorno de ingeniería Tw
             - **Colors** > **Normal state** > **Fill color** ➔ [0, 0, 0]
             - **Texts** > **Text** ➔ [Contador]
             - **Text properties** > **Font** ➔ [Arial, Negrita, 12]
-            - **Text properties** > **Font Color** ➔ Blanco = [255, 255, 255]
+            - **Text properties** > **Font Color** ➔ [255, 255, 255]
 
     2. Un rectángulo (*Rectangle*) para **mostrar el valor** de la variable `ContadorCiclos`.
 
@@ -102,36 +103,39 @@ Empiecemos por <span class="objetivo-hito">utilizar el entorno de ingeniería Tw
             - **Colors** > **Normal state** > **Fill color** ➔ [192, 192, 192]
             - **Texts** > **Text** ➔ [%d]
                 - *Formato estilo printf que, en este caso, indica que el dato a mostrar se formateará como un número entero (`%d`).*
+            - **Text properties** > **Font** ➔ [Consolas, 12]
+            - **Text properties** > **Font Color** ➔ [0, 0, 0]
             - **Text variables** > **Text variable** ➔ [`MAIN.ContadorCiclos`]
 
-    3. Un rectángulo (*Rectangle*) para **modificar el valor** de la variable `ContadorCiclos`.
+    3. Un campo de texto  (*Text field*) para **modificar el valor** de la variable `ContadorCiclos`.
 
         ??? note "Parámetros"
             - **Position** ➔ [230, 80, 90, 30, 0]
             - **Colors** > **Normal state** > **Frame color** ➔ [0, 0, 0]
             - **Colors** > **Normal state** > **Fill color** ➔ [255, 255, 255]
             - **Texts** > **Text** ➔ [%d]
+            - **Text properties** > **Font** ➔ [Consolas, 12]
+            - **Text properties** > **Font Color** ➔ [0, 0, 0]
             - **Text variables** > **Text variable** ➔ [`MAIN.ContadorCiclos`]
-            - **Inputconfiguration** > **OnMouseClick**
+            - **Inputconfiguration** > **OnMouseClick** ➔ *Write a Variable*
 
     4. Un botón (*Button*) para **reiniciar el valor** de la variable `ContadorCiclos`.
 
         ??? note "Parámetros"
             - **Position** ➔ [330, 80, 90, 30]
             - **Texts** > **Text** ➔ [**Reinicia**]
+            - **Text properties** > **Font** ➔ [Arial, 12]
             - **Inputconfiguration**
                 - **OnMouseClick** > **Configure** > **Execute ST-Code** ➔ [`MAIN.ContadorCiclos := 0;`]
 
     !!! success "Resultado de la operación"
-
-        ![Visualización Hola Mundo con el contador de ciclos](./img/v-hola-mundo-contador.png){ .screenshot }
-
+        ![Visualización Hola Mundo con el contador de ciclos](../img/hola-mundo-visu-contador.png){ .screenshot }
 
     ??? tip "Sugerencia"
         Las posiciones, tamaños y colores asignados a estos elementos son meramente ilustrativos.
 
-21. Vuelve a conectarte (**Login**) y comprueba que todos los elementos de la visualización funcionan correctamente.
-22. Vuelve a desconectarte (**Logout**) e incluye en la parte de declaración del programa `MAIN` las variables `i_Pulsador` y `o_Lampara`.
+20. Vuelve a conectarte (**Login**) al sistema destino y comprueba que todos los elementos de la visualización funcionan correctamente.
+21. Vuelve a desconectarte (**Logout**) e incluye en la parte de declaración del programa `MAIN` las variables `i_Pulsador` y `o_Lampara`.
 
     ```iecst {hl_lines="6-7"}
     // Hola Mundo de la Programación de PLC
@@ -144,38 +148,50 @@ Empiecemos por <span class="objetivo-hito">utilizar el entorno de ingeniería Tw
     END_VAR
     ```
 
-23. Incluye el código correspondiente a la activación de la lámpara en la parte de implementación del programa `MAIN`.
+    ??? warning "Notación Húngara vs Etiquetado Taxonómico"
+        La notación húngara (Charles Simonyi, 1976) es antiguo un sistema de nomenclatura que utiliza sistemáticamente prefijos en los nombres de las variables para indicar su tipo o su propósito.
+        Esta notación históricamente ha generado una fuerte controversia y debate en la comunidad, existiendo actualmente una postura mayoritaria y muy clara de rechazo principalmente por ser innecesaria y por reducir la legibilidad del código.
+
+        Sin embargo, en este tutorial se utilizará un **Etiquetado Taxonómico** con prefijos para indicar únicamente ciertas condiciones de determinados elementos de programación como: la ubicación de la variable (entrada/salida), los tipos de datos (DUT) y los tipos de módulos (POU).
+
+22. Incluye el código correspondiente a la activación de la lámpara en la parte de implementación del programa `MAIN`.
 
     ```iecst {hl_lines="2"}
     ContadorCiclos := ContadorCiclos + 1;
     o_Lampara := i_Pulsador;
     ```
 
-24. Incluye en la **visualización** los elementos correspondientes para <span class="objetivo-hito">monitorizar y modificar los valores de las variables booleanas</span> correspondientes al pulsador y a la lámpara.
+23. Para <span class="objetivo-hito">monitorizar y modificar los valores de las variables booleanas</span>, incluye en la **visualización** los elementos correspondientes  correspondientes al pulsador y a la lámpara.
 
-    ![Visualización Hola Mundo con el pulsador y la lámpara](./img/v-hola-mundo.png){ .screenshot }
-
-    1. Botón (*Button*) para modificar el valor de `i_Pulsador`.
+    1. Un botón (*Button*) para modificar el valor de `i_Pulsador`.
 
         ??? note "Parámetros"
+            - **Position** ➔ [130, 140, 90, 30]
             - **Texts** > **Text** ➔ [**Pulsador**]
+            - **Text properties** > **Font** ➔ [Arial, 12]
             - **Inputconfiguration**
                 - **Tap** > **Variable** ➔ [`MAIN.i_Pulsador`]
 
-    2. Rectángulo (*Rectangle*) para mostrar el valor de la variable `o_Lampara`.
+    2. Un rectángulo (*Rectangle*) para mostrar el valor de la variable `o_Lampara`.
 
         ??? note "Parámetros"
+            - **Position** ➔ [230, 140, 90, 30]
             - **Colors** > **Normal state** > **Frame color** ➔ [0, 64, 0]
             - **Colors** > **Normal state** > **Fill color** ➔ [0, 64, 0]
             - **Colors** > **Alarm state** > **Frame color** ➔ [0, 128, 0]
             - **Colors** > **Alarm state** > **Fill color** ➔ [0, 128, 0]
             - **Texts** > **Text** ➔ [**Lámpara**]
+            - **Text properties** > **Font** ➔ [Arial, Negrita, 12]
+            - **Text properties** > **Font Color** ➔ [255, 255, 255]
             - **Color variables** > **Toggle color** ➔ [`MAIN.o_Lampara`]
 
-    !!! tip "Sugerencia"
-        Completa la visualización con los elementos que consideres oportunos para mejorar su apariencia.
+    !!! success "Resultado de la operación"
+        ![Visualización Hola Mundo con el pulsador y la lámpara](./img/hola-mundo-visu-offline.png){ .screenshot }
 
-25. Conéctate nuevamente (**Login**) para <span class="objetivo-hito">validar el proyecto</span> desde la visualización.
+    ??? tip "Sugerencia"
+        Completa la visualización con los elementos que consideres oportunos para mejorar su apariencia. En el ejemplo, se han utilizado rectángulos de diferentes colores para poner el título (HOLA MUNDO) y crear paneles para agrupar los elementos.
+
+24. Conéctate nuevamente (**Login**) para <span class="objetivo-hito">validar el proyecto</span> desde la visualización.
 
     ??? warning "Compilación Implícita"
         Si, tras modificar el programa de PLC, intentas conectarte (**Login**) al *runtime* sin compilar previamente, TwinCAT compilará por ti.

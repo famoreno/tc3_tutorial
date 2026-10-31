@@ -9,18 +9,18 @@ icon: fontawesome/solid/hand
 
 Este proyecto es el **«Hola Mundo»** de la programación de **autómatas programables (PLC)**.
 
-El proyecto **Hola Mundo** se ha desarrollado con el entorno **TwinCAT 3** empleando el lenguaje **Texto Estructurado (ST)** conforme a la norma **IEC 61131-3**.
+El proyecto se ha desarrollado con el entorno **TwinCAT 3** empleando el lenguaje **Texto Estructurado (ST)** conforme a la norma internacional **IEC 61131-3**.
 
-**Hola Mundo** es un proyecto mínimo y funcional, que muestra la declaración y el uso básico de variables booleanas y enteras, ubicadas en los espacios de memoria de marcas, imagen de entrada e imagen de salida, y cubre los elementos esenciales del lenguaje {{ST}} de la norma **IEC 61131-3** para la programación de PLC.
+Hola Mundo es un proyecto mínimo y funcional, que muestra la declaración y el uso básico de variables booleanas y enteras, ubicadas en los espacios de memoria de marcas, imagen de entrada e imagen de salida, y cubre los elementos esenciales del lenguaje {{ST}} de la norma **IEC 61131-3** para la programación de PLC.
 
-![Visualización del proyecto Hola Mundo](./img/v-hola-mundo.png){ .screenshot }
+![Hola Mundo Visualización](./img/hola-mundo-visu.png){ .screenshot }
 <figcaption>Figura 1: Visualización del proyecto Hola Mundo.</figcaption>
 
-Este proyecto incluye además, una **visualización** elemental que permite, mediante objetos gráficos, interactuar con las variables del proyecto. Utilizando **formas rectangulares**, para mostrar el valor de variables booleanas y numéricas, y **botones** para modificar sus valores.
+Este proyecto incluye además, una **visualización** elemental que permite, mediante objetos gráficos, interactuar con las variables del proyecto. Utilizando ciertos objetos gráficos (rectángulos, botones y campos de texto) para mostrar y modificar el valor de variables booleanas y numéricas.
 
 !!! info "Aportación"
 
-    El valor fundamental de este ejemplo radica en que, con muy pocos elementos, ilustra el **flujo de trabajo completo** (*workflow*) requerido para crear, configurar y desplegar un proyecto en **TwinCAT 3**.
+    El valor fundamental de este ejemplo radica en que, a pesar de sus pocos elementos, para su creación, configuración y despliegue es necesario hacer uso del flujo de trabajo (workflow) completo de TwinCAT 3.
 ---
 
 ## :fontawesome-solid-folder-tree: Estructura Simplificada del Proyecto
@@ -70,7 +70,6 @@ o_Lampara := i_Pulsador;
 ```
 
 ??? note "Comentarios"
-    - El código del módulo, en lenguaje {{ST}}, se incluye en la **Parte de Implementación**.
     - La variable `ContadorCiclos` se incrementa indefinidamente una vez por **Ciclo Básico** de ejecución del **PLC** (10 ms).
     - La variable de salida `o_Lampara` copia, continuamente, el valor de la variable de entrada `i_Pulsador`.
 
@@ -78,13 +77,13 @@ o_Lampara := i_Pulsador;
 
 ### Visualización
 
-![Visualización del proyecto Hola Mundo](./img/v-hola-mundo-online.png){ .screenshot }
+![Visualización del proyecto Hola Mundo](./img/hola-mundo-visu.png){ .screenshot }
 
 ??? note "Comentarios"
-    - El valor de la variable `ContadorCiclos` se muestra en el rectángulo gris de la visualización.
-    - El valor de la variable `ContadorCiclos` se puede cambiar escribiéndolo en el rectángulo blanco de la visualización.
+    - El valor de la variable `ContadorCiclos` se muestra en rectángulo gris.
+    - El valor de la variable `ContadorCiclos` se se puede cambiar escribiéndolo en el cuadro de texto blanco.
     - La variable `ContadorCiclos` puede reiniciarse accionando el pulsador `Reinicia`.
-    - El valor de la variable `o_Lampara` se muestra con el cambio de color del rectángulo `Lampara` (verde claro ➔ `FALSE`, verde oscuro ➔ `TRUE`).
+    - El valor de la variable `o_Lampara` se muestra con el cambio de color del rectángulo `Lampara` (verde claro = `FALSE`, verde oscuro = `TRUE`).
     - El valor de la variable `i_Pulsador` cambia cuando se acciona el botón `Pulsador`.
 
 ---

@@ -57,8 +57,8 @@ theme:
   name: material
   language: es
   custom_dir: overrides
-  logo: assets/img/auto-isa-team-logo.svg
-  favicon: assets/img/auto-isa-team-icon-alt.svg
+  logo: assets/img/autoisateam-logo.svg
+  favicon: assets/img/autoisateam-icon-alt.svg
 
   palette:
     - scheme: default
@@ -99,6 +99,10 @@ plugins:
   - macros:
       include_dir: docs
 
+hooks:
+  # En snippets de inclusión (--8<--), convierte rutas relativas a rutas desde la raíz del proyecto.
+  - hooks/snippets-relative.py
+
 markdown_extensions:
   - admonition
   - attr_list
@@ -108,7 +112,6 @@ markdown_extensions:
   - abbr
   - pymdownx.snippets:
       check_paths: true
-      # base_path: !relative $docs_dir
       base_path: ["."]
       auto_append:
         - snippets/abreviaturas.md

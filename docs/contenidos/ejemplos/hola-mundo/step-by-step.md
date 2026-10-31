@@ -11,7 +11,7 @@ El proyecto [**«Hola Mundo»**](../hola-mundo/index.md) nos permitirá dar nues
 
 En esta guía se presenta el flujo de trabajo completo del desarrollo de un programa de PLC, desde la creación del proyecto hasta su puesta a punto sobre un ordenador embebido.
 
-A continuación se muestra cómo replicar este proyecto paso a paso para implementar tu primer programa completo de PLC con TwinCAT 3 desde cero.
+A continuación se muestra cómo replicar este proyecto paso a paso para implementar nuestro primer programa completo de PLC con TwinCAT 3 desde cero.
 
 ---
 
@@ -42,14 +42,14 @@ A lo largo de este proceso aprenderás a:
 !!! tip "Sugerencia"
     Pulsa en :material-arrow-right-bold-box: para obtener más información sobre cómo realizar el paso especificado.
 
---8<-- "docs/contenidos/ejemplos/hola-mundo/includes/sobre-simulador.md"
+--8<-- "./includes/sobre-simulador.md"
 
 ---
 
---8<-- "docs/contenidos/ejemplos/hola-mundo/includes/sobre-controlador.md"
+--8<-- "./includes/sobre-controlador.md"
 
 ---
 
---8<-- "docs/contenidos/ejemplos/hola-mundo/includes/con-ardutc.md"
+--8<-- "./includes/con-ardutc.md"
 
 ---

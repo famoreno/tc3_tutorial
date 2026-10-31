@@ -15,6 +15,8 @@ En la ventana emergente escribir un nombre para la visualización y pulsar **Ope
 parámetros VisuSymbols (System)
 
 aparacerá un lienzo sobre el que colocar los diferentes objetos gráficos...
+
+propiedades, marcar la casilla advanced
 -->
 
 ### Agregar un objeto

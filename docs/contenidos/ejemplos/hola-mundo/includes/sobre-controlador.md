@@ -5,14 +5,14 @@ Si dispones de un controlador de Beckhoff (ordenador embebido), puedes probar el
 ??? warning "Material Necesario"
     Para probar el programa con un pulsador y una lámpara real es necesario:
 
-    - Disponer de un controlador Beckhoff.
+    - Disponer de un controlador Beckhoff en condiciones de funcionamiento.
     - Disponer de un pulsador conectado a un canal de entrada.
     - Disponer de una lámpara conectada a un canal de salida.
-    - Modificar y construir nuevamente el programa.
+    - Modificar y reconstruir nuevamente el programa.
     - Configurar la E/S: escanear, identificar y vincular canales de E/S.
 
 1. Desconéctate (**Logout**), si estabas conectado, del sistema destino actual.
-2. Incluye en la parte de declaración del programa `MAIN` las variables `i_Pulsador` y `o_Lampara` como <span class="objetivo-hito">variables de entrada/salida localizadas con mapeo dinámico</span>.
+2. Utiliza <span class="objetivo-hito">variables de entrada/salida localizadas con mapeo dinámico</span> para situar las variables `i_Pulsador` y `o_Lampara` en la imagen de entrada y salida, modificando su declaración tal y como se muestra a continuación. [:material-arrow-right-bold-box:](../../fundamentos/lenguajes/index.md#variables-localizadas-y-mapeo-dinamico)
 
     ```iecst {hl_lines="6-7"}
     // Hola Mundo de la Programación de PLC
@@ -25,18 +25,13 @@ Si dispones de un controlador de Beckhoff (ordenador embebido), puedes probar el
     END_VAR
     ```
 
-    ??? note "Variables localizadas"
-        - Las **variables localizadas**, son aquellas a las que se le asigna explícitamente una dirección de memoria.
-        - Situar las instancias de estas variables en las correspondientes imágenes de E/S (*Process Image*) mediante el uso del modificador `AT`, las convierte en **variables de entrada y salida**.
-        - Si no se hiciera, el compilador situaría estas variables en el **espacio de memoria interna** (marcas) y no se generarían las correspondientes instancias de E/S, por lo que no podrían vincularse (*mapping*) a canales físicos de E/S del controlador.
-        - El símbolo `%` es el prefijo de ubicación directa.
-        - Las letras `I` y `Q` indican el área de memoria (entrada/salida).
-        - El símbolo `*` es un comodín que indica que estas variables tienen un **mapeo dinámico**, lo que implica que será el compilador el encargado de asignarle una dirección (`palabra.bit`) concreta.
+3. Genera las instancias de las variables de entrada y salida, construyendo (**Build**) nuevamente el proyecto.
 
-3. Construye (**Build**) y verifica la ausencia de errores.
+    !!! success "Resultado de la operación"
+        ![MAIN V1](../img/hola-mundo-plc-instance.png){ .screenshot }
 
     ??? note "Instancias de E/S"
-        Observa que si la compilación es correcta aparecen bajo el apartado `Hola_Mundo_PLC Instance` las instancias de las dos nuevas variables `i_Pulsador` y `o_Lampara`.
+        Si la compilación es correcta aparecen bajo el apartado `Hola_Mundo_PLC Instance` las instancias de las dos nuevas variables `i_Pulsador` y `o_Lampara`.
 
         ```text
             Hola_Mundo_PLC Instance/
@@ -56,19 +51,19 @@ Si dispones de un controlador de Beckhoff (ordenador embebido), puedes probar el
 
 7. Localiza, identifica, nombra y prueba un canal de entrada digital para `i_Pulsador`. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#identificar-entradas)
 8. Localiza, identifica, nombra y prueba un canal de salida digital para `o_Lampara`. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#identificar-salidas)
-9. <span class="objetivo-hito">Vincula las variables de entrada/salida</span> (**Link**) `i_Pulsador` y `o_Lampara` con los canales recién identificados. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#vincular-variables)
+9.  <span class="objetivo-hito">Vincula las variables de entrada/salida</span> (**Link**) `i_Pulsador` y `o_Lampara` con los canales recién identificados. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#vincular-variables)
 10. Activa la configuración (**Activate Configuration**) y reinicia TwinCAT (**Restart TwinCAT System**) en el nuevo sistema destino. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#activar-la-configuracion)
-11. Conéctate para transferir el programa al controlador (**Login**). [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#transferir-el-proyecto)
-12. Pon el programa en ejecución (**Start**). [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#arrancar-el-proyecto)
-13. Comprueba que:
+11. Transfiere el programa al controlador (**Login**). [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#transferir-el-proyecto)
+12. Inicia la ejecución del programa (**Start**). [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#arrancar-el-proyecto)
+13. Comprueba.
     - El contador de ciclos sigue incrementándose de forma continua.
     - Al accionar el pulsador físico se enciende la lámpara física.
-14. Utiliza la visualización integrada en el proyecto PLC para facilitar la prueba:
+14. Utiliza la visualización integrada en el proyecto PLC para facilitar la prueba.
     - Comprueba que, accionando el pulsador físico, cambia de estado la lámpara en la visualización.
     - Comprueba que, accionando el botón de la visualización, **NO cambia de estado la lámpara**.
 
     ??? note "Aclaración"
-        Que ahora el botón de la visualización «NO FUNCIONE» no es un mal funcionamiento, es la consecuencia lógica de la ejecución del ciclo de *scan* que provoca que, el valor de la variable `i_Pulsador` **se actualice con el valor del pulsador físico** al inicio de cada ciclo de ejecución del programa de PLC, sobreescribiendo el valor que fija el botón de la visualización.
+        Que ahora el botón de la visualización **«NO FUNCIONE»** no es un mal funcionamiento, es la consecuencia lógica de la ejecución del ciclo de *scan* que provoca que, el valor de la variable `i_Pulsador` **se actualice con el valor del pulsador físico** al inicio de cada ciclo de ejecución del programa de PLC, sobreescribiendo el valor que fija el botón de la visualización.
 
 !!! success ":fontawesome-solid-trophy: ¡Enhorabuena!"
     Has completado con éxito la segunda parte de esta guía.
