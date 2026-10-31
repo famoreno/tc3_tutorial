@@ -20,7 +20,7 @@
         
       
       
-      <link rel="icon" href="../../../../assets/img/auto-isa-team-icon-alt.svg">
+      <link rel="icon" href="../../../../assets/img/autoisateam-icon-alt.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
@@ -100,7 +100,7 @@
   <nav class="md-header__inner md-grid" aria-label="Cabecera">
     <a href="../../../.." title="Tutorial de TwinCAT 3" class="md-header__button md-logo" aria-label="Tutorial de TwinCAT 3" data-md-component="logo">
       
-  <img src="../../../../assets/img/auto-isa-team-logo.svg" alt="logo">
+  <img src="../../../../assets/img/autoisateam-logo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -225,7 +225,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../../../.." title="Tutorial de TwinCAT 3" class="md-nav__button md-logo" aria-label="Tutorial de TwinCAT 3" data-md-component="logo">
       
-  <img src="../../../../assets/img/auto-isa-team-logo.svg" alt="logo">
+  <img src="../../../../assets/img/autoisateam-logo.svg" alt="logo">
 
     </a>
     Tutorial de TwinCAT 3
@@ -1848,7 +1848,7 @@
 <h2 id="introduccion"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512m-32-352a32 32 0 1 1 64 0 32 32 0 1 1-64 0m-8 64h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24"/></svg></span> Introducción<a class="headerlink" href="#introduccion" title="Permanent link">&para;</a></h2>
 <p>El proyecto <a href="../"><strong>«Hola Mundo»</strong></a> nos permitirá dar nuestros primeros pasos en <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> <abbr title="eXtended Automation Engineering, entorno de ingeniería de TwinCAT.">XAE</abbr>, el entorno de ingeniería de Beckhoff para la configuración y el desarrollo de aplicaciones de automatización.</p>
 <p>En esta guía se presenta el flujo de trabajo completo del desarrollo de un programa de <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr>, desde la creación del proyecto hasta su puesta a punto sobre un ordenador embebido.</p>
-<p>A continuación se muestra cómo replicar este proyecto paso a paso para implementar tu primer programa completo de <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr> con <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> 3 desde cero.</p>
+<p>A continuación se muestra cómo replicar este proyecto paso a paso para implementar nuestro primer programa completo de <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr> con <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> 3 desde cero.</p>
 <hr />
 <h2 id="objetivos"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M448 256a192 192 0 1 0-384 0 192 192 0 1 0 384 0M0 256a256 256 0 1 1 512 0 256 256 0 1 1-512 0m256 80a80 80 0 1 0 0-160 80 80 0 1 0 0 160m0-224a144 144 0 1 1 0 288 144 144 0 1 1 0-288m-32 144a32 32 0 1 1 64 0 32 32 0 1 1-64 0"/></svg></span> Objetivos<a class="headerlink" href="#objetivos" title="Permanent link">&para;</a></h2>
 <p>A lo largo de este proceso aprenderás a:</p>
@@ -1908,7 +1908,7 @@ END_VAR
 </details>
 </li>
 <li>
-<p><span class="objetivo-hito">Declara la variable local de memoria interna</span> <code>ContadorCiclos</code> como un entero sin signo (<code>UINT</code>) en el bloque <code>VAR</code> de la parte de declaración del programa <code>MAIN</code>. <a href="../../../procedimientos/workflow/#declarar-una-variable"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></p>
+<p><span class="objetivo-hito">Declara la variable local de memoria interna</span> <code>ContadorCiclos</code> como un entero sin signo (<code>UINT</code>) en el bloque <code>VAR</code> de la parte de declaración del programa <code>MAIN</code>. <a href="../../../fundamentos/lenguajes/#declarar-una-variable"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></p>
 <div class="highlight"><pre><span></span><code>// Hola Mundo de la Programación de PLC
 PROGRAM MAIN
 VAR
@@ -1951,12 +1951,12 @@ VAR
 <div class="admonition success">
 <p class="admonition-title">Resultado de la operación</p>
 <p><img alt="MAIN V1" class="screenshot" src="../img/hola-mundo-main-v1-online.png" /></p>
+<p>Observa cómo el valor de la variable <code>ContadorCiclos</code> se incrementa continuamente al ritmo de ejecución del ciclo básico del <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr> (típicamente 10 ms), lo que prueba que el programa se está ejecutando localmente en el <em>runtime</em> del simulador <code>UmRT_Default</code> en tu ordenador.</p>
 </div>
 </li>
 <li>
-<p>Observa cómo el valor de la variable <code>ContadorCiclos</code> se incrementa continuamente al ritmo de ejecución del ciclo básico del <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr> (típicamente 10 ms), lo que prueba que el programa se está ejecutando localmente en el <em>runtime</em> del simulador <code>UmRT_Default</code> en tu ordenador.</p>
+<p>Modifica el valor del contador de ciclos mediante forzado de variables (<strong>Force values</strong>, <strong>Unforce values</strong>, <strong>Write values</strong>). <a href="../../../procedimientos/workflow/#forzar-variables"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></p>
 </li>
-<li>Modifica el valor del contador de ciclos mediante forzado de variables (<strong>Force values</strong>, <strong>Unforce values</strong>, <strong>Write values</strong>). <a href="../../../procedimientos/workflow/#forzar-variables"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></li>
 <li>
 <p>Desconéctate del sistema destino (<strong>Logout</strong>) para continuar con la edición del programa. <a href="../../../procedimientos/workflow/#desconectar"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></p>
 <details class="info">
@@ -1965,7 +1965,7 @@ VAR
 </details>
 </li>
 <li>
-<p>Para <span class="objetivo-hito">monitorizar y modificar el valor del dato numérico</span> del contador de ciclos, crea una sencilla visualización (<code>V_Hola_Mundo</code>). <a href="../../../procedimientos/hmi/includes/tc3-plc-hmi/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></p>
+<p>Para <span class="objetivo-hito">monitorizar y modificar el valor del dato numérico</span> del contador de ciclos más fácilmente, crea una sencilla visualización (<code>V_Hola_Mundo</code>). <a href="../../../procedimientos/hmi/includes/tc3-plc-hmi/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></p>
 <div class="admonition success">
 <p class="admonition-title">Resultado de la operación</p>
 <ul>
@@ -1991,7 +1991,7 @@ VAR
 <li><strong>Colors</strong> &gt; <strong>Normal state</strong> &gt; <strong>Fill color</strong> ➔ [0, 0, 0]</li>
 <li><strong>Texts</strong> &gt; <strong>Text</strong> ➔ [Contador]</li>
 <li><strong>Text properties</strong> &gt; <strong>Font</strong> ➔ [Arial, Negrita, 12]</li>
-<li><strong>Text properties</strong> &gt; <strong>Font Color</strong> ➔ Blanco = [255, 255, 255]</li>
+<li><strong>Text properties</strong> &gt; <strong>Font Color</strong> ➔ [255, 255, 255]</li>
 </ul>
 </details>
 </li>
@@ -2007,12 +2007,14 @@ VAR
 <li><em>Formato estilo printf que, en este caso, indica que el dato a mostrar se formateará como un número entero (<code>%d</code>).</em></li>
 </ul>
 </li>
+<li><strong>Text properties</strong> &gt; <strong>Font</strong> ➔ [Consolas, 12]</li>
+<li><strong>Text properties</strong> &gt; <strong>Font Color</strong> ➔ [0, 0, 0]</li>
 <li><strong>Text variables</strong> &gt; <strong>Text variable</strong> ➔ [<code>MAIN.ContadorCiclos</code>]</li>
 </ul>
 </details>
 </li>
 <li>
-<p>Un rectángulo (<em>Rectangle</em>) para <strong>modificar el valor</strong> de la variable <code>ContadorCiclos</code>.</p>
+<p>Un campo de texto  (<em>Text field</em>) para <strong>modificar el valor</strong> de la variable <code>ContadorCiclos</code>.</p>
 <details class="note">
 <summary>Parámetros</summary>
 <ul>
@@ -2020,8 +2022,10 @@ VAR
 <li><strong>Colors</strong> &gt; <strong>Normal state</strong> &gt; <strong>Frame color</strong> ➔ [0, 0, 0]</li>
 <li><strong>Colors</strong> &gt; <strong>Normal state</strong> &gt; <strong>Fill color</strong> ➔ [255, 255, 255]</li>
 <li><strong>Texts</strong> &gt; <strong>Text</strong> ➔ [%d]</li>
+<li><strong>Text properties</strong> &gt; <strong>Font</strong> ➔ [Consolas, 12]</li>
+<li><strong>Text properties</strong> &gt; <strong>Font Color</strong> ➔ [0, 0, 0]</li>
 <li><strong>Text variables</strong> &gt; <strong>Text variable</strong> ➔ [<code>MAIN.ContadorCiclos</code>]</li>
-<li><strong>Inputconfiguration</strong> &gt; <strong>OnMouseClick</strong></li>
+<li><strong>Inputconfiguration</strong> &gt; <strong>OnMouseClick</strong> ➔ <em>Write a Variable</em></li>
 </ul>
 </details>
 </li>
@@ -2032,6 +2036,7 @@ VAR
 <ul>
 <li><strong>Position</strong> ➔ [330, 80, 90, 30]</li>
 <li><strong>Texts</strong> &gt; <strong>Text</strong> ➔ [<strong>Reinicia</strong>]</li>
+<li><strong>Text properties</strong> &gt; <strong>Font</strong> ➔ [Arial, 12]</li>
 <li><strong>Inputconfiguration</strong><ul>
 <li><strong>OnMouseClick</strong> &gt; <strong>Configure</strong> &gt; <strong>Execute <abbr title="Texto estructurado (Structured Text), lenguaje de la norma IEC 61131-3.">ST</abbr>-Code</strong> ➔ [<code>MAIN.ContadorCiclos := 0;</code>]</li>
 </ul>
@@ -2042,7 +2047,7 @@ VAR
 </ol>
 <div class="admonition success">
 <p class="admonition-title">Resultado de la operación</p>
-<p><img alt="Visualización Hola Mundo con el contador de ciclos" class="screenshot" src="../img/v-hola-mundo-contador.png" /></p>
+<p><img alt="Visualización Hola Mundo con el contador de ciclos" class="screenshot" src="../img/hola-mundo-visu-contador.png" /></p>
 </div>
 <details class="tip">
 <summary>Sugerencia</summary>
@@ -2050,7 +2055,7 @@ VAR
 </details>
 </li>
 <li>
-<p>Vuelve a conectarte (<strong>Login</strong>) y comprueba que todos los elementos de la visualización funcionan correctamente.</p>
+<p>Vuelve a conectarte (<strong>Login</strong>) al sistema destino y comprueba que todos los elementos de la visualización funcionan correctamente.</p>
 </li>
 <li>
 <p>Vuelve a desconectarte (<strong>Logout</strong>) e incluye en la parte de declaración del programa <code>MAIN</code> las variables <code>i_Pulsador</code> y <code>o_Lampara</code>.</p>
@@ -2063,6 +2068,12 @@ VAR
 </span><span class="hll">    o_Lampara: BOOL;
 </span>END_VAR
 </code></pre></div>
+<details class="warning">
+<summary>Notación Húngara vs Etiquetado Taxonómico</summary>
+<p>La notación húngara (Charles Simonyi, 1976) es antiguo un sistema de nomenclatura que utiliza sistemáticamente prefijos en los nombres de las variables para indicar su tipo o su propósito.
+Esta notación históricamente ha generado una fuerte controversia y debate en la comunidad, existiendo actualmente una postura mayoritaria y muy clara de rechazo principalmente por ser innecesaria y por reducir la legibilidad del código.</p>
+<p>Sin embargo, en este tutorial se utilizará un <strong>Etiquetado Taxonómico</strong> con prefijos para indicar únicamente ciertas condiciones de determinados elementos de programación como: la ubicación de la variable (entrada/salida), los tipos de datos (DUT) y los tipos de módulos (<abbr title="Unidad de Organización de Programa (Program Organization Unit).">POU</abbr>).</p>
+</details>
 </li>
 <li>
 <p>Incluye el código correspondiente a la activación de la lámpara en la parte de implementación del programa <code>MAIN</code>.</p>
@@ -2071,15 +2082,16 @@ VAR
 </span></code></pre></div>
 </li>
 <li>
-<p>Incluye en la <strong>visualización</strong> los elementos correspondientes para <span class="objetivo-hito">monitorizar y modificar los valores de las variables booleanas</span> correspondientes al pulsador y a la lámpara.</p>
-<p><img alt="Visualización Hola Mundo con el pulsador y la lámpara" class="screenshot" src="../img/v-hola-mundo.png" /></p>
+<p>Para <span class="objetivo-hito">monitorizar y modificar los valores de las variables booleanas</span>, incluye en la <strong>visualización</strong> los elementos correspondientes  correspondientes al pulsador y a la lámpara.</p>
 <ol>
 <li>
-<p>Botón (<em>Button</em>) para modificar el valor de <code>i_Pulsador</code>.</p>
+<p>Un botón (<em>Button</em>) para modificar el valor de <code>i_Pulsador</code>.</p>
 <details class="note">
 <summary>Parámetros</summary>
 <ul>
+<li><strong>Position</strong> ➔ [130, 140, 90, 30]</li>
 <li><strong>Texts</strong> &gt; <strong>Text</strong> ➔ [<strong>Pulsador</strong>]</li>
+<li><strong>Text properties</strong> &gt; <strong>Font</strong> ➔ [Arial, 12]</li>
 <li><strong>Inputconfiguration</strong><ul>
 <li><strong>Tap</strong> &gt; <strong>Variable</strong> ➔ [<code>MAIN.i_Pulsador</code>]</li>
 </ul>
@@ -2088,24 +2100,31 @@ VAR
 </details>
 </li>
 <li>
-<p>Rectángulo (<em>Rectangle</em>) para mostrar el valor de la variable <code>o_Lampara</code>.</p>
+<p>Un rectángulo (<em>Rectangle</em>) para mostrar el valor de la variable <code>o_Lampara</code>.</p>
 <details class="note">
 <summary>Parámetros</summary>
 <ul>
+<li><strong>Position</strong> ➔ [230, 140, 90, 30]</li>
 <li><strong>Colors</strong> &gt; <strong>Normal state</strong> &gt; <strong>Frame color</strong> ➔ [0, 64, 0]</li>
 <li><strong>Colors</strong> &gt; <strong>Normal state</strong> &gt; <strong>Fill color</strong> ➔ [0, 64, 0]</li>
 <li><strong>Colors</strong> &gt; <strong>Alarm state</strong> &gt; <strong>Frame color</strong> ➔ [0, 128, 0]</li>
 <li><strong>Colors</strong> &gt; <strong>Alarm state</strong> &gt; <strong>Fill color</strong> ➔ [0, 128, 0]</li>
 <li><strong>Texts</strong> &gt; <strong>Text</strong> ➔ [<strong>Lámpara</strong>]</li>
+<li><strong>Text properties</strong> &gt; <strong>Font</strong> ➔ [Arial, Negrita, 12]</li>
+<li><strong>Text properties</strong> &gt; <strong>Font Color</strong> ➔ [255, 255, 255]</li>
 <li><strong>Color variables</strong> &gt; <strong>Toggle color</strong> ➔ [<code>MAIN.o_Lampara</code>]</li>
 </ul>
 </details>
 </li>
 </ol>
-<div class="admonition tip">
-<p class="admonition-title">Sugerencia</p>
-<p>Completa la visualización con los elementos que consideres oportunos para mejorar su apariencia.</p>
+<div class="admonition success">
+<p class="admonition-title">Resultado de la operación</p>
+<p><img alt="Visualización Hola Mundo con el pulsador y la lámpara" class="screenshot" src="../img/hola-mundo-visu-offline.png" /></p>
 </div>
+<details class="tip">
+<summary>Sugerencia</summary>
+<p>Completa la visualización con los elementos que consideres oportunos para mejorar su apariencia. En el ejemplo, se han utilizado rectángulos de diferentes colores para poner el título (HOLA MUNDO) y crear paneles para agrupar los elementos.</p>
+</details>
 </li>
 <li>
 <p>Conéctate nuevamente (<strong>Login</strong>) para <span class="objetivo-hito">validar el proyecto</span> desde la visualización.</p>
@@ -2128,17 +2147,17 @@ VAR
 <summary>Material Necesario</summary>
 <p>Para probar el programa con un pulsador y una lámpara real es necesario:</p>
 <ul>
-<li>Disponer de un controlador Beckhoff.</li>
+<li>Disponer de un controlador Beckhoff en condiciones de funcionamiento.</li>
 <li>Disponer de un pulsador conectado a un canal de entrada.</li>
 <li>Disponer de una lámpara conectada a un canal de salida.</li>
-<li>Modificar y construir nuevamente el programa.</li>
+<li>Modificar y reconstruir nuevamente el programa.</li>
 <li>Configurar la E/S: escanear, identificar y vincular canales de E/S.</li>
 </ul>
 </details>
 <ol>
 <li>Desconéctate (<strong>Logout</strong>), si estabas conectado, del sistema destino actual.</li>
 <li>
-<p>Incluye en la parte de declaración del programa <code>MAIN</code> las variables <code>i_Pulsador</code> y <code>o_Lampara</code> como <span class="objetivo-hito">variables de entrada/salida localizadas con mapeo dinámico</span>.</p>
+<p>Utiliza <span class="objetivo-hito">variables de entrada/salida localizadas con mapeo dinámico</span> para situar las variables <code>i_Pulsador</code> y <code>o_Lampara</code> en la imagen de entrada y salida, modificando su declaración tal y como se muestra a continuación. <a href="../../../fundamentos/lenguajes/#variables-localizadas-y-mapeo-dinamico"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></p>
 <div class="highlight"><pre><span></span><code>// Hola Mundo de la Programación de PLC
 PROGRAM MAIN
 VAR
@@ -2148,23 +2167,16 @@ VAR
 </span><span class="hll">    o_Lampara AT %Q*: BOOL;
 </span>END_VAR
 </code></pre></div>
-<details class="note">
-<summary>Variables localizadas</summary>
-<ul>
-<li>Las <strong>variables localizadas</strong>, son aquellas a las que se le asigna explícitamente una dirección de memoria.</li>
-<li>Situar las instancias de estas variables en las correspondientes imágenes de E/S (<em>Process Image</em>) mediante el uso del modificador <code>AT</code>, las convierte en <strong>variables de entrada y salida</strong>.</li>
-<li>Si no se hiciera, el compilador situaría estas variables en el <strong>espacio de memoria interna</strong> (marcas) y no se generarían las correspondientes instancias de E/S, por lo que no podrían vincularse (<em>mapping</em>) a canales físicos de E/S del controlador.</li>
-<li>El símbolo <code>%</code> es el prefijo de ubicación directa.</li>
-<li>Las letras <code>I</code> y <code>Q</code> indican el área de memoria (entrada/salida).</li>
-<li>El símbolo <code>*</code> es un comodín que indica que estas variables tienen un <strong>mapeo dinámico</strong>, lo que implica que será el compilador el encargado de asignarle una dirección (<code>palabra.bit</code>) concreta.</li>
-</ul>
-</details>
 </li>
 <li>
-<p>Construye (<strong>Build</strong>) y verifica la ausencia de errores.</p>
+<p>Genera las instancias de las variables de entrada y salida, construyendo (<strong>Build</strong>) nuevamente el proyecto.</p>
+<div class="admonition success">
+<p class="admonition-title">Resultado de la operación</p>
+<p><img alt="MAIN V1" class="screenshot" src="../img/hola-mundo-plc-instance.png" /></p>
+</div>
 <details class="note">
 <summary>Instancias de E/S</summary>
-<p>Observa que si la compilación es correcta aparecen bajo el apartado <code>Hola_Mundo_PLC Instance</code> las instancias de las dos nuevas variables <code>i_Pulsador</code> y <code>o_Lampara</code>.</p>
+<p>Si la compilación es correcta aparecen bajo el apartado <code>Hola_Mundo_PLC Instance</code> las instancias de las dos nuevas variables <code>i_Pulsador</code> y <code>o_Lampara</code>.</p>
 <div class="highlight"><pre><span></span><code>    Hola_Mundo_PLC Instance/
     ├── PLCTask Inputs
     |   └── MAIN.i_Pulsador
@@ -2193,22 +2205,22 @@ VAR
 <li>Localiza, identifica, nombra y prueba un canal de salida digital para <code>o_Lampara</code>. <a href="../../../procedimientos/workflow/#identificar-salidas"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></li>
 <li><span class="objetivo-hito">Vincula las variables de entrada/salida</span> (<strong>Link</strong>) <code>i_Pulsador</code> y <code>o_Lampara</code> con los canales recién identificados. <a href="../../../procedimientos/workflow/#vincular-variables"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></li>
 <li>Activa la configuración (<strong>Activate Configuration</strong>) y reinicia <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> (<strong>Restart <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> System</strong>) en el nuevo sistema destino. <a href="../../../procedimientos/workflow/#activar-la-configuracion"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></li>
-<li>Conéctate para transferir el programa al controlador (<strong>Login</strong>). <a href="../../../procedimientos/workflow/#transferir-el-proyecto"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></li>
-<li>Pon el programa en ejecución (<strong>Start</strong>). <a href="../../../procedimientos/workflow/#arrancar-el-proyecto"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></li>
-<li>Comprueba que:<ul>
+<li>Transfiere el programa al controlador (<strong>Login</strong>). <a href="../../../procedimientos/workflow/#transferir-el-proyecto"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></li>
+<li>Inicia la ejecución del programa (<strong>Start</strong>). <a href="../../../procedimientos/workflow/#arrancar-el-proyecto"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></li>
+<li>Comprueba.<ul>
 <li>El contador de ciclos sigue incrementándose de forma continua.</li>
 <li>Al accionar el pulsador físico se enciende la lámpara física.</li>
 </ul>
 </li>
 <li>
-<p>Utiliza la visualización integrada en el proyecto <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr> para facilitar la prueba:</p>
+<p>Utiliza la visualización integrada en el proyecto <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr> para facilitar la prueba.</p>
 <ul>
 <li>Comprueba que, accionando el pulsador físico, cambia de estado la lámpara en la visualización.</li>
 <li>Comprueba que, accionando el botón de la visualización, <strong>NO cambia de estado la lámpara</strong>.</li>
 </ul>
 <details class="note">
 <summary>Aclaración</summary>
-<p>Que ahora el botón de la visualización «NO FUNCIONE» no es un mal funcionamiento, es la consecuencia lógica de la ejecución del ciclo de <em>scan</em> que provoca que, el valor de la variable <code>i_Pulsador</code> <strong>se actualice con el valor del pulsador físico</strong> al inicio de cada ciclo de ejecución del programa de <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr>, sobreescribiendo el valor que fija el botón de la visualización.</p>
+<p>Que ahora el botón de la visualización <strong>«NO FUNCIONE»</strong> no es un mal funcionamiento, es la consecuencia lógica de la ejecución del ciclo de <em>scan</em> que provoca que, el valor de la variable <code>i_Pulsador</code> <strong>se actualice con el valor del pulsador físico</strong> al inicio de cada ciclo de ejecución del programa de <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr>, sobreescribiendo el valor que fija el botón de la visualización.</p>
 </details>
 </li>
 </ol>
@@ -2227,11 +2239,11 @@ VAR
 </details>
 <hr />
 <h3 id="con-ardutc">Con ArduTC<a class="headerlink" href="#con-ardutc" title="Permanent link">&para;</a></h3>
-<p>Si tienes instalada en tu ordenador la aplicación <strong>ArduTC</strong>, puedes ejecutar el proyecto sobre un <em>runtime</em> (local/remoto) o sobre el simulador (<code>UmRT_Default</code>) y utilizar una placa microcontroladora como <strong>Arduino UNO</strong> como terminal de E/S. <a href="../../../fundamentos/ardutc/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></p>
+<p>Si tienes instalada en tu ordenador la aplicación <strong>ArduTC</strong>, puedes ejecutar el proyecto sobre un <em>runtime</em> (local/remoto) o sobre el simulador (<code>UmRT_Default</code>) y utilizar una placa microcontroladora compatible como <strong>Arduino UNO</strong> como terminal de E/S. <a href="../../../fundamentos/ardutc/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></p>
 <details class="warning">
 <summary>Proyecto <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr></summary>
 <ul>
-<li>Tener preparado un controlador TC: runtime (local o remoto) o simulador (<code>UmRT_Default</code>).</li>
+<li>Tener preparado un controlador <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr>: runtime (local o remoto) o simulador (<code>UmRT_Default</code>).</li>
 <li>Deshabilitar todos los dispositivos <em>hardware</em> incluidos en el apartado <strong>I/O</strong>.</li>
 <li>Activar la configuración del proyecto sobre el controlador.</li>
 <li>Cargar el proyecto <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr> sobre el controlador.</li>
@@ -2241,8 +2253,8 @@ VAR
 <details class="warning">
 <summary>Placa Microcontroladora</summary>
 <ul>
-<li>Descargar <strong>Telemetrix</strong> en la placa microcontroladora (Arduino UNO).</li>
-<li>Preparar el montaje correspondiente: un pulsador y un LED conectados a los pines correspondientes.</li>
+<li>Cargar el código <strong>Telemetrix</strong> en la placa microcontroladora (Arduino UNO).</li>
+<li>Preparar el montaje conectando un pulsador y un led a los pines digitales correspondientes.</li>
 </ul>
 </details>
 <ol>
@@ -2252,12 +2264,12 @@ VAR
 <li>Vincula las variables de E/S del proyecto TC con los pines correspondientes de la placa <strong>microcontroladora</strong>. <a href="../../../fundamentos/ardutc/#vincular-variables"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></li>
 <li>Establece la dirección <strong>AMS Net ID</strong> y el <strong>puerto de comunicaciones</strong> del controlador TC en <strong>ArduTC</strong>. <a href="../../../fundamentos/ardutc/#configurar-comunicaciones"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></li>
 <li>Conecta <strong>ArduTC</strong>. <a href="../../../fundamentos/ardutc/#conectar"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></li>
-<li>Acciona el pulsador y verifica que se enciende el LED.</li>
+<li>Acciona el pulsador y verifica que se enciende el led.</li>
 </ol>
 <div class="admonition success">
 <p class="admonition-title"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M144.3 0h224c26.5 0 48.1 21.8 47.1 48.2-.2 5.3-.4 10.6-.7 15.8h49.6c26.1 0 49.1 21.6 47.1 49.8-7.5 103.7-60.5 160.7-118 190.5-15.8 8.2-31.9 14.3-47.2 18.8-20.2 28.6-41.2 43.7-57.9 51.8V448h64c17.7 0 32 14.3 32 32s-14.3 32-32 32h-192c-17.7 0-32-14.3-32-32s14.3-32 32-32h64v-73.1c-16-7.7-35.9-22-55.3-48.3-18.4-4.8-38.4-12.1-57.9-23.1C57 273.2 8.2 216.1 1.2 113.6c-1.9-28.1 21-49.7 47.1-49.7h49.6c-.3-5.2-.5-10.4-.7-15.8-1-26.5 20.6-48.2 47.1-48.2zm-42.8 112H49.1c6.2 84.7 45.1 127.1 85.2 149.6-14.4-37.3-26.3-86-32.8-149.6M380 256.8c40.5-23.8 77.1-66.1 83.3-144.8H411c-6.2 60.9-17.4 108.2-31 144.8"/></svg></span> ¡Enhorabuena!</p>
 <p>Has completado con éxito la última parte de esta guía de implementación.</p>
-<p>Has puesto en marcha tu primer <strong>proyecto de <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr></strong> completo en <strong>Texto Estructurado</strong> con <strong><abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> 3</strong> utilizando una placa <strong>Arduino UNO</strong> como terminal de entrada/salidas a través de la aplicación <strong>ArduTC</strong>.</p>
+<p>Has puesto en marcha tu primer <strong>proyecto de <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr></strong> completo en <strong>Texto Estructurado</strong> con <strong><abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> 3</strong> utilizando una placa microcontroladora compatible (<strong>Arduino UNO</strong>) como terminal de entrada/salidas con <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> a través de la aplicación <strong>ArduTC</strong>.</p>
 </div>
 <hr />
 
@@ -2280,7 +2292,7 @@ VAR
     <span class="md-icon" title="Última actualización">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="30 de octubre de 2026 06:46:49 UTC">30 de octubre de 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="31 de octubre de 2026 07:09:15 UTC">31 de octubre de 2026</span>
   </span>
 
     

@@ -20,7 +20,7 @@
         
       
       
-      <link rel="icon" href="../../../assets/img/auto-isa-team-icon-alt.svg">
+      <link rel="icon" href="../../../assets/img/autoisateam-icon-alt.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
@@ -100,7 +100,7 @@
   <nav class="md-header__inner md-grid" aria-label="Cabecera">
     <a href="../../.." title="Tutorial de TwinCAT 3" class="md-header__button md-logo" aria-label="Tutorial de TwinCAT 3" data-md-component="logo">
       
-  <img src="../../../assets/img/auto-isa-team-logo.svg" alt="logo">
+  <img src="../../../assets/img/autoisateam-logo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -225,7 +225,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="Tutorial de TwinCAT 3" class="md-nav__button md-logo" aria-label="Tutorial de TwinCAT 3" data-md-component="logo">
       
-  <img src="../../../assets/img/auto-isa-team-logo.svg" alt="logo">
+  <img src="../../../assets/img/autoisateam-logo.svg" alt="logo">
 
     </a>
     Tutorial de TwinCAT 3
@@ -524,6 +524,56 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Parte Común">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#identificador" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Identificador
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#declarar-una-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Declarar una Variable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variables-localizadas-y-mapeo-dinamico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variables localizadas y mapeo dinámico
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ambito-de-una-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ámbito de una Variable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1767,6 +1817,56 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Parte Común">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#identificador" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Identificador
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#declarar-una-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Declarar una Variable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variables-localizadas-y-mapeo-dinamico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variables localizadas y mapeo dinámico
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ambito-de-una-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ámbito de una Variable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1838,20 +1938,93 @@
 <div class="admonition warning">
 <p class="admonition-title">🚧 SECCIÓN EN CONSTRUCCIÓN</p>
 </div>
+<hr />
 <h2 id="parte-comun"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M80 104a24 24 0 1 0 0-48 24 24 0 1 0 0 48m80-24c0 32.8-19.7 61-48 73.3V224h176c26.5 0 48-21.5 48-48v-22.7c-28.3-12.3-48-40.5-48-73.3 0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V176c0 61.9-50.1 112-112 112H112v70.7c28.3 12.3 48 40.5 48 73.3 0 44.2-35.8 80-80 80S0 476.2 0 432c0-32.8 19.7-61 48-73.3V153.4C19.7 141 0 112.8 0 80 0 35.8 35.8 0 80 0s80 35.8 80 80m232 0a24 24 0 1 0-48 0 24 24 0 1 0 48 0M80 456a24 24 0 1 0 0-48 24 24 0 1 0 0 48"/></svg></span> Parte Común<a class="headerlink" href="#parte-comun" title="Permanent link">&para;</a></h2>
-<div class="admonition warning">
-<p class="admonition-title">🚧 SECCIÓN EN CONSTRUCCIÓN</p>
-</div>
-<!---
-Un identificador es la cadena de caracteres (letras, números y guiones bajos) que se utiliza para dar un nombre único a variables, constantes, funciones, bloques funcionales o programas dentro del código.
-Para que un identificador sea válido según la norma, debe cumplir con las siguientes reglas sintácticas:
-• Comienzo: Debe empezar siempre por una letra o por un carácter de subrayado (_). Nunca puede empezar con un número.
-• Composición: Solo puede contener letras (A-Z, a-z), números (0-9) y guiones bajos (_). No se permiten espacios ni caracteres especiales (como signos de interrogación o guiones medios).
-• Mayúsculas y minúsculas: El estándar IEC 61131-3 no distingue entre mayúsculas y minúsculas (case-insensitive). Por lo tanto, MiContador, micontador y MICONTADOR se consideran el mismo identificador.
-• Restricciones: No puede coincidir con ninguna palabra reservada del lenguaje (como IF, THEN, VAR, INT, etc.).
-
---->
-
+<h3 id="identificador">Identificador<a class="headerlink" href="#identificador" title="Permanent link">&para;</a></h3>
+<p>Un identificador es la cadena de caracteres (letras, números y guiones bajos) que se utiliza para dar un nombre único a variables, constantes, funciones, bloques funcionales o programas dentro del código.
+Para que un identificador sea válido según la norma, debe cumplir con las siguientes reglas sintácticas:</p>
+<ul>
+<li>Comienzo: Debe empezar siempre por una letra o por un carácter de subrayado (_). Nunca puede empezar con un número.</li>
+<li>Composición: Solo puede contener letras (A-Z, a-z), números (0-9) y guiones bajos (_). No se permiten espacios ni caracteres especiales (como signos de interrogación o guiones medios).</li>
+<li>Mayúsculas y minúsculas: El estándar IEC 61131-3 no distingue entre mayúsculas y minúsculas (case-insensitive). Por lo tanto, MiContador, micontador y MICONTADOR se consideran el mismo identificador.</li>
+<li>Restricciones: No puede coincidir con ninguna palabra reservada del lenguaje (como IF, THEN, VAR, INT, etc.).</li>
+</ul>
+<h3 id="declarar-una-variable">Declarar una Variable<a class="headerlink" href="#declarar-una-variable" title="Permanent link">&para;</a></h3>
+<p>Para crear una variable escribir su declaración siguiendo la siguiente sintaxis:</p>
+<div class="highlight"><pre><span></span><code>Identificador [AT %Localización]: Type [:= ValorInicial];
+</code></pre></div>
+<ol>
+<li><strong>Identificador</strong> (obligatorio). Es el nombre único de la variable dentro de su ámbito (scope).</li>
+<li>
+<p><strong>Localización</strong> (opcional). La localización o <strong>Ubicación Directa</strong> establece la zona y la posición de memoria en la que se situará la variable.</p>
+<ul>
+<li>Modificador de localización <code>AT</code>.</li>
+<li>
+<p>Dirección.</p>
+<div class="highlight"><pre><span></span><code>%[Área] [Tamaño] [Dirección]
+</code></pre></div>
+<ul>
+<li><code>%</code>: prefijo de ubicación.</li>
+<li>Área: <code>I</code> para entradas, <code>Q</code> para salidas y <code>M</code> para memoria interna (o de marcas).</li>
+<li>
+<p>Dirección:</p>
+<ul>
+<li>
+<p>Absoluta:</p>
+<div class="highlight"><pre><span></span><code>[Area][Tamaño][Dirección]
+</code></pre></div>
+<ul>
+<li>Tamaño [X/B/W/D/L]: prefijo que indica el tamaño de la variable (Bit/Byte/Palabra/Doble/Larga).</li>
+<li>Dirección [palabra.bit]: posición de la variable en el área de memoria.</li>
+</ul>
+<details class="info">
+<summary>Ejemplo</summary>
+<div class="highlight"><pre><span></span><code>Pulsador AT %IX0.0: BOOL;
+</code></pre></div>
+</details>
+</li>
+<li>
+<p>Inespecificada: utilizando el carácter comodín <code>*</code></p>
+<details class="info">
+<summary>Ejemplo</summary>
+<div class="highlight"><pre><span></span><code>Pulsador AT %*: BOOL;
+</code></pre></div>
+</details>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Separador de tipo:</strong> (obligatorio). Separa el nombre de la variable de su tipo.</p>
+</li>
+<li><strong>Tipo de dato</strong>: Especifica principalmente el tamaño y el rango de la variable. Puede ser un tipo elemental (BOOL, INT, REAL, TIME,...), complejo (STRUCT, ENUM, ARRAY,...) o de usuario.</li>
+<li><strong>Valor inicial</strong>: Especifica el valor de la variable al iniciar el runtime. Si no se especifica tomará el valor predeterminado para ese tipo de variable.</li>
+<li><strong>Delimitador ;</strong> (obligatorio). Terminador de instrucción.</li>
+</ol>
+<h3 id="variables-localizadas-y-mapeo-dinamico">Variables localizadas y mapeo dinámico<a class="headerlink" href="#variables-localizadas-y-mapeo-dinamico" title="Permanent link">&para;</a></h3>
+<p>Las <strong>variables localizadas</strong>, son aquellas a las que se le asigna explícitamente una dirección de memoria.</p>
+<ul>
+<li>Situar las instancias de estas variables en las correspondientes imágenes de E/S (<em>Process Image</em>) mediante el uso del modificador <code>AT</code>, las convierte en <strong>variables de entrada y salida</strong>.</li>
+<li>Si no se hiciera, el compilador situaría estas variables en el <strong>espacio de memoria interna</strong> (marcas) y no se generarían las correspondientes instancias de E/S, por lo que no podrían vincularse (<em>mapping</em>) a canales físicos de E/S del controlador.</li>
+<li>El símbolo <code>%</code> es el prefijo de ubicación directa.</li>
+<li>Las letras <code>I</code> y <code>Q</code> indican el área de memoria (entrada/salida).</li>
+<li>El símbolo <code>*</code> es un comodín que indica que estas variables tienen un <strong>mapeo dinámico</strong>, lo que implica que será el compilador el encargado de asignarle una dirección (<code>palabra.bit</code>) concreta.</li>
+</ul>
+<h3 id="ambito-de-una-variable">Ámbito de una Variable<a class="headerlink" href="#ambito-de-una-variable" title="Permanent link">&para;</a></h3>
+<p>El bloque de declaración determina el ámbito y el alcance de la variable especificando quién y cómo puede acceder a la variable o parámetro.</p>
+<ol>
+<li><code>VAR ... END_VAR</code>: variables locales, internas al <abbr title="Unidad de Organización de Programa (Program Organization Unit).">POU</abbr>. Únicamente accesibles dentro del <abbr title="Unidad de Organización de Programa (Program Organization Unit).">POU</abbr> en el que se declaran.</li>
+<li><code>VAR_INPUT ... END_VAR</code>: parámetros de entrada. Pueden ser escritos desde el exterior.</li>
+<li><code>VAR_OUTPUT ... END_VAR</code>: parámetros de salida. Pueden ser leídos desde el exterior.</li>
+<li><code>VAR_IN_OUT ... END_VAR</code>: parámetros de entrada/salida por referencia. Punteros a variables externas que pueden leerse y escribirse dentro del <abbr title="Unidad de Organización de Programa (Program Organization Unit).">POU</abbr>.</li>
+<li><code>VAR_GLOBAL ... END_VAR</code>: variables globales (GVL). Accesibles desde cualquier <abbr title="Unidad de Organización de Programa (Program Organization Unit).">POU</abbr> del proyecto.</li>
+<li><code>VAR_STAT ... END_VAR</code>: variables estáticas. Variables locales que conservan su valor entre ciclos de ejecución.</li>
+<li><code>VAR_PERSISTENT ... END_VAR</code>: variables persistentes. Variables que conservan su valor incluso tras la pérdida de alimentación.</li>
+</ol>
+<hr />
 <h2 id="lenguaje-st"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M360.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m64.6 136.1c-12.5 12.5-12.5 32.8 0 45.3l73.4 73.4-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l96-96c12.5-12.5 12.5-32.8 0-45.3l-96-96c-12.5-12.5-32.8-12.5-45.3 0zm-274.7 0c-12.5-12.5-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l73.3-73.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg></span> Lenguaje <abbr title="Texto estructurado (Structured Text), lenguaje de la norma IEC 61131-3.">ST</abbr><a class="headerlink" href="#lenguaje-st" title="Permanent link">&para;</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">🚧 SECCIÓN EN CONSTRUCCIÓN</p>
@@ -1891,7 +2064,7 @@ Para que un identificador sea válido según la norma, debe cumplir con las sigu
     <span class="md-icon" title="Última actualización">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="10 de octubre de 2026 11:22:37 UTC">10 de octubre de 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="31 de octubre de 2026 07:09:15 UTC">31 de octubre de 2026</span>
   </span>
 
     

@@ -20,7 +20,7 @@
         
       
       
-      <link rel="icon" href="../../../assets/img/auto-isa-team-icon-alt.svg">
+      <link rel="icon" href="../../../assets/img/autoisateam-icon-alt.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
@@ -100,7 +100,7 @@
   <nav class="md-header__inner md-grid" aria-label="Cabecera">
     <a href="../../.." title="Tutorial de TwinCAT 3" class="md-header__button md-logo" aria-label="Tutorial de TwinCAT 3" data-md-component="logo">
       
-  <img src="../../../assets/img/auto-isa-team-logo.svg" alt="logo">
+  <img src="../../../assets/img/autoisateam-logo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -225,7 +225,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="Tutorial de TwinCAT 3" class="md-nav__button md-logo" aria-label="Tutorial de TwinCAT 3" data-md-component="logo">
       
-  <img src="../../../assets/img/auto-isa-team-logo.svg" alt="logo">
+  <img src="../../../assets/img/autoisateam-logo.svg" alt="logo">
 
     </a>
     Tutorial de TwinCAT 3
@@ -798,34 +798,6 @@
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Implementar un POU">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#declarar-una-variable" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Declarar una Variable
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ambito-de-una-variable" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Ámbito de una Variable
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2129,34 +2101,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Implementar un POU">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#declarar-una-variable" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Declarar una Variable
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ambito-de-una-variable" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Ámbito de una Variable
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -2567,74 +2511,6 @@
 <li>En la ventana superior denominada <code>Parte de Declaración</code> se encuentra el <strong>Encabezado del <abbr title="Unidad de Organización de Programa (Program Organization Unit).">POU</abbr></strong> y los <strong>Bloques de Declaración</strong>.</li>
 <li>En la ventana inferior denominada <code>Parte de Implementación</code> se muestra el código del <abbr title="Unidad de Organización de Programa (Program Organization Unit).">POU</abbr> en el lenguaje seleccionado.</li>
 </ul>
-<h3 id="declarar-una-variable">Declarar una Variable<a class="headerlink" href="#declarar-una-variable" title="Permanent link">&para;</a></h3>
-<p>Para crear una variable escribir su declaración siguiendo la siguiente sintaxis:</p>
-<div class="highlight"><pre><span></span><code>Identificador [AT %Localización]: Type [:= ValorInicial];
-</code></pre></div>
-<ol>
-<li><strong>Identificador</strong> (obligatorio). Es el nombre único de la variable dentro de su ámbito (scope).</li>
-<li>
-<p><strong>Localización</strong> (opcional). La localización o <strong>Ubicación Directa</strong> establece la zona y la posición de memoria en la que se situará la variable.</p>
-<ul>
-<li>Modificador de localización <code>AT</code>.</li>
-<li>
-<p>Dirección.</p>
-<div class="highlight"><pre><span></span><code>%[Área] [Tamaño] [Dirección]
-</code></pre></div>
-<ul>
-<li><code>%</code>: prefijo de ubicación.</li>
-<li>Área: <code>I</code> para entradas, <code>Q</code> para salidas y <code>M</code> para memoria interna (o de marcas).</li>
-<li>
-<p>Dirección:</p>
-<ul>
-<li>
-<p>Absoluta:</p>
-<div class="highlight"><pre><span></span><code>[Area][Tamaño][Dirección]
-</code></pre></div>
-<ul>
-<li>Tamaño [X/B/W/D/L]: prefijo que indica el tamaño de la variable (Bit/Byte/Palabra/Doble/Larga).</li>
-<li>Dirección [palabra.bit]: posición de la variable en el área de memoria.</li>
-</ul>
-<details class="info">
-<summary>Ejemplo</summary>
-<div class="highlight"><pre><span></span><code>Pulsador AT %IX0.0: BOOL;
-</code></pre></div>
-</details>
-</li>
-<li>
-<p>Inespecificada: utilizando el carácter comodín <code>*</code></p>
-<details class="info">
-<summary>Ejemplo</summary>
-<div class="highlight"><pre><span></span><code>Pulsador AT %*: BOOL;
-</code></pre></div>
-</details>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>Separador de tipo:</strong> (obligatorio). Separa el nombre de la variable de su tipo.</p>
-</li>
-<li>
-<p><strong>Tipo de dato</strong>: Especifica principalmente el tamaño y el rango de la variable. Puede ser un tipo elemental (BOOL, INT, REAL, TIME,...), complejo (STRUCT, ENUM, ARRAY,...) o de usuario.</p>
-</li>
-<li><strong>Valor inicial</strong>: Especifica el valor de la variable al iniciar el runtime. Si no se especifica tomará el valor predeterminado para ese tipo de variable.</li>
-<li><strong>Delimitador ;</strong> (obligatorio). Terminador de instrucción.</li>
-</ol>
-<h3 id="ambito-de-una-variable">Ámbito de una Variable<a class="headerlink" href="#ambito-de-una-variable" title="Permanent link">&para;</a></h3>
-<p>El bloque de declaración determina el ámbito y el alcance de la variable especificando quién y cómo puede acceder a la variable o parámetro.</p>
-<ol>
-<li><code>VAR ... END_VAR</code>: variables locales, internas al <abbr title="Unidad de Organización de Programa (Program Organization Unit).">POU</abbr>. Únicamente accesibles dentro del <abbr title="Unidad de Organización de Programa (Program Organization Unit).">POU</abbr> en el que se declaran.</li>
-<li><code>VAR_INPUT ... END_VAR</code>: parámetros de entrada. Pueden ser escritos desde el exterior.</li>
-<li><code>VAR_OUTPUT ... END_VAR</code>: parámetros de salida. Pueden ser leídos desde el exterior.</li>
-<li><code>VAR_IN_OUT ... END_VAR</code>: parámetros de entrada/salida por referencia. Punteros a variables externas que pueden leerse y escribirse dentro del <abbr title="Unidad de Organización de Programa (Program Organization Unit).">POU</abbr>.</li>
-<li><code>VAR_GLOBAL ... END_VAR</code>: variables globales (GVL). Accesibles desde cualquier <abbr title="Unidad de Organización de Programa (Program Organization Unit).">POU</abbr> del proyecto.</li>
-<li><code>VAR_STAT ... END_VAR</code>: variables estáticas. Variables locales que conservan su valor entre ciclos de ejecución.</li>
-<li><code>VAR_PERSISTENT ... END_VAR</code>: variables persistentes. Variables que conservan su valor incluso tras la pérdida de alimentación.</li>
-</ol>
 <h2 id="guardar"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64V173.3c0-17-6.7-33.3-18.7-45.3L352 50.7c-12-12-28.3-18.7-45.3-18.7zm32 96c0-17.7 14.3-32 32-32h160c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32H128c-17.7 0-32-14.3-32-32zm128 160a64 64 0 1 1 0 128 64 64 0 1 1 0-128"/></svg></span> Guardar<a class="headerlink" href="#guardar" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Guardar archivo actual.<ul>
@@ -2679,7 +2555,7 @@
 <blockquote>
 <p>En <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> una ruta (route) es una conexión lógica entre dos entornos <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr>. Habitualmente se establece una ruta entre el entorno de ingeniería (<abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> <abbr title="eXtended Automation Engineering, entorno de ingeniería de TwinCAT.">XAE</abbr>) en el que se desarrolla el proyecto y el runtime o entorno de ejecución (<abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> <abbr title="eXtended Automation Runtime, runtime de TwinCAT.">XAR</abbr>) en el que se ejecuta el proyecto.</p>
 </blockquote>
-<p>Una ruta sirve básicamente para establecer una relación de confianza entre ambos dispositivos (entorno de desarrollo y entorno de ejecución), para permitir, entre otras cosas, la transferencia de código y monitorización de vararibles.</p>
+<p>Una ruta sirve básicamente para establecer una relación de confianza entre ambos dispositivos (entorno de desarrollo y entorno de ejecución), para permitir, entre otras cosas, la transferencia de código y monitorización de variables.</p>
 <ul>
 <li>
 <p>Seleccionar en la lista de sistemas destino <strong>Choose Target System...</strong>.</p>
@@ -2714,7 +2590,7 @@
 <p><img alt="Credenciales para una ruta remota segura" class="screenshot" src="img/add-remote-route-credentials-secure.png" /></p>
 </li>
 <li>
-<p>Introducir las credenciales de usuario y contraseña del |dispositivo seleccionado.</p>
+<p>Introducir las credenciales de usuario y contraseña del dispositivo seleccionado.</p>
 <details class="info">
 <summary>credenciales</summary>
 <p>Con los ajustes de fábrica el usuario es <code>Administrator</code> y la contraseña <code>1</code>.</p>
@@ -2722,7 +2598,7 @@
 <p><img alt="Credenciales para una ruta remota no segura" class="screenshot" src="img/add-remote-route-credentials-non-secure.png" /></p>
 </li>
 <li>
-<p>Si la ruta se crea correctamente, aparecerá una <code>x</code> en el campo <strong>Connected</strong>, junto al nombre del sistema destino (CX-840BD9), en la ventana <strong>Add Remote Dialog</strong>.</p>
+<p>Si la ruta se crea correctamente, aparecerá una <code>x</code> en el campo <strong>Connected</strong>, junto al nombre del sistema destino (en el ejemplo, CX-840BD9), en la ventana <strong>Add Remote Dialog</strong>.</p>
 <p><img alt="Ruta remota conectada en el diálogo" class="screenshot" src="img/add-remote-dialog-connected.png" /></p>
 </li>
 <li>
@@ -3148,7 +3024,7 @@ Instancia FB
     <span class="md-icon" title="Última actualización">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="30 de octubre de 2026 06:46:49 UTC">30 de octubre de 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="31 de octubre de 2026 07:09:15 UTC">31 de octubre de 2026</span>
   </span>
 
     
