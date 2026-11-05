@@ -1,6 +1,6 @@
 1. ejemplos (incluyen guía paso a paso)
      - hola_mundo
-     - carro_basico
+     - carro
      - carro_extendido
 2. prácticas
      - semáforo

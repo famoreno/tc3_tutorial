@@ -14,7 +14,7 @@
         - *Type* ➔ `Function Block`
         - *Implementation Language* ➔ `Structured Text`
 
-2. Como en la sección anterior, declara todas las variables de entrada/salida del sistema en `FB_Carro_GRF_ST` como variables locales (`VAR`) e incluye una variable entera para contener el valor del estado actual (`Estado`). [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#declarar-una-variable)
+2. Como en la sección anterior, declara todas las variables de entrada/salida del sistema en `FB_Carro_GRF_ST` como variables locales (`VAR`) e incluye una variable entera para contener el valor del estado actual (`Estado`). [:material-arrow-right-bold-box:](../../fundamentos/lenguajes/index.md#declarar-una-variable)
 
     ```iecst {hl_lines="8"}
     FUNCTION_BLOCK FB_Carro_GRF_ST

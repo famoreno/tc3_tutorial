@@ -5,9 +5,9 @@
 #### Carro Básico
 
 1. Abre la aplicación **TwinCAT XAE**. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#abrir-twincat-xae)
-2. Crea una solución de TwinCAT 3 con nombre `TC3_Carro_Basico`. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#crear-un-proyecto-twincat-3)
+2. Crea una solución de TwinCAT 3 con nombre `TC3_Carro`. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#crear-un-proyecto-twincat-3)
 3. Oculta las configuraciones innecesarias para dejar el explorador de la solución lo más despejado posible. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#ocultar-configuraciones)
-4. Crea un proyecto PLC estándar con el nombre `Carro_Basico_PLC`. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#crear-un-proyecto-plc)
+4. Crea un proyecto PLC estándar con el nombre `Carro_PLC`. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#crear-un-proyecto-plc)
 5. Crea una nueva **Unidad de Organización de Programa (POU)** de tipo **Bloque Funcional**. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#crear-una-pou)
 
     !!! note "Parámetros POU"
@@ -15,7 +15,7 @@
         - *Type* ➔ `Function Block`
         - *Implementation Language* ➔ `Sequential Function Chart (SFC)`
 
-6. Declara todas las **variables de entrada/salida** del sistema en `FB_Carro_GRF_SFC` como variables locales (`VAR`). [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#declarar-una-variable)
+6. Declara todas las **variables de entrada/salida** del sistema en `FB_Carro_GRF_SFC` como variables locales (`VAR`). [:material-arrow-right-bold-box:](../../fundamentos/lenguajes/index.md#declarar-una-variable)
 
     ```iecst {hl_lines="8-16"}
     FUNCTION_BLOCK FB_Carro_GRF_SFC

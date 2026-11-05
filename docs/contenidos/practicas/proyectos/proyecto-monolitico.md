@@ -77,7 +77,7 @@ XXX_TC3_GYY/
         - Type ➔ `Function Block`
         - Implementation Language ➔ `Sequential Function Chart (SFC)`
 
-- [ ] Declarar las **variables de entrada/salida** necesarias en `FB_Estacion_SFC` como variables locales (`VAR_LOCAL`). [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#declarar-una-variable)
+- [ ] Declarar las **variables de entrada/salida** necesarias en `FB_Estacion_SFC` como variables locales (`VAR_LOCAL`). [:material-arrow-right-bold-box:](../../fundamentos/lenguajes/index.md#declarar-una-variable)
 
     !!! info "Entradas/Salidas"
         - Consultar la tabla de entrada/salida de cada estación en la [descripción funcional.](./pdf/fms_200_descripcion_funcional.pdf){target="_blank"}

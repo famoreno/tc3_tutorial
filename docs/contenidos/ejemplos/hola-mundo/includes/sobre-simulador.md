@@ -1,6 +1,6 @@
 ### Sobre el Simulador
 
-Empiecemos por <span class="objetivo-hito">utilizar el entorno de ingeniería TwinCAT XAE de TwinCAT 3</span> para crear nuestro primer proyecto.
+Empecemos por <span class="objetivo-hito">utilizar el entorno de ingeniería TwinCAT XAE de TwinCAT 3</span> para crear nuestro primer proyecto.
 [:material-arrow-right-bold-box:](../../fundamentos/twincat/index.md#twincat-xae)
 
 ??? info "TwinCAT 3"
@@ -46,7 +46,7 @@ Empiecemos por <span class="objetivo-hito">utilizar el entorno de ingeniería Tw
     ```
 
     !!! success "Resultado de la operación"
-        ![MAIN V1](../img/hola-mundo-main-v1.png){ .screenshot }
+        ![MAIN V1](img/hola-mundo-main-v1.png){ .screenshot }
 
 8. Guarda el proyecto [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#guardar)
 9. <span class="objetivo-hito">Construye el proyecto</span> para obtener un archivo ejecutable. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#construir-el-proyecto)
@@ -62,7 +62,7 @@ Empiecemos por <span class="objetivo-hito">utilizar el entorno de ingeniería Tw
 15. <span class="objetivo-hito">Pon el programa en ejecución</span> (**Run**). [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#arrancar-el-proyecto)
 
     !!! success "Resultado de la operación"
-        ![MAIN V1](../img/hola-mundo-main-v1-online.png){ .screenshot }
+        ![MAIN V1](img/hola-mundo-main-v1-online.png){ .screenshot }
 
         Observa cómo el valor de la variable `ContadorCiclos` se incrementa continuamente al ritmo de ejecución del ciclo básico del PLC (típicamente 10 ms), lo que prueba que el programa se está ejecutando localmente en el *runtime* del simulador `UmRT_Default` en tu ordenador.
 
@@ -72,20 +72,20 @@ Empiecemos por <span class="objetivo-hito">utilizar el entorno de ingeniería Tw
     ??? info "Logout"
         Cuando te desconectas de un sistema destino abandonas la monitorización, pero el programa sigue ejecutándose en su *runtime*. Como prueba, observarás que, cuando vuelvas a conectarte, el contador de ciclos tendrá un valor diferente.
 
-18. Para <span class="objetivo-hito">monitorizar y modificar el valor del dato numérico</span> del contador de ciclos más fácilmente, crea una sencilla visualización (`V_Hola_Mundo`). [:material-arrow-right-bold-box:](../../procedimientos/hmi/includes/tc3-plc-hmi.md)
+18. Para <span class="objetivo-hito">monitorizar y modificar el valor del dato numérico</span> del contador de ciclos más fácilmente, crea una sencilla visualización (`V_Hola_Mundo`). [:material-arrow-right-bold-box:](../../procedimientos/hmi/index.md)
 
     !!! success "Resultado de la operación"
         - Tras crear la visualización podremos observar como en el Explorador de la Solución se han incluido la visualización en el nodo en `VISUs` y las librerías para la gestión de la visualizaicón en el nodo `References`...
 
-        ![Librerias Visu](../img/hola-mundo-solution-explorer-with-visu.png){ .screenshot }
+        ![Librerias Visu](img/hola-mundo-solution-explorer-with-visu.png){ .screenshot }
 
         - ... y, además, se muestra la ventana de la visualización con el lienzo vacío sobre el que se dispondrán los diferentes objetos gráficos.
 
-        ![Librerias Visu](../img/hola-mundo-visu-blank-canvas.png){ .screenshot }
+        ![Librerias Visu](img/hola-mundo-visu-blank-canvas.png){ .screenshot }
 
-19. Agregar los objetos gráficos necesarios. [:material-arrow-right-bold-box:](../../procedimientos/hmi/includes/tc3-plc-hmi.md#agregar-un-objeto)
+19. Agregar los objetos gráficos necesarios. [:material-arrow-right-bold-box:](../../procedimientos/hmi/index.md#agregar-un-objeto)
 
-    1. Un rectángulo (*Rectangle*) para la **etiqueta** «Contador». [:material-arrow-right-bold-box:](../../procedimientos/hmi/includes/tc3-plc-hmi.md#rentangulos)
+    1. Un rectángulo (*Rectangle*) para la **etiqueta** «Contador». [:material-arrow-right-bold-box:](../../procedimientos/hmi/index.md#rectangulo)
 
         ??? note "Parámetros"
             - **Position** ➔ [30, 80, 90, 30, 0]
@@ -129,7 +129,7 @@ Empiecemos por <span class="objetivo-hito">utilizar el entorno de ingeniería Tw
                 - **OnMouseClick** > **Configure** > **Execute ST-Code** ➔ [`MAIN.ContadorCiclos := 0;`]
 
     !!! success "Resultado de la operación"
-        ![Visualización Hola Mundo con el contador de ciclos](../img/hola-mundo-visu-contador.png){ .screenshot }
+        ![Visualización Hola Mundo con el contador de ciclos](img/hola-mundo-visu-contador.png){ .screenshot }
 
     ??? tip "Sugerencia"
         Las posiciones, tamaños y colores asignados a estos elementos son meramente ilustrativos.
@@ -201,4 +201,4 @@ Empiecemos por <span class="objetivo-hito">utilizar el entorno de ingeniería Tw
 !!! success ":fontawesome-solid-trophy: ¡Enhorabuena!"
     Has completado con éxito la primera parte de esta guía de implementación.
 
-    Has puesto en marcha tu primer **proyecto de PLC** completo en **Texto Estructurado** con **TwinCAT 3** sobre el simulador **UmRT_Default**.
+    Has puesto en marcha tu primer **proyecto de PLC** completo en **Texto Estructurado** ({{ST}})con **TwinCAT 3** sobre el simulador **UmRT_Default**.

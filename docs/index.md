@@ -50,7 +50,7 @@ Bienvenido/a al tutorial de TwinCAT 3. Aquí encontrarás guías y material de a
 
 - [Hola Mundo](contenidos/ejemplos/hola-mundo/index.md)
     - El «hola mundo» de la automatización industrial.
-- [Carro Básico](contenidos/ejemplos/carro-basico/index.md)
+- [Carro](contenidos/ejemplos/carro/index.md)
     - Implementación de máquinas de estado en {{LD}}, {{SFC}}, {{ST}}.
 - [Carro Extendido](contenidos/ejemplos/carro-extendido/index.md) 🚧 *(En construcción)*
     - Automatización de un sistema «realista» con diferentes arquitecturas.

@@ -9,5 +9,5 @@ Ejemplos prácticos para aprender los fundamentos de la programación y la autom
 ## Contenidos
 
 - [Hola Mundo](hola-mundo/index.md)
-- [Carro Básico](carro-basico/index.md)
+- [Carro](carro/index.md)
 - [Carro Extendido](carro-extendido/index.md)

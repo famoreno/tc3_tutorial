@@ -17,7 +17,7 @@ A continuación se muestra cómo replicar este proyecto paso a paso para impleme
 
 ## :fontawesome-solid-bullseye: Objetivos
 
-A lo largo de este proceso aprenderás a:
+A lo largo de este proceso se mostrará como:
 
 - Utilizar el entorno de ingeniería **TwinCAT XAE** de TwinCAT 3.
 - Declarar variables de **memoria interna** (marcas).
@@ -42,14 +42,14 @@ A lo largo de este proceso aprenderás a:
 !!! tip "Sugerencia"
     Pulsa en :material-arrow-right-bold-box: para obtener más información sobre cómo realizar el paso especificado.
 
---8<-- "./includes/sobre-simulador.md"
+{% include-markdown "./includes/sobre-simulador.md" rewrite-relative-urls=false %}
 
 ---
 
---8<-- "./includes/sobre-controlador.md"
+{% include-markdown "./includes/sobre-controlador.md" rewrite-relative-urls=false %}
 
 ---
 
---8<-- "./includes/con-ardutc.md"
+{% include-markdown "./includes/con-ardutc.md" rewrite-relative-urls=false %}
 
 ---

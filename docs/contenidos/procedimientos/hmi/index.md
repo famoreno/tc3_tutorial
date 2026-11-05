@@ -42,6 +42,6 @@ Es la nueva generación de interfaces basados en web de Beckhoff, es una platafo
 
 ---
 
---8<-- "docs/contenidos/procedimientos/hmi/includes/tc3-plc-hmi.md"
+{% include-markdown "./includes/tc3-plc-hmi.md" rewrite-relative-urls=false %}
 
 ---

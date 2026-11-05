@@ -28,7 +28,7 @@ Si dispones de un controlador de Beckhoff (ordenador embebido), puedes probar el
 3. Genera las instancias de las variables de entrada y salida, construyendo (**Build**) nuevamente el proyecto.
 
     !!! success "Resultado de la operación"
-        ![MAIN V1](../img/hola-mundo-plc-instance.png){ .screenshot }
+        ![MAIN V1](img/hola-mundo-plc-instance.png){ .screenshot }
 
     ??? note "Instancias de E/S"
         Si la compilación es correcta aparecen bajo el apartado `Hola_Mundo_PLC Instance` las instancias de las dos nuevas variables `i_Pulsador` y `o_Lampara`.

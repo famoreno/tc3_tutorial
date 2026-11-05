@@ -12,7 +12,7 @@ icon: fontawesome/solid/language
 
 ---
 
---8<-- "./includes/iec-parte-comun.md"
+{% include-markdown "./includes/iec-parte-comun.md" rewrite-relative-urls=false %}
 
 ---
 

@@ -91,7 +91,7 @@ o_Lampara := i_Pulsador;
 ## :fontawesome-solid-screwdriver-wrench: Implementación
 
 !!! info "Paso a paso"
-    Para implementar este proyecto desde cero en TwinCAT 3, sigue su **[guía de implementación](step-by-step.md)**.
+    Aprende a crear este proyecto desde cero en TwinCAT 3 siguiendo su **guía de implementación**. [:material-arrow-right-bold-box:](step-by-step.md)
 
 ---
 
@@ -100,10 +100,10 @@ o_Lampara := i_Pulsador;
 El código fuente completo de este proyecto está disponible en GitHub:
 
 - :simple-github: **Repositorio:** [:material-link-variant: vetorres-uma/TC3_Hola_Mundo](https://github.com/vetorres-uma/TC3_Hola_Mundo)
-- :simple-github: **Descargar:** [:material-download: Archivo fuente `.zip`](https://github.com/vetorres-uma/TC3_Hola_Mundo/archive/refs/heads/main.zip)
+- :simple-github: **Descargar:** [:material-download: archivo fuente `.zip`](https://github.com/vetorres-uma/TC3_Hola_Mundo/archive/refs/heads/main.zip)
 
 Los miembros de la **Universidad de Málaga**, también pueden descargar el archivo comprimido de la solución del proyecto (`.tnzip`) desde el siguiente enlace:
 
-- :simple-googledrive: **Descargar:** [:material-download: Solución comprimida `.tnzip`](https://drive.google.com/file/d/1HiN3VGmpYH63-8s_RbQovNkcL4GJR9_5/view?usp=drive_link)
+- :simple-googledrive: **Descargar:** [:material-download: solución comprimida `.tnzip`](https://drive.google.com/file/d/1HiN3VGmpYH63-8s_RbQovNkcL4GJR9_5/view?usp=drive_link)
 
 ---

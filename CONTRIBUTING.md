@@ -20,7 +20,7 @@ El tutorial divide el aprendizaje en cuatro pilares fundamentales:
 ### 2. Convención de Nombres (`kebab-case`)
 
 - **Nombres de archivos y carpetas:** Utilizar siempre minúsculas y guiones medios.
-    - *Correcto:* `contenidos/ejemplos/carro-basico/step-by-step.md`
+    - *Correcto:* `contenidos/ejemplos/carro/step-by-step.md`
     - *Incorrecto:* `contenidos/ejemplos/carro_basico/step_by_step.md`
 - **Estructura de Contenidos:**
     - `docs/index.md` ➔ Índice general del tutorial; sus secciones deben seguir la estructura y los nombres de `nav` en `mkdocs.yml`.

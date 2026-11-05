@@ -79,7 +79,7 @@ A continuación, se detalla la secuencia de pasos necesarios para codificar, en 
         - **Type** ➔ **Function Block**
         - **Implementation Language** ➔ **Sequential Function Chart (SFC)**
 
-6. Declarar los **parámetros y variables** necesarios en `FB_Semaforo_SFC`. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#declarar-una-variable)
+6. Declarar los **parámetros y variables** necesarios en `FB_Semaforo_SFC`. [:material-arrow-right-bold-box:](../../fundamentos/lenguajes/index.md#declarar-una-variable)
 
     ```iecst
     FUNCTION_BLOCK FB_Semaforo_SFC
