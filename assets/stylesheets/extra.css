@@ -474,8 +474,10 @@ img.inline-icon {
 /* Badge para Objetivos en las Guías */
 .objetivo-hito {
   display: inline-block;
-  background-color: var(--uma-dark-blue);
-  color: #ffffff;
+  background-color: #f1f3f5; /* Gris muy suave de fondo */
+  color: #495057;            /* Gris oscuro para el texto (buen contraste) */
+  /* background-color: var(--uma-dark-blue); *
+  /* color: #ffffff; */
   font-size: 0.75rem;
   font-weight: 700;
   /* text-transform: uppercase; */
@@ -486,6 +488,8 @@ img.inline-icon {
 }
 
 [data-md-color-scheme="slate"] .objetivo-hito {
-  background-color: var(--uma-light-blue);
-  color: var(--uma-dark-blue);
+  background-color: #343a40; /* Gris oscuro sutil para el fondo */
+  color: #f8f9fa;            /* Blanco roto/gris claro para el texto */
+  /* background-color: var(--uma-light-blue); */
+  /* color: var(--uma-dark-blue); */
 }
