@@ -56,11 +56,11 @@ A continuación se muestra la <span class="objetivo-hito">especificacion, en el 
 
 ### Carro Pulsado
 
-> El carro pulsado inicia su viaje de ida y vuelta, únicamente, cuando estando en su posición inicial se acciona el pulsador de marcha.
+> El carro inicia un viaje de ida y vuelta únicamente cuando, estando en su posición inicial, se realiza una pulsación sobre el pulsador de marcha.
 
 ![Diagrama GRAFCET del carro pulsado](./img/carro-pulsado-grf.svg){ width="200px" .image-centered }
 !!! note "Comentarios"
-    - El símbolo `↑` representa, en el lenguaje **GRAFCET**, el flanco ascendente de una variable lógica.
+    - El símbolo `↑` presente en la condición de la transición #0, representa, en el lenguaje **GRAFCET**, el flanco ascendente de una variable lógica.
     - Ahora, para iniciar la marcha no basta con que el pulsador esté accionado, es necesaria una pulsación.
 
 ### Carro Temporizado
@@ -69,8 +69,8 @@ A continuación se muestra la <span class="objetivo-hito">especificacion, en el 
 
 ![Diagrama GRAFCET del carro temporizado](./img/carro-temporizado-grf.svg){ width="200px" .image-centered }
 !!! note "Comentarios"
-    - La expresión `(TE)/X2` es el símbolo **GRAFCET** (condición de transición dependiente del tiempo simplificada) utilizado para indicar que se esperará en la etapa `2` la cantidad de tiempo indicada por la variable `TE`.
-    - El término `X2` es la variable asociada a la etapa 2 que indica su estado de actividad (`X2` es `TRUE` si la etapa 2 está activada).
+    - La expresión `(TE)/X2` de la transición #2 es el símbolo **GRAFCET** (condición de transición dependiente del tiempo simplificada) utilizado para indicar que se esperará en la etapa #2 la cantidad de tiempo indicada por la variable `TE`.
+    - El término `X2` es la variable asociada a la etapa #2 que indica su estado de actividad (`X2` es `TRUE` si la etapa #2 está activada).
 
 ### Carro Limitado
 
@@ -84,8 +84,17 @@ A continuación se muestra la <span class="objetivo-hito">especificacion, en el 
 
     Para llevar la cuenta de las maniobras (viajes) pendientes en **GRAFCET** se acostumbra a distribuir esta funcionalidad entre la estructura y la interpretación.
 
-    - En la **estructura** se introduce una nueva etapa (`4`) y una rama alternativa (`4a`) para evaluar si la tarea ha terminado.
-    - En la **interpretación** se incluyen dos acciones memorizadas, una asociada a la activación de la etapa inicial (`S0`) para reiniciar el contador de viajes pendientes y otra asociada a la entrada de la etapa final (`S4`) para actualizar el contador con cada maniobra finalizada.
+    - En la **estructura** se introduce:
+        - Una nueva etapa (#4) para evaluar si la tarea ha terminado.
+        - Una transición (#4) en la línea directa (transición #4) para cuando la tarea ha finalizado regresar a la etapa inicial.
+        - Una transición (#4a) alternativa con un salto hacia atrás para cuando la tarea no ha finalizado regresar a la etapa #2 y continuar con el siguiente viaje.
+    - En la **interpretación** se utiliza:
+        - Una variable CV (*Current Value*) para contener el número de viajes pendientes.
+        - Una variable PV (*Preset Value*) para contener el valor de los viajes a realizar.
+        - Un predicado [CV = 0] como condición de la transición #4, para indicar que la tarea ha finalizado.
+        - Un predicado [CV > 0] como condición de la transición #4a, para indicar que la terea no ha finalizado.
+        - Una acción memorizada a la desactivación de la etapa #0, para reiniciar el contador de viajes pendientes (CV := PV).
+        - Una acción memorizada a la activación de la etapa #4, para actualizar el contador con cada maniobra finalizada (CV := CV - 1).
 
 ??? info "Contadores"
     Por razones históricas, en automatización se suele utilizar **cuentas regresivas**. En los antiguos sistemas electromecánicos y de electrónica discreta, comprobar si un contador había finalizado su tarea era drásticamente más simple y económico si se comparaba con el **cero absoluto**. Esta comparación requiere únicamente un contacto físico o una sola compuerta lógica (`NOR`), independientemente del valor de la cuenta.
@@ -98,8 +107,8 @@ A continuación se muestra la <span class="objetivo-hito">especificacion, en el 
 ![Diagrama GRAFCET del carro señalizado](./img/carro-senalizado-grf.svg){ width="400px" .image-centered }
 !!! note "Comentarios"
 
-    - La señal de salida `LM` se activa de forma intermitente mediante una **acción condicionada** a la señal oscilante `BLK`.
-    - La señal de salida `LM` se activa mediante una **acción continua** para que permanezca fija en el resto de las etapas.
+    - La señal de salida `LM` se activa de forma intermitente mediante una **acción condicionada** a la señal oscilante `BLK` en la etapa inicial, para indicar que el sistema se encuentra a la espera.
+    - La señal de salida `LM` se activa mediante una **acción continua** para que permanezca fija en el resto de las etapas, para indicar que el sistema está en produción.
 
 ---
 
