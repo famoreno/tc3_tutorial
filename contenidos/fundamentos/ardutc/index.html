@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../assets/img/autoisateam-icon-alt.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -647,6 +647,17 @@
     <span class="md-ellipsis">
       
         Código Fuente y Descarga
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Instalación
       
     </span>
   </a>
@@ -1823,6 +1834,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#instalacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Instalación
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#materiales-y-requisitos" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2008,16 +2030,16 @@
 </svg>
 </span> ArduTC<a class="headerlink" href="#imagesvgxml-ardutc" title="Permanent link">&para;</a></h1>
 <h2 id="introduccion"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512m-32-352a32 32 0 1 1 64 0 32 32 0 1 1-64 0m-8 64h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24"/></svg></span> Introducción<a class="headerlink" href="#introduccion" title="Permanent link">&para;</a></h2>
-<p><strong>ArduTC</strong> es una aplicación informática de software libre desarrollada por el equipo <strong>AutoISATeam</strong> de la <strong>Universidad de Málaga</strong> que permite la interacción de un <strong>runtime</strong> de <strong><abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr></strong> con plataformas microcontroladoras y placas de desarrollo <em>hardware</em>.</p>
-<div class="admonition info">
-<p class="admonition-title">Plataformas compatibles</p>
+<p><strong>ArduTC</strong> es una aplicación informática de software libre desarrollada por el equipo <strong>AutoISATeam</strong> de la <strong>Universidad de Málaga</strong> para <strong>Windows</strong> que permite la interacción de un <strong>runtime</strong> de <strong><abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr></strong> con plataformas microcontroladoras y placas de desarrollo <em>hardware</em>.</p>
+<details class="info">
+<summary>Plataformas compatibles</summary>
 <p><strong>ArduTC</strong> debe funcionar con todas las plataformas compatibles con Telemetrix: Arduino con arquitectura AVR y ARM (UNO, Nano, Mega, Leonardo), Arduino Renesas (Serie UNO R4), Raspberry Pi Pico (RP2040 ), Espressif (ESP8266 y ESP32) y STM32.</p>
-</div>
+</details>
 <p><strong>ArduTC</strong> «convierte» una placa microcontroladora conectada a un PC con Windows mediante USB en un terminal de entradas y salidas digitales para <strong><abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr></strong>. De forma que un programa de <abbr title="Controlador lógico programable (Programmable Logic Controller).">PLC</abbr> escrito en un lenguaje de la norma IEC 61131-3, que se procese en cualquier sistema destino (runtime local/remoto o el simulador <code>UmRT_Default</code>), puede emitir y recibir información de entrada y salida hacia y desde una placa microcontroladora.</p>
 <p><img alt="Diagrama de comunicación de ArduTC entre TwinCAT y una placa microcontroladora" class="image-centered" src="img/ardutc-scheme.png" width="400px" /></p>
 <details class="info">
 <summary>Info</summary>
-<p><strong>ArduTC</strong> utiliza las siguientes librerı́as de software libre escritas en el lenguaje Python.</p>
+<p><strong>ArduTC</strong> utiliza las siguientes librerı́as de software libre.</p>
 <ul>
 <li><strong>pyADS</strong> (Stefan Lehmann): para la comunicación con <strong><abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr></strong>.</li>
 <li><strong>Telemetrix</strong> (Alan Yorinks): para la comunicación con la placa microcontroladora.</li>
@@ -2028,15 +2050,16 @@
 <blockquote>
 <p><strong>Aprender «haciendo que las cosas se muevan» con sistemas reales a muy bajo coste.</strong></p>
 </blockquote>
+<p><strong>Agradecimientos.</strong> <strong>ArduTC</strong> no sería posible sin el trabajo desinteresado de la comunidad de software libre: gracias a las personas que desarrollan, mantienen y documentan las librerías como las usadas en este proyecto, y a la comunidad que defiende y promueve el uso, estudio, distribución y mejora del software libre. Sin su labor, proyectos educativos como este no podrían existir.</p>
 <p><strong>ArduTC</strong> dispone de dos funcionalidades principales.</p>
 <ul>
 <li>Enlazar, de manera similar a <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr>, las variables de entrada y salida analógicas y digitales de una tarea <abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr> con los pines analógicos y digitales de una placa microcontroladora.</li>
 <li>Servir de interfaz entre el <strong>runtime</strong> del sistema destino de <strong><abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr></strong> seleccionado y la placa microcontroladora, para que una tarea IEC 61131-3 de <strong><abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr></strong> gestione de forma efectiva y transparente sus entradas y salidas.</li>
 </ul>
-<div class="admonition warning">
-<p class="admonition-title">Importante</p>
+<details class="warning">
+<summary>Importante</summary>
 <p>Hay que destacar que aunque la transmisión de datos mediante ADS entre el <strong>runtime</strong> de <strong><abbr title="The WINdows Control Automation Technology, plataforma software para la automatización industrial de Beckhoff.">TwinCAT</abbr></strong> y <strong>ArduTC</strong> se produce en tiempo real, la latencia que introduce la conexión USB con el sistema microcontrolador no garantiza que globalmente se cumpla tal requisito. Por tanto, este sistema de comunicación no puede sustituir, en ningún caso, a un sistema industrial basado en <strong>EtherCAT</strong> u otro protocolo de bus de campo compatible con los dispositivos fı́sicos de <strong>Beckhoff</strong>. Sin embargo, la velocidad de respuesta que ha demostrado en las pruebas realizadas es suficientemente alta como para poder ser utilizado como equipo para realizar prácticas o pruebas de concepto.</p>
-</div>
+</details>
 <div class="admonition success">
 <p class="admonition-title">Impacto y Contribuciones de ArduTC</p>
 <p>Las principales contribuciones de <strong>ArduTC</strong> son:</p>
@@ -2059,11 +2082,50 @@ El código fuente completo de este proyecto **Hola Mundo** está disponible en G
 <li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.01 1.485c-2.082 0-3.754.02-3.743.047.01.02 1.708 3.001 3.774 6.62l3.76 6.574h3.76c2.081 0 3.753-.02 3.742-.047-.005-.02-1.708-3.001-3.775-6.62l-3.76-6.574zm-4.76 1.73a789.828 789.861 0 0 0-3.63 6.319L0 15.868l1.89 3.298 1.885 3.297 3.62-6.335 3.618-6.33-1.88-3.287C8.1 4.704 7.255 3.22 7.25 3.214zm2.259 12.653-.203.348c-.114.198-.96 1.672-1.88 3.287a423.93 423.948 0 0 1-1.698 2.97c-.01.026 3.24.042 7.222.042h7.244l1.796-3.157c.992-1.734 1.85-3.23 1.906-3.323l.104-.167h-7.249z"/></svg></span> <strong>Google Drive:</strong> <a href="https://drive.google.com/file/d/18BegRgYjAHbBIg1U1vm0Bd4ghL0H9HHJ/view?usp=drive_link"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"/></svg></span> Descargar <code>ArduTC_Instalador.exe</code></a></li>
 </ul>
 <hr />
+<h2 id="instalacion"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M560.3 237.2c10.4 11.8 28.3 14.4 41.8 5.5 14.7-9.8 18.7-29.7 8.9-44.4l-48-72c-2.8-4.2-6.6-7.7-11.1-10.2L351.4 4.7C332.1-6 308.6-6 289.2 4.7L88.8 116c-5.4 3-9.7 7.4-12.6 12.8l-48.5 89.9c-12.6 23.4-3.8 52.5 19.6 65.1l33 17.7v53.3c0 23 12.4 44.3 32.4 55.7l176 99.7c19.6 11.1 43.5 11.1 63.1 0l176-99.7c20.1-11.4 32.4-32.6 32.4-55.7V237.3zm-240-9.8L170.2 144l150.1-83.4L470.4 144zm-41.5 50.2-21.3 46.2L91.7 235l25.4-47.2z"/></svg></span> Instalación<a class="headerlink" href="#instalacion" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>Instalar <strong>ArduTC</strong>. <a href="https://github.com/vetorres-uma/ArduTC#installation"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></p>
+<ul>
+<li>Descargar el instalador.</li>
+<li>Ejecutar el instalador y seguir los pasos.</li>
+</ul>
+</li>
+<li>
+<p>Intalar <strong>Arduino IDE</strong>. <a href="https://support.arduino.cc/hc/en-us/articles/360019833020-Download-and-install-Arduino-IDE"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></p>
+<ul>
+<li>Descarga la última versión <a href="https://downloads.arduino.cc/arduino-ide/arduino-ide_latest_Windows_64bit.exe"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></li>
+<li>Haz doble-clic en el <strong>archivo ejecutable</strong> (.exe) de instalación.</li>
+<li>Sigue las instrucciones.</li>
+</ul>
+</li>
+<li>
+<p>Instalar <strong>Telemetrix</strong>. <a href="https://mryslab.github.io/telemetrix/install_telemetrix/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></p>
+<ul>
+<li>Abre un terminal windows y escribe:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="n">pip</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="n">telemetrix</span>
+</code></pre></div>
+</li>
+<li>
+<p>Cargar <strong>Telemetrix</strong> en la placa Arduino. <a href="https://mryslab.github.io/telemetrix/telemetrix4arduino/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2m14-7-5-5v3H8v4h4v3z"/></svg></span></a></p>
+<ul>
+<li>Abre Arduino IDE y selecciona: <strong>Tools</strong> &gt; <strong>Manage Libraries...</strong></li>
+<li>Escribe <code>Telemetrix4Arduino</code> en la caja de búsqueda.</li>
+<li>Haz clic en el botón <strong>Instalar</strong> y acepta la instalación.</li>
+<li>Conecta la placa Arduino.</li>
+<li>Selecciona la placa Arduino en la lista desplegable.</li>
+<li>Abre Telemetrix4Arduino:  <strong>File</strong> &gt; <strong>Examples</strong> &gt; <strong>Telemetrix4Arduino</strong> &gt; <strong>Telemetrix4Arduino</strong>.</li>
+<li>Carga (upload) Telemetrix4Arduino,  usando el atajo de teclado <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-u">U</kbd></span>, pulsando sobre el botón <img alt="Upload Button" class="inline-icon" src="img/arduino-upload-button.png" /> o seleccionado <strong>Sketch</strong> &gt; <strong>Upload</strong>.</li>
+</ul>
+</li>
+</ol>
+<hr />
 <h2 id="materiales-y-requisitos"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M176 56v40h160V56c0-4.4-3.6-8-8-8H184c-4.4 0-8 3.6-8 8m-48 40V56c0-30.9 25.1-56 56-56h144c30.9 0 56 25.1 56 56v40h28.1c12.7 0 24.9 5.1 33.9 14.1l51.9 51.9c9 9 14.1 21.2 14.1 33.9V272H376v-16c0-13.3-10.7-24-24-24s-24 10.7-24 24v16H184v-16c0-13.3-10.7-24-24-24s-24 10.7-24 24v16H0v-76.1C0 183.2 5.1 171 14.1 162L66 110.1c9-9 21.2-14.1 33.9-14.1zM0 416v-96h136v16c0 13.3 10.7 24 24 24s24-10.7 24-24v-16h144v16c0 13.3 10.7 24 24 24s24-10.7 24-24v-16h136v96c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64"/></svg></span> Materiales y Requisitos<a class="headerlink" href="#materiales-y-requisitos" title="Permanent link">&para;</a></h2>
 <h3 id="hardware">Hardware<a class="headerlink" href="#hardware" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>PC con Windows</strong>.</li>
-<li><strong>Placa de desarrollo compatible</strong> y cable USB.</li>
+<li><strong>Placa de desarrollo compatible</strong> con <strong>Telemetrix</strong> y cable USB.</li>
 <li><strong>Kit de componentes electrónicos básicos:</strong> LEDs, pulsadores, potenciómetros, servomotores, ... para realizar el montaje deseado.</li>
 </ul>
 <h3 id="software">Software<a class="headerlink" href="#software" title="Permanent link">&para;</a></h3>
@@ -2214,7 +2276,7 @@ El código fuente completo de este proyecto **Hola Mundo** está disponible en G
     <span class="md-icon" title="Última actualización">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="18 de octubre de 2026 18:45:04 UTC">18 de octubre de 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="7 de noviembre de 2026 21:52:47 UTC">7 de noviembre de 2026</span>
   </span>
 
     
@@ -2339,7 +2401,7 @@ El código fuente completo de este proyecto **Hola Mundo** está disponible en G
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.indexes", "navigation.top", "navigation.tracking", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
         <script src="../../../assets/javascripts/ui-course.js"></script>
       
