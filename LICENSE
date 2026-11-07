@@ -1,0 +1,29 @@
+Licenses for this repository
+============================
+
+This repository contains original material under more than one license.
+The files below identify the applicable license by material type; neither
+license applies to third-party material, which remains under its own terms.
+
+Source code
+-----------
+
+Original source code in this repository, including PLC projects, IEC 61131-3
+code snippets, and auxiliary Python scripts used to build or publish the
+documentation, is licensed under GNU General Public License version 3.0
+(GPL-3.0). See LICENSES/GPL-3.0.txt for the complete license.
+
+Documentation and original didactic material
+--------------------------------------------
+
+Original explanatory text, didactic organization, diagrams, illustrations,
+and graphics created for this tutorial are licensed under Creative Commons
+Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0).
+See LICENSES/CC-BY-NC-SA-4.0.txt for the complete license.
+
+Third-party material
+--------------------
+
+Third-party software, trademarks, logos, screenshots, icons, and other
+third-party material are not relicensed by this notice. Their respective
+licenses, permissions, and terms apply.
