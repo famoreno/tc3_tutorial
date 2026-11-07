@@ -5,11 +5,15 @@ icon: fontawesome/solid/gears
 
 --8<-- "snippets/avisos.md:documento-en-construccion"
 
+## Guía de Instalación
+
+--8<-- "snippets/avisos.md:seccion-en-construccion"
+
 ## TwinCAT XAE
 
 --8<-- "snippets/avisos.md:seccion-en-construccion"
 
-## Guía de Instalación
+## TwinCAT XAR
 
 --8<-- "snippets/avisos.md:seccion-en-construccion"
 

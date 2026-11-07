@@ -36,13 +36,13 @@ Bienvenido/a al tutorial de TwinCAT 3. Aquí encontrarás guías y material de a
 ## :fontawesome-solid-screwdriver-wrench: [Procedimientos](contenidos/procedimientos/index.md)
 
 - [Crear un Proyecto](contenidos/procedimientos/workflow/index.md)
-    - Flujo de trabajo con TwiCAT 3 para el desarrollo de proyectos PLC.
+    - Flujo de trabajo con TwinCAT 3 para el desarrollo de proyectos PLC.
 - [Editar un Ladder](contenidos/procedimientos/ladder/index.md) 🚧 *(En construcción)*
     - Cómo programar con el lenguaje *Ladder* ({{LD}}).
 - [Editar un SFC](contenidos/procedimientos/sfc/index.md) 🚧 *(En construcción)*
     - Cómo programar con Diagramas de Funciones Secuenciales ({{SFC}}).
 - [Crear una HMI](contenidos/procedimientos/hmi/index.md) 🚧 *(En construcción)*
-    - Cómo crear **Interfaces Hombre-Máquina** con `TwinCAT 3`.
+    - Cómo crear **Interfaces Hombre-Máquina** con TwinCAT 3.
 
 ---
 
@@ -51,7 +51,7 @@ Bienvenido/a al tutorial de TwinCAT 3. Aquí encontrarás guías y material de a
 - [Hola Mundo](contenidos/ejemplos/hola-mundo/index.md)
     - El «hola mundo» de la automatización industrial.
 - [Carro](contenidos/ejemplos/carro/index.md)
-    - Implementación de máquinas de estado en {{LD}}, {{SFC}}, {{ST}}.
+    - Implementación de máquinas de estado DRC y GRAFCET en {{LD}}, {{SFC}}, {{ST}}.
 - [Carro Extendido](contenidos/ejemplos/carro-extendido/index.md) 🚧 *(En construcción)*
     - Automatización de un sistema «realista» con diferentes arquitecturas.
 
@@ -60,7 +60,7 @@ Bienvenido/a al tutorial de TwinCAT 3. Aquí encontrarás guías y material de a
 ## :fontawesome-solid-list-check: [Prácticas](contenidos/practicas/index.md)
 
 - [Semáforo](contenidos/practicas/semaforo/index.md)
-    - Implementación de máquinas de estado en {{LD}}, {{SFC}}, {{ST}}.
+    - Implementación de máquinas de estado DRC y GRAFCET en {{LD}}, {{SFC}}, {{ST}}.
 - [Proyecto Monolítico](contenidos/practicas/proyectos/proyecto-monolitico.md)
     - Proyecto de automatización con **arquitectura monolítica**.
 - [Proyecto Estructurado](contenidos/practicas/proyectos/proyecto-estructurado.md) 🚧 *(En construcción)*

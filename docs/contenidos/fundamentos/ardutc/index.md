@@ -6,16 +6,17 @@ icon: custom/ardutc-icon-dynamic
 
 ## :fontawesome-solid-circle-info: Introducción
 
-**ArduTC** es una aplicación informática de software libre desarrollada por el equipo **AutoISATeam** de la **Universidad de Málaga** que permite la interacción de un **runtime** de **TwinCAT** con plataformas microcontroladoras y placas de desarrollo *hardware*.
+**ArduTC** es una aplicación informática de software libre desarrollada por el equipo **AutoISATeam** de la **Universidad de Málaga** para **Windows** que permite la interacción de un **runtime** de **TwinCAT** con plataformas microcontroladoras y placas de desarrollo *hardware*.
 
-!!! info "Plataformas compatibles"
+??? info "Plataformas compatibles"
     **ArduTC** debe funcionar con todas las plataformas compatibles con Telemetrix: Arduino con arquitectura AVR y ARM (UNO, Nano, Mega, Leonardo), Arduino Renesas (Serie UNO R4), Raspberry Pi Pico (RP2040 ), Espressif (ESP8266 y ESP32) y STM32.
 
 **ArduTC** «convierte» una placa microcontroladora conectada a un PC con Windows mediante USB en un terminal de entradas y salidas digitales para **TwinCAT**. De forma que un programa de PLC escrito en un lenguaje de la norma IEC 61131-3, que se procese en cualquier sistema destino (runtime local/remoto o el simulador `UmRT_Default`), puede emitir y recibir información de entrada y salida hacia y desde una placa microcontroladora.
 
 ![Diagrama de comunicación de ArduTC entre TwinCAT y una placa microcontroladora](./img/ardutc-scheme.png){ width="400px" .image-centered }
+
 ??? info
-    **ArduTC** utiliza las siguientes librerı́as de software libre escritas en el lenguaje Python.
+    **ArduTC** utiliza las siguientes librerı́as de software libre.
 
     - **pyADS** (Stefan Lehmann): para la comunicación con **TwinCAT**.
     - **Telemetrix** (Alan Yorinks): para la comunicación con la placa microcontroladora.
@@ -25,12 +26,14 @@ Adquiriendo una placa microcontroladora compatible y algunos componentes electr�
 
 > **Aprender «haciendo que las cosas se muevan» con sistemas reales a muy bajo coste.**
 
+**Agradecimientos.** **ArduTC** no sería posible sin el trabajo desinteresado de la comunidad de software libre: gracias a las personas que desarrollan, mantienen y documentan las librerías como las usadas en este proyecto, y a la comunidad que defiende y promueve el uso, estudio, distribución y mejora del software libre. Sin su labor, proyectos educativos como este no podrían existir.
+
 **ArduTC** dispone de dos funcionalidades principales.
 
 - Enlazar, de manera similar a TwinCAT, las variables de entrada y salida analógicas y digitales de una tarea TwinCAT con los pines analógicos y digitales de una placa microcontroladora.
 - Servir de interfaz entre el **runtime** del sistema destino de **TwinCAT** seleccionado y la placa microcontroladora, para que una tarea IEC 61131-3 de **TwinCAT** gestione de forma efectiva y transparente sus entradas y salidas.
 
-!!! warning "Importante"
+??? warning "Importante"
     Hay que destacar que aunque la transmisión de datos mediante ADS entre el **runtime** de **TwinCAT** y **ArduTC** se produce en tiempo real, la latencia que introduce la conexión USB con el sistema microcontrolador no garantiza que globalmente se cumpla tal requisito. Por tanto, este sistema de comunicación no puede sustituir, en ningún caso, a un sistema industrial basado en **EtherCAT** u otro protocolo de bus de campo compatible con los dispositivos fı́sicos de **Beckhoff**. Sin embargo, la velocidad de respuesta que ha demostrado en las pruebas realizadas es suficientemente alta como para poder ser utilizado como equipo para realizar prácticas o pruebas de concepto.
 
 !!! success "Impacto y Contribuciones de ArduTC"
@@ -56,12 +59,44 @@ El instalador de la aplicación puede descargarse desde el siguiente repositorio
 
 ---
 
+## :fontawesome-solid-box-open: Instalación
+
+1. Instalar **ArduTC**. [:material-arrow-right-bold-box:](https://github.com/vetorres-uma/ArduTC#installation)
+
+    - Descargar el instalador.
+    - Ejecutar el instalador y seguir los pasos.
+
+2. Intalar **Arduino IDE**. [:material-arrow-right-bold-box:](https://support.arduino.cc/hc/en-us/articles/360019833020-Download-and-install-Arduino-IDE)
+    - Descarga la última versión [:material-arrow-right-bold-box:](https://downloads.arduino.cc/arduino-ide/arduino-ide_latest_Windows_64bit.exe)
+    - Haz doble-clic en el **archivo ejecutable** (.exe) de instalación.
+    - Sigue las instrucciones.
+
+3. Instalar **Telemetrix**. [:material-arrow-right-bold-box:](https://mryslab.github.io/telemetrix/install_telemetrix/)
+
+    - Abre un terminal windows y escribe:
+
+    ```pascal
+        pip install telemetrix
+    ```
+
+4. Cargar **Telemetrix** en la placa Arduino. [:material-arrow-right-bold-box:](https://mryslab.github.io/telemetrix/telemetrix4arduino/)
+
+    - Abre Arduino IDE y selecciona: **Tools** > **Manage Libraries...**
+    - Escribe `Telemetrix4Arduino` en la caja de búsqueda.
+    - Haz clic en el botón **Instalar** y acepta la instalación.
+    - Conecta la placa Arduino.
+    - Selecciona la placa Arduino en la lista desplegable.
+    - Abre Telemetrix4Arduino:  **File** > **Examples** > **Telemetrix4Arduino** > **Telemetrix4Arduino**.
+    - Carga (upload) Telemetrix4Arduino,  usando el atajo de teclado ++ctrl+u++, pulsando sobre el botón ![Upload Button](./img/arduino-upload-button.png){ .inline-icon } o seleccionado **Sketch** > **Upload**.
+
+---
+
 ## :fontawesome-solid-toolbox: Materiales y Requisitos
 
 ### Hardware
 
 - **PC con Windows**.
-- **Placa de desarrollo compatible** y cable USB.
+- **Placa de desarrollo compatible** con **Telemetrix** y cable USB.
 - **Kit de componentes electrónicos básicos:** LEDs, pulsadores, potenciómetros, servomotores, ... para realizar el montaje deseado.
 
 ### Software

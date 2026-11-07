@@ -69,6 +69,11 @@ Sin embargo, también presenta inconvenientes importantes, especialmente a medid
 
 ---
 
+## :fontawesome-solid-puzzle-piece: Arquitectura Orientada a Objetos
+
+--8<-- "snippets/avisos.md:seccion-en-construccion"
+
+---
 <!---
 Cuando enseño a programar plc con twincat utilizo una jerarquia de aproximaciones al problema de codificación de la lógica de control en los lenguajes de la norma iec 61131-3 que denomino jerarquías: monolítica (todo la lógica en un único grafcet, en un único fb), estructurada (la lógica se divide en grafcet de tareas y un grafcet coordinador de tareas, cada grafcet se corresponde con un fb en sfc), jerárquica (se introduce un elemento grafcet director a partir del gráfico GDMMA tras la aplicación de la guía gemma, que se corresponde con un FB  que codifica la correspondiente máquina de estados en ST) y finalmente funcional (en la que se pasa de "verbos/secuencias" a "objetos/unidades funcionales) en el que todo el sistemas se divide en unidades funcionales cada una de las cuales es responsable de una o varias secuencias y del "hardware" necesario para llevarlas a cabo, constituyendo cada unidad funcional un FB en ST que contiene un FB en SFC por cada secuencia, un FB en SFC para coordinar la ejecución de las secuencias,...)... es apropiado el nombre de estructura para referirse e estas formas de aproximación a la solución del problema de la automatización
 
