@@ -4,21 +4,23 @@ icon: fontawesome/solid/folder-plus
 
 # :fontawesome-solid-folder-plus: Crear un Proyecto
 
+--8<-- [start:abrir-twincat-xae]
 ## :fontawesome-solid-folder-open: Abrir TwinCAT XAE
 
 - Busca en el menú de inicio de Windows la aplicación **TwinCAT XAE Shell**.
 
-![Acceso a TwinCAT XAE desde el menú Inicio](./img/open-tc3-xae-start-menu.png){ .screenshot }
+![Acceso a TwinCAT XAE desde el menú Inicio](../../procedimientos/workflow/img/open-tc3-xae-start-menu.png){ .screenshot }
 
 - También es accesible desde la barra de tareas (junto al reloj de Windows).
-    - Haz clic sobre el icono de **TwinCAT** ![Símbolo TwinCAT Running](./img/symbol-command-restart-twincat-system.png){ .inline-icon } o ![Símbolo TwinCAT Config](./img/symbol-command-restart-twincat-config-mode.png){ .inline-icon } y seleccionar **TwinCAT XAE (TcXAEShell)**.
+    - Haz clic sobre el icono de **TwinCAT** ![Símbolo TwinCAT Running](../../procedimientos/workflow/img/symbol-command-restart-twincat-system.png){ .inline-icon } o ![Símbolo TwinCAT Config](../../procedimientos/workflow/img/symbol-command-restart-twincat-config-mode.png){ .inline-icon } y seleccionar **TwinCAT XAE (TcXAEShell)**.
 
-![Menu TwinCAT XAE en la barra de tareas](./img/open-tc3-xae-taskbar.png){ .screenshot }
+![Menu TwinCAT XAE en la barra de tareas](../../procedimientos/workflow/img/open-tc3-xae-taskbar.png){ .screenshot }
 
 !!! success "Resultado de la operación"
     Tras abrir TwinCAT XAE se muestra la pantalla inicial de la aplicación.
 
-    ![Ventana principal de TwinCAT XAE](./img/tc3-xae-main-window.png){ .screenshot }
+    ![Ventana principal de TwinCAT XAE](../../procedimientos/workflow/img/tc3-xae-main-window.png){ .screenshot }
+--8<-- [end:abrir-twincat-xae]
 
 ## :fontawesome-solid-folder-plus: Crear un Proyecto TwinCAT 3
 

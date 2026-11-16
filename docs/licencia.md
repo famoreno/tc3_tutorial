@@ -13,9 +13,10 @@ El código fuente original de este repositorio se distribuye bajo la licencia **
 
 ## :fontawesome-solid-book-open: Documentación y Material Didáctico
 
-El texto explicativo, la organización didáctica, los esquemas, las ilustraciones y los elementos gráficos originales creados para este tutorial se ofrecen bajo la licencia [Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+!!! info "Licencia del material didáctico original: CC BY-NC-SA 4.0"
+    El texto explicativo, la organización didáctica, los esquemas, las ilustraciones y los elementos gráficos originales creados para este tutorial se ofrecen bajo la licencia [Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
-Esta licencia permite copiar, compartir y adaptar el material, siempre que se atribuya la autoría, no se use con fines comerciales y las adaptaciones se compartan bajo la misma licencia. Para usos comerciales se necesita autorización previa. El código y los materiales de terceros quedan excluidos y se rigen por sus respectivas licencias o condiciones.
+    Esta licencia permite copiar, compartir y adaptar el material, siempre que se atribuya la autoría, no se use con fines comerciales y las adaptaciones se compartan bajo la misma licencia. Para usos comerciales se necesita autorización previa. El código y los materiales de terceros quedan excluidos y se rigen por sus respectivas licencias o condiciones.
 
 ## :fontawesome-solid-registered: Marcas, Logotipos e Identidad Visual
 

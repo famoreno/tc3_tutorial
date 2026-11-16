@@ -4,7 +4,11 @@
 
 <span class="objetivo-hito">Implementemos un diagrama grafcet en el lenguaje SFC</span>
 
-1. Abre la aplicación **TwinCAT XAE**. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#abrir-twincat-xae)
+1. Abre la aplicación **TwinCAT XAE**.
+
+    ??? note "Cómo se hace..."
+        --8<-- "docs/contenidos/procedimientos/workflow/index.md:abrir-twincat-xae"
+
 2. Crea una solución de TwinCAT 3 con nombre `TC3_Carro`. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#crear-un-proyecto-twincat-3)
 3. Oculta las configuraciones innecesarias para dejar el explorador de la solución lo más despejado posible. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#ocultar-configuraciones)
 4. Crea un proyecto PLC estándar con el nombre `Carro_PLC`. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#crear-un-proyecto-plc)
@@ -64,7 +68,7 @@
     END_VAR
     ```
 
-9. Escribe en `MAIN` el código, una sola línea con la invocación a la instancia `Carro`.
+9.  Escribe en `MAIN` el código, una sola línea con la invocación a la instancia `Carro`.
 
     ```iecst
     Carro();
@@ -98,7 +102,7 @@
 
 19. Prueba el programa cambiando el valor de las entradas desde la visualización.
 
-    ![Visualización V_Carro del carro básico en modo online](./img/vis-carro-online.png){ .screenshot }
+    ![Visualización V_Carro del carro básico en modo online](./img/vis-carro-basico-online.png){ .screenshot }
     ??? note "Visualización en Línea"
         Con la visualización en modo *Online* se puede:
 
@@ -217,8 +221,8 @@
     ![Visualización VIS_Carro del carro temporizado](./img/vis-carro-temporizado.png){ .screenshot }
 
     !!! note "Comentario"
-        - Incluye un objeto gráfico (Text field) para mostrar el tiempo pendiente.  [:material-arrow-right-bold-box:](../../procedimientos/hmi#mostrar-valor-numerico)
-        - Inclyue un objeto gráfico (Rectangle) para introducir el tiempo de espera.  [:material-arrow-right-bold-box:](../../procedimientos/hmi#editar-valor-numerico)
+        - Incluye un objeto gráfico (Text field) para mostrar el valor del tiempo pendiente.  [:material-arrow-right-bold-box:](../../procedimientos/hmi#mostrar-valor-numerico)
+        - Inclyue un objeto gráfico (Rectangle/Text field) para introducir el valor del tiempo de espera.  [:material-arrow-right-bold-box:](../../procedimientos/hmi#editar-valor-numerico)
 
 
 4. Procede como en el apartado anterior para probar el programa desde la visualización.
@@ -233,7 +237,7 @@
     FUNCTION_BLOCK FB_Carro_GRF_SFC
     VAR_INPUT
         TiempoEspera: TIME := T#2S;
-        ManiobrasTotales: UINT := 2;
+        ManiobrasTotales: UINT := 1;
     END_VAR
     VAR_OUTPUT
         TiempoPendiente: TIME;
@@ -287,7 +291,8 @@
     ![Visualización V_Carro del carro limitado](./img/vis-carro-limitado.png){ .screenshot }
 
     !!! note "Comentarios"
-        Incluye en la visualización `VIS_Carro` un objeto gráfico para introducir el número total de maniobras y otro para mostrar las maniobras pendientes.
+        - Incluye un objeto gráfico (Text field) para mostrar el valor de las maniobras pendiente.  [:material-arrow-right-bold-box:](../../procedimientos/hmi#mostrar-valor-numerico)
+        - Inclyue un objeto gráfico (Rectangle/Text field) para introducir el valor del número total de maniobras.  [:material-arrow-right-bold-box:](../../procedimientos/hmi#editar-valor-numerico)
 
 4. Procede como en el apartado anterior para probar el programa desde la visualización.
 
@@ -302,7 +307,7 @@
     FUNCTION_BLOCK FB_Carro_GRF_SFC
     VAR_INPUT
         TiempoEspera: TIME := T#2S;
-        ManiobrasTotales: UINT := 2;
+        ManiobrasTotales: UINT := 1;
     END_VAR
     VAR_OUTPUT
         TiempoPendiente: TIME;
@@ -325,15 +330,12 @@
     END_VAR
     ```
 
-   !!! note "Comentarios"
-        - Añade una instancia `Intermitencia` del bloque funcional `BLINK` de la librería `Util`, que implementa una intermitencia.
-
 3. Modifica la parte de implementación.
 
     ![Código SFC del bloque FB_Carro_GRF_SFC para el carro señalizado](./img/fb-carro-grf-sfc-senalizado.png){ .screenshot }
 
     !!! note "Comentarios"
-        - Incluye una acción `a_LamparaMarcha` para establecer el valor de `o_LamparaMarcha`, implementando tanto la acción condicionada a `BLK` en la etapa inicial (`S0`) como la acción continua en el resto de etapas.
+        - Incluye una acción `a_LamparaMarcha` para establecer el valor de `o_LamparaMarcha`, implementando tanto la acción condicionada a `BLK` de la etapa inicial (`S0`) como la acción continua en el resto de etapas.
 
             ```iecst
             Intermitencia(Enable := S0.x);

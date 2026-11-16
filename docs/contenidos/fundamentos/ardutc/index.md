@@ -33,13 +33,13 @@ Adquiriendo una placa microcontroladora compatible y algunos componentes electr�
 - Enlazar, de manera similar a TwinCAT, las variables de entrada y salida analógicas y digitales de una tarea TwinCAT con los pines analógicos y digitales de una placa microcontroladora.
 - Servir de interfaz entre el **runtime** del sistema destino de **TwinCAT** seleccionado y la placa microcontroladora, para que una tarea IEC 61131-3 de **TwinCAT** gestione de forma efectiva y transparente sus entradas y salidas.
 
-??? warning "Importante"
+??? warning "Restricción de uso"
     Hay que destacar que aunque la transmisión de datos mediante ADS entre el **runtime** de **TwinCAT** y **ArduTC** se produce en tiempo real, la latencia que introduce la conexión USB con el sistema microcontrolador no garantiza que globalmente se cumpla tal requisito. Por tanto, este sistema de comunicación no puede sustituir, en ningún caso, a un sistema industrial basado en **EtherCAT** u otro protocolo de bus de campo compatible con los dispositivos fı́sicos de **Beckhoff**. Sin embargo, la velocidad de respuesta que ha demostrado en las pruebas realizadas es suficientemente alta como para poder ser utilizado como equipo para realizar prácticas o pruebas de concepto.
 
 !!! success "Impacto y Contribuciones de ArduTC"
     Las principales contribuciones de **ArduTC** son:
 
-    - Fomentar la expansión del ecosistema de automatización industrial TwinCAT en la industria.
+    - Fomentar la expansión del ecosistema de automatización TwinCAT en la docencia y en la industria.
     - Democratizar el aprendizaje práctico de la programación de PLC, reduciendo drásticamente los costes asociados al hardware.
 
 ---

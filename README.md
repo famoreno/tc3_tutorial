@@ -61,7 +61,9 @@ Antes de editar o enviar contenido, consulta [CONTRIBUTING.md](CONTRIBUTING.md),
 ## Licencia
 
 - El código fuente propio del repositorio, incluidos los proyectos PLC, los fragmentos IEC 61131-3 y los scripts auxiliares, se distribuye bajo la licencia **GNU General Public License, versión 3.0 (GPLv3)**.
-- El texto explicativo y los recursos originales creados para el tutorial se distribuyen bajo la licencia **Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)**. Se permite compartir y adaptar el material con atribución, sin fines comerciales y bajo la misma licencia. Los bloques de código y los materiales de terceros quedan excluidos de esta licencia.
+- El texto explicativo y los recursos originales creados para el tutorial se distribuyen bajo la licencia **[Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/)**. Se permite compartir y adaptar el material con atribución, sin fines comerciales y bajo la misma licencia. Los bloques de código y los materiales de terceros quedan excluidos de esta licencia.
+
+Consulta la [página de licencia](docs/licencia.md) y el [aviso de licencias del repositorio](LICENSE) para más detalles.
 
 ---
 
