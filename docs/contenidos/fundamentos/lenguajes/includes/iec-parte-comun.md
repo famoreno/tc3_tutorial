@@ -10,6 +10,7 @@ Para que un identificador sea válido según la norma, debe cumplir con las sigu
 - Mayúsculas y minúsculas: El estándar IEC 61131-3 no distingue entre mayúsculas y minúsculas (case-insensitive). Por lo tanto, MiContador, micontador y MICONTADOR se consideran el mismo identificador.
 - Restricciones: No puede coincidir con ninguna palabra reservada del lenguaje (como IF, THEN, VAR, INT, etc.).
 
+--8<-- [start:declarar-una-variable]
 ### Declarar una Variable
 
 Para crear una variable escribir su declaración siguiendo la siguiente sintaxis:
@@ -55,6 +56,7 @@ Identificador [AT %Localización]: Type [:= ValorInicial];
 4. **Tipo de dato**: Especifica principalmente el tamaño y el rango de la variable. Puede ser un tipo elemental (BOOL, INT, REAL, TIME,...), complejo (STRUCT, ENUM, ARRAY,...) o de usuario.
 5. **Valor inicial**: Especifica el valor de la variable al iniciar el runtime. Si no se especifica tomará el valor predeterminado para ese tipo de variable.
 6. **Delimitador ;** (obligatorio). Terminador de instrucción.
+--8<-- [end:declarar-una-variable]
 
 ### Variables localizadas y mapeo dinámico
 

@@ -6,9 +6,11 @@ icon: fontawesome/solid/bolt
 
 --8<-- "snippets/avisos.md:documento-en-construccion"
 
+--8<-- [start:crear-una-visualizacion]
 ## :fontawesome-solid-display: Crear una Visualización
 
 Para crear una visualización básica utilizando TwinCAT 3 PLC HMI, haz clic derecho  :material-mouse-right-click: sobre la carpeta **VISUs** y selecciona la opción **Add New Item**.
+--8<-- [end:crear-una-visualizacion]
 
 <!--
 En la ventana emergente escribir un nombre para la visualización y pulsar **Open**.

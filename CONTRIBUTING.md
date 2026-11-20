@@ -75,6 +75,7 @@ El tutorial divide el aprendizaje en cuatro pilares fundamentales:
 - **Pasos:** redactar las acciones en imperativo de tú, preferiblemente una acción principal por paso. Añadir junto al paso las advertencias, explicaciones y resultados que ayuden a completarlo o verificarlo.
 - **Fragmentos incluidos (`includes/`):** comenzar cada fragmento con un título `###` descriptivo e insertarlo directamente en la guía anfitriona. No envolver el recorrido completo en un admonition colapsable; reservar los admonitions para información complementaria. Excluir los fragmentos de la navegación y validar el resultado desde la página que los incluye.
 - **Admonitions:** usar tipos reconocidos por Material (`note`, `info`, `tip`, `warning`, `success`, entre otros). Para un tipo personalizado, definir también su estilo en CSS.
+- **Ayuda de procedimiento:** usar `??? howto "Cómo se hace..."` para explicaciones plegables. Para incluir el botón de cierre al final, añadir `<button type="button" class="admonition-close-button" data-close-admonition>Plegar</button>` dentro del admonition.
 - Estas estructuras son una guía flexible: omitir secciones que no aporten al ejemplo y no inventar información solo para completar una plantilla.
 
 ---

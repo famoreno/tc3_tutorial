@@ -6,20 +6,50 @@
 
 1. Abre la aplicación **TwinCAT XAE**.
 
-    ??? note "Cómo se hace..."
+    ??? howto "Cómo se hace..."
         --8<-- "docs/contenidos/procedimientos/workflow/index.md:abrir-twincat-xae"
 
-2. Crea una solución de TwinCAT 3 con nombre `TC3_Carro`. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#crear-un-proyecto-twincat-3)
-3. Oculta las configuraciones innecesarias para dejar el explorador de la solución lo más despejado posible. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#ocultar-configuraciones)
-4. Crea un proyecto PLC estándar con el nombre `Carro_PLC`. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#crear-un-proyecto-plc)
-5. Crea una nueva **Unidad de Organización de Programa (POU)** de tipo **Bloque Funcional**. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#crear-una-pou)
+        <button type="button" class="admonition-close-button" data-close-admonition>Plegar</button>
+
+2. Crea una solución de TwinCAT 3 con nombre `TC3_Carro`.
+
+    ??? howto "Cómo se hace..."
+        --8<-- "docs/contenidos/procedimientos/workflow/index.md:crear-un-proyecto-twincat-3"
+
+        <button type="button" class="admonition-close-button" data-close-admonition>Plegar</button>
+
+3. Oculta las configuraciones innecesarias para dejar el explorador de la solución lo más despejado posible.
+
+    ??? howto "Cómo se hace..."
+        --8<-- "docs/contenidos/procedimientos/workflow/index.md:ocultar-configuraciones"
+
+        <button type="button" class="admonition-close-button" data-close-admonition>Plegar</button>
+
+4. Crea un proyecto PLC estándar con el nombre `Carro_PLC`.
+
+    ??? howto "Cómo se hace..."
+        --8<-- "docs/contenidos/procedimientos/workflow/index.md:crear-un-proyecto-plc"
+
+        <button type="button" class="admonition-close-button" data-close-admonition>Plegar</button>
+
+5. Crea una nueva **Unidad de Organización de Programa (POU)** de tipo **Bloque Funcional**.
+
+    ??? howto "Cómo se hace..."
+        --8<-- "docs/contenidos/procedimientos/workflow/index.md:crear-una-pou"
+
+        <button type="button" class="admonition-close-button" data-close-admonition>Plegar</button>
 
     !!! info "Parámetros POU"
         - *Name* ➔ `FB_Carro_GRF_SFC`
         - *Type* ➔ `Function Block`
         - *Implementation Language* ➔ `Sequential Function Chart (SFC)`
 
-6. Declara todas las **variables de entrada/salida** del sistema en `FB_Carro_GRF_SFC` como variables locales (`VAR`). [:material-arrow-right-bold-box:](../../fundamentos/lenguajes/index.md#declarar-una-variable)
+6. Declara todas las **variables de entrada/salida** del sistema en `FB_Carro_GRF_SFC` como variables locales (`VAR`).
+
+    ??? howto "Cómo se hace..."
+        --8<-- "docs/contenidos/fundamentos/lenguajes/includes/iec-parte-comun.md:declarar-una-variable"
+
+        <button type="button" class="admonition-close-button" data-close-admonition>Plegar</button>
 
     ```iecst {hl_lines="8-16"}
     FUNCTION_BLOCK FB_Carro_GRF_SFC
@@ -74,14 +104,61 @@
     Carro();
     ```
 
-10. Construye el proyecto (**Build**) para generar un archivo ejecutable. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#construir-el-proyecto)
-11. Si no dispones de ningún sistema destino (local o remoto) con un *runtime* sobre el que ejecutar el código, activa el simulador `UmRT_Default`. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#activar-simulador)
-12. Selecciona el sistema destino (**Target System**) sobre el que se vaya a ejecutar el programa (`UmRT_Default`). [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#seleccionar-sistema-destino)
-13. Activa la licencia temporal del *runtime* del sistema destino si es necesario. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#activar-licencia)
-14. Activa la configuración en el sistema destino (**Activate Configuration**). [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#activar-la-configuracion)
-15. Conéctate (**Login**) al sistema destino para transferir el proyecto. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#transferir-el-proyecto)
-16. Pon el programa de PLC en ejecución (**Run**). [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#arrancar-el-proyecto)
-17. Prueba el programa forzando las variables de entrada en el modo de **Monitorización *Online***. [:material-arrow-right-bold-box:](../../procedimientos/workflow/index.md#forzar-variables)
+10. Construye el proyecto (**Build**) para generar un archivo ejecutable.
+
+    ??? howto "Cómo se hace..."
+        --8<-- "docs/contenidos/procedimientos/workflow/index.md:construir-el-proyecto"
+
+        <button type="button" class="admonition-close-button" data-close-admonition>Plegar</button>
+
+11. Si no dispones de ningún sistema destino (local o remoto) con un *runtime* sobre el que ejecutar el código, activa el simulador `UmRT_Default`.
+
+    ??? howto "Cómo se hace..."
+        --8<-- "docs/contenidos/procedimientos/workflow/index.md:activar-simulador"
+
+        <button type="button" class="admonition-close-button" data-close-admonition>Plegar</button>
+
+12. Selecciona el sistema destino (**Target System**) sobre el que se vaya a ejecutar el programa (`UmRT_Default`).
+
+    ??? howto "Cómo se hace..."
+        --8<-- "docs/contenidos/procedimientos/workflow/index.md:seleccionar-sistema-destino"
+
+        <button type="button" class="admonition-close-button" data-close-admonition>Plegar</button>
+
+13. Activa la licencia temporal del *runtime* del sistema destino si es necesario.
+
+    ??? howto "Cómo se hace..."
+        --8<-- "docs/contenidos/procedimientos/workflow/index.md:activar-licencia"
+
+        <button type="button" class="admonition-close-button" data-close-admonition>Plegar</button>
+
+14. Activa la configuración en el sistema destino (**Activate Configuration**).
+
+    ??? howto "Cómo se hace..."
+        --8<-- "docs/contenidos/procedimientos/workflow/index.md:activar-la-configuracion"
+
+        <button type="button" class="admonition-close-button" data-close-admonition>Plegar</button>
+
+15. Conéctate (**Login**) al sistema destino para transferir el proyecto.
+
+    ??? howto "Cómo se hace..."
+        --8<-- "docs/contenidos/procedimientos/workflow/index.md:transferir-el-proyecto"
+
+        <button type="button" class="admonition-close-button" data-close-admonition>Plegar</button>
+
+16. Pon el programa de PLC en ejecución (**Run**).
+
+    ??? howto "Cómo se hace..."
+        --8<-- "docs/contenidos/procedimientos/workflow/index.md:arrancar-el-proyecto"
+
+        <button type="button" class="admonition-close-button" data-close-admonition>Plegar</button>
+
+17. Prueba el programa forzando las variables de entrada en el modo de **Monitorización *Online***.
+
+    ??? howto "Cómo se hace..."
+        --8<-- "docs/contenidos/procedimientos/workflow/index.md:forzar-variables"
+
+        <button type="button" class="admonition-close-button" data-close-admonition>Plegar</button>
 
     ![Monitorización online del bloque FB_Carro_GRF_SFC para el carro básico](./img/fb-carro-grf-sfc-basico-online.png){ .screenshot }
     ??? info "Monitorización Online"
@@ -90,13 +167,30 @@
         - En la parte de declaración ➔ el valor de las variables.
         - En la parte de implementación ➔ las etapas y transiciones activas.
 
-18. Crea una visualización mínima `VIS_Carro` que facilite la prueba. [:material-arrow-right-bold-box:](../../procedimientos/hmi#crear-una-visualizacion)
+18. Crea una visualización mínima `VIS_Carro` que facilite la prueba.
+
+    ??? howto "Cómo se hace..."
+        --8<-- "docs/contenidos/procedimientos/hmi/includes/tc3-plc-hmi.md:crear-una-visualizacion"
+
+        <button type="button" class="admonition-close-button" data-close-admonition>Plegar</button>
 
     ![Visualización V_Carro del carro básico](./img/vis-carro-basico.png){ .screenshot }
     !!! note "Visualización"
         - La visualización debe disponer al menos de:
-            - Un elemento gráfico (Rectangle) para mostrar el valor de cada actuador. [:material-arrow-right-bold-box:](../../procedimientos/hmi#mostrar-valor-booleano)
-            - Un elemento gráfico (Rectangle) para mostrar y modificar el valor de cada sensor. [:material-arrow-right-bold-box:](../../procedimientos/hmi#editar-valor-booleano)
+            - Un elemento gráfico (Rectangle) para mostrar el valor de cada actuador.
+
+                ??? howto "Cómo se hace..."
+                    [Ver procedimiento de HMI](../../procedimientos/hmi#mostrar-valor-booleano)
+
+                    <button type="button" class="admonition-close-button" data-close-admonition>Plegar</button>
+
+            - Un elemento gráfico (Rectangle) para mostrar y modificar el valor de cada sensor.
+
+                ??? howto "Cómo se hace..."
+                    [Ver procedimiento de HMI](../../procedimientos/hmi#editar-valor-booleano)
+
+                    <button type="button" class="admonition-close-button" data-close-admonition>Plegar</button>
+
         - Sin embargo, resulta conveniente que tanto los objetos gráficos destinados a los sensores como a los actuadores permitan leer y escribir las señales correspondientes. De esta forma se facilitará la prueba cuando se ejecuta con el simulador (`UmRT_Default`) sin *hardware* asociado, al tiempo que también se permite la monitorización y el mando en el modo manual cuando se ejecuta sobre un controlador con *hardware* asociado.
         - Conviene establecer un código de colores coherente para facilitar la interpretación y reducir la carga cognitiva del usuario.
 
@@ -139,7 +233,13 @@
     ```
 
     !!! note "Comentarios"
-        - Añade una instancia del bloque funcional `R_TRIG` de la librería estándar (`Tc2_Standard`) para la detección del flanco positivo del pulsador de marcha (`FlancoPulsadorMarcha`). [:material-arrow-right-bold-box:](../../fundamentos/lenguajes#detector-de-flanco)
+        - Añade una instancia del bloque funcional `R_TRIG` de la librería estándar (`Tc2_Standard`) para la detección del flanco positivo del pulsador de marcha (`FlancoPulsadorMarcha`).
+
+            ??? howto "Cómo se hace..."
+                [Ver procedimiento sobre el detector de flanco](../../fundamentos/lenguajes#detector-de-flanco)
+
+                <button type="button" class="admonition-close-button" data-close-admonition>Plegar</button>
+
         - La librería `Tc2_Standard` se incluye automáticamente, al crear un proyecto PLC estándar.
 
 2. Modifica el código de `FB_Carro_GRF_SFC`.
@@ -147,7 +247,12 @@
     ![Código SFC del bloque FB_Carro_GRF_SFC para el carro pulsado](./img/fb-carro-grf-sfc-pulsado.png){ .screenshot }
 
     !!! note "Comentarios"
-        - Añade a `FB_Carro_GRF_SFC` una acción `a_FlancoPulsadorMarcha_Evaluar` (ST), en la que se invoque la ejecución del detector de flanco `FlancoPulsadorMarcha`. [:material-arrow-right-bold-box:](../../procedimientos/sfc#crear-una-accion)
+        - Añade a `FB_Carro_GRF_SFC` una acción `a_FlancoPulsadorMarcha_Evaluar` (ST), en la que se invoque la ejecución del detector de flanco `FlancoPulsadorMarcha`.
+
+            ??? howto "Cómo se hace..."
+                [Ver procedimiento sobre acciones SFC](../../procedimientos/sfc#crear-una-accion)
+
+                <button type="button" class="admonition-close-button" data-close-admonition>Plegar</button>
 
             ```iecst
             FlancoPulsadorMarcha(CLK := i_PulsadorMarcha);
@@ -221,9 +326,19 @@
     ![Visualización VIS_Carro del carro temporizado](./img/vis-carro-temporizado.png){ .screenshot }
 
     !!! note "Comentario"
-        - Incluye un objeto gráfico (Text field) para mostrar el valor del tiempo pendiente.  [:material-arrow-right-bold-box:](../../procedimientos/hmi#mostrar-valor-numerico)
-        - Inclyue un objeto gráfico (Rectangle/Text field) para introducir el valor del tiempo de espera.  [:material-arrow-right-bold-box:](../../procedimientos/hmi#editar-valor-numerico)
+        - Incluye un objeto gráfico (Text field) para mostrar el valor del tiempo pendiente.
 
+            ??? howto "Cómo se hace..."
+                [Ver procedimiento de HMI](../../procedimientos/hmi#mostrar-valor-numerico)
+
+                <button type="button" class="admonition-close-button" data-close-admonition>Plegar</button>
+
+        - Inclyue un objeto gráfico (Rectangle/Text field) para introducir el valor del tiempo de espera.
+
+            ??? howto "Cómo se hace..."
+                [Ver procedimiento de HMI](../../procedimientos/hmi#editar-valor-numerico)
+
+                <button type="button" class="admonition-close-button" data-close-admonition>Plegar</button>
 
 4. Procede como en el apartado anterior para probar el programa desde la visualización.
 
@@ -291,8 +406,19 @@
     ![Visualización V_Carro del carro limitado](./img/vis-carro-limitado.png){ .screenshot }
 
     !!! note "Comentarios"
-        - Incluye un objeto gráfico (Text field) para mostrar el valor de las maniobras pendiente.  [:material-arrow-right-bold-box:](../../procedimientos/hmi#mostrar-valor-numerico)
-        - Inclyue un objeto gráfico (Rectangle/Text field) para introducir el valor del número total de maniobras.  [:material-arrow-right-bold-box:](../../procedimientos/hmi#editar-valor-numerico)
+        - Incluye un objeto gráfico (Text field) para mostrar el valor de las maniobras pendiente.
+
+            ??? howto "Cómo se hace..."
+                [Ver procedimiento de HMI](../../procedimientos/hmi#mostrar-valor-numerico)
+
+                <button type="button" class="admonition-close-button" data-close-admonition>Plegar</button>
+
+        - Inclyue un objeto gráfico (Rectangle/Text field) para introducir el valor del número total de maniobras.
+
+            ??? howto "Cómo se hace..."
+                [Ver procedimiento de HMI](../../procedimientos/hmi#editar-valor-numerico)
+
+                <button type="button" class="admonition-close-button" data-close-admonition>Plegar</button>
 
 4. Procede como en el apartado anterior para probar el programa desde la visualización.
 
